@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/examples/Sprite/Rotated_Sprite_2/Rotated_Sprite_2.ino</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Rotated__Sprite__2_8ino_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Rotated_Sprite_2.ino</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Rotated__Sprite__2_8ino.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>// This example plots a rotated Sprite into another Sprite and then the resultant composited</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>// Sprite is pushed to the TFT screen. This example is for a 240 x 320 screen.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>// The motivation for developing this capability is that animated dials can be drawn easily</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>// and the complex calculations involved are handled by the TFT_eSPI library. To create a dial</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>// with a moving needle a graphic of a meter needle is plotted at a specified angle into another</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>// Sprite that contains the dial face. When the needle Sprite is pushed to the dial Sprite the</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>// plotting ensures two pivot points for each Sprite coincide with pixel level accuracy.</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>// Two rotation pivot points must be set, one for the first Sprite and one for the second</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>// Sprite using setPivot(). These pivot points do not need to be within the Sprite boundaries.</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>// In this example a needle graphic is also be plotted direct to a defined TFT pivot point.</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>// The rotation angle is in degrees, an angle of 0 means no Sprite rotation.</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>// The pushRotated() function works with 1, 8 and 16-bit per pixel (bpp) Sprites.</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>// For 1 bpp Sprites the foreground and background colours are defined with the</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>// member function setBitmapColor(foregroundColor, backgroundColor).</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>// Created by Bodmer 6/1/19 as an example to the TFT_eSPI library:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>// https://github.com/Bodmer/TFT_eSPI</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>#include &lt;TFT_eSPI.h&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>TFT_eSPI tft = TFT_eSPI();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>TFT_eSprite dial   = TFT_eSprite(&amp;tft); // Sprite object for dial</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>TFT_eSprite needle = TFT_eSprite(&amp;tft); // Sprite object for needle</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>uint32_t startMillis;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>int16_t angle = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>// =======================================================================================</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>// Setup</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>// =======================================================================================</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>void setup()   {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  Serial.begin(250000); // Debug only</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  tft.begin();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  tft.setRotation(1);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  // Clear TFT screen</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  tft.fillScreen(TFT_NAVY);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  // Create the dial Sprite and dial (this temporarily hijacks the use of the needle Sprite)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  createDialScale(-120, 120, 30);   // create scale (start angle, end angle, increment angle)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  drawEmptyDial(&quot;Label&quot;, 12345);    // draw the centre of dial in the Sprite</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  dial.pushSprite(110, 0);          // push a copy of the dial to the screen so we can see it</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  // Create the needle Sprite</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  createNeedle();                // draw the needle graphic</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  needle.pushSprite(95, 7);    // push a copy of the needle to the screen so we can see it</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>// =======================================================================================</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>// Loop</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>// =======================================================================================</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>void loop() {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  // Push the needle sprite to the dial Sprite at different angles and then push the dial to the screen</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  // Use angle increments in range 1 to 6 for smoother or faster movement</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  for (int16_t angle = -120; angle &lt;= 120; angle += 2) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    plotDial(0, 0, angle, &quot;RPM&quot;, angle + 120);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    delay(25);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    yield(); // Avoid a watchdog time-out</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  delay(1000);  // Pause</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  // Update the dial Sprite with decreasing angle and plot to screen at 0,0, no delay</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  for (int16_t angle = 120; angle &gt;= -120; angle -= 2) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    plotDial(0, 0, angle, &quot;RPM&quot;, angle + 120);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    yield(); // Avoid a watchdog time-out</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  // Now show plotting of the rotated needle direct to the TFT</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  tft.setPivot(45, 150); // Set the TFT pivot point that the needle will rotate around</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  // The needle graphic has a black border so if the angle increment is small</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  // (6 degrees or less in this case) it wipes the last needle position when</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  // it is rotated and hence it clears the swept area to black</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  for (int16_t angle = 0; angle &lt;= 360; angle += 5)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    needle.pushRotated(angle); // Plot direct to TFT at specified angle</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    yield();                   // Avoid a watchdog time-out</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>// =======================================================================================</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>// Create the dial sprite, the dial outer and place scale markers</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>// =======================================================================================</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>void createDialScale(int16_t start_angle, int16_t end_angle, int16_t increment)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  // Create the dial Sprite</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  dial.setColorDepth(8);       // Size is odd (i.e. 91) so there is a centre pixel at 45,45</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  dial.createSprite(91, 91);   // 8bpp requires 91 * 91 = 8281 bytes</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  dial.setPivot(45, 45);       // set pivot in middle of dial Sprite</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  // Draw dial outline</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  dial.fillSprite(TFT_TRANSPARENT);           // Fill with transparent colour</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  dial.fillCircle(45, 45, 43, TFT_DARKGREY);  // Draw dial outer</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  // Hijack the use of the needle Sprite since that has not been used yet!</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  needle.createSprite(3, 3);     // 3 pixels wide, 3 high</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  needle.fillSprite(TFT_WHITE);  // Fill with white</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  needle.setPivot(1, 43);        //  Set pivot point x to the Sprite centre and y to marker radius</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  for (int16_t angle = start_angle; angle &lt;= end_angle; angle += increment) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    needle.pushRotated(&amp;dial, angle); // Sprite is used to make scale markers</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    yield(); // Avoid a watchdog time-out</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  needle.deleteSprite(); // Delete the hijacked Sprite</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>// =======================================================================================</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>// Add the empty dial face with label and value</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>// =======================================================================================</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>void drawEmptyDial(String label, int16_t val)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>{</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  // Draw black face</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  dial.fillCircle(45, 45, 40, TFT_BLACK);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  dial.drawPixel(45, 45, TFT_WHITE);        // For demo only, mark pivot point with a while pixel</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  dial.setTextDatum(TC_DATUM);              // Draw dial text</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  dial.drawString(label, 45, 15, 2);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  dial.drawNumber(val, 45, 60, 2);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>// =======================================================================================</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>// Update the dial and plot to screen with needle at defined angle</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>// =======================================================================================</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>void plotDial(int16_t x, int16_t y, int16_t angle, String label, uint16_t val)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  // Draw the blank dial in the Sprite, add label and number</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  drawEmptyDial(label, val);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  // Push a rotated needle Sprite to the dial Sprite, with black as transparent colour</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  needle.pushRotated(&amp;dial, angle, TFT_BLACK); // dial is the destination Sprite</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  // Push the resultant dial Sprite to the screen, with transparent colour</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  dial.pushSprite(x, y, TFT_TRANSPARENT);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>// =======================================================================================</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>// Create the needle Sprite and the image of the needle</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>// =======================================================================================</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>void createNeedle(void)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>{</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  needle.setColorDepth(8);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  needle.createSprite(11, 49); // create the needle Sprite 11 pixels wide by 49 high</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  needle.fillSprite(TFT_BLACK);          // Fill with black</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  // Define needle pivot point</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  uint16_t piv_x = needle.width() / 2;   // x pivot of Sprite (middle)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  uint16_t piv_y = needle.height() - 10; // y pivot of Sprite (10 pixels from bottom)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  needle.setPivot(piv_x, piv_y);         // Set pivot point in this Sprite</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  // Draw the red needle with a yellow tip</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  // Keep needle tip 1 pixel inside dial circle to avoid leaving stray pixels</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  needle.fillRect(piv_x - 1, 2, 3, piv_y + 8, TFT_RED);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  needle.fillRect(piv_x - 1, 2, 3, 5, TFT_YELLOW);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  // Draw needle centre boss</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  needle.fillCircle(piv_x, piv_y, 5, TFT_MAROON);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  needle.drawPixel( piv_x, piv_y, TFT_WHITE);     // Mark needle pivot point with a white pixel</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>// =======================================================================================</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d834161b10c57611f417f859026dded1.html">examples</a></li><li class="navelem"><a href="dir_f2bf512a83492f5a8bd26b1857381b72.html">Sprite</a></li><li class="navelem"><a href="dir_654377f6ed4ff5c9849d06f2641338a1.html">Rotated_Sprite_2</a></li><li class="navelem"><a href="Rotated__Sprite__2_8ino.html">Rotated_Sprite_2.ino</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/IRremote/src/IRProtocol.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('IRProtocol_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IRProtocol.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="IRProtocol_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * IRReceive.hpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * This file is exclusively included by IRremote.h to enable easy configuration of library switches</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  Contains all protocol functions used by receiver and sender.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  This file is part of Arduino-IRremote https://github.com/Arduino-IRremote/Arduino-IRremote.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> ************************************************************************************</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * MIT License</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Copyright (c) 2009-2023 Ken Shirriff, Rafi Khan, Armin Joachimsmeyer</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * copies of the Software, and to permit persons to whom the Software is furnished</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> ************************************************************************************</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifndef _IR_PROTOCOL_HPP</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define _IR_PROTOCOL_HPP</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#if defined(DEBUG) &amp;&amp; !defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define LOCAL_DEBUG</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//#define LOCAL_DEBUG // This enables debug output only for this file</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"></span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/** \addtogroup Receiving Receiving IR data for multiple protocols</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * @{</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__Receiving.html#ga40297ba8cf5a1c89fea2e9844c5e8d9e">   46</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Unknown[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_PulseWidth[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;PulseWidth&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_PulseDistance[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;PulseDistance&quot;</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Apple[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Apple&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Denon[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Denon&quot;</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_JVC[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;JVC&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_LG[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;LG&quot;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_LG2[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;LG2&quot;</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_NEC[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;NEC&quot;</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_NEC2[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;NEC2&quot;</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Onkyo[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Onkyo&quot;</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Panasonic[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Panasonic&quot;</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Kaseikyo[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Kaseikyo&quot;</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Kaseikyo_Denon[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Kaseikyo_Denon&quot;</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Kaseikyo_Sharp[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Kaseikyo_Sharp&quot;</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Kaseikyo_JVC[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Kaseikyo_JVC&quot;</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Kaseikyo_Mitsubishi[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Kaseikyo_Mitsubishi&quot;</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_RC5[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;RC5&quot;</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_RC6[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;RC6&quot;</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_RC6A[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;RC6A&quot;</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Samsung[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Samsung&quot;</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_SamsungLG[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;SamsungLG&quot;</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Samsung48[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Samsung48&quot;</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Sharp[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Sharp&quot;</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Sony[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Sony&quot;</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_BangOlufsen[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Bang&amp;Olufsen&quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_BoseWave[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;BoseWave&quot;</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Lego[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Lego&quot;</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_MagiQuest[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;MagiQuest&quot;</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_Whynter[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;Whynter&quot;</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">const</span> <span class="keywordtype">char</span> string_FAST[] <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = <span class="stringliteral">&quot;FAST&quot;</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"> * !!Must be the same order as in decode_type_t in IRProtocol.h!!!</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> <a class="code hl_variable" href="group__Receiving.html#ga3bdd668aa583bfcd42fc7ecffbe55653">ProtocolNames</a>[]</div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group__Receiving.html#ga3bdd668aa583bfcd42fc7ecffbe55653">   82</a></span><a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> = { string_Unknown, string_PulseWidth, string_PulseDistance, string_Apple, string_Denon, string_JVC, string_LG, string_LG2,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        string_NEC, string_NEC2, string_Onkyo, string_Panasonic, string_Kaseikyo, string_Kaseikyo_Denon, string_Kaseikyo_Sharp,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        string_Kaseikyo_JVC, string_Kaseikyo_Mitsubishi, string_RC5, string_RC6, string_RC6A, string_Samsung, string_SamsungLG, string_Samsung48,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        string_Sharp, string_Sony</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#if !defined(EXCLUDE_EXOTIC_PROTOCOLS)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        , string_BangOlufsen, string_BoseWave, string_Lego, string_MagiQuest, string_Whynter, string_FAST</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        };</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#if defined(__AVR__)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">const</span> __FlashStringHelper* <a class="code hl_function" href="group__Receiving.html#ga14bb0caef7bbd416306b17d5f8cb96a1">getProtocolString</a>(<a class="code hl_enumeration" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fad">decode_type_t</a> aProtocol) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *tProtocolStringPtr = (<span class="keywordtype">char</span>*) pgm_read_word(&amp;<a class="code hl_variable" href="group__Receiving.html#ga3bdd668aa583bfcd42fc7ecffbe55653">ProtocolNames</a>[aProtocol]);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> ((__FlashStringHelper*) (tProtocolStringPtr));</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#else</span></div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group__Receiving.html#ga14bb0caef7bbd416306b17d5f8cb96a1">   97</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="group__Receiving.html#ga14bb0caef7bbd416306b17d5f8cb96a1">getProtocolString</a>(<a class="code hl_enumeration" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fad">decode_type_t</a> aProtocol) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="group__Receiving.html#ga3bdd668aa583bfcd42fc7ecffbe55653">ProtocolNames</a>[aProtocol];</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#if (__INT_WIDTH__ &gt;= 32)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#  if __has_include(&lt;type_traits&gt;)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment"> * This code to handle the missing print(unsigned long long...) function of seeduino core was contributed by sklott</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"> * https://stackoverflow.com/questions/74622227/avoid-calling-of-function-size-t-printprintunsigned-long-long-n-int-base-if</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">// If you have C++17 you can just use std::void_t, or use this for all versions</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#if __cpp_lib_void_t &gt;= 201411L</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">using </span>void_t = std::void_t&lt;T&gt;;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> ... Ts&gt; <span class="keyword">struct </span>make_void {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">typedef</span> <span class="keywordtype">void</span> type;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>};</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> ... Ts&gt; <span class="keyword">using </span>void_t = <span class="keyword">typename</span> make_void&lt;Ts...&gt;::type;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">// Detecting if we have print(unsigned long long value, int base) / print(0ull, 0) overload</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">struct </span>has_ull_print: std::false_type {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">struct </span>has_ull_print&lt;T, void_t&lt;decltype(std::declval&lt;T&gt;().print(0ull, 0))&gt;&gt; : std::true_type {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>};</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">// Must be namespace, to avoid public and static declarations for class</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">namespace </span>PrintULL {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>template&lt;typename PrintImplType, typename std::enable_if&lt;!has_ull_print&lt;PrintImplType&gt;::value, <span class="keywordtype">bool</span>&gt;::type = <span class="keyword">true</span>&gt;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keywordtype">size_t</span> print(PrintImplType *p, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> value, <span class="keywordtype">int</span> base) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">size_t</span> tLength = p-&gt;print(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(value &gt;&gt; 32), base);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    tLength += p-&gt;print(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(value), base);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> tLength;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>template&lt;typename PrintImplType, typename std::enable_if&lt;has_ull_print&lt;PrintImplType&gt;::value, <span class="keywordtype">bool</span>&gt;::type = <span class="keyword">true</span>&gt;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keywordtype">size_t</span> print(PrintImplType *p, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> value, <span class="keywordtype">int</span> base) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">return</span> p-&gt;print(value, base);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keyword">namespace </span>PrintULL {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordtype">size_t</span> print(Print *aSerial, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> n, <span class="keywordtype">int</span> base) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> aSerial-&gt;print(n, base);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>};</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment"></span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment"> * Function to print decoded result and flags in one line.</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment"> * A static function to be able to print data to send or copied received data.</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment"> * Ends with println().</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment"> * @param aSerial The Print object on which to write, for Arduino you can use &amp;Serial.</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment"> * @param aIRDataPtr        Pointer to the data to be printed.</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment"> * @param aPrintRepeatGap   If true also print the gap before repeats.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="group__Receiving.html#gac45e8ead5e96868e61c65cd354758d4d">  163</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__Receiving.html#gac45e8ead5e96868e61c65cd354758d4d">printIRResultShort</a>(Print *aSerial, <a class="code hl_struct" href="structIRData.html">IRData</a> *aIRDataPtr, <span class="keywordtype">bool</span> aPrintRepeatGap) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#a1acaa14d5a437ad317e17489e845f401">IRDATA_FLAGS_WAS_OVERFLOW</a>) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        aSerial-&gt;println(F(<span class="stringliteral">&quot;Overflow&quot;</span>));</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    aSerial-&gt;print(F(<span class="stringliteral">&quot;Protocol=&quot;</span>));</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    aSerial-&gt;print(<a class="code hl_function" href="group__Receiving.html#ga14bb0caef7bbd416306b17d5f8cb96a1">getProtocolString</a>(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a703592faec26bab5cbe465f53ef14245">protocol</a>));</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a703592faec26bab5cbe465f53ef14245">protocol</a> == <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada6ce26a62afab55d7606ad4e92428b30c">UNKNOWN</a>) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#if defined(DECODE_HASH)</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        aSerial-&gt;print(F(<span class="stringliteral">&quot; Hash=0x&quot;</span>));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">#if (__INT_WIDTH__ &lt; 32)</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        aSerial-&gt;print(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a1aca80950279db7f8631f96268f012d9">decodedRawData</a>, HEX);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        PrintULL::print(aSerial,aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a1aca80950279db7f8631f96268f012d9">decodedRawData</a>, HEX);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#if !defined(DISABLE_CODE_FOR_RECEIVER)</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        aSerial-&gt;print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        aSerial-&gt;print((aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a8a17562431120ffc7f8964e56e5db27e">rawlen</a> + 1) / 2, DEC);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        aSerial-&gt;println(F(<span class="stringliteral">&quot; bits (incl. gap and start) received&quot;</span>));</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#if defined(DECODE_DISTANCE_WIDTH)</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a703592faec26bab5cbe465f53ef14245">protocol</a> != <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fadab60e0c1f01cfceb2dc9d5f2005f6dfc0">PULSE_DISTANCE</a> &amp;&amp; aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a703592faec26bab5cbe465f53ef14245">protocol</a> != <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada783253fd89cb09e1dbdb2bcdbc0400e3">PULSE_WIDTH</a>) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">         * New decoders have address and command</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">         */</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        aSerial-&gt;print(F(<span class="stringliteral">&quot; Address=0x&quot;</span>));</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        aSerial-&gt;print(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a1255a5b7d704d34fda83dcabcb903d4c">address</a>, HEX);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        aSerial-&gt;print(F(<span class="stringliteral">&quot; Command=0x&quot;</span>));</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        aSerial-&gt;print(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#ab0ce2b36765ea429e8c4bfa0706a45e7">command</a>, HEX);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#abf3b16f9ab35f4e4b95c8c362aca2d71">IRDATA_FLAGS_EXTRA_INFO</a>) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            aSerial-&gt;print(F(<span class="stringliteral">&quot; Extra=0x&quot;</span>));</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            aSerial-&gt;print(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a0b71fa1a17e3ab0ae9bc9462b795213f">extra</a>, HEX);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#a1a60f95f0885b1865dc5514ddd80e093">IRDATA_FLAGS_PARITY_FAILED</a>) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            aSerial-&gt;print(F(<span class="stringliteral">&quot; Parity fail&quot;</span>));</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#a169a0ae23ab363f24027f769881db0b0">IRDATA_FLAGS_TOGGLE_BIT</a>) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            aSerial-&gt;print(F(<span class="stringliteral">&quot; Toggle=1&quot;</span>));</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#if defined(DECODE_DISTANCE_WIDTH)</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; (<a class="code hl_define" href="IRProtocol_8h.html#a5c5e6ae69aa440bfa132550d120ace08">IRDATA_FLAGS_IS_AUTO_REPEAT</a> | <a class="code hl_define" href="IRProtocol_8h.html#aaa9952cd64b58083c28873484c494abf">IRDATA_FLAGS_IS_REPEAT</a>)) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            aSerial-&gt;print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#a5c5e6ae69aa440bfa132550d120ace08">IRDATA_FLAGS_IS_AUTO_REPEAT</a>) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                aSerial-&gt;print(F(<span class="stringliteral">&quot;Auto-&quot;</span>));</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            aSerial-&gt;print(F(<span class="stringliteral">&quot;Repeat&quot;</span>));</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#if !defined(DISABLE_CODE_FOR_RECEIVER)</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="keywordflow">if</span> (aPrintRepeatGap) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                aSerial-&gt;print(F(<span class="stringliteral">&quot; gap=&quot;</span>));</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                aSerial-&gt;print((uint32_t) aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a39cdcb814880cd9af21f79b53669e824">initialGapTicks</a> * <a class="code hl_define" href="IRremote_8hpp.html#a1c7eebb527483c272812530caa313d20">MICROS_PER_TICK</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                aSerial-&gt;print(F(<span class="stringliteral">&quot;us&quot;</span>));</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            (void)aPrintRepeatGap;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">         * Print raw data</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">         */</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">if</span> (!(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#aaa9952cd64b58083c28873484c494abf">IRDATA_FLAGS_IS_REPEAT</a>) || aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a1aca80950279db7f8631f96268f012d9">decodedRawData</a> != 0) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            aSerial-&gt;print(F(<span class="stringliteral">&quot; Raw-Data=0x&quot;</span>));</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#if (__INT_WIDTH__ &lt; 32)</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            aSerial-&gt;print(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a1aca80950279db7f8631f96268f012d9">decodedRawData</a>, HEX);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            PrintULL::print(aSerial, aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a1aca80950279db7f8631f96268f012d9">decodedRawData</a>, HEX);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <span class="comment">/*</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">             * Print number of bits processed</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">             */</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            aSerial-&gt;print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            aSerial-&gt;print(aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#a945c41b8463a36cf00b0f38b0aa73200">numberOfBits</a>, DEC);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            aSerial-&gt;print(F(<span class="stringliteral">&quot; bits&quot;</span>));</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="keywordflow">if</span> (aIRDataPtr-&gt;<a class="code hl_variable" href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">flags</a> &amp; <a class="code hl_define" href="IRProtocol_8h.html#a7f6872e6f83c0571e3150ba86428af4c">IRDATA_FLAGS_IS_MSB_FIRST</a>) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                aSerial-&gt;println(F(<span class="stringliteral">&quot; MSB first&quot;</span>));</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                aSerial-&gt;println(F(<span class="stringliteral">&quot; LSB first&quot;</span>));</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            aSerial-&gt;println();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        }</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment">/**********************************************************************************************************************</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment"> * Function to bit reverse OLD MSB values of e.g. NEC.</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="comment"> **********************************************************************************************************************/</span></div>
+<div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">  262</a></span>uint8_t <a class="code hl_function" href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">bitreverseOneByte</a>(uint8_t aValue) {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">//    uint8_t tReversedValue;</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment">//    return __builtin_avr_insert_bits(0x01234567, aValue, tReversedValue);</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">// 76543210</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    aValue = (aValue &gt;&gt; 4) | (aValue &lt;&lt; 4); <span class="comment">// Swap in groups of 4</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">// 32107654</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    aValue = ((aValue &amp; 0xcc) &gt;&gt; 2) | ((aValue &amp; 0x33) &lt;&lt; 2); <span class="comment">// Swap in groups of 2</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">// 10325476</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    aValue = ((aValue &amp; 0xaa) &gt;&gt; 1) | ((aValue &amp; 0x55) &lt;&lt; 1); <span class="comment">// Swap bit pairs</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">// 01234567</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordflow">return</span> aValue;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>}</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="foldopen" id="foldopen00275" data-start="{" data-end="}">
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="group__Receiving.html#gad7c345c1b554ca8f3069b5fb767f07d6">  275</a></span>uint32_t <a class="code hl_function" href="group__Receiving.html#gad7c345c1b554ca8f3069b5fb767f07d6">bitreverse32Bit</a>(uint32_t aInput) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">//    __builtin_avr_insert_bits();</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <a class="code hl_union" href="unionLongUnion.html">LongUnion</a> tValue;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    tValue.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#a67e1514b7a6ccc4d017eb6928c327e5c">HighByte</a> = <a class="code hl_function" href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">bitreverseOneByte</a>(aInput);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    tValue.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aba027b17010803cf910996cae9201f32">MidHighByte</a> = <a class="code hl_function" href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">bitreverseOneByte</a>(aInput &gt;&gt; 8);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    tValue.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aeed69e051ef3c5c3d03e0efa260226b1">MidLowByte</a> = <a class="code hl_function" href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">bitreverseOneByte</a>(aInput &gt;&gt; 16);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    tValue.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aa41368107679917a1c39f30999f4e9d9">LowByte</a> = <a class="code hl_function" href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">bitreverseOneByte</a>(aInput &gt;&gt; 24);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">return</span> tValue.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a>;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}</div>
+</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment"></span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">/** @}*/</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#undef LOCAL_DEBUG</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">#endif </span><span class="comment">// _IR_PROTOCOL_HPP</span></div>
+<div class="ttc" id="aIRProtocol_8h_html_a169a0ae23ab363f24027f769881db0b0"><div class="ttname"><a href="IRProtocol_8h.html#a169a0ae23ab363f24027f769881db0b0">IRDATA_FLAGS_TOGGLE_BIT</a></div><div class="ttdeci">#define IRDATA_FLAGS_TOGGLE_BIT</div><div class="ttdoc">Is set if RC5 or RC6 toggle bit is set.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00096">IRProtocol.h:96</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a1a60f95f0885b1865dc5514ddd80e093"><div class="ttname"><a href="IRProtocol_8h.html#a1a60f95f0885b1865dc5514ddd80e093">IRDATA_FLAGS_PARITY_FAILED</a></div><div class="ttdeci">#define IRDATA_FLAGS_PARITY_FAILED</div><div class="ttdoc">The current (autorepeat) frame violated parity check.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00095">IRProtocol.h:95</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a1acaa14d5a437ad317e17489e845f401"><div class="ttname"><a href="IRProtocol_8h.html#a1acaa14d5a437ad317e17489e845f401">IRDATA_FLAGS_WAS_OVERFLOW</a></div><div class="ttdeci">#define IRDATA_FLAGS_WAS_OVERFLOW</div><div class="ttdoc">irparams.rawlen is set to 0 in this case to avoid endless OverflowFlag.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00100">IRProtocol.h:100</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a5c5e6ae69aa440bfa132550d120ace08"><div class="ttname"><a href="IRProtocol_8h.html#a5c5e6ae69aa440bfa132550d120ace08">IRDATA_FLAGS_IS_AUTO_REPEAT</a></div><div class="ttdeci">#define IRDATA_FLAGS_IS_AUTO_REPEAT</div><div class="ttdoc">The current repeat frame is a repeat, that is always sent after a regular frame and cannot be avoided...</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00094">IRProtocol.h:94</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a7f6872e6f83c0571e3150ba86428af4c"><div class="ttname"><a href="IRProtocol_8h.html#a7f6872e6f83c0571e3150ba86428af4c">IRDATA_FLAGS_IS_MSB_FIRST</a></div><div class="ttdeci">#define IRDATA_FLAGS_IS_MSB_FIRST</div><div class="ttdoc">Value is mainly determined by the (known) protocol.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00101">IRProtocol.h:101</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_aaa9952cd64b58083c28873484c494abf"><div class="ttname"><a href="IRProtocol_8h.html#aaa9952cd64b58083c28873484c494abf">IRDATA_FLAGS_IS_REPEAT</a></div><div class="ttdeci">#define IRDATA_FLAGS_IS_REPEAT</div><div class="ttdoc">The gap between the preceding frame is as smaller than the maximum gap expected for a repeat....</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00093">IRProtocol.h:93</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_abf3b16f9ab35f4e4b95c8c362aca2d71"><div class="ttname"><a href="IRProtocol_8h.html#abf3b16f9ab35f4e4b95c8c362aca2d71">IRDATA_FLAGS_EXTRA_INFO</a></div><div class="ttdeci">#define IRDATA_FLAGS_EXTRA_INFO</div><div class="ttdoc">There is extra info not contained in address and data (e.g. Kaseikyo unknown vendor ID,...</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00098">IRProtocol.h:98</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fad"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fad">decode_type_t</a></div><div class="ttdeci">decode_type_t</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00040">IRProtocol.h:40</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fada6ce26a62afab55d7606ad4e92428b30c"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada6ce26a62afab55d7606ad4e92428b30c">UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00041">IRProtocol.h:41</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fada783253fd89cb09e1dbdb2bcdbc0400e3"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada783253fd89cb09e1dbdb2bcdbc0400e3">PULSE_WIDTH</a></div><div class="ttdeci">@ PULSE_WIDTH</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00042">IRProtocol.h:42</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fadab60e0c1f01cfceb2dc9d5f2005f6dfc0"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fadab60e0c1f01cfceb2dc9d5f2005f6dfc0">PULSE_DISTANCE</a></div><div class="ttdeci">@ PULSE_DISTANCE</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00043">IRProtocol.h:43</a></div></div>
+<div class="ttc" id="aIRremote_8hpp_html_a1c7eebb527483c272812530caa313d20"><div class="ttname"><a href="IRremote_8hpp.html#a1c7eebb527483c272812530caa313d20">MICROS_PER_TICK</a></div><div class="ttdeci">#define MICROS_PER_TICK</div><div class="ttdef"><b>Definition</b> <a href="IRremote_8hpp_source.html#l00250">IRremote.hpp:250</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a2fbcc74e9fcf029507e016c73c0b3218"><div class="ttname"><a href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a></div><div class="ttdeci">#define PROGMEM</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00091">TFT_eSPI.h:91</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga14bb0caef7bbd416306b17d5f8cb96a1"><div class="ttname"><a href="group__Receiving.html#ga14bb0caef7bbd416306b17d5f8cb96a1">getProtocolString</a></div><div class="ttdeci">const char * getProtocolString(decode_type_t aProtocol)</div><div class="ttdef"><b>Definition</b> <a href="#l00097">IRProtocol.hpp:97</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga3bdd668aa583bfcd42fc7ecffbe55653"><div class="ttname"><a href="group__Receiving.html#ga3bdd668aa583bfcd42fc7ecffbe55653">ProtocolNames</a></div><div class="ttdeci">const char *const ProtocolNames[]</div><div class="ttdef"><b>Definition</b> <a href="#l00082">IRProtocol.hpp:82</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga95e4a5acb86af8c967f8cae7e75062cb"><div class="ttname"><a href="group__Receiving.html#ga95e4a5acb86af8c967f8cae7e75062cb">bitreverseOneByte</a></div><div class="ttdeci">uint8_t bitreverseOneByte(uint8_t aValue)</div><div class="ttdef"><b>Definition</b> <a href="#l00262">IRProtocol.hpp:262</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_gac45e8ead5e96868e61c65cd354758d4d"><div class="ttname"><a href="group__Receiving.html#gac45e8ead5e96868e61c65cd354758d4d">printIRResultShort</a></div><div class="ttdeci">void printIRResultShort(Print *aSerial, IRData *aIRDataPtr, bool aPrintRepeatGap)</div><div class="ttdef"><b>Definition</b> <a href="#l00163">IRProtocol.hpp:163</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_gad7c345c1b554ca8f3069b5fb767f07d6"><div class="ttname"><a href="group__Receiving.html#gad7c345c1b554ca8f3069b5fb767f07d6">bitreverse32Bit</a></div><div class="ttdeci">uint32_t bitreverse32Bit(uint32_t aInput)</div><div class="ttdef"><b>Definition</b> <a href="#l00275">IRProtocol.hpp:275</a></div></div>
+<div class="ttc" id="astructIRData_html"><div class="ttname"><a href="structIRData.html">IRData</a></div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00109">IRProtocol.h:109</a></div></div>
+<div class="ttc" id="astructIRData_html_a0b71fa1a17e3ab0ae9bc9462b795213f"><div class="ttname"><a href="structIRData.html#a0b71fa1a17e3ab0ae9bc9462b795213f">IRData::extra</a></div><div class="ttdeci">uint16_t extra</div><div class="ttdoc">Contains upper 16 bit of Magiquest WandID, Kaseikyo unknown vendor ID and Distance protocol (HeaderMa...</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00113">IRProtocol.h:113</a></div></div>
+<div class="ttc" id="astructIRData_html_a1255a5b7d704d34fda83dcabcb903d4c"><div class="ttname"><a href="structIRData.html#a1255a5b7d704d34fda83dcabcb903d4c">IRData::address</a></div><div class="ttdeci">uint16_t address</div><div class="ttdoc">Decoded address, Distance protocol (tMarkTicksLong (if tMarkTicksLong == 0, then tMarkTicksShort) &lt;&lt; ...</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00111">IRProtocol.h:111</a></div></div>
+<div class="ttc" id="astructIRData_html_a1aca80950279db7f8631f96268f012d9"><div class="ttname"><a href="structIRData.html#a1aca80950279db7f8631f96268f012d9">IRData::decodedRawData</a></div><div class="ttdeci">IRRawDataType decodedRawData</div><div class="ttdoc">Up to 32/64 bit decoded raw data, to be used for send functions.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00114">IRProtocol.h:114</a></div></div>
+<div class="ttc" id="astructIRData_html_a39cdcb814880cd9af21f79b53669e824"><div class="ttname"><a href="structIRData.html#a39cdcb814880cd9af21f79b53669e824">IRData::initialGapTicks</a></div><div class="ttdeci">uint16_t initialGapTicks</div><div class="ttdoc">contains the initial gap (pre 4.4: the value in rawbuf[0]) of the last received frame.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00130">IRProtocol.h:130</a></div></div>
+<div class="ttc" id="astructIRData_html_a703592faec26bab5cbe465f53ef14245"><div class="ttname"><a href="structIRData.html#a703592faec26bab5cbe465f53ef14245">IRData::protocol</a></div><div class="ttdeci">decode_type_t protocol</div><div class="ttdoc">UNKNOWN, NEC, SONY, RC5, PULSE_DISTANCE, ...</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00110">IRProtocol.h:110</a></div></div>
+<div class="ttc" id="astructIRData_html_a8a17562431120ffc7f8964e56e5db27e"><div class="ttname"><a href="structIRData.html#a8a17562431120ffc7f8964e56e5db27e">IRData::rawlen</a></div><div class="ttdeci">IRRawlenType rawlen</div><div class="ttdoc">counter of entries in rawbuf of last received frame.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00129">IRProtocol.h:129</a></div></div>
+<div class="ttc" id="astructIRData_html_a945c41b8463a36cf00b0f38b0aa73200"><div class="ttname"><a href="structIRData.html#a945c41b8463a36cf00b0f38b0aa73200">IRData::numberOfBits</a></div><div class="ttdeci">uint16_t numberOfBits</div><div class="ttdoc">Number of bits received for data (address + command + parity) - to determine protocol length if diffe...</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00120">IRProtocol.h:120</a></div></div>
+<div class="ttc" id="astructIRData_html_aaaad48fc0d90e5c6daec601987848a51"><div class="ttname"><a href="structIRData.html#aaaad48fc0d90e5c6daec601987848a51">IRData::flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdoc">IRDATA_FLAGS_IS_REPEAT, IRDATA_FLAGS_WAS_OVERFLOW etc. See IRDATA_FLAGS_* definitions above.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00121">IRProtocol.h:121</a></div></div>
+<div class="ttc" id="astructIRData_html_ab0ce2b36765ea429e8c4bfa0706a45e7"><div class="ttname"><a href="structIRData.html#ab0ce2b36765ea429e8c4bfa0706a45e7">IRData::command</a></div><div class="ttdeci">uint16_t command</div><div class="ttdoc">Decoded command, Distance protocol (tMarkTicksShort &lt;&lt; 8) | tSpaceTicksShort.</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00112">IRProtocol.h:112</a></div></div>
+<div class="ttc" id="aunionLongUnion_html"><div class="ttname"><a href="unionLongUnion.html">LongUnion</a></div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00059">LongUnion.h:59</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_a67e1514b7a6ccc4d017eb6928c327e5c"><div class="ttname"><a href="unionLongUnion.html#a67e1514b7a6ccc4d017eb6928c327e5c">LongUnion::HighByte</a></div><div class="ttdeci">uint8_t HighByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00064">LongUnion.h:64</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_a81d84b7f8f09ffa223e0dbba9d234a0a"><div class="ttname"><a href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">LongUnion::UByte</a></div><div class="ttdeci">struct LongUnion::@061277105001236167100162262062116076230363273225 UByte</div></div>
+<div class="ttc" id="aunionLongUnion_html_aa41368107679917a1c39f30999f4e9d9"><div class="ttname"><a href="unionLongUnion.html#aa41368107679917a1c39f30999f4e9d9">LongUnion::LowByte</a></div><div class="ttdeci">uint8_t LowByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00061">LongUnion.h:61</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_aaf8815ca810b2d8386b5912f127586a7"><div class="ttname"><a href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">LongUnion::ULong</a></div><div class="ttdeci">uint32_t ULong</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00095">LongUnion.h:95</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_aba027b17010803cf910996cae9201f32"><div class="ttname"><a href="unionLongUnion.html#aba027b17010803cf910996cae9201f32">LongUnion::MidHighByte</a></div><div class="ttdeci">uint8_t MidHighByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00063">LongUnion.h:63</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_aeed69e051ef3c5c3d03e0efa260226b1"><div class="ttname"><a href="unionLongUnion.html#aeed69e051ef3c5c3d03e0efa260226b1">LongUnion::MidLowByte</a></div><div class="ttdeci">uint8_t MidLowByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00062">LongUnion.h:62</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_88c0bcaa7fd8df08d0f5885e4eb57ee3.html">src</a></li><li class="navelem"><a href="IRProtocol_8hpp.html">IRProtocol.hpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

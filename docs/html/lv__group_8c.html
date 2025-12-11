@@ -1,0 +1,1214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/core/lv_group.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__group_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_group.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="lv__group_8h_source.html">lv_group.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__gc_8h_source.html">../misc/lv_gc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__obj_8h_source.html">../core/lv_obj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__indev_8h_source.html">../core/lv_indev.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__group_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a00bed49b53f432c3b3819882b4fb7755" id="r_a00bed49b53f432c3b3819882b4fb7755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00bed49b53f432c3b3819882b4fb7755">_lv_group_init</a> (void)</td></tr>
+<tr class="memitem:a8673d9c19c91d2edecf2b1bff42c48fc" id="r_a8673d9c19c91d2edecf2b1bff42c48fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8673d9c19c91d2edecf2b1bff42c48fc">lv_group_add_obj</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:afd24771585b9b5cdbdc2eb7f0b9cb520" id="r_afd24771585b9b5cdbdc2eb7f0b9cb520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd24771585b9b5cdbdc2eb7f0b9cb520">lv_group_create</a> (void)</td></tr>
+<tr class="memitem:abce2efdec2202109914ba5866f295823" id="r_abce2efdec2202109914ba5866f295823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abce2efdec2202109914ba5866f295823">lv_group_del</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a95552390442529a311a425259348c707" id="r_a95552390442529a311a425259348c707"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95552390442529a311a425259348c707">lv_group_focus_freeze</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, bool en)</td></tr>
+<tr class="memitem:ad5479089f9d9554f88428bf63241515f" id="r_ad5479089f9d9554f88428bf63241515f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5479089f9d9554f88428bf63241515f">lv_group_focus_next</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a64199ace138af107ba25116f367997a3" id="r_a64199ace138af107ba25116f367997a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64199ace138af107ba25116f367997a3">lv_group_focus_obj</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a6d5b7b4a734589a68a03ed93addc17fd" id="r_a6d5b7b4a734589a68a03ed93addc17fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d5b7b4a734589a68a03ed93addc17fd">lv_group_focus_prev</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a3a366f11be2d259dbff771a53beaedaa" id="r_a3a366f11be2d259dbff771a53beaedaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a366f11be2d259dbff771a53beaedaa">lv_group_get_default</a> (void)</td></tr>
+<tr class="memitem:ac0cc6230633760554bbc7ee15a4b1850" id="r_ac0cc6230633760554bbc7ee15a4b1850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__group_8h.html#ab8c29cae0e324e483c90f1d2c21e3650">lv_group_edge_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0cc6230633760554bbc7ee15a4b1850">lv_group_get_edge_cb</a> (const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a06dd3f21e367415bd7845cbb9a0acc1c" id="r_a06dd3f21e367415bd7845cbb9a0acc1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06dd3f21e367415bd7845cbb9a0acc1c">lv_group_get_editing</a> (const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a44d1bd48f901ea2dab301e50e4983825" id="r_a44d1bd48f901ea2dab301e50e4983825"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__group_8h.html#a9d87bb6ed2406d3ea8ee2c83dc449401">lv_group_focus_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44d1bd48f901ea2dab301e50e4983825">lv_group_get_focus_cb</a> (const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a32f6012476aedc5eaa4ef9b493b28557" id="r_a32f6012476aedc5eaa4ef9b493b28557"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32f6012476aedc5eaa4ef9b493b28557">lv_group_get_focused</a> (const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a7482be16fb7de1689f73df46a51807e2" id="r_a7482be16fb7de1689f73df46a51807e2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7482be16fb7de1689f73df46a51807e2">lv_group_get_obj_count</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a3746b6bf277dc31b7888986d7683ee7b" id="r_a3746b6bf277dc31b7888986d7683ee7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3746b6bf277dc31b7888986d7683ee7b">lv_group_get_wrap</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a1c6a83ae23426121b9b5920e0b2c9447" id="r_a1c6a83ae23426121b9b5920e0b2c9447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c6a83ae23426121b9b5920e0b2c9447">lv_group_remove_all_objs</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:a219dc0b6d0674a706655aedcd56cf5ae" id="r_a219dc0b6d0674a706655aedcd56cf5ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a219dc0b6d0674a706655aedcd56cf5ae">lv_group_remove_obj</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a8c1fda9413187c7c1b7ba52fd29e9ac0" id="r_a8c1fda9413187c7c1b7ba52fd29e9ac0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c1fda9413187c7c1b7ba52fd29e9ac0">lv_group_send_data</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, uint32_t c)</td></tr>
+<tr class="memitem:ac3c7c582c324f2501ed585d683fd69e2" id="r_ac3c7c582c324f2501ed585d683fd69e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3c7c582c324f2501ed585d683fd69e2">lv_group_set_default</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group)</td></tr>
+<tr class="memitem:aa67bd604693906b5b9ec14fbd5b39df5" id="r_aa67bd604693906b5b9ec14fbd5b39df5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa67bd604693906b5b9ec14fbd5b39df5">lv_group_set_edge_cb</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, <a class="el" href="lv__group_8h.html#ab8c29cae0e324e483c90f1d2c21e3650">lv_group_edge_cb_t</a> edge_cb)</td></tr>
+<tr class="memitem:a823ad3a59540394774e86316f9c4b690" id="r_a823ad3a59540394774e86316f9c4b690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a823ad3a59540394774e86316f9c4b690">lv_group_set_editing</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, bool edit)</td></tr>
+<tr class="memitem:adfb0a96484ca6f6d4691c257f25eb273" id="r_adfb0a96484ca6f6d4691c257f25eb273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfb0a96484ca6f6d4691c257f25eb273">lv_group_set_focus_cb</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, <a class="el" href="lv__group_8h.html#a9d87bb6ed2406d3ea8ee2c83dc449401">lv_group_focus_cb_t</a> focus_cb)</td></tr>
+<tr class="memitem:aa666a2561be02d6dc630d346fe1a5a30" id="r_aa666a2561be02d6dc630d346fe1a5a30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa666a2561be02d6dc630d346fe1a5a30">lv_group_set_refocus_policy</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, <a class="el" href="lv__group_8h.html#a10d4ce12656b513694be63bc97b43e96">lv_group_refocus_policy_t</a> policy)</td></tr>
+<tr class="memitem:a18dcc5be6193ff5ca2281edae8fcf3af" id="r_a18dcc5be6193ff5ca2281edae8fcf3af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18dcc5be6193ff5ca2281edae8fcf3af">lv_group_set_wrap</a> (<a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *group, bool en)</td></tr>
+<tr class="memitem:aa061dceb32f6727af000ef3392792e1a" id="r_aa061dceb32f6727af000ef3392792e1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa061dceb32f6727af000ef3392792e1a">lv_group_swap_obj</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj1, <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj2)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a00bed49b53f432c3b3819882b4fb7755" name="a00bed49b53f432c3b3819882b4fb7755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00bed49b53f432c3b3819882b4fb7755">&#9670;&#160;</a></span>_lv_group_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_group_init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Init. the group module </p><dl class="section remark"><dt>Comentarios</dt><dd>Internal function, do not call directly. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00045">45</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_group_ll), <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a>));</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="alv__gc_8h_html_a56ab4f084c8075b22e02e1c99491c4cd"><div class="ttname"><a href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a></div><div class="ttdeci">#define LV_GC_ROOT(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__gc_8h_source.html#l00074">lv_gc.h:74</a></div></div>
+<div class="ttc" id="alv__group_8h_html_a0fa2dbb9ed984eb2abdfc8c0b1990d00"><div class="ttname"><a href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a></div><div class="ttdeci">struct _lv_group_t lv_group_t</div></div>
+<div class="ttc" id="alv__ll_8c_html_a991a8cdd1d53fcc0b2c7e1f2e55b067b"><div class="ttname"><a href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a></div><div class="ttdeci">void _lv_ll_init(lv_ll_t *ll_p, uint32_t node_size)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00047">lv_ll.c:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00047">_lv_ll_init()</a> y <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj_8c_source.html#l00098">lv_init()</a>.</p>
+
+</div>
+</div>
+<a id="a8673d9c19c91d2edecf2b1bff42c48fc" name="a8673d9c19c91d2edecf2b1bff42c48fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8673d9c19c91d2edecf2b1bff42c48fc">&#9670;&#160;</a></span>lv_group_add_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_add_obj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add an object to a group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+    <tr><td class="paramname">obj</td><td>pointer to an object to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00111">111</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>{</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span>(group == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="comment">/*Be sure the object is removed from its current group*/</span></div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="#a219dc0b6d0674a706655aedcd56cf5ae">lv_group_remove_obj</a>(obj);</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">/*Do not add the object twice*/</span></div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** obj_i;</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, obj_i) {</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span>((*obj_i) == obj) {</div>
+<div class="line"><span class="lineno">  124</span>            <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;the object is already added to this group&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  126</span>        }</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">/*If the object is already in a group and focused then refocus it*/</span></div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * group_cur = <a class="code hl_function" href="lv__obj_8c.html#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a>(obj);</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span>(group_cur) {</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">group_p</a> &amp;&amp; *(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">group_p</a>-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>) == obj) {</div>
+<div class="line"><span class="lineno">  133</span>            lv_group_refocus(group_cur);</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>            <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;changing object&#39;s group&quot;</span>);</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a> == NULL) <a class="code hl_function" href="lv__obj_8c.html#a1b734607bd80d900ba862375d08227cf">lv_obj_allocate_spec_attr</a>(obj);</div>
+<div class="line"><span class="lineno">  140</span>    obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">group_p</a> = group;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** next = <a class="code hl_function" href="lv__ll_8c.html#a4ef41f959d1d70c956e9bf79920d240a">_lv_ll_ins_tail</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>);</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(next);</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span>(next == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  145</span>    *next = obj;</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">/*If the head and the tail is equal then there is only one object in the linked list.</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment">     *In this case automatically activate it*/</span></div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__ll_8c.html#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>) == next) {</div>
+<div class="line"><span class="lineno">  150</span>        lv_group_refocus(group);</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;finished&quot;</span>);</div>
+<div class="line"><span class="lineno">  154</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__group_8c_html_a219dc0b6d0674a706655aedcd56cf5ae"><div class="ttname"><a href="#a219dc0b6d0674a706655aedcd56cf5ae">lv_group_remove_obj</a></div><div class="ttdeci">void lv_group_remove_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00175">lv_group.c:175</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_a4ef41f959d1d70c956e9bf79920d240a"><div class="ttname"><a href="lv__ll_8c.html#a4ef41f959d1d70c956e9bf79920d240a">_lv_ll_ins_tail</a></div><div class="ttdeci">void * _lv_ll_ins_tail(lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00126">lv_ll.c:126</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_afa5c88b6f53beba52b97d605884f4150"><div class="ttname"><a href="lv__ll_8c.html#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a></div><div class="ttdeci">void * _lv_ll_get_head(const lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00256">lv_ll.c:256</a></div></div>
+<div class="ttc" id="alv__ll_8h_html_a95bd9fc4c0a04816cd26d8cca80e4988"><div class="ttname"><a href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a></div><div class="ttdeci">#define _LV_LL_READ(list, i)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00159">lv_ll.h:159</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a1deeb0e317c6314c573ee8730321afd0"><div class="ttname"><a href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a></div><div class="ttdeci">#define LV_LOG_TRACE(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00093">lv_log.h:93</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a1b734607bd80d900ba862375d08227cf"><div class="ttname"><a href="lv__obj_8c.html#a1b734607bd80d900ba862375d08227cf">lv_obj_allocate_spec_attr</a></div><div class="ttdeci">void lv_obj_allocate_spec_attr(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00358">lv_obj.c:358</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_afbc1d207be82e3d738e17c18d8e7fdf9"><div class="ttname"><a href="lv__obj_8c.html#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a></div><div class="ttdeci">void * lv_obj_get_group(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00346">lv_obj.c:346</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="astruct__lv__group__t_html_a2a31a8ae6da7c3545cd3a6f6d56cc724"><div class="ttname"><a href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">_lv_group_t::obj_focus</a></div><div class="ttdeci">struct _lv_obj_t ** obj_focus</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00061">lv_group.h:61</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_a3e17edeb69f746e7836b192688b42bf9"><div class="ttname"><a href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">_lv_group_t::obj_ll</a></div><div class="ttdeci">lv_ll_t obj_ll</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00060">lv_group.h:60</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_afcb4e50fc3a05683f08e4af206759414"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">_lv_obj_spec_attr_t::group_p</a></div><div class="ttdeci">lv_group_t * group_p</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00158">lv_obj.h:158</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_acf5de681bc9200fd454f868c6820f3f0"><div class="ttname"><a href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">_lv_obj_t::spec_attr</a></div><div class="ttdeci">_lv_obj_spec_attr_t * spec_attr</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00177">lv_obj.h:177</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00126">_lv_ll_ins_tail()</a>, <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__obj_8h_source.html#l00158">_lv_obj_spec_attr_t::group_p</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__group_8c_source.html#l00175">lv_group_remove_obj()</a>, <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__obj_8c_source.html#l00358">lv_obj_allocate_spec_attr()</a>, <a class="el" href="lv__obj_8c_source.html#l00346">lv_obj_get_group()</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a>, <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a>, <a class="el" href="Navigation_8cpp_source.html#l00358">SetupScreen1Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00376">SetupScreen2Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00396">SetupScreen3Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00418">SetupScreen4Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00473">SetupScreen5Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00491">SetupScreen6Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00513">SetupScreen7Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00537">SetupScreen8Nav()</a> y <a class="el" href="Navigation_8cpp_source.html#l00555">SetupScreen9Nav()</a>.</p>
+
+</div>
+</div>
+<a id="afd24771585b9b5cdbdc2eb7f0b9cb520" name="afd24771585b9b5cdbdc2eb7f0b9cb520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd24771585b9b5cdbdc2eb7f0b9cb520">&#9670;&#160;</a></span>lv_group_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * lv_group_create </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new object group </p><dl class="section return"><dt>Devuelve</dt><dd>pointer to the new object group </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00050">50</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * group = <a class="code hl_function" href="lv__ll_8c.html#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_group_ll));</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(group);</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span>(group == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_function" href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *));</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>      = NULL;</div>
+<div class="line"><span class="lineno">   58</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">frozen</a>         = 0;</div>
+<div class="line"><span class="lineno">   59</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a0827156771bb68671288ccc913bb0156">focus_cb</a>       = NULL;</div>
+<div class="line"><span class="lineno">   60</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a>        = NULL;</div>
+<div class="line"><span class="lineno">   61</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ada9687b664ac571dbf3488ec74ee1694">editing</a>        = 0;</div>
+<div class="line"><span class="lineno">   62</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3f3ab676489c054f33e287b2b23adb33">refocus_policy</a> = <a class="code hl_enumvalue" href="lv__group_8h.html#a10d4ce12656b513694be63bc97b43e96a8cf92e57ba3f13978436dc64c508364f">LV_GROUP_REFOCUS_POLICY_PREV</a>;</div>
+<div class="line"><span class="lineno">   63</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9be7897b37b9557f669ea4465db79db2">wrap</a>           = 1;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span><span class="preprocessor">#if LV_USE_USER_DATA</span></div>
+<div class="line"><span class="lineno">   66</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ac73c377063106d76ca1f12101072a63d">user_data</a> = NULL;</div>
+<div class="line"><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> group;</div>
+<div class="line"><span class="lineno">   70</span>}</div>
+<div class="ttc" id="alv__group_8h_html_a10d4ce12656b513694be63bc97b43e96a8cf92e57ba3f13978436dc64c508364f"><div class="ttname"><a href="lv__group_8h.html#a10d4ce12656b513694be63bc97b43e96a8cf92e57ba3f13978436dc64c508364f">LV_GROUP_REFOCUS_POLICY_PREV</a></div><div class="ttdeci">@ LV_GROUP_REFOCUS_POLICY_PREV</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00083">lv_group.h:83</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_adea28cec6b6e492dbafa3564c08d6024"><div class="ttname"><a href="lv__ll_8c.html#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a></div><div class="ttdeci">void * _lv_ll_ins_head(lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00067">lv_ll.c:67</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_a0827156771bb68671288ccc913bb0156"><div class="ttname"><a href="struct__lv__group__t.html#a0827156771bb68671288ccc913bb0156">_lv_group_t::focus_cb</a></div><div class="ttdeci">lv_group_focus_cb_t focus_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00063">lv_group.h:63</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_a3f3ab676489c054f33e287b2b23adb33"><div class="ttname"><a href="struct__lv__group__t.html#a3f3ab676489c054f33e287b2b23adb33">_lv_group_t::refocus_policy</a></div><div class="ttdeci">uint8_t refocus_policy</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00074">lv_group.h:74</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_a9be7897b37b9557f669ea4465db79db2"><div class="ttname"><a href="struct__lv__group__t.html#a9be7897b37b9557f669ea4465db79db2">_lv_group_t::wrap</a></div><div class="ttdeci">uint8_t wrap</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00076">lv_group.h:76</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_a9bee9a1af52bbbd474caaa763de86793"><div class="ttname"><a href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">_lv_group_t::frozen</a></div><div class="ttdeci">uint8_t frozen</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00072">lv_group.h:72</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_ac73c377063106d76ca1f12101072a63d"><div class="ttname"><a href="struct__lv__group__t.html#ac73c377063106d76ca1f12101072a63d">_lv_group_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00069">lv_group.h:69</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_ada9687b664ac571dbf3488ec74ee1694"><div class="ttname"><a href="struct__lv__group__t.html#ada9687b664ac571dbf3488ec74ee1694">_lv_group_t::editing</a></div><div class="ttdeci">uint8_t editing</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00073">lv_group.h:73</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html_ae7fda50b2846aaee6799a5660a323b93"><div class="ttname"><a href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">_lv_group_t::edge_cb</a></div><div class="ttdeci">lv_group_edge_cb_t edge_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00064">lv_group.h:64</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00047">_lv_ll_init()</a>, <a class="el" href="lv__ll_8c_source.html#l00067">_lv_ll_ins_head()</a>, <a class="el" href="lv__group_8h_source.html#l00064">_lv_group_t::edge_cb</a>, <a class="el" href="lv__group_8h_source.html#l00073">_lv_group_t::editing</a>, <a class="el" href="lv__group_8h_source.html#l00063">_lv_group_t::focus_cb</a>, <a class="el" href="lv__group_8h_source.html#l00072">_lv_group_t::frozen</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__group_8h_source.html#l00083">LV_GROUP_REFOCUS_POLICY_PREV</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a>, <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a>, <a class="el" href="lv__group_8h_source.html#l00074">_lv_group_t::refocus_policy</a>, <a class="el" href="lv__group_8h_source.html#l00069">_lv_group_t::user_data</a> y <a class="el" href="lv__group_8h_source.html#l00076">_lv_group_t::wrap</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="abce2efdec2202109914ba5866f295823" name="abce2efdec2202109914ba5866f295823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce2efdec2202109914ba5866f295823">&#9670;&#160;</a></span>lv_group_del()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_del </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete a group object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00072">72</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>    <span class="comment">/*Defocus the currently focused object*/</span></div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span>(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> != NULL) {</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(*group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a6268513bd9ad2b5703e394f46f18e4de">LV_EVENT_DEFOCUSED</a>, get_indev(group));</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(*group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>);</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">/*Remove the objects from the group*/</span></div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** obj;</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, obj) {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span>((*obj)-&gt;spec_attr)(*obj)-&gt;spec_attr-&gt;group_p = NULL;</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">/*Remove the group from any indev devices */</span></div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev = <a class="code hl_function" href="lv__hal__indev_8c.html#a5ac34da1402e8d7540b17627d262ac01">lv_indev_get_next</a>(NULL);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">while</span>(indev) {</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">if</span>(indev-&gt;<a class="code hl_variable" href="struct__lv__indev__t.html#abe81eefe10ba7f66ff9ffe3a48db3a31">group</a> == group) {</div>
+<div class="line"><span class="lineno">   90</span>            <a class="code hl_function" href="lv__indev_8c.html#aa6f0e316052745e71c1b482ac85861cf">lv_indev_set_group</a>(indev, NULL);</div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+<div class="line"><span class="lineno">   92</span>        indev = <a class="code hl_function" href="lv__hal__indev_8c.html#a5ac34da1402e8d7540b17627d262ac01">lv_indev_get_next</a>(indev);</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span>(default_group == group) default_group = NULL;</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="lv__ll_8c.html#a100edcf0f1651fc36ebd6d3c12238a23">_lv_ll_clear</a>(&amp;(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>));</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_function" href="lv__ll_8c.html#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_group_ll), group);</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(group);</div>
+<div class="line"><span class="lineno">   99</span>}</div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a6268513bd9ad2b5703e394f46f18e4de"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a6268513bd9ad2b5703e394f46f18e4de">LV_EVENT_DEFOCUSED</a></div><div class="ttdeci">@ LV_EVENT_DEFOCUSED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00050">lv_event.h:50</a></div></div>
+<div class="ttc" id="alv__hal__indev_8c_html_a5ac34da1402e8d7540b17627d262ac01"><div class="ttname"><a href="lv__hal__indev_8c.html#a5ac34da1402e8d7540b17627d262ac01">lv_indev_get_next</a></div><div class="ttdeci">lv_indev_t * lv_indev_get_next(lv_indev_t *indev)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00152">lv_hal_indev.c:152</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a7fc4c271f4ad53b4949e26b2999a1785"><div class="ttname"><a href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a></div><div class="ttdeci">struct _lv_indev_t lv_indev_t</div></div>
+<div class="ttc" id="alv__indev_8c_html_aa6f0e316052745e71c1b482ac85861cf"><div class="ttname"><a href="lv__indev_8c.html#aa6f0e316052745e71c1b482ac85861cf">lv_indev_set_group</a></div><div class="ttdeci">void lv_indev_set_group(lv_indev_t *indev, lv_group_t *group)</div><div class="ttdef"><b>Definition</b> <a href="lv__indev_8c_source.html#l00207">lv_indev.c:207</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_a100edcf0f1651fc36ebd6d3c12238a23"><div class="ttname"><a href="lv__ll_8c.html#a100edcf0f1651fc36ebd6d3c12238a23">_lv_ll_clear</a></div><div class="ttdeci">void _lv_ll_clear(lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00191">lv_ll.c:191</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_a1751f3dd6c080b86d65f304d1949753c"><div class="ttname"><a href="lv__ll_8c.html#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a></div><div class="ttdeci">void _lv_ll_remove(lv_ll_t *ll_p, void *node_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00154">lv_ll.c:154</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_abe81eefe10ba7f66ff9ffe3a48db3a31"><div class="ttname"><a href="struct__lv__indev__t.html#abe81eefe10ba7f66ff9ffe3a48db3a31">_lv_indev_t::group</a></div><div class="ttdeci">struct _lv_group_t * group</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00180">lv_hal_indev.h:180</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00191">_lv_ll_clear()</a>, <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00180">_lv_indev_t::group</a>, <a class="el" href="lv__event_8h_source.html#l00050">LV_EVENT_DEFOCUSED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__hal__indev_8c_source.html#l00152">lv_indev_get_next()</a>, <a class="el" href="lv__indev_8c_source.html#l00207">lv_indev_set_group()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a> y <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a>.</p>
+
+</div>
+</div>
+<a id="a95552390442529a311a425259348c707" name="a95552390442529a311a425259348c707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95552390442529a311a425259348c707">&#9670;&#160;</a></span>lv_group_focus_freeze()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_focus_freeze </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>en</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Do not let to change the focus from the current object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+    <tr><td class="paramname">en</td><td>true: freeze, false: release freezing (normal mode) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00285">285</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  286</span>{</div>
+<div class="line"><span class="lineno">  287</span>    <span class="keywordflow">if</span>(en == <span class="keyword">false</span>) group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">frozen</a> = 0;</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">else</span> group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">frozen</a> = 1;</div>
+<div class="line"><span class="lineno">  289</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00072">_lv_group_t::frozen</a>.</p>
+
+</div>
+</div>
+<a id="ad5479089f9d9554f88428bf63241515f" name="ad5479089f9d9554f88428bf63241515f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5479089f9d9554f88428bf63241515f">&#9670;&#160;</a></span>lv_group_focus_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_focus_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Focus the next object in a group (defocus the current) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00267">267</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  268</span>{</div>
+<div class="line"><span class="lineno">  269</span>    <span class="keywordtype">bool</span> focus_changed = focus_next_core(group, <a class="code hl_function" href="lv__ll_8c.html#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>, <a class="code hl_function" href="lv__ll_8c.html#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a>);</div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">if</span>(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a>) {</div>
+<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">if</span>(!focus_changed)</div>
+<div class="line"><span class="lineno">  272</span>            group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a>(group, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  273</span>    }</div>
+<div class="line"><span class="lineno">  274</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a7bc52b9229e0f4c86093fc3ea2f6df4b"><div class="ttname"><a href="lv__ll_8c.html#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a></div><div class="ttdeci">void * _lv_ll_get_next(const lv_ll_t *ll_p, const void *n_act)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00279">lv_ll.c:279</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00279">_lv_ll_get_next()</a> y <a class="el" href="lv__group_8h_source.html#l00064">_lv_group_t::edge_cb</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Navigation_8cpp_source.html#l00025">HandleIRNavigation()</a> y <a class="el" href="lv__obj_8c_source.html#l00229">lv_obj_add_flag()</a>.</p>
+
+</div>
+</div>
+<a id="a64199ace138af107ba25116f367997a3" name="a64199ace138af107ba25116f367997a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64199ace138af107ba25116f367997a3">&#9670;&#160;</a></span>lv_group_focus_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_focus_obj </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Focus on an object (defocus the current) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object to focus on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00234">234</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  235</span>{</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">if</span>(obj == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * g = <a class="code hl_function" href="lv__obj_8c.html#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a>(obj);</div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">if</span>(g == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">frozen</a> != 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="comment">/*On defocus edit mode must be leaved*/</span></div>
+<div class="line"><span class="lineno">  243</span>    <a class="code hl_function" href="#a823ad3a59540394774e86316f9c4b690">lv_group_set_editing</a>(g, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** i;</div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, i) {</div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordflow">if</span>(*i == obj) {</div>
+<div class="line"><span class="lineno">  248</span>            <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> != NULL &amp;&amp; obj != *g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>) {  <span class="comment">/*Do not defocus if the same object needs to be focused again*/</span></div>
+<div class="line"><span class="lineno">  249</span>                <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(*g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a6268513bd9ad2b5703e394f46f18e4de">LV_EVENT_DEFOCUSED</a>, get_indev(g));</div>
+<div class="line"><span class="lineno">  250</span>                <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  251</span>                <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(*g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>);</div>
+<div class="line"><span class="lineno">  252</span>            }</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>            g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> = i;</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> != NULL) {</div>
+<div class="line"><span class="lineno">  257</span>                <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a0827156771bb68671288ccc913bb0156">focus_cb</a>) g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a0827156771bb68671288ccc913bb0156">focus_cb</a>(g);</div>
+<div class="line"><span class="lineno">  258</span>                <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(*g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa36d2b7aa8cfa92719266858018c274b">LV_EVENT_FOCUSED</a>, get_indev(g));</div>
+<div class="line"><span class="lineno">  259</span>                <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  260</span>                <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(*g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>);</div>
+<div class="line"><span class="lineno">  261</span>            }</div>
+<div class="line"><span class="lineno">  262</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  263</span>        }</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
+<div class="line"><span class="lineno">  265</span>}</div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771aa36d2b7aa8cfa92719266858018c274b"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa36d2b7aa8cfa92719266858018c274b">LV_EVENT_FOCUSED</a></div><div class="ttdeci">@ LV_EVENT_FOCUSED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00049">lv_event.h:49</a></div></div>
+<div class="ttc" id="alv__group_8c_html_a823ad3a59540394774e86316f9c4b690"><div class="ttname"><a href="#a823ad3a59540394774e86316f9c4b690">lv_group_set_editing</a></div><div class="ttdeci">void lv_group_set_editing(lv_group_t *group, bool edit)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00311">lv_group.c:311</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a></div><div class="ttdeci">@ LV_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00045">lv_types.h:45</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a5c71f43250ed3699f40a8b634e342228"><div class="ttname"><a href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a></div><div class="ttdeci">uint8_t lv_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00047">lv_types.h:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__group_8h_source.html#l00063">_lv_group_t::focus_cb</a>, <a class="el" href="lv__group_8h_source.html#l00072">_lv_group_t::frozen</a>, <a class="el" href="lv__event_8h_source.html#l00050">LV_EVENT_DEFOCUSED</a>, <a class="el" href="lv__event_8h_source.html#l00049">LV_EVENT_FOCUSED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__group_8c_source.html#l00311">lv_group_set_editing()</a>, <a class="el" href="lv__obj_8c_source.html#l00346">lv_obj_get_group()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a> y <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__group_8c_source.html#l00156">lv_group_swap_obj()</a>, <a class="el" href="Navigation_8cpp_source.html#l00358">SetupScreen1Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00376">SetupScreen2Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00396">SetupScreen3Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00418">SetupScreen4Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00473">SetupScreen5Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00491">SetupScreen6Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00513">SetupScreen7Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00537">SetupScreen8Nav()</a> y <a class="el" href="Navigation_8cpp_source.html#l00555">SetupScreen9Nav()</a>.</p>
+
+</div>
+</div>
+<a id="a6d5b7b4a734589a68a03ed93addc17fd" name="a6d5b7b4a734589a68a03ed93addc17fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5b7b4a734589a68a03ed93addc17fd">&#9670;&#160;</a></span>lv_group_focus_prev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_focus_prev </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Focus the previous object in a group (defocus the current) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00276">276</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  277</span>{</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordtype">bool</span> focus_changed = focus_next_core(group, <a class="code hl_function" href="lv__ll_8c.html#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a>, <a class="code hl_function" href="lv__ll_8c.html#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a>);</div>
+<div class="line"><span class="lineno">  279</span>    <span class="keywordflow">if</span>(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a>) {</div>
+<div class="line"><span class="lineno">  280</span>        <span class="keywordflow">if</span>(!focus_changed)</div>
+<div class="line"><span class="lineno">  281</span>            group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a>(group, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  282</span>    }</div>
+<div class="line"><span class="lineno">  283</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a7ce37131f386894569001a033ad7c445"><div class="ttname"><a href="lv__ll_8c.html#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a></div><div class="ttdeci">void * _lv_ll_get_prev(const lv_ll_t *ll_p, const void *n_act)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00294">lv_ll.c:294</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_a883ce4f0448a8fa1384fe2f4eb7b3be4"><div class="ttname"><a href="lv__ll_8c.html#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a></div><div class="ttdeci">void * _lv_ll_get_tail(const lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00267">lv_ll.c:267</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00294">_lv_ll_get_prev()</a>, <a class="el" href="lv__ll_8c_source.html#l00267">_lv_ll_get_tail()</a> y <a class="el" href="lv__group_8h_source.html#l00064">_lv_group_t::edge_cb</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Navigation_8cpp_source.html#l00025">HandleIRNavigation()</a>.</p>
+
+</div>
+</div>
+<a id="a3a366f11be2d259dbff771a53beaedaa" name="a3a366f11be2d259dbff771a53beaedaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a366f11be2d259dbff771a53beaedaa">&#9670;&#160;</a></span>lv_group_get_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * lv_group_get_default </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the default group </p><dl class="section return"><dt>Devuelve</dt><dd>pointer to the default group </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00106">106</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> default_group;</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a>.</p>
+
+</div>
+</div>
+<a id="ac0cc6230633760554bbc7ee15a4b1850" name="ac0cc6230633760554bbc7ee15a4b1850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0cc6230633760554bbc7ee15a4b1850">&#9670;&#160;</a></span>lv_group_get_edge_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__group_8h.html#ab8c29cae0e324e483c90f1d2c21e3650">lv_group_edge_cb_t</a> lv_group_get_edge_cb </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the edge callback function of a group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the call back function or NULL if not set </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00353">353</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  354</span>{</div>
+<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">if</span>(!group) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">return</span> group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a>;</div>
+<div class="line"><span class="lineno">  357</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00064">_lv_group_t::edge_cb</a>.</p>
+
+</div>
+</div>
+<a id="a06dd3f21e367415bd7845cbb9a0acc1c" name="a06dd3f21e367415bd7845cbb9a0acc1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06dd3f21e367415bd7845cbb9a0acc1c">&#9670;&#160;</a></span>lv_group_get_editing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_group_get_editing </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current mode (edit or navigate). </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: edit mode; false: navigate mode </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00359">359</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  360</span>{</div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">if</span>(!group) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">return</span> group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ada9687b664ac571dbf3488ec74ee1694">editing</a> ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  363</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00073">_lv_group_t::editing</a>.</p>
+
+</div>
+</div>
+<a id="a44d1bd48f901ea2dab301e50e4983825" name="a44d1bd48f901ea2dab301e50e4983825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d1bd48f901ea2dab301e50e4983825">&#9670;&#160;</a></span>lv_group_get_focus_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__group_8h.html#a9d87bb6ed2406d3ea8ee2c83dc449401">lv_group_focus_cb_t</a> lv_group_get_focus_cb </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the focus callback function of a group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the call back function or NULL if not set </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00347">347</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  348</span>{</div>
+<div class="line"><span class="lineno">  349</span>    <span class="keywordflow">if</span>(!group) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  350</span>    <span class="keywordflow">return</span> group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a0827156771bb68671288ccc913bb0156">focus_cb</a>;</div>
+<div class="line"><span class="lineno">  351</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00063">_lv_group_t::focus_cb</a>.</p>
+
+</div>
+</div>
+<a id="a32f6012476aedc5eaa4ef9b493b28557" name="a32f6012476aedc5eaa4ef9b493b28557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f6012476aedc5eaa4ef9b493b28557">&#9670;&#160;</a></span>lv_group_get_focused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_group_get_focused </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the focused object or NULL if there isn't one </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the focused object </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00339">339</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  340</span>{</div>
+<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">if</span>(!group) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  342</span>    <span class="keywordflow">if</span>(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">return</span> *group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>;</div>
+<div class="line"><span class="lineno">  345</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Navigation_8cpp_source.html#l00096">HandleDeltaSlider()</a>, <a class="el" href="Navigation_8cpp_source.html#l00025">HandleIRNavigation()</a>, <a class="el" href="Navigation_8cpp_source.html#l00246">HandleNumericDigit()</a>, <a class="el" href="Navigation_8cpp_source.html#l00309">HandleNumericMinus()</a>, <a class="el" href="lv__group_8c_source.html#l00291">lv_group_send_data()</a>, <a class="el" href="lv__group_8c_source.html#l00311">lv_group_set_editing()</a> y <a class="el" href="lv__obj_8c_source.html#l00229">lv_obj_add_flag()</a>.</p>
+
+</div>
+</div>
+<a id="a7482be16fb7de1689f73df46a51807e2" name="a7482be16fb7de1689f73df46a51807e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7482be16fb7de1689f73df46a51807e2">&#9670;&#160;</a></span>lv_group_get_obj_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t lv_group_get_obj_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of object in the group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>number of objects in the group </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00371">371</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  372</span>{</div>
+<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="lv__ll_8c.html#a502273f22bc68d030403f152d1b12462">_lv_ll_get_len</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>);</div>
+<div class="line"><span class="lineno">  374</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a502273f22bc68d030403f152d1b12462"><div class="ttname"><a href="lv__ll_8c.html#a502273f22bc68d030403f152d1b12462">_lv_ll_get_len</a></div><div class="ttdeci">uint32_t _lv_ll_get_len(const lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00308">lv_ll.c:308</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00308">_lv_ll_get_len()</a> y <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a>.</p>
+
+</div>
+</div>
+<a id="a3746b6bf277dc31b7888986d7683ee7b" name="a3746b6bf277dc31b7888986d7683ee7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3746b6bf277dc31b7888986d7683ee7b">&#9670;&#160;</a></span>lv_group_get_wrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_group_get_wrap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get whether focus next/prev will allow wrapping from first-&gt;last or last-&gt;first object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to group </td></tr>
+    <tr><td class="paramname">en</td><td>true: wrapping enabled; false: wrapping disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00365">365</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  366</span>{</div>
+<div class="line"><span class="lineno">  367</span>    <span class="keywordflow">if</span>(!group) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  368</span>    <span class="keywordflow">return</span> group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9be7897b37b9557f669ea4465db79db2">wrap</a> ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  369</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00076">_lv_group_t::wrap</a>.</p>
+
+</div>
+</div>
+<a id="a1c6a83ae23426121b9b5920e0b2c9447" name="a1c6a83ae23426121b9b5920e0b2c9447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6a83ae23426121b9b5920e0b2c9447">&#9670;&#160;</a></span>lv_group_remove_all_objs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_remove_all_objs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove all objects from a group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00216">216</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>{</div>
+<div class="line"><span class="lineno">  218</span>    <span class="comment">/*Defocus the currently focused object*/</span></div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">if</span>(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> != NULL) {</div>
+<div class="line"><span class="lineno">  220</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(*group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a6268513bd9ad2b5703e394f46f18e4de">LV_EVENT_DEFOCUSED</a>, get_indev(group));</div>
+<div class="line"><span class="lineno">  221</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(*group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>);</div>
+<div class="line"><span class="lineno">  222</span>        group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> = NULL;</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <span class="comment">/*Remove the objects from the group*/</span></div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** obj;</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, obj) {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordflow">if</span>((*obj)-&gt;spec_attr)(*obj)-&gt;spec_attr-&gt;group_p = NULL;</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_function" href="lv__ll_8c.html#a100edcf0f1651fc36ebd6d3c12238a23">_lv_ll_clear</a>(&amp;(group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>));</div>
+<div class="line"><span class="lineno">  232</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00191">_lv_ll_clear()</a>, <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__event_8h_source.html#l00050">LV_EVENT_DEFOCUSED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a> y <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Navigation_8cpp_source.html#l00358">SetupScreen1Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00376">SetupScreen2Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00396">SetupScreen3Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00418">SetupScreen4Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00473">SetupScreen5Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00491">SetupScreen6Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00513">SetupScreen7Nav()</a>, <a class="el" href="Navigation_8cpp_source.html#l00537">SetupScreen8Nav()</a> y <a class="el" href="Navigation_8cpp_source.html#l00555">SetupScreen9Nav()</a>.</p>
+
+</div>
+</div>
+<a id="a219dc0b6d0674a706655aedcd56cf5ae" name="a219dc0b6d0674a706655aedcd56cf5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219dc0b6d0674a706655aedcd56cf5ae">&#9670;&#160;</a></span>lv_group_remove_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_remove_obj </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove an object from its group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object to remove </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00175">175</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * g = <a class="code hl_function" href="lv__obj_8c.html#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a>(obj);</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">if</span>(g == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="comment">/*Focus on the next object*/</span></div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> &amp;&amp; *g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> == obj) {</div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">frozen</a>) g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9bee9a1af52bbbd474caaa763de86793">frozen</a> = 0;</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>        <span class="comment">/*If this is the only object in the group then focus to nothing.*/</span></div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__ll_8c.html#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>(&amp;g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>) == g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> &amp;&amp; <a class="code hl_function" href="lv__ll_8c.html#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a>(&amp;g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>) == g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>) {</div>
+<div class="line"><span class="lineno">  188</span>            <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(*g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a6268513bd9ad2b5703e394f46f18e4de">LV_EVENT_DEFOCUSED</a>, get_indev(g));</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span>        <span class="comment">/*If there more objects in the group then focus to the next/prev object*/</span></div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  192</span>            lv_group_refocus(g);</div>
+<div class="line"><span class="lineno">  193</span>        }</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    <span class="comment">/*If the focuses object is still the same then it was the only object in the group but it will</span></div>
+<div class="line"><span class="lineno">  197</span><span class="comment">     *be deleted. Set the `obj_focus` to NULL to get back to the initial state of the group with</span></div>
+<div class="line"><span class="lineno">  198</span><span class="comment">     *zero objects*/</span></div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">if</span>(g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> &amp;&amp; *g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> == obj) {</div>
+<div class="line"><span class="lineno">  200</span>        g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> = NULL;</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>    <span class="comment">/*Search the object and remove it from its group*/</span></div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** i;</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, i) {</div>
+<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">if</span>(*i == obj) {</div>
+<div class="line"><span class="lineno">  207</span>            <a class="code hl_function" href="lv__ll_8c.html#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a>(&amp;g-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, i);</div>
+<div class="line"><span class="lineno">  208</span>            <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(i);</div>
+<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>) obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">group_p</a> = NULL;</div>
+<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  211</span>        }</div>
+<div class="line"><span class="lineno">  212</span>    }</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;finished&quot;</span>);</div>
+<div class="line"><span class="lineno">  214</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00267">_lv_ll_get_tail()</a>, <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__group_8h_source.html#l00072">_lv_group_t::frozen</a>, <a class="el" href="lv__obj_8h_source.html#l00158">_lv_obj_spec_attr_t::group_p</a>, <a class="el" href="lv__event_8h_source.html#l00050">LV_EVENT_DEFOCUSED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__obj_8c_source.html#l00346">lv_obj_get_group()</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a>, <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__list__2_8c_source.html#l00115">lv_example_list_2()</a> y <a class="el" href="lv__group_8c_source.html#l00111">lv_group_add_obj()</a>.</p>
+
+</div>
+</div>
+<a id="a8c1fda9413187c7c1b7ba52fd29e9ac0" name="a8c1fda9413187c7c1b7ba52fd29e9ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1fda9413187c7c1b7ba52fd29e9ac0">&#9670;&#160;</a></span>lv_group_send_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_group_send_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Send a control character to the focuses object of a group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+    <tr><td class="paramname">c</td><td>a character (use LV_KEY_.. to navigate) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>result of focused object in group. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00291">291</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  292</span>{</div>
+<div class="line"><span class="lineno">  293</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * act = <a class="code hl_function" href="#a32f6012476aedc5eaa4ef9b493b28557">lv_group_get_focused</a>(group);</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">if</span>(act == NULL) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__obj_8c.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a>(act, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>)) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  297</span> </div>
+<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(act, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a26e32d4cfa8793473e2050455ad157eb">LV_EVENT_KEY</a>, &amp;c);</div>
+<div class="line"><span class="lineno">  299</span>}</div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a26e32d4cfa8793473e2050455ad157eb"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a26e32d4cfa8793473e2050455ad157eb">LV_EVENT_KEY</a></div><div class="ttdeci">@ LV_EVENT_KEY</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00048">lv_event.h:48</a></div></div>
+<div class="ttc" id="alv__group_8c_html_a32f6012476aedc5eaa4ef9b493b28557"><div class="ttname"><a href="#a32f6012476aedc5eaa4ef9b493b28557">lv_group_get_focused</a></div><div class="ttdeci">lv_obj_t * lv_group_get_focused(const lv_group_t *group)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00339">lv_group.c:339</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_af6296b36dd5eddc61f5544761b1ff5a7"><div class="ttname"><a href="lv__obj_8c.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a></div><div class="ttdeci">bool lv_obj_has_state(const lv_obj_t *obj, lv_state_t state)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00339">lv_obj.c:339</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a></div><div class="ttdeci">@ LV_STATE_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00050">lv_obj.h:50</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__event_8h_source.html#l00048">LV_EVENT_KEY</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__group_8c_source.html#l00339">lv_group_get_focused()</a>, <a class="el" href="lv__obj_8c_source.html#l00339">lv_obj_has_state()</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a> y <a class="el" href="lv__obj_8h_source.html#l00050">LV_STATE_DISABLED</a>.</p>
+
+</div>
+</div>
+<a id="ac3c7c582c324f2501ed585d683fd69e2" name="ac3c7c582c324f2501ed585d683fd69e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c7c582c324f2501ed585d683fd69e2">&#9670;&#160;</a></span>lv_group_set_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_set_default </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a default group. New object are added to this group if it's enabled in their class with <span class="tt">add_to_def_group = true</span> </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group (can be <span class="tt">NULL</span>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00101">101</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>{</div>
+<div class="line"><span class="lineno">  103</span>    default_group = group;</div>
+<div class="line"><span class="lineno">  104</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa67bd604693906b5b9ec14fbd5b39df5" name="aa67bd604693906b5b9ec14fbd5b39df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67bd604693906b5b9ec14fbd5b39df5">&#9670;&#160;</a></span>lv_group_set_edge_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_set_edge_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#ab8c29cae0e324e483c90f1d2c21e3650">lv_group_edge_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>edge_cb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a function for a group which will be called when a focus edge is reached </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+    <tr><td class="paramname">edge_cb</td><td>the call back function or NULL if unused </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00306">306</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  307</span>{</div>
+<div class="line"><span class="lineno">  308</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ae7fda50b2846aaee6799a5660a323b93">edge_cb</a> = edge_cb;</div>
+<div class="line"><span class="lineno">  309</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00064">_lv_group_t::edge_cb</a>.</p>
+
+</div>
+</div>
+<a id="a823ad3a59540394774e86316f9c4b690" name="a823ad3a59540394774e86316f9c4b690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823ad3a59540394774e86316f9c4b690">&#9670;&#160;</a></span>lv_group_set_editing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_set_editing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>edit</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Manually set the current mode (edit or navigate). </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to group </td></tr>
+    <tr><td class="paramname">edit</td><td>true: edit mode; false: navigate mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00311">311</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>{</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">if</span>(group == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  314</span>    uint8_t en_val = edit ? 1 : 0;</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordflow">if</span>(en_val == group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ada9687b664ac571dbf3488ec74ee1694">editing</a>) <span class="keywordflow">return</span>; <span class="comment">/*Do not set the same mode again*/</span></div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#ada9687b664ac571dbf3488ec74ee1694">editing</a>     = en_val;</div>
+<div class="line"><span class="lineno">  319</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * focused = <a class="code hl_function" href="#a32f6012476aedc5eaa4ef9b493b28557">lv_group_get_focused</a>(group);</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>    <span class="keywordflow">if</span>(focused) {</div>
+<div class="line"><span class="lineno">  322</span>        <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(*group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa36d2b7aa8cfa92719266858018c274b">LV_EVENT_FOCUSED</a>, get_indev(group));</div>
+<div class="line"><span class="lineno">  323</span>        <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(focused);</div>
+<div class="line"><span class="lineno">  326</span>    }</div>
+<div class="line"><span class="lineno">  327</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00073">_lv_group_t::editing</a>, <a class="el" href="lv__event_8h_source.html#l00049">LV_EVENT_FOCUSED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__group_8c_source.html#l00339">lv_group_get_focused()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a> y <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__group_8c_source.html#l00234">lv_group_focus_obj()</a>.</p>
+
+</div>
+</div>
+<a id="adfb0a96484ca6f6d4691c257f25eb273" name="adfb0a96484ca6f6d4691c257f25eb273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb0a96484ca6f6d4691c257f25eb273">&#9670;&#160;</a></span>lv_group_set_focus_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_set_focus_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a9d87bb6ed2406d3ea8ee2c83dc449401">lv_group_focus_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>focus_cb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a function for a group which will be called when a new object is focused </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+    <tr><td class="paramname">focus_cb</td><td>the call back function or NULL if unused </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00301">301</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>{</div>
+<div class="line"><span class="lineno">  303</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a0827156771bb68671288ccc913bb0156">focus_cb</a> = focus_cb;</div>
+<div class="line"><span class="lineno">  304</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00063">_lv_group_t::focus_cb</a>.</p>
+
+</div>
+</div>
+<a id="aa666a2561be02d6dc630d346fe1a5a30" name="aa666a2561be02d6dc630d346fe1a5a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa666a2561be02d6dc630d346fe1a5a30">&#9670;&#160;</a></span>lv_group_set_refocus_policy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_set_refocus_policy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a10d4ce12656b513694be63bc97b43e96">lv_group_refocus_policy_t</a></td>          <td class="paramname"><span class="paramname"><em>policy</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set whether the next or previous item in a group is focused if the currently focused obj is deleted. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to a group </td></tr>
+    <tr><td class="paramname">policy</td><td>new refocus policy enum </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00329">329</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>{</div>
+<div class="line"><span class="lineno">  331</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3f3ab676489c054f33e287b2b23adb33">refocus_policy</a> = policy &amp; 0x01;</div>
+<div class="line"><span class="lineno">  332</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00074">_lv_group_t::refocus_policy</a>.</p>
+
+</div>
+</div>
+<a id="a18dcc5be6193ff5ca2281edae8fcf3af" name="a18dcc5be6193ff5ca2281edae8fcf3af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dcc5be6193ff5ca2281edae8fcf3af">&#9670;&#160;</a></span>lv_group_set_wrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_set_wrap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>en</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set whether focus next/prev will allow wrapping from first-&gt;last or last-&gt;first object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>pointer to group </td></tr>
+    <tr><td class="paramname">en</td><td>true: wrapping enabled; false: wrapping disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00334">334</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  335</span>{</div>
+<div class="line"><span class="lineno">  336</span>    group-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a9be7897b37b9557f669ea4465db79db2">wrap</a> = en ? 1 : 0;</div>
+<div class="line"><span class="lineno">  337</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__group_8h_source.html#l00076">_lv_group_t::wrap</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="aa061dceb32f6727af000ef3392792e1a" name="aa061dceb32f6727af000ef3392792e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa061dceb32f6727af000ef3392792e1a">&#9670;&#160;</a></span>lv_group_swap_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_group_swap_obj </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Swap 2 object in a group. The object must be in the same group </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj1</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">obj2</td><td>pointer to an other object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__group_8c_source.html#l00156">156</a> del archivo <a class="el" href="lv__group_8c_source.html">lv_group.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * g1 = <a class="code hl_function" href="lv__obj_8c.html#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a>(obj1);</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * g2 = <a class="code hl_function" href="lv__obj_8c.html#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a>(obj2);</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span>(g1 != g2) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span>(g1 == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="comment">/*Do not add the object twice*/</span></div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> ** obj_i;</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;g1-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a3e17edeb69f746e7836b192688b42bf9">obj_ll</a>, obj_i) {</div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">if</span>((*obj_i) == obj1)(*obj_i) = obj2;</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>((*obj_i) == obj2)(*obj_i) = obj1;</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">if</span>(*g1-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> == obj1) <a class="code hl_function" href="#a64199ace138af107ba25116f367997a3">lv_group_focus_obj</a>(obj2);</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(*g1-&gt;<a class="code hl_variable" href="struct__lv__group__t.html#a2a31a8ae6da7c3545cd3a6f6d56cc724">obj_focus</a> == obj2) <a class="code hl_function" href="#a64199ace138af107ba25116f367997a3">lv_group_focus_obj</a>(obj1);</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>}</div>
+<div class="ttc" id="alv__group_8c_html_a64199ace138af107ba25116f367997a3"><div class="ttname"><a href="#a64199ace138af107ba25116f367997a3">lv_group_focus_obj</a></div><div class="ttdeci">void lv_group_focus_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00234">lv_group.c:234</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__group_8c_source.html#l00234">lv_group_focus_obj()</a>, <a class="el" href="lv__obj_8c_source.html#l00346">lv_obj_get_group()</a>, <a class="el" href="lv__group_8h_source.html#l00061">_lv_group_t::obj_focus</a> y <a class="el" href="lv__group_8h_source.html#l00060">_lv_group_t::obj_ll</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__tree_8c_source.html#l00219">lv_obj_swap()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_347ffc2652095edf055753e6ba2d2213.html">core</a></li><li class="navelem"><a href="lv__group_8c.html">lv_group.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/IRremote/src/ir_BoseWave.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ir__BoseWave_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ir_BoseWave.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ir__BoseWave_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ir_BoseWave.cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Contains functions for receiving and sending Bose IR Protocol</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  This file is part of Arduino-IRremote https://github.com/Arduino-IRremote/Arduino-IRremote.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _IR_BOSEWAVE_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _IR_BOSEWAVE_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#if defined(DEBUG) &amp;&amp; !defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define LOCAL_DEBUG</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//#define LOCAL_DEBUG // This enables debug output only for this file</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"></span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/** \addtogroup Decoder Decoders and encoders for different protocols</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * @{</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//==============================================================================</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//                           BBBB    OOO    SSSS  EEEEE</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//                           B   B  O   O  S      E</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//                           BB B   O   O   SSS   EEEE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//                           B   B  O   O      S  E</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//                           BBBB    OOO   SSSS   EEEEE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//==============================================================================</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// see http://lirc.sourceforge.net/remotes/bose/WAVERADIO</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// see: https://www.mikrocontroller.net/articles/IRMP_-_english#BOSE</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// Support for Bose Wave Radio CD initially provided by https://github.com/uvotguy.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// As seen on my oscilloscope, there is no repeat code. Instead, when I</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// press and hold a button on my remote, it sends a command, makes a 51.2ms space,</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// and resends the command again, and so on.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// 38 kHz, LSB first, 1 start bit + 8 bit data + 8 bit inverted data + 1 stop bit.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">   37</a></span><span class="preprocessor">#define BOSEWAVE_BITS             16 </span><span class="comment">// Command and inverted command</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga01910d7deda73c7866abb73405e982d5">   39</a></span><span class="preprocessor">#define BOSEWAVE_HEADER_MARK    1014    </span><span class="comment">// 1014 are 39 clock periods (I counted 3 times!)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga1d790d85945d62aeac5b1324dcbc0654">   40</a></span><span class="preprocessor">#define BOSEWAVE_HEADER_SPACE   1468    </span><span class="comment">// 1468(measured), 1456 are 56 clock periods</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga4a7b99be53662b1689675e92c5e8d640">   41</a></span><span class="preprocessor">#define BOSEWAVE_BIT_MARK        520    </span><span class="comment">// 520 are 20 clock periods</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga1a90821da64722ab8ddaefe4d084c4b9">   42</a></span><span class="preprocessor">#define BOSEWAVE_ZERO_SPACE      468    </span><span class="comment">// 468 are 18 clock periods</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="group__Decoder.html#gac5abcecc1e901cf947864d70ef5fd685">   43</a></span><span class="preprocessor">#define BOSEWAVE_ONE_SPACE      1468    </span><span class="comment">// 1468(measured), 1456 are 56 clock periods</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga3411e84f67ceffecca90355ae399fcca">   45</a></span><span class="preprocessor">#define BOSEWAVE_REPEAT_PERIOD              75000</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__Decoder.html#gabbdf7b50f7e8fa7bc9974a9c38508184">   46</a></span><span class="preprocessor">#define BOSEWAVE_REPEAT_DISTANCE            50000</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="group__Decoder.html#gac1d497c4e549ffd7b0a96a68b6d5e51a">   47</a></span><span class="preprocessor">#define BOSEWAVE_MAXIMUM_REPEAT_DISTANCE    62000</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga2b9372d46b99ffdd915e8e70d41b4360">   49</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPulseDistanceWidthProtocolConstants.html">PulseDistanceWidthProtocolConstants</a> <a class="code hl_variable" href="group__Decoder.html#ga2b9372d46b99ffdd915e8e70d41b4360">BoseWaveProtocolConstants</a> = { <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada20736b037c0e7444d4dc7ff06e9dea54">BOSEWAVE</a>, <a class="code hl_define" href="IRProtocol_8h.html#a5e8586b46bb336ab800f4239b9bc46d1">BOSEWAVE_KHZ</a>, <a class="code hl_define" href="group__Decoder.html#ga01910d7deda73c7866abb73405e982d5">BOSEWAVE_HEADER_MARK</a>,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><a class="code hl_define" href="group__Decoder.html#ga1d790d85945d62aeac5b1324dcbc0654">BOSEWAVE_HEADER_SPACE</a>, <a class="code hl_define" href="group__Decoder.html#ga4a7b99be53662b1689675e92c5e8d640">BOSEWAVE_BIT_MARK</a>, <a class="code hl_define" href="group__Decoder.html#gac5abcecc1e901cf947864d70ef5fd685">BOSEWAVE_ONE_SPACE</a>, <a class="code hl_define" href="group__Decoder.html#ga4a7b99be53662b1689675e92c5e8d640">BOSEWAVE_BIT_MARK</a>, <a class="code hl_define" href="group__Decoder.html#ga1a90821da64722ab8ddaefe4d084c4b9">BOSEWAVE_ZERO_SPACE</a>, <a class="code hl_define" href="IRProtocol_8h.html#a8717702b4019c982727719bd40af7630">PROTOCOL_IS_LSB_FIRST</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>       , (<a class="code hl_define" href="group__Decoder.html#ga3411e84f67ceffecca90355ae399fcca">BOSEWAVE_REPEAT_PERIOD</a> / <a class="code hl_define" href="IRremote_8hpp.html#ae9ba0b7dd556e22688f7da01019bba68">MICROS_IN_ONE_MILLI</a>), NULL };</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">/************************************</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * Start of send and decode functions</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> ************************************/</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga1288521054e8b5afb8aece28355829ff">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__Decoder.html#ga1288521054e8b5afb8aece28355829ff">IRsend::sendBoseWave</a>(uint8_t <a class="code hl_variable" href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">aCommand</a>, int_fast8_t <a class="code hl_variable" href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">aNumberOfRepeats</a>) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// send 8 command bits and then 8 inverted command bits LSB first</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    uint16_t tData = ((<a class="code hl_variable" href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">~aCommand</a>) &lt;&lt; 8) | <a class="code hl_variable" href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">aCommand</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="group__Sending.html#gacc820b71185ccb9571fcfaba9af6803f">sendPulseDistanceWidth</a>(&amp;<a class="code hl_variable" href="group__Decoder.html#ga2b9372d46b99ffdd915e8e70d41b4360">BoseWaveProtocolConstants</a>, tData, <a class="code hl_define" href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">BOSEWAVE_BITS</a>, <a class="code hl_variable" href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">aNumberOfRepeats</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__Decoder.html#gaf9a5bf8248971aca9d4f5b68f3e9f858">   64</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__Decoder.html#gaf9a5bf8248971aca9d4f5b68f3e9f858">IRrecv::decodeBoseWave</a>() {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga69b3bcea4b42c620264d9212e409238e">checkHeader</a>(&amp;<a class="code hl_variable" href="group__Decoder.html#ga2b9372d46b99ffdd915e8e70d41b4360">BoseWaveProtocolConstants</a>)) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Check we have enough data +4 for initial gap, start bit mark and space + stop bit mark</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen != (2 * <a class="code hl_define" href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">BOSEWAVE_BITS</a>) + 4) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Bose: &quot;</span>));</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Data length=&quot;</span>));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(F(<span class="stringliteral">&quot; is not 36&quot;</span>));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga97d300dc2b49cdc7aa1e0570bf888e7c">decodePulseDistanceWidthData</a>(&amp;<a class="code hl_variable" href="group__Decoder.html#ga2b9372d46b99ffdd915e8e70d41b4360">BoseWaveProtocolConstants</a>, <a class="code hl_define" href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">BOSEWAVE_BITS</a>)) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        Serial.print(F(<span class="stringliteral">&quot;Bose: &quot;</span>));</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        Serial.println(F(<span class="stringliteral">&quot;Decode failed&quot;</span>));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">// Stop bit</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawDataPtr-&gt;rawbuf[3 + (2 * <a class="code hl_define" href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">BOSEWAVE_BITS</a>)], <a class="code hl_define" href="group__Decoder.html#ga4a7b99be53662b1689675e92c5e8d640">BOSEWAVE_BIT_MARK</a>)) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        Serial.print(F(<span class="stringliteral">&quot;Bose: &quot;</span>));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        Serial.println(F(<span class="stringliteral">&quot;Stop bit mark length is wrong&quot;</span>));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// Success</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">//    decodedIRData.flags = IRDATA_FLAGS_IS_LSB_FIRST; // Not required, since this is the start value</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    uint16_t tDecodedValue = <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.decodedRawData;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    uint8_t tCommandNotInverted = tDecodedValue &amp; 0xFF; <span class="comment">// comes first and is in the lower bits (LSB first :-))</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    uint8_t tCommandInverted = tDecodedValue &gt;&gt; 8;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// parity check for command. Use this variant to avoid compiler warning &quot;comparison of promoted ~unsigned with unsigned [-Wsign-compare]&quot;</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> ((tCommandNotInverted ^ tCommandInverted) != 0xFF) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        Serial.print(F(<span class="stringliteral">&quot;Bose: &quot;</span>));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        Serial.println(F(<span class="stringliteral">&quot;Command and inverted command check failed&quot;</span>));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.command = tCommandNotInverted;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.numberOfBits = <a class="code hl_define" href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">BOSEWAVE_BITS</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.protocol = <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada20736b037c0e7444d4dc7ff06e9dea54">BOSEWAVE</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// check for repeat</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="group__Receiving.html#gad00cc7b682411c68ccd2056b1d45fa84">checkForRepeatSpaceTicksAndSetFlag</a>(<a class="code hl_define" href="group__Decoder.html#gac1d497c4e549ffd7b0a96a68b6d5e51a">BOSEWAVE_MAXIMUM_REPEAT_DISTANCE</a> / <a class="code hl_define" href="IRremote_8hpp.html#a1c7eebb527483c272812530caa313d20">MICROS_PER_TICK</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"></span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">/** @}*/</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#undef LOCAL_DEBUG</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">// _IR_BOSEWAVE_HPP</span></div>
+<div class="ttc" id="aIRProtocol_8h_html_a5e8586b46bb336ab800f4239b9bc46d1"><div class="ttname"><a href="IRProtocol_8h.html#a5e8586b46bb336ab800f4239b9bc46d1">BOSEWAVE_KHZ</a></div><div class="ttdeci">#define BOSEWAVE_KHZ</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00160">IRProtocol.h:160</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a8717702b4019c982727719bd40af7630"><div class="ttname"><a href="IRProtocol_8h.html#a8717702b4019c982727719bd40af7630">PROTOCOL_IS_LSB_FIRST</a></div><div class="ttdeci">#define PROTOCOL_IS_LSB_FIRST</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00151">IRProtocol.h:151</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fada20736b037c0e7444d4dc7ff06e9dea54"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada20736b037c0e7444d4dc7ff06e9dea54">BOSEWAVE</a></div><div class="ttdeci">@ BOSEWAVE</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00068">IRProtocol.h:68</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a093a1c04e9dd4d6845a48163554143a0"><div class="ttname"><a href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a></div><div class="ttdeci">#define IR_DEBUG_PRINT(...)</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00163">IRremoteInt.h:163</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_aebf95fa57eb370cfe65ce6a9728b6e1f"><div class="ttname"><a href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a></div><div class="ttdeci">#define IR_DEBUG_PRINTLN(...)</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00167">IRremoteInt.h:167</a></div></div>
+<div class="ttc" id="aIRremote_8hpp_html_a1c7eebb527483c272812530caa313d20"><div class="ttname"><a href="IRremote_8hpp.html#a1c7eebb527483c272812530caa313d20">MICROS_PER_TICK</a></div><div class="ttdeci">#define MICROS_PER_TICK</div><div class="ttdef"><b>Definition</b> <a href="IRremote_8hpp_source.html#l00250">IRremote.hpp:250</a></div></div>
+<div class="ttc" id="aIRremote_8hpp_html_ae9ba0b7dd556e22688f7da01019bba68"><div class="ttname"><a href="IRremote_8hpp.html#ae9ba0b7dd556e22688f7da01019bba68">MICROS_IN_ONE_MILLI</a></div><div class="ttdeci">#define MICROS_IN_ONE_MILLI</div><div class="ttdef"><b>Definition</b> <a href="IRremote_8hpp_source.html#l00255">IRremote.hpp:255</a></div></div>
+<div class="ttc" id="aclassIRrecv_html_a19d71758b1b0e1fbee948ad917c5b828"><div class="ttname"><a href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">IRrecv::decodedIRData</a></div><div class="ttdeci">IRData decodedIRData</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00356">IRremoteInt.h:356</a></div></div>
+<div class="ttc" id="aclassIRsend_html_a5f5d819c72ce2f74395d14166e77c7cc"><div class="ttname"><a href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">IRsend::aCommand</a></div><div class="ttdeci">void aCommand</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00543">IRremoteInt.h:543</a></div></div>
+<div class="ttc" id="aclassIRsend_html_aff233b57d2382a713926797ce5da0fd3"><div class="ttname"><a href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">IRsend::aNumberOfRepeats</a></div><div class="ttdeci">void aNumberOfRepeats</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00543">IRremoteInt.h:543</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga01910d7deda73c7866abb73405e982d5"><div class="ttname"><a href="group__Decoder.html#ga01910d7deda73c7866abb73405e982d5">BOSEWAVE_HEADER_MARK</a></div><div class="ttdeci">#define BOSEWAVE_HEADER_MARK</div><div class="ttdef"><b>Definition</b> <a href="#l00039">ir_BoseWave.hpp:39</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga1288521054e8b5afb8aece28355829ff"><div class="ttname"><a href="group__Decoder.html#ga1288521054e8b5afb8aece28355829ff">IRsend::sendBoseWave</a></div><div class="ttdeci">void sendBoseWave(uint8_t aCommand, int_fast8_t aNumberOfRepeats=NO_REPEATS)</div><div class="ttdef"><b>Definition</b> <a href="#l00057">ir_BoseWave.hpp:57</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga1a90821da64722ab8ddaefe4d084c4b9"><div class="ttname"><a href="group__Decoder.html#ga1a90821da64722ab8ddaefe4d084c4b9">BOSEWAVE_ZERO_SPACE</a></div><div class="ttdeci">#define BOSEWAVE_ZERO_SPACE</div><div class="ttdef"><b>Definition</b> <a href="#l00042">ir_BoseWave.hpp:42</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga1d790d85945d62aeac5b1324dcbc0654"><div class="ttname"><a href="group__Decoder.html#ga1d790d85945d62aeac5b1324dcbc0654">BOSEWAVE_HEADER_SPACE</a></div><div class="ttdeci">#define BOSEWAVE_HEADER_SPACE</div><div class="ttdef"><b>Definition</b> <a href="#l00040">ir_BoseWave.hpp:40</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga2b9372d46b99ffdd915e8e70d41b4360"><div class="ttname"><a href="group__Decoder.html#ga2b9372d46b99ffdd915e8e70d41b4360">BoseWaveProtocolConstants</a></div><div class="ttdeci">struct PulseDistanceWidthProtocolConstants BoseWaveProtocolConstants</div><div class="ttdef"><b>Definition</b> <a href="#l00049">ir_BoseWave.hpp:49</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga3411e84f67ceffecca90355ae399fcca"><div class="ttname"><a href="group__Decoder.html#ga3411e84f67ceffecca90355ae399fcca">BOSEWAVE_REPEAT_PERIOD</a></div><div class="ttdeci">#define BOSEWAVE_REPEAT_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="#l00045">ir_BoseWave.hpp:45</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga4a7b99be53662b1689675e92c5e8d640"><div class="ttname"><a href="group__Decoder.html#ga4a7b99be53662b1689675e92c5e8d640">BOSEWAVE_BIT_MARK</a></div><div class="ttdeci">#define BOSEWAVE_BIT_MARK</div><div class="ttdef"><b>Definition</b> <a href="#l00041">ir_BoseWave.hpp:41</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga97929dcf9c3088fe6b5ea9984179ee2a"><div class="ttname"><a href="group__Decoder.html#ga97929dcf9c3088fe6b5ea9984179ee2a">BOSEWAVE_BITS</a></div><div class="ttdeci">#define BOSEWAVE_BITS</div><div class="ttdef"><b>Definition</b> <a href="#l00037">ir_BoseWave.hpp:37</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gac1d497c4e549ffd7b0a96a68b6d5e51a"><div class="ttname"><a href="group__Decoder.html#gac1d497c4e549ffd7b0a96a68b6d5e51a">BOSEWAVE_MAXIMUM_REPEAT_DISTANCE</a></div><div class="ttdeci">#define BOSEWAVE_MAXIMUM_REPEAT_DISTANCE</div><div class="ttdef"><b>Definition</b> <a href="#l00047">ir_BoseWave.hpp:47</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gac5abcecc1e901cf947864d70ef5fd685"><div class="ttname"><a href="group__Decoder.html#gac5abcecc1e901cf947864d70ef5fd685">BOSEWAVE_ONE_SPACE</a></div><div class="ttdeci">#define BOSEWAVE_ONE_SPACE</div><div class="ttdef"><b>Definition</b> <a href="#l00043">ir_BoseWave.hpp:43</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gaf9a5bf8248971aca9d4f5b68f3e9f858"><div class="ttname"><a href="group__Decoder.html#gaf9a5bf8248971aca9d4f5b68f3e9f858">IRrecv::decodeBoseWave</a></div><div class="ttdeci">bool decodeBoseWave()</div><div class="ttdef"><b>Definition</b> <a href="#l00064">ir_BoseWave.hpp:64</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga4472564ea96b1ee10b51f594f60d7aeb"><div class="ttname"><a href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a></div><div class="ttdeci">bool matchMark(uint16_t aMeasuredTicks, uint16_t aMatchValueMicros)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l01215">IRReceive.hpp:1215</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga69b3bcea4b42c620264d9212e409238e"><div class="ttname"><a href="group__Receiving.html#ga69b3bcea4b42c620264d9212e409238e">IRrecv::checkHeader</a></div><div class="ttdeci">bool checkHeader(PulseDistanceWidthProtocolConstants *aProtocolConstants)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l01148">IRReceive.hpp:1148</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga97d300dc2b49cdc7aa1e0570bf888e7c"><div class="ttname"><a href="group__Receiving.html#ga97d300dc2b49cdc7aa1e0570bf888e7c">IRrecv::decodePulseDistanceWidthData</a></div><div class="ttdeci">bool decodePulseDistanceWidthData(PulseDistanceWidthProtocolConstants *aProtocolConstants, uint_fast8_t aNumberOfBits, IRRawlenType aStartOffset=3)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l00976">IRReceive.hpp:976</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_gad00cc7b682411c68ccd2056b1d45fa84"><div class="ttname"><a href="group__Receiving.html#gad00cc7b682411c68ccd2056b1d45fa84">IRrecv::checkForRepeatSpaceTicksAndSetFlag</a></div><div class="ttdeci">void checkForRepeatSpaceTicksAndSetFlag(uint16_t aMaximumRepeatSpaceTicks)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l01172">IRReceive.hpp:1172</a></div></div>
+<div class="ttc" id="agroup__Sending_html_gacc820b71185ccb9571fcfaba9af6803f"><div class="ttname"><a href="group__Sending.html#gacc820b71185ccb9571fcfaba9af6803f">IRsend::sendPulseDistanceWidth</a></div><div class="ttdeci">void sendPulseDistanceWidth(PulseDistanceWidthProtocolConstants *aProtocolConstants, IRRawDataType aData, uint_fast8_t aNumberOfBits, int_fast8_t aNumberOfRepeats)</div><div class="ttdef"><b>Definition</b> <a href="IRSend_8hpp_source.html#l00691">IRSend.hpp:691</a></div></div>
+<div class="ttc" id="astructPulseDistanceWidthProtocolConstants_html"><div class="ttname"><a href="structPulseDistanceWidthProtocolConstants.html">PulseDistanceWidthProtocolConstants</a></div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00137">IRProtocol.h:137</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_88c0bcaa7fd8df08d0f5885e4eb57ee3.html">src</a></li><li class="navelem"><a href="ir__BoseWave_8hpp.html">ir_BoseWave.hpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

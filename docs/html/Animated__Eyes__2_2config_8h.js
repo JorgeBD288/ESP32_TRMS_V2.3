@@ -1,0 +1,25 @@
+var Animated__Eyes__2_2config_8h =
+[
+    [ "AUTOBLINK", "Animated__Eyes__2_2config_8h.html#ae57232afbc4082b16a7901394f42d33b", null ],
+    [ "BACKLIGHT_MAX", "Animated__Eyes__2_2config_8h.html#ab13dfaba37e6fbb8a9c05ac20881bc27", null ],
+    [ "BLINK_PIN", "Animated__Eyes__2_2config_8h.html#a9b2b6e912c7c3b8c6edc8b2ec5b65dcd", null ],
+    [ "DISPLAY_BACKLIGHT", "Animated__Eyes__2_2config_8h.html#a3f4a7fb78afd6342f50d13ce48e9f566", null ],
+    [ "EYE_1_XPOSITION", "Animated__Eyes__2_2config_8h.html#a7b30c9b52efd40f4b87064739f69afaf", null ],
+    [ "EYE_2_XPOSITION", "Animated__Eyes__2_2config_8h.html#a7821edff994e6f99eadf8ce128c64beb", null ],
+    [ "IRIS_MAX", "Animated__Eyes__2_2config_8h.html#a4bc00c04d5997a3ff42eca6f4505a4b8", null ],
+    [ "IRIS_MIN", "Animated__Eyes__2_2config_8h.html#ab1268d25a7456f1e658d499391bd89c5", null ],
+    [ "IRIS_SMOOTH", "Animated__Eyes__2_2config_8h.html#a4e55a8651c4afc61d27b1ea80d98342b", null ],
+    [ "LH_WINK_PIN", "Animated__Eyes__2_2config_8h.html#a05834e6bbc6e0569a55be38cca98a73e", null ],
+    [ "LIGHT_CURVE", "Animated__Eyes__2_2config_8h.html#ab91ca9846ea7eb895913f9a1895248f3", null ],
+    [ "LIGHT_MAX", "Animated__Eyes__2_2config_8h.html#a38b06bbd397785d2ff3ace62c6a4f365", null ],
+    [ "LIGHT_MIN", "Animated__Eyes__2_2config_8h.html#a3347250b12c8c59f213baf21f1debf42", null ],
+    [ "NUM_EYES", "Animated__Eyes__2_2config_8h.html#a955d4850fa48e7caf693b8b72113348f", null ],
+    [ "RH_WINK_PIN", "Animated__Eyes__2_2config_8h.html#a4de727256a5a6db9a26f9a38f1147aa4", null ],
+    [ "TFT1_CS", "Animated__Eyes__2_2config_8h.html#af3eb43d9e580b0113f1684e1e360e72a", null ],
+    [ "TFT2_CS", "Animated__Eyes__2_2config_8h.html#a20df1606d5c370d6d021230ef4b48ea3", null ],
+    [ "TFT_1_ROT", "Animated__Eyes__2_2config_8h.html#aa705bc8460d080836343728a7e5616e1", null ],
+    [ "TFT_2_ROT", "Animated__Eyes__2_2config_8h.html#a1121d16786bc366f5cf5c9d24abbb314", null ],
+    [ "TFT_COUNT", "Animated__Eyes__2_2config_8h.html#ab327a39772781b0f6519dc0131282d22", null ],
+    [ "TRACKING", "Animated__Eyes__2_2config_8h.html#aab8abc565b638f1a18ebce4274fdbbad", null ],
+    [ "eyeInfo", "Animated__Eyes__2_2config_8h.html#a447fe26c5dad89dcb22229a601af3088", null ]
+];

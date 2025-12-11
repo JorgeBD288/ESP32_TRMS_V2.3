@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['aberration_0',['ABERRATION',['../astronomy_8h.html#a3ab2a1a2ef0ecb9093ce1e877c431dc6ab67ab7f38f0f52b82cf13d7bd722a026',1,'astronomy.h']]],
+  ['apple_1',['APPLE',['../IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5484ec37ffd1fcffb7aba549a4839910',1,'IRProtocol.h']]],
+  ['apsis_5fapocenter_2',['APSIS_APOCENTER',['../astronomy_8h.html#a637f68d8e61bfb5f1e49d6a115a05330a9c513b47e587176dc5a0197dd0e5118a',1,'astronomy.h']]],
+  ['apsis_5finvalid_3',['APSIS_INVALID',['../astronomy_8h.html#a637f68d8e61bfb5f1e49d6a115a05330a3e698a82ece643ff6ae813f7dee46bbe',1,'astronomy.h']]],
+  ['apsis_5fpericenter_4',['APSIS_PERICENTER',['../astronomy_8h.html#a637f68d8e61bfb5f1e49d6a115a05330a6ade54886bd432ef002cac56039daa2d',1,'astronomy.h']]],
+  ['astro_5fbad_5ftime_5',['ASTRO_BAD_TIME',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214a444cd7276a045b4cc757312c86ed21a5',1,'astronomy.h']]],
+  ['astro_5fbad_5fvector_6',['ASTRO_BAD_VECTOR',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214aa6d6b76d4d8cfcf83e889dfd8d70a874',1,'astronomy.h']]],
+  ['astro_5fbuffer_5ftoo_5fsmall_7',['ASTRO_BUFFER_TOO_SMALL',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214a5ffc095c1184d71b46a3ded7784ec743',1,'astronomy.h']]],
+  ['astro_5fearth_5fnot_5fallowed_8',['ASTRO_EARTH_NOT_ALLOWED',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214a962adf748f88f95c0fd9d6ecdfed3505',1,'astronomy.h']]],
+  ['astro_5ffail_5fapsis_9',['ASTRO_FAIL_APSIS',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214a712702035b1895cf776b890b3e60dea5',1,'astronomy.h']]],
+  ['astro_5finternal_5ferror_10',['ASTRO_INTERNAL_ERROR',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214ad9faa503a8f1b8c6e9d49e50bbac5863',1,'astronomy.h']]],
+  ['astro_5finvalid_5fbody_11',['ASTRO_INVALID_BODY',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214aca26a4c8a97204bdabcbbd011cd0a75c',1,'astronomy.h']]],
+  ['astro_5finvalid_5fparameter_12',['ASTRO_INVALID_PARAMETER',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214abf01c292b98fcb6a534c5c1dfa9f05d7',1,'astronomy.h']]],
+  ['astro_5fno_5fconverge_13',['ASTRO_NO_CONVERGE',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214aee480a21d29de5b05c5b4cd5654b1680',1,'astronomy.h']]],
+  ['astro_5fno_5fmoon_5fquarter_14',['ASTRO_NO_MOON_QUARTER',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214adb7bba8df971053f5d72e4052fd9b637',1,'astronomy.h']]],
+  ['astro_5fnot_5finitialized_15',['ASTRO_NOT_INITIALIZED',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214abe1744336f88c4358481b138de994344',1,'astronomy.h']]],
+  ['astro_5fout_5fof_5fmemory_16',['ASTRO_OUT_OF_MEMORY',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214a60d6eacf182964cb209c820fd6710717',1,'astronomy.h']]],
+  ['astro_5fsearch_5ffailure_17',['ASTRO_SEARCH_FAILURE',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214ae74f48e0daf71f91301e2441f40277ea',1,'astronomy.h']]],
+  ['astro_5fsuccess_18',['ASTRO_SUCCESS',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214ad17c563c7c89f68ffdc88b6b40d20939',1,'astronomy.h']]],
+  ['astro_5fwrong_5fmoon_5fquarter_19',['ASTRO_WRONG_MOON_QUARTER',['../astronomy_8h.html#a3605f063314f858dec26db307c4e8214ac17d6f0981aaa1fe114c6da5d86c60e6',1,'astronomy.h']]]
+];

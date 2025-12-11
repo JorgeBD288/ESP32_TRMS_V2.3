@@ -1,0 +1,1074 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/widgets/lv_img.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__img_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_img.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__img_8h_source.html">lv_img.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__disp_8h_source.html">../core/lv_disp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__img__decoder_8h_source.html">../draw/lv_img_decoder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__fs_8h_source.html">../misc/lv_fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__txt_8h_source.html">../misc/lv_txt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">../misc/lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">../misc/lv_log.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__img_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a3242ee9e0c4348b050e01da89cd32f5d" id="r_a3242ee9e0c4348b050e01da89cd32f5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3242ee9e0c4348b050e01da89cd32f5d">lv_img_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:ac25be3b56beaae1f3122f02e381dc09e" id="r_ac25be3b56beaae1f3122f02e381dc09e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac25be3b56beaae1f3122f02e381dc09e">lv_img_get_angle</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a0e149e21ad13cbf55e41047d6e4c11f3" id="r_a0e149e21ad13cbf55e41047d6e4c11f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e149e21ad13cbf55e41047d6e4c11f3">lv_img_get_antialias</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ae68d95b240cb6142d71c8b1492e6ac16" id="r_ae68d95b240cb6142d71c8b1492e6ac16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae68d95b240cb6142d71c8b1492e6ac16">lv_img_get_offset_x</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a604ff4277f078bc3519b412eab8c06d9" id="r_a604ff4277f078bc3519b412eab8c06d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a604ff4277f078bc3519b412eab8c06d9">lv_img_get_offset_y</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ab148000dc6b4a7f03bca7ea3c5f59e41" id="r_ab148000dc6b4a7f03bca7ea3c5f59e41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab148000dc6b4a7f03bca7ea3c5f59e41">lv_img_get_pivot</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="structlv__point__t.html">lv_point_t</a> *pivot)</td></tr>
+<tr class="memitem:a228a6006696901bfb9cba6cf9d2eec02" id="r_a228a6006696901bfb9cba6cf9d2eec02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__img_8h.html#aa0feae2704132379494e85e5f1663640">lv_img_size_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a228a6006696901bfb9cba6cf9d2eec02">lv_img_get_size_mode</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:aef08850e16c9853f2060b6f75fe25d21" id="r_aef08850e16c9853f2060b6f75fe25d21"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef08850e16c9853f2060b6f75fe25d21">lv_img_get_src</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a8b08c9c6958144452bd928b6ea2ae355" id="r_a8b08c9c6958144452bd928b6ea2ae355"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b08c9c6958144452bd928b6ea2ae355">lv_img_get_zoom</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a9195df132af56e213d2fe0b39885bb60" id="r_a9195df132af56e213d2fe0b39885bb60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9195df132af56e213d2fe0b39885bb60">lv_img_set_angle</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, int16_t angle)</td></tr>
+<tr class="memitem:a7a11235d877787d815c094fd97eaf97d" id="r_a7a11235d877787d815c094fd97eaf97d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a11235d877787d815c094fd97eaf97d">lv_img_set_antialias</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, bool antialias)</td></tr>
+<tr class="memitem:afd7277c6a877d7bd68c5b20308a79b62" id="r_afd7277c6a877d7bd68c5b20308a79b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd7277c6a877d7bd68c5b20308a79b62">lv_img_set_offset_x</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x)</td></tr>
+<tr class="memitem:acc4ddcd188e8d4a20497b468de938d4f" id="r_acc4ddcd188e8d4a20497b468de938d4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc4ddcd188e8d4a20497b468de938d4f">lv_img_set_offset_y</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y)</td></tr>
+<tr class="memitem:af003eb45102e0da11329767382bc6e86" id="r_af003eb45102e0da11329767382bc6e86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af003eb45102e0da11329767382bc6e86">lv_img_set_pivot</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y)</td></tr>
+<tr class="memitem:aa43689157d0c81c8f26cbec4826bc531" id="r_aa43689157d0c81c8f26cbec4826bc531"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa43689157d0c81c8f26cbec4826bc531">lv_img_set_size_mode</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__img_8h.html#aa0feae2704132379494e85e5f1663640">lv_img_size_mode_t</a> mode)</td></tr>
+<tr class="memitem:aee1e48c0fc36b804ceb8d2127d01ccac" id="r_aee1e48c0fc36b804ceb8d2127d01ccac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const void *src)</td></tr>
+<tr class="memitem:ac52774401c0f203bc30698432b948d29" id="r_ac52774401c0f203bc30698432b948d29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac52774401c0f203bc30698432b948d29">lv_img_set_zoom</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t zoom)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8f1d39441a4aab884e50cbfaf312a419" id="r_a8f1d39441a4aab884e50cbfaf312a419"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00023">23</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a3242ee9e0c4348b050e01da89cd32f5d" name="a3242ee9e0c4348b050e01da89cd32f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3242ee9e0c4348b050e01da89cd32f5d">&#9670;&#160;</a></span>lv_img_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_img_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create an image object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to an object, it will be the parent of the new image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the created image </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00058">58</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__img__1_8c_source.html#l00005">lv_example_img_1()</a>, <a class="el" href="lv__example__img__2_8c_source.html#l00014">lv_example_img_2()</a>, <a class="el" href="lv__example__img__3_8c_source.html#l00018">lv_example_img_3()</a>, <a class="el" href="lv__example__img__4_8c_source.html#l00012">lv_example_img_4()</a>, <a class="el" href="lv__example__style__6_8c_source.html#l00007">lv_example_style_6()</a>, <a class="el" href="lv__list_8c_source.html#l00076">lv_list_add_btn()</a>, <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>, <a class="el" href="lv__win_8c_source.html#l00065">lv_win_add_btn()</a>, <a class="el" href="ui__Screen10_8c_source.html#l00008">ui_Screen10_screen_init()</a>, <a class="el" href="ui__Screen1_8c_source.html#l00008">ui_Screen1_screen_init()</a>, <a class="el" href="ui__Screen2_8c_source.html#l00008">ui_Screen2_screen_init()</a>, <a class="el" href="ui__Screen4_8c_source.html#l00008">ui_Screen4_screen_init()</a>, <a class="el" href="ui__Screen5_8cpp_source.html#l00010">ui_Screen5_screen_init()</a>, <a class="el" href="ui__Screen6_8c_source.html#l00008">ui_Screen6_screen_init()</a> y <a class="el" href="ui__Screen9_8cpp_source.html#l00009">ui_Screen9_screen_init()</a>.</p>
+
+</div>
+</div>
+<a id="ac25be3b56beaae1f3122f02e381dc09e" name="ac25be3b56beaae1f3122f02e381dc09e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac25be3b56beaae1f3122f02e381dc09e">&#9670;&#160;</a></span>lv_img_get_angle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lv_img_get_angle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the rotation angle of the image. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>rotation angle in 0.1 degrees (0..3600) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00338">338</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  339</span>{</div>
+<div class="line"><span class="lineno">  340</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>;</div>
+<div class="line"><span class="lineno">  345</span>}</div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="astructlv__img__t_html"><div class="ttname"><a href="structlv__img__t.html">lv_img_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00040">lv_img.h:40</a></div></div>
+<div class="ttc" id="astructlv__img__t_html_a5e0c444b200c9ccf52dba0da177d9190"><div class="ttname"><a href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">lv_img_t::angle</a></div><div class="ttdeci">uint16_t angle</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00046">lv_img.h:46</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img_8h_source.html#l00046">lv_img_t::angle</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00284">_ui_anim_callback_get_image_angle()</a>.</p>
+
+</div>
+</div>
+<a id="a0e149e21ad13cbf55e41047d6e4c11f3" name="a0e149e21ad13cbf55e41047d6e4c11f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e149e21ad13cbf55e41047d6e4c11f3">&#9670;&#160;</a></span>lv_img_get_antialias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_img_get_antialias </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get whether the transformations (rotate, zoom) are anti-aliased or not </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: anti-aliased; false: not anti-aliased </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00365">365</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  366</span>{</div>
+<div class="line"><span class="lineno">  367</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  368</span> </div>
+<div class="line"><span class="lineno">  369</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  370</span> </div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a51a60ef2d177a1b44ae2af2ad8f36bcd">antialias</a> ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  372</span>}</div>
+<div class="ttc" id="astructlv__img__t_html_a51a60ef2d177a1b44ae2af2ad8f36bcd"><div class="ttname"><a href="structlv__img__t.html#a51a60ef2d177a1b44ae2af2ad8f36bcd">lv_img_t::antialias</a></div><div class="ttdeci">uint8_t antialias</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00051">lv_img.h:51</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img_8h_source.html#l00051">lv_img_t::antialias</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="ae68d95b240cb6142d71c8b1492e6ac16" name="ae68d95b240cb6142d71c8b1492e6ac16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68d95b240cb6142d71c8b1492e6ac16">&#9670;&#160;</a></span>lv_img_get_offset_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> lv_img_get_offset_x </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the offset's x attribute of the image object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>pointer to an image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>offset X value. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00320">320</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>{</div>
+<div class="line"><span class="lineno">  322</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#afec27bca65a3d56ce97f16ab60adf9f3">offset</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  327</span>}</div>
+<div class="ttc" id="astructlv__img__t_html_afec27bca65a3d56ce97f16ab60adf9f3"><div class="ttname"><a href="structlv__img__t.html#afec27bca65a3d56ce97f16ab60adf9f3">lv_img_t::offset</a></div><div class="ttdeci">lv_point_t offset</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00043">lv_img.h:43</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__img_8h_source.html#l00043">lv_img_t::offset</a> y <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a>.</p>
+
+</div>
+</div>
+<a id="a604ff4277f078bc3519b412eab8c06d9" name="a604ff4277f078bc3519b412eab8c06d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604ff4277f078bc3519b412eab8c06d9">&#9670;&#160;</a></span>lv_img_get_offset_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> lv_img_get_offset_y </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the offset's y attribute of the image object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>offset Y value. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00329">329</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>{</div>
+<div class="line"><span class="lineno">  331</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  334</span> </div>
+<div class="line"><span class="lineno">  335</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#afec27bca65a3d56ce97f16ab60adf9f3">offset</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  336</span>}</div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__img_8h_source.html#l00043">lv_img_t::offset</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+</div>
+</div>
+<a id="ab148000dc6b4a7f03bca7ea3c5f59e41" name="ab148000dc6b4a7f03bca7ea3c5f59e41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab148000dc6b4a7f03bca7ea3c5f59e41">&#9670;&#160;</a></span>lv_img_get_pivot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_get_pivot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__point__t.html">lv_point_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pivot</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the pivot (rotation center) of the image. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>pointer to an image object </td></tr>
+    <tr><td class="paramname">pivot</td><td>store the rotation center here </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00347">347</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  348</span>{</div>
+<div class="line"><span class="lineno">  349</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  350</span> </div>
+<div class="line"><span class="lineno">  351</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>    *pivot = img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>;</div>
+<div class="line"><span class="lineno">  354</span>}</div>
+<div class="ttc" id="astructlv__img__t_html_a8959dc95279f803c45935889a49202a1"><div class="ttname"><a href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">lv_img_t::pivot</a></div><div class="ttdeci">lv_point_t pivot</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00047">lv_img.h:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__img_8h_source.html#l00047">lv_img_t::pivot</a>.</p>
+
+</div>
+</div>
+<a id="a228a6006696901bfb9cba6cf9d2eec02" name="a228a6006696901bfb9cba6cf9d2eec02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228a6006696901bfb9cba6cf9d2eec02">&#9670;&#160;</a></span>lv_img_get_size_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__img_8h.html#aa0feae2704132379494e85e5f1663640">lv_img_size_mode_t</a> lv_img_get_size_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the size mode of the image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>element of <a class="el" href="lv__img_8h.html#aa0feae2704132379494e85e5f1663640">lv_img_size_mode_t</a> </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00374">374</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  375</span>{</div>
+<div class="line"><span class="lineno">  376</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  377</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a368031cda402cbddcb8fe83fa8b7f223">obj_size_mode</a>;</div>
+<div class="line"><span class="lineno">  379</span>}</div>
+<div class="ttc" id="astructlv__img__t_html_a368031cda402cbddcb8fe83fa8b7f223"><div class="ttname"><a href="structlv__img__t.html#a368031cda402cbddcb8fe83fa8b7f223">lv_img_t::obj_size_mode</a></div><div class="ttdeci">uint8_t obj_size_mode</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00052">lv_img.h:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__img_8h_source.html#l00052">lv_img_t::obj_size_mode</a>.</p>
+
+</div>
+</div>
+<a id="aef08850e16c9853f2060b6f75fe25d21" name="aef08850e16c9853f2060b6f75fe25d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef08850e16c9853f2060b6f75fe25d21">&#9670;&#160;</a></span>lv_img_get_src()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void * lv_img_get_src </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the source of the image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the image source (symbol, file name or ::lv-img_dsc_t for C arrays) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00311">311</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>{</div>
+<div class="line"><span class="lineno">  313</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  314</span> </div>
+<div class="line"><span class="lineno">  315</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a>;</div>
+<div class="line"><span class="lineno">  318</span>}</div>
+<div class="ttc" id="astructlv__img__t_html_a623248384799143cb8f6ee2b5e793d00"><div class="ttname"><a href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">lv_img_t::src</a></div><div class="ttdeci">const void * src</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00042">lv_img.h:42</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__img_8h_source.html#l00042">lv_img_t::src</a>.</p>
+
+</div>
+</div>
+<a id="a8b08c9c6958144452bd928b6ea2ae355" name="a8b08c9c6958144452bd928b6ea2ae355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b08c9c6958144452bd928b6ea2ae355">&#9670;&#160;</a></span>lv_img_get_zoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lv_img_get_zoom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the zoom factor of the image. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>zoom factor (256: no zoom) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00356">356</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  357</span>{</div>
+<div class="line"><span class="lineno">  358</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">return</span> img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>;</div>
+<div class="line"><span class="lineno">  363</span>}</div>
+<div class="ttc" id="astructlv__img__t_html_a7b040a9537e34f1159bb385b0f2fefe1"><div class="ttname"><a href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">lv_img_t::zoom</a></div><div class="ttdeci">uint16_t zoom</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00048">lv_img.h:48</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__img_8h_source.html#l00048">lv_img_t::zoom</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00275">_ui_anim_callback_get_image_zoom()</a>.</p>
+
+</div>
+</div>
+<a id="a9195df132af56e213d2fe0b39885bb60" name="a9195df132af56e213d2fe0b39885bb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9195df132af56e213d2fe0b39885bb60">&#9670;&#160;</a></span>lv_img_set_angle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_angle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>angle</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the rotation angle of the image. The image will be rotated around the set pivot set by <span class="tt"><a class="el" href="lv__img_8h.html#af003eb45102e0da11329767382bc6e86">lv_img_set_pivot()</a></span> Note that indexed and alpha only images can't be transformed. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+    <tr><td class="paramname">angle</td><td>rotation angle in degree with 0.1 degree resolution (0..3600: clock wise) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00183">183</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>{</div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">while</span>(angle &gt;= 3600) angle -= 3600;</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">while</span>(angle &lt; 0) angle += 3600;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  189</span>    <span class="keywordflow">if</span>(angle == img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a>(obj);  <span class="comment">/*Be sure the object&#39;s size is calculated*/</span></div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = <a class="code hl_function" href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a>(obj);</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> h = <a class="code hl_function" href="lv__obj__pos_8c.html#aada555bdfd06f2673714a7c6fd8a3b58">lv_obj_get_height</a>(obj);</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>;</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, w, h, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>, &amp;img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>);</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a> = angle;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="comment">/* Disable invalidations because lv_obj_refresh_ext_draw_size would invalidate</span></div>
+<div class="line"><span class="lineno">  205</span><span class="comment">     * the whole ext draw area */</span></div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp = <a class="code hl_function" href="lv__obj__tree_8c.html#a01ed5090703139c77edd07611a5ed148">lv_obj_get_disp</a>(obj);</div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_function" href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a>(disp, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_function" href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a>(disp, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_function" href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, w, h, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>, &amp;img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>);</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  217</span>}</div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__disp_8c_html_aac0138ca0897ca4fd5f6a2ef9ec6c5e1"><div class="ttname"><a href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a></div><div class="ttdeci">void lv_disp_enable_invalidation(lv_disp_t *disp, bool en)</div><div class="ttdef"><b>Definition</b> <a href="lv__disp_8c_source.html#l00425">lv_disp.c:425</a></div></div>
+<div class="ttc" id="alv__example__anim__3_8c_html_a734ce3ff48b2bdc8e7cc09dd6faee06f"><div class="ttname"><a href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a></div><div class="ttdeci">lv_anim_t a</div><div class="ttdef"><b>Definition</b> <a href="lv__example__anim__3_8c_source.html#l00024">lv_example_anim_3.c:24</a></div></div>
+<div class="ttc" id="alv__hal__disp_8h_html_a38e817df2a5f77f36d3fe4975cf58129"><div class="ttname"><a href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a></div><div class="ttdeci">struct _lv_disp_t lv_disp_t</div></div>
+<div class="ttc" id="alv__img__buf_8c_html_a54f200e9ed40bbf1384696a4058feb69"><div class="ttname"><a href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a></div><div class="ttdeci">void _lv_img_buf_get_transformed_area(lv_area_t *res, lv_coord_t w, lv_coord_t h, int16_t angle, uint16_t zoom, const lv_point_t *pivot)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8c_source.html#l00352">lv_img_buf.c:352</a></div></div>
+<div class="ttc" id="alv__obj__draw_8c_html_a334282a6e189afe45217f2fd5faaf71b"><div class="ttname"><a href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a></div><div class="ttdeci">void lv_obj_refresh_ext_draw_size(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8c_source.html#l00359">lv_obj_draw.c:359</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a118b18e487255be1d8729239e9ddbee1"><div class="ttname"><a href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a></div><div class="ttdeci">lv_coord_t lv_obj_get_width(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00555">lv_obj_pos.c:555</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a33a0a3c2c2861391f3b0e58cfe39914a"><div class="ttname"><a href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a></div><div class="ttdeci">void lv_obj_invalidate_area(const lv_obj_t *obj, const lv_area_t *area)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00837">lv_obj_pos.c:837</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aada555bdfd06f2673714a7c6fd8a3b58"><div class="ttname"><a href="lv__obj__pos_8c.html#aada555bdfd06f2673714a7c6fd8a3b58">lv_obj_get_height</a></div><div class="ttdeci">lv_coord_t lv_obj_get_height(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00562">lv_obj_pos.c:562</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aff54da7280d2ddf3a84db3d08c3bce83"><div class="ttname"><a href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a></div><div class="ttdeci">void lv_obj_update_layout(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00301">lv_obj_pos.c:301</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_a01ed5090703139c77edd07611a5ed148"><div class="ttname"><a href="lv__obj__tree_8c.html#a01ed5090703139c77edd07611a5ed148">lv_obj_get_disp</a></div><div class="ttdeci">lv_disp_t * lv_obj_get_disp(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00264">lv_obj_tree.c:264</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_a5159a54e860e2efa245ccd12f1f26253"><div class="ttname"><a href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">_lv_obj_t::coords</a></div><div class="ttdeci">lv_area_t coords</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00182">lv_obj.h:182</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a56d2e4d92428979499ff6a06e3d23cba"><div class="ttname"><a href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">lv_area_t::x1</a></div><div class="ttdeci">lv_coord_t x1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00044">lv_area.h:44</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a8e6b43ed9ab280f66ae4e00af312ca27"><div class="ttname"><a href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">lv_area_t::y1</a></div><div class="ttdeci">lv_coord_t y1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00045">lv_area.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__buf_8c_source.html#l00352">_lv_img_buf_get_transformed_area()</a>, <a class="el" href="lv__example__anim__3_8c_source.html#l00024">a</a>, <a class="el" href="lv__img_8h_source.html#l00046">lv_img_t::angle</a>, <a class="el" href="lv__obj_8h_source.html#l00182">_lv_obj_t::coords</a>, <a class="el" href="lv__disp_8c_source.html#l00425">lv_disp_enable_invalidation()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00264">lv_obj_get_disp()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00562">lv_obj_get_height()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00555">lv_obj_get_width()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00837">lv_obj_invalidate_area()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00301">lv_obj_update_layout()</a>, <a class="el" href="lv__img_8h_source.html#l00047">lv_img_t::pivot</a>, <a class="el" href="lv__area_8h_source.html#l00044">lv_area_t::x1</a>, <a class="el" href="lv__area_8h_source.html#l00045">lv_area_t::y1</a> y <a class="el" href="lv__img_8h_source.html#l00048">lv_img_t::zoom</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00204">_ui_anim_callback_set_image_angle()</a> y <a class="el" href="MotorControl_8cpp_source.html#l00018">motor_girar_a()</a>.</p>
+
+</div>
+</div>
+<a id="a7a11235d877787d815c094fd97eaf97d" name="a7a11235d877787d815c094fd97eaf97d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a11235d877787d815c094fd97eaf97d">&#9670;&#160;</a></span>lv_img_set_antialias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_antialias </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>antialias</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enable/disable anti-aliasing for the transformations (rotate, zoom) or not. The quality is better with anti-aliasing looks better but slower. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+    <tr><td class="paramname">antialias</td><td>true: anti-aliased; false: not anti-aliased </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00288">288</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  289</span>{</div>
+<div class="line"><span class="lineno">  290</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">if</span>(antialias == img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a51a60ef2d177a1b44ae2af2ad8f36bcd">antialias</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a51a60ef2d177a1b44ae2af2ad8f36bcd">antialias</a> = antialias;</div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  295</span>}</div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img_8h_source.html#l00051">lv_img_t::antialias</a> y <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>.</p>
+
+</div>
+</div>
+<a id="afd7277c6a877d7bd68c5b20308a79b62" name="afd7277c6a877d7bd68c5b20308a79b62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7277c6a877d7bd68c5b20308a79b62">&#9670;&#160;</a></span>lv_img_set_offset_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_offset_x </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set an offset for the source of an image so the image will be displayed from the new origin. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image </td></tr>
+    <tr><td class="paramname">x</td><td>the new offset along x axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00163">163</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>{</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#afec27bca65a3d56ce97f16ab60adf9f3">offset</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = x;</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__img_8h_source.html#l00043">lv_img_t::offset</a> y <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a>.</p>
+
+</div>
+</div>
+<a id="acc4ddcd188e8d4a20497b468de938d4f" name="acc4ddcd188e8d4a20497b468de938d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4ddcd188e8d4a20497b468de938d4f">&#9670;&#160;</a></span>lv_img_set_offset_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_offset_y </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set an offset for the source of an image. so the image will be displayed from the new origin. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image </td></tr>
+    <tr><td class="paramname">y</td><td>the new offset along y axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00173">173</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>{</div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#afec27bca65a3d56ce97f16ab60adf9f3">offset</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = y;</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__img_8h_source.html#l00043">lv_img_t::offset</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+</div>
+</div>
+<a id="af003eb45102e0da11329767382bc6e86" name="af003eb45102e0da11329767382bc6e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af003eb45102e0da11329767382bc6e86">&#9670;&#160;</a></span>lv_img_set_pivot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_pivot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the rotation center of the image. The image will be rotated around this point. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+    <tr><td class="paramname">x</td><td>rotation center x of the image </td></tr>
+    <tr><td class="paramname">y</td><td>rotation center y of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00219">219</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  220</span>{</div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">if</span>(img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> == x &amp;&amp; img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> == y) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a>(obj);  <span class="comment">/*Be sure the object&#39;s size is calculated*/</span></div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = <a class="code hl_function" href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a>(obj);</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> h = <a class="code hl_function" href="lv__obj__pos_8c.html#aada555bdfd06f2673714a7c6fd8a3b58">lv_obj_get_height</a>(obj);</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>;</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_function" href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, w, h, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>, &amp;img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>);</div>
+<div class="line"><span class="lineno">  229</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  232</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = x;</div>
+<div class="line"><span class="lineno">  236</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = y;</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <span class="comment">/* Disable invalidations because lv_obj_refresh_ext_draw_size would invalidate</span></div>
+<div class="line"><span class="lineno">  239</span><span class="comment">     * the whole ext draw area */</span></div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp = <a class="code hl_function" href="lv__obj__tree_8c.html#a01ed5090703139c77edd07611a5ed148">lv_obj_get_disp</a>(obj);</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_function" href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a>(disp, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  242</span>    <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  243</span>    <a class="code hl_function" href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a>(disp, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_function" href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, w, h, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>, &amp;img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>);</div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><span class="lineno">  250</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  251</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__buf_8c_source.html#l00352">_lv_img_buf_get_transformed_area()</a>, <a class="el" href="lv__example__anim__3_8c_source.html#l00024">a</a>, <a class="el" href="lv__img_8h_source.html#l00046">lv_img_t::angle</a>, <a class="el" href="lv__obj_8h_source.html#l00182">_lv_obj_t::coords</a>, <a class="el" href="lv__disp_8c_source.html#l00425">lv_disp_enable_invalidation()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00264">lv_obj_get_disp()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00562">lv_obj_get_height()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00555">lv_obj_get_width()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00837">lv_obj_invalidate_area()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00301">lv_obj_update_layout()</a>, <a class="el" href="lv__img_8h_source.html#l00047">lv_img_t::pivot</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a>, <a class="el" href="lv__area_8h_source.html#l00044">lv_area_t::x1</a>, <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>, <a class="el" href="lv__area_8h_source.html#l00045">lv_area_t::y1</a> y <a class="el" href="lv__img_8h_source.html#l00048">lv_img_t::zoom</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__img__3_8c_source.html#l00018">lv_example_img_3()</a>.</p>
+
+</div>
+</div>
+<a id="aa43689157d0c81c8f26cbec4826bc531" name="aa43689157d0c81c8f26cbec4826bc531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa43689157d0c81c8f26cbec4826bc531">&#9670;&#160;</a></span>lv_img_set_size_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_size_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img_8h.html#aa0feae2704132379494e85e5f1663640">lv_img_size_mode_t</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the image object size mode.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+    <tr><td class="paramname">mode</td><td>the new size mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00297">297</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  298</span>{</div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  300</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">if</span>(mode == img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a368031cda402cbddcb8fe83fa8b7f223">obj_size_mode</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a368031cda402cbddcb8fe83fa8b7f223">obj_size_mode</a> = mode;</div>
+<div class="line"><span class="lineno">  304</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  305</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__img_8h_source.html#l00052">lv_img_t::obj_size_mode</a>.</p>
+
+</div>
+</div>
+<a id="aee1e48c0fc36b804ceb8d2127d01ccac" name="aee1e48c0fc36b804ceb8d2127d01ccac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1e48c0fc36b804ceb8d2127d01ccac">&#9670;&#160;</a></span>lv_img_set_src()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_src </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the image data to display on the object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image object </td></tr>
+    <tr><td class="paramname">src_img</td><td>1) pointer to an <a class="el" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> descriptor (converted by LVGL's image converter) (e.g. &amp;my_img) or 2) path to an image file (e.g. "S:/dir/img.bin")or 3) a SYMBOL (e.g. LV_SYMBOL_OK) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00070">70</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a4a47e194ccb92c2d8bc70fa9e3655413">lv_img_src_t</a> src_type = <a class="code hl_function" href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a>(src);</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">#if LV_USE_LOG &amp;&amp; LV_LOG_LEVEL &gt;= LV_LOG_LEVEL_INFO</span></div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">switch</span>(src_type) {</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>:</div>
+<div class="line"><span class="lineno">   82</span>            <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;lv_img_set_src: `LV_IMG_SRC_FILE` type found&quot;</span>);</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>:</div>
+<div class="line"><span class="lineno">   85</span>            <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;lv_img_set_src: `LV_IMG_SRC_VARIABLE` type found&quot;</span>);</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a>:</div>
+<div class="line"><span class="lineno">   88</span>            <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;lv_img_set_src: `LV_IMG_SRC_SYMBOL` type found&quot;</span>);</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   91</span>            <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_img_set_src: unknown type&quot;</span>);</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">/*If the new source type is unknown free the memories of the old source*/</span></div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03aaca460ed70608fe3df9865c7e9e69a99">LV_IMG_SRC_UNKNOWN</a>) {</div>
+<div class="line"><span class="lineno">   97</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_img_set_src: unknown image type&quot;</span>);</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">if</span>(img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a> || img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">   99</span>            <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a>);</div>
+<div class="line"><span class="lineno">  100</span>        }</div>
+<div class="line"><span class="lineno">  101</span>        img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a>      = NULL;</div>
+<div class="line"><span class="lineno">  102</span>        img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> = <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03aaca460ed70608fe3df9865c7e9e69a99">LV_IMG_SRC_UNKNOWN</a>;</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_struct" href="structlv__img__header__t.html">lv_img_header_t</a> header;</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="lv__img__decoder_8c.html#a5072ea97b363d447756e68f7bdbd0baf">lv_img_decoder_get_info</a>(src, &amp;header);</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="comment">/*Save the source*/</span></div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">  111</span>        <span class="comment">/*If memory was allocated because of the previous `src_type` then free it*/</span></div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span>(img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a> || img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a>) {</div>
+<div class="line"><span class="lineno">  113</span>            <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a>);</div>
+<div class="line"><span class="lineno">  114</span>        }</div>
+<div class="line"><span class="lineno">  115</span>        img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a> = src;</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a> || src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a>) {</div>
+<div class="line"><span class="lineno">  118</span>        <span class="comment">/*If the new and the old src are the same then it was only a refresh.*/</span></div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">if</span>(img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a> != src) {</div>
+<div class="line"><span class="lineno">  120</span>            <span class="keyword">const</span> <span class="keywordtype">void</span> * old_src = NULL;</div>
+<div class="line"><span class="lineno">  121</span>            <span class="comment">/*If memory was allocated because of the previous `src_type` then save its pointer and free after allocation.</span></div>
+<div class="line"><span class="lineno">  122</span><span class="comment">             *It&#39;s important to allocate first to be sure the new data will be on a new address.</span></div>
+<div class="line"><span class="lineno">  123</span><span class="comment">             *Else `img_cache` wouldn&#39;t see the change in source.*/</span></div>
+<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">if</span>(img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a> || img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a>) {</div>
+<div class="line"><span class="lineno">  125</span>                old_src = img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a>;</div>
+<div class="line"><span class="lineno">  126</span>            }</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordtype">char</span> * new_str = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(strlen(src) + 1);</div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(new_str);</div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">if</span>(new_str == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  130</span>            strcpy(new_str, src);</div>
+<div class="line"><span class="lineno">  131</span>            img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a623248384799143cb8f6ee2b5e793d00">src</a> = new_str;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">if</span>(old_src) <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)old_src);</div>
+<div class="line"><span class="lineno">  134</span>        }</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a>) {</div>
+<div class="line"><span class="lineno">  138</span>        <span class="comment">/*`lv_img_dsc_get_info` couldn&#39;t set the width and height of a font so set it here*/</span></div>
+<div class="line"><span class="lineno">  139</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> * font = lv_obj_get_style_text_font(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> letter_space = lv_obj_get_style_text_letter_space(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> line_space = lv_obj_get_style_text_line_space(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> size;</div>
+<div class="line"><span class="lineno">  143</span>        <a class="code hl_function" href="lv__txt_8c.html#a8831104abda36f751dd1d2415170205f">lv_txt_get_size</a>(&amp;size, src, font, letter_space, line_space, <a class="code hl_define" href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a>, <a class="code hl_enumvalue" href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baac9f8f76bd0822532ab257331b5f0f027">LV_TEXT_FLAG_NONE</a>);</div>
+<div class="line"><span class="lineno">  144</span>        header.<a class="code hl_variable" href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">w</a> = size.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  145</span>        header.<a class="code hl_variable" href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">h</a> = size.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">src_type</a> = src_type;</div>
+<div class="line"><span class="lineno">  149</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#af8934d14b386f19acac6f1b80052f5b5">w</a>        = header.<a class="code hl_variable" href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">w</a>;</div>
+<div class="line"><span class="lineno">  150</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a29f86764a2331b438658d3acac546b3d">h</a>        = header.<a class="code hl_variable" href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">h</a>;</div>
+<div class="line"><span class="lineno">  151</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a6f367c8e2749f3c8f1bdf93da58d1f16">cf</a>       = header.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a>;</div>
+<div class="line"><span class="lineno">  152</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = header.<a class="code hl_variable" href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">w</a> / 2;</div>
+<div class="line"><span class="lineno">  153</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = header.<a class="code hl_variable" href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">h</a> / 2;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aa751e6933cd6346061dc027dc4db7c1f">lv_obj_refresh_self_size</a>(obj);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="comment">/*Provide enough room for the rotated corners*/</span></div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span>(img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a> || img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a> != <a class="code hl_define" href="lv__style_8h.html#a103c099809e82cd94ddf5c0e653895ee">LV_IMG_ZOOM_NONE</a>) <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  161</span>}</div>
+<div class="ttc" id="alv__area_8h_html_afd59cbd057971f697443ef3cdfd44b9d"><div class="ttname"><a href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a></div><div class="ttdeci">#define LV_COORD_MAX</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00283">lv_area.h:283</a></div></div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__draw__img_8c_html_ad1749598689c14b0b65ed7a81bc48148"><div class="ttname"><a href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a></div><div class="ttdeci">lv_img_src_t lv_img_src_get_type(const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__img_8c_source.html#l00195">lv_draw_img.c:195</a></div></div>
+<div class="ttc" id="alv__font_8h_html_a11e3396cab33231964d98046c4e436af"><div class="ttname"><a href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a></div><div class="ttdeci">struct _lv_font_t lv_font_t</div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a5072ea97b363d447756e68f7bdbd0baf"><div class="ttname"><a href="lv__img__decoder_8c.html#a5072ea97b363d447756e68f7bdbd0baf">lv_img_decoder_get_info</a></div><div class="ttdeci">lv_res_t lv_img_decoder_get_info(const void *src, lv_img_header_t *header)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00083">lv_img_decoder.c:83</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a></div><div class="ttdeci">@ LV_IMG_SRC_FILE</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00036">lv_img_decoder.h:36</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03aaca460ed70608fe3df9865c7e9e69a99"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03aaca460ed70608fe3df9865c7e9e69a99">LV_IMG_SRC_UNKNOWN</a></div><div class="ttdeci">@ LV_IMG_SRC_UNKNOWN</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00038">lv_img_decoder.h:38</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a></div><div class="ttdeci">@ LV_IMG_SRC_SYMBOL</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00037">lv_img_decoder.h:37</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a></div><div class="ttdeci">@ LV_IMG_SRC_VARIABLE</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00035">lv_img_decoder.h:35</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a4a47e194ccb92c2d8bc70fa9e3655413"><div class="ttname"><a href="lv__img__decoder_8h.html#a4a47e194ccb92c2d8bc70fa9e3655413">lv_img_src_t</a></div><div class="ttdeci">uint8_t lv_img_src_t</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00041">lv_img_decoder.h:41</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a1deeb0e317c6314c573ee8730321afd0"><div class="ttname"><a href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a></div><div class="ttdeci">#define LV_LOG_TRACE(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00093">lv_log.h:93</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a></div><div class="ttdeci">@ LV_PART_MAIN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00069">lv_obj.h:69</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aa751e6933cd6346061dc027dc4db7c1f"><div class="ttname"><a href="lv__obj__pos_8c.html#aa751e6933cd6346061dc027dc4db7c1f">lv_obj_refresh_self_size</a></div><div class="ttdeci">bool lv_obj_refresh_self_size(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00619">lv_obj_pos.c:619</a></div></div>
+<div class="ttc" id="alv__style_8h_html_a103c099809e82cd94ddf5c0e653895ee"><div class="ttname"><a href="lv__style_8h.html#a103c099809e82cd94ddf5c0e653895ee">LV_IMG_ZOOM_NONE</a></div><div class="ttdeci">#define LV_IMG_ZOOM_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00049">lv_style.h:49</a></div></div>
+<div class="ttc" id="alv__txt_8c_html_a8831104abda36f751dd1d2415170205f"><div class="ttname"><a href="lv__txt_8c.html#a8831104abda36f751dd1d2415170205f">lv_txt_get_size</a></div><div class="ttdeci">void lv_txt_get_size(lv_point_t *size_res, const char *text, const lv_font_t *font, lv_coord_t letter_space, lv_coord_t line_space, lv_coord_t max_width, lv_text_flag_t flag)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00091">lv_txt.c:91</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a65fa39831e92791b14c60c55e7bfe7baac9f8f76bd0822532ab257331b5f0f027"><div class="ttname"><a href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baac9f8f76bd0822532ab257331b5f0f027">LV_TEXT_FLAG_NONE</a></div><div class="ttdeci">@ LV_TEXT_FLAG_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00043">lv_txt.h:43</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html"><div class="ttname"><a href="structlv__img__header__t.html">lv_img_header_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00126">lv_img_buf.h:126</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html_a28513641737b777e0c546bd098eb58af"><div class="ttname"><a href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">lv_img_header_t::cf</a></div><div class="ttdeci">uint32_t cf</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00128">lv_img_buf.h:128</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html_a6553f8a9dc1a0f8c50dc51dda3aab537"><div class="ttname"><a href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">lv_img_header_t::w</a></div><div class="ttdeci">uint32_t w</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00134">lv_img_buf.h:134</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html_a7e3391cd72119d417766378f18aaae2c"><div class="ttname"><a href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">lv_img_header_t::h</a></div><div class="ttdeci">uint32_t h</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00135">lv_img_buf.h:135</a></div></div>
+<div class="ttc" id="astructlv__img__t_html_a29f86764a2331b438658d3acac546b3d"><div class="ttname"><a href="structlv__img__t.html#a29f86764a2331b438658d3acac546b3d">lv_img_t::h</a></div><div class="ttdeci">lv_coord_t h</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00045">lv_img.h:45</a></div></div>
+<div class="ttc" id="astructlv__img__t_html_a4d708245469601a7e433a15e25cb3f73"><div class="ttname"><a href="structlv__img__t.html#a4d708245469601a7e433a15e25cb3f73">lv_img_t::src_type</a></div><div class="ttdeci">uint8_t src_type</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00049">lv_img.h:49</a></div></div>
+<div class="ttc" id="astructlv__img__t_html_a6f367c8e2749f3c8f1bdf93da58d1f16"><div class="ttname"><a href="structlv__img__t.html#a6f367c8e2749f3c8f1bdf93da58d1f16">lv_img_t::cf</a></div><div class="ttdeci">uint8_t cf</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00050">lv_img.h:50</a></div></div>
+<div class="ttc" id="astructlv__img__t_html_af8934d14b386f19acac6f1b80052f5b5"><div class="ttname"><a href="structlv__img__t.html#af8934d14b386f19acac6f1b80052f5b5">lv_img_t::w</a></div><div class="ttdeci">lv_coord_t w</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00044">lv_img.h:44</a></div></div>
+<div class="ttc" id="astructlv__point__t_html"><div class="ttname"><a href="structlv__point__t.html">lv_point_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00037">lv_area.h:37</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img_8h_source.html#l00046">lv_img_t::angle</a>, <a class="el" href="lv__img__buf_8h_source.html#l00128">lv_img_header_t::cf</a>, <a class="el" href="lv__img_8h_source.html#l00050">lv_img_t::cf</a>, <a class="el" href="lv__img__buf_8h_source.html#l00135">lv_img_header_t::h</a>, <a class="el" href="lv__img_8h_source.html#l00045">lv_img_t::h</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__area_8h_source.html#l00283">LV_COORD_MAX</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00083">lv_img_decoder_get_info()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__draw__img_8c_source.html#l00195">lv_img_src_get_type()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00037">LV_IMG_SRC_SYMBOL</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00038">LV_IMG_SRC_UNKNOWN</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00035">LV_IMG_SRC_VARIABLE</a>, <a class="el" href="lv__style_8h_source.html#l00049">LV_IMG_ZOOM_NONE</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00619">lv_obj_refresh_self_size()</a>, <a class="el" href="lv__obj_8h_source.html#l00069">LV_PART_MAIN</a>, <a class="el" href="lv__txt_8h_source.html#l00043">LV_TEXT_FLAG_NONE</a>, <a class="el" href="lv__txt_8c_source.html#l00091">lv_txt_get_size()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__img_8h_source.html#l00047">lv_img_t::pivot</a>, <a class="el" href="lv__img_8h_source.html#l00042">lv_img_t::src</a>, <a class="el" href="lv__img_8h_source.html#l00049">lv_img_t::src_type</a>, <a class="el" href="lv__img__buf_8h_source.html#l00134">lv_img_header_t::w</a>, <a class="el" href="lv__img_8h_source.html#l00044">lv_img_t::w</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a>, <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a> y <a class="el" href="lv__img_8h_source.html#l00048">lv_img_t::zoom</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00214">_ui_anim_callback_set_image_frame()</a>, <a class="el" href="ui__helpers_8c_source.html#l00028">_ui_image_set_property()</a>, <a class="el" href="lv__canvas_8c_source.html#l00066">lv_canvas_set_buffer()</a>, <a class="el" href="lv__example__img__1_8c_source.html#l00005">lv_example_img_1()</a>, <a class="el" href="lv__example__img__2_8c_source.html#l00014">lv_example_img_2()</a>, <a class="el" href="lv__example__img__3_8c_source.html#l00018">lv_example_img_3()</a>, <a class="el" href="lv__example__img__4_8c_source.html#l00012">lv_example_img_4()</a>, <a class="el" href="lv__example__style__6_8c_source.html#l00007">lv_example_style_6()</a>, <a class="el" href="lv__list_8c_source.html#l00076">lv_list_add_btn()</a>, <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>, <a class="el" href="lv__win_8c_source.html#l00065">lv_win_add_btn()</a>, <a class="el" href="ui__Screen10_8c_source.html#l00008">ui_Screen10_screen_init()</a>, <a class="el" href="ui__Screen1_8c_source.html#l00008">ui_Screen1_screen_init()</a>, <a class="el" href="ui__Screen2_8c_source.html#l00008">ui_Screen2_screen_init()</a>, <a class="el" href="ui__Screen4_8c_source.html#l00008">ui_Screen4_screen_init()</a>, <a class="el" href="ui__Screen5_8cpp_source.html#l00010">ui_Screen5_screen_init()</a>, <a class="el" href="ui__Screen6_8c_source.html#l00008">ui_Screen6_screen_init()</a> y <a class="el" href="ui__Screen9_8cpp_source.html#l00009">ui_Screen9_screen_init()</a>.</p>
+
+</div>
+</div>
+<a id="ac52774401c0f203bc30698432b948d29" name="ac52774401c0f203bc30698432b948d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52774401c0f203bc30698432b948d29">&#9670;&#160;</a></span>lv_img_set_zoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_set_zoom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>zoom</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00253">253</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>{</div>
+<div class="line"><span class="lineno">  255</span>    <a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> * img = (<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">if</span>(zoom == img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    <span class="keywordflow">if</span>(zoom == 0) zoom = 1;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a>(obj);  <span class="comment">/*Be sure the object&#39;s size is calculated*/</span></div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = <a class="code hl_function" href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a>(obj);</div>
+<div class="line"><span class="lineno">  262</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> h = <a class="code hl_function" href="lv__obj__pos_8c.html#aada555bdfd06f2673714a7c6fd8a3b58">lv_obj_get_height</a>(obj);</div>
+<div class="line"><span class="lineno">  263</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>;</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_function" href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, w, h, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a> &gt;&gt; 8, &amp;img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>);</div>
+<div class="line"><span class="lineno">  265</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> - 1;</div>
+<div class="line"><span class="lineno">  266</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> - 1;</div>
+<div class="line"><span class="lineno">  267</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> + 1;</div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> + 1;</div>
+<div class="line"><span class="lineno">  269</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>    img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a> = zoom;</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>    <span class="comment">/* Disable invalidations because lv_obj_refresh_ext_draw_size would invalidate</span></div>
+<div class="line"><span class="lineno">  274</span><span class="comment">     * the whole ext draw area */</span></div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp = <a class="code hl_function" href="lv__obj__tree_8c.html#a01ed5090703139c77edd07611a5ed148">lv_obj_get_disp</a>(obj);</div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a>(disp, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  278</span>    <a class="code hl_function" href="lv__disp_8c.html#aac0138ca0897ca4fd5f6a2ef9ec6c5e1">lv_disp_enable_invalidation</a>(disp, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_function" href="lv__img__buf_8c.html#a54f200e9ed40bbf1384696a4058feb69">_lv_img_buf_get_transformed_area</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, w, h, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a5e0c444b200c9ccf52dba0da177d9190">angle</a>, img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a7b040a9537e34f1159bb385b0f2fefe1">zoom</a>, &amp;img-&gt;<a class="code hl_variable" href="structlv__img__t.html#a8959dc95279f803c45935889a49202a1">pivot</a>);</div>
+<div class="line"><span class="lineno">  281</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> - 1;</div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y1 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> - 1;</div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.x2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> + 1;</div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>.y2 += obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> + 1;</div>
+<div class="line"><span class="lineno">  285</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  286</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__buf_8c_source.html#l00352">_lv_img_buf_get_transformed_area()</a>, <a class="el" href="lv__example__anim__3_8c_source.html#l00024">a</a>, <a class="el" href="lv__img_8h_source.html#l00046">lv_img_t::angle</a>, <a class="el" href="lv__obj_8h_source.html#l00182">_lv_obj_t::coords</a>, <a class="el" href="lv__disp_8c_source.html#l00425">lv_disp_enable_invalidation()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00264">lv_obj_get_disp()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00562">lv_obj_get_height()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00555">lv_obj_get_width()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00837">lv_obj_invalidate_area()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00301">lv_obj_update_layout()</a>, <a class="el" href="lv__img_8h_source.html#l00047">lv_img_t::pivot</a>, <a class="el" href="lv__area_8h_source.html#l00044">lv_area_t::x1</a>, <a class="el" href="lv__area_8h_source.html#l00045">lv_area_t::y1</a> y <a class="el" href="lv__img_8h_source.html#l00048">lv_img_t::zoom</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00194">_ui_anim_callback_set_image_zoom()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a8f1d39441a4aab884e50cbfaf312a419" name="a8f1d39441a4aab884e50cbfaf312a419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1d39441a4aab884e50cbfaf312a419">&#9670;&#160;</a></span>lv_img_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_img_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_img_constructor,</div>
+<div class="line">    .destructor_cb = lv_img_destructor,</div>
+<div class="line">    .event_cb = lv_img_event,</div>
+<div class="line">    .width_def = <a class="code hl_define" href="lv__area_8h.html#a9b0bd6c8ea66bc349c7c697e46f7cf3c">LV_SIZE_CONTENT</a>,</div>
+<div class="line">    .height_def = <a class="code hl_define" href="lv__area_8h.html#a9b0bd6c8ea66bc349c7c697e46f7cf3c">LV_SIZE_CONTENT</a>,</div>
+<div class="line">    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a>),</div>
+<div class="line">    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line">}</div>
+<div class="ttc" id="alv__area_8h_html_a9b0bd6c8ea66bc349c7c697e46f7cf3c"><div class="ttname"><a href="lv__area_8h.html#a9b0bd6c8ea66bc349c7c697e46f7cf3c">LV_SIZE_CONTENT</a></div><div class="ttdeci">#define LV_SIZE_CONTENT</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00278">lv_area.h:278</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a424ca3b432ad82f98c4b05950b597d44"><div class="ttname"><a href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div><div class="ttdeci">const lv_obj_class_t lv_obj_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00073">lv_obj.c:73</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__img_8c_source.html#l00040">40</a> del archivo <a class="el" href="lv__img_8c_source.html">lv_img.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                    {</div>
+<div class="line"><span class="lineno">   41</span>    .constructor_cb = lv_img_constructor,</div>
+<div class="line"><span class="lineno">   42</span>    .destructor_cb = lv_img_destructor,</div>
+<div class="line"><span class="lineno">   43</span>    .event_cb = lv_img_event,</div>
+<div class="line"><span class="lineno">   44</span>    .width_def = <a class="code hl_define" href="lv__area_8h.html#a9b0bd6c8ea66bc349c7c697e46f7cf3c">LV_SIZE_CONTENT</a>,</div>
+<div class="line"><span class="lineno">   45</span>    .height_def = <a class="code hl_define" href="lv__area_8h.html#a9b0bd6c8ea66bc349c7c697e46f7cf3c">LV_SIZE_CONTENT</a>,</div>
+<div class="line"><span class="lineno">   46</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__t.html">lv_img_t</a>),</div>
+<div class="line"><span class="lineno">   47</span>    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line"><span class="lineno">   48</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_20066d84f6aea438deed21abfc1118ef.html">widgets</a></li><li class="navelem"><a href="lv__img_8c.html">lv_img.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

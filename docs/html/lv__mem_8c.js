@@ -1,0 +1,27 @@
+var lv__mem_8c =
+[
+    [ "ALIGN_MASK", "lv__mem_8c.html#a9acfa53ba535d32d76682f5d3e893c05", null ],
+    [ "COPY32", "lv__mem_8c.html#a162eb608f8a26f72f3ff07a85404ef3d", null ],
+    [ "COPY8", "lv__mem_8c.html#ad310bbf31b3bc1b57583f61cfde502eb", null ],
+    [ "LV_MEM_ADD_JUNK", "lv__mem_8c.html#ab8bcf165190363e3533a1adf4ad3b4d5", null ],
+    [ "MEM_TRACE", "lv__mem_8c.html#af2d5f26f4291d9ab8129599ed33c32c0", null ],
+    [ "MEM_UNIT", "lv__mem_8c.html#a721e5a71eeea3ba55be6d1f033df001d", null ],
+    [ "REPEAT8", "lv__mem_8c.html#a8ea5542f198b072bb6e512e57dda7231", null ],
+    [ "SET32", "lv__mem_8c.html#a8e5b513f22e0004635ee36596ec98453", null ],
+    [ "SET8", "lv__mem_8c.html#aecfd1548c524f98bf6c5faf244d9be4a", null ],
+    [ "ZERO_MEM_SENTINEL", "lv__mem_8c.html#a5a1d7b7327a8dc9f57682f32d6932643", null ],
+    [ "lv_mem_alloc", "lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa", null ],
+    [ "lv_mem_buf_free_all", "lv__mem_8c.html#a88509722d663e7563432a3d7c1d3628e", null ],
+    [ "lv_mem_buf_get", "lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815", null ],
+    [ "lv_mem_buf_release", "lv__mem_8c.html#a92be7074012180599b9b1122a639cc86", null ],
+    [ "lv_mem_deinit", "lv__mem_8c.html#ae94f89d2267ed9b203e5224c8ce8ec5c", null ],
+    [ "lv_mem_free", "lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4", null ],
+    [ "lv_mem_init", "lv__mem_8c.html#ab6a1069ab1e16cca811cd4203cd97ccc", null ],
+    [ "lv_mem_monitor", "lv__mem_8c.html#a870e4824ad667a372cbe58b2614892a2", null ],
+    [ "lv_mem_realloc", "lv__mem_8c.html#a2d1d6c69551f4c9f2c21960de8bd2242", null ],
+    [ "lv_mem_test", "lv__mem_8c.html#ab36d08cb351228c4ca20f87fd37f13ef", null ],
+    [ "lv_memcpy", "lv__mem_8c.html#a9e3596054c2dad5f13df43719bb5eff7", null ],
+    [ "lv_memset", "lv__mem_8c.html#a801fe66b1c8854687e4f22c4e53a150a", null ],
+    [ "lv_memset_00", "lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9", null ],
+    [ "lv_memset_ff", "lv__mem_8c.html#a97f78c0d617b305da72b90971808141f", null ]
+];

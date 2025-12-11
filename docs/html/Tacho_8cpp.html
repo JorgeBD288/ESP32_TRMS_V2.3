@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/Custom_Libraries/Tacho.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Tacho_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo Tacho.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Tacho_8h_source.html">Tacho.h</a>&quot;</code><br />
+</div>
+<p><a href="Tacho_8cpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a8101cf15774d371664daadb59d199eb4" id="r_a8101cf15774d371664daadb59d199eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8101cf15774d371664daadb59d199eb4">Tacho_begin</a> (const <a class="el" href="structTachoConfig.html">TachoConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:a8101cf15774d371664daadb59d199eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el módulo del tacómetro Configura ADC y almacena parámetros.  <br /></td></tr>
+<tr class="memitem:a22897bcf71f179e7ceb3831e23593c7a" id="r_a22897bcf71f179e7ceb3831e23593c7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22897bcf71f179e7ceb3831e23593c7a">Tacho_update</a> ()</td></tr>
+<tr class="memdesc:a22897bcf71f179e7ceb3831e23593c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los tacómetros, convierte a RPM y actualiza los labels de LVGL.  <br /></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a8101cf15774d371664daadb59d199eb4" name="a8101cf15774d371664daadb59d199eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8101cf15774d371664daadb59d199eb4">&#9670;&#160;</a></span>Tacho_begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tacho_begin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTachoConfig.html">TachoConfig</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el módulo del tacómetro Configura ADC y almacena parámetros. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Tacho_8cpp_source.html#l00039">39</a> del archivo <a class="el" href="Tacho_8cpp_source.html">Tacho.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    s_cfg = config;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">// Configurar pines como entrada analógica</span></div>
+<div class="line"><span class="lineno">   44</span>    pinMode(s_cfg.pinRotor, INPUT);</div>
+<div class="line"><span class="lineno">   45</span>    pinMode(s_cfg.pinMotor, INPUT);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    Serial.println(<span class="stringliteral">&quot;Tacho inicializado (ADC y conversión RPM listos).&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="a22897bcf71f179e7ceb3831e23593c7a" name="a22897bcf71f179e7ceb3831e23593c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22897bcf71f179e7ceb3831e23593c7a">&#9670;&#160;</a></span>Tacho_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tacho_update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee los tacómetros, convierte a RPM y actualiza los labels de LVGL. </p>
+<p>Debe llamarse periódicamente (ej: cada 100 ms) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Tacho_8cpp_source.html#l00050">50</a> del archivo <a class="el" href="Tacho_8cpp_source.html">Tacho.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">// Leer ADC</span></div>
+<div class="line"><span class="lineno">   53</span>    uint16_t raw_rotor = analogRead(s_cfg.pinRotor);</div>
+<div class="line"><span class="lineno">   54</span>    <span class="comment">//Serial.print(&quot;Tacho_rotor -&gt; DAC = &quot;);</span></div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">//Serial.println(raw_rotor); </span></div>
+<div class="line"><span class="lineno">   56</span>    uint16_t raw_motor = analogRead(s_cfg.pinMotor);</div>
+<div class="line"><span class="lineno">   57</span>    <span class="comment">//Serial.print(&quot;Tacho_m.p -&gt; DAC = &quot;);</span></div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">//Serial.println(raw_motor); </span></div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">// Convertir a voltaje</span></div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordtype">float</span> volts_rotor = adcToVolts(raw_rotor);</div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">//Serial.print(&quot;Tacho_rotor -&gt; volts = &quot;);</span></div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">//Serial.println(volts_rotor);  </span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">float</span> volts_motor = adcToVolts(raw_motor);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">//Serial.print(&quot;Tacho_motor -&gt; volts = &quot;);</span></div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">//Serial.println(volts_motor);  </span></div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">// Obtener voltajes reales</span></div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">float</span> real_volts_rotor = voltsAdapter(volts_rotor);</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">float</span> real_volts_motor = voltsAdapter(volts_motor);</div>
+<div class="line"><span class="lineno">   71</span>    </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> ((real_volts_rotor &lt; 0.25) &amp;&amp; (real_volts_rotor &gt; 0)) {</div>
+<div class="line"><span class="lineno">   73</span>        real_volts_rotor = 0;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> ((real_volts_motor &lt; 0.25) &amp;&amp; (real_volts_motor &gt; 0)) {</div>
+<div class="line"><span class="lineno">   77</span>        real_volts_motor = 0;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   80</span><span class="comment">    Serial.print(&quot;Tacho_rotor -&gt; real_volts = &quot;);</span></div>
+<div class="line"><span class="lineno">   81</span><span class="comment">    Serial.println(real_volts_rotor); </span></div>
+<div class="line"><span class="lineno">   82</span><span class="comment">    Serial.print(&quot;Tacho_m.p -&gt; real_volts = &quot;);</span></div>
+<div class="line"><span class="lineno">   83</span><span class="comment">    Serial.println(real_volts_motor);</span></div>
+<div class="line"><span class="lineno">   84</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// Convertir a RPM</span></div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordtype">float</span> rpm_rotor = voltsToRpm(real_volts_rotor);</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordtype">float</span> rpm_motor = voltsToRpm(real_volts_motor);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="comment">// Mostrar en LVGL</span></div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordtype">char</span> buf[32];</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;        V.rotor = %.0f rpm&quot;</span>, rpm_rotor);</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(<a class="code hl_variable" href="ui_8c.html#a88daf42b03a3dd59e15fd4f194b9a109">ui_V_rotor_1</a>, buf);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;        V.mp = %.0f rpm&quot;</span>, rpm_motor);</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(<a class="code hl_variable" href="ui_8c.html#a7de9bab0093e1dd2c73355c032ecd489">ui_V_motor_principal_1</a>, buf);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;        V.rotor = %.0f rpm&quot;</span>, rpm_rotor);</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(<a class="code hl_variable" href="ui_8c.html#ab5c56a81874cbc6825ee96b0d4ec50e1">ui_V_rotor_2</a>, buf);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;        V.mp = %.0f rpm&quot;</span>, rpm_motor);</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(<a class="code hl_variable" href="ui_8c.html#ad8f18824709563004ba6481cadeb7480">ui_V_motor_principal_2</a>, buf);</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="alv__label_8c_html_ac0a3691e31b2defebc1eab701a35d63b"><div class="ttname"><a href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a></div><div class="ttdeci">void lv_label_set_text(lv_obj_t *obj, const char *text)</div><div class="ttdef"><b>Definition</b> <a href="lv__label_8c_source.html#l00085">lv_label.c:85</a></div></div>
+<div class="ttc" id="aui_8c_html_a7de9bab0093e1dd2c73355c032ecd489"><div class="ttname"><a href="ui_8c.html#a7de9bab0093e1dd2c73355c032ecd489">ui_V_motor_principal_1</a></div><div class="ttdeci">lv_obj_t * ui_V_motor_principal_1</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00199">ui.c:199</a></div></div>
+<div class="ttc" id="aui_8c_html_a88daf42b03a3dd59e15fd4f194b9a109"><div class="ttname"><a href="ui_8c.html#a88daf42b03a3dd59e15fd4f194b9a109">ui_V_rotor_1</a></div><div class="ttdeci">lv_obj_t * ui_V_rotor_1</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00198">ui.c:198</a></div></div>
+<div class="ttc" id="aui_8c_html_ab5c56a81874cbc6825ee96b0d4ec50e1"><div class="ttname"><a href="ui_8c.html#ab5c56a81874cbc6825ee96b0d4ec50e1">ui_V_rotor_2</a></div><div class="ttdeci">lv_obj_t * ui_V_rotor_2</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00159">ui.c:159</a></div></div>
+<div class="ttc" id="aui_8c_html_ad8f18824709563004ba6481cadeb7480"><div class="ttname"><a href="ui_8c.html#ad8f18824709563004ba6481cadeb7480">ui_V_motor_principal_2</a></div><div class="ttdeci">lv_obj_t * ui_V_motor_principal_2</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00163">ui.c:163</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__label_8c_source.html#l00085">lv_label_set_text()</a>, <a class="el" href="ui_8c_source.html#l00199">ui_V_motor_principal_1</a>, <a class="el" href="ui_8c_source.html#l00163">ui_V_motor_principal_2</a>, <a class="el" href="ui_8c_source.html#l00198">ui_V_rotor_1</a> y <a class="el" href="ui_8c_source.html#l00159">ui_V_rotor_2</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00261">loop()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="Tacho_8cpp.html">Tacho.cpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

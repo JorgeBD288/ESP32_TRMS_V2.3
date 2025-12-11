@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('main_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;lvgl.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="TFT__eSPI_8h.html">TFT_eSPI.h</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SPI.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SD.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="ui_8h.html">ui.h</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// ==== Librerías personalizadas ====</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="DisplayTouch_8h.html">DisplayTouch.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Encoders_8h.html">Encoders.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Tacho_8h.html">Tacho.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="MotorControl_8h.html">MotorControl.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="IRControl_8h.html">IRControl.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="PID__Parameters_8h.html">PID_Parameters.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="Ang__Select_8h.html">Ang_Select.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="General__Diagram_8h.html">General_Diagram.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="SD__Control_8h.html">SD_Control.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="Element__Modifier_8h.html">Element_Modifier.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="ScreensaverState_8h.html">ScreensaverState.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="Load__Screen_8h.html">Load_Screen.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="Navigation_8h.html">Navigation.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="Remote__Diagram_8h.html">Remote_Diagram.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Definiciones de pines y constantes</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// Pines DAC</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="main_8cpp.html#a5a1c4be46828afb5d84f0707b7c68594">   30</a></span><span class="preprocessor">#define G1_DAC_PIN  25  </span><span class="comment">// DAC1 (GPIO 25) - Motor / G1</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="main_8cpp.html#a910cb0fde358b7c6948110ad4826e9fe">   31</a></span><span class="preprocessor">#define G2_DAC_PIN  26  </span><span class="comment">// DAC2 (GPIO 26) - Rotor / G2</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// Pines ADC (tacómetros)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="main_8cpp.html#a743e77ad1200bda20b7b39916f1faee2">   34</a></span><span class="preprocessor">#define G39_PIN 39   </span><span class="comment">// V rotor de cola</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="main_8cpp.html#a585923f25d4d5e5a8a032b92cb8124ed">   35</a></span><span class="preprocessor">#define G36_PIN 36   </span><span class="comment">// V motor principal</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// Pantalla LCD</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="main_8cpp.html#a83af0cb652728913ff58da7133c692ea">   38</a></span><span class="preprocessor">#define TFT_WIDTH   480</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="main_8cpp.html#a1c2d2e1cd167f90b809c3450fd6f3434">   39</a></span><span class="preprocessor">#define TFT_HEIGHT  320</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="main_8cpp.html#ac9aaae25fe7310fc322e04ae0cabef27">   40</a></span><span class="preprocessor">#define IR_RECV_PIN 34</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// Pin de interrupción del táctil (T_IRQ del XPT2046)</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="main_8cpp.html#a962d784715044703b7c4a193f15002c2">   43</a></span><span class="preprocessor">#define T_IRQ_PIN 35</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// Pines del ESP32 que van a los inversores de SEL / RST / OE del HCTL</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="main_8cpp.html#aacfa50b3d8fb3d588f62b617a1bd6b98">   46</a></span><span class="preprocessor">#define PIN_SEL 14</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0010d60e4eaa7f589cd190c45dcc7d20">   47</a></span><span class="preprocessor">#define PIN_RST 12</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="main_8cpp.html#ab5423e77d934dddc3ffbfdb5768990d2">   48</a></span><span class="preprocessor">#define PIN_OE  13</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">// Constante para conversión de voltaje a RPM para las lecturas de los tacómetros</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="main_8cpp.html#a2354ff44dde52cd2a6d58daaea4e11f5">   51</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="main_8cpp.html#a2354ff44dde52cd2a6d58daaea4e11f5">TACH_VOLTS_PER_1000RPM</a> = 0.52f;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// Cuentas por vuelta</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="main_8cpp.html#a6e4fdedd651ef38128782f206a2e2fff">   54</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="main_8cpp.html#a6e4fdedd651ef38128782f206a2e2fff">COUNTS_PER_REV_VERTICAL</a>   = 2000.0f;  <span class="comment">// ejemplo</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="main_8cpp.html#a1f5f87600b396f1b1cb69d6af718090c">   55</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="main_8cpp.html#a1f5f87600b396f1b1cb69d6af718090c">COUNTS_PER_REV_HORIZONTAL</a> = 2000.0f;  <span class="comment">// ejemplo</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// Objetos y configuración global</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">   61</a></span><a class="code hl_class" href="classTFT__eSPI.html">TFT_eSPI</a> <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a> = <a class="code hl_class" href="classTFT__eSPI.html">TFT_eSPI</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// Configuración de encoders</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="main_8cpp.html#acde88a2b84e95dde2ffc4d7e3d858205">   64</a></span><a class="code hl_struct" href="structEncoderConfig.html">EncoderConfig</a> <a class="code hl_variable" href="main_8cpp.html#acde88a2b84e95dde2ffc4d7e3d858205">g_encoderConfig</a> = {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_variable" href="main_8cpp.html#a6e4fdedd651ef38128782f206a2e2fff">COUNTS_PER_REV_VERTICAL</a>,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_variable" href="main_8cpp.html#a1f5f87600b396f1b1cb69d6af718090c">COUNTS_PER_REV_HORIZONTAL</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// Configuración de tacómetro</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="main_8cpp.html#a6bda3791cfbe4d7a74e32ff0d4be95be">   70</a></span><a class="code hl_struct" href="structTachoConfig.html">TachoConfig</a> <a class="code hl_variable" href="main_8cpp.html#a6bda3791cfbe4d7a74e32ff0d4be95be">g_tachoCfg</a> = {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    .pinRotor        = <a class="code hl_define" href="main_8cpp.html#a743e77ad1200bda20b7b39916f1faee2">G39_PIN</a>,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    .pinMotor        = <a class="code hl_define" href="main_8cpp.html#a585923f25d4d5e5a8a032b92cb8124ed">G36_PIN</a>,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    .voltsPer1000RPM = <a class="code hl_variable" href="main_8cpp.html#a2354ff44dde52cd2a6d58daaea4e11f5">TACH_VOLTS_PER_1000RPM</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// Datos de calibración táctil</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="main_8cpp.html#ad0c903269d3c42841b43a72098ba5a36">   77</a></span>uint16_t <a class="code hl_variable" href="main_8cpp.html#ad0c903269d3c42841b43a72098ba5a36">g_touchCalData</a>[5] = { 327, 3460, 264, 3497, 7 };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">// Configuración del display + táctil</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="main_8cpp.html#a5809aeb9fb03897af2aac330b68628c2">   80</a></span><a class="code hl_struct" href="structDisplayTouchConfig.html">DisplayTouchConfig</a> <a class="code hl_variable" href="main_8cpp.html#a5809aeb9fb03897af2aac330b68628c2">g_displayCfg</a> = {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    .width           = <a class="code hl_define" href="main_8cpp.html#a83af0cb652728913ff58da7133c692ea">TFT_WIDTH</a>,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    .height          = <a class="code hl_define" href="main_8cpp.html#a1c2d2e1cd167f90b809c3450fd6f3434">TFT_HEIGHT</a>,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    .t_irq_pin       = <a class="code hl_define" href="main_8cpp.html#a962d784715044703b7c4a193f15002c2">T_IRQ_PIN</a>,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    .calibrationData = <a class="code hl_variable" href="main_8cpp.html#ad0c903269d3c42841b43a72098ba5a36">g_touchCalData</a></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">// Registros</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">extern</span> <span class="keywordtype">int</span>  <a class="code hl_variable" href="main_8cpp.html#ac373b4ec88e744a90b2dd55ce9fc4dd8">Registro_MP</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">extern</span> <span class="keywordtype">int</span>  <a class="code hl_variable" href="main_8cpp.html#a3f5df5c3fa3f68b6b3547046d640c379">Registro_RDC</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//Variables para la temporización del salvapantallas</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a> <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">extern</span> <span class="keywordtype">bool</span>         <a class="code hl_variable" href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">extern</span> uint32_t     <a class="code hl_variable" href="main_8cpp.html#ab1a9ad141585244770b08b1a56a17c22">g_lastActivityMs</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">// Timeout de inactividad (ms)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">static</span> <span class="keyword">const</span> uint32_t INACTIVITY_TIMEOUT_MS = 60000;  <span class="comment">// 60 s</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">// Grupo pata navegación en pantalla utilizando las flechas del mando</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="main_8cpp.html#a5343a170fabefebbfc2794c027341623">  101</a></span><a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * <a class="code hl_variable" href="main_8cpp.html#a5343a170fabefebbfc2794c027341623">g_navGroup</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">// Estilo para cuando un objeto tiene el foco</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">  104</a></span><a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a>   <a class="code hl_variable" href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">style_focus</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// setup()</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">  110</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    pinMode(<a class="code hl_define" href="ui__events_8h.html#aeb7a7ba1ab7e0406f1b5ab36d579f585">LED</a>, OUTPUT);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    pinMode (<a class="code hl_define" href="ui__events_8h.html#a92f04683a25906bc612649e986a8072a">Buzzer</a>, OUTPUT);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">//Encdendemos el LED durante el arranque</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    digitalWrite(<a class="code hl_define" href="ui__events_8h.html#aeb7a7ba1ab7e0406f1b5ab36d579f585">LED</a>, HIGH);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">//Hacemos sonar el Buzzer durante un segundo en el inicio a toda potencia</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_function" href="ui__events_8cpp.html#a92f1280e4e831d695fcc0b32023424e6">BuzzerWrite</a>(HIGH);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_function" href="ui__events_8cpp.html#a92f1280e4e831d695fcc0b32023424e6">BuzzerWrite</a>(LOW);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    Serial.begin(115200);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    Serial.println(<span class="stringliteral">&quot;Inicializando ESP32...&quot;</span>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="comment">// Buses</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    SPI.begin(); </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    Wire.begin();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// CS de SD y TFT</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    pinMode(<a class="code hl_define" href="SD__Control_8h.html#a7e2d8ef8f0724f23ce84b1e7d0c171d9">SD_CS</a>, OUTPUT);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    digitalWrite(<a class="code hl_define" href="SD__Control_8h.html#a7e2d8ef8f0724f23ce84b1e7d0c171d9">SD_CS</a>, HIGH);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    pinMode(<a class="code hl_define" href="TFT__eSPI__ESP32_8h.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>, OUTPUT);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    digitalWrite(<a class="code hl_define" href="TFT__eSPI__ESP32_8h.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>, HIGH);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="comment">// Inicializar pantalla, táctil y LVGL (como antes)</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_function" href="DisplayTouch_8cpp.html#a804f0865039c3662deabefe0153ac5ca">DisplayTouch_begin</a>(<a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>, <a class="code hl_variable" href="main_8cpp.html#a5809aeb9fb03897af2aac330b68628c2">g_displayCfg</a>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">// -----------------------------------------------------------------</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">//  MENSAJES DE &quot;CARGA&quot; SIMULADOS ANTES DE ui_init()</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="comment">// -----------------------------------------------------------------</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.fillScreen(<a class="code hl_define" href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setRotation(1);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setTextSize(2);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setTextColor(<a class="code hl_define" href="TFT__eSPI_8h.html#a61c3af07250ddcbc8f021c3d4a8e7f5a">TFT_ORANGE</a>, <a class="code hl_define" href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setCursor(10, 20);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="comment">//----------------------------------------------------------------------------------------------//</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">//                     Grupo pata navegar por el menú utilizanzo las flechas</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">//----------------------------------------------------------------------------------------------//</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_variable" href="main_8cpp.html#a5343a170fabefebbfc2794c027341623">g_navGroup</a> = <a class="code hl_function" href="lv__group_8c.html#afd24771585b9b5cdbdc2eb7f0b9cb520">lv_group_create</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_function" href="lv__group_8c.html#a18dcc5be6193ff5ca2281edae8fcf3af">lv_group_set_wrap</a>(<a class="code hl_variable" href="main_8cpp.html#a5343a170fabefebbfc2794c027341623">g_navGroup</a>, <span class="keyword">true</span>);    <span class="comment">// al llegar al final, vuelve al primero</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="comment">// Estilo de foco (borde verde)</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;<a class="code hl_variable" href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">style_focus</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_function" href="lv__style__gen_8c.html#aab7e1ec93e002be9fdd7a11f933f6b13">lv_style_set_outline_width</a>(&amp;<a class="code hl_variable" href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">style_focus</a>, 4);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_function" href="lv__style__gen_8c.html#acd54e76a506cbb283cc8f194a079998a">lv_style_set_outline_color</a>(&amp;<a class="code hl_variable" href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">style_focus</a>, <a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca799cf9fdb9eacdbeb56b0562ace15d3b">LV_PALETTE_GREEN</a>));</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a0c6433d1feec4a96d2d8757ef00696be">lv_style_set_outline_opa</a>(&amp;<a class="code hl_variable" href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">style_focus</a>, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="comment">// Montar la tarjeta SD</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.print(<span class="stringliteral">&quot;Montando tarjeta SD... &quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);    </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">if</span> (SD.begin(<a class="code hl_define" href="SD__Control_8h.html#a7e2d8ef8f0724f23ce84b1e7d0c171d9">SD_CS</a>)) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setTextColor(<a class="code hl_define" href="TFT__eSPI_8h.html#a87698ed955e7f55acb2ee0ef78505efb">TFT_GREEN</a>, <a class="code hl_define" href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.println(<span class="stringliteral">&quot;SD OK&quot;</span>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setTextColor(<a class="code hl_define" href="TFT__eSPI_8h.html#aa5be28988e93afff36b1eaa8e71d8ba0">TFT_RED</a>, <a class="code hl_define" href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.println(<span class="stringliteral">&quot;ERROR&quot;</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.setTextColor(<a class="code hl_define" href="TFT__eSPI_8h.html#a61c3af07250ddcbc8f021c3d4a8e7f5a">TFT_ORANGE</a>, <a class="code hl_define" href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.println(<span class="stringliteral">&quot;Inicializando control de motores...&quot;</span>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.println(<span class="stringliteral">&quot;Inicializando encoders...&quot;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.println(<span class="stringliteral">&quot;Cargando ajustes PID...&quot;</span>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.println(<span class="stringliteral">&quot;Inicializando UI...&quot;</span>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(500);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">// Esquema del TRMS para la pantalla de inicio</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">int</span> trmsCenterX = <a class="code hl_define" href="main_8cpp.html#a83af0cb652728913ff58da7133c692ea">TFT_WIDTH</a> / 2;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">int</span> trmsBaseY   = 210;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_function" href="Load__Screen_8cpp.html#ab21713ed3a69f850f3b9c6c31dec72ab">DrawTRMSFigure</a>(<a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>, trmsCenterX, trmsBaseY);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="comment">//Barra de carga con 3 segundos de duración</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_function" href="Load__Screen_8cpp.html#a5f6b396ab9bc2b5fb504a293d17b84f4">Load_bar</a>(<a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">// -----------------------------------------------------------------</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="comment">//  AHORA SÍ: INICIALIZAR LA UI REAL DE LVGL</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">// -----------------------------------------------------------------</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_function" href="ui_8c.html#a42bb09ef137aaeb1733173f3a88ccc85">ui_init</a>();</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    Serial.println(<span class="stringliteral">&quot;UI cargada correctamente.&quot;</span>);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="comment">// Abilitar Labels como obejtos clicables para ahorrar elementos en uso de botones</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="Element__Modifier_8cpp.html#afddf8a0b8ad35cf8f62087b2a441dfb2">EnableConfigLabelsClickable</a>();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="comment">// Incializar navegación con control remoto</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <a class="code hl_function" href="Navigation_8cpp.html#ab88d6e2f8034879c102653da0e572ba6">SetupScreen1Nav</a>();</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="comment">//---------------------------------------------------------------------------------------------//</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="comment">//----------------------------------------------------------------------------------------------//</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="comment">// Ocultar de inicio las imágenes de detalle</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a073e0d4e0d142e9812701038b590a3ff">ui_EsquemaPIDCompleto</a>,  <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a17051ba722051ccaaa377ab46b2a4f3a">ui_EsquemaTRMSCompleto</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">// Inicializar manejo del esquema general</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_function" href="General__Diagram_8cpp.html#a4fe34b0e74b05968a549fcc5f2079aa5">GeneralDiagram_Init</a>(<a class="code hl_variable" href="ui_8c.html#a9e6c5f48cc5d530d8c8f0a27abae4ae7">ui_EsquemaGeneral</a>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// Inicializar tacómetros (ADC + RPM + labels)</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_function" href="Tacho_8cpp.html#a8101cf15774d371664daadb59d199eb4">Tacho_begin</a>(<a class="code hl_variable" href="main_8cpp.html#a6bda3791cfbe4d7a74e32ff0d4be95be">g_tachoCfg</a>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="comment">// Inicializar control de motores (DAC + sliders)</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <a class="code hl_function" href="MotorControl_8cpp.html#a3e86a1cf652b99767dd1c6ca00e009a3">MotorControl_begin</a>(<a class="code hl_define" href="main_8cpp.html#a5a1c4be46828afb5d84f0707b7c68594">G1_DAC_PIN</a>, <a class="code hl_define" href="main_8cpp.html#a910cb0fde358b7c6948110ad4826e9fe">G2_DAC_PIN</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// Inicializar receptor IR (vía librería IRControl)</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <a class="code hl_function" href="IRControl_8cpp.html#a68923bc6988628bfbb5cb112a4fdbd8a">IRControl_begin</a>(<a class="code hl_define" href="main_8cpp.html#ac9aaae25fe7310fc322e04ae0cabef27">IR_RECV_PIN</a>);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="comment">// Guardar configuración del mando IR desde EEPROM, si existe, de los contrario se cargarán unos datos</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="comment">// para un mando predeterminado, guardados en la memoria flash</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_function" href="IRControl_8cpp.html#a920e6cd29a4c93df7287a1b274ab5484">IRControl_loadConfigFromNVS</a>(); </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="comment">//Establecimiento de valores iniciales para los prámetros PID</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <a class="code hl_function" href="PID__Parameters_8cpp.html#add8b0c1fcf3a93153af02e5dec1e9297">PID_LoadDefaults</a>(); <span class="comment">//Inicializar valores PID a sus valores predeterminados</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_function" href="PID__Parameters_8cpp.html#a2d940fb0f8da903ab1be3814d6e7b9fc">PID_LoadFromNVS</a>(); <span class="comment">// Si hay algo en EEPROM, lo sobreescribe y actualiza UI</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="comment">//Inicializar la función para la detección de parámetros de entrada para el control PID</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <a class="code hl_function" href="Ang__Select_8cpp.html#a91d243f73b439d6a54b543864523163c">AngSelect_Init</a>(<a class="code hl_variable" href="ui_8c.html#a8b1f014df0ac414e7d38b57f2410a397">ui_Image12</a>, <a class="code hl_variable" href="Navigation_8cpp.html#a92f8aea2a2faa5ba65e388ed2e6ceee8">ui_Label65</a>, <a class="code hl_variable" href="Navigation_8cpp.html#a8a5aa0a95c1fe7088a407d766ace5ab1">ui_Label64</a>); <span class="comment">// (Cuadrícula, Ang_Horizontal, Ang_Vertical)</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">//Reset de encoders y registros antes de empezar</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_function" href="ui__events_8cpp.html#ad6c2d7a6656eda670314d17478d65b08">Reset_Encoders_Registros</a>();</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">// Arrancamos contadores de actividad</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_variable" href="main_8cpp.html#ab1a9ad141585244770b08b1a56a17c22">g_lastActivityMs</a> = millis();</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    Serial.println(<span class="stringliteral">&quot;Sistema listo (display + encoders + tacho + motores + IR).&quot;</span>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">//Hacemos sonar el Buzzer durante un segundo cuando el proceso de carga ha terminado por completo</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_function" href="ui__events_8cpp.html#a92f1280e4e831d695fcc0b32023424e6">BuzzerWrite</a>(HIGH);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <a class="code hl_function" href="ui__events_8cpp.html#a92f1280e4e831d695fcc0b32023424e6">BuzzerWrite</a>(LOW);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="comment">//Apagamos el LED al finalizar el proceso de carga</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    digitalWrite(<a class="code hl_define" href="ui__events_8h.html#aeb7a7ba1ab7e0406f1b5ab36d579f585">LED</a>, LOW);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>}</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment">// loop()</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment">// ================================</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">  261</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">// 1) Gestionar LVGL (display + táctil)</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <a class="code hl_function" href="DisplayTouch_8cpp.html#a1009d9c61e3839d65c7c343342bc4193">DisplayTouch_taskHandler</a>();</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(5);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="comment">// 2) Detectar actividad por TÁCTIL</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="comment">//    (cualquier toque en la pantalla cuenta como actividad)</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    uint16_t tx, ty;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>.getTouch(&amp;tx, &amp;ty)) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <a class="code hl_function" href="ScreensaverState_8cpp.html#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a>();   <span class="comment">// actualiza g_lastActivityMs</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="comment">// 3) Tacómetros: actualizar RPM cada 100 ms</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keyword">static</span> uint32_t lastTachoUpdate = 0;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    uint32_t now = millis();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">if</span> (now - lastTachoUpdate &gt; 100) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <a class="code hl_function" href="Tacho_8cpp.html#a22897bcf71f179e7ceb3831e23593c7a">Tacho_update</a>();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        lastTachoUpdate = now;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="comment">//Elimininar mensaje de confirmación de carga de datos desde SD en caso de que esta se haya producido, pasado un tiempo</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="SD__Control_8cpp.html#a12c31a9176552dbb951123eb48910bfe">flag_Config_Message</a> == <span class="keyword">true</span>){</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <a class="code hl_function" href="ui__events_8cpp.html#ac87f3f524d1b45bdbdbf68976e9773ee">Show_Config_Message_Selected</a>();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="comment">// 4) IR: leer mando y actuar</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <a class="code hl_struct" href="structIRControlEvent.html">IRControlEvent</a> ev = <a class="code hl_function" href="IRControl_8cpp.html#a88e6a934adf9a70b24a44b545da93402">IRControl_poll</a>();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">if</span> (ev.<a class="code hl_variable" href="structIRControlEvent.html#a12eef66eb319c6bee97c7845836c58c3">hasEvent</a>) {  </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="comment">// 4.1) Primero: si estamos en modo aprendizaje de la pantalla del mando,</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="comment">// que consuma este evento y no haga nada más.</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="Remote__Diagram_8cpp.html#a9b9e5e9b1a294b4ced6b128bf8ed161f">RemoteDiagram_HandleIRLearn</a>(ev)) {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                <span class="comment">// Solo se ha usado para programar un botón → no navegar, ni sliders, etc.</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            }</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="comment">// 4.2) Cambiar de pantalla si procede</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *scr_act = lv_scr_act();</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordflow">switch</span> (ev.<a class="code hl_variable" href="structIRControlEvent.html#a0917787b8d446b38cf742db5a88a5466">screen</a>) {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="IRControl_8h.html#a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb">IRScreenTarget::SCREEN1</a>:</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                <span class="comment">// Solo cambiar si NO estamos en la pantalla 9</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                <span class="keywordflow">if</span> (scr_act != <a class="code hl_variable" href="ui_8c.html#a2137edab587cf7bfaf28c1946aa560b0">ui_Screen9</a>) {</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>                    <a class="code hl_function" href="ui__helpers_8c.html#a44a894b04df3456a5dbdc7ab732ff6d9">_ui_screen_change</a>(</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>                        &amp;<a class="code hl_variable" href="ui_8c.html#aaa3441593ca65b333bb3d04fde68c34c">ui_Screen1</a>,</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                        <a class="code hl_enumvalue" href="lv__disp_8h.html#a0f753e364206eb26e1ad7c10d737b06ea3e415bd11c085aff5bc42db7f945695d">LV_SCR_LOAD_ANIM_FADE_ON</a>,</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                        500, 0,</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                        &amp;<a class="code hl_function" href="ui_8c.html#a59d1ae7d461cb9861cfaf23770f80bb1">ui_Screen1_screen_init</a></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                    );</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                    <span class="comment">// Habilitar control con mando a distancia en la pantalla 1</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                    <a class="code hl_function" href="Navigation_8cpp.html#ab88d6e2f8034879c102653da0e572ba6">SetupScreen1Nav</a>();</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="IRControl_8h.html#a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693">IRScreenTarget::NONE</a>:</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <span class="comment">// 4.3) Navegación con flechas</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keywordflow">if</span> (ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a> != <a class="code hl_enumvalue" href="IRControl_8h.html#a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693">IRNavKey::NONE</a>) {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            <a class="code hl_function" href="Navigation_8cpp.html#a23b8a5e5034c0dd82a785d488234d11c">HandleIRNavigation</a>(ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a>);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="comment">// 4.4) Control de sliders</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">if</span> (ev.<a class="code hl_variable" href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">deltaSlider</a> != 0) {</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>            <a class="code hl_function" href="Navigation_8cpp.html#ac11e52f500450eb7502b1838c590d50c">HandleDeltaSlider</a>(ev.<a class="code hl_variable" href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">deltaSlider</a>);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        }</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="comment">// 4.5) Entrada numérica en labels</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">if</span> (ev.<a class="code hl_variable" href="structIRControlEvent.html#a20b2fd0929ce377e7e11b5371a80d49c">digit</a> &gt;= 0) {</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            <a class="code hl_function" href="Navigation_8cpp.html#a1b67a298aed30b12927c07b5cf9d6d19">HandleNumericDigit</a>(ev.<a class="code hl_variable" href="structIRControlEvent.html#a20b2fd0929ce377e7e11b5371a80d49c">digit</a>);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        }</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        <span class="comment">// 4.6) Signo negativo</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        <span class="keywordflow">if</span> (ev.<a class="code hl_variable" href="structIRControlEvent.html#ad3bdeb60b5a06d1012181b5d0cf55198">minus</a>) {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            <a class="code hl_function" href="Navigation_8cpp.html#adf1a547177c52379936d880a3fb8f416">HandleNumericMinus</a>();</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        }</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    }</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <span class="comment">// 5) Comprobar INACTIVIDAD y activar salvapantallas (Screen10)</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    <span class="comment">// ---------------------------</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    now = millis();</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keywordflow">if</span> (now - <a class="code hl_variable" href="main_8cpp.html#ab1a9ad141585244770b08b1a56a17c22">g_lastActivityMs</a> &gt; INACTIVITY_TIMEOUT_MS) {</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *act = lv_scr_act();</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="comment">// Si no estamos ya en Screen10, cambiamos</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <span class="keywordflow">if</span> (act != <a class="code hl_variable" href="ui_8c.html#a25f975b6722a1886f24d3ce34fe76c29">ui_Screen10</a>) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            <span class="comment">// 1) Guardar de qué pantalla venimos</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>            <span class="keywordflow">if</span>      (act == <a class="code hl_variable" href="ui_8c.html#aaa3441593ca65b333bb3d04fde68c34c">ui_Screen1</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a>;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#aae7b985a983d52a0d5f4bc9d215fcbd6">ui_Screen2</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a>;</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#a26801fa4a7f3990efa97117c612e0451">ui_Screen3</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a>;</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#ac92791aba0a148d898fe6d90a7c7ac77">ui_Screen4</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a>;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#a6d94e807899701c18c3ba11dc5deab81">ui_Screen5</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a>;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#a6be2dff5a9dba6c3b430368ef00a2884">ui_Screen6</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a>;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#a81fc742d0e5a16084fbb380be58ce858">ui_Screen7</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a>;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#a522866bf3f4637bd248c4b5fedced5a9">ui_Screen8</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a>;</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (act == <a class="code hl_variable" href="ui_8c.html#a2137edab587cf7bfaf28c1946aa560b0">ui_Screen9</a>) <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a>;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            <span class="keywordflow">else</span>                        <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a> = <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a>;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            <span class="comment">// 2) Activar flag de salvapantallas</span></div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>            <a class="code hl_variable" href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            <span class="comment">// 3) Ir a Screen10 (salvapantallas)</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>            <a class="code hl_function" href="ui__helpers_8c.html#a44a894b04df3456a5dbdc7ab732ff6d9">_ui_screen_change</a>(</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                &amp;<a class="code hl_variable" href="ui_8c.html#a25f975b6722a1886f24d3ce34fe76c29">ui_Screen10</a>,</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                <a class="code hl_enumvalue" href="lv__disp_8h.html#a0f753e364206eb26e1ad7c10d737b06ea3e415bd11c085aff5bc42db7f945695d">LV_SCR_LOAD_ANIM_FADE_ON</a>,</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                500, 0,</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                &amp;<a class="code hl_function" href="ui_8c.html#a70d25529f758b3f22a9775daff417692">ui_Screen10_screen_init</a></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            );</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        }</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    }</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>}</div>
+</div>
+<div class="ttc" id="aAng__Select_8cpp_html_a91d243f73b439d6a54b543864523163c"><div class="ttname"><a href="Ang__Select_8cpp.html#a91d243f73b439d6a54b543864523163c">AngSelect_Init</a></div><div class="ttdeci">void AngSelect_Init(lv_obj_t *gridImage, lv_obj_t *labelH, lv_obj_t *labelV)</div><div class="ttdef"><b>Definition</b> <a href="Ang__Select_8cpp_source.html#l00244">Ang_Select.cpp:244</a></div></div>
+<div class="ttc" id="aAng__Select_8h_html"><div class="ttname"><a href="Ang__Select_8h.html">Ang_Select.h</a></div></div>
+<div class="ttc" id="aDisplayTouch_8cpp_html_a1009d9c61e3839d65c7c343342bc4193"><div class="ttname"><a href="DisplayTouch_8cpp.html#a1009d9c61e3839d65c7c343342bc4193">DisplayTouch_taskHandler</a></div><div class="ttdeci">void DisplayTouch_taskHandler()</div><div class="ttdoc">Llama al manejador de LVGL.</div><div class="ttdef"><b>Definition</b> <a href="DisplayTouch_8cpp_source.html#l00210">DisplayTouch.cpp:210</a></div></div>
+<div class="ttc" id="aDisplayTouch_8cpp_html_a804f0865039c3662deabefe0153ac5ca"><div class="ttname"><a href="DisplayTouch_8cpp.html#a804f0865039c3662deabefe0153ac5ca">DisplayTouch_begin</a></div><div class="ttdeci">void DisplayTouch_begin(TFT_eSPI &amp;tft, const DisplayTouchConfig &amp;cfg)</div><div class="ttdoc">Inicializa la TFT, el táctil y LVGL.</div><div class="ttdef"><b>Definition</b> <a href="DisplayTouch_8cpp_source.html#l00142">DisplayTouch.cpp:142</a></div></div>
+<div class="ttc" id="aDisplayTouch_8h_html"><div class="ttname"><a href="DisplayTouch_8h.html">DisplayTouch.h</a></div></div>
+<div class="ttc" id="aElement__Modifier_8cpp_html_afddf8a0b8ad35cf8f62087b2a441dfb2"><div class="ttname"><a href="Element__Modifier_8cpp.html#afddf8a0b8ad35cf8f62087b2a441dfb2">EnableConfigLabelsClickable</a></div><div class="ttdeci">void EnableConfigLabelsClickable()</div><div class="ttdef"><b>Definition</b> <a href="Element__Modifier_8cpp_source.html#l00004">Element_Modifier.cpp:4</a></div></div>
+<div class="ttc" id="aElement__Modifier_8h_html"><div class="ttname"><a href="Element__Modifier_8h.html">Element_Modifier.h</a></div></div>
+<div class="ttc" id="aEncoders_8h_html"><div class="ttname"><a href="Encoders_8h.html">Encoders.h</a></div></div>
+<div class="ttc" id="aGC9A01__Init_8h_html_a5aca13d7b6004cb9d0f57e632205e46b"><div class="ttname"><a href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a></div><div class="ttdeci">delay(120)</div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a4fe34b0e74b05968a549fcc5f2079aa5"><div class="ttname"><a href="General__Diagram_8cpp.html#a4fe34b0e74b05968a549fcc5f2079aa5">GeneralDiagram_Init</a></div><div class="ttdeci">void GeneralDiagram_Init(lv_obj_t *diagramImg)</div><div class="ttdef"><b>Definition</b> <a href="General__Diagram_8cpp_source.html#l00141">General_Diagram.cpp:141</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8h_html"><div class="ttname"><a href="General__Diagram_8h.html">General_Diagram.h</a></div></div>
+<div class="ttc" id="aIRControl_8cpp_html_a68923bc6988628bfbb5cb112a4fdbd8a"><div class="ttname"><a href="IRControl_8cpp.html#a68923bc6988628bfbb5cb112a4fdbd8a">IRControl_begin</a></div><div class="ttdeci">void IRControl_begin(uint8_t irPin)</div><div class="ttdoc">Inicializa el receptor IR.</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8cpp_source.html#l00142">IRControl.cpp:142</a></div></div>
+<div class="ttc" id="aIRControl_8cpp_html_a88e6a934adf9a70b24a44b545da93402"><div class="ttname"><a href="IRControl_8cpp.html#a88e6a934adf9a70b24a44b545da93402">IRControl_poll</a></div><div class="ttdeci">IRControlEvent IRControl_poll()</div><div class="ttdoc">Lee (no bloqueante) si ha llegado algún comando IR.</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8cpp_source.html#l00154">IRControl.cpp:154</a></div></div>
+<div class="ttc" id="aIRControl_8cpp_html_a920e6cd29a4c93df7287a1b274ab5484"><div class="ttname"><a href="IRControl_8cpp.html#a920e6cd29a4c93df7287a1b274ab5484">IRControl_loadConfigFromNVS</a></div><div class="ttdeci">void IRControl_loadConfigFromNVS()</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8cpp_source.html#l00245">IRControl.cpp:245</a></div></div>
+<div class="ttc" id="aIRControl_8h_html"><div class="ttname"><a href="IRControl_8h.html">IRControl.h</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb"><div class="ttname"><a href="IRControl_8h.html#a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb">IRScreenTarget::SCREEN1</a></div><div class="ttdeci">@ SCREEN1</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00015">IRControl.h:15</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="IRControl_8h.html#a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693">IRScreenTarget::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00014">IRControl.h:14</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="IRControl_8h.html#a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693">IRNavKey::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00019">IRControl.h:19</a></div></div>
+<div class="ttc" id="aLoad__Screen_8cpp_html_a5f6b396ab9bc2b5fb504a293d17b84f4"><div class="ttname"><a href="Load__Screen_8cpp.html#a5f6b396ab9bc2b5fb504a293d17b84f4">Load_bar</a></div><div class="ttdeci">void Load_bar(TFT_eSPI &amp;tft)</div><div class="ttdef"><b>Definition</b> <a href="Load__Screen_8cpp_source.html#l00128">Load_Screen.cpp:128</a></div></div>
+<div class="ttc" id="aLoad__Screen_8cpp_html_ab21713ed3a69f850f3b9c6c31dec72ab"><div class="ttname"><a href="Load__Screen_8cpp.html#ab21713ed3a69f850f3b9c6c31dec72ab">DrawTRMSFigure</a></div><div class="ttdeci">void DrawTRMSFigure(TFT_eSPI &amp;tft, int centerX, int baseY)</div><div class="ttdef"><b>Definition</b> <a href="Load__Screen_8cpp_source.html#l00014">Load_Screen.cpp:14</a></div></div>
+<div class="ttc" id="aLoad__Screen_8h_html"><div class="ttname"><a href="Load__Screen_8h.html">Load_Screen.h</a></div></div>
+<div class="ttc" id="aMotorControl_8cpp_html_a3e86a1cf652b99767dd1c6ca00e009a3"><div class="ttname"><a href="MotorControl_8cpp.html#a3e86a1cf652b99767dd1c6ca00e009a3">MotorControl_begin</a></div><div class="ttdeci">void MotorControl_begin(uint8_t dacPinG1, uint8_t dacPinG2)</div><div class="ttdoc">Inicializa el módulo de control de motores.</div><div class="ttdef"><b>Definition</b> <a href="MotorControl_8cpp_source.html#l00039">MotorControl.cpp:39</a></div></div>
+<div class="ttc" id="aMotorControl_8h_html"><div class="ttname"><a href="MotorControl_8h.html">MotorControl.h</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_a1b67a298aed30b12927c07b5cf9d6d19"><div class="ttname"><a href="Navigation_8cpp.html#a1b67a298aed30b12927c07b5cf9d6d19">HandleNumericDigit</a></div><div class="ttdeci">void HandleNumericDigit(int digit)</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00246">Navigation.cpp:246</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_a23b8a5e5034c0dd82a785d488234d11c"><div class="ttname"><a href="Navigation_8cpp.html#a23b8a5e5034c0dd82a785d488234d11c">HandleIRNavigation</a></div><div class="ttdeci">void HandleIRNavigation(IRNavKey nav)</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00025">Navigation.cpp:25</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_a8a5aa0a95c1fe7088a407d766ace5ab1"><div class="ttname"><a href="Navigation_8cpp.html#a8a5aa0a95c1fe7088a407d766ace5ab1">ui_Label64</a></div><div class="ttdeci">lv_obj_t * ui_Label64</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00157">ui.c:157</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_a92f8aea2a2faa5ba65e388ed2e6ceee8"><div class="ttname"><a href="Navigation_8cpp.html#a92f8aea2a2faa5ba65e388ed2e6ceee8">ui_Label65</a></div><div class="ttdeci">lv_obj_t * ui_Label65</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00158">ui.c:158</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_ab88d6e2f8034879c102653da0e572ba6"><div class="ttname"><a href="Navigation_8cpp.html#ab88d6e2f8034879c102653da0e572ba6">SetupScreen1Nav</a></div><div class="ttdeci">void SetupScreen1Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00358">Navigation.cpp:358</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_ac11e52f500450eb7502b1838c590d50c"><div class="ttname"><a href="Navigation_8cpp.html#ac11e52f500450eb7502b1838c590d50c">HandleDeltaSlider</a></div><div class="ttdeci">void HandleDeltaSlider(int delta)</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00096">Navigation.cpp:96</a></div></div>
+<div class="ttc" id="aNavigation_8cpp_html_adf1a547177c52379936d880a3fb8f416"><div class="ttname"><a href="Navigation_8cpp.html#adf1a547177c52379936d880a3fb8f416">HandleNumericMinus</a></div><div class="ttdeci">void HandleNumericMinus()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00309">Navigation.cpp:309</a></div></div>
+<div class="ttc" id="aNavigation_8h_html"><div class="ttname"><a href="Navigation_8h.html">Navigation.h</a></div></div>
+<div class="ttc" id="aPID__Parameters_8cpp_html_a2d940fb0f8da903ab1be3814d6e7b9fc"><div class="ttname"><a href="PID__Parameters_8cpp.html#a2d940fb0f8da903ab1be3814d6e7b9fc">PID_LoadFromNVS</a></div><div class="ttdeci">void PID_LoadFromNVS()</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00338">PID_Parameters.cpp:338</a></div></div>
+<div class="ttc" id="aPID__Parameters_8cpp_html_add8b0c1fcf3a93153af02e5dec1e9297"><div class="ttname"><a href="PID__Parameters_8cpp.html#add8b0c1fcf3a93153af02e5dec1e9297">PID_LoadDefaults</a></div><div class="ttdeci">void PID_LoadDefaults()</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00105">PID_Parameters.cpp:105</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html"><div class="ttname"><a href="PID__Parameters_8h.html">PID_Parameters.h</a></div></div>
+<div class="ttc" id="aRemote__Diagram_8cpp_html_a9b9e5e9b1a294b4ced6b128bf8ed161f"><div class="ttname"><a href="Remote__Diagram_8cpp.html#a9b9e5e9b1a294b4ced6b128bf8ed161f">RemoteDiagram_HandleIRLearn</a></div><div class="ttdeci">bool RemoteDiagram_HandleIRLearn(const IRControlEvent &amp;ev)</div><div class="ttdef"><b>Definition</b> <a href="Remote__Diagram_8cpp_source.html#l00357">Remote_Diagram.cpp:357</a></div></div>
+<div class="ttc" id="aRemote__Diagram_8h_html"><div class="ttname"><a href="Remote__Diagram_8h.html">Remote_Diagram.h</a></div></div>
+<div class="ttc" id="aSD__Control_8cpp_html_a12c31a9176552dbb951123eb48910bfe"><div class="ttname"><a href="SD__Control_8cpp.html#a12c31a9176552dbb951123eb48910bfe">flag_Config_Message</a></div><div class="ttdeci">bool flag_Config_Message</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8cpp_source.html#l00015">SD_Control.cpp:15</a></div></div>
+<div class="ttc" id="aSD__Control_8h_html"><div class="ttname"><a href="SD__Control_8h.html">SD_Control.h</a></div></div>
+<div class="ttc" id="aSD__Control_8h_html_a7e2d8ef8f0724f23ce84b1e7d0c171d9"><div class="ttname"><a href="SD__Control_8h.html#a7e2d8ef8f0724f23ce84b1e7d0c171d9">SD_CS</a></div><div class="ttdeci">#define SD_CS</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8h_source.html#l00006">SD_Control.h:6</a></div></div>
+<div class="ttc" id="aScreensaverState_8cpp_html_a81fc9d089912642873dd9e9ddb324a90"><div class="ttname"><a href="ScreensaverState_8cpp.html#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a></div><div class="ttdeci">void RegisterActivity()</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00009">ScreensaverState.cpp:9</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html"><div class="ttname"><a href="ScreensaverState_8h.html">ScreensaverState.h</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a></div><div class="ttdeci">PrevScreenId</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00007">ScreensaverState.h:7</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a></div><div class="ttdeci">@ SCR_6</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00014">ScreensaverState.h:14</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a></div><div class="ttdeci">@ SCR_1</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00009">ScreensaverState.h:9</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a></div><div class="ttdeci">@ SCR_5</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00013">ScreensaverState.h:13</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a></div><div class="ttdeci">@ SCR_2</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00010">ScreensaverState.h:10</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a></div><div class="ttdeci">@ SCR_7</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00015">ScreensaverState.h:15</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a></div><div class="ttdeci">@ SCR_8</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00016">ScreensaverState.h:16</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a></div><div class="ttdeci">@ SCR_9</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00017">ScreensaverState.h:17</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a></div><div class="ttdeci">@ SCR_3</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00011">ScreensaverState.h:11</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a></div><div class="ttdeci">@ SCR_4</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00012">ScreensaverState.h:12</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a></div><div class="ttdeci">@ SCR_NONE</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00008">ScreensaverState.h:8</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html"><div class="ttname"><a href="TFT__eSPI_8h.html">TFT_eSPI.h</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a54c6607f6fd422d8f7b10f6543a72dc9"><div class="ttname"><a href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a></div><div class="ttdeci">#define TFT_BLACK</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00305">TFT_eSPI.h:305</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a61c3af07250ddcbc8f021c3d4a8e7f5a"><div class="ttname"><a href="TFT__eSPI_8h.html#a61c3af07250ddcbc8f021c3d4a8e7f5a">TFT_ORANGE</a></div><div class="ttdeci">#define TFT_ORANGE</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00321">TFT_eSPI.h:321</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a87698ed955e7f55acb2ee0ef78505efb"><div class="ttname"><a href="TFT__eSPI_8h.html#a87698ed955e7f55acb2ee0ef78505efb">TFT_GREEN</a></div><div class="ttdeci">#define TFT_GREEN</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00315">TFT_eSPI.h:315</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_aa5be28988e93afff36b1eaa8e71d8ba0"><div class="ttname"><a href="TFT__eSPI_8h.html#aa5be28988e93afff36b1eaa8e71d8ba0">TFT_RED</a></div><div class="ttdeci">#define TFT_RED</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00317">TFT_eSPI.h:317</a></div></div>
+<div class="ttc" id="aTFT__eSPI__ESP32_8h_html_a5f4d46ae101b77df78010c506601c87c"><div class="ttname"><a href="TFT__eSPI__ESP32_8h.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a></div><div class="ttdeci">#define TFT_CS</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__ESP32_8h_source.html#l00203">TFT_eSPI_ESP32.h:203</a></div></div>
+<div class="ttc" id="aTacho_8cpp_html_a22897bcf71f179e7ceb3831e23593c7a"><div class="ttname"><a href="Tacho_8cpp.html#a22897bcf71f179e7ceb3831e23593c7a">Tacho_update</a></div><div class="ttdeci">void Tacho_update()</div><div class="ttdoc">Lee los tacómetros, convierte a RPM y actualiza los labels de LVGL.</div><div class="ttdef"><b>Definition</b> <a href="Tacho_8cpp_source.html#l00050">Tacho.cpp:50</a></div></div>
+<div class="ttc" id="aTacho_8cpp_html_a8101cf15774d371664daadb59d199eb4"><div class="ttname"><a href="Tacho_8cpp.html#a8101cf15774d371664daadb59d199eb4">Tacho_begin</a></div><div class="ttdeci">void Tacho_begin(const TachoConfig &amp;config)</div><div class="ttdoc">Inicializa el módulo del tacómetro Configura ADC y almacena parámetros.</div><div class="ttdef"><b>Definition</b> <a href="Tacho_8cpp_source.html#l00039">Tacho.cpp:39</a></div></div>
+<div class="ttc" id="aTacho_8h_html"><div class="ttname"><a href="Tacho_8h.html">Tacho.h</a></div></div>
+<div class="ttc" id="aclassTFT__eSPI_html"><div class="ttname"><a href="classTFT__eSPI.html">TFT_eSPI</a></div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00427">TFT_eSPI.h:427</a></div></div>
+<div class="ttc" id="alv__color_8c_html_a02d11c7e2f70e8b777901d9e403c6b34"><div class="ttname"><a href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a></div><div class="ttdeci">lv_color_t lv_palette_main(lv_palette_t p)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00274">lv_color.c:274</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a></div><div class="ttdeci">@ LV_OPA_COVER</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00054">lv_color.h:54</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca799cf9fdb9eacdbeb56b0562ace15d3b"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca799cf9fdb9eacdbeb56b0562ace15d3b">LV_PALETTE_GREEN</a></div><div class="ttdeci">@ LV_PALETTE_GREEN</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00268">lv_color.h:268</a></div></div>
+<div class="ttc" id="alv__disp_8h_html_a0f753e364206eb26e1ad7c10d737b06ea3e415bd11c085aff5bc42db7f945695d"><div class="ttname"><a href="lv__disp_8h.html#a0f753e364206eb26e1ad7c10d737b06ea3e415bd11c085aff5bc42db7f945695d">LV_SCR_LOAD_ANIM_FADE_ON</a></div><div class="ttdeci">@ LV_SCR_LOAD_ANIM_FADE_ON</div><div class="ttdef"><b>Definition</b> <a href="lv__disp_8h_source.html#l00039">lv_disp.h:39</a></div></div>
+<div class="ttc" id="alv__group_8c_html_a18dcc5be6193ff5ca2281edae8fcf3af"><div class="ttname"><a href="lv__group_8c.html#a18dcc5be6193ff5ca2281edae8fcf3af">lv_group_set_wrap</a></div><div class="ttdeci">void lv_group_set_wrap(lv_group_t *group, bool en)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00334">lv_group.c:334</a></div></div>
+<div class="ttc" id="alv__group_8c_html_afd24771585b9b5cdbdc2eb7f0b9cb520"><div class="ttname"><a href="lv__group_8c.html#afd24771585b9b5cdbdc2eb7f0b9cb520">lv_group_create</a></div><div class="ttdeci">lv_group_t * lv_group_create(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00050">lv_group.c:50</a></div></div>
+<div class="ttc" id="alv__group_8h_html_a0fa2dbb9ed984eb2abdfc8c0b1990d00"><div class="ttname"><a href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a></div><div class="ttdeci">struct _lv_group_t lv_group_t</div></div>
+<div class="ttc" id="alv__obj_8c_html_a87fa70194789d48ea3dba01d1c28c984"><div class="ttname"><a href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a></div><div class="ttdeci">void lv_obj_add_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00229">lv_obj.c:229</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a></div><div class="ttdeci">@ LV_OBJ_FLAG_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00090">lv_obj.h:90</a></div></div>
+<div class="ttc" id="alv__style_8c_html_a327db2c3050bd2d1a1693aa6981205dd"><div class="ttname"><a href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a></div><div class="ttdeci">void lv_style_init(lv_style_t *style)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00151">lv_style.c:151</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a0c6433d1feec4a96d2d8757ef00696be"><div class="ttname"><a href="lv__style__gen_8c.html#a0c6433d1feec4a96d2d8757ef00696be">lv_style_set_outline_opa</a></div><div class="ttdeci">void lv_style_set_outline_opa(lv_style_t *style, lv_opa_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00347">lv_style_gen.c:347</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_aab7e1ec93e002be9fdd7a11f933f6b13"><div class="ttname"><a href="lv__style__gen_8c.html#aab7e1ec93e002be9fdd7a11f933f6b13">lv_style_set_outline_width</a></div><div class="ttdeci">void lv_style_set_outline_width(lv_style_t *style, lv_coord_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00331">lv_style_gen.c:331</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_acd54e76a506cbb283cc8f194a079998a"><div class="ttname"><a href="lv__style__gen_8c.html#acd54e76a506cbb283cc8f194a079998a">lv_style_set_outline_color</a></div><div class="ttdeci">void lv_style_set_outline_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00339">lv_style_gen.c:339</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a1c2d2e1cd167f90b809c3450fd6f3434"><div class="ttname"><a href="main_8cpp.html#a1c2d2e1cd167f90b809c3450fd6f3434">TFT_HEIGHT</a></div><div class="ttdeci">#define TFT_HEIGHT</div><div class="ttdef"><b>Definition</b> <a href="#l00039">main.cpp:39</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a1f5f87600b396f1b1cb69d6af718090c"><div class="ttname"><a href="main_8cpp.html#a1f5f87600b396f1b1cb69d6af718090c">COUNTS_PER_REV_HORIZONTAL</a></div><div class="ttdeci">const float COUNTS_PER_REV_HORIZONTAL</div><div class="ttdef"><b>Definition</b> <a href="#l00055">main.cpp:55</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a2354ff44dde52cd2a6d58daaea4e11f5"><div class="ttname"><a href="main_8cpp.html#a2354ff44dde52cd2a6d58daaea4e11f5">TACH_VOLTS_PER_1000RPM</a></div><div class="ttdeci">const float TACH_VOLTS_PER_1000RPM</div><div class="ttdef"><b>Definition</b> <a href="#l00051">main.cpp:51</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a3f5df5c3fa3f68b6b3547046d640c379"><div class="ttname"><a href="main_8cpp.html#a3f5df5c3fa3f68b6b3547046d640c379">Registro_RDC</a></div><div class="ttdeci">int Registro_RDC</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00024">ui_events.cpp:24</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition</b> <a href="#l00110">main.cpp:110</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a5343a170fabefebbfc2794c027341623"><div class="ttname"><a href="main_8cpp.html#a5343a170fabefebbfc2794c027341623">g_navGroup</a></div><div class="ttdeci">lv_group_t * g_navGroup</div><div class="ttdef"><b>Definition</b> <a href="#l00101">main.cpp:101</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a5809aeb9fb03897af2aac330b68628c2"><div class="ttname"><a href="main_8cpp.html#a5809aeb9fb03897af2aac330b68628c2">g_displayCfg</a></div><div class="ttdeci">DisplayTouchConfig g_displayCfg</div><div class="ttdef"><b>Definition</b> <a href="#l00080">main.cpp:80</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a585923f25d4d5e5a8a032b92cb8124ed"><div class="ttname"><a href="main_8cpp.html#a585923f25d4d5e5a8a032b92cb8124ed">G36_PIN</a></div><div class="ttdeci">#define G36_PIN</div><div class="ttdef"><b>Definition</b> <a href="#l00035">main.cpp:35</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a5a1c4be46828afb5d84f0707b7c68594"><div class="ttname"><a href="main_8cpp.html#a5a1c4be46828afb5d84f0707b7c68594">G1_DAC_PIN</a></div><div class="ttdeci">#define G1_DAC_PIN</div><div class="ttdef"><b>Definition</b> <a href="#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a6bda3791cfbe4d7a74e32ff0d4be95be"><div class="ttname"><a href="main_8cpp.html#a6bda3791cfbe4d7a74e32ff0d4be95be">g_tachoCfg</a></div><div class="ttdeci">TachoConfig g_tachoCfg</div><div class="ttdef"><b>Definition</b> <a href="#l00070">main.cpp:70</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a6e4fdedd651ef38128782f206a2e2fff"><div class="ttname"><a href="main_8cpp.html#a6e4fdedd651ef38128782f206a2e2fff">COUNTS_PER_REV_VERTICAL</a></div><div class="ttdeci">const float COUNTS_PER_REV_VERTICAL</div><div class="ttdef"><b>Definition</b> <a href="#l00054">main.cpp:54</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a743e77ad1200bda20b7b39916f1faee2"><div class="ttname"><a href="main_8cpp.html#a743e77ad1200bda20b7b39916f1faee2">G39_PIN</a></div><div class="ttdeci">#define G39_PIN</div><div class="ttdef"><b>Definition</b> <a href="#l00034">main.cpp:34</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a83af0cb652728913ff58da7133c692ea"><div class="ttname"><a href="main_8cpp.html#a83af0cb652728913ff58da7133c692ea">TFT_WIDTH</a></div><div class="ttdeci">#define TFT_WIDTH</div><div class="ttdef"><b>Definition</b> <a href="#l00038">main.cpp:38</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a910cb0fde358b7c6948110ad4826e9fe"><div class="ttname"><a href="main_8cpp.html#a910cb0fde358b7c6948110ad4826e9fe">G2_DAC_PIN</a></div><div class="ttdeci">#define G2_DAC_PIN</div><div class="ttdef"><b>Definition</b> <a href="#l00031">main.cpp:31</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a962d784715044703b7c4a193f15002c2"><div class="ttname"><a href="main_8cpp.html#a962d784715044703b7c4a193f15002c2">T_IRQ_PIN</a></div><div class="ttdeci">#define T_IRQ_PIN</div><div class="ttdef"><b>Definition</b> <a href="#l00043">main.cpp:43</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aa5d66894685b1d6493101899bdd6c8db"><div class="ttname"><a href="main_8cpp.html#aa5d66894685b1d6493101899bdd6c8db">style_focus</a></div><div class="ttdeci">lv_style_t style_focus</div><div class="ttdef"><b>Definition</b> <a href="#l00104">main.cpp:104</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ab1a9ad141585244770b08b1a56a17c22"><div class="ttname"><a href="main_8cpp.html#ab1a9ad141585244770b08b1a56a17c22">g_lastActivityMs</a></div><div class="ttdeci">uint32_t g_lastActivityMs</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00006">ScreensaverState.cpp:6</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac373b4ec88e744a90b2dd55ce9fc4dd8"><div class="ttname"><a href="main_8cpp.html#ac373b4ec88e744a90b2dd55ce9fc4dd8">Registro_MP</a></div><div class="ttdeci">int Registro_MP</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00023">ui_events.cpp:23</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac5d2dc3534f30f704fd7529ad0f89ff1"><div class="ttname"><a href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a></div><div class="ttdeci">TFT_eSPI tft</div><div class="ttdef"><b>Definition</b> <a href="#l00061">main.cpp:61</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac9aaae25fe7310fc322e04ae0cabef27"><div class="ttname"><a href="main_8cpp.html#ac9aaae25fe7310fc322e04ae0cabef27">IR_RECV_PIN</a></div><div class="ttdeci">#define IR_RECV_PIN</div><div class="ttdef"><b>Definition</b> <a href="#l00040">main.cpp:40</a></div></div>
+<div class="ttc" id="amain_8cpp_html_acde88a2b84e95dde2ffc4d7e3d858205"><div class="ttname"><a href="main_8cpp.html#acde88a2b84e95dde2ffc4d7e3d858205">g_encoderConfig</a></div><div class="ttdeci">EncoderConfig g_encoderConfig</div><div class="ttdef"><b>Definition</b> <a href="#l00064">main.cpp:64</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad00e7da8b0a922bb82451c2a9281d0dd"><div class="ttname"><a href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a></div><div class="ttdeci">PrevScreenId g_prevScreenId</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00004">ScreensaverState.cpp:4</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad0c903269d3c42841b43a72098ba5a36"><div class="ttname"><a href="main_8cpp.html#ad0c903269d3c42841b43a72098ba5a36">g_touchCalData</a></div><div class="ttdeci">uint16_t g_touchCalData[5]</div><div class="ttdef"><b>Definition</b> <a href="#l00077">main.cpp:77</a></div></div>
+<div class="ttc" id="amain_8cpp_html_addce1751b09ea6eee45c994725cf5125"><div class="ttname"><a href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a></div><div class="ttdeci">bool g_screensaverActive</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00005">ScreensaverState.cpp:5</a></div></div>
+<div class="ttc" id="amain_8cpp_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition</b> <a href="#l00261">main.cpp:261</a></div></div>
+<div class="ttc" id="astructDisplayTouchConfig_html"><div class="ttname"><a href="structDisplayTouchConfig.html">DisplayTouchConfig</a></div><div class="ttdoc">Configuración del display + táctil.</div><div class="ttdef"><b>Definition</b> <a href="DisplayTouch_8h_source.html#l00016">DisplayTouch.h:16</a></div></div>
+<div class="ttc" id="astructEncoderConfig_html"><div class="ttname"><a href="structEncoderConfig.html">EncoderConfig</a></div><div class="ttdef"><b>Definition</b> <a href="Encoders_8h_source.html#l00010">Encoders.h:10</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html"><div class="ttname"><a href="structIRControlEvent.html">IRControlEvent</a></div><div class="ttdoc">Resultado de procesar un comando IR.</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00036">IRControl.h:36</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a0917787b8d446b38cf742db5a88a5466"><div class="ttname"><a href="structIRControlEvent.html#a0917787b8d446b38cf742db5a88a5466">IRControlEvent::screen</a></div><div class="ttdeci">IRScreenTarget screen</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00040">IRControl.h:40</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a12eef66eb319c6bee97c7845836c58c3"><div class="ttname"><a href="structIRControlEvent.html#a12eef66eb319c6bee97c7845836c58c3">IRControlEvent::hasEvent</a></div><div class="ttdeci">bool hasEvent</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00037">IRControl.h:37</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a20b2fd0929ce377e7e11b5371a80d49c"><div class="ttname"><a href="structIRControlEvent.html#a20b2fd0929ce377e7e11b5371a80d49c">IRControlEvent::digit</a></div><div class="ttdeci">int8_t digit</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00043">IRControl.h:43</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a38587dc7e51186d0f70f18bf6b7bc7cb"><div class="ttname"><a href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">IRControlEvent::deltaSlider</a></div><div class="ttdeci">int8_t deltaSlider</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00039">IRControl.h:39</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a853889439cea6af81cbe5fbd21cd4175"><div class="ttname"><a href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">IRControlEvent::nav</a></div><div class="ttdeci">IRNavKey nav</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00041">IRControl.h:41</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_ad3bdeb60b5a06d1012181b5d0cf55198"><div class="ttname"><a href="structIRControlEvent.html#ad3bdeb60b5a06d1012181b5d0cf55198">IRControlEvent::minus</a></div><div class="ttdeci">bool minus</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00044">IRControl.h:44</a></div></div>
+<div class="ttc" id="astructTachoConfig_html"><div class="ttname"><a href="structTachoConfig.html">TachoConfig</a></div><div class="ttdoc">Configuración de tacómetro.</div><div class="ttdef"><b>Definition</b> <a href="Tacho_8h_source.html#l00019">Tacho.h:19</a></div></div>
+<div class="ttc" id="astructlv__style__t_html"><div class="ttname"><a href="structlv__style__t.html">lv_style_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00319">lv_style.h:319</a></div></div>
+<div class="ttc" id="aui_8c_html_a073e0d4e0d142e9812701038b590a3ff"><div class="ttname"><a href="ui_8c.html#a073e0d4e0d142e9812701038b590a3ff">ui_EsquemaPIDCompleto</a></div><div class="ttdeci">lv_obj_t * ui_EsquemaPIDCompleto</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00147">ui.c:147</a></div></div>
+<div class="ttc" id="aui_8c_html_a17051ba722051ccaaa377ab46b2a4f3a"><div class="ttname"><a href="ui_8c.html#a17051ba722051ccaaa377ab46b2a4f3a">ui_EsquemaTRMSCompleto</a></div><div class="ttdeci">lv_obj_t * ui_EsquemaTRMSCompleto</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00145">ui.c:145</a></div></div>
+<div class="ttc" id="aui_8c_html_a2137edab587cf7bfaf28c1946aa560b0"><div class="ttname"><a href="ui_8c.html#a2137edab587cf7bfaf28c1946aa560b0">ui_Screen9</a></div><div class="ttdeci">lv_obj_t * ui_Screen9</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00269">ui.c:269</a></div></div>
+<div class="ttc" id="aui_8c_html_a25f975b6722a1886f24d3ce34fe76c29"><div class="ttname"><a href="ui_8c.html#a25f975b6722a1886f24d3ce34fe76c29">ui_Screen10</a></div><div class="ttdeci">lv_obj_t * ui_Screen10</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00260">ui.c:260</a></div></div>
+<div class="ttc" id="aui_8c_html_a26801fa4a7f3990efa97117c612e0451"><div class="ttname"><a href="ui_8c.html#a26801fa4a7f3990efa97117c612e0451">ui_Screen3</a></div><div class="ttdeci">lv_obj_t * ui_Screen3</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00040">ui.c:40</a></div></div>
+<div class="ttc" id="aui_8c_html_a42bb09ef137aaeb1733173f3a88ccc85"><div class="ttname"><a href="ui_8c.html#a42bb09ef137aaeb1733173f3a88ccc85">ui_init</a></div><div class="ttdeci">void ui_init(void)</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00906">ui.c:906</a></div></div>
+<div class="ttc" id="aui_8c_html_a522866bf3f4637bd248c4b5fedced5a9"><div class="ttname"><a href="ui_8c.html#a522866bf3f4637bd248c4b5fedced5a9">ui_Screen8</a></div><div class="ttdeci">lv_obj_t * ui_Screen8</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00236">ui.c:236</a></div></div>
+<div class="ttc" id="aui_8c_html_a59d1ae7d461cb9861cfaf23770f80bb1"><div class="ttname"><a href="ui_8c.html#a59d1ae7d461cb9861cfaf23770f80bb1">ui_Screen1_screen_init</a></div><div class="ttdeci">void ui_Screen1_screen_init(void)</div><div class="ttdef"><b>Definition</b> <a href="ui__Screen1_8c_source.html#l00008">ui_Screen1.c:8</a></div></div>
+<div class="ttc" id="aui_8c_html_a6be2dff5a9dba6c3b430368ef00a2884"><div class="ttname"><a href="ui_8c.html#a6be2dff5a9dba6c3b430368ef00a2884">ui_Screen6</a></div><div class="ttdeci">lv_obj_t * ui_Screen6</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00153">ui.c:153</a></div></div>
+<div class="ttc" id="aui_8c_html_a6d94e807899701c18c3ba11dc5deab81"><div class="ttname"><a href="ui_8c.html#a6d94e807899701c18c3ba11dc5deab81">ui_Screen5</a></div><div class="ttdeci">lv_obj_t * ui_Screen5</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00139">ui.c:139</a></div></div>
+<div class="ttc" id="aui_8c_html_a70d25529f758b3f22a9775daff417692"><div class="ttname"><a href="ui_8c.html#a70d25529f758b3f22a9775daff417692">ui_Screen10_screen_init</a></div><div class="ttdeci">void ui_Screen10_screen_init(void)</div><div class="ttdef"><b>Definition</b> <a href="ui__Screen10_8c_source.html#l00008">ui_Screen10.c:8</a></div></div>
+<div class="ttc" id="aui_8c_html_a81fc742d0e5a16084fbb380be58ce858"><div class="ttname"><a href="ui_8c.html#a81fc742d0e5a16084fbb380be58ce858">ui_Screen7</a></div><div class="ttdeci">lv_obj_t * ui_Screen7</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00215">ui.c:215</a></div></div>
+<div class="ttc" id="aui_8c_html_a8b1f014df0ac414e7d38b57f2410a397"><div class="ttname"><a href="ui_8c.html#a8b1f014df0ac414e7d38b57f2410a397">ui_Image12</a></div><div class="ttdeci">lv_obj_t * ui_Image12</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00168">ui.c:168</a></div></div>
+<div class="ttc" id="aui_8c_html_a9e6c5f48cc5d530d8c8f0a27abae4ae7"><div class="ttname"><a href="ui_8c.html#a9e6c5f48cc5d530d8c8f0a27abae4ae7">ui_EsquemaGeneral</a></div><div class="ttdeci">lv_obj_t * ui_EsquemaGeneral</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00146">ui.c:146</a></div></div>
+<div class="ttc" id="aui_8c_html_aaa3441593ca65b333bb3d04fde68c34c"><div class="ttname"><a href="ui_8c.html#aaa3441593ca65b333bb3d04fde68c34c">ui_Screen1</a></div><div class="ttdeci">lv_obj_t * ui_Screen1</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00016">ui.c:16</a></div></div>
+<div class="ttc" id="aui_8c_html_aae7b985a983d52a0d5f4bc9d215fcbd6"><div class="ttname"><a href="ui_8c.html#aae7b985a983d52a0d5f4bc9d215fcbd6">ui_Screen2</a></div><div class="ttdeci">lv_obj_t * ui_Screen2</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00175">ui.c:175</a></div></div>
+<div class="ttc" id="aui_8c_html_ac92791aba0a148d898fe6d90a7c7ac77"><div class="ttname"><a href="ui_8c.html#ac92791aba0a148d898fe6d90a7c7ac77">ui_Screen4</a></div><div class="ttdeci">lv_obj_t * ui_Screen4</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00065">ui.c:65</a></div></div>
+<div class="ttc" id="aui_8h_html"><div class="ttname"><a href="ui_8h.html">ui.h</a></div></div>
+<div class="ttc" id="aui__events_8cpp_html_a92f1280e4e831d695fcc0b32023424e6"><div class="ttname"><a href="ui__events_8cpp.html#a92f1280e4e831d695fcc0b32023424e6">BuzzerWrite</a></div><div class="ttdeci">void BuzzerWrite(bool level)</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00031">ui_events.cpp:31</a></div></div>
+<div class="ttc" id="aui__events_8cpp_html_ac87f3f524d1b45bdbdbf68976e9773ee"><div class="ttname"><a href="ui__events_8cpp.html#ac87f3f524d1b45bdbdbf68976e9773ee">Show_Config_Message_Selected</a></div><div class="ttdeci">void Show_Config_Message_Selected()</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00504">ui_events.cpp:504</a></div></div>
+<div class="ttc" id="aui__events_8cpp_html_ad6c2d7a6656eda670314d17478d65b08"><div class="ttname"><a href="ui__events_8cpp.html#ad6c2d7a6656eda670314d17478d65b08">Reset_Encoders_Registros</a></div><div class="ttdeci">void Reset_Encoders_Registros()</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00208">ui_events.cpp:208</a></div></div>
+<div class="ttc" id="aui__events_8h_html_a92f04683a25906bc612649e986a8072a"><div class="ttname"><a href="ui__events_8h.html#a92f04683a25906bc612649e986a8072a">Buzzer</a></div><div class="ttdeci">#define Buzzer</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8h_source.html#l00015">ui_events.h:15</a></div></div>
+<div class="ttc" id="aui__events_8h_html_aeb7a7ba1ab7e0406f1b5ab36d579f585"><div class="ttname"><a href="ui__events_8h.html#aeb7a7ba1ab7e0406f1b5ab36d579f585">LED</a></div><div class="ttdeci">#define LED</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8h_source.html#l00014">ui_events.h:14</a></div></div>
+<div class="ttc" id="aui__helpers_8c_html_a44a894b04df3456a5dbdc7ab732ff6d9"><div class="ttname"><a href="ui__helpers_8c.html#a44a894b04df3456a5dbdc7ab732ff6d9">_ui_screen_change</a></div><div class="ttdeci">void _ui_screen_change(lv_obj_t **target, lv_scr_load_anim_t fademode, int spd, int delay, void(*target_init)(void))</div><div class="ttdef"><b>Definition</b> <a href="ui__helpers_8c_source.html#l00052">ui_helpers.c:52</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

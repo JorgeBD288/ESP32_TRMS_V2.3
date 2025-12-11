@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['r61581_5fdefines_2eh_0',['R61581_Defines.h',['../R61581__Defines_8h.html',1,'']]],
+  ['r61581_5finit_2eh_1',['R61581_Init.h',['../R61581__Init_8h.html',1,'']]],
+  ['r61581_5frotation_2eh_2',['R61581_Rotation.h',['../R61581__Rotation_8h.html',1,'']]],
+  ['read_5fid_5fbitbash_2eino_3',['Read_ID_bitbash.ino',['../Read__ID__bitbash_8ino.html',1,'']]],
+  ['read_5fuser_5fsetup_2eino_4',['Read_User_Setup.ino',['../Read__User__Setup_8ino.html',1,'']]],
+  ['receiveandsend_2eino_5',['ReceiveAndSend.ino',['../ReceiveAndSend_8ino.html',1,'']]],
+  ['receiveandsenddistancewidth_2eino_6',['ReceiveAndSendDistanceWidth.ino',['../ReceiveAndSendDistanceWidth_8ino.html',1,'']]],
+  ['receiveandsendhob2hood_2eino_7',['ReceiveAndSendHob2Hood.ino',['../ReceiveAndSendHob2Hood_8ino.html',1,'']]],
+  ['receivedemo_2eino_8',['ReceiveDemo.ino',['../ReceiveDemo_8ino.html',1,'']]],
+  ['receivedump_2eino_9',['ReceiveDump.ino',['../ReceiveDump_8ino.html',1,'']]],
+  ['receiveoneandsendmultiple_2eino_10',['ReceiveOneAndSendMultiple.ino',['../ReceiveOneAndSendMultiple_8ino.html',1,'']]],
+  ['receivertiminganalysis_2eino_11',['ReceiverTimingAnalysis.ino',['../ReceiverTimingAnalysis_8ino.html',1,'']]],
+  ['remote_5fdiagram_2ecpp_12',['Remote_Diagram.cpp',['../Remote__Diagram_8cpp.html',1,'']]],
+  ['remote_5fdiagram_2eh_13',['Remote_Diagram.h',['../Remote__Diagram_8h.html',1,'']]],
+  ['rle_5ffont_5ftest_2eino_14',['RLE_Font_test.ino',['../160_01x_01128_2RLE__Font__test_2RLE__Font__test_8ino.html',1,'(Espacio de nombres global)'],['../320_01x_01240_2RLE__Font__test_2RLE__Font__test_8ino.html',1,'(Espacio de nombres global)']]],
+  ['rm68120_5fdefines_2eh_15',['RM68120_Defines.h',['../RM68120__Defines_8h.html',1,'']]],
+  ['rm68120_5finit_2eh_16',['RM68120_Init.h',['../RM68120__Init_8h.html',1,'']]],
+  ['rm68120_5frotation_2eh_17',['RM68120_Rotation.h',['../RM68120__Rotation_8h.html',1,'']]],
+  ['rm68140_5fdefines_2eh_18',['RM68140_Defines.h',['../RM68140__Defines_8h.html',1,'']]],
+  ['rm68140_5finit_2eh_19',['RM68140_Init.h',['../RM68140__Init_8h.html',1,'']]],
+  ['rm68140_5frotation_2eh_20',['RM68140_Rotation.h',['../RM68140__Rotation_8h.html',1,'']]],
+  ['roboto_5fthin_5f24_2eh_21',['Roboto_Thin_24.h',['../Roboto__Thin__24_8h.html',1,'']]],
+  ['rotated_5fsprite_5f1_2eino_22',['Rotated_Sprite_1.ino',['../Rotated__Sprite__1_8ino.html',1,'']]],
+  ['rotated_5fsprite_5f2_2eino_23',['Rotated_Sprite_2.ino',['../Rotated__Sprite__2_8ino.html',1,'']]],
+  ['rotated_5fsprite_5f3_2eino_24',['Rotated_Sprite_3.ino',['../Rotated__Sprite__3_8ino.html',1,'']]]
+];

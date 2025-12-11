@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/IRremote/src/ir_MagiQuest.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ir__MagiQuest_8hpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo ir_MagiQuest.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="ir__MagiQuest_8hpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a5ad7278bb378f828e4ef743ce1611734" id="r_a5ad7278bb378f828e4ef743ce1611734"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ad7278bb378f828e4ef743ce1611734">MAGIQUEST_BITS</a>&#160;&#160;&#160;(<a class="el" href="#a0ddfa63d378d6989df09835c9f46110c">MAGIQUEST_CHECKSUM_BITS</a> + <a class="el" href="#a64aeb7e87d7a2f844ca6ec967e6bdf34">MAGIQUEST_MAGNITUDE_BITS</a> + <a class="el" href="#a6f9ee212ff850e280f9c241c5143cee5">MAGIQUEST_WAND_ID_BITS</a> + <a class="el" href="#abc1cd828f421b96ee1d83411585471e4">MAGIQUEST_START_BITS</a>)</td></tr>
+<tr class="memitem:a0ddfa63d378d6989df09835c9f46110c" id="r_a0ddfa63d378d6989df09835c9f46110c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ddfa63d378d6989df09835c9f46110c">MAGIQUEST_CHECKSUM_BITS</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:aac808076aabe5cefd0b648f1cd3df89d" id="r_aac808076aabe5cefd0b648f1cd3df89d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac808076aabe5cefd0b648f1cd3df89d">MAGIQUEST_DATA_BITS</a>&#160;&#160;&#160;(<a class="el" href="#a0ddfa63d378d6989df09835c9f46110c">MAGIQUEST_CHECKSUM_BITS</a> + <a class="el" href="#a64aeb7e87d7a2f844ca6ec967e6bdf34">MAGIQUEST_MAGNITUDE_BITS</a> + <a class="el" href="#a6f9ee212ff850e280f9c241c5143cee5">MAGIQUEST_WAND_ID_BITS</a>)</td></tr>
+<tr class="memitem:a64aeb7e87d7a2f844ca6ec967e6bdf34" id="r_a64aeb7e87d7a2f844ca6ec967e6bdf34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64aeb7e87d7a2f844ca6ec967e6bdf34">MAGIQUEST_MAGNITUDE_BITS</a>&#160;&#160;&#160;9</td></tr>
+<tr class="memitem:ab75301149b3c053390e08668e270574e" id="r_ab75301149b3c053390e08668e270574e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab75301149b3c053390e08668e270574e">MAGIQUEST_ONE_MARK</a>&#160;&#160;&#160;(2 * <a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>)</td></tr>
+<tr class="memitem:a1965f9aa88f57ed564f46654f8247103" id="r_a1965f9aa88f57ed564f46654f8247103"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1965f9aa88f57ed564f46654f8247103">MAGIQUEST_ONE_SPACE</a>&#160;&#160;&#160;(2 * <a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>)</td></tr>
+<tr class="memitem:a4816f5fc6dfc00a7f07213eff150652e" id="r_a4816f5fc6dfc00a7f07213eff150652e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4816f5fc6dfc00a7f07213eff150652e">MAGIQUEST_PERIOD</a>&#160;&#160;&#160;1150</td></tr>
+<tr class="memitem:abc1cd828f421b96ee1d83411585471e4" id="r_abc1cd828f421b96ee1d83411585471e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc1cd828f421b96ee1d83411585471e4">MAGIQUEST_START_BITS</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:ab55a5562099370a536d44962ad2db98a" id="r_ab55a5562099370a536d44962ad2db98a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>&#160;&#160;&#160;(<a class="el" href="#a4816f5fc6dfc00a7f07213eff150652e">MAGIQUEST_PERIOD</a> / 4)</td></tr>
+<tr class="memitem:a6f9ee212ff850e280f9c241c5143cee5" id="r_a6f9ee212ff850e280f9c241c5143cee5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9ee212ff850e280f9c241c5143cee5">MAGIQUEST_WAND_ID_BITS</a>&#160;&#160;&#160;31</td></tr>
+<tr class="memitem:ac1bc4e99d5e1b697df724d180357095d" id="r_ac1bc4e99d5e1b697df724d180357095d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1bc4e99d5e1b697df724d180357095d">MAGIQUEST_ZERO_MARK</a>&#160;&#160;&#160;<a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a></td></tr>
+<tr class="memitem:a95ff1854b629d4e2dce95224f470f031" id="r_a95ff1854b629d4e2dce95224f470f031"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95ff1854b629d4e2dce95224f470f031">MAGIQUEST_ZERO_SPACE</a>&#160;&#160;&#160;(3 * <a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a86271aac714b1b5b2b7512d3460fca91" id="r_a86271aac714b1b5b2b7512d3460fca91"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structPulseDistanceWidthProtocolConstants.html">PulseDistanceWidthProtocolConstants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86271aac714b1b5b2b7512d3460fca91">MagiQuestProtocolConstants</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a5ad7278bb378f828e4ef743ce1611734" name="a5ad7278bb378f828e4ef743ce1611734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad7278bb378f828e4ef743ce1611734">&#9670;&#160;</a></span>MAGIQUEST_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_BITS&#160;&#160;&#160;(<a class="el" href="#a0ddfa63d378d6989df09835c9f46110c">MAGIQUEST_CHECKSUM_BITS</a> + <a class="el" href="#a64aeb7e87d7a2f844ca6ec967e6bdf34">MAGIQUEST_MAGNITUDE_BITS</a> + <a class="el" href="#a6f9ee212ff850e280f9c241c5143cee5">MAGIQUEST_WAND_ID_BITS</a> + <a class="el" href="#abc1cd828f421b96ee1d83411585471e4">MAGIQUEST_START_BITS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00094">94</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ir__MagiQuest_8hpp_source.html#l00154">IRrecv::decodeMagiQuest()</a>.</p>
+
+</div>
+</div>
+<a id="a0ddfa63d378d6989df09835c9f46110c" name="a0ddfa63d378d6989df09835c9f46110c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddfa63d378d6989df09835c9f46110c">&#9670;&#160;</a></span>MAGIQUEST_CHECKSUM_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_CHECKSUM_BITS&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00086">86</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ir__MagiQuest_8hpp_source.html#l00154">IRrecv::decodeMagiQuest()</a> y <a class="el" href="ir__MagiQuest_8hpp_source.html#l00121">IRsend::sendMagiQuest()</a>.</p>
+
+</div>
+</div>
+<a id="aac808076aabe5cefd0b648f1cd3df89d" name="aac808076aabe5cefd0b648f1cd3df89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac808076aabe5cefd0b648f1cd3df89d">&#9670;&#160;</a></span>MAGIQUEST_DATA_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_DATA_BITS&#160;&#160;&#160;(<a class="el" href="#a0ddfa63d378d6989df09835c9f46110c">MAGIQUEST_CHECKSUM_BITS</a> + <a class="el" href="#a64aeb7e87d7a2f844ca6ec967e6bdf34">MAGIQUEST_MAGNITUDE_BITS</a> + <a class="el" href="#a6f9ee212ff850e280f9c241c5143cee5">MAGIQUEST_WAND_ID_BITS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00093">93</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a64aeb7e87d7a2f844ca6ec967e6bdf34" name="a64aeb7e87d7a2f844ca6ec967e6bdf34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64aeb7e87d7a2f844ca6ec967e6bdf34">&#9670;&#160;</a></span>MAGIQUEST_MAGNITUDE_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_MAGNITUDE_BITS&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00087">87</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ir__MagiQuest_8hpp_source.html#l00154">IRrecv::decodeMagiQuest()</a> y <a class="el" href="ir__MagiQuest_8hpp_source.html#l00121">IRsend::sendMagiQuest()</a>.</p>
+
+</div>
+</div>
+<a id="ab75301149b3c053390e08668e270574e" name="ab75301149b3c053390e08668e270574e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab75301149b3c053390e08668e270574e">&#9670;&#160;</a></span>MAGIQUEST_ONE_MARK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_ONE_MARK&#160;&#160;&#160;(2 * <a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00106">106</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1965f9aa88f57ed564f46654f8247103" name="a1965f9aa88f57ed564f46654f8247103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1965f9aa88f57ed564f46654f8247103">&#9670;&#160;</a></span>MAGIQUEST_ONE_SPACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_ONE_SPACE&#160;&#160;&#160;(2 * <a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00107">107</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4816f5fc6dfc00a7f07213eff150652e" name="a4816f5fc6dfc00a7f07213eff150652e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4816f5fc6dfc00a7f07213eff150652e">&#9670;&#160;</a></span>MAGIQUEST_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_PERIOD&#160;&#160;&#160;1150</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00091">91</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abc1cd828f421b96ee1d83411585471e4" name="abc1cd828f421b96ee1d83411585471e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1cd828f421b96ee1d83411585471e4">&#9670;&#160;</a></span>MAGIQUEST_START_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_START_BITS&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00089">89</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ir__MagiQuest_8hpp_source.html#l00154">IRrecv::decodeMagiQuest()</a>.</p>
+
+</div>
+</div>
+<a id="ab55a5562099370a536d44962ad2db98a" name="ab55a5562099370a536d44962ad2db98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55a5562099370a536d44962ad2db98a">&#9670;&#160;</a></span>MAGIQUEST_UNIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_UNIT&#160;&#160;&#160;(<a class="el" href="#a4816f5fc6dfc00a7f07213eff150652e">MAGIQUEST_PERIOD</a> / 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00104">104</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6f9ee212ff850e280f9c241c5143cee5" name="a6f9ee212ff850e280f9c241c5143cee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9ee212ff850e280f9c241c5143cee5">&#9670;&#160;</a></span>MAGIQUEST_WAND_ID_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_WAND_ID_BITS&#160;&#160;&#160;31</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00088">88</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ir__MagiQuest_8hpp_source.html#l00154">IRrecv::decodeMagiQuest()</a> y <a class="el" href="ir__MagiQuest_8hpp_source.html#l00121">IRsend::sendMagiQuest()</a>.</p>
+
+</div>
+</div>
+<a id="ac1bc4e99d5e1b697df724d180357095d" name="ac1bc4e99d5e1b697df724d180357095d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bc4e99d5e1b697df724d180357095d">&#9670;&#160;</a></span>MAGIQUEST_ZERO_MARK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_ZERO_MARK&#160;&#160;&#160;<a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00108">108</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a95ff1854b629d4e2dce95224f470f031" name="a95ff1854b629d4e2dce95224f470f031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ff1854b629d4e2dce95224f470f031">&#9670;&#160;</a></span>MAGIQUEST_ZERO_SPACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAGIQUEST_ZERO_SPACE&#160;&#160;&#160;(3 * <a class="el" href="#ab55a5562099370a536d44962ad2db98a">MAGIQUEST_UNIT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00109">109</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a86271aac714b1b5b2b7512d3460fca91" name="a86271aac714b1b5b2b7512d3460fca91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86271aac714b1b5b2b7512d3460fca91">&#9670;&#160;</a></span>MagiQuestProtocolConstants</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structPulseDistanceWidthProtocolConstants.html">PulseDistanceWidthProtocolConstants</a> MagiQuestProtocolConstants</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= { <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada3be750ce1687bc1a92fee05b0c511100">MAGIQUEST</a>, 38, <a class="code hl_define" href="#ac1bc4e99d5e1b697df724d180357095d">MAGIQUEST_ZERO_MARK</a>, <a class="code hl_define" href="#a95ff1854b629d4e2dce95224f470f031">MAGIQUEST_ZERO_SPACE</a>,</div>
+<div class="line"><a class="code hl_define" href="#ab75301149b3c053390e08668e270574e">MAGIQUEST_ONE_MARK</a>, <a class="code hl_define" href="#a1965f9aa88f57ed564f46654f8247103">MAGIQUEST_ONE_SPACE</a>, <a class="code hl_define" href="#ac1bc4e99d5e1b697df724d180357095d">MAGIQUEST_ZERO_MARK</a>, <a class="code hl_define" href="#a95ff1854b629d4e2dce95224f470f031">MAGIQUEST_ZERO_SPACE</a>, <a class="code hl_define" href="IRProtocol_8h.html#a2db53e8319cd3f5de758337fa08552d0">PROTOCOL_IS_MSB_FIRST</a> | <a class="code hl_define" href="IRProtocol_8h.html#acb7cd491522896832a94dad6b13cc03e">SUPPRESS_STOP_BIT</a>, 110,</div>
+<div class="line">        NULL }</div>
+<div class="ttc" id="aIRProtocol_8h_html_a2db53e8319cd3f5de758337fa08552d0"><div class="ttname"><a href="IRProtocol_8h.html#a2db53e8319cd3f5de758337fa08552d0">PROTOCOL_IS_MSB_FIRST</a></div><div class="ttdeci">#define PROTOCOL_IS_MSB_FIRST</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00150">IRProtocol.h:150</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_acb7cd491522896832a94dad6b13cc03e"><div class="ttname"><a href="IRProtocol_8h.html#acb7cd491522896832a94dad6b13cc03e">SUPPRESS_STOP_BIT</a></div><div class="ttdeci">#define SUPPRESS_STOP_BIT</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00149">IRProtocol.h:149</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fada3be750ce1687bc1a92fee05b0c511100"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada3be750ce1687bc1a92fee05b0c511100">MAGIQUEST</a></div><div class="ttdeci">@ MAGIQUEST</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00070">IRProtocol.h:70</a></div></div>
+<div class="ttc" id="air__MagiQuest_8hpp_html_a1965f9aa88f57ed564f46654f8247103"><div class="ttname"><a href="#a1965f9aa88f57ed564f46654f8247103">MAGIQUEST_ONE_SPACE</a></div><div class="ttdeci">#define MAGIQUEST_ONE_SPACE</div><div class="ttdef"><b>Definition</b> <a href="ir__MagiQuest_8hpp_source.html#l00107">ir_MagiQuest.hpp:107</a></div></div>
+<div class="ttc" id="air__MagiQuest_8hpp_html_a95ff1854b629d4e2dce95224f470f031"><div class="ttname"><a href="#a95ff1854b629d4e2dce95224f470f031">MAGIQUEST_ZERO_SPACE</a></div><div class="ttdeci">#define MAGIQUEST_ZERO_SPACE</div><div class="ttdef"><b>Definition</b> <a href="ir__MagiQuest_8hpp_source.html#l00109">ir_MagiQuest.hpp:109</a></div></div>
+<div class="ttc" id="air__MagiQuest_8hpp_html_ab75301149b3c053390e08668e270574e"><div class="ttname"><a href="#ab75301149b3c053390e08668e270574e">MAGIQUEST_ONE_MARK</a></div><div class="ttdeci">#define MAGIQUEST_ONE_MARK</div><div class="ttdef"><b>Definition</b> <a href="ir__MagiQuest_8hpp_source.html#l00106">ir_MagiQuest.hpp:106</a></div></div>
+<div class="ttc" id="air__MagiQuest_8hpp_html_ac1bc4e99d5e1b697df724d180357095d"><div class="ttname"><a href="#ac1bc4e99d5e1b697df724d180357095d">MAGIQUEST_ZERO_MARK</a></div><div class="ttdeci">#define MAGIQUEST_ZERO_MARK</div><div class="ttdef"><b>Definition</b> <a href="ir__MagiQuest_8hpp_source.html#l00108">ir_MagiQuest.hpp:108</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="ir__MagiQuest_8hpp_source.html#l00112">112</a> del archivo <a class="el" href="ir__MagiQuest_8hpp_source.html">ir_MagiQuest.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>                                                                        { <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada3be750ce1687bc1a92fee05b0c511100">MAGIQUEST</a>, 38, <a class="code hl_define" href="#ac1bc4e99d5e1b697df724d180357095d">MAGIQUEST_ZERO_MARK</a>, <a class="code hl_define" href="#a95ff1854b629d4e2dce95224f470f031">MAGIQUEST_ZERO_SPACE</a>,</div>
+<div class="line"><span class="lineno">  113</span><a class="code hl_define" href="#ab75301149b3c053390e08668e270574e">MAGIQUEST_ONE_MARK</a>, <a class="code hl_define" href="#a1965f9aa88f57ed564f46654f8247103">MAGIQUEST_ONE_SPACE</a>, <a class="code hl_define" href="#ac1bc4e99d5e1b697df724d180357095d">MAGIQUEST_ZERO_MARK</a>, <a class="code hl_define" href="#a95ff1854b629d4e2dce95224f470f031">MAGIQUEST_ZERO_SPACE</a>, <a class="code hl_define" href="IRProtocol_8h.html#a2db53e8319cd3f5de758337fa08552d0">PROTOCOL_IS_MSB_FIRST</a> | <a class="code hl_define" href="IRProtocol_8h.html#acb7cd491522896832a94dad6b13cc03e">SUPPRESS_STOP_BIT</a>, 110,</div>
+<div class="line"><span class="lineno">  114</span>        NULL };</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="ir__MagiQuest_8hpp_source.html#l00154">IRrecv::decodeMagiQuest()</a> y <a class="el" href="ir__MagiQuest_8hpp_source.html#l00121">IRsend::sendMagiQuest()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_88c0bcaa7fd8df08d0f5885e4eb57ee3.html">src</a></li><li class="navelem"><a href="ir__MagiQuest_8hpp.html">ir_MagiQuest.hpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

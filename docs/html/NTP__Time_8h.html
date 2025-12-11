@@ -1,0 +1,1306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/TFT_eSPI/examples/Smooth Graphics/Anti-aliased_Clock/NTP_Time.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('NTP__Time_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo NTP_Time.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;TimeLib.h&gt;</code><br />
+<code>#include &lt;Timezone.h&gt;</code><br />
+<code>#include &lt;WiFi.h&gt;</code><br />
+<code>#include &lt;WiFiUdp.h&gt;</code><br />
+</div>
+<p><a href="NTP__Time_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a77a4765d1e38b93e353315ca174c9959" id="r_a77a4765d1e38b93e353315ca174c9959"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a4765d1e38b93e353315ca174c9959">TIMEZONE</a>&#160;&#160;&#160;<a class="el" href="#ad2436cde96f861bc361a33b8deef6aca">UK</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:abce2dda771e2046b78f153ab439ed758" id="r_abce2dda771e2046b78f153ab439ed758"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abce2dda771e2046b78f153ab439ed758">ausET</a> (<a class="el" href="#ab6fc1840908c158247db16d58d4001df">aEDT</a>, <a class="el" href="#ac8acc6d07552ed001348271b345bcbf3">aEST</a>)</td></tr>
+<tr class="memitem:a4a0911d0c4a0a359b0e81c9cd6ed6cf3" id="r_a4a0911d0c4a0a359b0e81c9cd6ed6cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a0911d0c4a0a359b0e81c9cd6ed6cf3">decodeNTP</a> (void)</td></tr>
+<tr class="memitem:af18730448b2a1abf55b8be432746d463" id="r_af18730448b2a1abf55b8be432746d463"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af18730448b2a1abf55b8be432746d463">displayTime</a> (void)</td></tr>
+<tr class="memitem:a2eec8ae93a1ca367c65e1dcdb4f9877f" id="r_a2eec8ae93a1ca367c65e1dcdb4f9877f"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eec8ae93a1ca367c65e1dcdb4f9877f">euCET</a> (<a class="el" href="#a59a28bfb182d0ae4e7afb0af78ae19d9">CEST</a>, <a class="el" href="#a75418899ce962e69c936d57a735b0938">CET</a>)</td></tr>
+<tr class="memitem:ab3c31477048f97cec3d975d3d8208f21" id="r_ab3c31477048f97cec3d975d3d8208f21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3c31477048f97cec3d975d3d8208f21">printTime</a> (time_t zone, char *tzCode)</td></tr>
+<tr class="memitem:a8ae1129fe8eab322ead67eaa83384ebc" id="r_a8ae1129fe8eab322ead67eaa83384ebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ae1129fe8eab322ead67eaa83384ebc">sendNTPpacket</a> (IPAddress &amp;address)</td></tr>
+<tr class="memitem:aa4fbffd11904a01a8788c4c00df958a2" id="r_aa4fbffd11904a01a8788c4c00df958a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4fbffd11904a01a8788c4c00df958a2">syncTime</a> (void)</td></tr>
+<tr class="memitem:a806f675dd695c9f8600e7911af51c570" id="r_a806f675dd695c9f8600e7911af51c570"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a806f675dd695c9f8600e7911af51c570">timeString</a> ()</td></tr>
+<tr class="memitem:abc05a34ec4af7069fe85e75102ce85fd" id="r_abc05a34ec4af7069fe85e75102ce85fd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc05a34ec4af7069fe85e75102ce85fd">timeString</a> (uint32_t t_secs)</td></tr>
+<tr class="memitem:ad2436cde96f861bc361a33b8deef6aca" id="r_ad2436cde96f861bc361a33b8deef6aca"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2436cde96f861bc361a33b8deef6aca">UK</a> (<a class="el" href="#ae98f67cedb0d451f6a204b65f0338585">BST</a>, <a class="el" href="#a4f9c1e7c7e010d327540d07ef7ebaa57">GMT</a>)</td></tr>
+<tr class="memitem:a6fb34fccb5bc80662297d5fcbc8223d0" id="r_a6fb34fccb5bc80662297d5fcbc8223d0"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fb34fccb5bc80662297d5fcbc8223d0">usAZ</a> (<a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a>, <a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a>)</td></tr>
+<tr class="memitem:a3ac4db402b5d72c14929902d0b6c13c6" id="r_a3ac4db402b5d72c14929902d0b6c13c6"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ac4db402b5d72c14929902d0b6c13c6">usCT</a> (<a class="el" href="#a25e240435021abffeee3ef3e293191f8">usCDT</a>, <a class="el" href="#a4a7e2d0173d5314b469cf6ea236e1497">usCST</a>)</td></tr>
+<tr class="memitem:a2e927ee23588262e0b0e13adac151d98" id="r_a2e927ee23588262e0b0e13adac151d98"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e927ee23588262e0b0e13adac151d98">usET</a> (<a class="el" href="#ae4ec6914048736ac353de23522ad1d53">usEDT</a>, <a class="el" href="#a07f127ad49cb0258151b28fe289a66a4">usEST</a>)</td></tr>
+<tr class="memitem:a67a364972848e7b954d3c80d2262a41e" id="r_a67a364972848e7b954d3c80d2262a41e"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67a364972848e7b954d3c80d2262a41e">usMT</a> (<a class="el" href="#a7318702923a7bd460be3f39c648ed0fc">usMDT</a>, <a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a>)</td></tr>
+<tr class="memitem:aa42d32847b860935d3d46e743d05862c" id="r_aa42d32847b860935d3d46e743d05862c"><td class="memItemLeft" align="right" valign="top">Timezone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa42d32847b860935d3d46e743d05862c">usPT</a> (<a class="el" href="#a1eec67c20010943eaed476d1e689429e">usPDT</a>, <a class="el" href="#a35907971adc18eab0abb2abc8dea3796">usPST</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab6fc1840908c158247db16d58d4001df" id="r_ab6fc1840908c158247db16d58d4001df"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6fc1840908c158247db16d58d4001df">aEDT</a> = {&quot;AEDT&quot;, First, Sun, Oct, 2, 660}</td></tr>
+<tr class="memitem:ac8acc6d07552ed001348271b345bcbf3" id="r_ac8acc6d07552ed001348271b345bcbf3"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8acc6d07552ed001348271b345bcbf3">aEST</a> = {&quot;AEST&quot;, First, Sun, Apr, 3, 600}</td></tr>
+<tr class="memitem:ae98f67cedb0d451f6a204b65f0338585" id="r_ae98f67cedb0d451f6a204b65f0338585"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae98f67cedb0d451f6a204b65f0338585">BST</a> = {&quot;BST&quot;, Last, Sun, Mar, 1, 60}</td></tr>
+<tr class="memitem:a59a28bfb182d0ae4e7afb0af78ae19d9" id="r_a59a28bfb182d0ae4e7afb0af78ae19d9"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59a28bfb182d0ae4e7afb0af78ae19d9">CEST</a> = {&quot;CEST&quot;, Last, Sun, Mar, 2, 120}</td></tr>
+<tr class="memitem:a75418899ce962e69c936d57a735b0938" id="r_a75418899ce962e69c936d57a735b0938"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75418899ce962e69c936d57a735b0938">CET</a> = {&quot;CET &quot;, Last, Sun, Oct, 3, 60}</td></tr>
+<tr class="memitem:a4f9c1e7c7e010d327540d07ef7ebaa57" id="r_a4f9c1e7c7e010d327540d07ef7ebaa57"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f9c1e7c7e010d327540d07ef7ebaa57">GMT</a> = {&quot;GMT&quot;, Last, Sun, Oct, 2, 0}</td></tr>
+<tr class="memitem:a3b22777a5996fb0c93c9597b4f36f9ff" id="r_a3b22777a5996fb0c93c9597b4f36f9ff"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b22777a5996fb0c93c9597b4f36f9ff">lastMinute</a> = 0</td></tr>
+<tr class="memitem:ab3003d2300252a6ce4864517ec1a8b6f" id="r_ab3003d2300252a6ce4864517ec1a8b6f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3003d2300252a6ce4864517ec1a8b6f">lastRecvTime</a> = 0</td></tr>
+<tr class="memitem:ad766c517f9a28cc42c4da235e92418e4" id="r_ad766c517f9a28cc42c4da235e92418e4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad766c517f9a28cc42c4da235e92418e4">lastTickTime</a> = 0</td></tr>
+<tr class="memitem:ac240824c9b35035b41bc24ee200565a2" id="r_ac240824c9b35035b41bc24ee200565a2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac240824c9b35035b41bc24ee200565a2">localPort</a> = 2390</td></tr>
+<tr class="memitem:a6567a80fb6d8bf8e692fc1dcb10ca83a" id="r_a6567a80fb6d8bf8e692fc1dcb10ca83a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">newRecvTime</a> = 0</td></tr>
+<tr class="memitem:a8a18029728a03ffaf7cbf745504945be" id="r_a8a18029728a03ffaf7cbf745504945be"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a18029728a03ffaf7cbf745504945be">newTickTime</a> = 0</td></tr>
+<tr class="memitem:a7df8f3a1ed49bbf60d88784c229656e7" id="r_a7df8f3a1ed49bbf60d88784c229656e7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7df8f3a1ed49bbf60d88784c229656e7">nextSendTime</a> = 0</td></tr>
+<tr class="memitem:ad0bdcbb0dddd34f5397d86fc05c89e18" id="r_ad0bdcbb0dddd34f5397d86fc05c89e18"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a> = 0</td></tr>
+<tr class="memitem:ae2843b6487d71a38433763495c106346" id="r_ae2843b6487d71a38433763495c106346"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a> = 48</td></tr>
+<tr class="memitem:a27804f7c47de4f4eb14512846b40b8d1" id="r_a27804f7c47de4f4eb14512846b40b8d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27804f7c47de4f4eb14512846b40b8d1">ntp_start</a> = 1</td></tr>
+<tr class="memitem:aae7c8e2142f39334ea873d9cd23d49e4" id="r_aae7c8e2142f39334ea873d9cd23d49e4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae7c8e2142f39334ea873d9cd23d49e4">ntpServerName</a> = &quot;pool.ntp.org&quot;</td></tr>
+<tr class="memitem:a64bc3d70081888ef346f466f8cffcaa9" id="r_a64bc3d70081888ef346f466f8cffcaa9"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a> [<a class="el" href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a>]</td></tr>
+<tr class="memitem:ab8e02bd063012c4f0be87cad563db23d" id="r_ab8e02bd063012c4f0be87cad563db23d"><td class="memItemLeft" align="right" valign="top">IPAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8e02bd063012c4f0be87cad563db23d">timeServerIP</a></td></tr>
+<tr class="memitem:a4f0d11853176471cc72447d9ecf0fea5" id="r_a4f0d11853176471cc72447d9ecf0fea5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f0d11853176471cc72447d9ecf0fea5">timeValid</a> = false</td></tr>
+<tr class="memitem:af4bb0ca2c04004abd78dc513a985e3df" id="r_af4bb0ca2c04004abd78dc513a985e3df"><td class="memItemLeft" align="right" valign="top">TimeChangeRule *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4bb0ca2c04004abd78dc513a985e3df">tz1_Code</a></td></tr>
+<tr class="memitem:a46b48e04b347d8c6d55433b1f1dcc5b1" id="r_a46b48e04b347d8c6d55433b1f1dcc5b1"><td class="memItemLeft" align="right" valign="top">WiFiUDP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a></td></tr>
+<tr class="memitem:a25e240435021abffeee3ef3e293191f8" id="r_a25e240435021abffeee3ef3e293191f8"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25e240435021abffeee3ef3e293191f8">usCDT</a> = {&quot;CDT&quot;, Second, dowSunday, Mar, 2, -300}</td></tr>
+<tr class="memitem:a4a7e2d0173d5314b469cf6ea236e1497" id="r_a4a7e2d0173d5314b469cf6ea236e1497"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a7e2d0173d5314b469cf6ea236e1497">usCST</a> = {&quot;CST&quot;, First, dowSunday, Nov, 2, -360}</td></tr>
+<tr class="memitem:ae4ec6914048736ac353de23522ad1d53" id="r_ae4ec6914048736ac353de23522ad1d53"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ec6914048736ac353de23522ad1d53">usEDT</a> = {&quot;EDT&quot;, Second, Sun, Mar, 2, -240}</td></tr>
+<tr class="memitem:a07f127ad49cb0258151b28fe289a66a4" id="r_a07f127ad49cb0258151b28fe289a66a4"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07f127ad49cb0258151b28fe289a66a4">usEST</a> = {&quot;EST&quot;, First, Sun, Nov, 2, -300}</td></tr>
+<tr class="memitem:a7318702923a7bd460be3f39c648ed0fc" id="r_a7318702923a7bd460be3f39c648ed0fc"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7318702923a7bd460be3f39c648ed0fc">usMDT</a> = {&quot;MDT&quot;, Second, dowSunday, Mar, 2, -360}</td></tr>
+<tr class="memitem:a5c7af2d98fb0b260fc0f57afa4726b89" id="r_a5c7af2d98fb0b260fc0f57afa4726b89"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a> = {&quot;MST&quot;, First, dowSunday, Nov, 2, -420}</td></tr>
+<tr class="memitem:a1eec67c20010943eaed476d1e689429e" id="r_a1eec67c20010943eaed476d1e689429e"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eec67c20010943eaed476d1e689429e">usPDT</a> = {&quot;PDT&quot;, Second, dowSunday, Mar, 2, -420}</td></tr>
+<tr class="memitem:a35907971adc18eab0abb2abc8dea3796" id="r_a35907971adc18eab0abb2abc8dea3796"><td class="memItemLeft" align="right" valign="top">TimeChangeRule&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35907971adc18eab0abb2abc8dea3796">usPST</a> = {&quot;PST&quot;, First, dowSunday, Nov, 2, -480}</td></tr>
+<tr class="memitem:a4c3dff1cb700be9fddeecf59990b1c6c" id="r_a4c3dff1cb700be9fddeecf59990b1c6c"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a> = 0</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a77a4765d1e38b93e353315ca174c9959" name="a77a4765d1e38b93e353315ca174c9959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a4765d1e38b93e353315ca174c9959">&#9670;&#160;</a></span>TIMEZONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMEZONE&#160;&#160;&#160;<a class="el" href="#ad2436cde96f861bc361a33b8deef6aca">UK</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00034">34</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="abce2dda771e2046b78f153ab439ed758" name="abce2dda771e2046b78f153ab439ed758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce2dda771e2046b78f153ab439ed758">&#9670;&#160;</a></span>ausET()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone ausET </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ab6fc1840908c158247db16d58d4001df">aEDT</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ac8acc6d07552ed001348271b345bcbf3">aEST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00069">aEDT</a> y <a class="el" href="NTP__Time_8h_source.html#l00070">aEST</a>.</p>
+
+</div>
+</div>
+<a id="a4a0911d0c4a0a359b0e81c9cd6ed6cf3" name="a4a0911d0c4a0a359b0e81c9cd6ed6cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0911d0c4a0a359b0e81c9cd6ed6cf3">&#9670;&#160;</a></span>decodeNTP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decodeNTP </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00216">216</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>{</div>
+<div class="line"><span class="lineno">  218</span>  <a class="code hl_variable" href="#a4f0d11853176471cc72447d9ecf0fea5">timeValid</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  219</span>  uint32_t waitTime = millis() + 500;</div>
+<div class="line"><span class="lineno">  220</span>  <span class="keywordflow">while</span> (millis() &lt; waitTime &amp;&amp; !<a class="code hl_variable" href="#a4f0d11853176471cc72447d9ecf0fea5">timeValid</a>)</div>
+<div class="line"><span class="lineno">  221</span>  {</div>
+<div class="line"><span class="lineno">  222</span>    yield();</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a>.parsePacket())</div>
+<div class="line"><span class="lineno">  224</span>    {</div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_variable" href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">newRecvTime</a> = millis();</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>      <span class="comment">// We&#39;ve received a packet, read the data from it</span></div>
+<div class="line"><span class="lineno">  228</span>      <a class="code hl_variable" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a>.read(<a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>, <a class="code hl_variable" href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a>); <span class="comment">// read the packet into the buffer</span></div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>      Serial.print(<span class="stringliteral">&quot;\nNTP response time was : &quot;</span>);</div>
+<div class="line"><span class="lineno">  231</span>      Serial.print(500 - (waitTime - <a class="code hl_variable" href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">newRecvTime</a>));</div>
+<div class="line"><span class="lineno">  232</span>      Serial.println(<span class="stringliteral">&quot; ms&quot;</span>);</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>      Serial.print(<span class="stringliteral">&quot;Time since last sync is: &quot;</span>);</div>
+<div class="line"><span class="lineno">  235</span>      Serial.print((<a class="code hl_variable" href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">newRecvTime</a> - <a class="code hl_variable" href="#ab3003d2300252a6ce4864517ec1a8b6f">lastRecvTime</a>) / 1000.0);</div>
+<div class="line"><span class="lineno">  236</span>      Serial.println(<span class="stringliteral">&quot; s&quot;</span>);</div>
+<div class="line"><span class="lineno">  237</span>      <a class="code hl_variable" href="#ab3003d2300252a6ce4864517ec1a8b6f">lastRecvTime</a> = <a class="code hl_variable" href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">newRecvTime</a>;</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>      <span class="comment">// The timestamp starts at byte 40 of the received packet and is four bytes,</span></div>
+<div class="line"><span class="lineno">  240</span>      <span class="comment">// or two words, long. First, extract the two words:</span></div>
+<div class="line"><span class="lineno">  241</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> highWord = word(<a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[40], <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[41]);</div>
+<div class="line"><span class="lineno">  242</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> lowWord = word(<a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[42], <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[43]);</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>      <span class="comment">// Combine the four bytes (two words) into a long integer</span></div>
+<div class="line"><span class="lineno">  245</span>      <span class="comment">// this is NTP time (seconds since Jan 1 1900):</span></div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> secsSince1900 = highWord &lt;&lt; 16 | lowWord;</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>      <span class="comment">// Now convert NTP Unix time (Seconds since Jan 1 1900) into everyday time:</span></div>
+<div class="line"><span class="lineno">  249</span>      <span class="comment">// UTC time starts on Jan 1 1970. In seconds the difference is 2208988800:</span></div>
+<div class="line"><span class="lineno">  250</span>      <a class="code hl_variable" href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a> = secsSince1900 - 2208988800UL;</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>      setTime(<a class="code hl_variable" href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a>);      <span class="comment">// Set system clock to utc time (not time zone compensated)</span></div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>      <a class="code hl_variable" href="#a4f0d11853176471cc72447d9ecf0fea5">timeValid</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>      <span class="comment">// Print the hour, minute and second:</span></div>
+<div class="line"><span class="lineno">  257</span>      Serial.print(<span class="stringliteral">&quot;Received NTP UTC time : &quot;</span>);</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>      uint8_t hh = hour(<a class="code hl_variable" href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a>);</div>
+<div class="line"><span class="lineno">  260</span>      Serial.print(hh); <span class="comment">// print the hour (86400 equals secs per day)</span></div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>      Serial.print(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  263</span>      uint8_t mm = minute(<a class="code hl_variable" href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a>);</div>
+<div class="line"><span class="lineno">  264</span>      <span class="keywordflow">if</span> (mm &lt; 10 ) Serial.print(<span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  265</span>      Serial.print(mm); <span class="comment">// print the minute (3600 equals secs per minute)</span></div>
+<div class="line"><span class="lineno">  266</span> </div>
+<div class="line"><span class="lineno">  267</span>      Serial.print(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  268</span>      uint8_t ss = second(<a class="code hl_variable" href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a>);</div>
+<div class="line"><span class="lineno">  269</span>      <span class="keywordflow">if</span> ( ss &lt; 10 ) Serial.print(<span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  270</span>      Serial.println(ss); <span class="comment">// print the second</span></div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>      time_secs = hh * 3600 + mm * 60 + ss; <span class="comment">// Update the clock time</span></div>
+<div class="line"><span class="lineno">  273</span>    }</div>
+<div class="line"><span class="lineno">  274</span>  }</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>  <span class="comment">// Keep a count of missing or bad NTP replies</span></div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>  <span class="keywordflow">if</span> ( <a class="code hl_variable" href="#a4f0d11853176471cc72447d9ecf0fea5">timeValid</a> ) {</div>
+<div class="line"><span class="lineno">  279</span>    <a class="code hl_variable" href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a> = 0;</div>
+<div class="line"><span class="lineno">  280</span>  }</div>
+<div class="line"><span class="lineno">  281</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  282</span>  {</div>
+<div class="line"><span class="lineno">  283</span>    Serial.println(<span class="stringliteral">&quot;\nNo NTP reply, trying again in 1 minute...&quot;</span>);</div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_variable" href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a>++;</div>
+<div class="line"><span class="lineno">  285</span>  }</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a> &gt;= 10) {</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_variable" href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a> = 0; <span class="comment">// Reset to one hour to try later</span></div>
+<div class="line"><span class="lineno">  289</span>    <span class="comment">// TODO: Flag the lack of sync on the display</span></div>
+<div class="line"><span class="lineno">  290</span>    Serial.println(<span class="stringliteral">&quot;\nNo NTP packet in last 10 minutes&quot;</span>);</div>
+<div class="line"><span class="lineno">  291</span>  }</div>
+<div class="line"><span class="lineno">  292</span>}</div>
+<div class="ttc" id="aNTP__Time_8h_html_a46b48e04b347d8c6d55433b1f1dcc5b1"><div class="ttname"><a href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a></div><div class="ttdeci">WiFiUDP udp</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00028">NTP_Time.h:28</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a4c3dff1cb700be9fddeecf59990b1c6c"><div class="ttname"><a href="#a4c3dff1cb700be9fddeecf59990b1c6c">utc</a></div><div class="ttdeci">time_t utc</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00102">NTP_Time.h:102</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a4f0d11853176471cc72447d9ecf0fea5"><div class="ttname"><a href="#a4f0d11853176471cc72447d9ecf0fea5">timeValid</a></div><div class="ttdeci">bool timeValid</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00104">NTP_Time.h:104</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a64bc3d70081888ef346f466f8cffcaa9"><div class="ttname"><a href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a></div><div class="ttdeci">byte packetBuffer[NTP_PACKET_SIZE]</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00110">NTP_Time.h:110</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a6567a80fb6d8bf8e692fc1dcb10ca83a"><div class="ttname"><a href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">newRecvTime</a></div><div class="ttdeci">uint32_t newRecvTime</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00115">NTP_Time.h:115</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_ab3003d2300252a6ce4864517ec1a8b6f"><div class="ttname"><a href="#ab3003d2300252a6ce4864517ec1a8b6f">lastRecvTime</a></div><div class="ttdeci">uint32_t lastRecvTime</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00116">NTP_Time.h:116</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_ad0bdcbb0dddd34f5397d86fc05c89e18"><div class="ttname"><a href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a></div><div class="ttdeci">uint32_t no_packet_count</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00123">NTP_Time.h:123</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_ae2843b6487d71a38433763495c106346"><div class="ttname"><a href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a></div><div class="ttdeci">const int NTP_PACKET_SIZE</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00108">NTP_Time.h:108</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00116">lastRecvTime</a>, <a class="el" href="NTP__Time_8h_source.html#l00115">newRecvTime</a>, <a class="el" href="NTP__Time_8h_source.html#l00123">no_packet_count</a>, <a class="el" href="NTP__Time_8h_source.html#l00108">NTP_PACKET_SIZE</a>, <a class="el" href="NTP__Time_8h_source.html#l00110">packetBuffer</a>, <a class="el" href="NTP__Time_8h_source.html#l00104">timeValid</a>, <a class="el" href="NTP__Time_8h_source.html#l00028">udp</a> y <a class="el" href="NTP__Time_8h_source.html#l00102">utc</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="af18730448b2a1abf55b8be432746d463" name="af18730448b2a1abf55b8be432746d463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18730448b2a1abf55b8be432746d463">&#9670;&#160;</a></span>displayTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayTime </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2eec8ae93a1ca367c65e1dcdb4f9877f" name="a2eec8ae93a1ca367c65e1dcdb4f9877f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eec8ae93a1ca367c65e1dcdb4f9877f">&#9670;&#160;</a></span>euCET()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone euCET </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a59a28bfb182d0ae4e7afb0af78ae19d9">CEST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a75418899ce962e69c936d57a735b0938">CET</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00064">CEST</a> y <a class="el" href="NTP__Time_8h_source.html#l00065">CET</a>.</p>
+
+</div>
+</div>
+<a id="ab3c31477048f97cec3d975d3d8208f21" name="ab3c31477048f97cec3d975d3d8208f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c31477048f97cec3d975d3d8208f21">&#9670;&#160;</a></span>printTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printTime </td>
+          <td>(</td>
+          <td class="paramtype">time_t</td>          <td class="paramname"><span class="paramname"><em>zone</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>tzCode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00319">319</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  320</span>{</div>
+<div class="line"><span class="lineno">  321</span>  String dateString = dayStr(weekday(t));</div>
+<div class="line"><span class="lineno">  322</span>  dateString += <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  323</span>  dateString += day(t);</div>
+<div class="line"><span class="lineno">  324</span>  <span class="keywordflow">if</span> (day(t) == 1 || day(t) == 21 || day(t) == 31) dateString += <span class="stringliteral">&quot;st&quot;</span>;</div>
+<div class="line"><span class="lineno">  325</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (day(t) == 2 || day(t) == 22) dateString += <span class="stringliteral">&quot;nd&quot;</span>;</div>
+<div class="line"><span class="lineno">  326</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (day(t) == 3 || day(t) == 23) dateString += <span class="stringliteral">&quot;rd&quot;</span>;</div>
+<div class="line"><span class="lineno">  327</span>  <span class="keywordflow">else</span> dateString += <span class="stringliteral">&quot;th&quot;</span>;</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>  dateString += <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  330</span>  dateString += monthStr(month(t));</div>
+<div class="line"><span class="lineno">  331</span>  dateString += <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  332</span>  dateString += year(t);</div>
+<div class="line"><span class="lineno">  333</span> </div>
+<div class="line"><span class="lineno">  334</span>  <span class="comment">// Print time to serial port</span></div>
+<div class="line"><span class="lineno">  335</span>  Serial.print(hour(t));</div>
+<div class="line"><span class="lineno">  336</span>  Serial.print(<span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><span class="lineno">  337</span>  Serial.print(minute(t));</div>
+<div class="line"><span class="lineno">  338</span>  Serial.print(<span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><span class="lineno">  339</span>  Serial.print(second(t));</div>
+<div class="line"><span class="lineno">  340</span>  Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><span class="lineno">  341</span>  <span class="comment">// Print time t</span></div>
+<div class="line"><span class="lineno">  342</span>  Serial.print(tzCode);</div>
+<div class="line"><span class="lineno">  343</span>  Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>  <span class="comment">// Print date</span></div>
+<div class="line"><span class="lineno">  346</span>  Serial.print(day(t));</div>
+<div class="line"><span class="lineno">  347</span>  Serial.print(<span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"><span class="lineno">  348</span>  Serial.print(month(t));</div>
+<div class="line"><span class="lineno">  349</span>  Serial.print(<span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"><span class="lineno">  350</span>  Serial.print(year(t));</div>
+<div class="line"><span class="lineno">  351</span>  Serial.print(<span class="stringliteral">&quot;  &quot;</span>);</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>  <span class="comment">// Now test some other functions that might be useful one day!</span></div>
+<div class="line"><span class="lineno">  354</span>  Serial.print(dayStr(weekday(t)));</div>
+<div class="line"><span class="lineno">  355</span>  Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><span class="lineno">  356</span>  Serial.print(monthStr(month(t)));</div>
+<div class="line"><span class="lineno">  357</span>  Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><span class="lineno">  358</span>  Serial.print(dayShortStr(weekday(t)));</div>
+<div class="line"><span class="lineno">  359</span>  Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><span class="lineno">  360</span>  Serial.print(monthShortStr(month(t)));</div>
+<div class="line"><span class="lineno">  361</span>  Serial.println();</div>
+<div class="line"><span class="lineno">  362</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ae1129fe8eab322ead67eaa83384ebc" name="a8ae1129fe8eab322ead67eaa83384ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae1129fe8eab322ead67eaa83384ebc">&#9670;&#160;</a></span>sendNTPpacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendNTPpacket </td>
+          <td>(</td>
+          <td class="paramtype">IPAddress &amp;</td>          <td class="paramname"><span class="paramname"><em>address</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00187">187</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>{</div>
+<div class="line"><span class="lineno">  189</span>  <span class="comment">// Serial.println(&quot;sending NTP packet...&quot;);</span></div>
+<div class="line"><span class="lineno">  190</span>  <span class="comment">// set all bytes in the buffer to 0</span></div>
+<div class="line"><span class="lineno">  191</span>  memset(<a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>, 0, <a class="code hl_variable" href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a>);</div>
+<div class="line"><span class="lineno">  192</span>  <span class="comment">// Initialize values needed to form NTP request</span></div>
+<div class="line"><span class="lineno">  193</span>  <span class="comment">// (see URL above for details on the packets)</span></div>
+<div class="line"><span class="lineno">  194</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[0] = 0b11100011;   <span class="comment">// LI, Version, Mode</span></div>
+<div class="line"><span class="lineno">  195</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[1] = 0;            <span class="comment">// Stratum, or type of clock</span></div>
+<div class="line"><span class="lineno">  196</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[2] = 6;            <span class="comment">// Polling Interval</span></div>
+<div class="line"><span class="lineno">  197</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[3] = 0xEC;         <span class="comment">// Peer Clock Precision</span></div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>  <span class="comment">// 8 bytes of zero for Root Delay &amp; Root Dispersion</span></div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[12]  = 49;</div>
+<div class="line"><span class="lineno">  202</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[13]  = 0x4E;</div>
+<div class="line"><span class="lineno">  203</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[14]  = 49;</div>
+<div class="line"><span class="lineno">  204</span>  <a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>[15]  = 52;</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>  <span class="comment">// all NTP fields have been given values, now</span></div>
+<div class="line"><span class="lineno">  207</span>  <span class="comment">// you can send a packet requesting a timestamp:</span></div>
+<div class="line"><span class="lineno">  208</span>  <a class="code hl_variable" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a>.beginPacket(address, 123); <span class="comment">//NTP requests are to port 123</span></div>
+<div class="line"><span class="lineno">  209</span>  <a class="code hl_variable" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a>.write(<a class="code hl_variable" href="#a64bc3d70081888ef346f466f8cffcaa9">packetBuffer</a>, <a class="code hl_variable" href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a>);</div>
+<div class="line"><span class="lineno">  210</span>  <a class="code hl_variable" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a>.endPacket();</div>
+<div class="line"><span class="lineno">  211</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00108">NTP_PACKET_SIZE</a>, <a class="el" href="NTP__Time_8h_source.html#l00110">packetBuffer</a> y <a class="el" href="NTP__Time_8h_source.html#l00028">udp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="aa4fbffd11904a01a8788c4c00df958a2" name="aa4fbffd11904a01a8788c4c00df958a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fbffd11904a01a8788c4c00df958a2">&#9670;&#160;</a></span>syncTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void syncTime </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00140">140</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>{</div>
+<div class="line"><span class="lineno">  142</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a27804f7c47de4f4eb14512846b40b8d1">ntp_start</a>) {  <span class="comment">// Run once</span></div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">// Call once for ESP32 and ESP8266</span></div>
+<div class="line"><span class="lineno">  145</span><span class="preprocessor">    #if !defined(ARDUINO_ARCH_MBED)</span></div>
+<div class="line"><span class="lineno">  146</span>    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);</div>
+<div class="line"><span class="lineno">  147</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">while</span> (WiFi.status() != WL_CONNECTED) {</div>
+<div class="line"><span class="lineno">  150</span>      Serial.print(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><span class="lineno">  151</span><span class="preprocessor">      #if defined(ARDUINO_ARCH_MBED) || defined(ARDUINO_ARCH_RP2040)</span></div>
+<div class="line"><span class="lineno">  152</span>      <span class="keywordflow">if</span> (WiFi.status() != WL_CONNECTED) WiFi.begin(WIFI_SSID, WIFI_PASSWORD);</div>
+<div class="line"><span class="lineno">  153</span><span class="preprocessor">      #endif</span></div>
+<div class="line"><span class="lineno">  154</span>      <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(500);</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span>    Serial.println();</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_variable" href="#a46b48e04b347d8c6d55433b1f1dcc5b1">udp</a>.begin(<a class="code hl_variable" href="#ac240824c9b35035b41bc24ee200565a2">localPort</a>); <a class="code hl_variable" href="#a27804f7c47de4f4eb14512846b40b8d1">ntp_start</a> = 0;</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="comment">// Don&#39;t send too often so we don&#39;t trigger Denial of Service</span></div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7df8f3a1ed49bbf60d88784c229656e7">nextSendTime</a> &lt; millis()) {</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="comment">// Wait 1 hour for next sync</span></div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_variable" href="#a7df8f3a1ed49bbf60d88784c229656e7">nextSendTime</a> = millis() + 60 * 60 * 1000;</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="comment">// Get a random server from the pool</span></div>
+<div class="line"><span class="lineno">  168</span>    WiFi.hostByName(<a class="code hl_variable" href="#aae7c8e2142f39334ea873d9cd23d49e4">ntpServerName</a>, <a class="code hl_variable" href="#ab8e02bd063012c4f0be87cad563db23d">timeServerIP</a>);</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_function" href="#a8ae1129fe8eab322ead67eaa83384ebc">sendNTPpacket</a>(<a class="code hl_variable" href="#ab8e02bd063012c4f0be87cad563db23d">timeServerIP</a>); <span class="comment">// send an NTP packet to a time server</span></div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="#a4a0911d0c4a0a359b0e81c9cd6ed6cf3">decodeNTP</a>();</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">if</span> ( <a class="code hl_variable" href="#ad0bdcbb0dddd34f5397d86fc05c89e18">no_packet_count</a> &gt; 0 )  {</div>
+<div class="line"><span class="lineno">  174</span>      <span class="comment">// Wait 1 minute for next sync</span></div>
+<div class="line"><span class="lineno">  175</span>      <a class="code hl_variable" href="#a7df8f3a1ed49bbf60d88784c229656e7">nextSendTime</a> = millis() + 60 * 1000;</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  178</span>      <span class="comment">// Wait 1 hour for next sync</span></div>
+<div class="line"><span class="lineno">  179</span>      <a class="code hl_variable" href="#a7df8f3a1ed49bbf60d88784c229656e7">nextSendTime</a> = millis() + 60 * 60 * 1000;</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="aGC9A01__Init_8h_html_a5aca13d7b6004cb9d0f57e632205e46b"><div class="ttname"><a href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a></div><div class="ttdeci">delay(120)</div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a27804f7c47de4f4eb14512846b40b8d1"><div class="ttname"><a href="#a27804f7c47de4f4eb14512846b40b8d1">ntp_start</a></div><div class="ttdeci">bool ntp_start</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00121">NTP_Time.h:121</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a4a0911d0c4a0a359b0e81c9cd6ed6cf3"><div class="ttname"><a href="#a4a0911d0c4a0a359b0e81c9cd6ed6cf3">decodeNTP</a></div><div class="ttdeci">void decodeNTP(void)</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00216">NTP_Time.h:216</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a7df8f3a1ed49bbf60d88784c229656e7"><div class="ttname"><a href="#a7df8f3a1ed49bbf60d88784c229656e7">nextSendTime</a></div><div class="ttdeci">uint32_t nextSendTime</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00114">NTP_Time.h:114</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_a8ae1129fe8eab322ead67eaa83384ebc"><div class="ttname"><a href="#a8ae1129fe8eab322ead67eaa83384ebc">sendNTPpacket</a></div><div class="ttdeci">void sendNTPpacket(IPAddress &amp;address)</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00187">NTP_Time.h:187</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_aae7c8e2142f39334ea873d9cd23d49e4"><div class="ttname"><a href="#aae7c8e2142f39334ea873d9cd23d49e4">ntpServerName</a></div><div class="ttdeci">const char * ntpServerName</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00046">NTP_Time.h:46</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_ab8e02bd063012c4f0be87cad563db23d"><div class="ttname"><a href="#ab8e02bd063012c4f0be87cad563db23d">timeServerIP</a></div><div class="ttdeci">IPAddress timeServerIP</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00053">NTP_Time.h:53</a></div></div>
+<div class="ttc" id="aNTP__Time_8h_html_ac240824c9b35035b41bc24ee200565a2"><div class="ttname"><a href="#ac240824c9b35035b41bc24ee200565a2">localPort</a></div><div class="ttdeci">unsigned int localPort</div><div class="ttdef"><b>Definition</b> <a href="NTP__Time_8h_source.html#l00106">NTP_Time.h:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a>, <a class="el" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay()</a>, <a class="el" href="NTP__Time_8h_source.html#l00106">localPort</a>, <a class="el" href="NTP__Time_8h_source.html#l00114">nextSendTime</a>, <a class="el" href="NTP__Time_8h_source.html#l00123">no_packet_count</a>, <a class="el" href="NTP__Time_8h_source.html#l00121">ntp_start</a>, <a class="el" href="NTP__Time_8h_source.html#l00046">ntpServerName</a>, <a class="el" href="NTP__Time_8h_source.html#l00187">sendNTPpacket()</a>, <a class="el" href="NTP__Time_8h_source.html#l00053">timeServerIP</a> y <a class="el" href="NTP__Time_8h_source.html#l00028">udp</a>.</p>
+
+</div>
+</div>
+<a id="a806f675dd695c9f8600e7911af51c570" name="a806f675dd695c9f8600e7911af51c570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806f675dd695c9f8600e7911af51c570">&#9670;&#160;</a></span>timeString() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String timeString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc05a34ec4af7069fe85e75102ce85fd" name="abc05a34ec4af7069fe85e75102ce85fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc05a34ec4af7069fe85e75102ce85fd">&#9670;&#160;</a></span>timeString() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String timeString </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>t_secs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00296">296</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  297</span>{</div>
+<div class="line"><span class="lineno">  298</span>  String timeNow = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>  uint8_t h = t_secs / 3600;</div>
+<div class="line"><span class="lineno">  301</span>  <span class="keywordflow">if</span> ( h &lt; 10) timeNow += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><span class="lineno">  302</span>  timeNow += h;</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>  timeNow += <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  305</span>  uint8_t m = (t_secs - ( h * 3600 )) / 60;</div>
+<div class="line"><span class="lineno">  306</span>  <span class="keywordflow">if</span> (m &lt; 10) timeNow += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><span class="lineno">  307</span>  timeNow += m;</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>  timeNow += <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  310</span>  uint8_t s = t_secs - ( h * 3600 ) - ( m * 60 );</div>
+<div class="line"><span class="lineno">  311</span>  <span class="keywordflow">if</span> (s &lt; 10) timeNow += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><span class="lineno">  312</span>  timeNow += s;</div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>  <span class="keywordflow">return</span> timeNow;</div>
+<div class="line"><span class="lineno">  315</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad2436cde96f861bc361a33b8deef6aca" name="ad2436cde96f861bc361a33b8deef6aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2436cde96f861bc361a33b8deef6aca">&#9670;&#160;</a></span>UK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone UK </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae98f67cedb0d451f6a204b65f0338585">BST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a4f9c1e7c7e010d327540d07ef7ebaa57">GMT</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00059">BST</a> y <a class="el" href="NTP__Time_8h_source.html#l00060">GMT</a>.</p>
+
+</div>
+</div>
+<a id="a6fb34fccb5bc80662297d5fcbc8223d0" name="a6fb34fccb5bc80662297d5fcbc8223d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb34fccb5bc80662297d5fcbc8223d0">&#9670;&#160;</a></span>usAZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone usAZ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00085">usMST</a>.</p>
+
+</div>
+</div>
+<a id="a3ac4db402b5d72c14929902d0b6c13c6" name="a3ac4db402b5d72c14929902d0b6c13c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ac4db402b5d72c14929902d0b6c13c6">&#9670;&#160;</a></span>usCT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone usCT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a25e240435021abffeee3ef3e293191f8">usCDT</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a4a7e2d0173d5314b469cf6ea236e1497">usCST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00079">usCDT</a> y <a class="el" href="NTP__Time_8h_source.html#l00080">usCST</a>.</p>
+
+</div>
+</div>
+<a id="a2e927ee23588262e0b0e13adac151d98" name="a2e927ee23588262e0b0e13adac151d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e927ee23588262e0b0e13adac151d98">&#9670;&#160;</a></span>usET()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone usET </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae4ec6914048736ac353de23522ad1d53">usEDT</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a07f127ad49cb0258151b28fe289a66a4">usEST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00074">usEDT</a> y <a class="el" href="NTP__Time_8h_source.html#l00075">usEST</a>.</p>
+
+</div>
+</div>
+<a id="a67a364972848e7b954d3c80d2262a41e" name="a67a364972848e7b954d3c80d2262a41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a364972848e7b954d3c80d2262a41e">&#9670;&#160;</a></span>usMT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone usMT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7318702923a7bd460be3f39c648ed0fc">usMDT</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5c7af2d98fb0b260fc0f57afa4726b89">usMST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00084">usMDT</a> y <a class="el" href="NTP__Time_8h_source.html#l00085">usMST</a>.</p>
+
+</div>
+</div>
+<a id="aa42d32847b860935d3d46e743d05862c" name="aa42d32847b860935d3d46e743d05862c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42d32847b860935d3d46e743d05862c">&#9670;&#160;</a></span>usPT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timezone usPT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1eec67c20010943eaed476d1e689429e">usPDT</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a35907971adc18eab0abb2abc8dea3796">usPST</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Hace referencia a <a class="el" href="NTP__Time_8h_source.html#l00092">usPDT</a> y <a class="el" href="NTP__Time_8h_source.html#l00093">usPST</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ab6fc1840908c158247db16d58d4001df" name="ab6fc1840908c158247db16d58d4001df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6fc1840908c158247db16d58d4001df">&#9670;&#160;</a></span>aEDT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule aEDT = {&quot;AEDT&quot;, First, Sun, Oct, 2, 660}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00069">69</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{<span class="stringliteral">&quot;AEDT&quot;</span>, First, Sun, Oct, 2, 660};    <span class="comment">//UTC + 11 hours</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#abce2dda771e2046b78f153ab439ed758">ausET()</a>.</p>
+
+</div>
+</div>
+<a id="ac8acc6d07552ed001348271b345bcbf3" name="ac8acc6d07552ed001348271b345bcbf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8acc6d07552ed001348271b345bcbf3">&#9670;&#160;</a></span>aEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule aEST = {&quot;AEST&quot;, First, Sun, Apr, 3, 600}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00070">70</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{<span class="stringliteral">&quot;AEST&quot;</span>, First, Sun, Apr, 3, 600};    <span class="comment">//UTC + 10 hours</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#abce2dda771e2046b78f153ab439ed758">ausET()</a>.</p>
+
+</div>
+</div>
+<a id="ae98f67cedb0d451f6a204b65f0338585" name="ae98f67cedb0d451f6a204b65f0338585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98f67cedb0d451f6a204b65f0338585">&#9670;&#160;</a></span>BST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule BST = {&quot;BST&quot;, Last, Sun, Mar, 1, 60}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00059">59</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{<span class="stringliteral">&quot;BST&quot;</span>, Last, Sun, Mar, 1, 60};        <span class="comment">//British Summer (Daylight saving) Time</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#ad2436cde96f861bc361a33b8deef6aca">UK()</a>.</p>
+
+</div>
+</div>
+<a id="a59a28bfb182d0ae4e7afb0af78ae19d9" name="a59a28bfb182d0ae4e7afb0af78ae19d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a28bfb182d0ae4e7afb0af78ae19d9">&#9670;&#160;</a></span>CEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule CEST = {&quot;CEST&quot;, Last, Sun, Mar, 2, 120}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00064">64</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{<span class="stringliteral">&quot;CEST&quot;</span>, Last, Sun, Mar, 2, 120};     <span class="comment">//Central European Summer Time</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a2eec8ae93a1ca367c65e1dcdb4f9877f">euCET()</a>.</p>
+
+</div>
+</div>
+<a id="a75418899ce962e69c936d57a735b0938" name="a75418899ce962e69c936d57a735b0938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75418899ce962e69c936d57a735b0938">&#9670;&#160;</a></span>CET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule CET = {&quot;CET &quot;, Last, Sun, Oct, 3, 60}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00065">65</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>{<span class="stringliteral">&quot;CET &quot;</span>, Last, Sun, Oct, 3, 60};      <span class="comment">//Central European Standard Time</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a2eec8ae93a1ca367c65e1dcdb4f9877f">euCET()</a>.</p>
+
+</div>
+</div>
+<a id="a4f9c1e7c7e010d327540d07ef7ebaa57" name="a4f9c1e7c7e010d327540d07ef7ebaa57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f9c1e7c7e010d327540d07ef7ebaa57">&#9670;&#160;</a></span>GMT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule GMT = {&quot;GMT&quot;, Last, Sun, Oct, 2, 0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00060">60</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{<span class="stringliteral">&quot;GMT&quot;</span>, Last, Sun, Oct, 2, 0};         <span class="comment">//Standard Time</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#ad2436cde96f861bc361a33b8deef6aca">UK()</a>.</p>
+
+</div>
+</div>
+<a id="a3b22777a5996fb0c93c9597b4f36f9ff" name="a3b22777a5996fb0c93c9597b4f36f9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b22777a5996fb0c93c9597b4f36f9ff">&#9670;&#160;</a></span>lastMinute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lastMinute = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00112">112</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3003d2300252a6ce4864517ec1a8b6f" name="ab3003d2300252a6ce4864517ec1a8b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3003d2300252a6ce4864517ec1a8b6f">&#9670;&#160;</a></span>lastRecvTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t lastRecvTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00116">116</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a>.</p>
+
+</div>
+</div>
+<a id="ad766c517f9a28cc42c4da235e92418e4" name="ad766c517f9a28cc42c4da235e92418e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad766c517f9a28cc42c4da235e92418e4">&#9670;&#160;</a></span>lastTickTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t lastTickTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00119">119</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+</div>
+</div>
+<a id="ac240824c9b35035b41bc24ee200565a2" name="ac240824c9b35035b41bc24ee200565a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac240824c9b35035b41bc24ee200565a2">&#9670;&#160;</a></span>localPort</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int localPort = 2390</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00106">106</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="a6567a80fb6d8bf8e692fc1dcb10ca83a" name="a6567a80fb6d8bf8e692fc1dcb10ca83a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6567a80fb6d8bf8e692fc1dcb10ca83a">&#9670;&#160;</a></span>newRecvTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t newRecvTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00115">115</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a>.</p>
+
+</div>
+</div>
+<a id="a8a18029728a03ffaf7cbf745504945be" name="a8a18029728a03ffaf7cbf745504945be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a18029728a03ffaf7cbf745504945be">&#9670;&#160;</a></span>newTickTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t newTickTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00118">118</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+</div>
+</div>
+<a id="a7df8f3a1ed49bbf60d88784c229656e7" name="a7df8f3a1ed49bbf60d88784c229656e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7df8f3a1ed49bbf60d88784c229656e7">&#9670;&#160;</a></span>nextSendTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t nextSendTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00114">114</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="ad0bdcbb0dddd34f5397d86fc05c89e18" name="ad0bdcbb0dddd34f5397d86fc05c89e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bdcbb0dddd34f5397d86fc05c89e18">&#9670;&#160;</a></span>no_packet_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t no_packet_count = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00123">123</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a> y <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="ae2843b6487d71a38433763495c106346" name="ae2843b6487d71a38433763495c106346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2843b6487d71a38433763495c106346">&#9670;&#160;</a></span>NTP_PACKET_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int NTP_PACKET_SIZE = 48</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00108">108</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a> y <a class="el" href="NTP__Time_8h_source.html#l00187">sendNTPpacket()</a>.</p>
+
+</div>
+</div>
+<a id="a27804f7c47de4f4eb14512846b40b8d1" name="a27804f7c47de4f4eb14512846b40b8d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27804f7c47de4f4eb14512846b40b8d1">&#9670;&#160;</a></span>ntp_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ntp_start = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00121">121</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="aae7c8e2142f39334ea873d9cd23d49e4" name="aae7c8e2142f39334ea873d9cd23d49e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7c8e2142f39334ea873d9cd23d49e4">&#9670;&#160;</a></span>ntpServerName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ntpServerName = &quot;pool.ntp.org&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00046">46</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="a64bc3d70081888ef346f466f8cffcaa9" name="a64bc3d70081888ef346f466f8cffcaa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64bc3d70081888ef346f466f8cffcaa9">&#9670;&#160;</a></span>packetBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte packetBuffer[<a class="el" href="#ae2843b6487d71a38433763495c106346">NTP_PACKET_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00110">110</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a> y <a class="el" href="NTP__Time_8h_source.html#l00187">sendNTPpacket()</a>.</p>
+
+</div>
+</div>
+<a id="ab8e02bd063012c4f0be87cad563db23d" name="ab8e02bd063012c4f0be87cad563db23d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e02bd063012c4f0be87cad563db23d">&#9670;&#160;</a></span>timeServerIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IPAddress timeServerIP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00053">53</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="a4f0d11853176471cc72447d9ecf0fea5" name="a4f0d11853176471cc72447d9ecf0fea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0d11853176471cc72447d9ecf0fea5">&#9670;&#160;</a></span>timeValid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool timeValid = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00104">104</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a>.</p>
+
+</div>
+</div>
+<a id="af4bb0ca2c04004abd78dc513a985e3df" name="af4bb0ca2c04004abd78dc513a985e3df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4bb0ca2c04004abd78dc513a985e3df">&#9670;&#160;</a></span>tz1_Code</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule* tz1_Code</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00100">100</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+</div>
+</div>
+<a id="a46b48e04b347d8c6d55433b1f1dcc5b1" name="a46b48e04b347d8c6d55433b1f1dcc5b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46b48e04b347d8c6d55433b1f1dcc5b1">&#9670;&#160;</a></span>udp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WiFiUDP udp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00028">28</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a>, <a class="el" href="NTP__Time_8h_source.html#l00187">sendNTPpacket()</a> y <a class="el" href="NTP__Time_8h_source.html#l00140">syncTime()</a>.</p>
+
+</div>
+</div>
+<a id="a25e240435021abffeee3ef3e293191f8" name="a25e240435021abffeee3ef3e293191f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e240435021abffeee3ef3e293191f8">&#9670;&#160;</a></span>usCDT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usCDT = {&quot;CDT&quot;, Second, dowSunday, Mar, 2, -300}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00079">79</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{<span class="stringliteral">&quot;CDT&quot;</span>, Second, dowSunday, Mar, 2, -300};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a3ac4db402b5d72c14929902d0b6c13c6">usCT()</a>.</p>
+
+</div>
+</div>
+<a id="a4a7e2d0173d5314b469cf6ea236e1497" name="a4a7e2d0173d5314b469cf6ea236e1497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7e2d0173d5314b469cf6ea236e1497">&#9670;&#160;</a></span>usCST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usCST = {&quot;CST&quot;, First, dowSunday, Nov, 2, -360}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00080">80</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{<span class="stringliteral">&quot;CST&quot;</span>, First, dowSunday, Nov, 2, -360};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a3ac4db402b5d72c14929902d0b6c13c6">usCT()</a>.</p>
+
+</div>
+</div>
+<a id="ae4ec6914048736ac353de23522ad1d53" name="ae4ec6914048736ac353de23522ad1d53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ec6914048736ac353de23522ad1d53">&#9670;&#160;</a></span>usEDT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usEDT = {&quot;EDT&quot;, Second, Sun, Mar, 2, -240}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00074">74</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{<span class="stringliteral">&quot;EDT&quot;</span>, Second, Sun, Mar, 2, -240};  <span class="comment">//Eastern Daylight Time = UTC - 4 hours</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a2e927ee23588262e0b0e13adac151d98">usET()</a>.</p>
+
+</div>
+</div>
+<a id="a07f127ad49cb0258151b28fe289a66a4" name="a07f127ad49cb0258151b28fe289a66a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f127ad49cb0258151b28fe289a66a4">&#9670;&#160;</a></span>usEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usEST = {&quot;EST&quot;, First, Sun, Nov, 2, -300}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00075">75</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{<span class="stringliteral">&quot;EST&quot;</span>, First, Sun, Nov, 2, -300};   <span class="comment">//Eastern Standard Time = UTC - 5 hours</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a2e927ee23588262e0b0e13adac151d98">usET()</a>.</p>
+
+</div>
+</div>
+<a id="a7318702923a7bd460be3f39c648ed0fc" name="a7318702923a7bd460be3f39c648ed0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7318702923a7bd460be3f39c648ed0fc">&#9670;&#160;</a></span>usMDT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usMDT = {&quot;MDT&quot;, Second, dowSunday, Mar, 2, -360}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00084">84</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{<span class="stringliteral">&quot;MDT&quot;</span>, Second, dowSunday, Mar, 2, -360};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a67a364972848e7b954d3c80d2262a41e">usMT()</a>.</p>
+
+</div>
+</div>
+<a id="a5c7af2d98fb0b260fc0f57afa4726b89" name="a5c7af2d98fb0b260fc0f57afa4726b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7af2d98fb0b260fc0f57afa4726b89">&#9670;&#160;</a></span>usMST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usMST = {&quot;MST&quot;, First, dowSunday, Nov, 2, -420}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00085">85</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{<span class="stringliteral">&quot;MST&quot;</span>, First, dowSunday, Nov, 2, -420};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#a6fb34fccb5bc80662297d5fcbc8223d0">usAZ()</a> y <a class="el" href="#a67a364972848e7b954d3c80d2262a41e">usMT()</a>.</p>
+
+</div>
+</div>
+<a id="a1eec67c20010943eaed476d1e689429e" name="a1eec67c20010943eaed476d1e689429e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eec67c20010943eaed476d1e689429e">&#9670;&#160;</a></span>usPDT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usPDT = {&quot;PDT&quot;, Second, dowSunday, Mar, 2, -420}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00092">92</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{<span class="stringliteral">&quot;PDT&quot;</span>, Second, dowSunday, Mar, 2, -420};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#aa42d32847b860935d3d46e743d05862c">usPT()</a>.</p>
+
+</div>
+</div>
+<a id="a35907971adc18eab0abb2abc8dea3796" name="a35907971adc18eab0abb2abc8dea3796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35907971adc18eab0abb2abc8dea3796">&#9670;&#160;</a></span>usPST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeChangeRule usPST = {&quot;PST&quot;, First, dowSunday, Nov, 2, -480}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00093">93</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{<span class="stringliteral">&quot;PST&quot;</span>, First, dowSunday, Nov, 2, -480};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="#aa42d32847b860935d3d46e743d05862c">usPT()</a>.</p>
+
+</div>
+</div>
+<a id="a4c3dff1cb700be9fddeecf59990b1c6c" name="a4c3dff1cb700be9fddeecf59990b1c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3dff1cb700be9fddeecf59990b1c6c">&#9670;&#160;</a></span>utc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t utc = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="NTP__Time_8h_source.html#l00102">102</a> del archivo <a class="el" href="NTP__Time_8h_source.html">NTP_Time.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="astronomy_8c_source.html#l00933">Astronomy_FormatTime()</a>, <a class="el" href="astronomy_8c_source.html#l00846">Astronomy_TimeFromUtc()</a>, <a class="el" href="astronomy_8c_source.html#l00863">Astronomy_UtcFromTime()</a> y <a class="el" href="NTP__Time_8h_source.html#l00216">decodeNTP()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d834161b10c57611f417f859026dded1.html">examples</a></li><li class="navelem"><a href="dir_58369e6c6ba447fb9ea81844d16b4e24.html">Smooth Graphics</a></li><li class="navelem"><a href="dir_ce1d23a49d855d3d1e295328556ad993.html">Anti-aliased_Clock</a></li><li class="navelem"><a href="NTP__Time_8h.html">NTP_Time.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

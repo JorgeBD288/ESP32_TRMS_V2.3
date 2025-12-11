@@ -1,0 +1,27 @@
+var GC9A01__Defines_8h =
+[
+    [ "TFT_CASET", "GC9A01__Defines_8h.html#ab8e30268a8a9b6034eb14ec965e24007", null ],
+    [ "TFT_DISPOFF", "GC9A01__Defines_8h.html#aeef5118709f748e30d6a3e36daf4fe78", null ],
+    [ "TFT_DISPON", "GC9A01__Defines_8h.html#af147dd0647cb522482b605407080d0fa", null ],
+    [ "TFT_HEIGHT", "GC9A01__Defines_8h.html#a1c2d2e1cd167f90b809c3450fd6f3434", null ],
+    [ "TFT_IDXRD", "GC9A01__Defines_8h.html#a3e94e5c0fe6f960ff89b865ffe590962", null ],
+    [ "TFT_INIT_DELAY", "GC9A01__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a", null ],
+    [ "TFT_INVOFF", "GC9A01__Defines_8h.html#a795de9a5c1c834adbe3a3d8f54938064", null ],
+    [ "TFT_INVON", "GC9A01__Defines_8h.html#a51e1c3c43d6be5dc251620395218cda2", null ],
+    [ "TFT_MAD_BGR", "GC9A01__Defines_8h.html#ae1b1f98bde78acb42cda4cd92e7bcc0d", null ],
+    [ "TFT_MAD_MH", "GC9A01__Defines_8h.html#a942818c031b7301083145d5a687001e6", null ],
+    [ "TFT_MAD_ML", "GC9A01__Defines_8h.html#ab26e956050b6f54ffcef116a48d388eb", null ],
+    [ "TFT_MAD_MV", "GC9A01__Defines_8h.html#a57400bfd9a8eb47a2420788c82dfa319", null ],
+    [ "TFT_MAD_MX", "GC9A01__Defines_8h.html#af817f607b700b2fb279d11437d5ca1e8", null ],
+    [ "TFT_MAD_MY", "GC9A01__Defines_8h.html#ab125c4748224ddc6cb36c7bd1ac29fa2", null ],
+    [ "TFT_MAD_RGB", "GC9A01__Defines_8h.html#a16a30a4dd484b92b070d63f227bc6b45", null ],
+    [ "TFT_MADCTL", "GC9A01__Defines_8h.html#a9f06228c5dd946e0d2658551dc5cc36c", null ],
+    [ "TFT_NOP", "GC9A01__Defines_8h.html#a8265db7a8d5940d5a665e6188755520c", null ],
+    [ "TFT_PASET", "GC9A01__Defines_8h.html#a6933304a9acb207cba70285cb5577db5", null ],
+    [ "TFT_RAMRD", "GC9A01__Defines_8h.html#acfb3e534418718cffb7f32a487a38c92", null ],
+    [ "TFT_RAMWR", "GC9A01__Defines_8h.html#ae955f58d1b3cdbaf47e4cc58aff8d2cf", null ],
+    [ "TFT_SLPIN", "GC9A01__Defines_8h.html#a7ffa682095d49f29a25e9981e0b4769f", null ],
+    [ "TFT_SLPOUT", "GC9A01__Defines_8h.html#a1229921852f861dca39a2ec2fc0c2a4c", null ],
+    [ "TFT_SWRST", "GC9A01__Defines_8h.html#a10aa3b62accf59709f4429b56baac99d", null ],
+    [ "TFT_WIDTH", "GC9A01__Defines_8h.html#a83af0cb652728913ff58da7133c692ea", null ]
+];

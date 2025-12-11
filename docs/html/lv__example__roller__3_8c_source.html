@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/examples/widgets/roller/lv_example_roller_3.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__example__roller__3_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_example_roller_3.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__example__roller__3_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lv__examples_8h.html">../../lv_examples.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#if LV_USE_ROLLER &amp;&amp; LV_DRAW_COMPLEX &amp;&amp; LV_BUILD_EXAMPLES</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">static</span> <span class="keywordtype">void</span> mask_event_cb(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_enumeration" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="lv__event_8c.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a>(e);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> int16_t mask_top_id = -1;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> int16_t mask_bottom_id = -1;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span>(code == <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59dba93643f8aea4bb1517e26198d48f">LV_EVENT_COVER_CHECK</a>) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_function" href="lv__event_8c.html#a164f8baaeac9e3e2a77410de2175147c">lv_event_set_cover_res</a>(e, <a class="code hl_enumvalue" href="lv__obj__draw_8h.html#ab574311d5f23b50737c863f8c6259a41a377d981a1d974fde8f3336971bc965c3">LV_COVER_RES_MASKED</a>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(code == <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a13752c2a6065c47cf0d87c0b536e18c3">LV_EVENT_DRAW_MAIN_BEGIN</a>) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="comment">/* add mask */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> * font = lv_obj_get_style_text_font(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> line_space = lv_obj_get_style_text_line_space(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> font_h = lv_font_get_line_height(font);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> roller_coords;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#ac6ad8c741536203b984fc628dbb4f9f8">lv_obj_get_coords</a>(obj, &amp;roller_coords);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> rect_area;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        rect_area.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> = roller_coords.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        rect_area.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> = roller_coords.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        rect_area.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> = roller_coords.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        rect_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> = roller_coords.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> + (<a class="code hl_function" href="lv__obj__pos_8c.html#aada555bdfd06f2673714a7c6fd8a3b58">lv_obj_get_height</a>(obj) - font_h - line_space) / 2;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_struct" href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a> * fade_mask_top = <a class="code hl_function" href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a>));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a9d0ceeba92eebec614ba26caa28fa09c">lv_draw_mask_fade_init</a>(fade_mask_top, &amp;rect_area, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a>, rect_area.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>, rect_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        mask_top_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(fade_mask_top, NULL);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        rect_area.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> = rect_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> + font_h + line_space - 1;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        rect_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> = roller_coords.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_struct" href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a> * fade_mask_bottom = <a class="code hl_function" href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a>));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a9d0ceeba92eebec614ba26caa28fa09c">lv_draw_mask_fade_init</a>(fade_mask_bottom, &amp;rect_area, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>, rect_area.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a>, rect_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        mask_bottom_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(fade_mask_bottom, NULL);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(code == <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771afad91939b7594c633c09db3edefab125">LV_EVENT_DRAW_POST_END</a>) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_struct" href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a> * fade_mask_top = <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_top_id);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_struct" href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a> * fade_mask_bottom = <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_bottom_id);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(fade_mask_top);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(fade_mask_bottom);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_function" href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a>(fade_mask_top);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a>(fade_mask_bottom);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        mask_top_id = -1;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        mask_bottom_id = -1;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * Add a fade mask to roller.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="lv__example__widgets_8h.html#a76695aad4aed6e54e751963cfd3dafdc">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__example__roller__3_8c.html#a76695aad4aed6e54e751963cfd3dafdc">lv_example_roller_3</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a>(&amp;style, lv_color_black());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a74d7ad0e1d27b174a82fd95786020dbd">lv_style_set_text_color</a>(&amp;style, lv_color_white());</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a75b3b33d822f1d1f937f7f231754906b">lv_style_set_border_width</a>(&amp;style, 0);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    lv_style_set_pad_all(&amp;style, 0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(lv_scr_act(), &amp;style, 0);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * roller1 = <a class="code hl_function" href="lv__roller_8c.html#ace4c7cd4f5be4bf66be0c7027e4fce6d">lv_roller_create</a>(lv_scr_act());</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(roller1, &amp;style, 0);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="lv__obj__style__gen_8c.html#a2d39882412a8ea65486b999b02a14a47">lv_obj_set_style_bg_opa</a>(roller1, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aab86fa09e396634c9a640a40e38621c40">LV_PART_SELECTED</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#if LV_FONT_MONTSERRAT_22</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="lv__obj__style__gen_8c.html#a42f072823f804d4a6ad33507141c7125">lv_obj_set_style_text_font</a>(roller1, &amp;lv_font_montserrat_22, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aab86fa09e396634c9a640a40e38621c40">LV_PART_SELECTED</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="lv__roller_8c.html#aa47d176962f75987b364fbcf47ec51d8">lv_roller_set_options</a>(roller1,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                          <span class="stringliteral">&quot;January\n&quot;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                          <span class="stringliteral">&quot;February\n&quot;</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                          <span class="stringliteral">&quot;March\n&quot;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                          <span class="stringliteral">&quot;April\n&quot;</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                          <span class="stringliteral">&quot;May\n&quot;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                          <span class="stringliteral">&quot;June\n&quot;</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                          <span class="stringliteral">&quot;July\n&quot;</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                          <span class="stringliteral">&quot;August\n&quot;</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                          <span class="stringliteral">&quot;September\n&quot;</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                          <span class="stringliteral">&quot;October\n&quot;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                          <span class="stringliteral">&quot;November\n&quot;</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                          <span class="stringliteral">&quot;December&quot;</span>,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                          <a class="code hl_enumvalue" href="lv__roller_8h.html#a93a46f84874d871671a5eed0af6cbbeaa4ad742124588acc96f71ae3d96dbdcaa">LV_ROLLER_MODE_NORMAL</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    lv_obj_center(roller1);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="lv__roller_8c.html#ae74cf170705d3cbcda32123d57de2474">lv_roller_set_visible_row_count</a>(roller1, 3);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a>(roller1, mask_event_cb, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a1abba2082b450de63c0052c342a4d66a">LV_EVENT_ALL</a>, NULL);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a></div><div class="ttdeci">@ LV_OPA_COVER</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00054">lv_color.h:54</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a></div><div class="ttdeci">@ LV_OPA_TRANSP</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00042">lv_color.h:42</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a0c6e2dfc4102853ccd17a96d7dd2c9a9"><div class="ttname"><a href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a></div><div class="ttdeci">int16_t lv_draw_mask_add(void *param, void *custom_id)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00081">lv_draw_mask.c:81</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a42befac4b0b19cd552618cf02e05d3af"><div class="ttname"><a href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a></div><div class="ttdeci">void * lv_draw_mask_remove_id(int16_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00172">lv_draw_mask.c:172</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a9d0ceeba92eebec614ba26caa28fa09c"><div class="ttname"><a href="lv__draw__mask_8c.html#a9d0ceeba92eebec614ba26caa28fa09c">lv_draw_mask_fade_init</a></div><div class="ttdeci">void lv_draw_mask_fade_init(lv_draw_mask_fade_param_t *param, const lv_area_t *coords, lv_opa_t opa_top, lv_coord_t y_top, lv_opa_t opa_bottom, lv_coord_t y_bottom)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00541">lv_draw_mask.c:541</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_af0fd11f700504180695cc4d7fa5f3cb2"><div class="ttname"><a href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a></div><div class="ttdeci">void lv_draw_mask_free_param(void *p)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00211">lv_draw_mask.c:211</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a164f8baaeac9e3e2a77410de2175147c"><div class="ttname"><a href="lv__event_8c.html#a164f8baaeac9e3e2a77410de2175147c">lv_event_set_cover_res</a></div><div class="ttdeci">void lv_event_set_cover_res(lv_event_t *e, lv_cover_res_t res)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00401">lv_event.c:401</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a1c1e534267d7f818054106a10966b6f1"><div class="ttname"><a href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a></div><div class="ttdeci">lv_obj_t * lv_event_get_target(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00108">lv_event.c:108</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a9a532f570ede648810e9e36b5d3f3bb1"><div class="ttname"><a href="lv__event_8c.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a></div><div class="ttdeci">lv_event_code_t lv_event_get_code(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00118">lv_event.c:118</a></div></div>
+<div class="ttc" id="alv__event_8c_html_abacf41238027144749f68107a5375994"><div class="ttname"><a href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a></div><div class="ttdeci">struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00162">lv_event.c:162</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a21b130dbe9349eab447cf0c891517272"><div class="ttname"><a href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a></div><div class="ttdeci">struct _lv_event_t lv_event_t</div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></div><div class="ttdeci">lv_event_code_t</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00032">lv_event.h:32</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a13752c2a6065c47cf0d87c0b536e18c3"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a13752c2a6065c47cf0d87c0b536e18c3">LV_EVENT_DRAW_MAIN_BEGIN</a></div><div class="ttdeci">@ LV_EVENT_DRAW_MAIN_BEGIN</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00057">lv_event.h:57</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a1abba2082b450de63c0052c342a4d66a"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a1abba2082b450de63c0052c342a4d66a">LV_EVENT_ALL</a></div><div class="ttdeci">@ LV_EVENT_ALL</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00033">lv_event.h:33</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a59dba93643f8aea4bb1517e26198d48f"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59dba93643f8aea4bb1517e26198d48f">LV_EVENT_COVER_CHECK</a></div><div class="ttdeci">@ LV_EVENT_COVER_CHECK</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00055">lv_event.h:55</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771afad91939b7594c633c09db3edefab125"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771afad91939b7594c633c09db3edefab125">LV_EVENT_DRAW_POST_END</a></div><div class="ttdeci">@ LV_EVENT_DRAW_POST_END</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00062">lv_event.h:62</a></div></div>
+<div class="ttc" id="alv__example__roller__3_8c_html_a76695aad4aed6e54e751963cfd3dafdc"><div class="ttname"><a href="lv__example__roller__3_8c.html#a76695aad4aed6e54e751963cfd3dafdc">lv_example_roller_3</a></div><div class="ttdeci">void lv_example_roller_3(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00058">lv_example_roller_3.c:58</a></div></div>
+<div class="ttc" id="alv__examples_8h_html"><div class="ttname"><a href="lv__examples_8h.html">lv_examples.h</a></div></div>
+<div class="ttc" id="alv__font_8h_html_a11e3396cab33231964d98046c4e436af"><div class="ttname"><a href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a></div><div class="ttdeci">struct _lv_font_t lv_font_t</div></div>
+<div class="ttc" id="alv__mem_8c_html_a05d38dfa0f4d69de8ff082551c263815"><div class="ttname"><a href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a></div><div class="ttdeci">void * lv_mem_buf_get(uint32_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00276">lv_mem.c:276</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a92be7074012180599b9b1122a639cc86"><div class="ttname"><a href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a></div><div class="ttdeci">void lv_mem_buf_release(void *p)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00332">lv_mem.c:332</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a></div><div class="ttdeci">@ LV_PART_MAIN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00069">lv_obj.h:69</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aab86fa09e396634c9a640a40e38621c40"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aab86fa09e396634c9a640a40e38621c40">LV_PART_SELECTED</a></div><div class="ttdeci">@ LV_PART_SELECTED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00073">lv_obj.h:73</a></div></div>
+<div class="ttc" id="alv__obj__draw_8h_html_ab574311d5f23b50737c863f8c6259a41a377d981a1d974fde8f3336971bc965c3"><div class="ttname"><a href="lv__obj__draw_8h.html#ab574311d5f23b50737c863f8c6259a41a377d981a1d974fde8f3336971bc965c3">LV_COVER_RES_MASKED</a></div><div class="ttdeci">@ LV_COVER_RES_MASKED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8h_source.html#l00033">lv_obj_draw.h:33</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aada555bdfd06f2673714a7c6fd8a3b58"><div class="ttname"><a href="lv__obj__pos_8c.html#aada555bdfd06f2673714a7c6fd8a3b58">lv_obj_get_height</a></div><div class="ttdeci">lv_coord_t lv_obj_get_height(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00562">lv_obj_pos.c:562</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_ac6ad8c741536203b984fc628dbb4f9f8"><div class="ttname"><a href="lv__obj__pos_8c.html#ac6ad8c741536203b984fc628dbb4f9f8">lv_obj_get_coords</a></div><div class="ttdeci">void lv_obj_get_coords(const lv_obj_t *obj, lv_area_t *coords)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00487">lv_obj_pos.c:487</a></div></div>
+<div class="ttc" id="alv__obj__style_8c_html_afde1c6c8ff1810dcfa37b4a3aaf8f89e"><div class="ttname"><a href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a></div><div class="ttdeci">void lv_obj_add_style(lv_obj_t *obj, lv_style_t *style, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style_8c_source.html#l00076">lv_obj_style.c:76</a></div></div>
+<div class="ttc" id="alv__obj__style__gen_8c_html_a2d39882412a8ea65486b999b02a14a47"><div class="ttname"><a href="lv__obj__style__gen_8c.html#a2d39882412a8ea65486b999b02a14a47">lv_obj_set_style_bg_opa</a></div><div class="ttdeci">void lv_obj_set_style_bg_opa(struct _lv_obj_t *obj, lv_opa_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style__gen_8c_source.html#l00195">lv_obj_style_gen.c:195</a></div></div>
+<div class="ttc" id="alv__obj__style__gen_8c_html_a42f072823f804d4a6ad33507141c7125"><div class="ttname"><a href="lv__obj__style__gen_8c.html#a42f072823f804d4a6ad33507141c7125">lv_obj_set_style_text_font</a></div><div class="ttdeci">void lv_obj_set_style_text_font(struct _lv_obj_t *obj, const lv_font_t *value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style__gen_8c_source.html#l00539">lv_obj_style_gen.c:539</a></div></div>
+<div class="ttc" id="alv__roller_8c_html_aa47d176962f75987b364fbcf47ec51d8"><div class="ttname"><a href="lv__roller_8c.html#aa47d176962f75987b364fbcf47ec51d8">lv_roller_set_options</a></div><div class="ttdeci">void lv_roller_set_options(lv_obj_t *obj, const char *options, lv_roller_mode_t mode)</div><div class="ttdef"><b>Definition</b> <a href="lv__roller_8c_source.html#l00096">lv_roller.c:96</a></div></div>
+<div class="ttc" id="alv__roller_8c_html_ace4c7cd4f5be4bf66be0c7027e4fce6d"><div class="ttname"><a href="lv__roller_8c.html#ace4c7cd4f5be4bf66be0c7027e4fce6d">lv_roller_create</a></div><div class="ttdeci">lv_obj_t * lv_roller_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__roller_8c_source.html#l00078">lv_roller.c:78</a></div></div>
+<div class="ttc" id="alv__roller_8c_html_ae74cf170705d3cbcda32123d57de2474"><div class="ttname"><a href="lv__roller_8c.html#ae74cf170705d3cbcda32123d57de2474">lv_roller_set_visible_row_count</a></div><div class="ttdeci">void lv_roller_set_visible_row_count(lv_obj_t *obj, uint8_t row_cnt)</div><div class="ttdef"><b>Definition</b> <a href="lv__roller_8c_source.html#l00191">lv_roller.c:191</a></div></div>
+<div class="ttc" id="alv__roller_8h_html_a93a46f84874d871671a5eed0af6cbbeaa4ad742124588acc96f71ae3d96dbdcaa"><div class="ttname"><a href="lv__roller_8h.html#a93a46f84874d871671a5eed0af6cbbeaa4ad742124588acc96f71ae3d96dbdcaa">LV_ROLLER_MODE_NORMAL</a></div><div class="ttdeci">@ LV_ROLLER_MODE_NORMAL</div><div class="ttdef"><b>Definition</b> <a href="lv__roller_8h_source.html#l00038">lv_roller.h:38</a></div></div>
+<div class="ttc" id="alv__style_8c_html_a327db2c3050bd2d1a1693aa6981205dd"><div class="ttname"><a href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a></div><div class="ttdeci">void lv_style_init(lv_style_t *style)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00151">lv_style.c:151</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a74d7ad0e1d27b174a82fd95786020dbd"><div class="ttname"><a href="lv__style__gen_8c.html#a74d7ad0e1d27b174a82fd95786020dbd">lv_style_set_text_color</a></div><div class="ttdeci">void lv_style_set_text_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00523">lv_style_gen.c:523</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a75b3b33d822f1d1f937f7f231754906b"><div class="ttname"><a href="lv__style__gen_8c.html#a75b3b33d822f1d1f937f7f231754906b">lv_style_set_border_width</a></div><div class="ttdeci">void lv_style_set_border_width(lv_style_t *style, lv_coord_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00307">lv_style_gen.c:307</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_afcfd90e9415c860adbf13bedb97ce0c7"><div class="ttname"><a href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a></div><div class="ttdeci">void lv_style_set_bg_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00187">lv_style_gen.c:187</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a56d2e4d92428979499ff6a06e3d23cba"><div class="ttname"><a href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">lv_area_t::x1</a></div><div class="ttdeci">lv_coord_t x1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00044">lv_area.h:44</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a8e6b43ed9ab280f66ae4e00af312ca27"><div class="ttname"><a href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">lv_area_t::y1</a></div><div class="ttdeci">lv_coord_t y1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00045">lv_area.h:45</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_ac3da01ffe2d07a8e446684160dd1f7fc"><div class="ttname"><a href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">lv_area_t::y2</a></div><div class="ttdeci">lv_coord_t y2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00047">lv_area.h:47</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_aec0405ee6e0fa96f922fee6851240081"><div class="ttname"><a href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">lv_area_t::x2</a></div><div class="ttdeci">lv_coord_t x2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00046">lv_area.h:46</a></div></div>
+<div class="ttc" id="astructlv__draw__mask__fade__param__t_html"><div class="ttname"><a href="structlv__draw__mask__fade__param__t.html">lv_draw_mask_fade_param_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00183">lv_draw_mask.h:183</a></div></div>
+<div class="ttc" id="astructlv__style__t_html"><div class="ttname"><a href="structlv__style__t.html">lv_style_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00319">lv_style.h:319</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_e5da66859f2abaa21457d60ce5a09176.html">examples</a></li><li class="navelem"><a href="dir_4295e6305f0c15259038b87422dc7837.html">widgets</a></li><li class="navelem"><a href="dir_bb67f211ae271ec4e198933f25233d8a.html">roller</a></li><li class="navelem"><a href="lv__example__roller__3_8c.html">lv_example_roller_3.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

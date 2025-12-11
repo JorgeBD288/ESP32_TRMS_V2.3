@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/examples/widgets/bar/lv_example_bar_3.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__example__bar__3_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_example_bar_3.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__example__bar__3_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lv__examples_8h.html">../../lv_examples.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#if LV_USE_BAR &amp;&amp; LV_BUILD_EXAMPLES</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">static</span> <span class="keywordtype">void</span> set_temp(<span class="keywordtype">void</span> * bar, int32_t temp)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_function" href="lv__bar_8c.html#a34b028e8302a9ea27b4fbe24cb300b7a">lv_bar_set_value</a>(bar, temp, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * A temperature meter example</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="lv__example__bar__3_8c.html#ae1a44ed274d6218cc8df51f74fbff758">   12</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__example__bar__3_8c.html#ae1a44ed274d6218cc8df51f74fbff758">lv_example_bar_3</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_indic;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_indic);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a>(&amp;style_indic, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a>(&amp;style_indic, <a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5">LV_PALETTE_RED</a>));</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="lv__style__gen_8c.html#ad7829d3c456fba75fd3308ea4059489f">lv_style_set_bg_grad_color</a>(&amp;style_indic, <a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2">LV_PALETTE_BLUE</a>));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="lv__style__gen_8c.html#aa690aa12942d71c91129410819207a9b">lv_style_set_bg_grad_dir</a>(&amp;style_indic, <a class="code hl_enumvalue" href="lv__style_8h.html#a738ebf919f7ed6212b7a33e13857e61aa213ea9c1af983a3b7d4dbe131e30ec67">LV_GRAD_DIR_VER</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * bar = <a class="code hl_function" href="lv__bar_8c.html#a5d0819a9a2bc510c0c5f995e70dc0df4">lv_bar_create</a>(lv_scr_act());</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(bar, &amp;style_indic, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aae1fb6dda668a19264aef30e0bfb0930d">LV_PART_INDICATOR</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a>(bar, 20, 200);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    lv_obj_center(bar);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="lv__bar_8c.html#a9bb7d26ed4bb68a4db615b45e5ac92ef">lv_bar_set_range</a>(bar, -20, 40);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_typedef" href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a> <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="lv__anim_8c.html#ab47f0c3139bbd759c1ccae268fc297e6">lv_anim_init</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    lv_anim_set_exec_cb(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, set_temp);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    lv_anim_set_time(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, 3000);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    lv_anim_set_playback_time(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, 3000);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    lv_anim_set_var(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, bar);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    lv_anim_set_values(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, -20, 40);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    lv_anim_set_repeat_count(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, <a class="code hl_define" href="lv__anim_8h.html#afa32040e71befa6e806501861a7a61da">LV_ANIM_REPEAT_INFINITE</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__anim_8c_html_a51a27d8a0a7d7337a08c9416217b9d02"><div class="ttname"><a href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a></div><div class="ttdeci">lv_anim_t * lv_anim_start(const lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00076">lv_anim.c:76</a></div></div>
+<div class="ttc" id="alv__anim_8c_html_ab47f0c3139bbd759c1ccae268fc297e6"><div class="ttname"><a href="lv__anim_8c.html#ab47f0c3139bbd759c1ccae268fc297e6">lv_anim_init</a></div><div class="ttdeci">void lv_anim_init(lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00065">lv_anim.c:65</a></div></div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a></div><div class="ttdeci">@ LV_ANIM_ON</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00039">lv_anim.h:39</a></div></div>
+<div class="ttc" id="alv__anim_8h_html_a94df93c022dc57ee917b4757e50ebe22"><div class="ttname"><a href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a></div><div class="ttdeci">struct _lv_anim_t lv_anim_t</div></div>
+<div class="ttc" id="alv__anim_8h_html_afa32040e71befa6e806501861a7a61da"><div class="ttname"><a href="lv__anim_8h.html#afa32040e71befa6e806501861a7a61da">LV_ANIM_REPEAT_INFINITE</a></div><div class="ttdeci">#define LV_ANIM_REPEAT_INFINITE</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00026">lv_anim.h:26</a></div></div>
+<div class="ttc" id="alv__bar_8c_html_a34b028e8302a9ea27b4fbe24cb300b7a"><div class="ttname"><a href="lv__bar_8c.html#a34b028e8302a9ea27b4fbe24cb300b7a">lv_bar_set_value</a></div><div class="ttdeci">void lv_bar_set_value(lv_obj_t *obj, int32_t value, lv_anim_enable_t anim)</div><div class="ttdef"><b>Definition</b> <a href="lv__bar_8c_source.html#l00090">lv_bar.c:90</a></div></div>
+<div class="ttc" id="alv__bar_8c_html_a5d0819a9a2bc510c0c5f995e70dc0df4"><div class="ttname"><a href="lv__bar_8c.html#a5d0819a9a2bc510c0c5f995e70dc0df4">lv_bar_create</a></div><div class="ttdeci">lv_obj_t * lv_bar_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__bar_8c_source.html#l00078">lv_bar.c:78</a></div></div>
+<div class="ttc" id="alv__bar_8c_html_a9bb7d26ed4bb68a4db615b45e5ac92ef"><div class="ttname"><a href="lv__bar_8c.html#a9bb7d26ed4bb68a4db615b45e5ac92ef">lv_bar_set_range</a></div><div class="ttdeci">void lv_bar_set_range(lv_obj_t *obj, int32_t min, int32_t max)</div><div class="ttdef"><b>Definition</b> <a href="lv__bar_8c_source.html#l00121">lv_bar.c:121</a></div></div>
+<div class="ttc" id="alv__color_8c_html_a02d11c7e2f70e8b777901d9e403c6b34"><div class="ttname"><a href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a></div><div class="ttdeci">lv_color_t lv_palette_main(lv_palette_t p)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00274">lv_color.c:274</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a></div><div class="ttdeci">@ LV_OPA_COVER</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00054">lv_color.h:54</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2">LV_PALETTE_BLUE</a></div><div class="ttdeci">@ LV_PALETTE_BLUE</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00264">lv_color.h:264</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5">LV_PALETTE_RED</a></div><div class="ttdeci">@ LV_PALETTE_RED</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00259">lv_color.h:259</a></div></div>
+<div class="ttc" id="alv__example__anim__3_8c_html_a734ce3ff48b2bdc8e7cc09dd6faee06f"><div class="ttname"><a href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a></div><div class="ttdeci">lv_anim_t a</div><div class="ttdef"><b>Definition</b> <a href="lv__example__anim__3_8c_source.html#l00024">lv_example_anim_3.c:24</a></div></div>
+<div class="ttc" id="alv__example__bar__3_8c_html_ae1a44ed274d6218cc8df51f74fbff758"><div class="ttname"><a href="lv__example__bar__3_8c.html#ae1a44ed274d6218cc8df51f74fbff758">lv_example_bar_3</a></div><div class="ttdeci">void lv_example_bar_3(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">lv_example_bar_3.c:12</a></div></div>
+<div class="ttc" id="alv__examples_8h_html"><div class="ttname"><a href="lv__examples_8h.html">lv_examples.h</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aae1fb6dda668a19264aef30e0bfb0930d"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aae1fb6dda668a19264aef30e0bfb0930d">LV_PART_INDICATOR</a></div><div class="ttdeci">@ LV_PART_INDICATOR</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00071">lv_obj.h:71</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_abcc5ebd0d1bda82435697baeeb58048d"><div class="ttname"><a href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a></div><div class="ttdeci">void lv_obj_set_size(lv_obj_t *obj, lv_coord_t w, lv_coord_t h)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00215">lv_obj_pos.c:215</a></div></div>
+<div class="ttc" id="alv__obj__style_8c_html_afde1c6c8ff1810dcfa37b4a3aaf8f89e"><div class="ttname"><a href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a></div><div class="ttdeci">void lv_obj_add_style(lv_obj_t *obj, lv_style_t *style, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style_8c_source.html#l00076">lv_obj_style.c:76</a></div></div>
+<div class="ttc" id="alv__style_8c_html_a327db2c3050bd2d1a1693aa6981205dd"><div class="ttname"><a href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a></div><div class="ttdeci">void lv_style_init(lv_style_t *style)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00151">lv_style.c:151</a></div></div>
+<div class="ttc" id="alv__style_8h_html_a738ebf919f7ed6212b7a33e13857e61aa213ea9c1af983a3b7d4dbe131e30ec67"><div class="ttname"><a href="lv__style_8h.html#a738ebf919f7ed6212b7a33e13857e61aa213ea9c1af983a3b7d4dbe131e30ec67">LV_GRAD_DIR_VER</a></div><div class="ttdeci">@ LV_GRAD_DIR_VER</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00128">lv_style.h:128</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a033bf2ecb3aab94dde82136cea696693"><div class="ttname"><a href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a></div><div class="ttdeci">void lv_style_set_bg_opa(lv_style_t *style, lv_opa_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00195">lv_style_gen.c:195</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_aa690aa12942d71c91129410819207a9b"><div class="ttname"><a href="lv__style__gen_8c.html#aa690aa12942d71c91129410819207a9b">lv_style_set_bg_grad_dir</a></div><div class="ttdeci">void lv_style_set_bg_grad_dir(lv_style_t *style, lv_grad_dir_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00211">lv_style_gen.c:211</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_ad7829d3c456fba75fd3308ea4059489f"><div class="ttname"><a href="lv__style__gen_8c.html#ad7829d3c456fba75fd3308ea4059489f">lv_style_set_bg_grad_color</a></div><div class="ttdeci">void lv_style_set_bg_grad_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00203">lv_style_gen.c:203</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_afcfd90e9415c860adbf13bedb97ce0c7"><div class="ttname"><a href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a></div><div class="ttdeci">void lv_style_set_bg_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00187">lv_style_gen.c:187</a></div></div>
+<div class="ttc" id="astructlv__style__t_html"><div class="ttname"><a href="structlv__style__t.html">lv_style_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00319">lv_style.h:319</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_e5da66859f2abaa21457d60ce5a09176.html">examples</a></li><li class="navelem"><a href="dir_4295e6305f0c15259038b87422dc7837.html">widgets</a></li><li class="navelem"><a href="dir_d7ab2a7ce06310669a53a8c44fe62ffa.html">bar</a></li><li class="navelem"><a href="lv__example__bar__3_8c.html">lv_example_bar_3.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

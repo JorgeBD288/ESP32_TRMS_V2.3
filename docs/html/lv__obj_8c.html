@@ -1,0 +1,1121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/core/lv_obj.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__obj_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_obj.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__obj_8h_source.html">lv_obj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__indev_8h_source.html">lv_indev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__refr_8h_source.html">lv_refr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__group_8h_source.html">lv_group.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__disp_8h_source.html">lv_disp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__theme_8h_source.html">lv_theme.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__draw_8h_source.html">../draw/lv_draw.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__anim_8h_source.html">../misc/lv_anim.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__timer_8h_source.html">../misc/lv_timer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__async_8h_source.html">../misc/lv_async.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__fs_8h_source.html">../misc/lv_fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__gc_8h_source.html">../misc/lv_gc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">../misc/lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">../misc/lv_log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__hal_8h_source.html">../hal/lv_hal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__extra_8h_source.html">../extra/lv_extra.h</a>&quot;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div>
+<p><a href="lv__obj_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a99e3c00b0412448e5f97215ad4dca771" id="r_a99e3c00b0412448e5f97215ad4dca771"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99e3c00b0412448e5f97215ad4dca771">LV_OBJ_DEF_HEIGHT</a>&#160;&#160;&#160;(<a class="el" href="lv__hal_8h.html#af899ca4d4ba17880b64111f602ba36e1">LV_DPX</a>(50))</td></tr>
+<tr class="memitem:a68c68ec521cab370ea0d1e5f2b2bef85" id="r_a68c68ec521cab370ea0d1e5f2b2bef85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c68ec521cab370ea0d1e5f2b2bef85">LV_OBJ_DEF_WIDTH</a>&#160;&#160;&#160;(<a class="el" href="lv__hal_8h.html#af899ca4d4ba17880b64111f602ba36e1">LV_DPX</a>(100))</td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></td></tr>
+<tr class="memitem:ac49b55bcbc734037ef017dc04308e7dc" id="r_ac49b55bcbc734037ef017dc04308e7dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac49b55bcbc734037ef017dc04308e7dc">STYLE_TRANSITION_MAX</a>&#160;&#160;&#160;32</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a666fa58edac1e61856b2a00fe60308a0" id="r_a666fa58edac1e61856b2a00fe60308a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a666fa58edac1e61856b2a00fe60308a0">lv_init</a> (void)</td></tr>
+<tr class="memitem:a548cb2278027f044b648acd7f02b2f0c" id="r_a548cb2278027f044b648acd7f02b2f0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a548cb2278027f044b648acd7f02b2f0c">lv_is_initialized</a> (void)</td></tr>
+<tr class="memitem:a87fa70194789d48ea3dba01d1c28c984" id="r_a87fa70194789d48ea3dba01d1c28c984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a> f)</td></tr>
+<tr class="memitem:adbd258635d3d653e5446336764044db1" id="r_adbd258635d3d653e5446336764044db1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> state)</td></tr>
+<tr class="memitem:a1b734607bd80d900ba862375d08227cf" id="r_a1b734607bd80d900ba862375d08227cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b734607bd80d900ba862375d08227cf">lv_obj_allocate_spec_attr</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a3d7bedf32977bdf5a8ddfa01f1302c08" id="r_a3d7bedf32977bdf5a8ddfa01f1302c08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d7bedf32977bdf5a8ddfa01f1302c08">lv_obj_check_type</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> *class_p)</td></tr>
+<tr class="memitem:a8a45a671b0fb07c0e99639c180d25fba" id="r_a8a45a671b0fb07c0e99639c180d25fba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a> f)</td></tr>
+<tr class="memitem:ac94c26d36140c7c83da6914d60170e16" id="r_ac94c26d36140c7c83da6914d60170e16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> state)</td></tr>
+<tr class="memitem:acf57dc362a43990cbad93921da833b5d" id="r_acf57dc362a43990cbad93921da833b5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf57dc362a43990cbad93921da833b5d">lv_obj_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:a30595a041d9abd1a81629965d22a82e0" id="r_a30595a041d9abd1a81629965d22a82e0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30595a041d9abd1a81629965d22a82e0">lv_obj_get_class</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:afbc1d207be82e3d738e17c18d8e7fdf9" id="r_afbc1d207be82e3d738e17c18d8e7fdf9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a512731c24ce12b0e62abb3179cbde6ed" id="r_a512731c24ce12b0e62abb3179cbde6ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a512731c24ce12b0e62abb3179cbde6ed">lv_obj_get_state</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a27480f49b6f82e0e2643c1dd09735e9d" id="r_a27480f49b6f82e0e2643c1dd09735e9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27480f49b6f82e0e2643c1dd09735e9d">lv_obj_has_class</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> *class_p)</td></tr>
+<tr class="memitem:a349bf1b6dea18bd0ab189e7a1c06a662" id="r_a349bf1b6dea18bd0ab189e7a1c06a662"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a349bf1b6dea18bd0ab189e7a1c06a662">lv_obj_has_flag</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a> f)</td></tr>
+<tr class="memitem:a29244deb39942043ee658fbb8e1a47d2" id="r_a29244deb39942043ee658fbb8e1a47d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29244deb39942043ee658fbb8e1a47d2">lv_obj_has_flag_any</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a> f)</td></tr>
+<tr class="memitem:af6296b36dd5eddc61f5544761b1ff5a7" id="r_af6296b36dd5eddc61f5544761b1ff5a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> state)</td></tr>
+<tr class="memitem:a4c220acd20b632ad2d4ca7cd7a3023bb" id="r_a4c220acd20b632ad2d4ca7cd7a3023bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c220acd20b632ad2d4ca7cd7a3023bb">lv_obj_is_valid</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a424ca3b432ad82f98c4b05950b597d44" id="r_a424ca3b432ad82f98c4b05950b597d44"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a99e3c00b0412448e5f97215ad4dca771" name="a99e3c00b0412448e5f97215ad4dca771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e3c00b0412448e5f97215ad4dca771">&#9670;&#160;</a></span>LV_OBJ_DEF_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_OBJ_DEF_HEIGHT&#160;&#160;&#160;(<a class="el" href="lv__hal_8h.html#af899ca4d4ba17880b64111f602ba36e1">LV_DPX</a>(50))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00050">50</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+
+</div>
+</div>
+<a id="a68c68ec521cab370ea0d1e5f2b2bef85" name="a68c68ec521cab370ea0d1e5f2b2bef85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c68ec521cab370ea0d1e5f2b2bef85">&#9670;&#160;</a></span>LV_OBJ_DEF_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_OBJ_DEF_WIDTH&#160;&#160;&#160;(<a class="el" href="lv__hal_8h.html#af899ca4d4ba17880b64111f602ba36e1">LV_DPX</a>(100))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00049">49</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+
+</div>
+</div>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00048">48</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+
+</div>
+</div>
+<a id="ac49b55bcbc734037ef017dc04308e7dc" name="ac49b55bcbc734037ef017dc04308e7dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac49b55bcbc734037ef017dc04308e7dc">&#9670;&#160;</a></span>STYLE_TRANSITION_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STYLE_TRANSITION_MAX&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00051">51</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a666fa58edac1e61856b2a00fe60308a0" name="a666fa58edac1e61856b2a00fe60308a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a666fa58edac1e61856b2a00fe60308a0">&#9670;&#160;</a></span>lv_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize LVGL library. Should be called before any other LVGL related function. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00098">98</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>{</div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">/*Do nothing if already initialized*/</span></div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span>(lv_initialized) {</div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_init: already inited&quot;</span>);</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <span class="comment">/*Initialize the misc modules*/</span></div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="lv__mem_8c.html#ab6a1069ab1e16cca811cd4203cd97ccc">lv_mem_init</a>();</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_function" href="lv__timer_8c.html#afcfd134fc188cf77059b2aa7f118da5c">_lv_timer_core_init</a>();</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="lv__fs_8c.html#adc8beccbcb0961436c1680751ef54afc">_lv_fs_init</a>();</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="lv__anim_8c.html#ae8276fe9608fab75e9bdc989c837d7d3">_lv_anim_core_init</a>();</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_function" href="lv__group_8c.html#a00bed49b53f432c3b3819882b4fb7755">_lv_group_init</a>();</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="lv__draw_8c.html#af7a40ccee4c55b76a524fb3c212235db">lv_draw_init</a>();</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span><span class="preprocessor">#if LV_USE_GPU_STM32_DMA2D</span></div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">/*Initialize DMA2D GPU*/</span></div>
+<div class="line"><span class="lineno">  123</span>    lv_draw_stm32_dma2d_init();</div>
+<div class="line"><span class="lineno">  124</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span><span class="preprocessor">#if LV_USE_GPU_RA6M3_G2D</span></div>
+<div class="line"><span class="lineno">  127</span>    <span class="comment">/*Initialize G2D GPU*/</span></div>
+<div class="line"><span class="lineno">  128</span>    lv_draw_ra6m3_g2d_init();</div>
+<div class="line"><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span><span class="preprocessor">#if LV_USE_GPU_SWM341_DMA2D</span></div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment">/*Initialize DMA2D GPU*/</span></div>
+<div class="line"><span class="lineno">  133</span>    lv_draw_swm341_dma2d_init();</div>
+<div class="line"><span class="lineno">  134</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span><span class="preprocessor">#if LV_USE_GPU_NXP_PXP &amp;&amp; LV_USE_GPU_NXP_PXP_AUTO_INIT</span></div>
+<div class="line"><span class="lineno">  137</span>    PXP_COND_STOP(!lv_gpu_nxp_pxp_init(), <span class="stringliteral">&quot;PXP init failed.&quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_function" href="lv__obj__style_8c.html#a06dd08ec4b467767ea5593834fd3d7a5">_lv_obj_style_init</a>();</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_function" href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_disp_ll), <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a>));</div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_function" href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_indev_ll), <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a>));</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">/*Initialize the screen refresh system*/</span></div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="lv__refr_8c.html#ada28969f0e880484db61b7db55302580">_lv_refr_init</a>();</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_function" href="lv__img__decoder_8c.html#a2401ec660a45155ade702834a2b35bca">_lv_img_decoder_init</a>();</div>
+<div class="line"><span class="lineno">  148</span><span class="preprocessor">#if LV_IMG_CACHE_DEF_SIZE</span></div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_function" href="lv__img__cache_8c.html#a285d69a06a7c86380815647aa705d451">lv_img_cache_set_size</a>(<a class="code hl_define" href="lv__conf_8h.html#ae599fa8c2a484d7a27e64257af0307af">LV_IMG_CACHE_DEF_SIZE</a>);</div>
+<div class="line"><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">/*Test if the IDE has UTF-8 encoding*/</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * txt = <span class="stringliteral">&quot;Á&quot;</span>;</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="keyword">const</span> uint8_t * txt_u8 = (uint8_t *)txt;</div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span>(txt_u8[0] != 0xc3 || txt_u8[1] != 0x81 || txt_u8[2] != 0x00) {</div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;The strings have no UTF-8 encoding. Non-ASCII characters won&#39;t be displayed.&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    uint32_t endianess_test = 0x11223344;</div>
+<div class="line"><span class="lineno">  160</span>    uint8_t * endianess_test_p = (uint8_t *) &amp;endianess_test;</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordtype">bool</span> big_endian = endianess_test_p[0] == 0x11 ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span>(big_endian) {</div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_define" href="lv__assert_8h.html#a0ec4363af9fedf7ddeaaa41d31f364bb">LV_ASSERT_MSG</a>(<a class="code hl_define" href="lv__conf_8h.html#ae7d23c710abd0533067f78bbf6ec3519">LV_BIG_ENDIAN_SYSTEM</a> == 1,</div>
+<div class="line"><span class="lineno">  165</span>                      <span class="stringliteral">&quot;It&#39;s a big endian system but LV_BIG_ENDIAN_SYSTEM is not enabled in lv_conf.h&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  168</span>        <a class="code hl_define" href="lv__assert_8h.html#a0ec4363af9fedf7ddeaaa41d31f364bb">LV_ASSERT_MSG</a>(<a class="code hl_define" href="lv__conf_8h.html#ae7d23c710abd0533067f78bbf6ec3519">LV_BIG_ENDIAN_SYSTEM</a> == 0,</div>
+<div class="line"><span class="lineno">  169</span>                      <span class="stringliteral">&quot;It&#39;s a little endian system but LV_BIG_ENDIAN_SYSTEM is enabled in lv_conf.h&quot;</span>);</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span><span class="preprocessor">#if LV_USE_ASSERT_MEM_INTEGRITY</span></div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Memory integrity checks are enabled via LV_USE_ASSERT_MEM_INTEGRITY which makes LVGL much slower&quot;</span>);</div>
+<div class="line"><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span><span class="preprocessor">#if LV_USE_ASSERT_OBJ</span></div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Object sanity checks are enabled via LV_USE_ASSERT_OBJ which makes LVGL much slower&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span><span class="preprocessor">#if LV_USE_ASSERT_STYLE</span></div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Style sanity checks are enabled that uses more RAM&quot;</span>);</div>
+<div class="line"><span class="lineno">  182</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span><span class="preprocessor">#if LV_LOG_LEVEL == LV_LOG_LEVEL_TRACE</span></div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Log level is set to &#39;Trace&#39; which makes LVGL much slower&quot;</span>);</div>
+<div class="line"><span class="lineno">  186</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_function" href="lv__extra_8c.html#a6141cd33afd80e31c16f92dc6d617242">lv_extra_init</a>();</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    lv_initialized = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;finished&quot;</span>);</div>
+<div class="line"><span class="lineno">  193</span>}</div>
+<div class="ttc" id="alv__anim_8c_html_ae8276fe9608fab75e9bdc989c837d7d3"><div class="ttname"><a href="lv__anim_8c.html#ae8276fe9608fab75e9bdc989c837d7d3">_lv_anim_core_init</a></div><div class="ttdeci">void _lv_anim_core_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00057">lv_anim.c:57</a></div></div>
+<div class="ttc" id="alv__assert_8h_html_a0ec4363af9fedf7ddeaaa41d31f364bb"><div class="ttname"><a href="lv__assert_8h.html#a0ec4363af9fedf7ddeaaa41d31f364bb">LV_ASSERT_MSG</a></div><div class="ttdeci">#define LV_ASSERT_MSG(expr, msg)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00045">lv_assert.h:45</a></div></div>
+<div class="ttc" id="alv__conf_8h_html_ae599fa8c2a484d7a27e64257af0307af"><div class="ttname"><a href="lv__conf_8h.html#ae599fa8c2a484d7a27e64257af0307af">LV_IMG_CACHE_DEF_SIZE</a></div><div class="ttdeci">#define LV_IMG_CACHE_DEF_SIZE</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00147">lv_conf.h:147</a></div></div>
+<div class="ttc" id="alv__conf_8h_html_ae7d23c710abd0533067f78bbf6ec3519"><div class="ttname"><a href="lv__conf_8h.html#ae7d23c710abd0533067f78bbf6ec3519">LV_BIG_ENDIAN_SYSTEM</a></div><div class="ttdeci">#define LV_BIG_ENDIAN_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00321">lv_conf.h:321</a></div></div>
+<div class="ttc" id="alv__draw_8c_html_af7a40ccee4c55b76a524fb3c212235db"><div class="ttname"><a href="lv__draw_8c.html#af7a40ccee4c55b76a524fb3c212235db">lv_draw_init</a></div><div class="ttdeci">void lv_draw_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8c_source.html#l00040">lv_draw.c:40</a></div></div>
+<div class="ttc" id="alv__extra_8c_html_a6141cd33afd80e31c16f92dc6d617242"><div class="ttname"><a href="lv__extra_8c.html#a6141cd33afd80e31c16f92dc6d617242">lv_extra_init</a></div><div class="ttdeci">void lv_extra_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__extra_8c_source.html#l00035">lv_extra.c:35</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_adc8beccbcb0961436c1680751ef54afc"><div class="ttname"><a href="lv__fs_8c.html#adc8beccbcb0961436c1680751ef54afc">_lv_fs_init</a></div><div class="ttdeci">void _lv_fs_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00041">lv_fs.c:41</a></div></div>
+<div class="ttc" id="alv__gc_8h_html_a56ab4f084c8075b22e02e1c99491c4cd"><div class="ttname"><a href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a></div><div class="ttdeci">#define LV_GC_ROOT(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__gc_8h_source.html#l00074">lv_gc.h:74</a></div></div>
+<div class="ttc" id="alv__group_8c_html_a00bed49b53f432c3b3819882b4fb7755"><div class="ttname"><a href="lv__group_8c.html#a00bed49b53f432c3b3819882b4fb7755">_lv_group_init</a></div><div class="ttdeci">void _lv_group_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00045">lv_group.c:45</a></div></div>
+<div class="ttc" id="alv__hal__disp_8h_html_a38e817df2a5f77f36d3fe4975cf58129"><div class="ttname"><a href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a></div><div class="ttdeci">struct _lv_disp_t lv_disp_t</div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a7fc4c271f4ad53b4949e26b2999a1785"><div class="ttname"><a href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a></div><div class="ttdeci">struct _lv_indev_t lv_indev_t</div></div>
+<div class="ttc" id="alv__img__cache_8c_html_a285d69a06a7c86380815647aa705d451"><div class="ttname"><a href="lv__img__cache_8c.html#a285d69a06a7c86380815647aa705d451">lv_img_cache_set_size</a></div><div class="ttdeci">void lv_img_cache_set_size(uint16_t new_entry_cnt)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8c_source.html#l00149">lv_img_cache.c:149</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a2401ec660a45155ade702834a2b35bca"><div class="ttname"><a href="lv__img__decoder_8c.html#a2401ec660a45155ade702834a2b35bca">_lv_img_decoder_init</a></div><div class="ttdeci">void _lv_img_decoder_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00056">lv_img_decoder.c:56</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_a991a8cdd1d53fcc0b2c7e1f2e55b067b"><div class="ttname"><a href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a></div><div class="ttdeci">void _lv_ll_init(lv_ll_t *ll_p, uint32_t node_size)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00047">lv_ll.c:47</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a1deeb0e317c6314c573ee8730321afd0"><div class="ttname"><a href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a></div><div class="ttdeci">#define LV_LOG_TRACE(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00093">lv_log.h:93</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ab6a1069ab1e16cca811cd4203cd97ccc"><div class="ttname"><a href="lv__mem_8c.html#ab6a1069ab1e16cca811cd4203cd97ccc">lv_mem_init</a></div><div class="ttdeci">void lv_mem_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00086">lv_mem.c:86</a></div></div>
+<div class="ttc" id="alv__obj__style_8c_html_a06dd08ec4b467767ea5593834fd3d7a5"><div class="ttname"><a href="lv__obj__style_8c.html#a06dd08ec4b467767ea5593834fd3d7a5">_lv_obj_style_init</a></div><div class="ttdeci">void _lv_obj_style_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style_8c_source.html#l00071">lv_obj_style.c:71</a></div></div>
+<div class="ttc" id="alv__refr_8c_html_ada28969f0e880484db61b7db55302580"><div class="ttname"><a href="lv__refr_8c.html#ada28969f0e880484db61b7db55302580">_lv_refr_init</a></div><div class="ttdeci">void _lv_refr_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__refr_8c_source.html#l00103">lv_refr.c:103</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_afcfd134fc188cf77059b2aa7f118da5c"><div class="ttname"><a href="lv__timer_8c.html#afcfd134fc188cf77059b2aa7f118da5c">_lv_timer_core_init</a></div><div class="ttdeci">void _lv_timer_core_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00055">lv_timer.c:55</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__anim_8c_source.html#l00057">_lv_anim_core_init()</a>, <a class="el" href="lv__fs_8c_source.html#l00041">_lv_fs_init()</a>, <a class="el" href="lv__group_8c_source.html#l00045">_lv_group_init()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>, <a class="el" href="lv__ll_8c_source.html#l00047">_lv_ll_init()</a>, <a class="el" href="lv__obj__style_8c_source.html#l00071">_lv_obj_style_init()</a>, <a class="el" href="lv__refr_8c_source.html#l00103">_lv_refr_init()</a>, <a class="el" href="lv__timer_8c_source.html#l00055">_lv_timer_core_init()</a>, <a class="el" href="lv__assert_8h_source.html#l00045">LV_ASSERT_MSG</a>, <a class="el" href="lv__conf_8h_source.html#l00321">LV_BIG_ENDIAN_SYSTEM</a>, <a class="el" href="lv__draw_8c_source.html#l00040">lv_draw_init()</a>, <a class="el" href="lv__extra_8c_source.html#l00035">lv_extra_init()</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__conf_8h_source.html#l00147">LV_IMG_CACHE_DEF_SIZE</a>, <a class="el" href="lv__img__cache_8c_source.html#l00149">lv_img_cache_set_size()</a>, <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a> y <a class="el" href="lv__mem_8c_source.html#l00086">lv_mem_init()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="DisplayTouch_8cpp_source.html#l00142">DisplayTouch_begin()</a>.</p>
+
+</div>
+</div>
+<a id="a548cb2278027f044b648acd7f02b2f0c" name="a548cb2278027f044b648acd7f02b2f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a548cb2278027f044b648acd7f02b2f0c">&#9670;&#160;</a></span>lv_is_initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_is_initialized </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns whether the 'lv' library is currently initialized </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00093">93</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> lv_initialized;</div>
+<div class="line"><span class="lineno">   96</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a87fa70194789d48ea3dba01d1c28c984" name="a87fa70194789d48ea3dba01d1c28c984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87fa70194789d48ea3dba01d1c28c984">&#9670;&#160;</a></span>lv_obj_add_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_add_flag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set one or more flags </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">f</td><td>R-ed values from <span class="tt"><a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a></span> to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00229">229</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>{</div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordtype">bool</span> was_on_layout = <a class="code hl_function" href="lv__obj__pos_8c.html#af71b05975a91f3dfddaf28fbe96fe4eb">lv_obj_is_layout_positioned</a>(obj);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    <span class="comment">/* We must invalidate the area occupied by the object before we hide it as calls to invalidate hidden objects are ignored */</span></div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">if</span>(f &amp; <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>) <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#ae6f24d376b42d0a9ebb75b8abb4cece9">flags</a> |= f;</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">if</span>(f &amp; <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>) {</div>
+<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a5fb9f48f09dbcf9d45b0f79675e793cb">LV_STATE_FOCUSED</a>)) {</div>
+<div class="line"><span class="lineno">  242</span>            <a class="code hl_typedef" href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a> * group = <a class="code hl_function" href="#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a>(obj);</div>
+<div class="line"><span class="lineno">  243</span>            <span class="keywordflow">if</span>(group != NULL) {</div>
+<div class="line"><span class="lineno">  244</span>                <a class="code hl_function" href="lv__group_8c.html#ad5479089f9d9554f88428bf63241515f">lv_group_focus_next</a>(group);</div>
+<div class="line"><span class="lineno">  245</span>                <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * next_obj = <a class="code hl_function" href="lv__group_8c.html#a32f6012476aedc5eaa4ef9b493b28557">lv_group_get_focused</a>(group);</div>
+<div class="line"><span class="lineno">  246</span>                <span class="keywordflow">if</span>(next_obj != NULL) {</div>
+<div class="line"><span class="lineno">  247</span>                    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(next_obj);</div>
+<div class="line"><span class="lineno">  248</span>                }</div>
+<div class="line"><span class="lineno">  249</span>            }</div>
+<div class="line"><span class="lineno">  250</span>        }</div>
+<div class="line"><span class="lineno">  251</span>    }</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">if</span>((was_on_layout != <a class="code hl_function" href="lv__obj__pos_8c.html#af71b05975a91f3dfddaf28fbe96fe4eb">lv_obj_is_layout_positioned</a>(obj)) || (f &amp; (<a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea2a8087232ace4a32a3b84d5cceb0cf8a">LV_OBJ_FLAG_LAYOUT_1</a> |  <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea2f926bc2c9a05243d3cefb33a6e019a2">LV_OBJ_FLAG_LAYOUT_2</a>))) {</div>
+<div class="line"><span class="lineno">  254</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(<a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj));</div>
+<div class="line"><span class="lineno">  255</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(obj);</div>
+<div class="line"><span class="lineno">  256</span>    }</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    <span class="keywordflow">if</span>(f &amp; <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eacd85fb802b95208772b4e124a87546ca">LV_OBJ_FLAG_SCROLLABLE</a>) {</div>
+<div class="line"><span class="lineno">  259</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> hor_area, ver_area;</div>
+<div class="line"><span class="lineno">  260</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#ade3f7501b9b9383b8bdf23610de66233">lv_obj_get_scrollbar_area</a>(obj, &amp;hor_area, &amp;ver_area);</div>
+<div class="line"><span class="lineno">  261</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;hor_area);</div>
+<div class="line"><span class="lineno">  262</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;ver_area);</div>
+<div class="line"><span class="lineno">  263</span>    }</div>
+<div class="line"><span class="lineno">  264</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__group_8c_html_a32f6012476aedc5eaa4ef9b493b28557"><div class="ttname"><a href="lv__group_8c.html#a32f6012476aedc5eaa4ef9b493b28557">lv_group_get_focused</a></div><div class="ttdeci">lv_obj_t * lv_group_get_focused(const lv_group_t *group)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00339">lv_group.c:339</a></div></div>
+<div class="ttc" id="alv__group_8c_html_ad5479089f9d9554f88428bf63241515f"><div class="ttname"><a href="lv__group_8c.html#ad5479089f9d9554f88428bf63241515f">lv_group_focus_next</a></div><div class="ttdeci">void lv_group_focus_next(lv_group_t *group)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00267">lv_group.c:267</a></div></div>
+<div class="ttc" id="alv__group_8h_html_a0fa2dbb9ed984eb2abdfc8c0b1990d00"><div class="ttname"><a href="lv__group_8h.html#a0fa2dbb9ed984eb2abdfc8c0b1990d00">lv_group_t</a></div><div class="ttdeci">struct _lv_group_t lv_group_t</div></div>
+<div class="ttc" id="alv__obj_8c_html_af6296b36dd5eddc61f5544761b1ff5a7"><div class="ttname"><a href="#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a></div><div class="ttdeci">bool lv_obj_has_state(const lv_obj_t *obj, lv_state_t state)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00339">lv_obj.c:339</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_afbc1d207be82e3d738e17c18d8e7fdf9"><div class="ttname"><a href="#afbc1d207be82e3d738e17c18d8e7fdf9">lv_obj_get_group</a></div><div class="ttdeci">void * lv_obj_get_group(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00346">lv_obj.c:346</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a5fb9f48f09dbcf9d45b0f79675e793cb"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a5fb9f48f09dbcf9d45b0f79675e793cb">LV_STATE_FOCUSED</a></div><div class="ttdeci">@ LV_STATE_FOCUSED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00044">lv_obj.h:44</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea2a8087232ace4a32a3b84d5cceb0cf8a"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea2a8087232ace4a32a3b84d5cceb0cf8a">LV_OBJ_FLAG_LAYOUT_1</a></div><div class="ttdeci">@ LV_OBJ_FLAG_LAYOUT_1</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00112">lv_obj.h:112</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea2f926bc2c9a05243d3cefb33a6e019a2"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea2f926bc2c9a05243d3cefb33a6e019a2">LV_OBJ_FLAG_LAYOUT_2</a></div><div class="ttdeci">@ LV_OBJ_FLAG_LAYOUT_2</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00113">lv_obj.h:113</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a></div><div class="ttdeci">@ LV_OBJ_FLAG_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00090">lv_obj.h:90</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10eacd85fb802b95208772b4e124a87546ca"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eacd85fb802b95208772b4e124a87546ca">LV_OBJ_FLAG_SCROLLABLE</a></div><div class="ttdeci">@ LV_OBJ_FLAG_SCROLLABLE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00094">lv_obj.h:94</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a33a0a3c2c2861391f3b0e58cfe39914a"><div class="ttname"><a href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a></div><div class="ttdeci">void lv_obj_invalidate_area(const lv_obj_t *obj, const lv_area_t *area)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00837">lv_obj_pos.c:837</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aa5cb16ea6fdd8ff7ae6838a4e3b6f826"><div class="ttname"><a href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a></div><div class="ttdeci">void lv_obj_mark_layout_as_dirty(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00288">lv_obj_pos.c:288</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_af71b05975a91f3dfddaf28fbe96fe4eb"><div class="ttname"><a href="lv__obj__pos_8c.html#af71b05975a91f3dfddaf28fbe96fe4eb">lv_obj_is_layout_positioned</a></div><div class="ttdeci">bool lv_obj_is_layout_positioned(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00276">lv_obj_pos.c:276</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_ade3f7501b9b9383b8bdf23610de66233"><div class="ttname"><a href="lv__obj__scroll_8c.html#ade3f7501b9b9383b8bdf23610de66233">lv_obj_get_scrollbar_area</a></div><div class="ttdeci">void lv_obj_get_scrollbar_area(lv_obj_t *obj, lv_area_t *hor_area, lv_area_t *ver_area)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00448">lv_obj_scroll.c:448</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ae57dc586fb19ae81c4c9f70d8e7eec7d"><div class="ttname"><a href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_parent(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00285">lv_obj_tree.c:285</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_ae6f24d376b42d0a9ebb75b8abb4cece9"><div class="ttname"><a href="struct__lv__obj__t.html#ae6f24d376b42d0a9ebb75b8abb4cece9">_lv_obj_t::flags</a></div><div class="ttdeci">lv_obj_flag_t flags</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00183">lv_obj.h:183</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00183">_lv_obj_t::flags</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__group_8c_source.html#l00267">lv_group_focus_next()</a>, <a class="el" href="lv__group_8c_source.html#l00339">lv_group_get_focused()</a>, <a class="el" href="lv__obj_8h_source.html#l00090">LV_OBJ_FLAG_HIDDEN</a>, <a class="el" href="lv__obj_8h_source.html#l00112">LV_OBJ_FLAG_LAYOUT_1</a>, <a class="el" href="lv__obj_8h_source.html#l00113">LV_OBJ_FLAG_LAYOUT_2</a>, <a class="el" href="lv__obj_8h_source.html#l00094">LV_OBJ_FLAG_SCROLLABLE</a>, <a class="el" href="lv__obj_8c_source.html#l00346">lv_obj_get_group()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00448">lv_obj_get_scrollbar_area()</a>, <a class="el" href="lv__obj_8c_source.html#l00339">lv_obj_has_state()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00837">lv_obj_invalidate_area()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00276">lv_obj_is_layout_positioned()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00288">lv_obj_mark_layout_as_dirty()</a>, <a class="el" href="lv__obj_8h_source.html#l00044">LV_STATE_FOCUSED</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00092">_ui_flag_modify()</a>, <a class="el" href="Ang__Select_8cpp_source.html#l00244">AngSelect_Init()</a>, <a class="el" href="Element__Modifier_8cpp_source.html#l00004">EnableConfigLabelsClickable()</a>, <a class="el" href="ui__events_8cpp_source.html#l00409">function_Change_Images()</a>, <a class="el" href="ui__events_8cpp_source.html#l00448">function_Encoders_2()</a>, <a class="el" href="General__Diagram_8cpp_source.html#l00141">GeneralDiagram_Init()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00207">lv_btnmatrix_set_btn_ctrl()</a>, <a class="el" href="lv__dropdown_8c_source.html#l00553">lv_dropdown_close()</a>, <a class="el" href="lv__example__anim__timeline__1_8c_source.html#l00137">lv_example_anim_timeline_1()</a>, <a class="el" href="lv__example__btn__1_8c_source.html#l00016">lv_example_btn_1()</a>, <a class="el" href="lv__example__event__3_8c_source.html#l00022">lv_example_event_3()</a>, <a class="el" href="lv__example__flex__2_8c_source.html#l00007">lv_example_flex_2()</a>, <a class="el" href="lv__example__menu__4_8c_source.html#l00031">lv_example_menu_4()</a>, <a class="el" href="lv__example__scroll__3_8c_source.html#l00027">lv_example_scroll_3()</a>, <a class="el" href="lv__indev_8c_source.html#l00196">lv_indev_set_cursor()</a>, <a class="el" href="lv__keyboard_8c_source.html#l00154">lv_keyboard_set_textarea()</a>, <a class="el" href="lv__menu_8c_source.html#l00365">lv_menu_set_load_page_event()</a>, <a class="el" href="lv__menu_8c_source.html#l00192">lv_menu_set_page()</a>, <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a>, <a class="el" href="MotorControl_8cpp_source.html#l00034">ocultar_flecha()</a>, <a class="el" href="Remote__Diagram_8cpp_source.html#l00265">RemoteDiagram_Init()</a>, <a class="el" href="main_8cpp_source.html#l00110">setup()</a>, <a class="el" href="ui__events_8cpp_source.html#l00504">Show_Config_Message_Selected()</a>, <a class="el" href="ui__Screen10_8c_source.html#l00008">ui_Screen10_screen_init()</a>, <a class="el" href="ui__Screen1_8c_source.html#l00008">ui_Screen1_screen_init()</a>, <a class="el" href="ui__Screen2_8c_source.html#l00008">ui_Screen2_screen_init()</a>, <a class="el" href="ui__Screen3_8c_source.html#l00008">ui_Screen3_screen_init()</a>, <a class="el" href="ui__Screen4_8c_source.html#l00008">ui_Screen4_screen_init()</a>, <a class="el" href="ui__Screen5_8cpp_source.html#l00010">ui_Screen5_screen_init()</a>, <a class="el" href="ui__Screen6_8c_source.html#l00008">ui_Screen6_screen_init()</a>, <a class="el" href="ui__Screen7_8c_source.html#l00008">ui_Screen7_screen_init()</a>, <a class="el" href="ui__Screen8_8c_source.html#l00008">ui_Screen8_screen_init()</a> y <a class="el" href="ui__Screen9_8cpp_source.html#l00009">ui_Screen9_screen_init()</a>.</p>
+
+</div>
+</div>
+<a id="adbd258635d3d653e5446336764044db1" name="adbd258635d3d653e5446336764044db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbd258635d3d653e5446336764044db1">&#9670;&#160;</a></span>lv_obj_add_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_add_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add one or more states to the object. The other state bits will remain unchanged. If specified in the styles, transition animation will be started from the previous state to the current. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">state</td><td>the states to add. E.g <span class="tt"><a class="el" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a> | <a class="el" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a5fb9f48f09dbcf9d45b0f79675e793cb">LV_STATE_FOCUSED</a></span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00294">294</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  295</span>{</div>
+<div class="line"><span class="lineno">  296</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  297</span> </div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> new_state = obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">state</a> | state;</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">state</a> != new_state) {</div>
+<div class="line"><span class="lineno">  300</span>        lv_obj_set_state(obj, new_state);</div>
+<div class="line"><span class="lineno">  301</span>    }</div>
+<div class="line"><span class="lineno">  302</span>}</div>
+<div class="ttc" id="alv__obj_8h_html_a6a2a787185848ca20a71ca29900721ff"><div class="ttname"><a href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a></div><div class="ttdeci">uint16_t lv_state_t</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00060">lv_obj.h:60</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_aa3fd4378cceb29153c26649eeda2f5c3"><div class="ttname"><a href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">_lv_obj_t::state</a></div><div class="ttdeci">lv_state_t state</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00184">lv_obj.h:184</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00184">_lv_obj_t::state</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00101">_ui_state_modify()</a>, <a class="el" href="ui__helpers_8c_source.html#l00112">_ui_textarea_move_cursor()</a>, <a class="el" href="MotorControl_8cpp_source.html#l00022">bloquear_slider()</a>, <a class="el" href="lv__dropdown_8c_source.html#l00455">lv_dropdown_open()</a>, <a class="el" href="lv__example__anim__1_8c_source.html#l00040">lv_example_anim_1()</a>, <a class="el" href="lv__example__checkbox__1_8c_source.html#l00015">lv_example_checkbox_1()</a>, <a class="el" href="lv__example__checkbox__2_8c_source.html#l00040">lv_example_checkbox_2()</a>, <a class="el" href="lv__example__list__2_8c_source.html#l00115">lv_example_list_2()</a>, <a class="el" href="lv__example__switch__1_8c_source.html#l00013">lv_example_switch_1()</a>, <a class="el" href="lv__example__textarea__1_8c_source.html#l00022">lv_example_textarea_1()</a>, <a class="el" href="lv__imgbtn_8c_source.html#l00093">lv_imgbtn_set_state()</a> y <a class="el" href="lv__menu_8c_source.html#l00192">lv_menu_set_page()</a>.</p>
+
+</div>
+</div>
+<a id="a1b734607bd80d900ba862375d08227cf" name="a1b734607bd80d900ba862375d08227cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b734607bd80d900ba862375d08227cf">&#9670;&#160;</a></span>lv_obj_allocate_spec_attr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_allocate_spec_attr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allocate special data for an object if not allocated yet. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00358">358</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  359</span>{</div>
+<div class="line"><span class="lineno">  360</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a> == NULL) {</div>
+<div class="line"><span class="lineno">  363</span>        <span class="keyword">static</span> uint32_t x = 0;</div>
+<div class="line"><span class="lineno">  364</span>        x++;</div>
+<div class="line"><span class="lineno">  365</span>        obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a> = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__lv__obj__spec__attr__t.html">_lv_obj_spec_attr_t</a>));</div>
+<div class="line"><span class="lineno">  366</span>        <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>);</div>
+<div class="line"><span class="lineno">  367</span>        <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a> == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  368</span> </div>
+<div class="line"><span class="lineno">  369</span>        <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__lv__obj__spec__attr__t.html">_lv_obj_spec_attr_t</a>));</div>
+<div class="line"><span class="lineno">  370</span> </div>
+<div class="line"><span class="lineno">  371</span>        obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a85052ac92f99a5fc31c6e737b1fb2541">scroll_dir</a> = <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea92f71a851c80b50cd75c32594370d277">LV_DIR_ALL</a>;</div>
+<div class="line"><span class="lineno">  372</span>        obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a1172b4fc8c2ebce6d338d693990550fc">scrollbar_mode</a> = <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#a9c7c5b3aa9c34e687517102f2daea73da6ac64abeecc16acfb717647c1545812c">LV_SCROLLBAR_MODE_AUTO</a>;</div>
+<div class="line"><span class="lineno">  373</span>    }</div>
+<div class="line"><span class="lineno">  374</span>}</div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea92f71a851c80b50cd75c32594370d277"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea92f71a851c80b50cd75c32594370d277">LV_DIR_ALL</a></div><div class="ttdeci">@ LV_DIR_ALL</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00086">lv_area.h:86</a></div></div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8h_html_a9c7c5b3aa9c34e687517102f2daea73da6ac64abeecc16acfb717647c1545812c"><div class="ttname"><a href="lv__obj__scroll_8h.html#a9c7c5b3aa9c34e687517102f2daea73da6ac64abeecc16acfb717647c1545812c">LV_SCROLLBAR_MODE_AUTO</a></div><div class="ttdeci">@ LV_SCROLLBAR_MODE_AUTO</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8h_source.html#l00036">lv_obj_scroll.h:36</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html">_lv_obj_spec_attr_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00155">lv_obj.h:155</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_a1172b4fc8c2ebce6d338d693990550fc"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#a1172b4fc8c2ebce6d338d693990550fc">_lv_obj_spec_attr_t::scrollbar_mode</a></div><div class="ttdeci">lv_scrollbar_mode_t scrollbar_mode</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00166">lv_obj.h:166</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_a85052ac92f99a5fc31c6e737b1fb2541"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#a85052ac92f99a5fc31c6e737b1fb2541">_lv_obj_spec_attr_t::scroll_dir</a></div><div class="ttdeci">lv_dir_t scroll_dir</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00169">lv_obj.h:169</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_acf5de681bc9200fd454f868c6820f3f0"><div class="ttname"><a href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">_lv_obj_t::spec_attr</a></div><div class="ttdeci">_lv_obj_spec_attr_t * spec_attr</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00177">lv_obj.h:177</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__area_8h_source.html#l00086">LV_DIR_ALL</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>, <a class="el" href="lv__obj__scroll_8h_source.html#l00036">LV_SCROLLBAR_MODE_AUTO</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__obj_8h_source.html#l00169">_lv_obj_spec_attr_t::scroll_dir</a>, <a class="el" href="lv__obj_8h_source.html#l00166">_lv_obj_spec_attr_t::scrollbar_mode</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__scroll_8c_source.html#l00412">_lv_obj_scroll_by_raw()</a>, <a class="el" href="lv__group_8c_source.html#l00111">lv_group_add_obj()</a>, <a class="el" href="lv__event_8c_source.html#l00162">lv_obj_add_event_cb()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__obj__style_8c_source.html#l00167">lv_obj_refresh_style()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00934">lv_obj_set_ext_click_area()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00127">lv_obj_set_parent()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00067">lv_obj_set_scroll_dir()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00076">lv_obj_set_scroll_snap_x()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00082">lv_obj_set_scroll_snap_y()</a> y <a class="el" href="lv__obj__scroll_8c_source.html#l00056">lv_obj_set_scrollbar_mode()</a>.</p>
+
+</div>
+</div>
+<a id="a3d7bedf32977bdf5a8ddfa01f1302c08" name="a3d7bedf32977bdf5a8ddfa01f1302c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7bedf32977bdf5a8ddfa01f1302c08">&#9670;&#160;</a></span>lv_obj_check_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_obj_check_type </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> *</td>          <td class="paramname"><span class="paramname"><em>class_p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check the type of obj. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">class_p</td><td>a class to check (e.g. <span class="tt"><a class="el" href="lv__slider_8c.html#a6e4e9fa8d4d1036cebb913e1dea92a5c">lv_slider_class</a></span>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: <span class="tt">class_p</span> is the <span class="tt">obj</span> class. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00376">376</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  377</span>{</div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">if</span>(obj == NULL) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  379</span>    <span class="keywordflow">return</span> obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5c45af901114834bdd67198582250b2d">class_p</a> == class_p ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  380</span>}</div>
+<div class="ttc" id="astruct__lv__obj__t_html_a5c45af901114834bdd67198582250b2d"><div class="ttname"><a href="struct__lv__obj__t.html#a5c45af901114834bdd67198582250b2d">_lv_obj_t::class_p</a></div><div class="ttdeci">const lv_obj_class_t * class_p</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00175">lv_obj.h:175</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00175">_lv_obj_t::class_p</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__list_8c_source.html#l00101">lv_list_get_btn_text()</a>.</p>
+
+</div>
+</div>
+<a id="a8a45a671b0fb07c0e99639c180d25fba" name="a8a45a671b0fb07c0e99639c180d25fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a45a671b0fb07c0e99639c180d25fba">&#9670;&#160;</a></span>lv_obj_clear_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_clear_flag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clear one or more flags </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">f</td><td>OR-ed values from <span class="tt"><a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a></span> to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00266">266</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>{</div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordtype">bool</span> was_on_layout = <a class="code hl_function" href="lv__obj__pos_8c.html#af71b05975a91f3dfddaf28fbe96fe4eb">lv_obj_is_layout_positioned</a>(obj);</div>
+<div class="line"><span class="lineno">  271</span>    <span class="keywordflow">if</span>(f &amp; <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eacd85fb802b95208772b4e124a87546ca">LV_OBJ_FLAG_SCROLLABLE</a>) {</div>
+<div class="line"><span class="lineno">  272</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> hor_area, ver_area;</div>
+<div class="line"><span class="lineno">  273</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#ade3f7501b9b9383b8bdf23610de66233">lv_obj_get_scrollbar_area</a>(obj, &amp;hor_area, &amp;ver_area);</div>
+<div class="line"><span class="lineno">  274</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;hor_area);</div>
+<div class="line"><span class="lineno">  275</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#a33a0a3c2c2861391f3b0e58cfe39914a">lv_obj_invalidate_area</a>(obj, &amp;ver_area);</div>
+<div class="line"><span class="lineno">  276</span>    }</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>    obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#ae6f24d376b42d0a9ebb75b8abb4cece9">flags</a> &amp;= (~f);</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">if</span>(f &amp; <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>) {</div>
+<div class="line"><span class="lineno">  281</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  282</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__obj__pos_8c.html#af71b05975a91f3dfddaf28fbe96fe4eb">lv_obj_is_layout_positioned</a>(obj)) {</div>
+<div class="line"><span class="lineno">  283</span>            <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(<a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj));</div>
+<div class="line"><span class="lineno">  284</span>            <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(obj);</div>
+<div class="line"><span class="lineno">  285</span>        }</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">if</span>((was_on_layout != <a class="code hl_function" href="lv__obj__pos_8c.html#af71b05975a91f3dfddaf28fbe96fe4eb">lv_obj_is_layout_positioned</a>(obj)) || (f &amp; (<a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea2a8087232ace4a32a3b84d5cceb0cf8a">LV_OBJ_FLAG_LAYOUT_1</a> |  <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea2f926bc2c9a05243d3cefb33a6e019a2">LV_OBJ_FLAG_LAYOUT_2</a>))) {</div>
+<div class="line"><span class="lineno">  289</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(<a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj));</div>
+<div class="line"><span class="lineno">  290</span>    }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00183">_lv_obj_t::flags</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__obj_8h_source.html#l00090">LV_OBJ_FLAG_HIDDEN</a>, <a class="el" href="lv__obj_8h_source.html#l00112">LV_OBJ_FLAG_LAYOUT_1</a>, <a class="el" href="lv__obj_8h_source.html#l00113">LV_OBJ_FLAG_LAYOUT_2</a>, <a class="el" href="lv__obj_8h_source.html#l00094">LV_OBJ_FLAG_SCROLLABLE</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00448">lv_obj_get_scrollbar_area()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00837">lv_obj_invalidate_area()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00276">lv_obj_is_layout_positioned()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00288">lv_obj_mark_layout_as_dirty()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00092">_ui_flag_modify()</a>, <a class="el" href="SD__Control_8cpp_source.html#l00345">ControlSD_LoadConfig()</a>, <a class="el" href="ui__events_8cpp_source.html#l00409">function_Change_Images()</a>, <a class="el" href="ui__events_8cpp_source.html#l00448">function_Encoders_2()</a>, <a class="el" href="ui__events_8cpp_source.html#l00713">function_Save_Button_Config()</a>, <a class="el" href="ui__events_8cpp_source.html#l00542">function_Save_Config_5_In_EEPROM()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00240">lv_btnmatrix_clear_btn_ctrl()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00166">lv_disp_drv_register()</a>, <a class="el" href="lv__dropdown_8c_source.html#l00455">lv_dropdown_open()</a>, <a class="el" href="lv__example__arc__2_8c_source.html#l00013">lv_example_arc_2()</a>, <a class="el" href="lv__example__scroll__2_8c_source.html#l00020">lv_example_scroll_2()</a>, <a class="el" href="lv__example__tabview__2_8c_source.html#l00004">lv_example_tabview_2()</a>, <a class="el" href="lv__example__textarea__1_8c_source.html#l00022">lv_example_textarea_1()</a>, <a class="el" href="lv__indev_8c_source.html#l00196">lv_indev_set_cursor()</a>, <a class="el" href="lv__menu_8c_source.html#l00365">lv_menu_set_load_page_event()</a>, <a class="el" href="lv__menu_8c_source.html#l00192">lv_menu_set_page()</a>, <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a>, <a class="el" href="lv__tabview_8c_source.html#l00067">lv_tabview_add_tab()</a>, <a class="el" href="MotorControl_8cpp_source.html#l00030">mostrar_flecha()</a>, <a class="el" href="ui__Screen10_8c_source.html#l00008">ui_Screen10_screen_init()</a>, <a class="el" href="ui__Screen1_8c_source.html#l00008">ui_Screen1_screen_init()</a>, <a class="el" href="ui__Screen2_8c_source.html#l00008">ui_Screen2_screen_init()</a>, <a class="el" href="ui__Screen3_8c_source.html#l00008">ui_Screen3_screen_init()</a>, <a class="el" href="ui__Screen4_8c_source.html#l00008">ui_Screen4_screen_init()</a>, <a class="el" href="ui__Screen5_8cpp_source.html#l00010">ui_Screen5_screen_init()</a>, <a class="el" href="ui__Screen6_8c_source.html#l00008">ui_Screen6_screen_init()</a>, <a class="el" href="ui__Screen7_8c_source.html#l00008">ui_Screen7_screen_init()</a>, <a class="el" href="ui__Screen8_8c_source.html#l00008">ui_Screen8_screen_init()</a> y <a class="el" href="ui__Screen9_8cpp_source.html#l00009">ui_Screen9_screen_init()</a>.</p>
+
+</div>
+</div>
+<a id="ac94c26d36140c7c83da6914d60170e16" name="ac94c26d36140c7c83da6914d60170e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94c26d36140c7c83da6914d60170e16">&#9670;&#160;</a></span>lv_obj_clear_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_clear_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove one or more states to the object. The other state bits will remain unchanged. If specified in the styles, transition animation will be started from the previous state to the current. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">state</td><td>the states to add. E.g <span class="tt"><a class="el" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a> | <a class="el" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a5fb9f48f09dbcf9d45b0f79675e793cb">LV_STATE_FOCUSED</a></span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00304">304</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  305</span>{</div>
+<div class="line"><span class="lineno">  306</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  307</span> </div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> new_state = obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">state</a> &amp; (~state);</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">state</a> != new_state) {</div>
+<div class="line"><span class="lineno">  310</span>        lv_obj_set_state(obj, new_state);</div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+<div class="line"><span class="lineno">  312</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00184">_lv_obj_t::state</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00101">_ui_state_modify()</a>, <a class="el" href="MotorControl_8cpp_source.html#l00026">desbloquear_slider()</a>, <a class="el" href="lv__dropdown_8c_source.html#l00553">lv_dropdown_close()</a>, <a class="el" href="lv__imgbtn_8c_source.html#l00093">lv_imgbtn_set_state()</a>, <a class="el" href="lv__keyboard_8c_source.html#l00154">lv_keyboard_set_textarea()</a> y <a class="el" href="lv__menu_8c_source.html#l00192">lv_menu_set_page()</a>.</p>
+
+</div>
+</div>
+<a id="acf57dc362a43990cbad93921da833b5d" name="acf57dc362a43990cbad93921da833b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf57dc362a43990cbad93921da833b5d">&#9670;&#160;</a></span>lv_obj_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_obj_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a base object (a rectangle) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to a parent object. If NULL then a screen will be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the new object </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00213">213</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>{</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">  219</span>}</div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__hal__disp_8c_source.html#l00166">lv_disp_drv_register()</a>, <a class="el" href="lv__example__anim__2_8c_source.html#l00018">lv_example_anim_2()</a>, <a class="el" href="lv__example__anim__3_8c_source.html#l00037">lv_example_anim_3()</a>, <a class="el" href="lv__example__anim__timeline__1_8c_source.html#l00137">lv_example_anim_timeline_1()</a>, <a class="el" href="lv__example__checkbox__2_8c_source.html#l00040">lv_example_checkbox_2()</a>, <a class="el" href="lv__example__event__3_8c_source.html#l00022">lv_example_event_3()</a>, <a class="el" href="lv__example__event__4_8c_source.html#l00052">lv_example_event_4()</a>, <a class="el" href="lv__example__flex__1_8c_source.html#l00007">lv_example_flex_1()</a>, <a class="el" href="lv__example__flex__2_8c_source.html#l00007">lv_example_flex_2()</a>, <a class="el" href="lv__example__flex__3_8c_source.html#l00007">lv_example_flex_3()</a>, <a class="el" href="lv__example__flex__4_8c_source.html#l00007">lv_example_flex_4()</a>, <a class="el" href="lv__example__flex__5_8c_source.html#l00017">lv_example_flex_5()</a>, <a class="el" href="lv__example__flex__6_8c_source.html#l00008">lv_example_flex_6()</a>, <a class="el" href="lv__example__grid__1_8c_source.html#l00007">lv_example_grid_1()</a>, <a class="el" href="lv__example__grid__2_8c_source.html#l00008">lv_example_grid_2()</a>, <a class="el" href="lv__example__grid__3_8c_source.html#l00007">lv_example_grid_3()</a>, <a class="el" href="lv__example__grid__4_8c_source.html#l00007">lv_example_grid_4()</a>, <a class="el" href="lv__example__grid__5_8c_source.html#l00017">lv_example_grid_5()</a>, <a class="el" href="lv__example__grid__6_8c_source.html#l00007">lv_example_grid_6()</a>, <a class="el" href="lv__example__label__4_8c_source.html#l00032">lv_example_label_4()</a>, <a class="el" href="lv__example__obj__1_8c_source.html#l00004">lv_example_obj_1()</a>, <a class="el" href="lv__example__obj__2_8c_source.html#l00023">lv_example_obj_2()</a>, <a class="el" href="lv__example__scroll__1_8c_source.html#l00007">lv_example_scroll_1()</a>, <a class="el" href="lv__example__scroll__2_8c_source.html#l00020">lv_example_scroll_2()</a>, <a class="el" href="lv__example__scroll__4_8c_source.html#l00008">lv_example_scroll_4()</a>, <a class="el" href="lv__example__scroll__6_8c_source.html#l00051">lv_example_scroll_6()</a>, <a class="el" href="lv__example__style__1_8c_source.html#l00007">lv_example_style_1()</a>, <a class="el" href="lv__example__style__10_8c_source.html#l00007">lv_example_style_10()</a>, <a class="el" href="lv__example__style__11_8c_source.html#l00007">lv_example_style_11()</a>, <a class="el" href="lv__example__style__12_8c_source.html#l00007">lv_example_style_12()</a>, <a class="el" href="lv__example__style__2_8c_source.html#l00007">lv_example_style_2()</a>, <a class="el" href="lv__example__style__3_8c_source.html#l00007">lv_example_style_3()</a>, <a class="el" href="lv__example__style__4_8c_source.html#l00007">lv_example_style_4()</a>, <a class="el" href="lv__example__style__5_8c_source.html#l00007">lv_example_style_5()</a>, <a class="el" href="lv__tabview_8c_source.html#l00067">lv_tabview_add_tab()</a>, <a class="el" href="ui_8c_source.html#l00906">ui_init()</a>, <a class="el" href="ui__Screen10_8c_source.html#l00008">ui_Screen10_screen_init()</a>, <a class="el" href="ui__Screen1_8c_source.html#l00008">ui_Screen1_screen_init()</a>, <a class="el" href="ui__Screen2_8c_source.html#l00008">ui_Screen2_screen_init()</a>, <a class="el" href="ui__Screen3_8c_source.html#l00008">ui_Screen3_screen_init()</a>, <a class="el" href="ui__Screen4_8c_source.html#l00008">ui_Screen4_screen_init()</a>, <a class="el" href="ui__Screen5_8cpp_source.html#l00010">ui_Screen5_screen_init()</a>, <a class="el" href="ui__Screen6_8c_source.html#l00008">ui_Screen6_screen_init()</a>, <a class="el" href="ui__Screen7_8c_source.html#l00008">ui_Screen7_screen_init()</a>, <a class="el" href="ui__Screen8_8c_source.html#l00008">ui_Screen8_screen_init()</a> y <a class="el" href="ui__Screen9_8cpp_source.html#l00009">ui_Screen9_screen_init()</a>.</p>
+
+</div>
+</div>
+<a id="a30595a041d9abd1a81629965d22a82e0" name="a30595a041d9abd1a81629965d22a82e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30595a041d9abd1a81629965d22a82e0">&#9670;&#160;</a></span>lv_obj_get_class()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * lv_obj_get_class </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the class (type) of the object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the class (type) of the object </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00393">393</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  394</span>{</div>
+<div class="line"><span class="lineno">  395</span>    <span class="keywordflow">return</span> obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5c45af901114834bdd67198582250b2d">class_p</a>;</div>
+<div class="line"><span class="lineno">  396</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00175">_lv_obj_t::class_p</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Navigation_8cpp_source.html#l00096">HandleDeltaSlider()</a>.</p>
+
+</div>
+</div>
+<a id="afbc1d207be82e3d738e17c18d8e7fdf9" name="afbc1d207be82e3d738e17c18d8e7fdf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc1d207be82e3d738e17c18d8e7fdf9">&#9670;&#160;</a></span>lv_obj_get_group()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * lv_obj_get_group </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the group of the object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the pointer to group of the object </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00346">346</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>{</div>
+<div class="line"><span class="lineno">  348</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>) <span class="keywordflow">return</span> obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">group_p</a>;</div>
+<div class="line"><span class="lineno">  351</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  352</span>}</div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_afcb4e50fc3a05683f08e4af206759414"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#afcb4e50fc3a05683f08e4af206759414">_lv_obj_spec_attr_t::group_p</a></div><div class="ttdeci">lv_group_t * group_p</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00158">lv_obj.h:158</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00158">_lv_obj_spec_attr_t::group_p</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__group_8c_source.html#l00111">lv_group_add_obj()</a>, <a class="el" href="lv__group_8c_source.html#l00234">lv_group_focus_obj()</a>, <a class="el" href="lv__group_8c_source.html#l00175">lv_group_remove_obj()</a>, <a class="el" href="lv__group_8c_source.html#l00156">lv_group_swap_obj()</a> y <a class="el" href="lv__obj_8c_source.html#l00229">lv_obj_add_flag()</a>.</p>
+
+</div>
+</div>
+<a id="a512731c24ce12b0e62abb3179cbde6ed" name="a512731c24ce12b0e62abb3179cbde6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512731c24ce12b0e62abb3179cbde6ed">&#9670;&#160;</a></span>lv_obj_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> lv_obj_get_state </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the state of an object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the state (OR-ed values from <span class="tt"><a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a></span>) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00332">332</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>{</div>
+<div class="line"><span class="lineno">  334</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  335</span> </div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">return</span> obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">state</a>;</div>
+<div class="line"><span class="lineno">  337</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00184">_lv_obj_t::state</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__imgbtn_8c_source.html#l00365">get_state()</a>.</p>
+
+</div>
+</div>
+<a id="a27480f49b6f82e0e2643c1dd09735e9d" name="a27480f49b6f82e0e2643c1dd09735e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27480f49b6f82e0e2643c1dd09735e9d">&#9670;&#160;</a></span>lv_obj_has_class()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_obj_has_class </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> *</td>          <td class="paramname"><span class="paramname"><em>class_p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if any object has a given class (type). It checks the ancestor classes too. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">class_p</td><td>a class to check (e.g. <span class="tt"><a class="el" href="lv__slider_8c.html#a6e4e9fa8d4d1036cebb913e1dea92a5c">lv_slider_class</a></span>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: <span class="tt">obj</span> has the given class </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00382">382</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  383</span>{</div>
+<div class="line"><span class="lineno">  384</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * obj_class = obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5c45af901114834bdd67198582250b2d">class_p</a>;</div>
+<div class="line"><span class="lineno">  385</span>    <span class="keywordflow">while</span>(obj_class) {</div>
+<div class="line"><span class="lineno">  386</span>        <span class="keywordflow">if</span>(obj_class == class_p) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  387</span>        obj_class = obj_class-&gt;<a class="code hl_variable" href="struct__lv__obj__class__t.html#a3f2950ef3d76f897b0842e62e1a7c21b">base_class</a>;</div>
+<div class="line"><span class="lineno">  388</span>    }</div>
+<div class="line"><span class="lineno">  389</span> </div>
+<div class="line"><span class="lineno">  390</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  391</span>}</div>
+<div class="ttc" id="alv__obj__class_8h_html_a45f1eead6ce2fb12e215ea3e0558f168"><div class="ttname"><a href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a></div><div class="ttdeci">struct _lv_obj_class_t lv_obj_class_t</div></div>
+<div class="ttc" id="astruct__lv__obj__class__t_html_a3f2950ef3d76f897b0842e62e1a7c21b"><div class="ttname"><a href="struct__lv__obj__class__t.html#a3f2950ef3d76f897b0842e62e1a7c21b">_lv_obj_class_t::base_class</a></div><div class="ttdeci">const struct _lv_obj_class_t * base_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00050">lv_obj_class.h:50</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__class_8h_source.html#l00050">_lv_obj_class_t::base_class</a> y <a class="el" href="lv__obj_8h_source.html#l00175">_lv_obj_t::class_p</a>.</p>
+
+</div>
+</div>
+<a id="a349bf1b6dea18bd0ab189e7a1c06a662" name="a349bf1b6dea18bd0ab189e7a1c06a662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349bf1b6dea18bd0ab189e7a1c06a662">&#9670;&#160;</a></span>lv_obj_has_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_obj_has_flag </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if a given flag or all the given flags are set on an object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">f</td><td>the flag(s) to check (OR-ed values can be used) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: all flags are set; false: not all flags are set </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00318">318</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  319</span>{</div>
+<div class="line"><span class="lineno">  320</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordflow">return</span> (obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#ae6f24d376b42d0a9ebb75b8abb4cece9">flags</a> &amp; f)  == f ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  323</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00183">_lv_obj_t::flags</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__indev__scroll_8c_source.html#l00112">_lv_indev_scroll_throw_handler()</a>, <a class="el" href="ui__helpers_8c_source.html#l00092">_ui_flag_modify()</a>, <a class="el" href="ui__events_8cpp_source.html#l00409">function_Change_Images()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00240">lv_btnmatrix_clear_btn_ctrl()</a>, <a class="el" href="lv__dropdown_8c_source.html#l00566">lv_dropdown_is_open()</a>, <a class="el" href="lv__indev_8c_source.html#l00300">lv_indev_search_obj()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00189">lv_msgbox_close()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00195">lv_msgbox_close_async()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00868">lv_obj_area_is_visible()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00448">lv_obj_get_scrollbar_area()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00953">lv_obj_hit_test()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00782">lv_obj_move_children_by()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00709">lv_obj_move_to()</a> y <a class="el" href="lv__refr_8c_source.html#l00130">lv_obj_redraw()</a>.</p>
+
+</div>
+</div>
+<a id="a29244deb39942043ee658fbb8e1a47d2" name="a29244deb39942043ee658fbb8e1a47d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29244deb39942043ee658fbb8e1a47d2">&#9670;&#160;</a></span>lv_obj_has_flag_any()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_obj_has_flag_any </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a8d31d58e68ad0349ffdf0c6b4f37afd7">lv_obj_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if a given flag or any of the flags are set on an object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">f</td><td>the flag(s) to check (OR-ed values can be used) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: at lest one flag flag is set; false: none of the flags are set </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00325">325</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>{</div>
+<div class="line"><span class="lineno">  327</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">return</span> (obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#ae6f24d376b42d0a9ebb75b8abb4cece9">flags</a> &amp; f) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  330</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00183">_lv_obj_t::flags</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__pos_8c_source.html#l00868">lv_obj_area_is_visible()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00134">lv_obj_get_scroll_bottom()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00161">lv_obj_get_scroll_left()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00204">lv_obj_get_scroll_right()</a> y <a class="el" href="lv__obj__pos_8c_source.html#l00276">lv_obj_is_layout_positioned()</a>.</p>
+
+</div>
+</div>
+<a id="af6296b36dd5eddc61f5544761b1ff5a7" name="af6296b36dd5eddc61f5544761b1ff5a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6296b36dd5eddc61f5544761b1ff5a7">&#9670;&#160;</a></span>lv_obj_has_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_obj_has_state </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if the object is in a given state or not. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">state</td><td>a state or combination of states to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: <span class="tt">obj</span> is in <span class="tt">state</span>; false: <span class="tt">obj</span> is not in <span class="tt">state</span> </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00339">339</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  340</span>{</div>
+<div class="line"><span class="lineno">  341</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">return</span> obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3">state</a> &amp; state ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  344</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00184">_lv_obj_t::state</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00319">_ui_checked_set_text_value()</a>, <a class="el" href="ui__helpers_8c_source.html#l00101">_ui_state_modify()</a>, <a class="el" href="lv__group_8c_source.html#l00291">lv_group_send_data()</a>, <a class="el" href="lv__obj_8c_source.html#l00229">lv_obj_add_flag()</a> y <a class="el" href="lv__obj__pos_8c_source.html#l00953">lv_obj_hit_test()</a>.</p>
+
+</div>
+</div>
+<a id="a4c220acd20b632ad2d4ca7cd7a3023bb" name="a4c220acd20b632ad2d4ca7cd7a3023bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c220acd20b632ad2d4ca7cd7a3023bb">&#9670;&#160;</a></span>lv_obj_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_obj_is_valid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if any object is still "alive". </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: valid </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00398">398</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  399</span>{</div>
+<div class="line"><span class="lineno">  400</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp = <a class="code hl_function" href="lv__hal__disp_8c.html#a9f7abb8a43306b5136907d537eef4779">lv_disp_get_next</a>(NULL);</div>
+<div class="line"><span class="lineno">  401</span>    <span class="keywordflow">while</span>(disp) {</div>
+<div class="line"><span class="lineno">  402</span>        uint32_t i;</div>
+<div class="line"><span class="lineno">  403</span>        <span class="keywordflow">for</span>(i = 0; i &lt; disp-&gt;<a class="code hl_variable" href="struct__lv__disp__t.html#a9b0e29f211f611b32607c8af55b30c47">screen_cnt</a>; i++) {</div>
+<div class="line"><span class="lineno">  404</span>            <span class="keywordflow">if</span>(disp-&gt;<a class="code hl_variable" href="struct__lv__disp__t.html#a2721d7c9aa569c24c2a65537385abafc">screens</a>[i] == obj) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  405</span>            <span class="keywordtype">bool</span> found = obj_valid_child(disp-&gt;<a class="code hl_variable" href="struct__lv__disp__t.html#a2721d7c9aa569c24c2a65537385abafc">screens</a>[i], obj);</div>
+<div class="line"><span class="lineno">  406</span>            <span class="keywordflow">if</span>(found) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  407</span>        }</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>        disp = <a class="code hl_function" href="lv__hal__disp_8c.html#a9f7abb8a43306b5136907d537eef4779">lv_disp_get_next</a>(disp);</div>
+<div class="line"><span class="lineno">  410</span>    }</div>
+<div class="line"><span class="lineno">  411</span> </div>
+<div class="line"><span class="lineno">  412</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  413</span>}</div>
+<div class="ttc" id="alv__hal__disp_8c_html_a9f7abb8a43306b5136907d537eef4779"><div class="ttname"><a href="lv__hal__disp_8c.html#a9f7abb8a43306b5136907d537eef4779">lv_disp_get_next</a></div><div class="ttdeci">lv_disp_t * lv_disp_get_next(lv_disp_t *disp)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__disp_8c_source.html#l00541">lv_hal_disp.c:541</a></div></div>
+<div class="ttc" id="astruct__lv__disp__t_html_a2721d7c9aa569c24c2a65537385abafc"><div class="ttname"><a href="struct__lv__disp__t.html#a2721d7c9aa569c24c2a65537385abafc">_lv_disp_t::screens</a></div><div class="ttdeci">struct _lv_obj_t ** screens</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__disp_8h_source.html#l00170">lv_hal_disp.h:170</a></div></div>
+<div class="ttc" id="astruct__lv__disp__t_html_a9b0e29f211f611b32607c8af55b30c47"><div class="ttname"><a href="struct__lv__disp__t.html#a9b0e29f211f611b32607c8af55b30c47">_lv_disp_t::screen_cnt</a></div><div class="ttdeci">uint32_t screen_cnt</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__disp_8h_source.html#l00176">lv_hal_disp.h:176</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__hal__disp_8c_source.html#l00541">lv_disp_get_next()</a>, <a class="el" href="lv__hal__disp_8h_source.html#l00176">_lv_disp_t::screen_cnt</a> y <a class="el" href="lv__hal__disp_8h_source.html#l00170">_lv_disp_t::screens</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a424ca3b432ad82f98c4b05950b597d44" name="a424ca3b432ad82f98c4b05950b597d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a424ca3b432ad82f98c4b05950b597d44">&#9670;&#160;</a></span>lv_obj_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_obj_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_obj_constructor,</div>
+<div class="line">    .destructor_cb = lv_obj_destructor,</div>
+<div class="line">    .event_cb = lv_obj_event,</div>
+<div class="line">    .width_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line">    .height_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line">    .editable = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82a8f71b520721c9990497639fdf7c69128">LV_OBJ_CLASS_EDITABLE_FALSE</a>,</div>
+<div class="line">    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871da1ef50a6cb279713cf8ac90861c61b605">LV_OBJ_CLASS_GROUP_DEF_FALSE</a>,</div>
+<div class="line">    .instance_size = (<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a>)),</div>
+<div class="line">    .base_class = NULL,</div>
+<div class="line">}</div>
+<div class="ttc" id="alv__conf_8h_html_aadf0386c6d60d0c07153b38654f6b6d3"><div class="ttname"><a href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a></div><div class="ttdeci">#define LV_DPI_DEF</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00099">lv_conf.h:99</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a86f3f042b274542776ab1a066cfe7c82a8f71b520721c9990497639fdf7c69128"><div class="ttname"><a href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82a8f71b520721c9990497639fdf7c69128">LV_OBJ_CLASS_EDITABLE_FALSE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_EDITABLE_FALSE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00035">lv_obj_class.h:35</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_aebc1dfe87bf60e09142aea1746c6871da1ef50a6cb279713cf8ac90861c61b605"><div class="ttname"><a href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871da1ef50a6cb279713cf8ac90861c61b605">LV_OBJ_CLASS_GROUP_DEF_FALSE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_GROUP_DEF_FALSE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00041">lv_obj_class.h:41</a></div></div>
+</div><!-- fragment --><p>Make the base object's class publicly available. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj_8c_source.html#l00073">73</a> del archivo <a class="el" href="lv__obj_8c_source.html">lv_obj.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                    {</div>
+<div class="line"><span class="lineno">   74</span>    .constructor_cb = lv_obj_constructor,</div>
+<div class="line"><span class="lineno">   75</span>    .destructor_cb = lv_obj_destructor,</div>
+<div class="line"><span class="lineno">   76</span>    .event_cb = lv_obj_event,</div>
+<div class="line"><span class="lineno">   77</span>    .width_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line"><span class="lineno">   78</span>    .height_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line"><span class="lineno">   79</span>    .editable = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82a8f71b520721c9990497639fdf7c69128">LV_OBJ_CLASS_EDITABLE_FALSE</a>,</div>
+<div class="line"><span class="lineno">   80</span>    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871da1ef50a6cb279713cf8ac90861c61b605">LV_OBJ_CLASS_GROUP_DEF_FALSE</a>,</div>
+<div class="line"><span class="lineno">   81</span>    .instance_size = (<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a>)),</div>
+<div class="line"><span class="lineno">   82</span>    .base_class = NULL,</div>
+<div class="line"><span class="lineno">   83</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_347ffc2652095edf055753e6ba2d2213.html">core</a></li><li class="navelem"><a href="lv__obj_8c.html">lv_obj.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

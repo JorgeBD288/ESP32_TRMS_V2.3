@@ -1,0 +1,28 @@
+var lv__img__buf_8h =
+[
+    [ "lv_img_dsc_t", "structlv__img__dsc__t.html", "structlv__img__dsc__t" ],
+    [ "lv_img_header_t", "structlv__img__header__t.html", "structlv__img__header__t" ],
+    [ "_LV_ZOOM_INV_UPSCALE", "lv__img__buf_8h.html#a5d6fd033f286e58d5882440934249c64", null ],
+    [ "LV_IMG_BUF_SIZE_ALPHA_1BIT", "lv__img__buf_8h.html#a4df84faae7e57a175e2529bd0130094f", null ],
+    [ "LV_IMG_BUF_SIZE_ALPHA_2BIT", "lv__img__buf_8h.html#a3ed777ccf60a5cd624c55b45f3ef2f2a", null ],
+    [ "LV_IMG_BUF_SIZE_ALPHA_4BIT", "lv__img__buf_8h.html#a6ec967b7d08ab415da7864c22ff54f25", null ],
+    [ "LV_IMG_BUF_SIZE_ALPHA_8BIT", "lv__img__buf_8h.html#afa3168e2168f6a341f6092ab4535405e", null ],
+    [ "LV_IMG_BUF_SIZE_INDEXED_1BIT", "lv__img__buf_8h.html#a10aba5514a79544cc63424362ae8721b", null ],
+    [ "LV_IMG_BUF_SIZE_INDEXED_2BIT", "lv__img__buf_8h.html#a06bc48975032964f8c7b640ebeeff0b5", null ],
+    [ "LV_IMG_BUF_SIZE_INDEXED_4BIT", "lv__img__buf_8h.html#abe7db8e0f201b8b750eb967e21743500", null ],
+    [ "LV_IMG_BUF_SIZE_INDEXED_8BIT", "lv__img__buf_8h.html#a9c6682f15ad36a2c82b432b25f8c79b4", null ],
+    [ "LV_IMG_BUF_SIZE_TRUE_COLOR", "lv__img__buf_8h.html#a15ae7605d130bf08c0a6bbb064952b3c", null ],
+    [ "LV_IMG_BUF_SIZE_TRUE_COLOR_ALPHA", "lv__img__buf_8h.html#ac165cdb2ccf591038f8a4da38fb2a9b2", null ],
+    [ "LV_IMG_BUF_SIZE_TRUE_COLOR_CHROMA_KEYED", "lv__img__buf_8h.html#a4e69f80005214a802cb2a91bb5651999", null ],
+    [ "LV_IMG_PX_SIZE_ALPHA_BYTE", "lv__img__buf_8h.html#afcd8da034fac14905f604cf04e75c122", null ],
+    [ "lv_img_cf_t", "lv__img__buf_8h.html#a3cd0b0d2269a76ecf35c65d5abc8fa2c", null ],
+    [ "_lv_img_buf_get_transformed_area", "lv__img__buf_8h.html#a54f200e9ed40bbf1384696a4058feb69", null ],
+    [ "lv_img_buf_alloc", "lv__img__buf_8h.html#ab0207df25e39acce648b47095818f7a1", null ],
+    [ "lv_img_buf_free", "lv__img__buf_8h.html#afda14850c7da203239ded571831a776e", null ],
+    [ "lv_img_buf_get_img_size", "lv__img__buf_8h.html#a5da34d625c83610b49ee8eb11d55a8cf", null ],
+    [ "lv_img_buf_get_px_alpha", "lv__img__buf_8h.html#a68891d96704ba49022f34bf80bb02fe9", null ],
+    [ "lv_img_buf_get_px_color", "lv__img__buf_8h.html#a4f46c0641240c11c127f55a4bb176963", null ],
+    [ "lv_img_buf_set_palette", "lv__img__buf_8h.html#a3e5a43ba234dc0b3e5092e1c3cfbc5d3", null ],
+    [ "lv_img_buf_set_px_alpha", "lv__img__buf_8h.html#a2018250537f171c5bda670b49bd7408d", null ],
+    [ "lv_img_buf_set_px_color", "lv__img__buf_8h.html#a2bb73768c1bc747a8ce2e5356a752d4a", null ]
+];

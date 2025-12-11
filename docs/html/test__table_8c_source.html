@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/tests/src/test_cases/test_table.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('test__table_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">test_table.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="test__table_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#if LV_BUILD_TEST</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../lvgl.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="unity_8h.html">unity/unity.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * scr = NULL;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * table = NULL;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">void</span> setUp(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    scr = lv_scr_act();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    table = <a class="code hl_function" href="lv__table_8c.html#a82e9898115534ebfce431eb100cf2186">lv_table_create</a>(scr);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> tearDown(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="lv__obj__tree_8c.html#ab9e1d84b921e63d1da83fe711b214aea">lv_obj_clean</a>(lv_scr_act());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> test_table_should_return_assigned_cell_value(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    uint16_t row = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    uint16_t column = 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * value = <span class="stringliteral">&quot;LVGL&quot;</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, row, column, value);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    TEST_ASSERT_EQUAL_STRING(value, <a class="code hl_function" href="lv__table_8c.html#a058fcf4de7f5c22dd514c2e1be858424">lv_table_get_cell_value</a>(table, row, column));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> test_table_should_grow_columns_automatically_when_setting_formatted_cell_value(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">/* Newly created tables have 1 column and 1 row */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    uint16_t original_column_count = <a class="code hl_function" href="lv__table_8c.html#a2d2bd84c2ff05d303cbe5531cd45884d">lv_table_get_col_cnt</a>(table);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    TEST_ASSERT_EQUAL_UINT16(1, original_column_count);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/* Table currently only has a cell at 0,0 (row, colum) */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="lv__table_8c.html#a2e9b84a95576e39e406822254234ff59">lv_table_set_cell_value_fmt</a>(table, 0, 1, <span class="stringliteral">&quot;LVGL %s&quot;</span>, <span class="stringliteral">&quot;Rocks!&quot;</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">/* Table now should have cells at 0,0 and 0,1, so 2 columns */</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    uint16_t expected_column_count = original_column_count + 1;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    TEST_ASSERT_EQUAL_UINT16(expected_column_count, <a class="code hl_function" href="lv__table_8c.html#a2d2bd84c2ff05d303cbe5531cd45884d">lv_table_get_col_cnt</a>(table));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> test_table_should_identify_cell_with_ctrl(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> has_ctrl = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    has_ctrl = <a class="code hl_function" href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    TEST_ASSERT_FALSE(has_ctrl);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    has_ctrl = <a class="code hl_function" href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    TEST_ASSERT_TRUE(has_ctrl);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> test_table_should_clear_selected_cell_ctrl(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> has_ctrl = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    has_ctrl = <a class="code hl_function" href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    TEST_ASSERT_TRUE(has_ctrl);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="lv__table_8c.html#a8c8036cc7a2fcbccb47581190f6c2b9e">lv_table_clear_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    has_ctrl = <a class="code hl_function" href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    TEST_ASSERT_FALSE(has_ctrl);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> test_table_should_keep_not_selected_cell_ctrl(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">bool</span> has_ctrl = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a> | <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaa75cbac4f497f05421fe0483dee2b9da3">LV_TABLE_CELL_CTRL_TEXT_CROP</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="lv__table_8c.html#a8c8036cc7a2fcbccb47581190f6c2b9e">lv_table_clear_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    has_ctrl = <a class="code hl_function" href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    TEST_ASSERT_FALSE(has_ctrl);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    has_ctrl = <a class="code hl_function" href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a>(table, 0, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaa75cbac4f497f05421fe0483dee2b9da3">LV_TABLE_CELL_CTRL_TEXT_CROP</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    TEST_ASSERT_TRUE(has_ctrl);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">/* We&#39;re using a newly created table */</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> test_table_cell_value_should_return_empty_string_when_cell_is_empty(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    TEST_ASSERT_EQUAL_STRING(<span class="stringliteral">&quot;&quot;</span>, <a class="code hl_function" href="lv__table_8c.html#a058fcf4de7f5c22dd514c2e1be858424">lv_table_get_cell_value</a>(table, 0, 0));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">void</span> test_table_row_height_should_increase_with_multiline_cell_value(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_struct" href="structlv__table__t.html">lv_table_t</a> * table_ptr = (<a class="code hl_struct" href="structlv__table__t.html">lv_table_t</a> *) table;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * singleline_value = <span class="stringliteral">&quot;LVGL&quot;</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * multiline_value = <span class="stringliteral">&quot;LVGL\nRocks&quot;</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, 0, 0, singleline_value);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> singleline_row_height = table_ptr-&gt;<a class="code hl_variable" href="structlv__table__t.html#aa2885f35bbb63b4f6a5beda5d699d2de">row_h</a>[0];</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, 0, 0, multiline_value);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> multiline_row_height = table_ptr-&gt;<a class="code hl_variable" href="structlv__table__t.html#aa2885f35bbb63b4f6a5beda5d699d2de">row_h</a>[0];</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    TEST_ASSERT_GREATER_THAN(singleline_row_height, multiline_row_height);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">void</span> test_table_should_wrap_long_texts(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_struct" href="structlv__table__t.html">lv_table_t</a> * table_ptr = (<a class="code hl_struct" href="structlv__table__t.html">lv_table_t</a> *) table;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * long_text = <span class="stringliteral">&quot;Testing automatic text wrap with a very long text&quot;</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * small_text = <span class="stringliteral">&quot;Hi&quot;</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_function" href="lv__table_8c.html#af8cdced86d76df15890ab095206902ef">lv_table_set_col_width</a>(table, 0, 50);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, 0, 0, small_text);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> row_height = table_ptr-&gt;<a class="code hl_variable" href="structlv__table__t.html#aa2885f35bbb63b4f6a5beda5d699d2de">row_h</a>[0];</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, 0, 0, long_text);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> wrapped_row_height = table_ptr-&gt;<a class="code hl_variable" href="structlv__table__t.html#aa2885f35bbb63b4f6a5beda5d699d2de">row_h</a>[0];</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">/* Row height on cells with wrapped text is bigger than cells with small texts */</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    TEST_ASSERT_GREATER_THAN(row_height, wrapped_row_height);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">static</span> <span class="keywordtype">void</span> draw_part_event_cb(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a>(e);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_struct" href="structlv__obj__draw__part__dsc__t.html">lv_obj_draw_part_dsc_t</a> * dsc = <a class="code hl_function" href="lv__event_8c.html#a26691f954c24215b4baa5854d103deac">lv_event_get_param</a>(e);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">/*If the cells are drawn...*/</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#afd4837df6558644ecbc1b024df952f8e">part</a> == <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa90487e55bc86a255ad935ca1a0403261">LV_PART_ITEMS</a>) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        uint32_t row = dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a42de730be272f85fd21e5c7c7cbbd029">id</a> /  <a class="code hl_function" href="lv__table_8c.html#a2d2bd84c2ff05d303cbe5531cd45884d">lv_table_get_col_cnt</a>(obj);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        uint32_t col = dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a42de730be272f85fd21e5c7c7cbbd029">id</a> - row * <a class="code hl_function" href="lv__table_8c.html#a2d2bd84c2ff05d303cbe5531cd45884d">lv_table_get_col_cnt</a>(obj);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="comment">/*Make the texts in the first cell center aligned*/</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">if</span>(row == 0) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a13ef9df5d2947c39cb39d69a7b4197de">label_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__label__dsc__t.html#ab15ef606e46b440b7d7b9817b394e517">align</a> = <a class="code hl_enumvalue" href="lv__txt_8h.html#a79d7e381487ffbf9280f9dda0240bbe7a16eba1c936d720ced8af3a7ff51547ed">LV_TEXT_ALIGN_CENTER</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">rect_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">bg_color</a> = lv_color_mix(<a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2">LV_PALETTE_BLUE</a>), dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">rect_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">bg_color</a>, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f">LV_OPA_40</a>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">rect_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#a8211fe41507fda70839dde2c5df2710d">bg_opa</a> = <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="comment">/*In the first column align the texts to the right*/</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(col == 0) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a13ef9df5d2947c39cb39d69a7b4197de">label_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__label__dsc__t.html#ab15ef606e46b440b7d7b9817b394e517">align</a> = <a class="code hl_enumvalue" href="lv__txt_8h.html#a79d7e381487ffbf9280f9dda0240bbe7ab15a170b40c38228acef2cc78e1338f5">LV_TEXT_ALIGN_RIGHT</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="comment">/*Make every 2nd row grayish*/</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span>(row != 0 &amp;&amp; (row % 2 == 0)) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">rect_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">bg_color</a> = lv_color_mix(<a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5">LV_PALETTE_RED</a>), dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">rect_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">bg_color</a>, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2eca983ed75d41926f0e7c9608aa2aa0">LV_OPA_30</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            dsc-&gt;<a class="code hl_variable" href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">rect_dsc</a>-&gt;<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#a8211fe41507fda70839dde2c5df2710d">bg_opa</a> = <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keywordtype">void</span> test_table_rendering(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>{</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    lv_obj_center(table);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_function" href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a>(table, draw_part_event_cb, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a56b3cbda13c0c9a34c79bd15e021beb3">LV_EVENT_DRAW_PART_BEGIN</a>, NULL);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_function" href="lv__obj__style__gen_8c.html#a5fc73eb77947b4845a8b4b6558330876">lv_obj_set_style_border_side</a>(table, <a class="code hl_enumvalue" href="lv__style_8h.html#ad635da85f000c00c3ee2e8113e3adc29a9cae2792fb8b898c531ed9e83f2ff79f">LV_BORDER_SIDE_FULL</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa90487e55bc86a255ad935ca1a0403261">LV_PART_ITEMS</a>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    lv_obj_set_style_pad_all(table, 10, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa90487e55bc86a255ad935ca1a0403261">LV_PART_ITEMS</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_function" href="lv__obj__style__gen_8c.html#a3bf0357ecdf2acbae2a8e3ee59c4fddd">lv_obj_set_style_border_width</a>(table, 5, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa90487e55bc86a255ad935ca1a0403261">LV_PART_ITEMS</a>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_function" href="lv__table_8c.html#a8e936180e94dfa9a2a4ea4bbb0e241fe">lv_table_set_col_cnt</a>(table, 5);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_function" href="lv__table_8c.html#a337c9d264355b5e76bb10c8281ab3fbb">lv_table_set_row_cnt</a>(table, 5);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_function" href="lv__table_8c.html#af8cdced86d76df15890ab095206902ef">lv_table_set_col_width</a>(table, 1, 60);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_function" href="lv__table_8c.html#af8cdced86d76df15890ab095206902ef">lv_table_set_col_width</a>(table, 2, 100);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 0, 1, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, 0, 1, <span class="stringliteral">&quot;2 cells are merged&quot;</span>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 1, 0, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 1, 1, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 1, 2, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 1, 3, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, 1, 0, <span class="stringliteral">&quot;5 cells are merged&quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    uint32_t i;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">for</span>(i = 0; i &lt; 5; i++) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_function" href="lv__table_8c.html#a2e9b84a95576e39e406822254234ff59">lv_table_set_cell_value_fmt</a>(table, 3, i, <span class="stringliteral">&quot;%d&quot;</span>, i);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_function" href="lv__table_8c.html#a2e9b84a95576e39e406822254234ff59">lv_table_set_cell_value_fmt</a>(table, 2, 3, <span class="stringliteral">&quot;Multi\nline text&quot;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_function" href="lv__table_8c.html#a2e9b84a95576e39e406822254234ff59">lv_table_set_cell_value_fmt</a>(table, 2, 4, <span class="stringliteral">&quot;Very long text wrapped automatically&quot;</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_function" href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a>(table, 4, 3, <a class="code hl_enumvalue" href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaa75cbac4f497f05421fe0483dee2b9da3">LV_TABLE_CELL_CTRL_TEXT_CROP</a>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_function" href="lv__table_8c.html#a2e9b84a95576e39e406822254234ff59">lv_table_set_cell_value_fmt</a>(table, 4, 3, <span class="stringliteral">&quot;crop crop crop crop crop crop crop crop &quot;</span>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_define" href="unity__support_8h.html#a1569409b36f7232cf050ab2f9d536cd0">TEST_ASSERT_EQUAL_SCREENSHOT</a>(<span class="stringliteral">&quot;table_1.png&quot;</span>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">/* See #3120 for context */</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keywordtype">void</span> test_table_should_reduce_cells(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>{</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">const</span> uint16_t initial_col_num = 8;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keyword">const</span> uint16_t initial_row_num = 1;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keyword">const</span> uint16_t final_col_num = 4;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">const</span> uint16_t final_row_num = 1;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    lv_obj_center(table);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_function" href="lv__table_8c.html#a8e936180e94dfa9a2a4ea4bbb0e241fe">lv_table_set_col_cnt</a>(table, initial_col_num);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_function" href="lv__table_8c.html#a337c9d264355b5e76bb10c8281ab3fbb">lv_table_set_row_cnt</a>(table, initial_row_num);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    uint32_t row_idx, col_idx;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">for</span>(row_idx = 0; row_idx &lt; initial_row_num; row_idx++) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">for</span>(col_idx = 0; col_idx &lt; initial_col_num; col_idx++) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, row_idx, col_idx, <span class="stringliteral">&quot;00&quot;</span>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_function" href="lv__table_8c.html#a8e936180e94dfa9a2a4ea4bbb0e241fe">lv_table_set_col_cnt</a>(table, final_col_num);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_function" href="lv__table_8c.html#a337c9d264355b5e76bb10c8281ab3fbb">lv_table_set_row_cnt</a>(table, final_row_num);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">for</span>(row_idx = 0; row_idx &lt; final_row_num; row_idx++) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">for</span>(col_idx = 0; col_idx &lt; final_col_num; col_idx++) {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, row_idx, col_idx, <span class="stringliteral">&quot;00&quot;</span>);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">/* See #3120 for context */</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="keywordtype">void</span> test_table_should_reduce_cells_with_more_than_one_row(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>{</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">const</span> uint16_t initial_col_num = 8;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keyword">const</span> uint16_t initial_row_num = 2;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keyword">const</span> uint16_t final_col_num = 4;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keyword">const</span> uint16_t final_row_num = 1;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    lv_obj_center(table);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <a class="code hl_function" href="lv__table_8c.html#a8e936180e94dfa9a2a4ea4bbb0e241fe">lv_table_set_col_cnt</a>(table, initial_col_num);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_function" href="lv__table_8c.html#a337c9d264355b5e76bb10c8281ab3fbb">lv_table_set_row_cnt</a>(table, initial_row_num);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    uint32_t row_idx, col_idx;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">for</span>(row_idx = 0; row_idx &lt; initial_row_num; row_idx++) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">for</span>(col_idx = 0; col_idx &lt; initial_col_num; col_idx++) {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, row_idx, col_idx, <span class="stringliteral">&quot;00&quot;</span>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <a class="code hl_function" href="lv__table_8c.html#a8e936180e94dfa9a2a4ea4bbb0e241fe">lv_table_set_col_cnt</a>(table, final_col_num);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_function" href="lv__table_8c.html#a337c9d264355b5e76bb10c8281ab3fbb">lv_table_set_row_cnt</a>(table, final_row_num);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">for</span>(row_idx = 0; row_idx &lt; final_row_num; row_idx++) {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">for</span>(col_idx = 0; col_idx &lt; final_col_num; col_idx++) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <a class="code hl_function" href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a>(table, row_idx, col_idx, <span class="stringliteral">&quot;00&quot;</span>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>}</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__color_8c_html_a02d11c7e2f70e8b777901d9e403c6b34"><div class="ttname"><a href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a></div><div class="ttdeci">lv_color_t lv_palette_main(lv_palette_t p)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00274">lv_color.c:274</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a></div><div class="ttdeci">@ LV_OPA_COVER</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00054">lv_color.h:54</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a2eca983ed75d41926f0e7c9608aa2aa0"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2eca983ed75d41926f0e7c9608aa2aa0">LV_OPA_30</a></div><div class="ttdeci">@ LV_OPA_30</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00046">lv_color.h:46</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f">LV_OPA_40</a></div><div class="ttdeci">@ LV_OPA_40</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00047">lv_color.h:47</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2">LV_PALETTE_BLUE</a></div><div class="ttdeci">@ LV_PALETTE_BLUE</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00264">lv_color.h:264</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5">LV_PALETTE_RED</a></div><div class="ttdeci">@ LV_PALETTE_RED</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00259">lv_color.h:259</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a1c1e534267d7f818054106a10966b6f1"><div class="ttname"><a href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a></div><div class="ttdeci">lv_obj_t * lv_event_get_target(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00108">lv_event.c:108</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a26691f954c24215b4baa5854d103deac"><div class="ttname"><a href="lv__event_8c.html#a26691f954c24215b4baa5854d103deac">lv_event_get_param</a></div><div class="ttdeci">void * lv_event_get_param(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00123">lv_event.c:123</a></div></div>
+<div class="ttc" id="alv__event_8c_html_abacf41238027144749f68107a5375994"><div class="ttname"><a href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a></div><div class="ttdeci">struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00162">lv_event.c:162</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a21b130dbe9349eab447cf0c891517272"><div class="ttname"><a href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a></div><div class="ttdeci">struct _lv_event_t lv_event_t</div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a56b3cbda13c0c9a34c79bd15e021beb3"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a56b3cbda13c0c9a34c79bd15e021beb3">LV_EVENT_DRAW_PART_BEGIN</a></div><div class="ttdeci">@ LV_EVENT_DRAW_PART_BEGIN</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00063">lv_event.h:63</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aa90487e55bc86a255ad935ca1a0403261"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa90487e55bc86a255ad935ca1a0403261">LV_PART_ITEMS</a></div><div class="ttdeci">@ LV_PART_ITEMS</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00074">lv_obj.h:74</a></div></div>
+<div class="ttc" id="alv__obj__style__gen_8c_html_a3bf0357ecdf2acbae2a8e3ee59c4fddd"><div class="ttname"><a href="lv__obj__style__gen_8c.html#a3bf0357ecdf2acbae2a8e3ee59c4fddd">lv_obj_set_style_border_width</a></div><div class="ttdeci">void lv_obj_set_style_border_width(struct _lv_obj_t *obj, lv_coord_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style__gen_8c_source.html#l00307">lv_obj_style_gen.c:307</a></div></div>
+<div class="ttc" id="alv__obj__style__gen_8c_html_a5fc73eb77947b4845a8b4b6558330876"><div class="ttname"><a href="lv__obj__style__gen_8c.html#a5fc73eb77947b4845a8b4b6558330876">lv_obj_set_style_border_side</a></div><div class="ttdeci">void lv_obj_set_style_border_side(struct _lv_obj_t *obj, lv_border_side_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style__gen_8c_source.html#l00315">lv_obj_style_gen.c:315</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ab9e1d84b921e63d1da83fe711b214aea"><div class="ttname"><a href="lv__obj__tree_8c.html#ab9e1d84b921e63d1da83fe711b214aea">lv_obj_clean</a></div><div class="ttdeci">void lv_obj_clean(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00080">lv_obj_tree.c:80</a></div></div>
+<div class="ttc" id="alv__style_8h_html_ad635da85f000c00c3ee2e8113e3adc29a9cae2792fb8b898c531ed9e83f2ff79f"><div class="ttname"><a href="lv__style_8h.html#ad635da85f000c00c3ee2e8113e3adc29a9cae2792fb8b898c531ed9e83f2ff79f">LV_BORDER_SIDE_FULL</a></div><div class="ttdeci">@ LV_BORDER_SIDE_FULL</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00118">lv_style.h:118</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a058fcf4de7f5c22dd514c2e1be858424"><div class="ttname"><a href="lv__table_8c.html#a058fcf4de7f5c22dd514c2e1be858424">lv_table_get_cell_value</a></div><div class="ttdeci">const char * lv_table_get_cell_value(lv_obj_t *obj, uint16_t row, uint16_t col)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00415">lv_table.c:415</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a2d2bd84c2ff05d303cbe5531cd45884d"><div class="ttname"><a href="lv__table_8c.html#a2d2bd84c2ff05d303cbe5531cd45884d">lv_table_get_col_cnt</a></div><div class="ttdeci">uint16_t lv_table_get_col_cnt(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00439">lv_table.c:439</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a2e9b84a95576e39e406822254234ff59"><div class="ttname"><a href="lv__table_8c.html#a2e9b84a95576e39e406822254234ff59">lv_table_set_cell_value_fmt</a></div><div class="ttdeci">void lv_table_set_cell_value_fmt(lv_obj_t *obj, uint16_t row, uint16_t col, const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00125">lv_table.c:125</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a337c9d264355b5e76bb10c8281ab3fbb"><div class="ttname"><a href="lv__table_8c.html#a337c9d264355b5e76bb10c8281ab3fbb">lv_table_set_row_cnt</a></div><div class="ttdeci">void lv_table_set_row_cnt(lv_obj_t *obj, uint16_t row_cnt)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00206">lv_table.c:206</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a747bb579fbaeb1e2d15eb0c11f2a1ec0"><div class="ttname"><a href="lv__table_8c.html#a747bb579fbaeb1e2d15eb0c11f2a1ec0">lv_table_has_cell_ctrl</a></div><div class="ttdeci">bool lv_table_has_cell_ctrl(lv_obj_t *obj, uint16_t row, uint16_t col, lv_table_cell_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00461">lv_table.c:461</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a82e9898115534ebfce431eb100cf2186"><div class="ttname"><a href="lv__table_8c.html#a82e9898115534ebfce431eb100cf2186">lv_table_create</a></div><div class="ttdeci">lv_obj_t * lv_table_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00074">lv_table.c:74</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a8c8036cc7a2fcbccb47581190f6c2b9e"><div class="ttname"><a href="lv__table_8c.html#a8c8036cc7a2fcbccb47581190f6c2b9e">lv_table_clear_cell_ctrl</a></div><div class="ttdeci">void lv_table_clear_cell_ctrl(lv_obj_t *obj, uint16_t row, uint16_t col, lv_table_cell_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00353">lv_table.c:353</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a8e936180e94dfa9a2a4ea4bbb0e241fe"><div class="ttname"><a href="lv__table_8c.html#a8e936180e94dfa9a2a4ea4bbb0e241fe">lv_table_set_col_cnt</a></div><div class="ttdeci">void lv_table_set_col_cnt(lv_obj_t *obj, uint16_t col_cnt)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00251">lv_table.c:251</a></div></div>
+<div class="ttc" id="alv__table_8c_html_a9df9a6a2f6c76e2e7e72f1bd1bdc9034"><div class="ttname"><a href="lv__table_8c.html#a9df9a6a2f6c76e2e7e72f1bd1bdc9034">lv_table_add_cell_ctrl</a></div><div class="ttdeci">void lv_table_add_cell_ctrl(lv_obj_t *obj, uint16_t row, uint16_t col, lv_table_cell_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00326">lv_table.c:326</a></div></div>
+<div class="ttc" id="alv__table_8c_html_af51fb1d74bc6566ab73bce4d8250f11d"><div class="ttname"><a href="lv__table_8c.html#af51fb1d74bc6566ab73bce4d8250f11d">lv_table_set_cell_value</a></div><div class="ttdeci">void lv_table_set_cell_value(lv_obj_t *obj, uint16_t row, uint16_t col, const char *txt)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00086">lv_table.c:86</a></div></div>
+<div class="ttc" id="alv__table_8c_html_af8cdced86d76df15890ab095206902ef"><div class="ttname"><a href="lv__table_8c.html#af8cdced86d76df15890ab095206902ef">lv_table_set_col_width</a></div><div class="ttdeci">void lv_table_set_col_width(lv_obj_t *obj, uint16_t col_id, lv_coord_t w)</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8c_source.html#l00313">lv_table.c:313</a></div></div>
+<div class="ttc" id="alv__table_8h_html_a5783afe7cb5f0a6108e7c283af1d7feaa75cbac4f497f05421fe0483dee2b9da3"><div class="ttname"><a href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaa75cbac4f497f05421fe0483dee2b9da3">LV_TABLE_CELL_CTRL_TEXT_CROP</a></div><div class="ttdeci">@ LV_TABLE_CELL_CTRL_TEXT_CROP</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8h_source.html#l00040">lv_table.h:40</a></div></div>
+<div class="ttc" id="alv__table_8h_html_a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37"><div class="ttname"><a href="lv__table_8h.html#a5783afe7cb5f0a6108e7c283af1d7feaaeb8f6672e6e1cf784ace6bd96a90ed37">LV_TABLE_CELL_CTRL_MERGE_RIGHT</a></div><div class="ttdeci">@ LV_TABLE_CELL_CTRL_MERGE_RIGHT</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8h_source.html#l00039">lv_table.h:39</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a79d7e381487ffbf9280f9dda0240bbe7a16eba1c936d720ced8af3a7ff51547ed"><div class="ttname"><a href="lv__txt_8h.html#a79d7e381487ffbf9280f9dda0240bbe7a16eba1c936d720ced8af3a7ff51547ed">LV_TEXT_ALIGN_CENTER</a></div><div class="ttdeci">@ LV_TEXT_ALIGN_CENTER</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00063">lv_txt.h:63</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a79d7e381487ffbf9280f9dda0240bbe7ab15a170b40c38228acef2cc78e1338f5"><div class="ttname"><a href="lv__txt_8h.html#a79d7e381487ffbf9280f9dda0240bbe7ab15a170b40c38228acef2cc78e1338f5">LV_TEXT_ALIGN_RIGHT</a></div><div class="ttdeci">@ LV_TEXT_ALIGN_RIGHT</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00064">lv_txt.h:64</a></div></div>
+<div class="ttc" id="astructlv__draw__label__dsc__t_html_ab15ef606e46b440b7d7b9817b394e517"><div class="ttname"><a href="structlv__draw__label__dsc__t.html#ab15ef606e46b440b7d7b9817b394e517">lv_draw_label_dsc_t::align</a></div><div class="ttdeci">lv_text_align_t align</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__label_8h_source.html#l00043">lv_draw_label.h:43</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_a8211fe41507fda70839dde2c5df2710d"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#a8211fe41507fda70839dde2c5df2710d">lv_draw_rect_dsc_t::bg_opa</a></div><div class="ttdeci">lv_opa_t bg_opa</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00037">lv_draw_rect.h:37</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_ab729b49b24e3e57974cdebfe86ee1778"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">lv_draw_rect_dsc_t::bg_color</a></div><div class="ttdeci">lv_color_t bg_color</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00038">lv_draw_rect.h:38</a></div></div>
+<div class="ttc" id="astructlv__obj__draw__part__dsc__t_html"><div class="ttname"><a href="structlv__obj__draw__part__dsc__t.html">lv_obj_draw_part_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8h_source.html#l00042">lv_obj_draw.h:42</a></div></div>
+<div class="ttc" id="astructlv__obj__draw__part__dsc__t_html_a13ef9df5d2947c39cb39d69a7b4197de"><div class="ttname"><a href="structlv__obj__draw__part__dsc__t.html#a13ef9df5d2947c39cb39d69a7b4197de">lv_obj_draw_part_dsc_t::label_dsc</a></div><div class="ttdeci">lv_draw_label_dsc_t * label_dsc</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8h_source.html#l00050">lv_obj_draw.h:50</a></div></div>
+<div class="ttc" id="astructlv__obj__draw__part__dsc__t_html_a42de730be272f85fd21e5c7c7cbbd029"><div class="ttname"><a href="structlv__obj__draw__part__dsc__t.html#a42de730be272f85fd21e5c7c7cbbd029">lv_obj_draw_part_dsc_t::id</a></div><div class="ttdeci">uint32_t id</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8h_source.html#l00063">lv_obj_draw.h:63</a></div></div>
+<div class="ttc" id="astructlv__obj__draw__part__dsc__t_html_a890dfc7829e4cf749b975a5f0f1ee73a"><div class="ttname"><a href="structlv__obj__draw__part__dsc__t.html#a890dfc7829e4cf749b975a5f0f1ee73a">lv_obj_draw_part_dsc_t::rect_dsc</a></div><div class="ttdeci">lv_draw_rect_dsc_t * rect_dsc</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8h_source.html#l00048">lv_obj_draw.h:48</a></div></div>
+<div class="ttc" id="astructlv__obj__draw__part__dsc__t_html_afd4837df6558644ecbc1b024df952f8e"><div class="ttname"><a href="structlv__obj__draw__part__dsc__t.html#afd4837df6558644ecbc1b024df952f8e">lv_obj_draw_part_dsc_t::part</a></div><div class="ttdeci">uint32_t part</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8h_source.html#l00062">lv_obj_draw.h:62</a></div></div>
+<div class="ttc" id="astructlv__table__t_html"><div class="ttname"><a href="structlv__table__t.html">lv_table_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__table_8h_source.html#l00059">lv_table.h:59</a></div></div>
+<div class="ttc" id="astructlv__table__t_html_aa2885f35bbb63b4f6a5beda5d699d2de"><div class="ttname"><a href="structlv__table__t.html#aa2885f35bbb63b4f6a5beda5d699d2de">lv_table_t::row_h</a></div><div class="ttdeci">lv_coord_t * row_h</div><div class="ttdef"><b>Definition</b> <a href="lv__table_8h_source.html#l00064">lv_table.h:64</a></div></div>
+<div class="ttc" id="aunity_8h_html"><div class="ttname"><a href="unity_8h.html">unity.h</a></div></div>
+<div class="ttc" id="aunity__support_8h_html_a1569409b36f7232cf050ab2f9d536cd0"><div class="ttname"><a href="unity__support_8h.html#a1569409b36f7232cf050ab2f9d536cd0">TEST_ASSERT_EQUAL_SCREENSHOT</a></div><div class="ttdeci">#define TEST_ASSERT_EQUAL_SCREENSHOT(path)</div><div class="ttdef"><b>Definition</b> <a href="unity__support_8h_source.html#l00016">unity_support.h:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_f070bc0cb73a4ad1c4c8f9e7fda9a852.html">tests</a></li><li class="navelem"><a href="dir_a8f6ecb5f84b153223432d96815f1a7f.html">src</a></li><li class="navelem"><a href="dir_63195b95730c5d28a547b107ac71870d.html">test_cases</a></li><li class="navelem"><a href="test__table_8c.html">test_table.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

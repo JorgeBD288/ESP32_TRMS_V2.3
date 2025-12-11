@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/Custom_Libraries/PID_Control.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('PID__Control_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PID_Control.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="PID__Control_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="PID__Parameters_8h.html">PID_Parameters.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="MotorControl_8h.html">MotorControl.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"></span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Estructura de parámetros de un PID</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * (equivalente a un bloque de Simulink: Kp, Ki, Kd, Isat).</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structPIDParams.html">   10</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPIDParams.html">PIDParams</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structPIDParams.html#a19cb8d9e5c5c90bab811f1dfa862fee8">   11</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPIDParams.html#a19cb8d9e5c5c90bab811f1dfa862fee8">Kp</a>;      <span class="comment">// Kp* u</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structPIDParams.html#aeac7f803c23e75fda8f91bd766a283df">   12</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPIDParams.html#aeac7f803c23e75fda8f91bd766a283df">Ki</a>;      <span class="comment">// Ki* u -&gt; integrado</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structPIDParams.html#ac31eb9b76b293076c9ce97cf57356cb4">   13</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPIDParams.html#ac31eb9b76b293076c9ce97cf57356cb4">Kd</a>;      <span class="comment">// Kd* du/dt</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">   14</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">I_sat</a>;   <span class="comment">// saturación de la PARTE INTEGRAL (±I_sat)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"></span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * Estado interno del PID.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * Un objeto de estos por cada PID (PIDvv, PIDvh, PIDhv, PIDhh).</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structPIDState.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPIDState.html">PIDState</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">   22</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a>;  <span class="comment">// estado del integrador (ya incluye Ki)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">   23</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">prevInput</a>;   <span class="comment">// u[k-1]</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">   24</a></span>    <span class="keywordtype">bool</span>  <a class="code hl_variable" href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">firstRun</a>;    <span class="comment">// para inicializar derivada la primera vez</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * Inicializa el estado del PID.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * Llama a esto una vez al arrancar o cuando quieras resetearlo.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a>(<a class="code hl_struct" href="structPIDState.html">PIDState</a> &amp;state);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"></span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * Calcula la salida del PID para una muestra.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * @param params  Ganancias Kp, Ki, Kd, I_sat</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * @param state   Estado interno del PID (integrador, memoria)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * @param input   Entrada u (normalmente el error: ref - medida)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * @param dt      Tiempo de muestreo [s]</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * @return salida del PID (antes de Umax/Uhmax/Uvmax, eso va aparte)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">float</span> <a class="code hl_function" href="PID__Control_8h.html#a45bb04bcecfff5567830a6ba6c4d451d">PID_Update</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPIDParams.html">PIDParams</a> &amp;params,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                 <a class="code hl_struct" href="structPIDState.html">PIDState</a>        &amp;state,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                 <span class="keywordtype">float</span>            input,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                 <span class="keywordtype">float</span>            dt);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// =====================================================</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// Bloque PID-4 (MIMO 2x2) para el TRMS</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// =====================================================</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structPID4Params.html">   51</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPID4Params.html">PID4Params</a> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structPID4Params.html#a643aabb96629224eaa6e1935e0952159">   52</a></span>    <a class="code hl_struct" href="structPIDParams.html">PIDParams</a> <a class="code hl_variable" href="structPID4Params.html#a643aabb96629224eaa6e1935e0952159">hh</a>;   <span class="comment">// PIDhh: in_1 -&gt; out_1</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structPID4Params.html#a9d49273ed3546c23dfd685cc920bcf7b">   53</a></span>    <a class="code hl_struct" href="structPIDParams.html">PIDParams</a> <a class="code hl_variable" href="structPID4Params.html#a9d49273ed3546c23dfd685cc920bcf7b">hv</a>;   <span class="comment">// PIDhv: in_1 -&gt; out_2</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structPID4Params.html#a08b2e21b32d4b2159af23304409f29b5">   54</a></span>    <a class="code hl_struct" href="structPIDParams.html">PIDParams</a> <a class="code hl_variable" href="structPID4Params.html#a08b2e21b32d4b2159af23304409f29b5">vh</a>;   <span class="comment">// PIDvh: in_2 -&gt; out_1</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structPID4Params.html#ab83f375b80bb363b4a3c66005922c176">   55</a></span>    <a class="code hl_struct" href="structPIDParams.html">PIDParams</a> <a class="code hl_variable" href="structPID4Params.html#ab83f375b80bb363b4a3c66005922c176">vv</a>;   <span class="comment">// PIDvv: in_2 -&gt; out_2</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structPID4Params.html#a6dd44db83898205db5b71b682126ad03">   57</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID4Params.html#a6dd44db83898205db5b71b682126ad03">Uh_max</a>;   <span class="comment">// saturación simétrica para out_1 (±Uh_max)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structPID4Params.html#a7e515f9181d24cb70b2d2412e8261192">   58</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID4Params.html#a7e515f9181d24cb70b2d2412e8261192">Uv_max</a>;   <span class="comment">// saturación simétrica para out_2 (±Uv_max)</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structPID4State.html">   61</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPID4State.html">PID4State</a> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structPID4State.html#a32dac0eedb981d722099b8a534ca0ff3">   62</a></span>    <a class="code hl_struct" href="structPIDState.html">PIDState</a> <a class="code hl_variable" href="structPID4State.html#a32dac0eedb981d722099b8a534ca0ff3">hh</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structPID4State.html#aa6f81523685f78f9154b096d6a83d923">   63</a></span>    <a class="code hl_struct" href="structPIDState.html">PIDState</a> <a class="code hl_variable" href="structPID4State.html#aa6f81523685f78f9154b096d6a83d923">hv</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structPID4State.html#a713b7f014789fa9e0d6da1e1a45fbf06">   64</a></span>    <a class="code hl_struct" href="structPIDState.html">PIDState</a> <a class="code hl_variable" href="structPID4State.html#a713b7f014789fa9e0d6da1e1a45fbf06">vh</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structPID4State.html#ab047b940bc7ffd093c7d623feec293d0">   65</a></span>    <a class="code hl_struct" href="structPIDState.html">PIDState</a> <a class="code hl_variable" href="structPID4State.html#ab047b940bc7ffd093c7d623feec293d0">vv</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"> * Resetea todos los integradores y memorias del bloque PID-4.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#ae1cb84dbdee5166cba6ed2329ff7fa66">PID4_Reset</a>(<a class="code hl_struct" href="structPID4State.html">PID4State</a> &amp;state);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"> * Evalúa el bloque PID-4.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> * @param params  Parámetros de los 4 PID + Uh_max / Uv_max</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"> * @param state   Estado interno de los 4 PID</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"> * @param in1     in_1 (error horizontal, por ejemplo)</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"> * @param in2     in_2 (error vertical, por ejemplo)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"> * @param dt      Tiempo de muestreo [s]</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment"> * @param out1    out_1 (Uh) → señal para motor horizontal</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment"> * @param out2    out_2 (Uv) → señal para motor vertical</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#af2de7a04dc6f7aea449dc15e5caa99ab">PID4_Update</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPID4Params.html">PID4Params</a> &amp;params,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                 <a class="code hl_struct" href="structPID4State.html">PID4State</a>        &amp;state,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                 <span class="keywordtype">float</span>             in1,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                 <span class="keywordtype">float</span>             in2,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                 <span class="keywordtype">float</span>             dt,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                 <span class="keywordtype">float</span>            &amp;out1,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                 <span class="keywordtype">float</span>            &amp;out2);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                 <span class="comment">// ======================================</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// Módulo global de control PID-4 (TRMS)</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">// ======================================</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">// Inicializa los parámetros del PID-4 a partir de g_pidCurr</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#a75cca6569aa1683f00e98d62aec850f9">PID4_LoadFromCurr</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPID__CURR.html">PID_CURR</a> &amp;curr);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">// Establece referencias (procedentes del display) en GRADOS</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#afe0f5b177448ffb139d60ea5289e0060">PID4_SetReferences</a>(<span class="keywordtype">float</span> refVertDeg, <span class="keywordtype">float</span> refHorDeg);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">// Habilita / deshabilita el control PID-4</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#a8e50d2aba4e2895d32221c29fd5532a8">PID4_SetEnabled</a>(<span class="keywordtype">bool</span> enable);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keywordtype">bool</span> <a class="code hl_function" href="PID__Control_8h.html#ab742ffa103f35e4b9ae3340199f58915">PID4_IsEnabled</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">// Ejecuta un paso de control:</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">//   dt  -&gt; tiempo de muestreo [s]</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// Internamente:</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">//   - lee los ángulos medidos (Encoders_readAngles)</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//   - convierte ref y medida a radianes</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">//   - calcula errores</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">//   - llama a PID4_Update</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">//   - convierte Uh/Uv a Registro_MP / Registro_RDC</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">//   - llama a MotorControl_update(...)</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Control_8h.html#abeefb1959bd545203628ada8b0d1665a">PID4_Step</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="ttc" id="aMotorControl_8h_html"><div class="ttname"><a href="MotorControl_8h.html">MotorControl.h</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_a45bb04bcecfff5567830a6ba6c4d451d"><div class="ttname"><a href="PID__Control_8h.html#a45bb04bcecfff5567830a6ba6c4d451d">PID_Update</a></div><div class="ttdeci">float PID_Update(const PIDParams &amp;params, PIDState &amp;state, float input, float dt)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00047">PID_Control.cpp:47</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_a75cca6569aa1683f00e98d62aec850f9"><div class="ttname"><a href="PID__Control_8h.html#a75cca6569aa1683f00e98d62aec850f9">PID4_LoadFromCurr</a></div><div class="ttdeci">void PID4_LoadFromCurr(const PID_CURR &amp;curr)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00089">PID_Control.cpp:89</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_a8e50d2aba4e2895d32221c29fd5532a8"><div class="ttname"><a href="PID__Control_8h.html#a8e50d2aba4e2895d32221c29fd5532a8">PID4_SetEnabled</a></div><div class="ttdeci">void PID4_SetEnabled(bool enable)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00110">PID_Control.cpp:110</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_ab742ffa103f35e4b9ae3340199f58915"><div class="ttname"><a href="PID__Control_8h.html#ab742ffa103f35e4b9ae3340199f58915">PID4_IsEnabled</a></div><div class="ttdeci">bool PID4_IsEnabled()</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00118">PID_Control.cpp:118</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_abeefb1959bd545203628ada8b0d1665a"><div class="ttname"><a href="PID__Control_8h.html#abeefb1959bd545203628ada8b0d1665a">PID4_Step</a></div><div class="ttdeci">void PID4_Step(float dt)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00184">PID_Control.cpp:184</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_ae1cb84dbdee5166cba6ed2329ff7fa66"><div class="ttname"><a href="PID__Control_8h.html#ae1cb84dbdee5166cba6ed2329ff7fa66">PID4_Reset</a></div><div class="ttdeci">void PID4_Reset(PID4State &amp;state)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00135">PID_Control.cpp:135</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_af2de7a04dc6f7aea449dc15e5caa99ab"><div class="ttname"><a href="PID__Control_8h.html#af2de7a04dc6f7aea449dc15e5caa99ab">PID4_Update</a></div><div class="ttdeci">void PID4_Update(const PID4Params &amp;params, PID4State &amp;state, float in1, float in2, float dt, float &amp;out1, float &amp;out2)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00143">PID_Control.cpp:143</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_afb7f621a6d8f40d8a5630530cac8f890"><div class="ttname"><a href="PID__Control_8h.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a></div><div class="ttdeci">void PID_Reset(PIDState &amp;state)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00033">PID_Control.cpp:33</a></div></div>
+<div class="ttc" id="aPID__Control_8h_html_afe0f5b177448ffb139d60ea5289e0060"><div class="ttname"><a href="PID__Control_8h.html#afe0f5b177448ffb139d60ea5289e0060">PID4_SetReferences</a></div><div class="ttdeci">void PID4_SetReferences(float refVertDeg, float refHorDeg)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00104">PID_Control.cpp:104</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html"><div class="ttname"><a href="PID__Parameters_8h.html">PID_Parameters.h</a></div></div>
+<div class="ttc" id="astructPID4Params_html"><div class="ttname"><a href="structPID4Params.html">PID4Params</a></div><div class="ttdef"><b>Definition</b> <a href="#l00051">PID_Control.h:51</a></div></div>
+<div class="ttc" id="astructPID4Params_html_a08b2e21b32d4b2159af23304409f29b5"><div class="ttname"><a href="structPID4Params.html#a08b2e21b32d4b2159af23304409f29b5">PID4Params::vh</a></div><div class="ttdeci">PIDParams vh</div><div class="ttdef"><b>Definition</b> <a href="#l00054">PID_Control.h:54</a></div></div>
+<div class="ttc" id="astructPID4Params_html_a643aabb96629224eaa6e1935e0952159"><div class="ttname"><a href="structPID4Params.html#a643aabb96629224eaa6e1935e0952159">PID4Params::hh</a></div><div class="ttdeci">PIDParams hh</div><div class="ttdef"><b>Definition</b> <a href="#l00052">PID_Control.h:52</a></div></div>
+<div class="ttc" id="astructPID4Params_html_a6dd44db83898205db5b71b682126ad03"><div class="ttname"><a href="structPID4Params.html#a6dd44db83898205db5b71b682126ad03">PID4Params::Uh_max</a></div><div class="ttdeci">float Uh_max</div><div class="ttdef"><b>Definition</b> <a href="#l00057">PID_Control.h:57</a></div></div>
+<div class="ttc" id="astructPID4Params_html_a7e515f9181d24cb70b2d2412e8261192"><div class="ttname"><a href="structPID4Params.html#a7e515f9181d24cb70b2d2412e8261192">PID4Params::Uv_max</a></div><div class="ttdeci">float Uv_max</div><div class="ttdef"><b>Definition</b> <a href="#l00058">PID_Control.h:58</a></div></div>
+<div class="ttc" id="astructPID4Params_html_a9d49273ed3546c23dfd685cc920bcf7b"><div class="ttname"><a href="structPID4Params.html#a9d49273ed3546c23dfd685cc920bcf7b">PID4Params::hv</a></div><div class="ttdeci">PIDParams hv</div><div class="ttdef"><b>Definition</b> <a href="#l00053">PID_Control.h:53</a></div></div>
+<div class="ttc" id="astructPID4Params_html_ab83f375b80bb363b4a3c66005922c176"><div class="ttname"><a href="structPID4Params.html#ab83f375b80bb363b4a3c66005922c176">PID4Params::vv</a></div><div class="ttdeci">PIDParams vv</div><div class="ttdef"><b>Definition</b> <a href="#l00055">PID_Control.h:55</a></div></div>
+<div class="ttc" id="astructPID4State_html"><div class="ttname"><a href="structPID4State.html">PID4State</a></div><div class="ttdef"><b>Definition</b> <a href="#l00061">PID_Control.h:61</a></div></div>
+<div class="ttc" id="astructPID4State_html_a32dac0eedb981d722099b8a534ca0ff3"><div class="ttname"><a href="structPID4State.html#a32dac0eedb981d722099b8a534ca0ff3">PID4State::hh</a></div><div class="ttdeci">PIDState hh</div><div class="ttdef"><b>Definition</b> <a href="#l00062">PID_Control.h:62</a></div></div>
+<div class="ttc" id="astructPID4State_html_a713b7f014789fa9e0d6da1e1a45fbf06"><div class="ttname"><a href="structPID4State.html#a713b7f014789fa9e0d6da1e1a45fbf06">PID4State::vh</a></div><div class="ttdeci">PIDState vh</div><div class="ttdef"><b>Definition</b> <a href="#l00064">PID_Control.h:64</a></div></div>
+<div class="ttc" id="astructPID4State_html_aa6f81523685f78f9154b096d6a83d923"><div class="ttname"><a href="structPID4State.html#aa6f81523685f78f9154b096d6a83d923">PID4State::hv</a></div><div class="ttdeci">PIDState hv</div><div class="ttdef"><b>Definition</b> <a href="#l00063">PID_Control.h:63</a></div></div>
+<div class="ttc" id="astructPID4State_html_ab047b940bc7ffd093c7d623feec293d0"><div class="ttname"><a href="structPID4State.html#ab047b940bc7ffd093c7d623feec293d0">PID4State::vv</a></div><div class="ttdeci">PIDState vv</div><div class="ttdef"><b>Definition</b> <a href="#l00065">PID_Control.h:65</a></div></div>
+<div class="ttc" id="astructPIDParams_html"><div class="ttname"><a href="structPIDParams.html">PIDParams</a></div><div class="ttdef"><b>Definition</b> <a href="#l00010">PID_Control.h:10</a></div></div>
+<div class="ttc" id="astructPIDParams_html_a19cb8d9e5c5c90bab811f1dfa862fee8"><div class="ttname"><a href="structPIDParams.html#a19cb8d9e5c5c90bab811f1dfa862fee8">PIDParams::Kp</a></div><div class="ttdeci">float Kp</div><div class="ttdef"><b>Definition</b> <a href="#l00011">PID_Control.h:11</a></div></div>
+<div class="ttc" id="astructPIDParams_html_a60c7dac9e2f4a03281be3085756a2bfb"><div class="ttname"><a href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">PIDParams::I_sat</a></div><div class="ttdeci">float I_sat</div><div class="ttdef"><b>Definition</b> <a href="#l00014">PID_Control.h:14</a></div></div>
+<div class="ttc" id="astructPIDParams_html_ac31eb9b76b293076c9ce97cf57356cb4"><div class="ttname"><a href="structPIDParams.html#ac31eb9b76b293076c9ce97cf57356cb4">PIDParams::Kd</a></div><div class="ttdeci">float Kd</div><div class="ttdef"><b>Definition</b> <a href="#l00013">PID_Control.h:13</a></div></div>
+<div class="ttc" id="astructPIDParams_html_aeac7f803c23e75fda8f91bd766a283df"><div class="ttname"><a href="structPIDParams.html#aeac7f803c23e75fda8f91bd766a283df">PIDParams::Ki</a></div><div class="ttdeci">float Ki</div><div class="ttdef"><b>Definition</b> <a href="#l00012">PID_Control.h:12</a></div></div>
+<div class="ttc" id="astructPIDState_html"><div class="ttname"><a href="structPIDState.html">PIDState</a></div><div class="ttdef"><b>Definition</b> <a href="#l00021">PID_Control.h:21</a></div></div>
+<div class="ttc" id="astructPIDState_html_ad4d98ab6c83e42bcd08c15ff060d3fb7"><div class="ttname"><a href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">PIDState::firstRun</a></div><div class="ttdeci">bool firstRun</div><div class="ttdef"><b>Definition</b> <a href="#l00024">PID_Control.h:24</a></div></div>
+<div class="ttc" id="astructPIDState_html_adecb8e52af7f054de8c2d15ce406eb15"><div class="ttname"><a href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">PIDState::integrator</a></div><div class="ttdeci">float integrator</div><div class="ttdef"><b>Definition</b> <a href="#l00022">PID_Control.h:22</a></div></div>
+<div class="ttc" id="astructPIDState_html_ae1895b615aab2a6c59e87c2a7f271e1d"><div class="ttname"><a href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">PIDState::prevInput</a></div><div class="ttdeci">float prevInput</div><div class="ttdef"><b>Definition</b> <a href="#l00023">PID_Control.h:23</a></div></div>
+<div class="ttc" id="astructPID__CURR_html"><div class="ttname"><a href="structPID__CURR.html">PID_CURR</a></div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8h_source.html#l00015">PID_Parameters.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="PID__Control_8h.html">PID_Control.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

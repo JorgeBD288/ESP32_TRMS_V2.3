@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/extra/widgets/tileview/lv_tileview.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__tileview_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_tileview.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__tileview_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_tileview.c</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lv__tileview_8h.html">lv_tileview.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="lv__indev_8h.html">../../../core/lv_indev.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_TILEVIEW</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  STATIC PROTOTYPES</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_tileview_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_tileview_tile_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">static</span> <span class="keywordtype">void</span> tileview_event_cb(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  STATIC VARIABLES</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#a2ecaf5f68f948538154dda12569ae6b1">   32</a></span><span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__tileview_8c.html#a2ecaf5f68f948538154dda12569ae6b1">lv_tileview_class</a> = {.constructor_cb = lv_tileview_constructor,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                                          .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                          .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                         };</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#acf2d0dfcd17710e53975685aa6e08626">   37</a></span><span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__tileview_8c.html#acf2d0dfcd17710e53975685aa6e08626">lv_tileview_tile_class</a> = {.constructor_cb = lv_tileview_tile_constructor,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                                               .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                                               .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                                              };</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> create_dir;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">static</span> uint32_t create_col_id;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">static</span> uint32_t create_row_id;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#ae5cc5c3c3942d4e0852589c3ceed7106">   54</a></span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__tileview_8c.html#ae5cc5c3c3942d4e0852589c3ceed7106">lv_tileview_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(&amp;<a class="code hl_variable" href="lv__tileview_8c.html#a2ecaf5f68f948538154dda12569ae6b1">lv_tileview_class</a>, parent);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/*======================</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"> * Add/remove functions</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> *=====================*/</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#ac989591f5c916b4a78f3403c3db21ff5">   66</a></span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__tileview_8c.html#ac989591f5c916b4a78f3403c3db21ff5">lv_tileview_add_tile</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tv, uint8_t col_id, uint8_t row_id, <a class="code hl_typedef" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> dir)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    create_dir = dir;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    create_col_id = col_id;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    create_row_id = row_id;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(&amp;<a class="code hl_variable" href="lv__tileview_8c.html#acf2d0dfcd17710e53975685aa6e08626">lv_tileview_tile_class</a>, tv);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#a8c987843fa031498b203f874a8c2fa5c">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__tileview_8c.html#a8c987843fa031498b203f874a8c2fa5c">lv_obj_set_tile</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tile_obj, <a class="code hl_enumeration" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71">lv_anim_enable_t</a> anim_en)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> tx = <a class="code hl_function" href="lv__obj__pos_8c.html#aeefcb58f5d09e5ba9722fc680a3ad409">lv_obj_get_x</a>(tile_obj);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> ty = <a class="code hl_function" href="lv__obj__pos_8c.html#adb5b94d45013ad689376f1b92eaf7072">lv_obj_get_y</a>(tile_obj);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a> * tile = (<a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a> *)tile_obj;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a> * tv = (<a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a> *) obj;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    tv-&gt;<a class="code hl_variable" href="structlv__tileview__t.html#a4b4747b46807179a55ea2a6f3a4a40a3">tile_act</a> = (<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *)tile;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#afbeaa2556147e27514da6021179d38ef">lv_obj_set_scroll_dir</a>(obj, tile-&gt;<a class="code hl_variable" href="structlv__tileview__tile__t.html#a0891a427a9e6f24c32d4e7cbfad02d29">dir</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#a00be04866f7abbe45862d0d3b079dadf">lv_obj_scroll_to</a>(obj, tx, ty, anim_en);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#a51659bce897591a59a51f0ce09b5395a">   91</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__tileview_8c.html#a51659bce897591a59a51f0ce09b5395a">lv_obj_set_tile_id</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tv, uint32_t col_id, uint32_t row_id, <a class="code hl_enumeration" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71">lv_anim_enable_t</a> anim_en)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a>(tv);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = <a class="code hl_function" href="lv__obj__pos_8c.html#a5a13624c03eef715b089ec7981523d11">lv_obj_get_content_width</a>(tv);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> h = <a class="code hl_function" href="lv__obj__pos_8c.html#af41c84dafb07f7445f35699024f3d5d6">lv_obj_get_content_height</a>(tv);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> tx = col_id * w;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> ty = row_id * h;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    uint32_t i;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(tv); i++) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tile_obj = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(tv, i);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x = <a class="code hl_function" href="lv__obj__pos_8c.html#aeefcb58f5d09e5ba9722fc680a3ad409">lv_obj_get_x</a>(tile_obj);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y = <a class="code hl_function" href="lv__obj__pos_8c.html#adb5b94d45013ad689376f1b92eaf7072">lv_obj_get_y</a>(tile_obj);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span>(x == tx &amp;&amp; y == ty) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <a class="code hl_function" href="lv__tileview_8c.html#a8c987843fa031498b203f874a8c2fa5c">lv_obj_set_tile</a>(tv, tile_obj, anim_en);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;No tile found with at (%d,%d) index&quot;</span>, (<span class="keywordtype">int</span>)col_id, (<span class="keywordtype">int</span>)row_id);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="lv__tileview_8c.html#a16a115b273138893c0b71bdc18770ca1">  115</a></span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__tileview_8c.html#a16a115b273138893c0b71bdc18770ca1">lv_tileview_get_tile_act</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a> * tv = (<a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a> *) obj;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">return</span> tv-&gt;<a class="code hl_variable" href="structlv__tileview__t.html#a4b4747b46807179a55ea2a6f3a4a40a3">tile_act</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment"> *   STATIC FUNCTIONS</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_tileview_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(class_p);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a>(obj, <a class="code hl_define" href="lv__area_8h.html#ac8ff3dd7fe0c5622285a2741128cf314">LV_PCT</a>(100), <a class="code hl_define" href="lv__area_8h.html#ac8ff3dd7fe0c5622285a2741128cf314">LV_PCT</a>(100));</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_function" href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a>(obj, tileview_event_cb, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a1abba2082b450de63c0052c342a4d66a">LV_EVENT_ALL</a>, NULL);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eacd235b2da2988b6673679aa0d825f97f">LV_OBJ_FLAG_SCROLL_ONE</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#aa897a1cccd24ebb287135d6a5bf3af39">lv_obj_set_scroll_snap_x</a>(obj, <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069">LV_SCROLL_SNAP_CENTER</a>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#a0163965d49e256d03a9cb42035198755">lv_obj_set_scroll_snap_y</a>(obj, <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069">LV_SCROLL_SNAP_CENTER</a>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_tileview_tile_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(class_p);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent = <a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a>(obj, <a class="code hl_define" href="lv__area_8h.html#ac8ff3dd7fe0c5622285a2741128cf314">LV_PCT</a>(100), <a class="code hl_define" href="lv__area_8h.html#ac8ff3dd7fe0c5622285a2741128cf314">LV_PCT</a>(100));</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a>(obj);  <span class="comment">/*Be sure the size is correct*/</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#ab224721bfc40f9fbedc291bccd84cbea">lv_obj_set_pos</a>(obj, create_col_id * <a class="code hl_function" href="lv__obj__pos_8c.html#a5a13624c03eef715b089ec7981523d11">lv_obj_get_content_width</a>(parent),</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                   create_row_id * <a class="code hl_function" href="lv__obj__pos_8c.html#af41c84dafb07f7445f35699024f3d5d6">lv_obj_get_content_height</a>(parent));</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a> * tile = (<a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a> *)obj;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    tile-&gt;<a class="code hl_variable" href="structlv__tileview__tile__t.html#a0891a427a9e6f24c32d4e7cbfad02d29">dir</a> = create_dir;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">if</span>(create_col_id == 0 &amp;&amp; create_row_id == 0) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#afbeaa2556147e27514da6021179d38ef">lv_obj_set_scroll_dir</a>(parent, create_dir);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">static</span> <span class="keywordtype">void</span> tileview_event_cb(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_enumeration" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="lv__event_8c.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a>(e);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a> * tv = (<a class="code hl_struct" href="structlv__tileview__t.html">lv_tileview_t</a> *) obj;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">if</span>(code == <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771ad8d6f4bce7fc468c2e422dacd10e2ec7">LV_EVENT_SCROLL_END</a>) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev = <a class="code hl_function" href="lv__indev_8c.html#afb429194dbfb22811c076955d792f73c">lv_indev_get_act</a>();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">if</span>(indev &amp;&amp; indev-&gt;<a class="code hl_variable" href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">proc</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8">state</a> == <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a>) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = <a class="code hl_function" href="lv__obj__pos_8c.html#a5a13624c03eef715b089ec7981523d11">lv_obj_get_content_width</a>(obj);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> h = <a class="code hl_function" href="lv__obj__pos_8c.html#af41c84dafb07f7445f35699024f3d5d6">lv_obj_get_content_height</a>(obj);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> scroll_end;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#a6223c77c8b9aa69ec7cbeda4474bb41f">lv_obj_get_scroll_end</a>(obj, &amp;scroll_end);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> left = scroll_end.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> top = scroll_end.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> tx = ((left + (w / 2)) / w) * w;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> ty = ((top + (h / 2)) / h) * h;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <a class="code hl_typedef" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> dir = <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea92f71a851c80b50cd75c32594370d277">LV_DIR_ALL</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        uint32_t i;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">for</span>(i = 0; i &lt; <a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(obj); i++) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tile_obj = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(obj, i);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x = <a class="code hl_function" href="lv__obj__pos_8c.html#aeefcb58f5d09e5ba9722fc680a3ad409">lv_obj_get_x</a>(tile_obj);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y = <a class="code hl_function" href="lv__obj__pos_8c.html#adb5b94d45013ad689376f1b92eaf7072">lv_obj_get_y</a>(tile_obj);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">if</span>(x == tx &amp;&amp; y == ty) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a> * tile = (<a class="code hl_struct" href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a> *)tile_obj;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                tv-&gt;<a class="code hl_variable" href="structlv__tileview__t.html#a4b4747b46807179a55ea2a6f3a4a40a3">tile_act</a> = (<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *)tile;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                dir = tile-&gt;<a class="code hl_variable" href="structlv__tileview__tile__t.html#a0891a427a9e6f24c32d4e7cbfad02d29">dir</a>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(obj, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>, NULL);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#afbeaa2556147e27514da6021179d38ef">lv_obj_set_scroll_dir</a>(obj, dir);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_TILEVIEW*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71">lv_anim_enable_t</a></div><div class="ttdeci">lv_anim_enable_t</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00037">lv_anim.h:37</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea92f71a851c80b50cd75c32594370d277"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea92f71a851c80b50cd75c32594370d277">LV_DIR_ALL</a></div><div class="ttdeci">@ LV_DIR_ALL</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00086">lv_area.h:86</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ac8ff3dd7fe0c5622285a2741128cf314"><div class="ttname"><a href="lv__area_8h.html#ac8ff3dd7fe0c5622285a2741128cf314">LV_PCT</a></div><div class="ttdeci">#define LV_PCT(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00275">lv_area.h:275</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ae805e7334672ed782d8140eb200330eb"><div class="ttname"><a href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a></div><div class="ttdeci">uint8_t lv_dir_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00089">lv_area.h:89</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a1c1e534267d7f818054106a10966b6f1"><div class="ttname"><a href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a></div><div class="ttdeci">lv_obj_t * lv_event_get_target(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00108">lv_event.c:108</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a9a532f570ede648810e9e36b5d3f3bb1"><div class="ttname"><a href="lv__event_8c.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a></div><div class="ttdeci">lv_event_code_t lv_event_get_code(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00118">lv_event.c:118</a></div></div>
+<div class="ttc" id="alv__event_8c_html_abacf41238027144749f68107a5375994"><div class="ttname"><a href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a></div><div class="ttdeci">struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00162">lv_event.c:162</a></div></div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a21b130dbe9349eab447cf0c891517272"><div class="ttname"><a href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a></div><div class="ttdeci">struct _lv_event_t lv_event_t</div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></div><div class="ttdeci">lv_event_code_t</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00032">lv_event.h:32</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a1abba2082b450de63c0052c342a4d66a"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a1abba2082b450de63c0052c342a4d66a">LV_EVENT_ALL</a></div><div class="ttdeci">@ LV_EVENT_ALL</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00033">lv_event.h:33</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a></div><div class="ttdeci">@ LV_EVENT_VALUE_CHANGED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00067">lv_event.h:67</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771ad8d6f4bce7fc468c2e422dacd10e2ec7"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771ad8d6f4bce7fc468c2e422dacd10e2ec7">LV_EVENT_SCROLL_END</a></div><div class="ttdeci">@ LV_EVENT_SCROLL_END</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00045">lv_event.h:45</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a7fc4c271f4ad53b4949e26b2999a1785"><div class="ttname"><a href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a></div><div class="ttdeci">struct _lv_indev_t lv_indev_t</div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39"><div class="ttname"><a href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a></div><div class="ttdeci">@ LV_INDEV_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00073">lv_hal_indev.h:73</a></div></div>
+<div class="ttc" id="alv__indev_8c_html_afb429194dbfb22811c076955d792f73c"><div class="ttname"><a href="lv__indev_8c.html#afb429194dbfb22811c076955d792f73c">lv_indev_get_act</a></div><div class="ttdeci">lv_indev_t * lv_indev_get_act(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__indev_8c_source.html#l00139">lv_indev.c:139</a></div></div>
+<div class="ttc" id="alv__indev_8h_html"><div class="ttname"><a href="lv__indev_8h.html">lv_indev.h</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a424ca3b432ad82f98c4b05950b597d44"><div class="ttname"><a href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div><div class="ttdeci">const lv_obj_class_t lv_obj_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00073">lv_obj.c:73</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a87fa70194789d48ea3dba01d1c28c984"><div class="ttname"><a href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a></div><div class="ttdeci">void lv_obj_add_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00229">lv_obj.c:229</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10eacd235b2da2988b6673679aa0d825f97f"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eacd235b2da2988b6673679aa0d825f97f">LV_OBJ_FLAG_SCROLL_ONE</a></div><div class="ttdeci">@ LV_OBJ_FLAG_SCROLL_ONE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00097">lv_obj.h:97</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a45f1eead6ce2fb12e215ea3e0558f168"><div class="ttname"><a href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a></div><div class="ttdeci">struct _lv_obj_class_t lv_obj_class_t</div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a5a13624c03eef715b089ec7981523d11"><div class="ttname"><a href="lv__obj__pos_8c.html#a5a13624c03eef715b089ec7981523d11">lv_obj_get_content_width</a></div><div class="ttdeci">lv_coord_t lv_obj_get_content_width(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00569">lv_obj_pos.c:569</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_ab224721bfc40f9fbedc291bccd84cbea"><div class="ttname"><a href="lv__obj__pos_8c.html#ab224721bfc40f9fbedc291bccd84cbea">lv_obj_set_pos</a></div><div class="ttdeci">void lv_obj_set_pos(lv_obj_t *obj, lv_coord_t x, lv_coord_t y)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00044">lv_obj_pos.c:44</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_abcc5ebd0d1bda82435697baeeb58048d"><div class="ttname"><a href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a></div><div class="ttdeci">void lv_obj_set_size(lv_obj_t *obj, lv_coord_t w, lv_coord_t h)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00215">lv_obj_pos.c:215</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_adb5b94d45013ad689376f1b92eaf7072"><div class="ttname"><a href="lv__obj__pos_8c.html#adb5b94d45013ad689376f1b92eaf7072">lv_obj_get_y</a></div><div class="ttdeci">lv_coord_t lv_obj_get_y(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00519">lv_obj_pos.c:519</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aeefcb58f5d09e5ba9722fc680a3ad409"><div class="ttname"><a href="lv__obj__pos_8c.html#aeefcb58f5d09e5ba9722fc680a3ad409">lv_obj_get_x</a></div><div class="ttdeci">lv_coord_t lv_obj_get_x(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00494">lv_obj_pos.c:494</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_af41c84dafb07f7445f35699024f3d5d6"><div class="ttname"><a href="lv__obj__pos_8c.html#af41c84dafb07f7445f35699024f3d5d6">lv_obj_get_content_height</a></div><div class="ttdeci">lv_coord_t lv_obj_get_content_height(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00580">lv_obj_pos.c:580</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aff54da7280d2ddf3a84db3d08c3bce83"><div class="ttname"><a href="lv__obj__pos_8c.html#aff54da7280d2ddf3a84db3d08c3bce83">lv_obj_update_layout</a></div><div class="ttdeci">void lv_obj_update_layout(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00301">lv_obj_pos.c:301</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a00be04866f7abbe45862d0d3b079dadf"><div class="ttname"><a href="lv__obj__scroll_8c.html#a00be04866f7abbe45862d0d3b079dadf">lv_obj_scroll_to</a></div><div class="ttdeci">void lv_obj_scroll_to(lv_obj_t *obj, lv_coord_t x, lv_coord_t y, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00362">lv_obj_scroll.c:362</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a0163965d49e256d03a9cb42035198755"><div class="ttname"><a href="lv__obj__scroll_8c.html#a0163965d49e256d03a9cb42035198755">lv_obj_set_scroll_snap_y</a></div><div class="ttdeci">void lv_obj_set_scroll_snap_y(lv_obj_t *obj, lv_scroll_snap_t align)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00082">lv_obj_scroll.c:82</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a6223c77c8b9aa69ec7cbeda4474bb41f"><div class="ttname"><a href="lv__obj__scroll_8c.html#a6223c77c8b9aa69ec7cbeda4474bb41f">lv_obj_get_scroll_end</a></div><div class="ttdeci">void lv_obj_get_scroll_end(struct _lv_obj_t *obj, lv_point_t *end)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00240">lv_obj_scroll.c:240</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_aa897a1cccd24ebb287135d6a5bf3af39"><div class="ttname"><a href="lv__obj__scroll_8c.html#aa897a1cccd24ebb287135d6a5bf3af39">lv_obj_set_scroll_snap_x</a></div><div class="ttdeci">void lv_obj_set_scroll_snap_x(lv_obj_t *obj, lv_scroll_snap_t align)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00076">lv_obj_scroll.c:76</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_afbeaa2556147e27514da6021179d38ef"><div class="ttname"><a href="lv__obj__scroll_8c.html#afbeaa2556147e27514da6021179d38ef">lv_obj_set_scroll_dir</a></div><div class="ttdeci">void lv_obj_set_scroll_dir(lv_obj_t *obj, lv_dir_t dir)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00067">lv_obj_scroll.c:67</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8h_html_ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069"><div class="ttname"><a href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069">LV_SCROLL_SNAP_CENTER</a></div><div class="ttdeci">@ LV_SCROLL_SNAP_CENTER</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8h_source.html#l00046">lv_obj_scroll.h:46</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_a708b3eb8efc7d0ac06d1b924dcd9b651"><div class="ttname"><a href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_child(const lv_obj_t *obj, int32_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00293">lv_obj_tree.c:293</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_aa70909493dbfa20500193fb3934ebdb4"><div class="ttname"><a href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a></div><div class="ttdeci">uint32_t lv_obj_get_child_cnt(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00313">lv_obj_tree.c:313</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ae57dc586fb19ae81c4c9f70d8e7eec7d"><div class="ttname"><a href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_parent(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00285">lv_obj_tree.c:285</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_a16a115b273138893c0b71bdc18770ca1"><div class="ttname"><a href="lv__tileview_8c.html#a16a115b273138893c0b71bdc18770ca1">lv_tileview_get_tile_act</a></div><div class="ttdeci">lv_obj_t * lv_tileview_get_tile_act(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="#l00115">lv_tileview.c:115</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_a2ecaf5f68f948538154dda12569ae6b1"><div class="ttname"><a href="lv__tileview_8c.html#a2ecaf5f68f948538154dda12569ae6b1">lv_tileview_class</a></div><div class="ttdeci">const lv_obj_class_t lv_tileview_class</div><div class="ttdef"><b>Definition</b> <a href="#l00032">lv_tileview.c:32</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_a51659bce897591a59a51f0ce09b5395a"><div class="ttname"><a href="lv__tileview_8c.html#a51659bce897591a59a51f0ce09b5395a">lv_obj_set_tile_id</a></div><div class="ttdeci">void lv_obj_set_tile_id(lv_obj_t *tv, uint32_t col_id, uint32_t row_id, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="#l00091">lv_tileview.c:91</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_a8c987843fa031498b203f874a8c2fa5c"><div class="ttname"><a href="lv__tileview_8c.html#a8c987843fa031498b203f874a8c2fa5c">lv_obj_set_tile</a></div><div class="ttdeci">void lv_obj_set_tile(lv_obj_t *obj, lv_obj_t *tile_obj, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="#l00078">lv_tileview.c:78</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_ac989591f5c916b4a78f3403c3db21ff5"><div class="ttname"><a href="lv__tileview_8c.html#ac989591f5c916b4a78f3403c3db21ff5">lv_tileview_add_tile</a></div><div class="ttdeci">lv_obj_t * lv_tileview_add_tile(lv_obj_t *tv, uint8_t col_id, uint8_t row_id, lv_dir_t dir)</div><div class="ttdef"><b>Definition</b> <a href="#l00066">lv_tileview.c:66</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_acf2d0dfcd17710e53975685aa6e08626"><div class="ttname"><a href="lv__tileview_8c.html#acf2d0dfcd17710e53975685aa6e08626">lv_tileview_tile_class</a></div><div class="ttdeci">const lv_obj_class_t lv_tileview_tile_class</div><div class="ttdef"><b>Definition</b> <a href="#l00037">lv_tileview.c:37</a></div></div>
+<div class="ttc" id="alv__tileview_8c_html_ae5cc5c3c3942d4e0852589c3ceed7106"><div class="ttname"><a href="lv__tileview_8c.html#ae5cc5c3c3942d4e0852589c3ceed7106">lv_tileview_create</a></div><div class="ttdeci">lv_obj_t * lv_tileview_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">lv_tileview.c:54</a></div></div>
+<div class="ttc" id="alv__tileview_8h_html"><div class="ttname"><a href="lv__tileview_8h.html">lv_tileview.h</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a993ced14d531f55381346cebf8a978d8"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8">_lv_indev_proc_t::state</a></div><div class="ttdeci">lv_indev_state_t state</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00133">lv_hal_indev.h:133</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_a532e74e74e6a183ee3e0fde02c9b2beb"><div class="ttname"><a href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">_lv_indev_t::proc</a></div><div class="ttdeci">_lv_indev_proc_t proc</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00178">lv_hal_indev.h:178</a></div></div>
+<div class="ttc" id="astructlv__point__t_html"><div class="ttname"><a href="structlv__point__t.html">lv_point_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00037">lv_area.h:37</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+<div class="ttc" id="astructlv__tileview__t_html"><div class="ttname"><a href="structlv__tileview__t.html">lv_tileview_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__tileview_8h_source.html#l00027">lv_tileview.h:27</a></div></div>
+<div class="ttc" id="astructlv__tileview__t_html_a4b4747b46807179a55ea2a6f3a4a40a3"><div class="ttname"><a href="structlv__tileview__t.html#a4b4747b46807179a55ea2a6f3a4a40a3">lv_tileview_t::tile_act</a></div><div class="ttdeci">lv_obj_t * tile_act</div><div class="ttdef"><b>Definition</b> <a href="lv__tileview_8h_source.html#l00029">lv_tileview.h:29</a></div></div>
+<div class="ttc" id="astructlv__tileview__tile__t_html"><div class="ttname"><a href="structlv__tileview__tile__t.html">lv_tileview_tile_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__tileview_8h_source.html#l00032">lv_tileview.h:32</a></div></div>
+<div class="ttc" id="astructlv__tileview__tile__t_html_a0891a427a9e6f24c32d4e7cbfad02d29"><div class="ttname"><a href="structlv__tileview__tile__t.html#a0891a427a9e6f24c32d4e7cbfad02d29">lv_tileview_tile_t::dir</a></div><div class="ttdeci">lv_dir_t dir</div><div class="ttdef"><b>Definition</b> <a href="lv__tileview_8h_source.html#l00034">lv_tileview.h:34</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_79c5b94d665439d41ffc10de35b9cdc9.html">tileview</a></li><li class="navelem"><a href="lv__tileview_8c.html">lv_tileview.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

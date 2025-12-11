@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/core/lv_indev_scroll.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__indev__scroll_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_indev_scroll.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__indev_8h_source.html">lv_indev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__indev__scroll_8h_source.html">lv_indev_scroll.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__indev__scroll_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:acef7b961603fbdce6e3462fad0ce5da4" id="r_acef7b961603fbdce6e3462fad0ce5da4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acef7b961603fbdce6e3462fad0ce5da4">ELASTIC_SLOWNESS_FACTOR</a>&#160;&#160;&#160;4   /*Scrolling on elastic parts are slower by this factor*/</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a2ffdb3af74315f8d92e5853d6425c485" id="r_a2ffdb3af74315f8d92e5853d6425c485"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ffdb3af74315f8d92e5853d6425c485">_lv_indev_scroll_handler</a> (<a class="el" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a> *proc)</td></tr>
+<tr class="memitem:a2f962cad60292b1684599cfe2f28848f" id="r_a2f962cad60292b1684599cfe2f28848f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f962cad60292b1684599cfe2f28848f">_lv_indev_scroll_throw_handler</a> (<a class="el" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a> *proc)</td></tr>
+<tr class="memitem:a4fc4e91dcd36707244e4ba4dba73dd50" id="r_a4fc4e91dcd36707244e4ba4dba73dd50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc4e91dcd36707244e4ba4dba73dd50">lv_indev_scroll_get_snap_dist</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="structlv__point__t.html">lv_point_t</a> *p)</td></tr>
+<tr class="memitem:abd46b5c1b6c1cfe2fbbadc72c29e84a0" id="r_abd46b5c1b6c1cfe2fbbadc72c29e84a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd46b5c1b6c1cfe2fbbadc72c29e84a0">lv_indev_scroll_throw_predict</a> (<a class="el" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> *indev, <a class="el" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> dir)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="acef7b961603fbdce6e3462fad0ce5da4" name="acef7b961603fbdce6e3462fad0ce5da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef7b961603fbdce6e3462fad0ce5da4">&#9670;&#160;</a></span>ELASTIC_SLOWNESS_FACTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELASTIC_SLOWNESS_FACTOR&#160;&#160;&#160;4   /*Scrolling on elastic parts are slower by this factor*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__indev__scroll_8c_source.html#l00015">15</a> del archivo <a class="el" href="lv__indev__scroll_8c_source.html">lv_indev_scroll.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a2ffdb3af74315f8d92e5853d6425c485" name="a2ffdb3af74315f8d92e5853d6425c485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ffdb3af74315f8d92e5853d6425c485">&#9670;&#160;</a></span>_lv_indev_scroll_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_indev_scroll_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>proc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Handle scrolling. Called by LVGL during input device processing </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proc</td><td>pointer to an input device's proc field </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__indev__scroll_8c_source.html#l00046">46</a> del archivo <a class="el" href="lv__indev__scroll_8c_source.html">lv_indev_scroll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> == 0 &amp;&amp; proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> == 0) {</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * scroll_obj = proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">scroll_obj</a>;</div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">/*If there is no scroll object yet try to find one*/</span></div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span>(scroll_obj == NULL) {</div>
+<div class="line"><span class="lineno">   55</span>        scroll_obj = find_scroll_obj(proc);</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span>(scroll_obj == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>        init_scroll_limits(proc);</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(scroll_obj, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a75436c74b3a1b914bd216280c1a08039">LV_EVENT_SCROLL_BEGIN</a>, NULL);</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">reset_query</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="comment">/*Set new position or scroll if the vector is not zero*/</span></div>
+<div class="line"><span class="lineno">   65</span>    int16_t angle = 0;</div>
+<div class="line"><span class="lineno">   66</span>    int16_t zoom = 256;</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent = scroll_obj;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">while</span>(parent) {</div>
+<div class="line"><span class="lineno">   69</span>        angle += lv_obj_get_style_transform_angle(parent, 0);</div>
+<div class="line"><span class="lineno">   70</span>        zoom *= (lv_obj_get_style_transform_zoom(parent, 0) / 256);</div>
+<div class="line"><span class="lineno">   71</span>        parent = <a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(parent);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span>(angle != 0 || zoom != <a class="code hl_define" href="lv__style_8h.html#a103c099809e82cd94ddf5c0e653895ee">LV_IMG_ZOOM_NONE</a>) {</div>
+<div class="line"><span class="lineno">   75</span>        angle = -angle;</div>
+<div class="line"><span class="lineno">   76</span>        zoom = (256 * 256) / zoom;</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> pivot = { 0, 0 };</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_function" href="lv__area_8c.html#a24140a2e1da0042a874f6b275c1b8633">lv_point_transform</a>(&amp;proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">vect</a>, angle, zoom, &amp;pivot);</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> diff_x = 0;</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> diff_y = 0;</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">scroll_dir</a> == <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a>) {</div>
+<div class="line"><span class="lineno">   86</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sr = <a class="code hl_function" href="lv__obj__scroll_8c.html#ae04ad856b62ba895069a06d6dd88f86b">lv_obj_get_scroll_right</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">   87</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sl = <a class="code hl_function" href="lv__obj__scroll_8c.html#a5045b6bbe79baf95a84e89ccdd501371">lv_obj_get_scroll_left</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">   88</span>        diff_x = elastic_diff(scroll_obj, proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>, sl, sr, <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a>);</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> st = <a class="code hl_function" href="lv__obj__scroll_8c.html#a64fc636d627e5452608a5541be81c06e">lv_obj_get_scroll_top</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">   92</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sb = <a class="code hl_function" href="lv__obj__scroll_8c.html#a6a0a74215c2b719b26efb0c28488d274">lv_obj_get_scroll_bottom</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">   93</span>        diff_y = elastic_diff(scroll_obj, proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>, st, sb, <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16">LV_DIR_VER</a>);</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_typedef" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> scroll_dir = <a class="code hl_function" href="lv__obj__scroll_8c.html#ab1b3ab584b622d54c3e09fda3c3df252">lv_obj_get_scroll_dir</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span>((scroll_dir &amp; <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea57453b2cb931fed2ae2e74eef45afbc6">LV_DIR_LEFT</a>)   == 0 &amp;&amp; diff_x &gt; 0) diff_x = 0;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span>((scroll_dir &amp; <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea8f0907c1d744e3801bc5ef8f09d48b49">LV_DIR_RIGHT</a>)  == 0 &amp;&amp; diff_x &lt; 0) diff_x = 0;</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span>((scroll_dir &amp; <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea3ba8ee31c01355aa9ebaa431accf5f11">LV_DIR_TOP</a>)    == 0 &amp;&amp; diff_y &gt; 0) diff_y = 0;</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span>((scroll_dir &amp; <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea96feeaa8be687e143d8e364ced362495">LV_DIR_BOTTOM</a>) == 0 &amp;&amp; diff_y &lt; 0) diff_y = 0;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="comment">/*Respect the scroll limit area*/</span></div>
+<div class="line"><span class="lineno">  103</span>    scroll_limit_diff(proc, &amp;diff_x, &amp;diff_y);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#a1b531b08cdf3bc7fea68f9defc387b64">_lv_obj_scroll_by_raw</a>(scroll_obj, diff_x, diff_y);</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">reset_query</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  107</span>    proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a6dcf864ff00cce45de9ad7da54c25db8">scroll_sum</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> += diff_x;</div>
+<div class="line"><span class="lineno">  108</span>    proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a6dcf864ff00cce45de9ad7da54c25db8">scroll_sum</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> += diff_y;</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+<div class="ttc" id="alv__area_8c_html_a24140a2e1da0042a874f6b275c1b8633"><div class="ttname"><a href="lv__area_8c.html#a24140a2e1da0042a874f6b275c1b8633">lv_point_transform</a></div><div class="ttdeci">void lv_point_transform(lv_point_t *p, int32_t angle, int32_t zoom, const lv_point_t *pivot)</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8c_source.html#l00532">lv_area.c:532</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea3ba8ee31c01355aa9ebaa431accf5f11"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea3ba8ee31c01355aa9ebaa431accf5f11">LV_DIR_TOP</a></div><div class="ttdeci">@ LV_DIR_TOP</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00082">lv_area.h:82</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea57453b2cb931fed2ae2e74eef45afbc6"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea57453b2cb931fed2ae2e74eef45afbc6">LV_DIR_LEFT</a></div><div class="ttdeci">@ LV_DIR_LEFT</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00080">lv_area.h:80</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a></div><div class="ttdeci">@ LV_DIR_HOR</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00084">lv_area.h:84</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea8f0907c1d744e3801bc5ef8f09d48b49"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea8f0907c1d744e3801bc5ef8f09d48b49">LV_DIR_RIGHT</a></div><div class="ttdeci">@ LV_DIR_RIGHT</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00081">lv_area.h:81</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea96feeaa8be687e143d8e364ced362495"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea96feeaa8be687e143d8e364ced362495">LV_DIR_BOTTOM</a></div><div class="ttdeci">@ LV_DIR_BOTTOM</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00083">lv_area.h:83</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16">LV_DIR_VER</a></div><div class="ttdeci">@ LV_DIR_VER</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00085">lv_area.h:85</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ae805e7334672ed782d8140eb200330eb"><div class="ttname"><a href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a></div><div class="ttdeci">uint8_t lv_dir_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00089">lv_area.h:89</a></div></div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a75436c74b3a1b914bd216280c1a08039"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a75436c74b3a1b914bd216280c1a08039">LV_EVENT_SCROLL_BEGIN</a></div><div class="ttdeci">@ LV_EVENT_SCROLL_BEGIN</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00044">lv_event.h:44</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a1b531b08cdf3bc7fea68f9defc387b64"><div class="ttname"><a href="lv__obj__scroll_8c.html#a1b531b08cdf3bc7fea68f9defc387b64">_lv_obj_scroll_by_raw</a></div><div class="ttdeci">lv_res_t _lv_obj_scroll_by_raw(lv_obj_t *obj, lv_coord_t x, lv_coord_t y)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00412">lv_obj_scroll.c:412</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a5045b6bbe79baf95a84e89ccdd501371"><div class="ttname"><a href="lv__obj__scroll_8c.html#a5045b6bbe79baf95a84e89ccdd501371">lv_obj_get_scroll_left</a></div><div class="ttdeci">lv_coord_t lv_obj_get_scroll_left(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00161">lv_obj_scroll.c:161</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a64fc636d627e5452608a5541be81c06e"><div class="ttname"><a href="lv__obj__scroll_8c.html#a64fc636d627e5452608a5541be81c06e">lv_obj_get_scroll_top</a></div><div class="ttdeci">lv_coord_t lv_obj_get_scroll_top(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00128">lv_obj_scroll.c:128</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a6a0a74215c2b719b26efb0c28488d274"><div class="ttname"><a href="lv__obj__scroll_8c.html#a6a0a74215c2b719b26efb0c28488d274">lv_obj_get_scroll_bottom</a></div><div class="ttdeci">lv_coord_t lv_obj_get_scroll_bottom(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00134">lv_obj_scroll.c:134</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_ab1b3ab584b622d54c3e09fda3c3df252"><div class="ttname"><a href="lv__obj__scroll_8c.html#ab1b3ab584b622d54c3e09fda3c3df252">lv_obj_get_scroll_dir</a></div><div class="ttdeci">lv_dir_t lv_obj_get_scroll_dir(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00098">lv_obj_scroll.c:98</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_ae04ad856b62ba895069a06d6dd88f86b"><div class="ttname"><a href="lv__obj__scroll_8c.html#ae04ad856b62ba895069a06d6dd88f86b">lv_obj_get_scroll_right</a></div><div class="ttdeci">lv_coord_t lv_obj_get_scroll_right(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00204">lv_obj_scroll.c:204</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ae57dc586fb19ae81c4c9f70d8e7eec7d"><div class="ttname"><a href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_parent(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00285">lv_obj_tree.c:285</a></div></div>
+<div class="ttc" id="alv__style_8h_html_a103c099809e82cd94ddf5c0e653895ee"><div class="ttname"><a href="lv__style_8h.html#a103c099809e82cd94ddf5c0e653895ee">LV_IMG_ZOOM_NONE</a></div><div class="ttdeci">#define LV_IMG_ZOOM_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00049">lv_style.h:49</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a1a831877520ad18e9c57bb3f2563bd39"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">_lv_indev_proc_t::scroll_obj</a></div><div class="ttdeci">struct _lv_obj_t * scroll_obj</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00153">lv_hal_indev.h:153</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a311ca773c25e7719b27ec09a36bf17e1"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">_lv_indev_proc_t::vect</a></div><div class="ttdeci">lv_point_t vect</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00147">lv_hal_indev.h:147</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a31d5ff29f413a09c9cd7d1a418a1ab0f"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">_lv_indev_proc_t::pointer</a></div><div class="ttdeci">struct _lv_indev_proc_t::@322357127026317264073165272352035321176077221312::@212032016224320153357151046024141073241055165265 pointer</div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a600b34a836cc33e0b73d61e861adab13"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">_lv_indev_proc_t::types</a></div><div class="ttdeci">union _lv_indev_proc_t::@322357127026317264073165272352035321176077221312 types</div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a6dcf864ff00cce45de9ad7da54c25db8"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a6dcf864ff00cce45de9ad7da54c25db8">_lv_indev_proc_t::scroll_sum</a></div><div class="ttdeci">lv_point_t scroll_sum</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00148">lv_hal_indev.h:148</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_ab7a4b61acd0befd72fd772d2e51704f5"><div class="ttname"><a href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">_lv_indev_proc_t::reset_query</a></div><div class="ttdeci">uint8_t reset_query</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00136">lv_hal_indev.h:136</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_acbfc138ec3c3b93a38aae9ea5d48cb23"><div class="ttname"><a href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">_lv_indev_proc_t::scroll_dir</a></div><div class="ttdeci">lv_dir_t scroll_dir</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00159">lv_hal_indev.h:159</a></div></div>
+<div class="ttc" id="astructlv__point__t_html"><div class="ttname"><a href="structlv__point__t.html">lv_point_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00037">lv_area.h:37</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__scroll_8c_source.html#l00412">_lv_obj_scroll_by_raw()</a>, <a class="el" href="lv__area_8h_source.html#l00083">LV_DIR_BOTTOM</a>, <a class="el" href="lv__area_8h_source.html#l00084">LV_DIR_HOR</a>, <a class="el" href="lv__area_8h_source.html#l00080">LV_DIR_LEFT</a>, <a class="el" href="lv__area_8h_source.html#l00081">LV_DIR_RIGHT</a>, <a class="el" href="lv__area_8h_source.html#l00082">LV_DIR_TOP</a>, <a class="el" href="lv__area_8h_source.html#l00085">LV_DIR_VER</a>, <a class="el" href="lv__event_8h_source.html#l00044">LV_EVENT_SCROLL_BEGIN</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__style_8h_source.html#l00049">LV_IMG_ZOOM_NONE</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00134">lv_obj_get_scroll_bottom()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00098">lv_obj_get_scroll_dir()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00161">lv_obj_get_scroll_left()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00204">lv_obj_get_scroll_right()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00128">lv_obj_get_scroll_top()</a>, <a class="el" href="lv__area_8c_source.html#l00532">lv_point_transform()</a>, <a class="el" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">_lv_indev_proc_t::pointer</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00136">_lv_indev_proc_t::reset_query</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00159">_lv_indev_proc_t::scroll_dir</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00153">_lv_indev_proc_t::scroll_obj</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00148">_lv_indev_proc_t::scroll_sum</a>, <a class="el" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">_lv_indev_proc_t::types</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00147">_lv_indev_proc_t::vect</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+</div>
+</div>
+<a id="a2f962cad60292b1684599cfe2f28848f" name="a2f962cad60292b1684599cfe2f28848f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f962cad60292b1684599cfe2f28848f">&#9670;&#160;</a></span>_lv_indev_scroll_throw_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_indev_scroll_throw_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>proc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Handle throwing after scrolling. Called by LVGL during input device processing </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">proc</td><td>pointer to an input device's proc field </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__indev__scroll_8c_source.html#l00112">112</a> del archivo <a class="el" href="lv__indev__scroll_8c_source.html">lv_indev_scroll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * scroll_obj = proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">scroll_obj</a>;</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span>(scroll_obj == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">scroll_dir</a> == <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea6ab739e5ea7b2628e2e7d17b5574f65d">LV_DIR_NONE</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev_act = <a class="code hl_function" href="lv__indev_8c.html#afb429194dbfb22811c076955d792f73c">lv_indev_get_act</a>();</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> scroll_throw = indev_act-&gt;driver-&gt;scroll_throw;</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__obj_8c.html#a349bf1b6dea18bd0ab189e7a1c06a662">lv_obj_has_flag</a>(scroll_obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea4fe2a1748c3b752cfad7b2f2e371f97c">LV_OBJ_FLAG_SCROLL_MOMENTUM</a>) == <span class="keyword">false</span>) {</div>
+<div class="line"><span class="lineno">  122</span>        proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = 0;</div>
+<div class="line"><span class="lineno">  123</span>        proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = 0;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_typedef" href="lv__obj__scroll_8h.html#ae4ed7a867959d5227d693a9d1613c672">lv_scroll_snap_t</a> align_x = <a class="code hl_function" href="lv__obj__scroll_8c.html#af14c9caf0840252bb5f5195327fdce01">lv_obj_get_scroll_snap_x</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_typedef" href="lv__obj__scroll_8h.html#ae4ed7a867959d5227d693a9d1613c672">lv_scroll_snap_t</a> align_y = <a class="code hl_function" href="lv__obj__scroll_8c.html#a17e37b846ec4eb5a5369e3c26133ec79">lv_obj_get_scroll_snap_y</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">scroll_dir</a> == <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16">LV_DIR_VER</a>) {</div>
+<div class="line"><span class="lineno">  130</span>        proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = 0;</div>
+<div class="line"><span class="lineno">  131</span>        <span class="comment">/*If no snapping &quot;throw&quot;*/</span></div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">if</span>(align_y == <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178eaed4bf40cbb2409b8b0b2604a91a2dde3">LV_SCROLL_SNAP_NONE</a>) {</div>
+<div class="line"><span class="lineno">  133</span>            proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> =</div>
+<div class="line"><span class="lineno">  134</span>                proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> * (100 - scroll_throw) / 100;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sb = <a class="code hl_function" href="lv__obj__scroll_8c.html#a6a0a74215c2b719b26efb0c28488d274">lv_obj_get_scroll_bottom</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  137</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> st = <a class="code hl_function" href="lv__obj__scroll_8c.html#a64fc636d627e5452608a5541be81c06e">lv_obj_get_scroll_top</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>            proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = elastic_diff(scroll_obj, proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>, st, sb,</div>
+<div class="line"><span class="lineno">  140</span>                                                                   <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16">LV_DIR_VER</a>);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>            <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, 0, proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42">LV_ANIM_OFF</a>);</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+<div class="line"><span class="lineno">  144</span>        <span class="comment">/*With snapping find the nearest snap point and scroll there*/</span></div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  146</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> diff_y = scroll_throw_predict_y(proc);</div>
+<div class="line"><span class="lineno">  147</span>            proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = 0;</div>
+<div class="line"><span class="lineno">  148</span>            scroll_limit_diff(proc, NULL, &amp;diff_y);</div>
+<div class="line"><span class="lineno">  149</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y = find_snap_point_y(scroll_obj, <a class="code hl_define" href="lv__area_8h.html#aac556eabce2feec93116344fb2b87b25">LV_COORD_MIN</a>, <a class="code hl_define" href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a>, diff_y);</div>
+<div class="line"><span class="lineno">  150</span>            <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, 0, diff_y + y, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><span class="lineno">  151</span>        }</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">scroll_dir</a> == <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a>) {</div>
+<div class="line"><span class="lineno">  154</span>        proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = 0;</div>
+<div class="line"><span class="lineno">  155</span>        <span class="comment">/*If no snapping &quot;throw&quot;*/</span></div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">if</span>(align_x == <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178eaed4bf40cbb2409b8b0b2604a91a2dde3">LV_SCROLL_SNAP_NONE</a>) {</div>
+<div class="line"><span class="lineno">  157</span>            proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> =</div>
+<div class="line"><span class="lineno">  158</span>                proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> * (100 - scroll_throw) / 100;</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sl = <a class="code hl_function" href="lv__obj__scroll_8c.html#a5045b6bbe79baf95a84e89ccdd501371">lv_obj_get_scroll_left</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  161</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sr = <a class="code hl_function" href="lv__obj__scroll_8c.html#ae04ad856b62ba895069a06d6dd88f86b">lv_obj_get_scroll_right</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>            proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = elastic_diff(scroll_obj, proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>, sl, sr,</div>
+<div class="line"><span class="lineno">  164</span>                                                                   <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a>);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>            <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>, 0, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42">LV_ANIM_OFF</a>);</div>
+<div class="line"><span class="lineno">  167</span>        }</div>
+<div class="line"><span class="lineno">  168</span>        <span class="comment">/*With snapping find the nearest snap point and scroll there*/</span></div>
+<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  170</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> diff_x = scroll_throw_predict_x(proc);</div>
+<div class="line"><span class="lineno">  171</span>            proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = 0;</div>
+<div class="line"><span class="lineno">  172</span>            scroll_limit_diff(proc, &amp;diff_x, NULL);</div>
+<div class="line"><span class="lineno">  173</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x = find_snap_point_x(scroll_obj, <a class="code hl_define" href="lv__area_8h.html#aac556eabce2feec93116344fb2b87b25">LV_COORD_MIN</a>, <a class="code hl_define" href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a>, diff_x);</div>
+<div class="line"><span class="lineno">  174</span>            <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, x + diff_x, 0, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><span class="lineno">  175</span>        }</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    <span class="comment">/*Check if the scroll has finished*/</span></div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> == 0 &amp;&amp; proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> == 0) {</div>
+<div class="line"><span class="lineno">  180</span>        <span class="comment">/*Revert if scrolled in*/</span></div>
+<div class="line"><span class="lineno">  181</span>        <span class="comment">/*If vertically scrollable and not controlled by snap*/</span></div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">if</span>(align_y == <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178eaed4bf40cbb2409b8b0b2604a91a2dde3">LV_SCROLL_SNAP_NONE</a>) {</div>
+<div class="line"><span class="lineno">  183</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> st = <a class="code hl_function" href="lv__obj__scroll_8c.html#a64fc636d627e5452608a5541be81c06e">lv_obj_get_scroll_top</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  184</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sb = <a class="code hl_function" href="lv__obj__scroll_8c.html#a6a0a74215c2b719b26efb0c28488d274">lv_obj_get_scroll_bottom</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">if</span>(st &gt; 0 || sb &gt; 0) {</div>
+<div class="line"><span class="lineno">  186</span>                <span class="keywordflow">if</span>(st &lt; 0) {</div>
+<div class="line"><span class="lineno">  187</span>                    <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, 0, st, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><span class="lineno">  188</span>                }</div>
+<div class="line"><span class="lineno">  189</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(sb &lt; 0) {</div>
+<div class="line"><span class="lineno">  190</span>                    <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, 0, -sb, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><span class="lineno">  191</span>                }</div>
+<div class="line"><span class="lineno">  192</span>            }</div>
+<div class="line"><span class="lineno">  193</span>        }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>        <span class="comment">/*If horizontally scrollable and not controlled by snap*/</span></div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">if</span>(align_x == <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178eaed4bf40cbb2409b8b0b2604a91a2dde3">LV_SCROLL_SNAP_NONE</a>) {</div>
+<div class="line"><span class="lineno">  197</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sl = <a class="code hl_function" href="lv__obj__scroll_8c.html#a5045b6bbe79baf95a84e89ccdd501371">lv_obj_get_scroll_left</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  198</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sr = <a class="code hl_function" href="lv__obj__scroll_8c.html#ae04ad856b62ba895069a06d6dd88f86b">lv_obj_get_scroll_right</a>(scroll_obj);</div>
+<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">if</span>(sl &gt; 0 || sr &gt; 0) {</div>
+<div class="line"><span class="lineno">  200</span>                <span class="keywordflow">if</span>(sl &lt; 0) {</div>
+<div class="line"><span class="lineno">  201</span>                    <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, sl, 0, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><span class="lineno">  202</span>                }</div>
+<div class="line"><span class="lineno">  203</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(sr &lt; 0) {</div>
+<div class="line"><span class="lineno">  204</span>                    <a class="code hl_function" href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a>(scroll_obj, -sr, 0, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><span class="lineno">  205</span>                }</div>
+<div class="line"><span class="lineno">  206</span>            }</div>
+<div class="line"><span class="lineno">  207</span>        }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(scroll_obj, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771ad8d6f4bce7fc468c2e422dacd10e2ec7">LV_EVENT_SCROLL_END</a>, indev_act);</div>
+<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">if</span>(proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">reset_query</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>        proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">scroll_dir</a> = <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea6ab739e5ea7b2628e2e7d17b5574f65d">LV_DIR_NONE</a>;</div>
+<div class="line"><span class="lineno">  213</span>        proc-&gt;<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">scroll_obj</a> = NULL;</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span>}</div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42">LV_ANIM_OFF</a></div><div class="ttdeci">@ LV_ANIM_OFF</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00038">lv_anim.h:38</a></div></div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a></div><div class="ttdeci">@ LV_ANIM_ON</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00039">lv_anim.h:39</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea6ab739e5ea7b2628e2e7d17b5574f65d"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea6ab739e5ea7b2628e2e7d17b5574f65d">LV_DIR_NONE</a></div><div class="ttdeci">@ LV_DIR_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00079">lv_area.h:79</a></div></div>
+<div class="ttc" id="alv__area_8h_html_aac556eabce2feec93116344fb2b87b25"><div class="ttname"><a href="lv__area_8h.html#aac556eabce2feec93116344fb2b87b25">LV_COORD_MIN</a></div><div class="ttdeci">#define LV_COORD_MIN</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00284">lv_area.h:284</a></div></div>
+<div class="ttc" id="alv__area_8h_html_afd59cbd057971f697443ef3cdfd44b9d"><div class="ttname"><a href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a></div><div class="ttdeci">#define LV_COORD_MAX</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00283">lv_area.h:283</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771ad8d6f4bce7fc468c2e422dacd10e2ec7"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771ad8d6f4bce7fc468c2e422dacd10e2ec7">LV_EVENT_SCROLL_END</a></div><div class="ttdeci">@ LV_EVENT_SCROLL_END</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00045">lv_event.h:45</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a7fc4c271f4ad53b4949e26b2999a1785"><div class="ttname"><a href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a></div><div class="ttdeci">struct _lv_indev_t lv_indev_t</div></div>
+<div class="ttc" id="alv__indev_8c_html_afb429194dbfb22811c076955d792f73c"><div class="ttname"><a href="lv__indev_8c.html#afb429194dbfb22811c076955d792f73c">lv_indev_get_act</a></div><div class="ttdeci">lv_indev_t * lv_indev_get_act(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__indev_8c_source.html#l00139">lv_indev.c:139</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a349bf1b6dea18bd0ab189e7a1c06a662"><div class="ttname"><a href="lv__obj_8c.html#a349bf1b6dea18bd0ab189e7a1c06a662">lv_obj_has_flag</a></div><div class="ttdeci">bool lv_obj_has_flag(const lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00318">lv_obj.c:318</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea4fe2a1748c3b752cfad7b2f2e371f97c"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea4fe2a1748c3b752cfad7b2f2e371f97c">LV_OBJ_FLAG_SCROLL_MOMENTUM</a></div><div class="ttdeci">@ LV_OBJ_FLAG_SCROLL_MOMENTUM</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00096">lv_obj.h:96</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a17e37b846ec4eb5a5369e3c26133ec79"><div class="ttname"><a href="lv__obj__scroll_8c.html#a17e37b846ec4eb5a5369e3c26133ec79">lv_obj_get_scroll_snap_y</a></div><div class="ttdeci">lv_scroll_snap_t lv_obj_get_scroll_snap_y(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00110">lv_obj_scroll.c:110</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a92106c5e8e76c0bbe7ae4fd1e12ca419"><div class="ttname"><a href="lv__obj__scroll_8c.html#a92106c5e8e76c0bbe7ae4fd1e12ca419">lv_obj_scroll_by</a></div><div class="ttdeci">void lv_obj_scroll_by(lv_obj_t *obj, lv_coord_t dx, lv_coord_t dy, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00303">lv_obj_scroll.c:303</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_af14c9caf0840252bb5f5195327fdce01"><div class="ttname"><a href="lv__obj__scroll_8c.html#af14c9caf0840252bb5f5195327fdce01">lv_obj_get_scroll_snap_x</a></div><div class="ttdeci">lv_scroll_snap_t lv_obj_get_scroll_snap_x(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00104">lv_obj_scroll.c:104</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8h_html_ade83011398bb8b69988b482f6508178eaed4bf40cbb2409b8b0b2604a91a2dde3"><div class="ttname"><a href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178eaed4bf40cbb2409b8b0b2604a91a2dde3">LV_SCROLL_SNAP_NONE</a></div><div class="ttdeci">@ LV_SCROLL_SNAP_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8h_source.html#l00043">lv_obj_scroll.h:43</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8h_html_ae4ed7a867959d5227d693a9d1613c672"><div class="ttname"><a href="lv__obj__scroll_8h.html#ae4ed7a867959d5227d693a9d1613c672">lv_scroll_snap_t</a></div><div class="ttdeci">uint8_t lv_scroll_snap_t</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8h_source.html#l00048">lv_obj_scroll.h:48</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a9bb0b055f6a7b857c3d0f77bb652cb97"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">_lv_indev_proc_t::scroll_throw_vect</a></div><div class="ttdeci">lv_point_t scroll_throw_vect</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00149">lv_hal_indev.h:149</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__anim_8h_source.html#l00038">LV_ANIM_OFF</a>, <a class="el" href="lv__anim_8h_source.html#l00039">LV_ANIM_ON</a>, <a class="el" href="lv__area_8h_source.html#l00283">LV_COORD_MAX</a>, <a class="el" href="lv__area_8h_source.html#l00284">LV_COORD_MIN</a>, <a class="el" href="lv__area_8h_source.html#l00084">LV_DIR_HOR</a>, <a class="el" href="lv__area_8h_source.html#l00079">LV_DIR_NONE</a>, <a class="el" href="lv__area_8h_source.html#l00085">LV_DIR_VER</a>, <a class="el" href="lv__event_8h_source.html#l00045">LV_EVENT_SCROLL_END</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__indev_8c_source.html#l00139">lv_indev_get_act()</a>, <a class="el" href="lv__obj_8h_source.html#l00096">LV_OBJ_FLAG_SCROLL_MOMENTUM</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00134">lv_obj_get_scroll_bottom()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00161">lv_obj_get_scroll_left()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00204">lv_obj_get_scroll_right()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00104">lv_obj_get_scroll_snap_x()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00110">lv_obj_get_scroll_snap_y()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00128">lv_obj_get_scroll_top()</a>, <a class="el" href="lv__obj_8c_source.html#l00318">lv_obj_has_flag()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00303">lv_obj_scroll_by()</a>, <a class="el" href="lv__obj__scroll_8h_source.html#l00043">LV_SCROLL_SNAP_NONE</a>, <a class="el" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">_lv_indev_proc_t::pointer</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00136">_lv_indev_proc_t::reset_query</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00159">_lv_indev_proc_t::scroll_dir</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00153">_lv_indev_proc_t::scroll_obj</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00149">_lv_indev_proc_t::scroll_throw_vect</a>, <a class="el" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">_lv_indev_proc_t::types</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+</div>
+</div>
+<a id="a4fc4e91dcd36707244e4ba4dba73dd50" name="a4fc4e91dcd36707244e4ba4dba73dd50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc4e91dcd36707244e4ba4dba73dd50">&#9670;&#160;</a></span>lv_indev_scroll_get_snap_dist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_indev_scroll_get_snap_dist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__point__t.html">lv_point_t</a> *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the distance of the nearest snap point </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the object on which snap points should be found </td></tr>
+    <tr><td class="paramname">p</td><td>save the distance of the found snap point there </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__indev__scroll_8c_source.html#l00248">248</a> del archivo <a class="el" href="lv__indev__scroll_8c_source.html">lv_indev_scroll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span>{</div>
+<div class="line"><span class="lineno">  250</span>    p-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = find_snap_point_x(obj, obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>, obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a>, 0);</div>
+<div class="line"><span class="lineno">  251</span>    p-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = find_snap_point_y(obj, obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>, obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">coords</a>.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a>, 0);</div>
+<div class="line"><span class="lineno">  252</span>}</div>
+<div class="ttc" id="astruct__lv__obj__t_html_a5159a54e860e2efa245ccd12f1f26253"><div class="ttname"><a href="struct__lv__obj__t.html#a5159a54e860e2efa245ccd12f1f26253">_lv_obj_t::coords</a></div><div class="ttdeci">lv_area_t coords</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00182">lv_obj.h:182</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a56d2e4d92428979499ff6a06e3d23cba"><div class="ttname"><a href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">lv_area_t::x1</a></div><div class="ttdeci">lv_coord_t x1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00044">lv_area.h:44</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a8e6b43ed9ab280f66ae4e00af312ca27"><div class="ttname"><a href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">lv_area_t::y1</a></div><div class="ttdeci">lv_coord_t y1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00045">lv_area.h:45</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_ac3da01ffe2d07a8e446684160dd1f7fc"><div class="ttname"><a href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">lv_area_t::y2</a></div><div class="ttdeci">lv_coord_t y2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00047">lv_area.h:47</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_aec0405ee6e0fa96f922fee6851240081"><div class="ttname"><a href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">lv_area_t::x2</a></div><div class="ttdeci">lv_coord_t x2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00046">lv_area.h:46</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00182">_lv_obj_t::coords</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a>, <a class="el" href="lv__area_8h_source.html#l00044">lv_area_t::x1</a>, <a class="el" href="lv__area_8h_source.html#l00046">lv_area_t::x2</a>, <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>, <a class="el" href="lv__area_8h_source.html#l00045">lv_area_t::y1</a> y <a class="el" href="lv__area_8h_source.html#l00047">lv_area_t::y2</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__scroll_8c_source.html#l00440">lv_obj_update_snap()</a>.</p>
+
+</div>
+</div>
+<a id="abd46b5c1b6c1cfe2fbbadc72c29e84a0" name="abd46b5c1b6c1cfe2fbbadc72c29e84a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd46b5c1b6c1cfe2fbbadc72c29e84a0">&#9670;&#160;</a></span>lv_indev_scroll_throw_predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> lv_indev_scroll_throw_predict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> *</td>          <td class="paramname"><span class="paramname"><em>indev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a></td>          <td class="paramname"><span class="paramname"><em>dir</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Predict where would a scroll throw end </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indev</td><td>pointer to an input device </td></tr>
+    <tr><td class="paramname">dir</td><td><span class="tt"><a class="el" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16">LV_DIR_VER</a></span> or <span class="tt"><a class="el" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a></span> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the difference compared to the current position when the throw would be finished </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__indev__scroll_8c_source.html#l00223">223</a> del archivo <a class="el" href="lv__indev__scroll_8c_source.html">lv_indev_scroll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>{</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">if</span>(indev == NULL) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> v;</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">switch</span>(dir) {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfeaa4954e8c5d853bb8c7b33a5fa18b8b16">LV_DIR_VER</a>:</div>
+<div class="line"><span class="lineno">  229</span>            v = indev-&gt;<a class="code hl_variable" href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">proc</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#afded21d1887b4ca6c8f14669846c2152">scroll_throw_vect_ori</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea798251d9ea57f07a37f029bd3d26989e">LV_DIR_HOR</a>:</div>
+<div class="line"><span class="lineno">  232</span>            v = indev-&gt;<a class="code hl_variable" href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">proc</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>.<a class="code hl_variable" href="struct__lv__indev__proc__t.html#afded21d1887b4ca6c8f14669846c2152">scroll_throw_vect_ori</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> scroll_throw = indev-&gt;<a class="code hl_variable" href="struct__lv__indev__t.html#a5aed39e0d1027712f3894e1ba5e89d7a">driver</a>-&gt;<a class="code hl_variable" href="struct__lv__indev__drv__t.html#a23226c4cd9c78a7e8c6672b810eb45d8">scroll_throw</a>;</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> sum = 0;</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">while</span>(v) {</div>
+<div class="line"><span class="lineno">  241</span>        sum += v;</div>
+<div class="line"><span class="lineno">  242</span>        v = v * (100 - scroll_throw) / 100;</div>
+<div class="line"><span class="lineno">  243</span>    }</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><span class="lineno">  246</span>}</div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a23226c4cd9c78a7e8c6672b810eb45d8"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a23226c4cd9c78a7e8c6672b810eb45d8">_lv_indev_drv_t::scroll_throw</a></div><div class="ttdeci">uint8_t scroll_throw</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00114">lv_hal_indev.h:114</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_afded21d1887b4ca6c8f14669846c2152"><div class="ttname"><a href="struct__lv__indev__proc__t.html#afded21d1887b4ca6c8f14669846c2152">_lv_indev_proc_t::scroll_throw_vect_ori</a></div><div class="ttdeci">lv_point_t scroll_throw_vect_ori</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00150">lv_hal_indev.h:150</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_a532e74e74e6a183ee3e0fde02c9b2beb"><div class="ttname"><a href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">_lv_indev_t::proc</a></div><div class="ttdeci">_lv_indev_proc_t proc</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00178">lv_hal_indev.h:178</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_a5aed39e0d1027712f3894e1ba5e89d7a"><div class="ttname"><a href="struct__lv__indev__t.html#a5aed39e0d1027712f3894e1ba5e89d7a">_lv_indev_t::driver</a></div><div class="ttdeci">struct _lv_indev_drv_t * driver</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00177">lv_hal_indev.h:177</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__hal__indev_8h_source.html#l00177">_lv_indev_t::driver</a>, <a class="el" href="lv__area_8h_source.html#l00084">LV_DIR_HOR</a>, <a class="el" href="lv__area_8h_source.html#l00085">LV_DIR_VER</a>, <a class="el" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">_lv_indev_proc_t::pointer</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00178">_lv_indev_t::proc</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00114">_lv_indev_drv_t::scroll_throw</a>, <a class="el" href="lv__hal__indev_8h_source.html#l00150">_lv_indev_proc_t::scroll_throw_vect_ori</a>, <a class="el" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">_lv_indev_proc_t::types</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_347ffc2652095edf055753e6ba2d2213.html">core</a></li><li class="navelem"><a href="lv__indev__scroll_8c.html">lv_indev_scroll.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

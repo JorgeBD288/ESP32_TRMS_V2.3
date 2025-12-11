@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/misc/lv_color.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__color_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_color.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__color_8h_source.html">lv_color.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">lv_log.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__color_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a1172ce6482486321aa2412584f8a4cb1" id="r_a1172ce6482486321aa2412584f8a4cb1"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1172ce6482486321aa2412584f8a4cb1">lv_color_change_lightness</a> (lv_color_t c, lv_opa_t lvl)</td></tr>
+<tr class="memitem:a210eb413016d55506d3a74d0e562cd18" id="r_a210eb413016d55506d3a74d0e562cd18"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a210eb413016d55506d3a74d0e562cd18">lv_color_darken</a> (lv_color_t c, lv_opa_t lvl)</td></tr>
+<tr class="memitem:a98945a51e38d6f693a1b2971d21b3733" id="r_a98945a51e38d6f693a1b2971d21b3733"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="lv__conf_8h.html#a61048d2055ebf90e7cb2c67c3d453b78">LV_ATTRIBUTE_FAST_MEM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98945a51e38d6f693a1b2971d21b3733">lv_color_fill</a> (lv_color_t *buf, lv_color_t color, uint32_t px_num)</td></tr>
+<tr class="memitem:a09816229b98000ba2fc7098696c2b740" id="r_a09816229b98000ba2fc7098696c2b740"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09816229b98000ba2fc7098696c2b740">lv_color_hsv_to_rgb</a> (uint16_t h, uint8_t s, uint8_t v)</td></tr>
+<tr class="memitem:abb69f9753b72145e5c6334b418ee61f6" id="r_abb69f9753b72145e5c6334b418ee61f6"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb69f9753b72145e5c6334b418ee61f6">lv_color_lighten</a> (lv_color_t c, lv_opa_t lvl)</td></tr>
+<tr class="memitem:a4d455fed0393e8a3fee3d8d5d3ea5900" id="r_a4d455fed0393e8a3fee3d8d5d3ea5900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlv__color__hsv__t.html">lv_color_hsv_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d455fed0393e8a3fee3d8d5d3ea5900">lv_color_rgb_to_hsv</a> (uint8_t r8, uint8_t g8, uint8_t b8)</td></tr>
+<tr class="memitem:a2afdf6490e5979aa453398c03773bf2d" id="r_a2afdf6490e5979aa453398c03773bf2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlv__color__hsv__t.html">lv_color_hsv_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2afdf6490e5979aa453398c03773bf2d">lv_color_to_hsv</a> (lv_color_t color)</td></tr>
+<tr class="memitem:a024d5d5539910f590b43b23f5908c695" id="r_a024d5d5539910f590b43b23f5908c695"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a024d5d5539910f590b43b23f5908c695">lv_palette_darken</a> (<a class="el" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9c">lv_palette_t</a> p, uint8_t lvl)</td></tr>
+<tr class="memitem:acf087458512c83eba0b5feacc3e26396" id="r_acf087458512c83eba0b5feacc3e26396"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf087458512c83eba0b5feacc3e26396">lv_palette_lighten</a> (<a class="el" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9c">lv_palette_t</a> p, uint8_t lvl)</td></tr>
+<tr class="memitem:a02d11c7e2f70e8b777901d9e403c6b34" id="r_a02d11c7e2f70e8b777901d9e403c6b34"><td class="memItemLeft" align="right" valign="top">lv_color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a> (<a class="el" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9c">lv_palette_t</a> p)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a1172ce6482486321aa2412584f8a4cb1" name="a1172ce6482486321aa2412584f8a4cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1172ce6482486321aa2412584f8a4cb1">&#9670;&#160;</a></span>lv_color_change_lightness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_color_change_lightness </td>
+          <td>(</td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_opa_t</td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00136">136</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">/*It&#39;d be better to convert the color to HSL, change L and convert back to RGB.*/</span></div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span>(lvl == <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2b0db3f7dd5170beb8cdaa5e26c35200">LV_OPA_50</a>) <span class="keywordflow">return</span> c;</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(lvl &lt; <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2b0db3f7dd5170beb8cdaa5e26c35200">LV_OPA_50</a>) <span class="keywordflow">return</span> <a class="code hl_function" href="#a210eb413016d55506d3a74d0e562cd18">lv_color_darken</a>(c, (<a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2b0db3f7dd5170beb8cdaa5e26c35200">LV_OPA_50</a> - lvl) * 2);</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code hl_function" href="#abb69f9753b72145e5c6334b418ee61f6">lv_color_lighten</a>(c, (lvl - <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2b0db3f7dd5170beb8cdaa5e26c35200">LV_OPA_50</a>) * 2);</div>
+<div class="line"><span class="lineno">  142</span>}</div>
+<div class="ttc" id="alv__color_8c_html_a210eb413016d55506d3a74d0e562cd18"><div class="ttname"><a href="#a210eb413016d55506d3a74d0e562cd18">lv_color_darken</a></div><div class="ttdeci">lv_color_t lv_color_darken(lv_color_t c, lv_opa_t lvl)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00131">lv_color.c:131</a></div></div>
+<div class="ttc" id="alv__color_8c_html_abb69f9753b72145e5c6334b418ee61f6"><div class="ttname"><a href="#abb69f9753b72145e5c6334b418ee61f6">lv_color_lighten</a></div><div class="ttdeci">lv_color_t lv_color_lighten(lv_color_t c, lv_opa_t lvl)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00126">lv_color.c:126</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a2b0db3f7dd5170beb8cdaa5e26c35200"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a2b0db3f7dd5170beb8cdaa5e26c35200">LV_OPA_50</a></div><div class="ttdeci">@ LV_OPA_50</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00048">lv_color.h:48</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8c_source.html#l00131">lv_color_darken()</a>, <a class="el" href="lv__color_8c_source.html#l00126">lv_color_lighten()</a> y <a class="el" href="lv__color_8h_source.html#l00048">LV_OPA_50</a>.</p>
+
+</div>
+</div>
+<a id="a210eb413016d55506d3a74d0e562cd18" name="a210eb413016d55506d3a74d0e562cd18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210eb413016d55506d3a74d0e562cd18">&#9670;&#160;</a></span>lv_color_darken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_color_darken </td>
+          <td>(</td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_opa_t</td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00131">131</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">return</span> lv_color_mix(lv_color_black(), c, lvl);</div>
+<div class="line"><span class="lineno">  134</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__color_8c_source.html#l00136">lv_color_change_lightness()</a> y <a class="el" href="lv__example__menu__5_8c_source.html#l00020">lv_example_menu_5()</a>.</p>
+
+</div>
+</div>
+<a id="a98945a51e38d6f693a1b2971d21b3733" name="a98945a51e38d6f693a1b2971d21b3733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98945a51e38d6f693a1b2971d21b3733">&#9670;&#160;</a></span>lv_color_fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="lv__conf_8h.html#a61048d2055ebf90e7cb2c67c3d453b78">LV_ATTRIBUTE_FAST_MEM</a> lv_color_fill </td>
+          <td>(</td>
+          <td class="paramtype">lv_color_t *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>px_num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00036">36</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span><span class="preprocessor">#if LV_COLOR_DEPTH == 16</span></div>
+<div class="line"><span class="lineno">   39</span>    uintptr_t buf_int = (uintptr_t)buf;</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span>(buf_int &amp; 0x3) {</div>
+<div class="line"><span class="lineno">   41</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   42</span>        buf++;</div>
+<div class="line"><span class="lineno">   43</span>        px_num--;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    uint32_t c32 = (uint32_t)color.full + ((uint32_t)color.full &lt;&lt; 16);</div>
+<div class="line"><span class="lineno">   47</span>    uint32_t * buf32 = (uint32_t *)buf;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">while</span>(px_num &gt; 16) {</div>
+<div class="line"><span class="lineno">   50</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   51</span>        buf32++;</div>
+<div class="line"><span class="lineno">   52</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   53</span>        buf32++;</div>
+<div class="line"><span class="lineno">   54</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   55</span>        buf32++;</div>
+<div class="line"><span class="lineno">   56</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   57</span>        buf32++;</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   60</span>        buf32++;</div>
+<div class="line"><span class="lineno">   61</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   62</span>        buf32++;</div>
+<div class="line"><span class="lineno">   63</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   64</span>        buf32++;</div>
+<div class="line"><span class="lineno">   65</span>        *buf32 = c32;</div>
+<div class="line"><span class="lineno">   66</span>        buf32++;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        px_num -= 16;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    buf = (lv_color_t *)buf32;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">while</span>(px_num) {</div>
+<div class="line"><span class="lineno">   74</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   75</span>        buf++;</div>
+<div class="line"><span class="lineno">   76</span>        px_num--;</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">while</span>(px_num &gt; 16) {</div>
+<div class="line"><span class="lineno">   80</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   81</span>        buf++;</div>
+<div class="line"><span class="lineno">   82</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   83</span>        buf++;</div>
+<div class="line"><span class="lineno">   84</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   85</span>        buf++;</div>
+<div class="line"><span class="lineno">   86</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   87</span>        buf++;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   90</span>        buf++;</div>
+<div class="line"><span class="lineno">   91</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   92</span>        buf++;</div>
+<div class="line"><span class="lineno">   93</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   94</span>        buf++;</div>
+<div class="line"><span class="lineno">   95</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   96</span>        buf++;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>        *buf = color;</div>
+<div class="line"><span class="lineno">   99</span>        buf++;</div>
+<div class="line"><span class="lineno">  100</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  101</span>        buf++;</div>
+<div class="line"><span class="lineno">  102</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  103</span>        buf++;</div>
+<div class="line"><span class="lineno">  104</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  105</span>        buf++;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  108</span>        buf++;</div>
+<div class="line"><span class="lineno">  109</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  110</span>        buf++;</div>
+<div class="line"><span class="lineno">  111</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  112</span>        buf++;</div>
+<div class="line"><span class="lineno">  113</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  114</span>        buf++;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>        px_num -= 16;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">while</span>(px_num) {</div>
+<div class="line"><span class="lineno">  119</span>        *buf = color;</div>
+<div class="line"><span class="lineno">  120</span>        buf++;</div>
+<div class="line"><span class="lineno">  121</span>        px_num--;</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  124</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__conf_8h_source.html#l00346">LV_ATTRIBUTE_FAST_MEM</a>.</p>
+
+</div>
+</div>
+<a id="a09816229b98000ba2fc7098696c2b740" name="a09816229b98000ba2fc7098696c2b740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09816229b98000ba2fc7098696c2b740">&#9670;&#160;</a></span>lv_color_hsv_to_rgb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_color_hsv_to_rgb </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a HSV color to RGB </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>hue [0..359] </td></tr>
+    <tr><td class="paramname">s</td><td>saturation [0..100] </td></tr>
+    <tr><td class="paramname">v</td><td>value [0..100] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the given RGB color in RGB (with LV_COLOR_DEPTH depth) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00151">151</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{</div>
+<div class="line"><span class="lineno">  153</span>    h = (uint32_t)((uint32_t)h * 255) / 360;</div>
+<div class="line"><span class="lineno">  154</span>    s = (uint16_t)((uint16_t)s * 255) / 100;</div>
+<div class="line"><span class="lineno">  155</span>    v = (uint16_t)((uint16_t)v * 255) / 100;</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    uint8_t r, g, b;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    uint8_t region, remainder, p, q, t;</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span>(s == 0) {</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span> lv_color_make(v, v, v);</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    region    = h / 43;</div>
+<div class="line"><span class="lineno">  166</span>    remainder = (h - (region * 43)) * 6;</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    p = (v * (255 - s)) &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  169</span>    q = (v * (255 - ((s * remainder) &gt;&gt; 8))) &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  170</span>    t = (v * (255 - ((s * (255 - remainder)) &gt;&gt; 8))) &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">switch</span>(region) {</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  174</span>            r = v;</div>
+<div class="line"><span class="lineno">  175</span>            g = t;</div>
+<div class="line"><span class="lineno">  176</span>            b = p;</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  179</span>            r = q;</div>
+<div class="line"><span class="lineno">  180</span>            g = v;</div>
+<div class="line"><span class="lineno">  181</span>            b = p;</div>
+<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  184</span>            r = p;</div>
+<div class="line"><span class="lineno">  185</span>            g = v;</div>
+<div class="line"><span class="lineno">  186</span>            b = t;</div>
+<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  189</span>            r = p;</div>
+<div class="line"><span class="lineno">  190</span>            g = q;</div>
+<div class="line"><span class="lineno">  191</span>            b = v;</div>
+<div class="line"><span class="lineno">  192</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">  194</span>            r = t;</div>
+<div class="line"><span class="lineno">  195</span>            g = p;</div>
+<div class="line"><span class="lineno">  196</span>            b = v;</div>
+<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  199</span>            r = v;</div>
+<div class="line"><span class="lineno">  200</span>            g = p;</div>
+<div class="line"><span class="lineno">  201</span>            b = q;</div>
+<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  203</span>    }</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    lv_color_t result = lv_color_make(r, g, b);</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  207</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__colorwheel_8c_source.html#l00182">lv_colorwheel_get_rgb()</a>.</p>
+
+</div>
+</div>
+<a id="abb69f9753b72145e5c6334b418ee61f6" name="abb69f9753b72145e5c6334b418ee61f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb69f9753b72145e5c6334b418ee61f6">&#9670;&#160;</a></span>lv_color_lighten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_color_lighten </td>
+          <td>(</td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_opa_t</td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00126">126</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> lv_color_mix(lv_color_white(), c, lvl);</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__color_8c_source.html#l00136">lv_color_change_lightness()</a>.</p>
+
+</div>
+</div>
+<a id="a4d455fed0393e8a3fee3d8d5d3ea5900" name="a4d455fed0393e8a3fee3d8d5d3ea5900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d455fed0393e8a3fee3d8d5d3ea5900">&#9670;&#160;</a></span>lv_color_rgb_to_hsv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlv__color__hsv__t.html">lv_color_hsv_t</a> lv_color_rgb_to_hsv </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>r8</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>g8</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>b8</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a 32-bit RGB color to HSV </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r8</td><td>8-bit red </td></tr>
+    <tr><td class="paramname">g8</td><td>8-bit green </td></tr>
+    <tr><td class="paramname">b8</td><td>8-bit blue </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the given RGB color in HSV </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00216">216</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>{</div>
+<div class="line"><span class="lineno">  218</span>    uint16_t r = ((uint32_t)r8 &lt;&lt; 10) / 255;</div>
+<div class="line"><span class="lineno">  219</span>    uint16_t g = ((uint32_t)g8 &lt;&lt; 10) / 255;</div>
+<div class="line"><span class="lineno">  220</span>    uint16_t b = ((uint32_t)b8 &lt;&lt; 10) / 255;</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    uint16_t rgbMin = r &lt; g ? (r &lt; b ? r : b) : (g &lt; b ? g : b);</div>
+<div class="line"><span class="lineno">  223</span>    uint16_t rgbMax = r &gt; g ? (r &gt; b ? r : b) : (g &gt; b ? g : b);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_struct" href="structlv__color__hsv__t.html">lv_color_hsv_t</a> hsv;</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    <span class="comment">// https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness</span></div>
+<div class="line"><span class="lineno">  228</span>    hsv.<a class="code hl_variable" href="structlv__color__hsv__t.html#aee68a0e7d6e57be412bc49a241cf02bf">v</a> = (100 * rgbMax) &gt;&gt; 10;</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    int32_t delta = rgbMax - rgbMin;</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">if</span>(delta &lt; 3) {</div>
+<div class="line"><span class="lineno">  232</span>        hsv.<a class="code hl_variable" href="structlv__color__hsv__t.html#a953cf0eb0bd57da53b496b846b659a10">h</a> = 0;</div>
+<div class="line"><span class="lineno">  233</span>        hsv.<a class="code hl_variable" href="structlv__color__hsv__t.html#ad95e4cc269ea11bf20f2e56e8dd92037">s</a> = 0;</div>
+<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">return</span> hsv;</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    <span class="comment">// https://en.wikipedia.org/wiki/HSL_and_HSV#Saturation</span></div>
+<div class="line"><span class="lineno">  238</span>    hsv.<a class="code hl_variable" href="structlv__color__hsv__t.html#ad95e4cc269ea11bf20f2e56e8dd92037">s</a> = 100 * delta / rgbMax;</div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">if</span>(hsv.<a class="code hl_variable" href="structlv__color__hsv__t.html#ad95e4cc269ea11bf20f2e56e8dd92037">s</a> &lt; 3) {</div>
+<div class="line"><span class="lineno">  240</span>        hsv.h = 0;</div>
+<div class="line"><span class="lineno">  241</span>        return hsv;</div>
+<div class="line"><span class="lineno">  242</span>    }</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    <span class="comment">// https://en.wikipedia.org/wiki/HSL_and_HSV#Hue_and_chroma</span></div>
+<div class="line"><span class="lineno">  245</span>    int32_t h;</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">if</span>(rgbMax == r)</div>
+<div class="line"><span class="lineno">  247</span>        h = (((g - b) &lt;&lt; 10) / delta) + (g &lt; b ? (6 &lt;&lt; 10) : 0); <span class="comment">// between yellow &amp; magenta</span></div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(rgbMax == g)</div>
+<div class="line"><span class="lineno">  249</span>        h = (((b - r) &lt;&lt; 10) / delta) + (2 &lt;&lt; 10); <span class="comment">// between cyan &amp; yellow</span></div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(rgbMax == b)</div>
+<div class="line"><span class="lineno">  251</span>        h = (((r - g) &lt;&lt; 10) / delta) + (4 &lt;&lt; 10); <span class="comment">// between magenta &amp; cyan</span></div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  253</span>        h = 0;</div>
+<div class="line"><span class="lineno">  254</span>    h *= 60;</div>
+<div class="line"><span class="lineno">  255</span>    h &gt;&gt;= 10;</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">if</span>(h &lt; 0) h += 360;</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    hsv.<a class="code hl_variable" href="structlv__color__hsv__t.html#a953cf0eb0bd57da53b496b846b659a10">h</a> = h;</div>
+<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">return</span> hsv;</div>
+<div class="line"><span class="lineno">  260</span>}</div>
+<div class="ttc" id="astructlv__color__hsv__t_html"><div class="ttname"><a href="structlv__color__hsv__t.html">lv_color_hsv_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00237">lv_color.h:237</a></div></div>
+<div class="ttc" id="astructlv__color__hsv__t_html_a953cf0eb0bd57da53b496b846b659a10"><div class="ttname"><a href="structlv__color__hsv__t.html#a953cf0eb0bd57da53b496b846b659a10">lv_color_hsv_t::h</a></div><div class="ttdeci">uint16_t h</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00238">lv_color.h:238</a></div></div>
+<div class="ttc" id="astructlv__color__hsv__t_html_ad95e4cc269ea11bf20f2e56e8dd92037"><div class="ttname"><a href="structlv__color__hsv__t.html#ad95e4cc269ea11bf20f2e56e8dd92037">lv_color_hsv_t::s</a></div><div class="ttdeci">uint8_t s</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00239">lv_color.h:239</a></div></div>
+<div class="ttc" id="astructlv__color__hsv__t_html_aee68a0e7d6e57be412bc49a241cf02bf"><div class="ttname"><a href="structlv__color__hsv__t.html#aee68a0e7d6e57be412bc49a241cf02bf">lv_color_hsv_t::v</a></div><div class="ttdeci">uint8_t v</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00240">lv_color.h:240</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8h_source.html#l00238">lv_color_hsv_t::h</a>, <a class="el" href="lv__color_8h_source.html#l00239">lv_color_hsv_t::s</a> y <a class="el" href="lv__color_8h_source.html#l00240">lv_color_hsv_t::v</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__color_8c_source.html#l00267">lv_color_to_hsv()</a> y <a class="el" href="lv__colorwheel_8c_source.html#l00123">lv_colorwheel_set_rgb()</a>.</p>
+
+</div>
+</div>
+<a id="a2afdf6490e5979aa453398c03773bf2d" name="a2afdf6490e5979aa453398c03773bf2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2afdf6490e5979aa453398c03773bf2d">&#9670;&#160;</a></span>lv_color_to_hsv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlv__color__hsv__t.html">lv_color_hsv_t</a> lv_color_to_hsv </td>
+          <td>(</td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a color to HSV </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>color </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the given color in HSV </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00267">267</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  268</span>{</div>
+<div class="line"><span class="lineno">  269</span>    <a class="code hl_union" href="unionlv__color32__t.html">lv_color32_t</a> color32;</div>
+<div class="line"><span class="lineno">  270</span>    color32.<a class="code hl_variable" href="unionlv__color32__t.html#a724212bffcd824d555e7842b4d3a88c6">full</a> = lv_color_to32(color);</div>
+<div class="line"><span class="lineno">  271</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a4d455fed0393e8a3fee3d8d5d3ea5900">lv_color_rgb_to_hsv</a>(color32.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a7e62d507ce57ce35236017591fab3224">red</a>, color32.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a7951b7863d314fab2ddf29df169bd483">green</a>, color32.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a3dfb38a077f62e782d1c63350584f6bb">blue</a>);</div>
+<div class="line"><span class="lineno">  272</span>}</div>
+<div class="ttc" id="alv__color_8c_html_a4d455fed0393e8a3fee3d8d5d3ea5900"><div class="ttname"><a href="#a4d455fed0393e8a3fee3d8d5d3ea5900">lv_color_rgb_to_hsv</a></div><div class="ttdeci">lv_color_hsv_t lv_color_rgb_to_hsv(uint8_t r8, uint8_t g8, uint8_t b8)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00216">lv_color.c:216</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html"><div class="ttname"><a href="unionlv__color32__t.html">lv_color32_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00224">lv_color.h:224</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a3dfb38a077f62e782d1c63350584f6bb"><div class="ttname"><a href="unionlv__color32__t.html#a3dfb38a077f62e782d1c63350584f6bb">lv_color32_t::blue</a></div><div class="ttdeci">uint8_t blue</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00226">lv_color.h:226</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a724212bffcd824d555e7842b4d3a88c6"><div class="ttname"><a href="unionlv__color32__t.html#a724212bffcd824d555e7842b4d3a88c6">lv_color32_t::full</a></div><div class="ttdeci">uint32_t full</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00231">lv_color.h:231</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a7951b7863d314fab2ddf29df169bd483"><div class="ttname"><a href="unionlv__color32__t.html#a7951b7863d314fab2ddf29df169bd483">lv_color32_t::green</a></div><div class="ttdeci">uint8_t green</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00227">lv_color.h:227</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a7e62d507ce57ce35236017591fab3224"><div class="ttname"><a href="unionlv__color32__t.html#a7e62d507ce57ce35236017591fab3224">lv_color32_t::red</a></div><div class="ttdeci">uint8_t red</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00228">lv_color.h:228</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a84c4545292a8af88ef3c03d6892c1fc8"><div class="ttname"><a href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">lv_color32_t::ch</a></div><div class="ttdeci">struct lv_color32_t::@260055066070264274003200372354347346315170016153 ch</div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8h_source.html#l00226">lv_color32_t::blue</a>, <a class="el" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">lv_color32_t::ch</a>, <a class="el" href="lv__color_8h_source.html#l00231">lv_color32_t::full</a>, <a class="el" href="lv__color_8h_source.html#l00227">lv_color32_t::green</a>, <a class="el" href="lv__color_8c_source.html#l00216">lv_color_rgb_to_hsv()</a> y <a class="el" href="lv__color_8h_source.html#l00228">lv_color32_t::red</a>.</p>
+
+</div>
+</div>
+<a id="a024d5d5539910f590b43b23f5908c695" name="a024d5d5539910f590b43b23f5908c695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024d5d5539910f590b43b23f5908c695">&#9670;&#160;</a></span>lv_palette_darken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_palette_darken </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9c">lv_palette_t</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00332">332</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>{</div>
+<div class="line"><span class="lineno">  334</span>    <span class="keyword">static</span> <span class="keyword">const</span> lv_color_t colors[][4] = {</div>
+<div class="line"><span class="lineno">  335</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE5, 0x39, 0x35), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xD3, 0x2F, 0x2F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xC6, 0x28, 0x28), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xB7, 0x1C, 0x1C)},</div>
+<div class="line"><span class="lineno">  336</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xD8, 0x1B, 0x60), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xC2, 0x18, 0x5B), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xAD, 0x14, 0x57), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x88, 0x0E, 0x4F)},</div>
+<div class="line"><span class="lineno">  337</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x8E, 0x24, 0xAA), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x7B, 0x1F, 0xA2), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x6A, 0x1B, 0x9A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x4A, 0x14, 0x8C)},</div>
+<div class="line"><span class="lineno">  338</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x5E, 0x35, 0xB1), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x51, 0x2D, 0xA8), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x45, 0x27, 0xA0), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x31, 0x1B, 0x92)},</div>
+<div class="line"><span class="lineno">  339</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x39, 0x49, 0xAB), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x30, 0x3F, 0x9F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x28, 0x35, 0x93), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x1A, 0x23, 0x7E)},</div>
+<div class="line"><span class="lineno">  340</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x1E, 0x88, 0xE5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x19, 0x76, 0xD2), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x15, 0x65, 0xC0), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x0D, 0x47, 0xA1)},</div>
+<div class="line"><span class="lineno">  341</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x03, 0x9B, 0xE5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x02, 0x88, 0xD1), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x02, 0x77, 0xBD), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x01, 0x57, 0x9B)},</div>
+<div class="line"><span class="lineno">  342</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0xAC, 0xC1), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x97, 0xA7), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x83, 0x8F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x60, 0x64)},</div>
+<div class="line"><span class="lineno">  343</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x89, 0x7B), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x79, 0x6B), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x69, 0x5C), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x4D, 0x40)},</div>
+<div class="line"><span class="lineno">  344</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x43, 0xA0, 0x47), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x38, 0x8E, 0x3C), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x2E, 0x7D, 0x32), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x1B, 0x5E, 0x20)},</div>
+<div class="line"><span class="lineno">  345</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x7C, 0xB3, 0x42), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x68, 0x9F, 0x38), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x55, 0x8B, 0x2F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x33, 0x69, 0x1E)},</div>
+<div class="line"><span class="lineno">  346</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xC0, 0xCA, 0x33), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xAF, 0xB4, 0x2B), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x9E, 0x9D, 0x24), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x82, 0x77, 0x17)},</div>
+<div class="line"><span class="lineno">  347</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFD, 0xD8, 0x35), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFB, 0xC0, 0x2D), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF9, 0xA8, 0x25), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF5, 0x7F, 0x17)},</div>
+<div class="line"><span class="lineno">  348</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xB3, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xA0, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0x8F, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0x6F, 0x00)},</div>
+<div class="line"><span class="lineno">  349</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFB, 0x8C, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF5, 0x7C, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEF, 0x6C, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE6, 0x51, 0x00)},</div>
+<div class="line"><span class="lineno">  350</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF4, 0x51, 0x1E), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE6, 0x4A, 0x19), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xD8, 0x43, 0x15), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xBF, 0x36, 0x0C)},</div>
+<div class="line"><span class="lineno">  351</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x6D, 0x4C, 0x41), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x5D, 0x40, 0x37), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x4E, 0x34, 0x2E), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x3E, 0x27, 0x23)},</div>
+<div class="line"><span class="lineno">  352</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x54, 0x6E, 0x7A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x45, 0x5A, 0x64), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x37, 0x47, 0x4F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x26, 0x32, 0x38)},</div>
+<div class="line"><span class="lineno">  353</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x75, 0x75, 0x75), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x61, 0x61, 0x61), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x42, 0x42, 0x42), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x21, 0x21, 0x21)},</div>
+<div class="line"><span class="lineno">  354</span>    };</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">if</span>(p &gt;= <a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca26d732f1007914518d1f3549d9a7bbda">_LV_PALETTE_LAST</a>) {</div>
+<div class="line"><span class="lineno">  357</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Invalid palette: %d&quot;</span>, p);</div>
+<div class="line"><span class="lineno">  358</span>        <span class="keywordflow">return</span> lv_color_black();</div>
+<div class="line"><span class="lineno">  359</span>    }</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">if</span>(lvl == 0 || lvl &gt; 4) {</div>
+<div class="line"><span class="lineno">  362</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Invalid level: %d. Must be 1..4&quot;</span>, lvl);</div>
+<div class="line"><span class="lineno">  363</span>        <span class="keywordflow">return</span> lv_color_black();</div>
+<div class="line"><span class="lineno">  364</span>    }</div>
+<div class="line"><span class="lineno">  365</span> </div>
+<div class="line"><span class="lineno">  366</span>    lvl--;</div>
+<div class="line"><span class="lineno">  367</span> </div>
+<div class="line"><span class="lineno">  368</span>    <span class="keywordflow">return</span> colors[p][lvl];</div>
+<div class="line"><span class="lineno">  369</span>}</div>
+<div class="ttc" id="alv__color_8h_html_a1114077945bc9caa3781a0c2e9484283"><div class="ttname"><a href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a></div><div class="ttdeci">#define LV_COLOR_MAKE(r8, g8, b8)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00184">lv_color.h:184</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca26d732f1007914518d1f3549d9a7bbda"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca26d732f1007914518d1f3549d9a7bbda">_LV_PALETTE_LAST</a></div><div class="ttdeci">@ _LV_PALETTE_LAST</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00278">lv_color.h:278</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8h_source.html#l00278">_LV_PALETTE_LAST</a>, <a class="el" href="lv__color_8h_source.html#l00184">LV_COLOR_MAKE</a> y <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__btn__2_8c_source.html#l00007">lv_example_btn_2()</a>, <a class="el" href="lv__example__chart__3_8c_source.html#l00018">lv_example_chart_3()</a>, <a class="el" href="lv__example__scroll__4_8c_source.html#l00008">lv_example_scroll_4()</a>, <a class="el" href="lv__example__slider__2_8c_source.html#l00009">lv_example_slider_2()</a>, <a class="el" href="lv__example__style__10_8c_source.html#l00007">lv_example_style_10()</a>, <a class="el" href="lv__example__style__11_8c_source.html#l00007">lv_example_style_11()</a> y <a class="el" href="lv__example__tabview__2_8c_source.html#l00004">lv_example_tabview_2()</a>.</p>
+
+</div>
+</div>
+<a id="acf087458512c83eba0b5feacc3e26396" name="acf087458512c83eba0b5feacc3e26396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf087458512c83eba0b5feacc3e26396">&#9670;&#160;</a></span>lv_palette_lighten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_palette_lighten </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9c">lv_palette_t</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00293">293</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  294</span>{</div>
+<div class="line"><span class="lineno">  295</span>    <span class="keyword">static</span> <span class="keyword">const</span> lv_color_t colors[][5] = {</div>
+<div class="line"><span class="lineno">  296</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEF, 0x53, 0x50), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE5, 0x73, 0x73), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEF, 0x9A, 0x9A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xCD, 0xD2), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xEB, 0xEE)},</div>
+<div class="line"><span class="lineno">  297</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEC, 0x40, 0x7A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF0, 0x62, 0x92), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF4, 0x8F, 0xB1), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF8, 0xBB, 0xD0), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFC, 0xE4, 0xEC)},</div>
+<div class="line"><span class="lineno">  298</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xAB, 0x47, 0xBC), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xBA, 0x68, 0xC8), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xCE, 0x93, 0xD8), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE1, 0xBE, 0xE7), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF3, 0xE5, 0xF5)},</div>
+<div class="line"><span class="lineno">  299</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x7E, 0x57, 0xC2), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x95, 0x75, 0xCD), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xB3, 0x9D, 0xDB), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xD1, 0xC4, 0xE9), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xED, 0xE7, 0xF6)},</div>
+<div class="line"><span class="lineno">  300</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x5C, 0x6B, 0xC0), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x79, 0x86, 0xCB), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x9F, 0xA8, 0xDA), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xC5, 0xCA, 0xE9), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE8, 0xEA, 0xF6)},</div>
+<div class="line"><span class="lineno">  301</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x42, 0xA5, 0xF5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x64, 0xB5, 0xF6), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x90, 0xCA, 0xF9), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xBB, 0xDE, 0xFB), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE3, 0xF2, 0xFD)},</div>
+<div class="line"><span class="lineno">  302</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x29, 0xB6, 0xF6), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x4F, 0xC3, 0xF7), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x81, 0xD4, 0xFA), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xB3, 0xE5, 0xFC), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE1, 0xF5, 0xFE)},</div>
+<div class="line"><span class="lineno">  303</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x26, 0xC6, 0xDA), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x4D, 0xD0, 0xE1), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x80, 0xDE, 0xEA), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xB2, 0xEB, 0xF2), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE0, 0xF7, 0xFA)},</div>
+<div class="line"><span class="lineno">  304</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x26, 0xA6, 0x9A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x4D, 0xB6, 0xAC), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x80, 0xCB, 0xC4), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xB2, 0xDF, 0xDB), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE0, 0xF2, 0xF1)},</div>
+<div class="line"><span class="lineno">  305</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x66, 0xBB, 0x6A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x81, 0xC7, 0x84), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xA5, 0xD6, 0xA7), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xC8, 0xE6, 0xC9), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE8, 0xF5, 0xE9)},</div>
+<div class="line"><span class="lineno">  306</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x9C, 0xCC, 0x65), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xAE, 0xD5, 0x81), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xC5, 0xE1, 0xA5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xDC, 0xED, 0xC8), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF1, 0xF8, 0xE9)},</div>
+<div class="line"><span class="lineno">  307</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xD4, 0xE1, 0x57), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xDC, 0xE7, 0x75), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE6, 0xEE, 0x9C), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF0, 0xF4, 0xC3), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF9, 0xFB, 0xE7)},</div>
+<div class="line"><span class="lineno">  308</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xEE, 0x58), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xF1, 0x76), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xF5, 0x9D), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xF9, 0xC4), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xFD, 0xE7)},</div>
+<div class="line"><span class="lineno">  309</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xCA, 0x28), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xD5, 0x4F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xE0, 0x82), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xEC, 0xB3), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xF8, 0xE1)},</div>
+<div class="line"><span class="lineno">  310</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xA7, 0x26), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xB7, 0x4D), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xCC, 0x80), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xE0, 0xB2), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xF3, 0xE0)},</div>
+<div class="line"><span class="lineno">  311</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0x70, 0x43), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0x8A, 0x65), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xAB, 0x91), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xCC, 0xBC), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFB, 0xE9, 0xE7)},</div>
+<div class="line"><span class="lineno">  312</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x8D, 0x6E, 0x63), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xA1, 0x88, 0x7F), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xBC, 0xAA, 0xA4), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xD7, 0xCC, 0xC8), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEF, 0xEB, 0xE9)},</div>
+<div class="line"><span class="lineno">  313</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x78, 0x90, 0x9C), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x90, 0xA4, 0xAE), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xB0, 0xBE, 0xC5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xCF, 0xD8, 0xDC), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEC, 0xEF, 0xF1)},</div>
+<div class="line"><span class="lineno">  314</span>        {<a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xBD, 0xBD, 0xBD), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE0, 0xE0, 0xE0), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xEE, 0xEE, 0xEE), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF5, 0xF5, 0xF5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFA, 0xFA, 0xFA)},</div>
+<div class="line"><span class="lineno">  315</span>    };</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">if</span>(p &gt;= <a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca26d732f1007914518d1f3549d9a7bbda">_LV_PALETTE_LAST</a>) {</div>
+<div class="line"><span class="lineno">  318</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Invalid palette: %d&quot;</span>, p);</div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordflow">return</span> lv_color_black();</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordflow">if</span>(lvl == 0 || lvl &gt; 5) {</div>
+<div class="line"><span class="lineno">  323</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Invalid level: %d. Must be 1..5&quot;</span>, lvl);</div>
+<div class="line"><span class="lineno">  324</span>        <span class="keywordflow">return</span> lv_color_black();</div>
+<div class="line"><span class="lineno">  325</span>    }</div>
+<div class="line"><span class="lineno">  326</span> </div>
+<div class="line"><span class="lineno">  327</span>    lvl--;</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">return</span> colors[p][lvl];</div>
+<div class="line"><span class="lineno">  330</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8h_source.html#l00278">_LV_PALETTE_LAST</a>, <a class="el" href="lv__color_8h_source.html#l00184">LV_COLOR_MAKE</a> y <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__canvas__1_8c_source.html#l00008">lv_example_canvas_1()</a>, <a class="el" href="lv__example__chart__3_8c_source.html#l00018">lv_example_chart_3()</a>, <a class="el" href="lv__example__style__12_8c_source.html#l00007">lv_example_style_12()</a>, <a class="el" href="lv__example__style__13_8c_source.html#l00007">lv_example_style_13()</a>, <a class="el" href="lv__example__style__2_8c_source.html#l00007">lv_example_style_2()</a>, <a class="el" href="lv__example__style__3_8c_source.html#l00007">lv_example_style_3()</a>, <a class="el" href="lv__example__style__4_8c_source.html#l00007">lv_example_style_4()</a>, <a class="el" href="lv__example__style__5_8c_source.html#l00007">lv_example_style_5()</a>, <a class="el" href="lv__example__style__6_8c_source.html#l00007">lv_example_style_6()</a>, <a class="el" href="lv__example__style__8_8c_source.html#l00007">lv_example_style_8()</a> y <a class="el" href="lv__example__tabview__2_8c_source.html#l00004">lv_example_tabview_2()</a>.</p>
+
+</div>
+</div>
+<a id="a02d11c7e2f70e8b777901d9e403c6b34" name="a02d11c7e2f70e8b777901d9e403c6b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d11c7e2f70e8b777901d9e403c6b34">&#9670;&#160;</a></span>lv_palette_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_color_t lv_palette_main </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9c">lv_palette_t</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__color_8c_source.html#l00274">274</a> del archivo <a class="el" href="lv__color_8c_source.html">lv_color.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>{</div>
+<div class="line"><span class="lineno">  276</span>    <span class="keyword">static</span> <span class="keyword">const</span> lv_color_t colors[] = {</div>
+<div class="line"><span class="lineno">  277</span>        <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xF4, 0x43, 0x36), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xE9, 0x1E, 0x63), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x9C, 0x27, 0xB0), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x67, 0x3A, 0xB7),</div>
+<div class="line"><span class="lineno">  278</span>        <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x3F, 0x51, 0xB5), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x21, 0x96, 0xF3), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x03, 0xA9, 0xF4), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0xBC, 0xD4),</div>
+<div class="line"><span class="lineno">  279</span>        <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x00, 0x96, 0x88), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x4C, 0xAF, 0x50), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x8B, 0xC3, 0x4A), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xCD, 0xDC, 0x39),</div>
+<div class="line"><span class="lineno">  280</span>        <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xEB, 0x3B), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0xC1, 0x07), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0x98, 0x00), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0xFF, 0x57, 0x22),</div>
+<div class="line"><span class="lineno">  281</span>        <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x79, 0x55, 0x48), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x60, 0x7D, 0x8B), <a class="code hl_define" href="lv__color_8h.html#a1114077945bc9caa3781a0c2e9484283">LV_COLOR_MAKE</a>(0x9E, 0x9E, 0x9E)</div>
+<div class="line"><span class="lineno">  282</span>    };</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">if</span>(p &gt;= <a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca26d732f1007914518d1f3549d9a7bbda">_LV_PALETTE_LAST</a>) {</div>
+<div class="line"><span class="lineno">  285</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Invalid palette: %d&quot;</span>, p);</div>
+<div class="line"><span class="lineno">  286</span>        <span class="keywordflow">return</span> lv_color_black();</div>
+<div class="line"><span class="lineno">  287</span>    }</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">return</span> colors[p];</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8h_source.html#l00278">_LV_PALETTE_LAST</a>, <a class="el" href="lv__color_8h_source.html#l00184">LV_COLOR_MAKE</a> y <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Encoders_8cpp_source.html#l00163">Encoders_chartInit()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00166">lv_disp_drv_register()</a>, <a class="el" href="lv__draw__label_8c_source.html#l00055">lv_draw_label_dsc_init()</a>, <a class="el" href="lv__example__anim__2_8c_source.html#l00018">lv_example_anim_2()</a>, <a class="el" href="lv__example__bar__2_8c_source.html#l00007">lv_example_bar_2()</a>, <a class="el" href="lv__example__bar__3_8c_source.html#l00012">lv_example_bar_3()</a>, <a class="el" href="lv__example__btn__2_8c_source.html#l00007">lv_example_btn_2()</a>, <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>, <a class="el" href="lv__example__canvas__1_8c_source.html#l00008">lv_example_canvas_1()</a>, <a class="el" href="lv__example__canvas__2_8c_source.html#l00010">lv_example_canvas_2()</a>, <a class="el" href="lv__example__chart__1_8c_source.html#l00004">lv_example_chart_1()</a>, <a class="el" href="lv__example__chart__2_8c_source.html#l00104">lv_example_chart_2()</a>, <a class="el" href="lv__example__chart__4_8c_source.html#l00062">lv_example_chart_4()</a>, <a class="el" href="lv__example__chart__5_8c_source.html#l00068">lv_example_chart_5()</a>, <a class="el" href="lv__example__chart__6_8c_source.html#l00060">lv_example_chart_6()</a>, <a class="el" href="lv__example__chart__7_8c_source.html#l00039">lv_example_chart_7()</a>, <a class="el" href="lv__example__chart__8_8c_source.html#l00074">lv_example_chart_8()</a>, <a class="el" href="lv__example__chart__9_8c_source.html#l00026">lv_example_chart_9()</a>, <a class="el" href="lv__example__img__2_8c_source.html#l00014">lv_example_img_2()</a>, <a class="el" href="lv__example__img__4_8c_source.html#l00012">lv_example_img_4()</a>, <a class="el" href="lv__example__led__1_8c_source.html#l00007">lv_example_led_1()</a>, <a class="el" href="lv__example__line__1_8c_source.html#l00004">lv_example_line_1()</a>, <a class="el" href="lv__example__meter__1_8c_source.html#l00014">lv_example_meter_1()</a>, <a class="el" href="lv__example__meter__2_8c_source.html#l00015">lv_example_meter_2()</a>, <a class="el" href="lv__example__meter__3_8c_source.html#l00014">lv_example_meter_3()</a>, <a class="el" href="lv__example__meter__4_8c_source.html#l00007">lv_example_meter_4()</a>, <a class="el" href="lv__example__obj__1_8c_source.html#l00004">lv_example_obj_1()</a>, <a class="el" href="lv__example__scroll__4_8c_source.html#l00008">lv_example_scroll_4()</a>, <a class="el" href="lv__example__slider__2_8c_source.html#l00009">lv_example_slider_2()</a>, <a class="el" href="lv__example__span__1_8c_source.html#l00007">lv_example_span_1()</a>, <a class="el" href="lv__example__style__10_8c_source.html#l00007">lv_example_style_10()</a>, <a class="el" href="lv__example__style__11_8c_source.html#l00007">lv_example_style_11()</a>, <a class="el" href="lv__example__style__12_8c_source.html#l00007">lv_example_style_12()</a>, <a class="el" href="lv__example__style__13_8c_source.html#l00007">lv_example_style_13()</a>, <a class="el" href="lv__example__style__2_8c_source.html#l00007">lv_example_style_2()</a>, <a class="el" href="lv__example__style__3_8c_source.html#l00007">lv_example_style_3()</a>, <a class="el" href="lv__example__style__4_8c_source.html#l00007">lv_example_style_4()</a>, <a class="el" href="lv__example__style__5_8c_source.html#l00007">lv_example_style_5()</a>, <a class="el" href="lv__example__style__6_8c_source.html#l00007">lv_example_style_6()</a>, <a class="el" href="lv__example__style__7_8c_source.html#l00007">lv_example_style_7()</a>, <a class="el" href="lv__example__style__8_8c_source.html#l00007">lv_example_style_8()</a>, <a class="el" href="lv__example__style__9_8c_source.html#l00007">lv_example_style_9()</a>, <a class="el" href="lv__theme_8c_source.html#l00098">lv_theme_get_color_primary()</a>, <a class="el" href="lv__theme_8c_source.html#l00104">lv_theme_get_color_secondary()</a>, <a class="el" href="main_8cpp_source.html#l00110">setup()</a> y <a class="el" href="ui_8c_source.html#l00906">ui_init()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__color_8c.html">lv_color.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

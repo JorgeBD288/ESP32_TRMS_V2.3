@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/Custom_Libraries/SD_Control.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('SD__Control_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo SD_Control.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="SD__Control_8h_source.html">SD_Control.h</a>&quot;</code><br />
+<code>#include &lt;SD.h&gt;</code><br />
+<code>#include &lt;FS.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="PID__Parameters_8h_source.html">PID_Parameters.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">ui.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>&gt;</code><br />
+</div>
+<p><a href="SD__Control_8cpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a5ffc81b1657c0423e979fa4c5de32e06" id="r_a5ffc81b1657c0423e979fa4c5de32e06"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ffc81b1657c0423e979fa4c5de32e06">PIDSection</a> { <a class="el" href="#a5ffc81b1657c0423e979fa4c5de32e06afc3fdcac4d26b201b4f53c4185ae97cb">PID_SECTION_NONE</a> = 0
+, <a class="el" href="#a5ffc81b1657c0423e979fa4c5de32e06adb4d0c5ee428d596b1148688457230f2">PID_SECTION_MIN</a>
+, <a class="el" href="#a5ffc81b1657c0423e979fa4c5de32e06ada30f35793923ba3acea9d0000fb99f8">PID_SECTION_CURR</a>
+, <a class="el" href="#a5ffc81b1657c0423e979fa4c5de32e06a5e961eaa8a9e8d5f51ed4601ab4dfe69">PID_SECTION_MAX</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab5c1b815ca2d13fb3bd544c9dd7f8fcc" id="r_ab5c1b815ca2d13fb3bd544c9dd7f8fcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5c1b815ca2d13fb3bd544c9dd7f8fcc">ControlSD_LoadConfig</a> (uint8_t index)</td></tr>
+<tr class="memitem:aa980d3543566da1de50c689f06c92c12" id="r_aa980d3543566da1de50c689f06c92c12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa980d3543566da1de50c689f06c92c12">ControlSD_SaveConfig</a> (uint8_t index)</td></tr>
+<tr class="memitem:ad71145f010a4eccdc4de79d7b602c16b" id="r_ad71145f010a4eccdc4de79d7b602c16b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad71145f010a4eccdc4de79d7b602c16b">PID_UpdateParamLabel</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *label, float minVal, float currVal, float maxVal)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a12c31a9176552dbb951123eb48910bfe" id="r_a12c31a9176552dbb951123eb48910bfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12c31a9176552dbb951123eb48910bfe">flag_Config_Message</a> = false</td></tr>
+<tr class="memitem:aba95a72a8c1f37e1a379225d01e1a032" id="r_aba95a72a8c1f37e1a379225d01e1a032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPID__CURR.html">PID_CURR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba95a72a8c1f37e1a379225d01e1a032">g_pidCurr</a></td></tr>
+<tr class="memitem:ad30a565699d3b8e3b56cae7c9b5a20b8" id="r_ad30a565699d3b8e3b56cae7c9b5a20b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPID__MAX.html">PID_MAX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad30a565699d3b8e3b56cae7c9b5a20b8">g_pidMax</a></td></tr>
+<tr class="memitem:a26acda68f4ee1257773b57619d16dafb" id="r_a26acda68f4ee1257773b57619d16dafb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPID__MIN.html">PID_MIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26acda68f4ee1257773b57619d16dafb">g_pidMin</a></td></tr>
+</table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a5ffc81b1657c0423e979fa4c5de32e06" name="a5ffc81b1657c0423e979fa4c5de32e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ffc81b1657c0423e979fa4c5de32e06">&#9670;&#160;</a></span>PIDSection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a5ffc81b1657c0423e979fa4c5de32e06">PIDSection</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a5ffc81b1657c0423e979fa4c5de32e06afc3fdcac4d26b201b4f53c4185ae97cb" name="a5ffc81b1657c0423e979fa4c5de32e06afc3fdcac4d26b201b4f53c4185ae97cb"></a>PID_SECTION_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5ffc81b1657c0423e979fa4c5de32e06adb4d0c5ee428d596b1148688457230f2" name="a5ffc81b1657c0423e979fa4c5de32e06adb4d0c5ee428d596b1148688457230f2"></a>PID_SECTION_MIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5ffc81b1657c0423e979fa4c5de32e06ada30f35793923ba3acea9d0000fb99f8" name="a5ffc81b1657c0423e979fa4c5de32e06ada30f35793923ba3acea9d0000fb99f8"></a>PID_SECTION_CURR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5ffc81b1657c0423e979fa4c5de32e06a5e961eaa8a9e8d5f51ed4601ab4dfe69" name="a5ffc81b1657c0423e979fa4c5de32e06a5e961eaa8a9e8d5f51ed4601ab4dfe69"></a>PID_SECTION_MAX&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="SD__Control_8cpp_source.html#l00189">189</a> del archivo <a class="el" href="SD__Control_8cpp_source.html">SD_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>                {</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_enumvalue" href="#a5ffc81b1657c0423e979fa4c5de32e06afc3fdcac4d26b201b4f53c4185ae97cb">PID_SECTION_NONE</a> = 0,</div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_enumvalue" href="#a5ffc81b1657c0423e979fa4c5de32e06adb4d0c5ee428d596b1148688457230f2">PID_SECTION_MIN</a>,</div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_enumvalue" href="#a5ffc81b1657c0423e979fa4c5de32e06ada30f35793923ba3acea9d0000fb99f8">PID_SECTION_CURR</a>,</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_enumvalue" href="#a5ffc81b1657c0423e979fa4c5de32e06a5e961eaa8a9e8d5f51ed4601ab4dfe69">PID_SECTION_MAX</a></div>
+<div class="line"><span class="lineno">  194</span>};</div>
+<div class="ttc" id="aSD__Control_8cpp_html_a5ffc81b1657c0423e979fa4c5de32e06a5e961eaa8a9e8d5f51ed4601ab4dfe69"><div class="ttname"><a href="#a5ffc81b1657c0423e979fa4c5de32e06a5e961eaa8a9e8d5f51ed4601ab4dfe69">PID_SECTION_MAX</a></div><div class="ttdeci">@ PID_SECTION_MAX</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8cpp_source.html#l00193">SD_Control.cpp:193</a></div></div>
+<div class="ttc" id="aSD__Control_8cpp_html_a5ffc81b1657c0423e979fa4c5de32e06ada30f35793923ba3acea9d0000fb99f8"><div class="ttname"><a href="#a5ffc81b1657c0423e979fa4c5de32e06ada30f35793923ba3acea9d0000fb99f8">PID_SECTION_CURR</a></div><div class="ttdeci">@ PID_SECTION_CURR</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8cpp_source.html#l00192">SD_Control.cpp:192</a></div></div>
+<div class="ttc" id="aSD__Control_8cpp_html_a5ffc81b1657c0423e979fa4c5de32e06adb4d0c5ee428d596b1148688457230f2"><div class="ttname"><a href="#a5ffc81b1657c0423e979fa4c5de32e06adb4d0c5ee428d596b1148688457230f2">PID_SECTION_MIN</a></div><div class="ttdeci">@ PID_SECTION_MIN</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8cpp_source.html#l00191">SD_Control.cpp:191</a></div></div>
+<div class="ttc" id="aSD__Control_8cpp_html_a5ffc81b1657c0423e979fa4c5de32e06afc3fdcac4d26b201b4f53c4185ae97cb"><div class="ttname"><a href="#a5ffc81b1657c0423e979fa4c5de32e06afc3fdcac4d26b201b4f53c4185ae97cb">PID_SECTION_NONE</a></div><div class="ttdeci">@ PID_SECTION_NONE</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8cpp_source.html#l00190">SD_Control.cpp:190</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ab5c1b815ca2d13fb3bd544c9dd7f8fcc" name="ab5c1b815ca2d13fb3bd544c9dd7f8fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c1b815ca2d13fb3bd544c9dd7f8fcc">&#9670;&#160;</a></span>ControlSD_LoadConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ControlSD_LoadConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="SD__Control_8cpp_source.html#l00345">345</a> del archivo <a class="el" href="SD__Control_8cpp_source.html">SD_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  346</span>{</div>
+<div class="line"><span class="lineno">  347</span>    <span class="comment">// Asegurar que la SD está montada</span></div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span> (!SD_EnsureMounted()) {</div>
+<div class="line"><span class="lineno">  349</span>        Serial.println(<span class="stringliteral">&quot;No se puede cargar: SD no montada&quot;</span>);</div>
+<div class="line"><span class="lineno">  350</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  351</span>    }</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>    String path = buildConfigPath(index);  <span class="comment">// → &quot;/Config_PID/Config_1.txt&quot;, etc.</span></div>
+<div class="line"><span class="lineno">  354</span>    Serial.print(<span class="stringliteral">&quot;Leyendo config de: &quot;</span>);</div>
+<div class="line"><span class="lineno">  355</span>    Serial.println(path);</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>    <span class="keywordflow">if</span> (!PID_LoadConfigFromFile(path.c_str())) {</div>
+<div class="line"><span class="lineno">  358</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  359</span>    }</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>    <span class="comment">// Tras cargar, actualizar sliders + labels de UI</span></div>
+<div class="line"><span class="lineno">  362</span>    PID_ApplyCurrToUI();</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_function" href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a>(<a class="code hl_variable" href="ui_8c.html#a06c1e219588f7a1c0235fe0cfc620b9f">ui_Label92</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><span class="lineno">  364</span>    <a class="code hl_variable" href="#a12c31a9176552dbb951123eb48910bfe">flag_Config_Message</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  365</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  366</span>}</div>
+<div class="ttc" id="aSD__Control_8cpp_html_a12c31a9176552dbb951123eb48910bfe"><div class="ttname"><a href="#a12c31a9176552dbb951123eb48910bfe">flag_Config_Message</a></div><div class="ttdeci">bool flag_Config_Message</div><div class="ttdef"><b>Definition</b> <a href="SD__Control_8cpp_source.html#l00015">SD_Control.cpp:15</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a8a45a671b0fb07c0e99639c180d25fba"><div class="ttname"><a href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a></div><div class="ttdeci">void lv_obj_clear_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00266">lv_obj.c:266</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a></div><div class="ttdeci">@ LV_OBJ_FLAG_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00090">lv_obj.h:90</a></div></div>
+<div class="ttc" id="aui_8c_html_a06c1e219588f7a1c0235fe0cfc620b9f"><div class="ttname"><a href="ui_8c.html#a06c1e219588f7a1c0235fe0cfc620b9f">ui_Label92</a></div><div class="ttdeci">lv_obj_t * ui_Label92</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00230">ui.c:230</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="SD__Control_8cpp_source.html#l00015">flag_Config_Message</a>, <a class="el" href="lv__obj_8c_source.html#l00266">lv_obj_clear_flag()</a>, <a class="el" href="lv__obj_8h_source.html#l00090">LV_OBJ_FLAG_HIDDEN</a> y <a class="el" href="ui_8c_source.html#l00230">ui_Label92</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__events_8cpp_source.html#l00534">function_Load_Config_1()</a>, <a class="el" href="ui__events_8cpp_source.html#l00526">function_Load_Config_2()</a>, <a class="el" href="ui__events_8cpp_source.html#l00518">function_Load_Config_3()</a> y <a class="el" href="ui__events_8cpp_source.html#l00510">function_Load_Config_4()</a>.</p>
+
+</div>
+</div>
+<a id="aa980d3543566da1de50c689f06c92c12" name="aa980d3543566da1de50c689f06c92c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa980d3543566da1de50c689f06c92c12">&#9670;&#160;</a></span>ControlSD_SaveConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ControlSD_SaveConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="SD__Control_8cpp_source.html#l00330">330</a> del archivo <a class="el" href="SD__Control_8cpp_source.html">SD_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  331</span>{</div>
+<div class="line"><span class="lineno">  332</span>    <span class="comment">// Asegurar que la SD está montada</span></div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">if</span> (!SD_EnsureMounted()) {</div>
+<div class="line"><span class="lineno">  334</span>        Serial.println(<span class="stringliteral">&quot;No se puede guardar: SD no montada&quot;</span>);</div>
+<div class="line"><span class="lineno">  335</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  336</span>    }</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    String path = buildConfigPath(index);  <span class="comment">// → &quot;/Config_PID/Config_1.txt&quot;, etc.</span></div>
+<div class="line"><span class="lineno">  339</span>    Serial.print(<span class="stringliteral">&quot;Guardando config en: &quot;</span>);</div>
+<div class="line"><span class="lineno">  340</span>    Serial.println(path);</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>    <span class="keywordflow">return</span> PID_SaveConfigToFile(path.c_str());</div>
+<div class="line"><span class="lineno">  343</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad71145f010a4eccdc4de79d7b602c16b" name="ad71145f010a4eccdc4de79d7b602c16b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad71145f010a4eccdc4de79d7b602c16b">&#9670;&#160;</a></span>PID_UpdateParamLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID_UpdateParamLabel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>label</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>minVal</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>currVal</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>maxVal</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Parameters_8cpp_source.html#l00186">186</a> del archivo <a class="el" href="PID__Parameters_8cpp_source.html">PID_Parameters.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>{</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span> (!label) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordtype">char</span> buf[48];  <span class="comment">// más que suficiente para &quot;xx.xxx xx.xxx xx.xxx&quot;</span></div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">// min  curr  max, separados por espacios</span></div>
+<div class="line"><span class="lineno">  193</span>    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%.2f   %.2f   %.2f&quot;</span>, minVal, currVal, maxVal);</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(label, buf);</div>
+<div class="line"><span class="lineno">  196</span>}</div>
+<div class="ttc" id="alv__label_8c_html_ac0a3691e31b2defebc1eab701a35d63b"><div class="ttname"><a href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a></div><div class="ttdeci">void lv_label_set_text(lv_obj_t *obj, const char *text)</div><div class="ttdef"><b>Definition</b> <a href="lv__label_8c_source.html#l00085">lv_label.c:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__label_8c_source.html#l00085">lv_label_set_text()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__events_8cpp_source.html#l00373">function_Isathh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00365">function_Isathv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00357">function_Isatvh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00349">function_Isatvv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00341">function_Kdhh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00333">function_Kdhv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00293">function_Kdvh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00285">function_Kdvv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00325">function_Kihh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00317">function_Kihv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00277">function_Kivh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00269">function_Kivv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00309">function_Kphh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00301">function_Kphv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00261">function_Kpvh()</a>, <a class="el" href="ui__events_8cpp_source.html#l00253">function_Kpvv()</a>, <a class="el" href="ui__events_8cpp_source.html#l00389">function_Uhmax()</a>, <a class="el" href="ui__events_8cpp_source.html#l00381">function_Uvmax()</a> y <a class="el" href="Navigation_8cpp_source.html#l00096">HandleDeltaSlider()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a12c31a9176552dbb951123eb48910bfe" name="a12c31a9176552dbb951123eb48910bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c31a9176552dbb951123eb48910bfe">&#9670;&#160;</a></span>flag_Config_Message</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool flag_Config_Message = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="SD__Control_8cpp_source.html#l00015">15</a> del archivo <a class="el" href="SD__Control_8cpp_source.html">SD_Control.cpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="SD__Control_8cpp_source.html#l00345">ControlSD_LoadConfig()</a>, <a class="el" href="ui__events_8cpp_source.html#l00542">function_Save_Config_5_In_EEPROM()</a>, <a class="el" href="main_8cpp_source.html#l00261">loop()</a> y <a class="el" href="ui__events_8cpp_source.html#l00504">Show_Config_Message_Selected()</a>.</p>
+
+</div>
+</div>
+<a id="aba95a72a8c1f37e1a379225d01e1a032" name="aba95a72a8c1f37e1a379225d01e1a032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba95a72a8c1f37e1a379225d01e1a032">&#9670;&#160;</a></span>g_pidCurr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPID__CURR.html">PID_CURR</a> g_pidCurr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Parameters_8cpp_source.html#l00020">20</a> del archivo <a class="el" href="PID__Parameters_8cpp_source.html">PID_Parameters.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                     {</div>
+<div class="line"><span class="lineno">   21</span>    .KpvvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   22</span>    .KpvhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   23</span>    .KivvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   24</span>    .KivhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   25</span>    .KdvvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   26</span>    .KdvhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    .KphvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   29</span>    .KphhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   30</span>    .KihvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   31</span>    .KihhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   32</span>    .KdhvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   33</span>    .KdhhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    .IsatvvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   36</span>    .IsatvhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   37</span>    .IsathvCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   38</span>    .IsathhCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    .UvmaxCurr = 0.0f,</div>
+<div class="line"><span class="lineno">   41</span>    .UhmaxCurr = 0.0f</div>
+<div class="line"><span class="lineno">   42</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad30a565699d3b8e3b56cae7c9b5a20b8" name="ad30a565699d3b8e3b56cae7c9b5a20b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad30a565699d3b8e3b56cae7c9b5a20b8">&#9670;&#160;</a></span>g_pidMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPID__MAX.html">PID_MAX</a> g_pidMax</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Parameters_8cpp_source.html#l00078">78</a> del archivo <a class="el" href="PID__Parameters_8cpp_source.html">PID_Parameters.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                   {</div>
+<div class="line"><span class="lineno">   79</span>    .KpvvMax = 10.0f,</div>
+<div class="line"><span class="lineno">   80</span>    .KpvhMax = 10.0f,</div>
+<div class="line"><span class="lineno">   81</span>    .KivvMax = 10.0f,</div>
+<div class="line"><span class="lineno">   82</span>    .KivhMax = 10.0f,</div>
+<div class="line"><span class="lineno">   83</span>    .KdvvMax = 10.0f,</div>
+<div class="line"><span class="lineno">   84</span>    .KdvhMax = 10.0f,</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    .KphvMax = 10.0f,</div>
+<div class="line"><span class="lineno">   87</span>    .KphhMax = 10.0f,</div>
+<div class="line"><span class="lineno">   88</span>    .KihvMax = 10.0f,</div>
+<div class="line"><span class="lineno">   89</span>    .KihhMax = 10.0f,</div>
+<div class="line"><span class="lineno">   90</span>    .KdhvMax = 10.0f,</div>
+<div class="line"><span class="lineno">   91</span>    .KdhhMax = 10.0f,</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    .IsatvvMax = 5.0f,</div>
+<div class="line"><span class="lineno">   94</span>    .IsatvhMax = 5.0f,</div>
+<div class="line"><span class="lineno">   95</span>    .IsathvMax = 5.0f,</div>
+<div class="line"><span class="lineno">   96</span>    .IsathhMax = 5.0f,</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    .UvmaxMax = 3.3f,</div>
+<div class="line"><span class="lineno">   99</span>    .UhmaxMax = 3.3f</div>
+<div class="line"><span class="lineno">  100</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a26acda68f4ee1257773b57619d16dafb" name="a26acda68f4ee1257773b57619d16dafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26acda68f4ee1257773b57619d16dafb">&#9670;&#160;</a></span>g_pidMin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPID__MIN.html">PID_MIN</a> g_pidMin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Parameters_8cpp_source.html#l00049">49</a> del archivo <a class="el" href="PID__Parameters_8cpp_source.html">PID_Parameters.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                   {</div>
+<div class="line"><span class="lineno">   50</span>    .KpvvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   51</span>    .KpvhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   52</span>    .KivvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   53</span>    .KivhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   54</span>    .KdvvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   55</span>    .KdvhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    .KphvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   58</span>    .KphhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   59</span>    .KihvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   60</span>    .KihhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   61</span>    .KdhvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   62</span>    .KdhhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    .IsatvvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   65</span>    .IsatvhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   66</span>    .IsathvMin = 0.0f,</div>
+<div class="line"><span class="lineno">   67</span>    .IsathhMin = 0.0f,</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    .UvmaxMin = 0.0f,</div>
+<div class="line"><span class="lineno">   70</span>    .UhmaxMin = 0.0f</div>
+<div class="line"><span class="lineno">   71</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="SD__Control_8cpp.html">SD_Control.cpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

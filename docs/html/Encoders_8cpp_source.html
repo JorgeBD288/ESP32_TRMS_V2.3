@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/Custom_Libraries/Encoders.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Encoders_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Encoders.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Encoders_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Esta librería, junto con su correspondiente &quot;Encoders.h&quot;, sirve para declarar las funciones </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">que controlan los HCTL-2016, el TCA9539 y la representación en la pantalla LCD </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">de los ángulos obtenidos por los encoders */</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Encoders.cpp</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Encoders_8h.html">Encoders.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;lvgl.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Dirección I2C del TCA9539</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="Encoders_8cpp.html#af894088c7dad21639840f78ac3860aa8">   11</a></span><span class="preprocessor">#define TCA_ADDR 0x74</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// Pines hacia inversores (guardados internamente)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">static</span> uint8_t s_pinSEL;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">static</span> uint8_t s_pinRST;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">static</span> uint8_t s_pinOE;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Configuración de cuentas por vuelta</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">static</span> <a class="code hl_struct" href="structEncoderConfig.html">EncoderConfig</a> s_config;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Series del chart</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__chart__series__t.html">lv_chart_series_t</a> * s_serHorizontal = <span class="keyword">nullptr</span>; <span class="comment">// rojo</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__chart__series__t.html">lv_chart_series_t</a> * s_serVertical   = <span class="keyword">nullptr</span>; <span class="comment">// azul</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/*--------------------------------------------------</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * Funciones internas (static) - no visibles fuera</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *-------------------------------------------------*/</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">static</span> <span class="keywordtype">void</span> hctl_setSEL(<span class="keywordtype">bool</span> level) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Las señales están invertidas por los inversores de hardware</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    digitalWrite(s_pinSEL, !level);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">static</span> <span class="keywordtype">void</span> hctl_setRST(<span class="keywordtype">bool</span> level) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    digitalWrite(s_pinRST, !level);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">static</span> <span class="keywordtype">void</span> hctl_setOE(<span class="keywordtype">bool</span> level) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    digitalWrite(s_pinOE, !level);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">static</span> <span class="keywordtype">void</span> tca_writeReg(uint8_t <a class="code hl_variable" href="RM68120__Rotation_8h.html#a9428adc9af4653a2050e2536b55dec8d">reg</a>, uint8_t value) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Wire.beginTransmission(<a class="code hl_define" href="Encoders_8cpp.html#af894088c7dad21639840f78ac3860aa8">TCA_ADDR</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Wire.write(<a class="code hl_variable" href="RM68120__Rotation_8h.html#a9428adc9af4653a2050e2536b55dec8d">reg</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Wire.write(value);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    Wire.endTransmission();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">static</span> uint8_t tca_readReg(uint8_t <a class="code hl_variable" href="RM68120__Rotation_8h.html#a9428adc9af4653a2050e2536b55dec8d">reg</a>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    Wire.beginTransmission(<a class="code hl_define" href="Encoders_8cpp.html#af894088c7dad21639840f78ac3860aa8">TCA_ADDR</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Wire.write(<a class="code hl_variable" href="RM68120__Rotation_8h.html#a9428adc9af4653a2050e2536b55dec8d">reg</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Wire.endTransmission(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    Wire.requestFrom(<a class="code hl_define" href="Encoders_8cpp.html#af894088c7dad21639840f78ac3860aa8">TCA_ADDR</a>, (uint8_t)1);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> Wire.read();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">static</span> uint8_t tca_readPort(uint8_t port) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// Port 0 -&gt; registro 0x00, Port 1 -&gt; registro 0x01</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> tca_readReg(port == 0 ? 0x00 : 0x01);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">static</span> <span class="keywordtype">void</span> tca_init() {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Todos los pines como entradas</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    tca_writeReg(0x06, 0xFF);  <span class="comment">// Configuration Port 0</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    tca_writeReg(0x07, 0xFF);  <span class="comment">// Configuration Port 1</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">// Polaridad normal</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    tca_writeReg(0x04, 0x00);  <span class="comment">// Polarity Port 0</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    tca_writeReg(0x05, 0x00);  <span class="comment">// Polarity Port 1</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">static</span> <span class="keywordtype">void</span> hctl_resetCounters_internal() {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    hctl_setRST(0);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    delayMicroseconds(5);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    hctl_setRST(1);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">static</span> uint8_t hctl_readByte(uint8_t port, <span class="keywordtype">bool</span> highByte) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (highByte)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        hctl_setSEL(0);   <span class="comment">// HIGH BYTE</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        hctl_setSEL(1);   <span class="comment">// LOW BYTE</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    delayMicroseconds(2);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> tca_readPort(port);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">static</span> uint16_t hctl_readVertical() {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    hctl_setOE(0);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    uint8_t hi = hctl_readByte(0, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    uint8_t lo = hctl_readByte(0, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> ((uint16_t)hi &lt;&lt; 8) | lo;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">static</span> uint16_t hctl_readHorizontal() {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    hctl_setOE(0);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    uint8_t hi = hctl_readByte(1, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    uint8_t lo = hctl_readByte(1, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> ((uint16_t)hi &lt;&lt; 8) | lo;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">static</span> <span class="keywordtype">float</span> countsToDegrees(uint16_t count, <span class="keywordtype">float</span> countsPerRev) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (countsPerRev &lt;= 0.0f) <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    uint16_t modulo = (uint16_t)countsPerRev;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> 360.0f * (float(count % modulo) / countsPerRev);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">/*--------------------------------------------------</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment"> * API pública</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"> *-------------------------------------------------*/</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="Encoders_8cpp.html#a3c7fe22e220fdb176bc480a17dc011d8">  117</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="Encoders_8cpp.html#a3c7fe22e220fdb176bc480a17dc011d8">Encoders_begin</a>(uint8_t pinSEL,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    uint8_t pinRST,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    uint8_t pinOE,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    <span class="keyword">const</span> <a class="code hl_struct" href="structEncoderConfig.html">EncoderConfig</a> &amp;config) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    s_pinSEL  = pinSEL;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    s_pinRST  = pinRST;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    s_pinOE   = pinOE;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    s_config  = config;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    pinMode(s_pinSEL, OUTPUT);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    pinMode(s_pinRST, OUTPUT);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    pinMode(s_pinOE,  OUTPUT);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// Estado inicial</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    hctl_setOE(1);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    hctl_setRST(1);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    hctl_setSEL(0);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="comment">// Inicializar expansor TCA9539</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    tca_init();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// Reset de contadores</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    hctl_resetCounters_internal();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// Activar salidas</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    hctl_setOE(0);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    Serial.println(<span class="stringliteral">&quot;Encoders: inicializados (HCTL + TCA9539).&quot;</span>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="Encoders_8cpp.html#af3c2e1957e66c769367de3930548b916">  147</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="Encoders_8cpp.html#af3c2e1957e66c769367de3930548b916">Encoders_resetCounters</a>() {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    hctl_resetCounters_internal();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="Encoders_8cpp.html#a0e943e64d1663095ea48207683184fc4">  151</a></span><a class="code hl_struct" href="structEncoderAngles.html">EncoderAngles</a> <a class="code hl_function" href="Encoders_8cpp.html#a0e943e64d1663095ea48207683184fc4">Encoders_readAngles</a>() {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_struct" href="structEncoderAngles.html">EncoderAngles</a> ang{0.0f, 0.0f};</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    uint16_t cntV = hctl_readVertical();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    uint16_t cntH = hctl_readHorizontal();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    ang.<a class="code hl_variable" href="structEncoderAngles.html#a89508711051358d77da18880ecfd2e14">verticalDeg</a>   = countsToDegrees(cntV, s_config.countsPerRevVertical);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    ang.<a class="code hl_variable" href="structEncoderAngles.html#ab1a47ca59c21cb6b79aa3a48d3783cdf">horizontalDeg</a> = countsToDegrees(cntH, s_config.countsPerRevHorizontal);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> ang;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="Encoders_8cpp.html#a4a7a391e8f599554bb0f088b7d98107e">  163</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="Encoders_8cpp.html#a4a7a391e8f599554bb0f088b7d98107e">Encoders_chartInit</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// Serie roja (horizontal) eje primario Y</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    s_serHorizontal = <a class="code hl_function" href="lv__chart_8c.html#a94528ab74309379615ce3f52fa9e2ca6">lv_chart_add_series</a>(</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5">LV_PALETTE_RED</a>),</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_enumvalue" href="lv__chart_8h.html#a09ad1c7b6d5c75250b26f5dcc726c42cab4d56111d313fae7564ace970f5030de">LV_CHART_AXIS_PRIMARY_Y</a></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    );</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="comment">// Serie azul (vertical) eje secundario Y</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    s_serVertical = <a class="code hl_function" href="lv__chart_8c.html#a94528ab74309379615ce3f52fa9e2ca6">lv_chart_add_series</a>(</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>,</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_function" href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a>(<a class="code hl_enumvalue" href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2">LV_PALETTE_BLUE</a>),</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <a class="code hl_enumvalue" href="lv__chart_8h.html#a09ad1c7b6d5c75250b26f5dcc726c42caf7adb009e843a6b0688afb27b3cb3fe2">LV_CHART_AXIS_SECONDARY_Y</a></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    );</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="comment">// Modo scroll</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_function" href="lv__chart_8c.html#a93ad4bb5e42fb4d789f162110d9a9142">lv_chart_set_update_mode</a>(<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>, <a class="code hl_enumvalue" href="lv__chart_8h.html#acd0f05ddd828be68ca8d6214aa729d27a9a0b47047328265061fc1ea51dc08f46">LV_CHART_UPDATE_MODE_SHIFT</a>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="comment">// Rango en grados [-180, 180] para ambos ejes</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_function" href="lv__chart_8c.html#ae56fe53c2a06b3015e391c9c6e728358">lv_chart_set_range</a>(<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>, <a class="code hl_enumvalue" href="lv__chart_8h.html#a09ad1c7b6d5c75250b26f5dcc726c42cab4d56111d313fae7564ace970f5030de">LV_CHART_AXIS_PRIMARY_Y</a>,   -180, 180);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <a class="code hl_function" href="lv__chart_8c.html#ae56fe53c2a06b3015e391c9c6e728358">lv_chart_set_range</a>(<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>, <a class="code hl_enumvalue" href="lv__chart_8h.html#a09ad1c7b6d5c75250b26f5dcc726c42caf7adb009e843a6b0688afb27b3cb3fe2">LV_CHART_AXIS_SECONDARY_Y</a>, -180, 180);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>}</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="Encoders_8cpp.html#a95a2d2532028b3fac437b875d9e97675">  188</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="Encoders_8cpp.html#a95a2d2532028b3fac437b875d9e97675">Encoders_chartAddSample</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structEncoderAngles.html">EncoderAngles</a> &amp;angles) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (!s_serVertical || !s_serHorizontal) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="comment">// Vertical (azul)</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_function" href="lv__chart_8c.html#a65d072352ea0eb36db0c0bf2c69b26d5">lv_chart_set_next_value</a>(<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>, s_serVertical, angles.<a class="code hl_variable" href="structEncoderAngles.html#a89508711051358d77da18880ecfd2e14">verticalDeg</a>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// Horizontal (rojo)</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <a class="code hl_function" href="lv__chart_8c.html#a65d072352ea0eb36db0c0bf2c69b26d5">lv_chart_set_next_value</a>(<a class="code hl_variable" href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a>, s_serHorizontal, angles.<a class="code hl_variable" href="structEncoderAngles.html#ab1a47ca59c21cb6b79aa3a48d3783cdf">horizontalDeg</a>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
+</div>
+<div class="ttc" id="aEncoders_8cpp_html_a0e943e64d1663095ea48207683184fc4"><div class="ttname"><a href="Encoders_8cpp.html#a0e943e64d1663095ea48207683184fc4">Encoders_readAngles</a></div><div class="ttdeci">EncoderAngles Encoders_readAngles()</div><div class="ttdef"><b>Definition</b> <a href="#l00151">Encoders.cpp:151</a></div></div>
+<div class="ttc" id="aEncoders_8cpp_html_a3c7fe22e220fdb176bc480a17dc011d8"><div class="ttname"><a href="Encoders_8cpp.html#a3c7fe22e220fdb176bc480a17dc011d8">Encoders_begin</a></div><div class="ttdeci">void Encoders_begin(uint8_t pinSEL, uint8_t pinRST, uint8_t pinOE, const EncoderConfig &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="#l00117">Encoders.cpp:117</a></div></div>
+<div class="ttc" id="aEncoders_8cpp_html_a4a7a391e8f599554bb0f088b7d98107e"><div class="ttname"><a href="Encoders_8cpp.html#a4a7a391e8f599554bb0f088b7d98107e">Encoders_chartInit</a></div><div class="ttdeci">void Encoders_chartInit(lv_obj_t *chart)</div><div class="ttdef"><b>Definition</b> <a href="#l00163">Encoders.cpp:163</a></div></div>
+<div class="ttc" id="aEncoders_8cpp_html_a95a2d2532028b3fac437b875d9e97675"><div class="ttname"><a href="Encoders_8cpp.html#a95a2d2532028b3fac437b875d9e97675">Encoders_chartAddSample</a></div><div class="ttdeci">void Encoders_chartAddSample(lv_obj_t *chart, const EncoderAngles &amp;angles)</div><div class="ttdef"><b>Definition</b> <a href="#l00188">Encoders.cpp:188</a></div></div>
+<div class="ttc" id="aEncoders_8cpp_html_af3c2e1957e66c769367de3930548b916"><div class="ttname"><a href="Encoders_8cpp.html#af3c2e1957e66c769367de3930548b916">Encoders_resetCounters</a></div><div class="ttdeci">void Encoders_resetCounters()</div><div class="ttdef"><b>Definition</b> <a href="#l00147">Encoders.cpp:147</a></div></div>
+<div class="ttc" id="aEncoders_8cpp_html_af894088c7dad21639840f78ac3860aa8"><div class="ttname"><a href="Encoders_8cpp.html#af894088c7dad21639840f78ac3860aa8">TCA_ADDR</a></div><div class="ttdeci">#define TCA_ADDR</div><div class="ttdef"><b>Definition</b> <a href="#l00011">Encoders.cpp:11</a></div></div>
+<div class="ttc" id="aEncoders_8h_html"><div class="ttname"><a href="Encoders_8h.html">Encoders.h</a></div></div>
+<div class="ttc" id="aRM68120__Rotation_8h_html_a9428adc9af4653a2050e2536b55dec8d"><div class="ttname"><a href="RM68120__Rotation_8h.html#a9428adc9af4653a2050e2536b55dec8d">reg</a></div><div class="ttdeci">uint8_t reg</div><div class="ttdef"><b>Definition</b> <a href="RM68120__Rotation_8h_source.html#l00005">RM68120_Rotation.h:5</a></div></div>
+<div class="ttc" id="alv__chart_8c_html_a65d072352ea0eb36db0c0bf2c69b26d5"><div class="ttname"><a href="lv__chart_8c.html#a65d072352ea0eb36db0c0bf2c69b26d5">lv_chart_set_next_value</a></div><div class="ttdeci">void lv_chart_set_next_value(lv_obj_t *obj, lv_chart_series_t *ser, lv_coord_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8c_source.html#l00538">lv_chart.c:538</a></div></div>
+<div class="ttc" id="alv__chart_8c_html_a93ad4bb5e42fb4d789f162110d9a9142"><div class="ttname"><a href="lv__chart_8c.html#a93ad4bb5e42fb4d789f162110d9a9142">lv_chart_set_update_mode</a></div><div class="ttdeci">void lv_chart_set_update_mode(lv_obj_t *obj, lv_chart_update_mode_t update_mode)</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8c_source.html#l00160">lv_chart.c:160</a></div></div>
+<div class="ttc" id="alv__chart_8c_html_a94528ab74309379615ce3f52fa9e2ca6"><div class="ttname"><a href="lv__chart_8c.html#a94528ab74309379615ce3f52fa9e2ca6">lv_chart_add_series</a></div><div class="ttdeci">lv_chart_series_t * lv_chart_add_series(lv_obj_t *obj, lv_color_t color, lv_chart_axis_t axis)</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8c_source.html#l00342">lv_chart.c:342</a></div></div>
+<div class="ttc" id="alv__chart_8c_html_ae56fe53c2a06b3015e391c9c6e728358"><div class="ttname"><a href="lv__chart_8c.html#ae56fe53c2a06b3015e391c9c6e728358">lv_chart_set_range</a></div><div class="ttdeci">void lv_chart_set_range(lv_obj_t *obj, lv_chart_axis_t axis, lv_coord_t min, lv_coord_t max)</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8c_source.html#l00128">lv_chart.c:128</a></div></div>
+<div class="ttc" id="alv__chart_8h_html_a09ad1c7b6d5c75250b26f5dcc726c42cab4d56111d313fae7564ace970f5030de"><div class="ttname"><a href="lv__chart_8h.html#a09ad1c7b6d5c75250b26f5dcc726c42cab4d56111d313fae7564ace970f5030de">LV_CHART_AXIS_PRIMARY_Y</a></div><div class="ttdeci">@ LV_CHART_AXIS_PRIMARY_Y</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8h_source.html#l00060">lv_chart.h:60</a></div></div>
+<div class="ttc" id="alv__chart_8h_html_a09ad1c7b6d5c75250b26f5dcc726c42caf7adb009e843a6b0688afb27b3cb3fe2"><div class="ttname"><a href="lv__chart_8h.html#a09ad1c7b6d5c75250b26f5dcc726c42caf7adb009e843a6b0688afb27b3cb3fe2">LV_CHART_AXIS_SECONDARY_Y</a></div><div class="ttdeci">@ LV_CHART_AXIS_SECONDARY_Y</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8h_source.html#l00061">lv_chart.h:61</a></div></div>
+<div class="ttc" id="alv__chart_8h_html_acd0f05ddd828be68ca8d6214aa729d27a9a0b47047328265061fc1ea51dc08f46"><div class="ttname"><a href="lv__chart_8h.html#acd0f05ddd828be68ca8d6214aa729d27a9a0b47047328265061fc1ea51dc08f46">LV_CHART_UPDATE_MODE_SHIFT</a></div><div class="ttdeci">@ LV_CHART_UPDATE_MODE_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8h_source.html#l00051">lv_chart.h:51</a></div></div>
+<div class="ttc" id="alv__color_8c_html_a02d11c7e2f70e8b777901d9e403c6b34"><div class="ttname"><a href="lv__color_8c.html#a02d11c7e2f70e8b777901d9e403c6b34">lv_palette_main</a></div><div class="ttdeci">lv_color_t lv_palette_main(lv_palette_t p)</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8c_source.html#l00274">lv_color.c:274</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2">LV_PALETTE_BLUE</a></div><div class="ttdeci">@ LV_PALETTE_BLUE</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00264">lv_color.h:264</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5"><div class="ttname"><a href="lv__color_8h.html#ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5">LV_PALETTE_RED</a></div><div class="ttdeci">@ LV_PALETTE_RED</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00259">lv_color.h:259</a></div></div>
+<div class="ttc" id="alv__example__anim__3_8c_html_aeebe20098200cb0796a6a0b671839abf"><div class="ttname"><a href="lv__example__anim__3_8c.html#aeebe20098200cb0796a6a0b671839abf">chart</a></div><div class="ttdeci">lv_obj_t * chart</div><div class="ttdef"><b>Definition</b> <a href="lv__example__anim__3_8c_source.html#l00015">lv_example_anim_3.c:15</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="astructEncoderAngles_html"><div class="ttname"><a href="structEncoderAngles.html">EncoderAngles</a></div><div class="ttdef"><b>Definition</b> <a href="Encoders_8h_source.html#l00016">Encoders.h:16</a></div></div>
+<div class="ttc" id="astructEncoderAngles_html_a89508711051358d77da18880ecfd2e14"><div class="ttname"><a href="structEncoderAngles.html#a89508711051358d77da18880ecfd2e14">EncoderAngles::verticalDeg</a></div><div class="ttdeci">float verticalDeg</div><div class="ttdef"><b>Definition</b> <a href="Encoders_8h_source.html#l00017">Encoders.h:17</a></div></div>
+<div class="ttc" id="astructEncoderAngles_html_ab1a47ca59c21cb6b79aa3a48d3783cdf"><div class="ttname"><a href="structEncoderAngles.html#ab1a47ca59c21cb6b79aa3a48d3783cdf">EncoderAngles::horizontalDeg</a></div><div class="ttdeci">float horizontalDeg</div><div class="ttdef"><b>Definition</b> <a href="Encoders_8h_source.html#l00018">Encoders.h:18</a></div></div>
+<div class="ttc" id="astructEncoderConfig_html"><div class="ttname"><a href="structEncoderConfig.html">EncoderConfig</a></div><div class="ttdef"><b>Definition</b> <a href="Encoders_8h_source.html#l00010">Encoders.h:10</a></div></div>
+<div class="ttc" id="astructlv__chart__series__t_html"><div class="ttname"><a href="structlv__chart__series__t.html">lv_chart_series_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__chart_8h_source.html#l00071">lv_chart.h:71</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="Encoders_8cpp.html">Encoders.cpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

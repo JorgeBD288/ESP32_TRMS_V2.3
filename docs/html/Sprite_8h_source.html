@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/Extensions/Sprite.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Sprite_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Sprite.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Sprite_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***************************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// The following class creates Sprites in RAM, graphics can then be drawn in the Sprite</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// and rendered quickly onto the TFT screen. The class inherits the graphics functions</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// from the TFT_eSPI class. Some functions are overridden by this class so that the</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// graphics are written to the Sprite rather than the TFT.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">***************************************************************************************/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html">    8</a></span><span class="keyword">class </span><a class="code hl_function" href="classTFT__eSprite.html#a9acc114fa70482ea6117e795ccd32845">TFT_eSprite</a> : <span class="keyword">public</span> <a class="code hl_function" href="classTFT__eSPI.html#a7cdfdcf8a886a5f6763973586fe0c114">TFT_eSPI</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">explicit</span> <a class="code hl_friend" href="classTFT__eSPI.html#a51051b4946e2a7886c5017287a3c360c">TFT_eSprite</a>(<a class="code hl_function" href="classTFT__eSPI.html#a7cdfdcf8a886a5f6763973586fe0c114">TFT_eSPI</a> *<a class="code hl_variable" href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <a class="code hl_function" href="classTFT__eSprite.html#a0b51c0f67b562b2d08c14c94709e70c0">~TFT_eSprite</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>           <span class="comment">// Create a sprite of width x height pixels, return a pointer to the RAM area</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>           <span class="comment">// Sketch can cast returned value to (uint16_t*) for 16-bit depth if needed</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>           <span class="comment">// RAM required is:</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>           <span class="comment">//  - 1 bit per pixel for 1 bit colour depth</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>           <span class="comment">//  - 1 nibble per pixel for 4-bit colour (with palette table)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>           <span class="comment">//  - 1 byte per pixel for 8-bit colour (332 RGB format)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>           <span class="comment">//  - 2 bytes per pixel for 16-bit color depth (565 RGB format)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">void</span>*    <a class="code hl_function" href="classTFT__eSprite.html#a242cbf9bcd3148af87f68587c446c3a9">createSprite</a>(int16_t <a class="code hl_function" href="classTFT__eSprite.html#a75b64339dec0dc53205e1fea662dbc1c">width</a>, int16_t <a class="code hl_function" href="classTFT__eSprite.html#aeaaf00c611161aa0ce56c9d66b911038">height</a>, uint8_t frames = 1);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>           <span class="comment">// Returns a pointer to the sprite or nullptr if not created, user must cast to pointer type</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">void</span>*    <a class="code hl_function" href="classTFT__eSprite.html#a57b7adfcfbb06148b7aaa4d66fe81788">getPointer</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>           <span class="comment">// Returns true if sprite has been created</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#aab3b167b4a7dfb8b87d5063e062d9f5a">created</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>           <span class="comment">// Delete the sprite to free up the RAM</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#adc42520af92c8e47c9069d4496291388">deleteSprite</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>           <span class="comment">// Select the frame buffer for graphics write (for 2 colour ePaper and DMA toggle buffer)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>           <span class="comment">// Returns a pointer to the Sprite frame buffer</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">void</span>*    <a class="code hl_function" href="classTFT__eSprite.html#a939dbc51ae576d4ce5a6ea1e8279d678">frameBuffer</a>(int8_t f);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>           <span class="comment">// Set or get the colour depth to 1, 4, 8 or 16 bits. Can be used to change depth an existing</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>           <span class="comment">// sprite, but clears it to black, returns a new pointer if sprite is re-created.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span>*    <a class="code hl_function" href="classTFT__eSprite.html#adea45a73a254ef7d048202bc89518643">setColorDepth</a>(int8_t b);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  int8_t   <a class="code hl_function" href="classTFT__eSprite.html#a5adecb831418738ffab78d7748c65f22">getColorDepth</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>           <span class="comment">// Set the palette for a 4-bit depth sprite.  Only the first 16 colours in the map are used.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a9c0856755fa1ce721acc1f55023a10dc">   43</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a9c0856755fa1ce721acc1f55023a10dc">createPalette</a>(uint16_t *palette = <span class="keyword">nullptr</span>, uint8_t colors = 16);       <span class="comment">// Palette in RAM</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#ab703fb051b5b8b72fe8e438ef01eda34">   44</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#ab703fb051b5b8b72fe8e438ef01eda34">createPalette</a>(<span class="keyword">const</span> uint16_t *palette = <span class="keyword">nullptr</span>, uint8_t colors = 16); <span class="comment">// Palette in FLASH</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>           <span class="comment">// Set a single palette index to the given color</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#ad58fe2f7b9583040b150b827c7960817">setPaletteColor</a>(uint8_t index, uint16_t color);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>           <span class="comment">// Get the color at the given palette index</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  uint16_t <a class="code hl_function" href="classTFT__eSprite.html#aa25f9f45f211a0da9f463af2eda63adb">getPaletteColor</a>(uint8_t index);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>           <span class="comment">// Set foreground and background colours for 1 bit per pixel Sprite</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#ae00520e7c5d7ae34620a6a8a23a530d3">setBitmapColor</a>(uint16_t fg, uint16_t bg);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>           <span class="comment">// Draw a single pixel at x,y</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a6679cdbf3391923e5687ab035ebed56b">drawPixel</a>(int32_t x, int32_t y, uint32_t color);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>           <span class="comment">// Draw a single character in the GLCD or GFXFF font</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a845b183107d6692c0f99a1c6051a5e87">drawChar</a>(int32_t x, int32_t y, uint16_t c, uint32_t color, uint32_t bg, uint8_t size),</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>           <span class="comment">// Fill Sprite with a colour</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>           <a class="code hl_function" href="classTFT__eSprite.html#a7079259acdfd09ee8ca609111109644b">fillSprite</a>(uint32_t color),</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>           <span class="comment">// Define a window to push 16-bit colour pixels into in a raster order</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>           <span class="comment">// Colours are converted to the set Sprite colour bit depth</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>           <a class="code hl_function" href="classTFT__eSprite.html#a2b9c08e4ec5bfbc6ad9b4fc359295020">setWindow</a>(int32_t x0, int32_t y0, int32_t x1, int32_t y1),</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>           <span class="comment">// Push a color (aka singe pixel) to the sprite&#39;s set window area</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>           <a class="code hl_function" href="classTFT__eSprite.html#a859b6d84e3676a391d61cec673aff110">pushColor</a>(uint16_t color),</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>           <span class="comment">// Push len colors (pixels) to the sprite&#39;s set window area</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>           <a class="code hl_function" href="classTFT__eSprite.html#a859b6d84e3676a391d61cec673aff110">pushColor</a>(uint16_t color, uint32_t len),</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>           <span class="comment">// Push a pixel pre-formatted as a 1, 4, 8 or 16-bit colour (avoids conversion overhead)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>           <a class="code hl_function" href="classTFT__eSprite.html#a050a050e1ee41a31f93c8c9dbeee890d">writeColor</a>(uint16_t color),</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>           <span class="comment">// Set the scroll zone, top left corner at x,y with defined width and height</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>           <span class="comment">// The colour (optional, black is default) is used to fill the gap after the scroll</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>           <a class="code hl_function" href="classTFT__eSprite.html#ab798b8426fbf23431e535ec5471736d8">setScrollRect</a>(int32_t x, int32_t y, int32_t w, int32_t h, uint16_t color = <a class="code hl_define" href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>),</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>           <span class="comment">// Scroll the defined zone dx,dy pixels. Negative values left,up, positive right,down</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>           <span class="comment">// dy is optional (default is 0, so no up/down scroll).</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>           <span class="comment">// The sprite coordinate frame does not move because pixels are moved</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>           <a class="code hl_function" href="classTFT__eSprite.html#a6cf16cc8eec03ebd1d3161d8eb9966fc">scroll</a>(int16_t dx, int16_t dy = 0),</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>           <span class="comment">// Draw lines</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>           <a class="code hl_function" href="classTFT__eSprite.html#a7ae6b14a8e955f27d6800eaf7761b5f8">drawLine</a>(int32_t x0, int32_t y0, int32_t x1, int32_t y1, uint32_t color),</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>           <a class="code hl_function" href="classTFT__eSprite.html#a491b6e872bc430d9003434d4195a6a70">drawFastVLine</a>(int32_t x, int32_t y, int32_t h, uint32_t color),</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>           <a class="code hl_function" href="classTFT__eSprite.html#a8eab95d4821af539a6d10dce36773a55">drawFastHLine</a>(int32_t x, int32_t y, int32_t w, uint32_t color),</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>           <span class="comment">// Fill a rectangular area with a color (aka draw a filled rectangle)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>           <a class="code hl_function" href="classTFT__eSprite.html#a3bdeab4658cd86ee88b76a9c89f970fb">fillRect</a>(int32_t x, int32_t y, int32_t w, int32_t h, uint32_t color);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>           <span class="comment">// Set the coordinate rotation of the Sprite (for 1bpp Sprites only)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>           <span class="comment">// Note: this uses coordinate rotation and is primarily for ePaper which does not support</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>           <span class="comment">// CGRAM rotation (like TFT drivers do) within the displays internal hardware</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a1364264278d68f343c4d0531d153ec94">setRotation</a>(uint8_t <a class="code hl_variable" href="classTFT__eSPI.html#a8283eb84f85faf4950dfe9f3e7729bce">rotation</a>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  uint8_t  <a class="code hl_function" href="classTFT__eSprite.html#aa6e6f8f33ffcdbaef756023b67ba8617">getRotation</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>           <span class="comment">// Push a rotated copy of Sprite to TFT with optional transparent colour</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#af9f52612718f039c4cbc9da3d49f1d82">pushRotated</a>(int16_t angle, uint32_t transp = 0x00FFFFFF);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>           <span class="comment">// Push a rotated copy of Sprite to another different Sprite with optional transparent colour</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#af9f52612718f039c4cbc9da3d49f1d82">pushRotated</a>(<a class="code hl_function" href="classTFT__eSprite.html#a9acc114fa70482ea6117e795ccd32845">TFT_eSprite</a> *spr, int16_t angle, uint32_t transp = 0x00FFFFFF);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>           <span class="comment">// Get the TFT bounding box for a rotated copy of this Sprite</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#a3a3f5f726f9187b3a43a4f5259d5e2dd">getRotatedBounds</a>(int16_t angle, int16_t *min_x, int16_t *min_y, int16_t *max_x, int16_t *max_y);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>           <span class="comment">// Get the destination Sprite bounding box for a rotated copy of this Sprite</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#a3a3f5f726f9187b3a43a4f5259d5e2dd">getRotatedBounds</a>(<a class="code hl_function" href="classTFT__eSprite.html#a9acc114fa70482ea6117e795ccd32845">TFT_eSprite</a> *spr, int16_t angle, int16_t *min_x, int16_t *min_y,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                                             int16_t *max_x, int16_t *max_y);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>           <span class="comment">// Bounding box support function</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a3a3f5f726f9187b3a43a4f5259d5e2dd">getRotatedBounds</a>(int16_t angle, int16_t w, int16_t h, int16_t xp, int16_t yp,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                            int16_t *min_x, int16_t *min_y, int16_t *max_x, int16_t *max_y);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>           <span class="comment">// Read the colour of a pixel at x,y and return value in 565 format </span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  uint16_t <a class="code hl_function" href="classTFT__eSprite.html#a9567d2fce696e37fa064ec11f195d7d9">readPixel</a>(int32_t x0, int32_t y0);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>           <span class="comment">// return the numerical value of the pixel at x,y (used when scrolling)</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>           <span class="comment">// 16bpp = colour, 8bpp = byte, 4bpp = colour index, 1bpp = 1 or 0</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  uint16_t <a class="code hl_function" href="classTFT__eSprite.html#a8253d3a216b10596561f73a83edd83cf">readPixelValue</a>(int32_t x, int32_t y);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>           <span class="comment">// Write an image (colour bitmap) to the sprite.</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#aaa7ac9604b85bf1d28a48160c8f4f6ae">pushImage</a>(int32_t x0, int32_t y0, int32_t w, int32_t h, uint16_t *data, uint8_t sbpp = 0);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#aaa7ac9604b85bf1d28a48160c8f4f6ae">pushImage</a>(int32_t x0, int32_t y0, int32_t w, int32_t h, <span class="keyword">const</span> uint16_t *data);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>           <span class="comment">// Push the sprite to the TFT screen, this fn calls pushImage() in the TFT class.</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>           <span class="comment">// Optionally a &quot;transparent&quot; colour can be defined, pixels of that colour will not be rendered</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a93cdc3e149dd4f6a3581ab08cd55f85e">pushSprite</a>(int32_t x, int32_t y);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a93cdc3e149dd4f6a3581ab08cd55f85e">pushSprite</a>(int32_t x, int32_t y, uint16_t transparent);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>           <span class="comment">// Push a windowed area of the sprite to the TFT at tx, ty</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#a93cdc3e149dd4f6a3581ab08cd55f85e">pushSprite</a>(int32_t tx, int32_t ty, int32_t sx, int32_t sy, int32_t sw, int32_t sh);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>           <span class="comment">// Push the sprite to another sprite at x,y. This fn calls pushImage() in the destination sprite (dspr) class.</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#a549a4c800be56e5ee40c2b248e83ada4">pushToSprite</a>(<a class="code hl_function" href="classTFT__eSprite.html#a9acc114fa70482ea6117e795ccd32845">TFT_eSprite</a> *dspr, int32_t x, int32_t y);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="classTFT__eSprite.html#a549a4c800be56e5ee40c2b248e83ada4">pushToSprite</a>(<a class="code hl_function" href="classTFT__eSprite.html#a9acc114fa70482ea6117e795ccd32845">TFT_eSprite</a> *dspr, int32_t x, int32_t y, uint16_t transparent);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>           <span class="comment">// Draw a single character in the selected font</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  int16_t  <a class="code hl_function" href="classTFT__eSprite.html#a845b183107d6692c0f99a1c6051a5e87">drawChar</a>(uint16_t uniCode, int32_t x, int32_t y, uint8_t font),</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>           <a class="code hl_function" href="classTFT__eSprite.html#a845b183107d6692c0f99a1c6051a5e87">drawChar</a>(uint16_t uniCode, int32_t x, int32_t y);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>           <span class="comment">// Return the width and height of the sprite</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  int16_t  <a class="code hl_function" href="classTFT__eSprite.html#a75b64339dec0dc53205e1fea662dbc1c">width</a>(<span class="keywordtype">void</span>),</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>           <a class="code hl_function" href="classTFT__eSprite.html#aeaaf00c611161aa0ce56c9d66b911038">height</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>           <span class="comment">// Functions associated with anti-aliased fonts</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>           <span class="comment">// Draw a single Unicode character using the loaded font</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#ab47cf2f10e3fc9ebfe36ae67719c7363">  143</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#ab47cf2f10e3fc9ebfe36ae67719c7363">drawGlyph</a>(uint16_t code);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>           <span class="comment">// Print string to sprite using loaded font at cursor position</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#ae940bb518a951c098b1d43f8307e4c39">  145</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#ae940bb518a951c098b1d43f8307e4c39">printToSprite</a>(String <span class="keywordtype">string</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>           <span class="comment">// Print char array to sprite using loaded font at cursor position</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a556a52b8708e8579549917c1b9a918d7">  147</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSprite.html#a556a52b8708e8579549917c1b9a918d7">printToSprite</a>(<span class="keywordtype">char</span> *cbuffer, uint16_t len);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>           <span class="comment">// Print indexed glyph to sprite using loaded font at x,y</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a515e6de327e70d0a2330a909b959f491">  149</a></span>  int16_t  <a class="code hl_function" href="classTFT__eSprite.html#a515e6de327e70d0a2330a909b959f491">printToSprite</a>(int16_t x, int16_t y, uint16_t index);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <a class="code hl_function" href="classTFT__eSPI.html#a7cdfdcf8a886a5f6763973586fe0c114">TFT_eSPI</a> *_tft;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>           <span class="comment">// Reserve memory for the Sprite and return a pointer</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordtype">void</span>*    callocSprite(int16_t <a class="code hl_function" href="classTFT__eSprite.html#a75b64339dec0dc53205e1fea662dbc1c">width</a>, int16_t <a class="code hl_function" href="classTFT__eSprite.html#aeaaf00c611161aa0ce56c9d66b911038">height</a>, uint8_t frames = 1);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>           <span class="comment">// Override the non-inlined TFT_eSPI functions</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSPI.html#a72fdc194c1fd254fdb695d32f07ac58e">begin_nin_write</a>(<span class="keywordtype">void</span>) { ; }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="classTFT__eSPI.html#ab043037081576a0bfcb492ec223e3d6c">end_nin_write</a>(<span class="keywordtype">void</span>) { ; }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a0e309ceff5f8fe9f5d070df5249033a8">  164</a></span>  uint8_t  <a class="code hl_variable" href="classTFT__eSprite.html#a0e309ceff5f8fe9f5d070df5249033a8">_bpp</a>;     <span class="comment">// bits per pixel (1, 4, 8 or 16)</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a6f0f0e069a82f125db1d9f9594c8b667">  165</a></span>  uint16_t *<a class="code hl_variable" href="classTFT__eSprite.html#a6f0f0e069a82f125db1d9f9594c8b667">_img</a>;    <span class="comment">// pointer to 16-bit sprite</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a63e8051097e20bc3a0b2d4b94571f148">  166</a></span>  uint8_t  *<a class="code hl_variable" href="classTFT__eSprite.html#a63e8051097e20bc3a0b2d4b94571f148">_img8</a>;   <span class="comment">// pointer to  1 and 8-bit sprite frame 1 or frame 2</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#ae008b830fe6fb27e3c29dd75f79ef463">  167</a></span>  uint8_t  *<a class="code hl_variable" href="classTFT__eSprite.html#ae008b830fe6fb27e3c29dd75f79ef463">_img4</a>;   <span class="comment">// pointer to  4-bit sprite (uses color map)</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a823d73c0ccac5fa55a94c79aa21e244a">  168</a></span>  uint8_t  *<a class="code hl_variable" href="classTFT__eSprite.html#a823d73c0ccac5fa55a94c79aa21e244a">_img8_1</a>; <span class="comment">// pointer to frame 1</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a97919da0a53adb482c7ef383e7d75cd4">  169</a></span>  uint8_t  *<a class="code hl_variable" href="classTFT__eSprite.html#a97919da0a53adb482c7ef383e7d75cd4">_img8_2</a>; <span class="comment">// pointer to frame 2</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a5d3b087988cc797eef8d54b8d29c20fe">  171</a></span>  uint16_t *<a class="code hl_variable" href="classTFT__eSprite.html#a5d3b087988cc797eef8d54b8d29c20fe">_colorMap</a>; <span class="comment">// color map pointer: 16 entries, used with 4-bit color map.</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a210f416eb060f08a3af9a04ff154365e">  173</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#a210f416eb060f08a3af9a04ff154365e">_sinra</a>;   <span class="comment">// Sine of rotation angle in fixed point</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#aa8fe18176d436e37873466df98339c90">  174</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#aa8fe18176d436e37873466df98339c90">_cosra</a>;   <span class="comment">// Cosine of rotation angle in fixed point</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a42e01a52887bca6e31233356f22b8877">  176</a></span>  <span class="keywordtype">bool</span>     <a class="code hl_variable" href="classTFT__eSprite.html#a42e01a52887bca6e31233356f22b8877">_created</a>; <span class="comment">// A Sprite has been created and memory reserved</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a084b4eed5513fdbb4b911047ca8d0240">  177</a></span>  <span class="keywordtype">bool</span>     <a class="code hl_variable" href="classTFT__eSprite.html#a084b4eed5513fdbb4b911047ca8d0240">_gFont</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#ae37992aa472702009e18963426e55cbf">  179</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#a4f8d4696ce9b8c0e8ba7f952a6a33fbf">_xs</a>, <a class="code hl_variable" href="classTFT__eSprite.html#a4aac0db8980bffe5ea24bdcd65f3aa46">_ys</a>, <a class="code hl_variable" href="classTFT__eSprite.html#ae37992aa472702009e18963426e55cbf">_xe</a>, <a class="code hl_variable" href="classTFT__eSprite.html#a7a87b915b9eca0688e213f56edb6d3d5">_ye</a>, <a class="code hl_variable" href="classTFT__eSprite.html#a48d2a82072668f111c445c90ed6a990f">_xptr</a>, <a class="code hl_variable" href="classTFT__eSprite.html#aea4780309eac5fb5dbe79f88e52a5473">_yptr</a>; <span class="comment">// for setWindow</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a5570ce23dcdcaf5f7ea8a4319f0abc07">  180</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#a5570ce23dcdcaf5f7ea8a4319f0abc07">_sx</a>, <a class="code hl_variable" href="classTFT__eSprite.html#aa0750fd482893b39dce195c410889bd2">_sy</a>; <span class="comment">// x,y for scroll zone</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#ac9971a8946d86529f31774e7b096eb2d">  181</a></span>  uint32_t <a class="code hl_variable" href="classTFT__eSprite.html#adf31a4939edee4095249ba94f0902dea">_sw</a>, <a class="code hl_variable" href="classTFT__eSprite.html#ac9971a8946d86529f31774e7b096eb2d">_sh</a>; <span class="comment">// w,h for scroll zone</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a382666b9731a106590401d17633acbc6">  182</a></span>  uint32_t <a class="code hl_variable" href="classTFT__eSprite.html#a382666b9731a106590401d17633acbc6">_scolor</a>;  <span class="comment">// gap fill colour for scroll zone</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a14c96f36080e87ef318c29fe9a3c00ea">  184</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#a6fd24c34e5c41950e031082ea4f8dd51">_iwidth</a>, <a class="code hl_variable" href="classTFT__eSprite.html#a14c96f36080e87ef318c29fe9a3c00ea">_iheight</a>; <span class="comment">// Sprite memory image bit width and height (swapped during rotations)</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a92ae263fcfbedd6470c0f574f8707ebe">  185</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#a91c6a98fc6a227ad0512a1db714ea57b">_dwidth</a>, <a class="code hl_variable" href="classTFT__eSprite.html#a92ae263fcfbedd6470c0f574f8707ebe">_dheight</a>; <span class="comment">// Real sprite width and height (for &lt;8bpp Sprites)</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classTFT__eSprite.html#a12ce64d4eae62f02e0cc67f78e9adac3">  186</a></span>  int32_t  <a class="code hl_variable" href="classTFT__eSprite.html#a12ce64d4eae62f02e0cc67f78e9adac3">_bitwidth</a>;         <span class="comment">// Sprite image bit width for drawPixel (for &lt;8bpp Sprites, not swapped)</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>};</div>
+</div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a54c6607f6fd422d8f7b10f6543a72dc9"><div class="ttname"><a href="TFT__eSPI_8h.html#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a></div><div class="ttdeci">#define TFT_BLACK</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00305">TFT_eSPI.h:305</a></div></div>
+<div class="ttc" id="aclassTFT__eSPI_html_a51051b4946e2a7886c5017287a3c360c"><div class="ttname"><a href="classTFT__eSPI.html#a51051b4946e2a7886c5017287a3c360c">TFT_eSPI::TFT_eSprite</a></div><div class="ttdeci">friend class TFT_eSprite</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00427">TFT_eSPI.h:427</a></div></div>
+<div class="ttc" id="aclassTFT__eSPI_html_a72fdc194c1fd254fdb695d32f07ac58e"><div class="ttname"><a href="classTFT__eSPI.html#a72fdc194c1fd254fdb695d32f07ac58e">TFT_eSPI::begin_nin_write</a></div><div class="ttdeci">virtual void begin_nin_write()</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8cpp_source.html#l00086">TFT_eSPI.cpp:86</a></div></div>
+<div class="ttc" id="aclassTFT__eSPI_html_a7cdfdcf8a886a5f6763973586fe0c114"><div class="ttname"><a href="classTFT__eSPI.html#a7cdfdcf8a886a5f6763973586fe0c114">TFT_eSPI::TFT_eSPI</a></div><div class="ttdeci">TFT_eSPI(int16_t _W=TFT_WIDTH, int16_t _H=TFT_HEIGHT)</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8cpp_source.html#l00439">TFT_eSPI.cpp:439</a></div></div>
+<div class="ttc" id="aclassTFT__eSPI_html_a8283eb84f85faf4950dfe9f3e7729bce"><div class="ttname"><a href="classTFT__eSPI.html#a8283eb84f85faf4950dfe9f3e7729bce">TFT_eSPI::rotation</a></div><div class="ttdeci">uint8_t rotation</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00833">TFT_eSPI.h:833</a></div></div>
+<div class="ttc" id="aclassTFT__eSPI_html_ab043037081576a0bfcb492ec223e3d6c"><div class="ttname"><a href="classTFT__eSPI.html#ab043037081576a0bfcb492ec223e3d6c">TFT_eSPI::end_nin_write</a></div><div class="ttdeci">virtual void end_nin_write()</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8cpp_source.html#l00116">TFT_eSPI.cpp:116</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a050a050e1ee41a31f93c8c9dbeee890d"><div class="ttname"><a href="classTFT__eSprite.html#a050a050e1ee41a31f93c8c9dbeee890d">TFT_eSprite::writeColor</a></div><div class="ttdeci">void writeColor(uint16_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01354">Sprite.cpp:1354</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a084b4eed5513fdbb4b911047ca8d0240"><div class="ttname"><a href="classTFT__eSprite.html#a084b4eed5513fdbb4b911047ca8d0240">TFT_eSprite::_gFont</a></div><div class="ttdeci">bool _gFont</div><div class="ttdef"><b>Definition</b> <a href="#l00177">Sprite.h:177</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a0b51c0f67b562b2d08c14c94709e70c0"><div class="ttname"><a href="classTFT__eSprite.html#a0b51c0f67b562b2d08c14c94709e70c0">TFT_eSprite::~TFT_eSprite</a></div><div class="ttdeci">~TFT_eSprite(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00139">Sprite.cpp:139</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a0e309ceff5f8fe9f5d070df5249033a8"><div class="ttname"><a href="classTFT__eSprite.html#a0e309ceff5f8fe9f5d070df5249033a8">TFT_eSprite::_bpp</a></div><div class="ttdeci">uint8_t _bpp</div><div class="ttdef"><b>Definition</b> <a href="#l00164">Sprite.h:164</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a12ce64d4eae62f02e0cc67f78e9adac3"><div class="ttname"><a href="classTFT__eSprite.html#a12ce64d4eae62f02e0cc67f78e9adac3">TFT_eSprite::_bitwidth</a></div><div class="ttdeci">int32_t _bitwidth</div><div class="ttdef"><b>Definition</b> <a href="#l00186">Sprite.h:186</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a1364264278d68f343c4d0531d153ec94"><div class="ttname"><a href="classTFT__eSprite.html#a1364264278d68f343c4d0531d153ec94">TFT_eSprite::setRotation</a></div><div class="ttdeci">void setRotation(uint8_t rotation)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01601">Sprite.cpp:1601</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a14c96f36080e87ef318c29fe9a3c00ea"><div class="ttname"><a href="classTFT__eSprite.html#a14c96f36080e87ef318c29fe9a3c00ea">TFT_eSprite::_iheight</a></div><div class="ttdeci">int32_t _iheight</div><div class="ttdef"><b>Definition</b> <a href="#l00184">Sprite.h:184</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a210f416eb060f08a3af9a04ff154365e"><div class="ttname"><a href="classTFT__eSprite.html#a210f416eb060f08a3af9a04ff154365e">TFT_eSprite::_sinra</a></div><div class="ttdeci">int32_t _sinra</div><div class="ttdef"><b>Definition</b> <a href="#l00173">Sprite.h:173</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a242cbf9bcd3148af87f68587c446c3a9"><div class="ttname"><a href="classTFT__eSprite.html#a242cbf9bcd3148af87f68587c446c3a9">TFT_eSprite::createSprite</a></div><div class="ttdeci">void * createSprite(int16_t width, int16_t height, uint8_t frames=1)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00051">Sprite.cpp:51</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a2b9c08e4ec5bfbc6ad9b4fc359295020"><div class="ttname"><a href="classTFT__eSprite.html#a2b9c08e4ec5bfbc6ad9b4fc359295020">TFT_eSprite::setWindow</a></div><div class="ttdeci">void setWindow(int32_t x0, int32_t y0, int32_t x1, int32_t y1)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01253">Sprite.cpp:1253</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a382666b9731a106590401d17633acbc6"><div class="ttname"><a href="classTFT__eSprite.html#a382666b9731a106590401d17633acbc6">TFT_eSprite::_scolor</a></div><div class="ttdeci">uint32_t _scolor</div><div class="ttdef"><b>Definition</b> <a href="#l00182">Sprite.h:182</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a3a3f5f726f9187b3a43a4f5259d5e2dd"><div class="ttname"><a href="classTFT__eSprite.html#a3a3f5f726f9187b3a43a4f5259d5e2dd">TFT_eSprite::getRotatedBounds</a></div><div class="ttdeci">bool getRotatedBounds(int16_t angle, int16_t *min_x, int16_t *min_y, int16_t *max_x, int16_t *max_y)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00536">Sprite.cpp:536</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a3bdeab4658cd86ee88b76a9c89f970fb"><div class="ttname"><a href="classTFT__eSprite.html#a3bdeab4658cd86ee88b76a9c89f970fb">TFT_eSprite::fillRect</a></div><div class="ttdeci">void fillRect(int32_t x, int32_t y, int32_t w, int32_t h, uint32_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01872">Sprite.cpp:1872</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a42e01a52887bca6e31233356f22b8877"><div class="ttname"><a href="classTFT__eSprite.html#a42e01a52887bca6e31233356f22b8877">TFT_eSprite::_created</a></div><div class="ttdeci">bool _created</div><div class="ttdef"><b>Definition</b> <a href="#l00176">Sprite.h:176</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a48d2a82072668f111c445c90ed6a990f"><div class="ttname"><a href="classTFT__eSprite.html#a48d2a82072668f111c445c90ed6a990f">TFT_eSprite::_xptr</a></div><div class="ttdeci">int32_t _xptr</div><div class="ttdef"><b>Definition</b> <a href="#l00179">Sprite.h:179</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a491b6e872bc430d9003434d4195a6a70"><div class="ttname"><a href="classTFT__eSprite.html#a491b6e872bc430d9003434d4195a6a70">TFT_eSprite::drawFastVLine</a></div><div class="ttdeci">void drawFastVLine(int32_t x, int32_t y, int32_t h, uint32_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01748">Sprite.cpp:1748</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a4aac0db8980bffe5ea24bdcd65f3aa46"><div class="ttname"><a href="classTFT__eSprite.html#a4aac0db8980bffe5ea24bdcd65f3aa46">TFT_eSprite::_ys</a></div><div class="ttdeci">int32_t _ys</div><div class="ttdef"><b>Definition</b> <a href="#l00179">Sprite.h:179</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a4f8d4696ce9b8c0e8ba7f952a6a33fbf"><div class="ttname"><a href="classTFT__eSprite.html#a4f8d4696ce9b8c0e8ba7f952a6a33fbf">TFT_eSprite::_xs</a></div><div class="ttdeci">int32_t _xs</div><div class="ttdef"><b>Definition</b> <a href="#l00179">Sprite.h:179</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a515e6de327e70d0a2330a909b959f491"><div class="ttname"><a href="classTFT__eSprite.html#a515e6de327e70d0a2330a909b959f491">TFT_eSprite::printToSprite</a></div><div class="ttdeci">int16_t printToSprite(int16_t x, int16_t y, uint16_t index)</div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a549a4c800be56e5ee40c2b248e83ada4"><div class="ttname"><a href="classTFT__eSprite.html#a549a4c800be56e5ee40c2b248e83ada4">TFT_eSprite::pushToSprite</a></div><div class="ttdeci">bool pushToSprite(TFT_eSprite *dspr, int32_t x, int32_t y)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00718">Sprite.cpp:718</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a556a52b8708e8579549917c1b9a918d7"><div class="ttname"><a href="classTFT__eSprite.html#a556a52b8708e8579549917c1b9a918d7">TFT_eSprite::printToSprite</a></div><div class="ttdeci">void printToSprite(char *cbuffer, uint16_t len)</div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a5570ce23dcdcaf5f7ea8a4319f0abc07"><div class="ttname"><a href="classTFT__eSprite.html#a5570ce23dcdcaf5f7ea8a4319f0abc07">TFT_eSprite::_sx</a></div><div class="ttdeci">int32_t _sx</div><div class="ttdef"><b>Definition</b> <a href="#l00180">Sprite.h:180</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a57b7adfcfbb06148b7aaa4d66fe81788"><div class="ttname"><a href="classTFT__eSprite.html#a57b7adfcfbb06148b7aaa4d66fe81788">TFT_eSprite::getPointer</a></div><div class="ttdeci">void * getPointer(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00118">Sprite.cpp:118</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a5adecb831418738ffab78d7748c65f22"><div class="ttname"><a href="classTFT__eSprite.html#a5adecb831418738ffab78d7748c65f22">TFT_eSprite::getColorDepth</a></div><div class="ttdeci">int8_t getColorDepth(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00326">Sprite.cpp:326</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a5d3b087988cc797eef8d54b8d29c20fe"><div class="ttname"><a href="classTFT__eSprite.html#a5d3b087988cc797eef8d54b8d29c20fe">TFT_eSprite::_colorMap</a></div><div class="ttdeci">uint16_t * _colorMap</div><div class="ttdef"><b>Definition</b> <a href="#l00171">Sprite.h:171</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a63e8051097e20bc3a0b2d4b94571f148"><div class="ttname"><a href="classTFT__eSprite.html#a63e8051097e20bc3a0b2d4b94571f148">TFT_eSprite::_img8</a></div><div class="ttdeci">uint8_t * _img8</div><div class="ttdef"><b>Definition</b> <a href="#l00166">Sprite.h:166</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a6679cdbf3391923e5687ab035ebed56b"><div class="ttname"><a href="classTFT__eSprite.html#a6679cdbf3391923e5687ab035ebed56b">TFT_eSprite::drawPixel</a></div><div class="ttdeci">void drawPixel(int32_t x, int32_t y, uint32_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01630">Sprite.cpp:1630</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a6cf16cc8eec03ebd1d3161d8eb9966fc"><div class="ttname"><a href="classTFT__eSprite.html#a6cf16cc8eec03ebd1d3161d8eb9966fc">TFT_eSprite::scroll</a></div><div class="ttdeci">void scroll(int16_t dx, int16_t dy=0)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01418">Sprite.cpp:1418</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a6f0f0e069a82f125db1d9f9594c8b667"><div class="ttname"><a href="classTFT__eSprite.html#a6f0f0e069a82f125db1d9f9594c8b667">TFT_eSprite::_img</a></div><div class="ttdeci">uint16_t * _img</div><div class="ttdef"><b>Definition</b> <a href="#l00165">Sprite.h:165</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a6fd24c34e5c41950e031082ea4f8dd51"><div class="ttname"><a href="classTFT__eSprite.html#a6fd24c34e5c41950e031082ea4f8dd51">TFT_eSprite::_iwidth</a></div><div class="ttdeci">int32_t _iwidth</div><div class="ttdef"><b>Definition</b> <a href="#l00184">Sprite.h:184</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a7079259acdfd09ee8ca609111109644b"><div class="ttname"><a href="classTFT__eSprite.html#a7079259acdfd09ee8ca609111109644b">TFT_eSprite::fillSprite</a></div><div class="ttdeci">void fillSprite(uint32_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01516">Sprite.cpp:1516</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a75b64339dec0dc53205e1fea662dbc1c"><div class="ttname"><a href="classTFT__eSprite.html#a75b64339dec0dc53205e1fea662dbc1c">TFT_eSprite::width</a></div><div class="ttdeci">int16_t width(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01554">Sprite.cpp:1554</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a7a87b915b9eca0688e213f56edb6d3d5"><div class="ttname"><a href="classTFT__eSprite.html#a7a87b915b9eca0688e213f56edb6d3d5">TFT_eSprite::_ye</a></div><div class="ttdeci">int32_t _ye</div><div class="ttdef"><b>Definition</b> <a href="#l00179">Sprite.h:179</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a7ae6b14a8e955f27d6800eaf7761b5f8"><div class="ttname"><a href="classTFT__eSprite.html#a7ae6b14a8e955f27d6800eaf7761b5f8">TFT_eSprite::drawLine</a></div><div class="ttdeci">void drawLine(int32_t x0, int32_t y0, int32_t x1, int32_t y1, uint32_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01690">Sprite.cpp:1690</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a823d73c0ccac5fa55a94c79aa21e244a"><div class="ttname"><a href="classTFT__eSprite.html#a823d73c0ccac5fa55a94c79aa21e244a">TFT_eSprite::_img8_1</a></div><div class="ttdeci">uint8_t * _img8_1</div><div class="ttdef"><b>Definition</b> <a href="#l00168">Sprite.h:168</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a8253d3a216b10596561f73a83edd83cf"><div class="ttname"><a href="classTFT__eSprite.html#a8253d3a216b10596561f73a83edd83cf">TFT_eSprite::readPixelValue</a></div><div class="ttdeci">uint16_t readPixelValue(int32_t x, int32_t y)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00898">Sprite.cpp:898</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a845b183107d6692c0f99a1c6051a5e87"><div class="ttname"><a href="classTFT__eSprite.html#a845b183107d6692c0f99a1c6051a5e87">TFT_eSprite::drawChar</a></div><div class="ttdeci">void drawChar(int32_t x, int32_t y, uint16_t c, uint32_t color, uint32_t bg, uint8_t size)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01984">Sprite.cpp:1984</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a859b6d84e3676a391d61cec673aff110"><div class="ttname"><a href="classTFT__eSprite.html#a859b6d84e3676a391d61cec673aff110">TFT_eSprite::pushColor</a></div><div class="ttdeci">void pushColor(uint16_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01290">Sprite.cpp:1290</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a8eab95d4821af539a6d10dce36773a55"><div class="ttname"><a href="classTFT__eSprite.html#a8eab95d4821af539a6d10dce36773a55">TFT_eSprite::drawFastHLine</a></div><div class="ttdeci">void drawFastHLine(int32_t x, int32_t y, int32_t w, uint32_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01809">Sprite.cpp:1809</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a91c6a98fc6a227ad0512a1db714ea57b"><div class="ttname"><a href="classTFT__eSprite.html#a91c6a98fc6a227ad0512a1db714ea57b">TFT_eSprite::_dwidth</a></div><div class="ttdeci">int32_t _dwidth</div><div class="ttdef"><b>Definition</b> <a href="#l00185">Sprite.h:185</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a92ae263fcfbedd6470c0f574f8707ebe"><div class="ttname"><a href="classTFT__eSprite.html#a92ae263fcfbedd6470c0f574f8707ebe">TFT_eSprite::_dheight</a></div><div class="ttdeci">int32_t _dheight</div><div class="ttdef"><b>Definition</b> <a href="#l00185">Sprite.h:185</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a939dbc51ae576d4ce5a6ea1e8279d678"><div class="ttname"><a href="classTFT__eSprite.html#a939dbc51ae576d4ce5a6ea1e8279d678">TFT_eSprite::frameBuffer</a></div><div class="ttdeci">void * frameBuffer(int8_t f)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00280">Sprite.cpp:280</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a93cdc3e149dd4f6a3581ab08cd55f85e"><div class="ttname"><a href="classTFT__eSprite.html#a93cdc3e149dd4f6a3581ab08cd55f85e">TFT_eSprite::pushSprite</a></div><div class="ttdeci">void pushSprite(int32_t x, int32_t y)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00659">Sprite.cpp:659</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a9567d2fce696e37fa064ec11f195d7d9"><div class="ttname"><a href="classTFT__eSprite.html#a9567d2fce696e37fa064ec11f195d7d9">TFT_eSprite::readPixel</a></div><div class="ttdeci">uint16_t readPixel(int32_t x0, int32_t y0)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00960">Sprite.cpp:960</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a97919da0a53adb482c7ef383e7d75cd4"><div class="ttname"><a href="classTFT__eSprite.html#a97919da0a53adb482c7ef383e7d75cd4">TFT_eSprite::_img8_2</a></div><div class="ttdeci">uint8_t * _img8_2</div><div class="ttdef"><b>Definition</b> <a href="#l00169">Sprite.h:169</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a9acc114fa70482ea6117e795ccd32845"><div class="ttname"><a href="classTFT__eSprite.html#a9acc114fa70482ea6117e795ccd32845">TFT_eSprite::TFT_eSprite</a></div><div class="ttdeci">TFT_eSprite(TFT_eSPI *tft)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00017">Sprite.cpp:17</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_a9c0856755fa1ce721acc1f55023a10dc"><div class="ttname"><a href="classTFT__eSprite.html#a9c0856755fa1ce721acc1f55023a10dc">TFT_eSprite::createPalette</a></div><div class="ttdeci">void createPalette(uint16_t *palette=nullptr, uint8_t colors=16)</div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aa0750fd482893b39dce195c410889bd2"><div class="ttname"><a href="classTFT__eSprite.html#aa0750fd482893b39dce195c410889bd2">TFT_eSprite::_sy</a></div><div class="ttdeci">int32_t _sy</div><div class="ttdef"><b>Definition</b> <a href="#l00180">Sprite.h:180</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aa25f9f45f211a0da9f463af2eda63adb"><div class="ttname"><a href="classTFT__eSprite.html#aa25f9f45f211a0da9f463af2eda63adb">TFT_eSprite::getPaletteColor</a></div><div class="ttdeci">uint16_t getPaletteColor(uint8_t index)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00361">Sprite.cpp:361</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aa6e6f8f33ffcdbaef756023b67ba8617"><div class="ttname"><a href="classTFT__eSprite.html#aa6e6f8f33ffcdbaef756023b67ba8617">TFT_eSprite::getRotation</a></div><div class="ttdeci">uint8_t getRotation(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01620">Sprite.cpp:1620</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aa8fe18176d436e37873466df98339c90"><div class="ttname"><a href="classTFT__eSprite.html#aa8fe18176d436e37873466df98339c90">TFT_eSprite::_cosra</a></div><div class="ttdeci">int32_t _cosra</div><div class="ttdef"><b>Definition</b> <a href="#l00174">Sprite.h:174</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aaa7ac9604b85bf1d28a48160c8f4f6ae"><div class="ttname"><a href="classTFT__eSprite.html#aaa7ac9604b85bf1d28a48160c8f4f6ae">TFT_eSprite::pushImage</a></div><div class="ttdeci">void pushImage(int32_t x0, int32_t y0, int32_t w, int32_t h, uint16_t *data, uint8_t sbpp=0)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01031">Sprite.cpp:1031</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aab3b167b4a7dfb8b87d5063e062d9f5a"><div class="ttname"><a href="classTFT__eSprite.html#aab3b167b4a7dfb8b87d5063e062d9f5a">TFT_eSprite::created</a></div><div class="ttdeci">bool created(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00129">Sprite.cpp:129</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ab47cf2f10e3fc9ebfe36ae67719c7363"><div class="ttname"><a href="classTFT__eSprite.html#ab47cf2f10e3fc9ebfe36ae67719c7363">TFT_eSprite::drawGlyph</a></div><div class="ttdeci">void drawGlyph(uint16_t code)</div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ab703fb051b5b8b72fe8e438ef01eda34"><div class="ttname"><a href="classTFT__eSprite.html#ab703fb051b5b8b72fe8e438ef01eda34">TFT_eSprite::createPalette</a></div><div class="ttdeci">void createPalette(const uint16_t *palette=nullptr, uint8_t colors=16)</div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ab798b8426fbf23431e535ec5471736d8"><div class="ttname"><a href="classTFT__eSprite.html#ab798b8426fbf23431e535ec5471736d8">TFT_eSprite::setScrollRect</a></div><div class="ttdeci">void setScrollRect(int32_t x, int32_t y, int32_t w, int32_t h, uint16_t color=TFT_BLACK)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01393">Sprite.cpp:1393</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ac9971a8946d86529f31774e7b096eb2d"><div class="ttname"><a href="classTFT__eSprite.html#ac9971a8946d86529f31774e7b096eb2d">TFT_eSprite::_sh</a></div><div class="ttdeci">uint32_t _sh</div><div class="ttdef"><b>Definition</b> <a href="#l00181">Sprite.h:181</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ad58fe2f7b9583040b150b827c7960817"><div class="ttname"><a href="classTFT__eSprite.html#ad58fe2f7b9583040b150b827c7960817">TFT_eSprite::setPaletteColor</a></div><div class="ttdeci">void setPaletteColor(uint8_t index, uint16_t color)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00349">Sprite.cpp:349</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_adc42520af92c8e47c9069d4496291388"><div class="ttname"><a href="classTFT__eSprite.html#adc42520af92c8e47c9069d4496291388">TFT_eSprite::deleteSprite</a></div><div class="ttdeci">void deleteSprite(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00373">Sprite.cpp:373</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_adea45a73a254ef7d048202bc89518643"><div class="ttname"><a href="classTFT__eSprite.html#adea45a73a254ef7d048202bc89518643">TFT_eSprite::setColorDepth</a></div><div class="ttdeci">void * setColorDepth(int8_t b)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00301">Sprite.cpp:301</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_adf31a4939edee4095249ba94f0902dea"><div class="ttname"><a href="classTFT__eSprite.html#adf31a4939edee4095249ba94f0902dea">TFT_eSprite::_sw</a></div><div class="ttdeci">uint32_t _sw</div><div class="ttdef"><b>Definition</b> <a href="#l00181">Sprite.h:181</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ae00520e7c5d7ae34620a6a8a23a530d3"><div class="ttname"><a href="classTFT__eSprite.html#ae00520e7c5d7ae34620a6a8a23a530d3">TFT_eSprite::setBitmapColor</a></div><div class="ttdeci">void setBitmapColor(uint16_t fg, uint16_t bg)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00337">Sprite.cpp:337</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ae008b830fe6fb27e3c29dd75f79ef463"><div class="ttname"><a href="classTFT__eSprite.html#ae008b830fe6fb27e3c29dd75f79ef463">TFT_eSprite::_img4</a></div><div class="ttdeci">uint8_t * _img4</div><div class="ttdef"><b>Definition</b> <a href="#l00167">Sprite.h:167</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ae37992aa472702009e18963426e55cbf"><div class="ttname"><a href="classTFT__eSprite.html#ae37992aa472702009e18963426e55cbf">TFT_eSprite::_xe</a></div><div class="ttdeci">int32_t _xe</div><div class="ttdef"><b>Definition</b> <a href="#l00179">Sprite.h:179</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_ae940bb518a951c098b1d43f8307e4c39"><div class="ttname"><a href="classTFT__eSprite.html#ae940bb518a951c098b1d43f8307e4c39">TFT_eSprite::printToSprite</a></div><div class="ttdeci">void printToSprite(String string)</div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aea4780309eac5fb5dbe79f88e52a5473"><div class="ttname"><a href="classTFT__eSprite.html#aea4780309eac5fb5dbe79f88e52a5473">TFT_eSprite::_yptr</a></div><div class="ttdeci">int32_t _yptr</div><div class="ttdef"><b>Definition</b> <a href="#l00179">Sprite.h:179</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_aeaaf00c611161aa0ce56c9d66b911038"><div class="ttname"><a href="classTFT__eSprite.html#aeaaf00c611161aa0ce56c9d66b911038">TFT_eSprite::height</a></div><div class="ttdeci">int16_t height(void)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l01577">Sprite.cpp:1577</a></div></div>
+<div class="ttc" id="aclassTFT__eSprite_html_af9f52612718f039c4cbc9da3d49f1d82"><div class="ttname"><a href="classTFT__eSprite.html#af9f52612718f039c4cbc9da3d49f1d82">TFT_eSprite::pushRotated</a></div><div class="ttdeci">bool pushRotated(int16_t angle, uint32_t transp=0x00FFFFFF)</div><div class="ttdef"><b>Definition</b> <a href="Sprite_8cpp_source.html#l00396">Sprite.cpp:396</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac5d2dc3534f30f704fd7529ad0f89ff1"><div class="ttname"><a href="main_8cpp.html#ac5d2dc3534f30f704fd7529ad0f89ff1">tft</a></div><div class="ttdeci">TFT_eSPI tft</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00061">main.cpp:61</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_181aaffaeb0e21d83e108f76ec753182.html">Extensions</a></li><li class="navelem"><a href="Sprite_8h.html">Sprite.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

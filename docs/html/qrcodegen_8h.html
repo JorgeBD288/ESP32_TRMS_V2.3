@@ -1,0 +1,1179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/extra/libs/qrcode/qrcodegen.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('qrcodegen_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo qrcodegen.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div>
+<p><a href="qrcodegen_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:qrcodegen_5FSegment" id="r_qrcodegen_5FSegment"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a44e02d707085c5157c9a4d1293786aaf" id="r_a44e02d707085c5157c9a4d1293786aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44e02d707085c5157c9a4d1293786aaf">qrcodegen_BUFFER_LEN_FOR_VERSION</a>(n)</td></tr>
+<tr class="memitem:a82257a23d67f51b04926c4fd64bc4fa5" id="r_a82257a23d67f51b04926c4fd64bc4fa5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82257a23d67f51b04926c4fd64bc4fa5">qrcodegen_BUFFER_LEN_MAX</a>&#160;&#160;&#160;<a class="el" href="#a44e02d707085c5157c9a4d1293786aaf">qrcodegen_BUFFER_LEN_FOR_VERSION</a>(<a class="el" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>)</td></tr>
+<tr class="memitem:a347f93227050ed89e6f70f0b1cfb64fe" id="r_a347f93227050ed89e6f70f0b1cfb64fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>&#160;&#160;&#160;40</td></tr>
+<tr class="memitem:a8d1f6f0044dde26b3cda74b815be3f2c" id="r_a8d1f6f0044dde26b3cda74b815be3f2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d1f6f0044dde26b3cda74b815be3f2c">qrcodegen_VERSION_MIN</a>&#160;&#160;&#160;1</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a4823d2c403f1e1ae151939d14003b65c" id="r_a4823d2c403f1e1ae151939d14003b65c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a> { <a class="el" href="#a4823d2c403f1e1ae151939d14003b65caa6f4e3ad3cd16ee38110410f1d14e18a">qrcodegen_Ecc_LOW</a> = 0
+, <a class="el" href="#a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a">qrcodegen_Ecc_MEDIUM</a>
+, <a class="el" href="#a4823d2c403f1e1ae151939d14003b65ca5f04fea8990526759c2014f9b65cd6b3">qrcodegen_Ecc_QUARTILE</a>
+, <a class="el" href="#a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501">qrcodegen_Ecc_HIGH</a>
+ }</td></tr>
+<tr class="memitem:ab76629ca36a731ee5fdd02ab06f6952e" id="r_ab76629ca36a731ee5fdd02ab06f6952e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a> { <br />
+&#160;&#160;<a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841">qrcodegen_Mask_AUTO</a> = -1
+, <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952ea432c7c933d09d790868926d1d0bca9f6">qrcodegen_Mask_0</a> = 0
+, <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952ea12f7a153833c932ae55ae43f590d68bf">qrcodegen_Mask_1</a>
+, <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952ea490f43ad946e38be19b6f4d7af0412d0">qrcodegen_Mask_2</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952ead0cf7acb420259a09a04d7ea5825736d">qrcodegen_Mask_3</a>
+, <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952eac73781e3dd5f9eede287feef45445284">qrcodegen_Mask_4</a>
+, <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952eace0ab4d89746779385f68bec68f7eacc">qrcodegen_Mask_5</a>
+, <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952ea5c6558779e1906cd16ef4a51434fd614">qrcodegen_Mask_6</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952eab511af9acf2dde5af0e9734bbba989ad">qrcodegen_Mask_7</a>
+<br />
+ }</td></tr>
+<tr class="memitem:abc07959354ad4ea91d2a97be2cce097b" id="r_abc07959354ad4ea91d2a97be2cce097b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc07959354ad4ea91d2a97be2cce097b">qrcodegen_Mode</a> { <br />
+&#160;&#160;<a class="el" href="#abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6">qrcodegen_Mode_NUMERIC</a> = 0x1
+, <a class="el" href="#abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1">qrcodegen_Mode_ALPHANUMERIC</a> = 0x2
+, <a class="el" href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a> = 0x4
+, <a class="el" href="#abc07959354ad4ea91d2a97be2cce097badc5fad762df1a0dff0462be08dbdb99f">qrcodegen_Mode_KANJI</a> = 0x8
+, <br />
+&#160;&#160;<a class="el" href="#abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5">qrcodegen_Mode_ECI</a> = 0x7
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a15e9a13d5e49596089d6506558f6e506" id="r_a15e9a13d5e49596089d6506558f6e506"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15e9a13d5e49596089d6506558f6e506">qrcodegen_calcSegmentBufferSize</a> (enum <a class="el" href="#abc07959354ad4ea91d2a97be2cce097b">qrcodegen_Mode</a> mode, size_t numChars)</td></tr>
+<tr class="memitem:a1cc45de66046354d5aad2ee1cc6b2581" id="r_a1cc45de66046354d5aad2ee1cc6b2581"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc45de66046354d5aad2ee1cc6b2581">qrcodegen_encodeBinary</a> (uint8_t dataAndTemp[], size_t dataLen, uint8_t qrcode[], enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a> ecl, int minVersion, int maxVersion, enum <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a> mask, bool boostEcl)</td></tr>
+<tr class="memitem:a41164e2a41efb324b919395ffde14fa7" id="r_a41164e2a41efb324b919395ffde14fa7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41164e2a41efb324b919395ffde14fa7">qrcodegen_encodeSegments</a> (const struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> segs[], size_t len, enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a> ecl, uint8_t tempBuffer[], uint8_t qrcode[])</td></tr>
+<tr class="memitem:a7df325ca1714e2a5a1305b9b75436f8f" id="r_a7df325ca1714e2a5a1305b9b75436f8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7df325ca1714e2a5a1305b9b75436f8f">qrcodegen_encodeSegmentsAdvanced</a> (const struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> segs[], size_t len, enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a> ecl, int minVersion, int maxVersion, int mask, bool boostEcl, uint8_t tempBuffer[], uint8_t qrcode[])</td></tr>
+<tr class="memitem:a2eb79247b6f8bed92514c1815fe0079c" id="r_a2eb79247b6f8bed92514c1815fe0079c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eb79247b6f8bed92514c1815fe0079c">qrcodegen_encodeText</a> (const char *text, uint8_t tempBuffer[], uint8_t qrcode[], enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a> ecl, int minVersion, int maxVersion, enum <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a> mask, bool boostEcl)</td></tr>
+<tr class="memitem:ac90fae8dd32872553aa99a20978dc22c" id="r_ac90fae8dd32872553aa99a20978dc22c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac90fae8dd32872553aa99a20978dc22c">qrcodegen_getMinFitVersion</a> (enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a> ecl, size_t dataLen)</td></tr>
+<tr class="memitem:a495cb24d97c9b90a9c1e8a62903debf5" id="r_a495cb24d97c9b90a9c1e8a62903debf5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a495cb24d97c9b90a9c1e8a62903debf5">qrcodegen_getModule</a> (const uint8_t qrcode[], int x, int y)</td></tr>
+<tr class="memitem:afe30b8ff2b6218f37a2945871e6f11b8" id="r_afe30b8ff2b6218f37a2945871e6f11b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe30b8ff2b6218f37a2945871e6f11b8">qrcodegen_getSize</a> (const uint8_t qrcode[])</td></tr>
+<tr class="memitem:a25856a1d9c76851f8b83640ba3c6a3fc" id="r_a25856a1d9c76851f8b83640ba3c6a3fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25856a1d9c76851f8b83640ba3c6a3fc">qrcodegen_isAlphanumeric</a> (const char *text)</td></tr>
+<tr class="memitem:aa873e0a91056118719064ea4f2a15013" id="r_aa873e0a91056118719064ea4f2a15013"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa873e0a91056118719064ea4f2a15013">qrcodegen_isNumeric</a> (const char *text)</td></tr>
+<tr class="memitem:aaed32d45f095ce02e6718c8a48f4393d" id="r_aaed32d45f095ce02e6718c8a48f4393d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaed32d45f095ce02e6718c8a48f4393d">qrcodegen_makeAlphanumeric</a> (const char *text, uint8_t buf[])</td></tr>
+<tr class="memitem:a5b28f0f89765839d8f4c8a803edc4ad4" id="r_a5b28f0f89765839d8f4c8a803edc4ad4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b28f0f89765839d8f4c8a803edc4ad4">qrcodegen_makeBytes</a> (const uint8_t data[], size_t len, uint8_t buf[])</td></tr>
+<tr class="memitem:a27c3b3d01e91f9532689adbb01c1ff2c" id="r_a27c3b3d01e91f9532689adbb01c1ff2c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c3b3d01e91f9532689adbb01c1ff2c">qrcodegen_makeEci</a> (long assignVal, uint8_t buf[])</td></tr>
+<tr class="memitem:aa1c8b8a85f121c8cd1be89ddab684d43" id="r_aa1c8b8a85f121c8cd1be89ddab684d43"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1c8b8a85f121c8cd1be89ddab684d43">qrcodegen_makeNumeric</a> (const char *digits, uint8_t buf[])</td></tr>
+<tr class="memitem:af4c81f8d440eaa1a5aebf17a4d8ab51b" id="r_af4c81f8d440eaa1a5aebf17a4d8ab51b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c81f8d440eaa1a5aebf17a4d8ab51b">qrcodegen_version2size</a> (int version)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a44e02d707085c5157c9a4d1293786aaf" name="a44e02d707085c5157c9a4d1293786aaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e02d707085c5157c9a4d1293786aaf">&#9670;&#160;</a></span>qrcodegen_BUFFER_LEN_FOR_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define qrcodegen_BUFFER_LEN_FOR_VERSION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">((((n) * 4 + 17) * ((n) * 4 + 17) + 7) / 8 + 1)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00139">139</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00203">qrcodegen_encodeSegmentsAdvanced()</a> y <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a>.</p>
+
+</div>
+</div>
+<a id="a82257a23d67f51b04926c4fd64bc4fa5" name="a82257a23d67f51b04926c4fd64bc4fa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82257a23d67f51b04926c4fd64bc4fa5">&#9670;&#160;</a></span>qrcodegen_BUFFER_LEN_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define qrcodegen_BUFFER_LEN_MAX&#160;&#160;&#160;<a class="el" href="#a44e02d707085c5157c9a4d1293786aaf">qrcodegen_BUFFER_LEN_FOR_VERSION</a>(<a class="el" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00144">144</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+
+</div>
+</div>
+<a id="a347f93227050ed89e6f70f0b1cfb64fe" name="a347f93227050ed89e6f70f0b1cfb64fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347f93227050ed89e6f70f0b1cfb64fe">&#9670;&#160;</a></span>qrcodegen_VERSION_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define qrcodegen_VERSION_MAX&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00133">133</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00291">addEccAndInterleave()</a>, <a class="el" href="qrcodegen_8c_source.html#l00336">getNumRawDataModules()</a>, <a class="el" href="qrcodegen_8c_source.html#l00195">qrcodegen_encodeSegments()</a>, <a class="el" href="qrcodegen_8c_source.html#l00203">qrcodegen_encodeSegmentsAdvanced()</a>, <a class="el" href="qrcodegen_8c_source.html#l01012">qrcodegen_getMinFitVersion()</a>, <a class="el" href="qrcodegen_8c_source.html#l00739">qrcodegen_getSize()</a> y <a class="el" href="qrcodegen_8c_source.html#l01028">qrcodegen_version2size()</a>.</p>
+
+</div>
+</div>
+<a id="a8d1f6f0044dde26b3cda74b815be3f2c" name="a8d1f6f0044dde26b3cda74b815be3f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1f6f0044dde26b3cda74b815be3f2c">&#9670;&#160;</a></span>qrcodegen_VERSION_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define qrcodegen_VERSION_MIN&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00132">132</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00291">addEccAndInterleave()</a>, <a class="el" href="qrcodegen_8c_source.html#l00336">getNumRawDataModules()</a>, <a class="el" href="qrcodegen_8c_source.html#l00195">qrcodegen_encodeSegments()</a>, <a class="el" href="qrcodegen_8c_source.html#l00203">qrcodegen_encodeSegmentsAdvanced()</a>, <a class="el" href="qrcodegen_8c_source.html#l01012">qrcodegen_getMinFitVersion()</a> y <a class="el" href="qrcodegen_8c_source.html#l00739">qrcodegen_getSize()</a>.</p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a4823d2c403f1e1ae151939d14003b65c" name="a4823d2c403f1e1ae151939d14003b65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4823d2c403f1e1ae151939d14003b65c">&#9670;&#160;</a></span>qrcodegen_Ecc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a4823d2c403f1e1ae151939d14003b65caa6f4e3ad3cd16ee38110410f1d14e18a" name="a4823d2c403f1e1ae151939d14003b65caa6f4e3ad3cd16ee38110410f1d14e18a"></a>qrcodegen_Ecc_LOW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a" name="a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a"></a>qrcodegen_Ecc_MEDIUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4823d2c403f1e1ae151939d14003b65ca5f04fea8990526759c2014f9b65cd6b3" name="a4823d2c403f1e1ae151939d14003b65ca5f04fea8990526759c2014f9b65cd6b3"></a>qrcodegen_Ecc_QUARTILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501" name="a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501"></a>qrcodegen_Ecc_HIGH&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00057">57</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>                   {</div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">// Must be declared in ascending order of error protection</span></div>
+<div class="line"><span class="lineno">   59</span>    <span class="comment">// so that an internal qrcodegen function works properly</span></div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_enumvalue" href="#a4823d2c403f1e1ae151939d14003b65caa6f4e3ad3cd16ee38110410f1d14e18a">qrcodegen_Ecc_LOW</a> = 0 ,  <span class="comment">// The QR Code can tolerate about  7% erroneous codewords</span></div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_enumvalue" href="#a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a">qrcodegen_Ecc_MEDIUM</a>  ,  <span class="comment">// The QR Code can tolerate about 15% erroneous codewords</span></div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_enumvalue" href="#a4823d2c403f1e1ae151939d14003b65ca5f04fea8990526759c2014f9b65cd6b3">qrcodegen_Ecc_QUARTILE</a>,  <span class="comment">// The QR Code can tolerate about 25% erroneous codewords</span></div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_enumvalue" href="#a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501">qrcodegen_Ecc_HIGH</a>    ,  <span class="comment">// The QR Code can tolerate about 30% erroneous codewords</span></div>
+<div class="line"><span class="lineno">   64</span>};</div>
+<div class="ttc" id="aqrcodegen_8h_html_a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a"><div class="ttname"><a href="#a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a">qrcodegen_Ecc_MEDIUM</a></div><div class="ttdeci">@ qrcodegen_Ecc_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00061">qrcodegen.h:61</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501"><div class="ttname"><a href="#a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501">qrcodegen_Ecc_HIGH</a></div><div class="ttdeci">@ qrcodegen_Ecc_HIGH</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00063">qrcodegen.h:63</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_a4823d2c403f1e1ae151939d14003b65ca5f04fea8990526759c2014f9b65cd6b3"><div class="ttname"><a href="#a4823d2c403f1e1ae151939d14003b65ca5f04fea8990526759c2014f9b65cd6b3">qrcodegen_Ecc_QUARTILE</a></div><div class="ttdeci">@ qrcodegen_Ecc_QUARTILE</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00062">qrcodegen.h:62</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_a4823d2c403f1e1ae151939d14003b65caa6f4e3ad3cd16ee38110410f1d14e18a"><div class="ttname"><a href="#a4823d2c403f1e1ae151939d14003b65caa6f4e3ad3cd16ee38110410f1d14e18a">qrcodegen_Ecc_LOW</a></div><div class="ttdeci">@ qrcodegen_Ecc_LOW</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00060">qrcodegen.h:60</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab76629ca36a731ee5fdd02ab06f6952e" name="ab76629ca36a731ee5fdd02ab06f6952e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab76629ca36a731ee5fdd02ab06f6952e">&#9670;&#160;</a></span>qrcodegen_Mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841" name="ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841"></a>qrcodegen_Mask_AUTO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952ea432c7c933d09d790868926d1d0bca9f6" name="ab76629ca36a731ee5fdd02ab06f6952ea432c7c933d09d790868926d1d0bca9f6"></a>qrcodegen_Mask_0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952ea12f7a153833c932ae55ae43f590d68bf" name="ab76629ca36a731ee5fdd02ab06f6952ea12f7a153833c932ae55ae43f590d68bf"></a>qrcodegen_Mask_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952ea490f43ad946e38be19b6f4d7af0412d0" name="ab76629ca36a731ee5fdd02ab06f6952ea490f43ad946e38be19b6f4d7af0412d0"></a>qrcodegen_Mask_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952ead0cf7acb420259a09a04d7ea5825736d" name="ab76629ca36a731ee5fdd02ab06f6952ead0cf7acb420259a09a04d7ea5825736d"></a>qrcodegen_Mask_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952eac73781e3dd5f9eede287feef45445284" name="ab76629ca36a731ee5fdd02ab06f6952eac73781e3dd5f9eede287feef45445284"></a>qrcodegen_Mask_4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952eace0ab4d89746779385f68bec68f7eacc" name="ab76629ca36a731ee5fdd02ab06f6952eace0ab4d89746779385f68bec68f7eacc"></a>qrcodegen_Mask_5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952ea5c6558779e1906cd16ef4a51434fd614" name="ab76629ca36a731ee5fdd02ab06f6952ea5c6558779e1906cd16ef4a51434fd614"></a>qrcodegen_Mask_6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab76629ca36a731ee5fdd02ab06f6952eab511af9acf2dde5af0e9734bbba989ad" name="ab76629ca36a731ee5fdd02ab06f6952eab511af9acf2dde5af0e9734bbba989ad"></a>qrcodegen_Mask_7&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00070">70</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                    {</div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">// A special value to tell the QR Code encoder to</span></div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">// automatically select an appropriate mask pattern</span></div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841">qrcodegen_Mask_AUTO</a> = -1,</div>
+<div class="line"><span class="lineno">   74</span>    <span class="comment">// The eight actual mask patterns</span></div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952ea432c7c933d09d790868926d1d0bca9f6">qrcodegen_Mask_0</a> = 0,</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952ea12f7a153833c932ae55ae43f590d68bf">qrcodegen_Mask_1</a>,</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952ea490f43ad946e38be19b6f4d7af0412d0">qrcodegen_Mask_2</a>,</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952ead0cf7acb420259a09a04d7ea5825736d">qrcodegen_Mask_3</a>,</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952eac73781e3dd5f9eede287feef45445284">qrcodegen_Mask_4</a>,</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952eace0ab4d89746779385f68bec68f7eacc">qrcodegen_Mask_5</a>,</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952ea5c6558779e1906cd16ef4a51434fd614">qrcodegen_Mask_6</a>,</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952eab511af9acf2dde5af0e9734bbba989ad">qrcodegen_Mask_7</a>,</div>
+<div class="line"><span class="lineno">   83</span>};</div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952ea12f7a153833c932ae55ae43f590d68bf"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952ea12f7a153833c932ae55ae43f590d68bf">qrcodegen_Mask_1</a></div><div class="ttdeci">@ qrcodegen_Mask_1</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00076">qrcodegen.h:76</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952ea432c7c933d09d790868926d1d0bca9f6"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952ea432c7c933d09d790868926d1d0bca9f6">qrcodegen_Mask_0</a></div><div class="ttdeci">@ qrcodegen_Mask_0</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00075">qrcodegen.h:75</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952ea490f43ad946e38be19b6f4d7af0412d0"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952ea490f43ad946e38be19b6f4d7af0412d0">qrcodegen_Mask_2</a></div><div class="ttdeci">@ qrcodegen_Mask_2</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00077">qrcodegen.h:77</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952ea5c6558779e1906cd16ef4a51434fd614"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952ea5c6558779e1906cd16ef4a51434fd614">qrcodegen_Mask_6</a></div><div class="ttdeci">@ qrcodegen_Mask_6</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00081">qrcodegen.h:81</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841">qrcodegen_Mask_AUTO</a></div><div class="ttdeci">@ qrcodegen_Mask_AUTO</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00073">qrcodegen.h:73</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952eab511af9acf2dde5af0e9734bbba989ad"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952eab511af9acf2dde5af0e9734bbba989ad">qrcodegen_Mask_7</a></div><div class="ttdeci">@ qrcodegen_Mask_7</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00082">qrcodegen.h:82</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952eac73781e3dd5f9eede287feef45445284"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952eac73781e3dd5f9eede287feef45445284">qrcodegen_Mask_4</a></div><div class="ttdeci">@ qrcodegen_Mask_4</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00079">qrcodegen.h:79</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952eace0ab4d89746779385f68bec68f7eacc"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952eace0ab4d89746779385f68bec68f7eacc">qrcodegen_Mask_5</a></div><div class="ttdeci">@ qrcodegen_Mask_5</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00080">qrcodegen.h:80</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952ead0cf7acb420259a09a04d7ea5825736d"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952ead0cf7acb420259a09a04d7ea5825736d">qrcodegen_Mask_3</a></div><div class="ttdeci">@ qrcodegen_Mask_3</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00078">qrcodegen.h:78</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abc07959354ad4ea91d2a97be2cce097b" name="abc07959354ad4ea91d2a97be2cce097b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc07959354ad4ea91d2a97be2cce097b">&#9670;&#160;</a></span>qrcodegen_Mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#abc07959354ad4ea91d2a97be2cce097b">qrcodegen_Mode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6" name="abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6"></a>qrcodegen_Mode_NUMERIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1" name="abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1"></a>qrcodegen_Mode_ALPHANUMERIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d" name="abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d"></a>qrcodegen_Mode_BYTE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abc07959354ad4ea91d2a97be2cce097badc5fad762df1a0dff0462be08dbdb99f" name="abc07959354ad4ea91d2a97be2cce097badc5fad762df1a0dff0462be08dbdb99f"></a>qrcodegen_Mode_KANJI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5" name="abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5"></a>qrcodegen_Mode_ECI&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8h_source.html#l00089">89</a> del archivo <a class="el" href="qrcodegen_8h_source.html">qrcodegen.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>                    {</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6">qrcodegen_Mode_NUMERIC</a>      = 0x1,</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1">qrcodegen_Mode_ALPHANUMERIC</a> = 0x2,</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a>         = 0x4,</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097badc5fad762df1a0dff0462be08dbdb99f">qrcodegen_Mode_KANJI</a>        = 0x8,</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5">qrcodegen_Mode_ECI</a>          = 0x7,</div>
+<div class="line"><span class="lineno">   95</span>};</div>
+<div class="ttc" id="aqrcodegen_8h_html_abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6"><div class="ttname"><a href="#abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6">qrcodegen_Mode_NUMERIC</a></div><div class="ttdeci">@ qrcodegen_Mode_NUMERIC</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00090">qrcodegen.h:90</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1"><div class="ttname"><a href="#abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1">qrcodegen_Mode_ALPHANUMERIC</a></div><div class="ttdeci">@ qrcodegen_Mode_ALPHANUMERIC</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00091">qrcodegen.h:91</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d"><div class="ttname"><a href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a></div><div class="ttdeci">@ qrcodegen_Mode_BYTE</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00092">qrcodegen.h:92</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_abc07959354ad4ea91d2a97be2cce097badc5fad762df1a0dff0462be08dbdb99f"><div class="ttname"><a href="#abc07959354ad4ea91d2a97be2cce097badc5fad762df1a0dff0462be08dbdb99f">qrcodegen_Mode_KANJI</a></div><div class="ttdeci">@ qrcodegen_Mode_KANJI</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00093">qrcodegen.h:93</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5"><div class="ttname"><a href="#abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5">qrcodegen_Mode_ECI</a></div><div class="ttdeci">@ qrcodegen_Mode_ECI</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00094">qrcodegen.h:94</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a15e9a13d5e49596089d6506558f6e506" name="a15e9a13d5e49596089d6506558f6e506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e9a13d5e49596089d6506558f6e506">&#9670;&#160;</a></span>qrcodegen_calcSegmentBufferSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t qrcodegen_calcSegmentBufferSize </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="#abc07959354ad4ea91d2a97be2cce097b">qrcodegen_Mode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>numChars</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00819">819</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  819</span>                                                                                  {</div>
+<div class="line"><span class="lineno">  820</span>    <span class="keywordtype">int</span> temp = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(mode, numChars);</div>
+<div class="line"><span class="lineno">  821</span>    <span class="keywordflow">if</span> (temp == -1)</div>
+<div class="line"><span class="lineno">  822</span>        <span class="keywordflow">return</span> SIZE_MAX;</div>
+<div class="line"><span class="lineno">  823</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(0 &lt;= temp &amp;&amp; temp &lt;= INT16_MAX);</div>
+<div class="line"><span class="lineno">  824</span>    <span class="keywordflow">return</span> ((<span class="keywordtype">size_t</span>)temp + 7) / 8;</div>
+<div class="line"><span class="lineno">  825</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a6f28be74978da222b03c2694241d3d01"><div class="ttname"><a href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a></div><div class="ttdeci">#define LV_ASSERT(expr)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00037">lv_assert.h:37</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_ae34ade648f24fea23665ebe784556a62"><div class="ttname"><a href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a></div><div class="ttdeci">testable int calcSegmentBitLength(enum qrcodegen_Mode mode, size_t numChars)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00836">qrcodegen.c:836</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a> y <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a>.</p>
+
+</div>
+</div>
+<a id="a1cc45de66046354d5aad2ee1cc6b2581" name="a1cc45de66046354d5aad2ee1cc6b2581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc45de66046354d5aad2ee1cc6b2581">&#9670;&#160;</a></span>qrcodegen_encodeBinary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_encodeBinary </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>dataAndTemp</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>dataLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>qrcode</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></td>          <td class="paramname"><span class="paramname"><em>ecl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>minVersion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxVersion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a></td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>boostEcl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00166">166</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>                                                                                                         {</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> seg;</div>
+<div class="line"><span class="lineno">  170</span>    seg.<a class="code hl_variable" href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">mode</a> = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a>;</div>
+<div class="line"><span class="lineno">  171</span>    seg.bitLength = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(seg.mode, dataLen);</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span> (seg.bitLength == -1) {</div>
+<div class="line"><span class="lineno">  173</span>        qrcode[0] = 0;  <span class="comment">// Set size to invalid value for safety</span></div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  176</span>    seg.numChars = (int)dataLen;</div>
+<div class="line"><span class="lineno">  177</span>    seg.data = dataAndTemp;</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="qrcodegen_8c.html#a7df325ca1714e2a5a1305b9b75436f8f">qrcodegen_encodeSegmentsAdvanced</a>(&amp;seg, 1, ecl, minVersion, maxVersion, mask, boostEcl, dataAndTemp, qrcode);</div>
+<div class="line"><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aqrcodegen_8c_html_a7df325ca1714e2a5a1305b9b75436f8f"><div class="ttname"><a href="qrcodegen_8c.html#a7df325ca1714e2a5a1305b9b75436f8f">qrcodegen_encodeSegmentsAdvanced</a></div><div class="ttdeci">bool qrcodegen_encodeSegmentsAdvanced(const struct qrcodegen_Segment segs[], size_t len, enum qrcodegen_Ecc ecl, int minVersion, int maxVersion, int mask, bool boostEcl, uint8_t tempBuffer[], uint8_t qrcode[])</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00203">qrcodegen.c:203</a></div></div>
+<div class="ttc" id="astructqrcodegen__Segment_html"><div class="ttname"><a href="structqrcodegen__Segment.html">qrcodegen_Segment</a></div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00109">qrcodegen.h:109</a></div></div>
+<div class="ttc" id="astructqrcodegen__Segment_html_aec23b42bfdb2a0468bfffca96343b513"><div class="ttname"><a href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">qrcodegen_Segment::mode</a></div><div class="ttdeci">enum qrcodegen_Mode mode</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00111">qrcodegen.h:111</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8c_source.html#l00203">qrcodegen_encodeSegmentsAdvanced()</a> y <a class="el" href="qrcodegen_8h_source.html#l00092">qrcodegen_Mode_BYTE</a>.</p>
+
+</div>
+</div>
+<a id="a41164e2a41efb324b919395ffde14fa7" name="a41164e2a41efb324b919395ffde14fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41164e2a41efb324b919395ffde14fa7">&#9670;&#160;</a></span>qrcodegen_encodeSegments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_encodeSegments </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a></td>          <td class="paramname"><span class="paramname"><em>segs</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></td>          <td class="paramname"><span class="paramname"><em>ecl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>tempBuffer</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>qrcode</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00195">195</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>                                                                        {</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="qrcodegen_8c.html#a7df325ca1714e2a5a1305b9b75436f8f">qrcodegen_encodeSegmentsAdvanced</a>(segs, len, ecl,</div>
+<div class="line"><span class="lineno">  198</span>        <a class="code hl_define" href="#a8d1f6f0044dde26b3cda74b815be3f2c">qrcodegen_VERSION_MIN</a>, <a class="code hl_define" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>, -1, <span class="keyword">true</span>, tempBuffer, qrcode);</div>
+<div class="line"><span class="lineno">  199</span>}</div>
+<div class="ttc" id="aqrcodegen_8h_html_a347f93227050ed89e6f70f0b1cfb64fe"><div class="ttname"><a href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a></div><div class="ttdeci">#define qrcodegen_VERSION_MAX</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00133">qrcodegen.h:133</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_a8d1f6f0044dde26b3cda74b815be3f2c"><div class="ttname"><a href="#a8d1f6f0044dde26b3cda74b815be3f2c">qrcodegen_VERSION_MIN</a></div><div class="ttdeci">#define qrcodegen_VERSION_MIN</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00132">qrcodegen.h:132</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00203">qrcodegen_encodeSegmentsAdvanced()</a>, <a class="el" href="qrcodegen_8h_source.html#l00133">qrcodegen_VERSION_MAX</a> y <a class="el" href="qrcodegen_8h_source.html#l00132">qrcodegen_VERSION_MIN</a>.</p>
+
+</div>
+</div>
+<a id="a7df325ca1714e2a5a1305b9b75436f8f" name="a7df325ca1714e2a5a1305b9b75436f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7df325ca1714e2a5a1305b9b75436f8f">&#9670;&#160;</a></span>qrcodegen_encodeSegmentsAdvanced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_encodeSegmentsAdvanced </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a></td>          <td class="paramname"><span class="paramname"><em>segs</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></td>          <td class="paramname"><span class="paramname"><em>ecl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>minVersion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxVersion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>boostEcl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>tempBuffer</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>qrcode</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00203">203</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>                                                                                                         {</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(segs != NULL || len == 0);</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(<a class="code hl_define" href="#a8d1f6f0044dde26b3cda74b815be3f2c">qrcodegen_VERSION_MIN</a> &lt;= minVersion &amp;&amp; minVersion &lt;= maxVersion &amp;&amp; maxVersion &lt;= <a class="code hl_define" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>);</div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(0 &lt;= (<span class="keywordtype">int</span>)ecl &amp;&amp; (<span class="keywordtype">int</span>)ecl &lt;= 3 &amp;&amp; -1 &lt;= (<span class="keywordtype">int</span>)mask &amp;&amp; (<span class="keywordtype">int</span>)mask &lt;= 7);</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <span class="comment">// Find the minimal version number to use</span></div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordtype">int</span> version, dataUsedBits;</div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">for</span> (version = minVersion; ; version++) {</div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordtype">int</span> dataCapacityBits = <a class="code hl_function" href="qrcodegen_8c.html#ae3402527eaf904babc6f218acd6195af">getNumDataCodewords</a>(version, ecl) * 8;  <span class="comment">// Number of data bits available</span></div>
+<div class="line"><span class="lineno">  213</span>        dataUsedBits = <a class="code hl_function" href="qrcodegen_8c.html#a2a6584906b509f7a7833d20473de86e9">getTotalBits</a>(segs, len, version);</div>
+<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">if</span> (dataUsedBits != -1 &amp;&amp; dataUsedBits &lt;= dataCapacityBits)</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">break</span>;  <span class="comment">// This version number is found to be suitable</span></div>
+<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">if</span> (version &gt;= maxVersion) {  <span class="comment">// All versions in the range could not fit the given data</span></div>
+<div class="line"><span class="lineno">  217</span>            qrcode[0] = 0;  <span class="comment">// Set size to invalid value for safety</span></div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  219</span>        }</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(dataUsedBits != -1);</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="comment">// Increase the error correction level while the data still fits in the current version number</span></div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = (<span class="keywordtype">int</span>)<a class="code hl_enumvalue" href="#a4823d2c403f1e1ae151939d14003b65ca09d959a0d2081c1f9bf679d0b2aae62a">qrcodegen_Ecc_MEDIUM</a>; i &lt;= (int)<a class="code hl_enumvalue" href="#a4823d2c403f1e1ae151939d14003b65ca0fc0cef57fd9214dc450fb3ad4762501">qrcodegen_Ecc_HIGH</a>; i++) {  <span class="comment">// From low to high</span></div>
+<div class="line"><span class="lineno">  225</span>        <span class="keywordflow">if</span> (boostEcl &amp;&amp; dataUsedBits &lt;= <a class="code hl_function" href="qrcodegen_8c.html#ae3402527eaf904babc6f218acd6195af">getNumDataCodewords</a>(version, (<span class="keyword">enum</span> <a class="code hl_enumeration" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a>)i) * 8)</div>
+<div class="line"><span class="lineno">  226</span>            ecl = (<span class="keyword">enum</span> <a class="code hl_enumeration" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a>)i;</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    <span class="comment">// Concatenate all segments to create the data bit string</span></div>
+<div class="line"><span class="lineno">  230</span>    memset(qrcode, 0, <a class="code hl_define" href="#a44e02d707085c5157c9a4d1293786aaf">qrcodegen_BUFFER_LEN_FOR_VERSION</a>(version) * <span class="keyword">sizeof</span>(qrcode[0]));</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordtype">int</span> bitLen = 0;</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++) {</div>
+<div class="line"><span class="lineno">  233</span>        <span class="keyword">const</span> <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> *seg = &amp;segs[i];</div>
+<div class="line"><span class="lineno">  234</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>((<span class="keywordtype">int</span>)seg-&gt;<a class="code hl_variable" href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">mode</a>, 4, qrcode, &amp;bitLen);</div>
+<div class="line"><span class="lineno">  235</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(seg-&gt;<a class="code hl_variable" href="structqrcodegen__Segment.html#a36a92341f466a3a13acc56449943634c">numChars</a>, numCharCountBits(seg-&gt;<a class="code hl_variable" href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">mode</a>, version), qrcode, &amp;bitLen);</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; seg-&gt;<a class="code hl_variable" href="structqrcodegen__Segment.html#a3f9c0e922dbb1a8aa5f8fea7fbe90ad3">bitLength</a>; j++)</div>
+<div class="line"><span class="lineno">  237</span>            <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>((seg-&gt;<a class="code hl_variable" href="structqrcodegen__Segment.html#a0e9cd1915812ada8e06cfd49be30f8b9">data</a>[j &gt;&gt; 3] &gt;&gt; (7 - (j &amp; 7))) &amp; 1, 1, qrcode, &amp;bitLen);</div>
+<div class="line"><span class="lineno">  238</span>    }</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(bitLen == dataUsedBits);</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    <span class="comment">// Add terminator and pad up to a byte if applicable</span></div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordtype">int</span> dataCapacityBits = <a class="code hl_function" href="qrcodegen_8c.html#ae3402527eaf904babc6f218acd6195af">getNumDataCodewords</a>(version, ecl) * 8;</div>
+<div class="line"><span class="lineno">  243</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(bitLen &lt;= dataCapacityBits);</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordtype">int</span> terminatorBits = dataCapacityBits - bitLen;</div>
+<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">if</span> (terminatorBits &gt; 4)</div>
+<div class="line"><span class="lineno">  246</span>        terminatorBits = 4;</div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(0, terminatorBits, qrcode, &amp;bitLen);</div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(0, (8 - bitLen % 8) % 8, qrcode, &amp;bitLen);</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(bitLen % 8 == 0);</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <span class="comment">// Pad with alternating bytes until data capacity is reached</span></div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">for</span> (uint8_t padByte = 0xEC; bitLen &lt; dataCapacityBits; padByte ^= 0xEC ^ 0x11)</div>
+<div class="line"><span class="lineno">  253</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(padByte, 8, qrcode, &amp;bitLen);</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>    <span class="comment">// Draw function and data codeword modules</span></div>
+<div class="line"><span class="lineno">  256</span>    <a class="code hl_function" href="qrcodegen_8c.html#a26abd9af78a1ebc168486c698e29e539">addEccAndInterleave</a>(qrcode, version, ecl, tempBuffer);</div>
+<div class="line"><span class="lineno">  257</span>    <a class="code hl_function" href="qrcodegen_8c.html#a687c2ba705ea43d61e3cb6bd79cb0f41">initializeFunctionModules</a>(version, qrcode);</div>
+<div class="line"><span class="lineno">  258</span>    drawCodewords(tempBuffer, <a class="code hl_function" href="qrcodegen_8c.html#a8725e511e96e40dda99377e2f89bcda5">getNumRawDataModules</a>(version) / 8, qrcode);</div>
+<div class="line"><span class="lineno">  259</span>    drawWhiteFunctionModules(qrcode, version);</div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_function" href="qrcodegen_8c.html#a687c2ba705ea43d61e3cb6bd79cb0f41">initializeFunctionModules</a>(version, tempBuffer);</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="comment">// Handle masking</span></div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">if</span> (mask == <a class="code hl_enumvalue" href="#ab76629ca36a731ee5fdd02ab06f6952eaab7db72352dfe446a65025749b77c841">qrcodegen_Mask_AUTO</a>) {  <span class="comment">// Automatically choose best mask</span></div>
+<div class="line"><span class="lineno">  264</span>        <span class="keywordtype">long</span> minPenalty = LONG_MAX;</div>
+<div class="line"><span class="lineno">  265</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8; i++) {</div>
+<div class="line"><span class="lineno">  266</span>            <span class="keyword">enum</span> <a class="code hl_enumeration" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a> msk = (<span class="keyword">enum</span> <a class="code hl_enumeration" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a>)i;</div>
+<div class="line"><span class="lineno">  267</span>            applyMask(tempBuffer, qrcode, msk);</div>
+<div class="line"><span class="lineno">  268</span>            drawFormatBits(ecl, msk, qrcode);</div>
+<div class="line"><span class="lineno">  269</span>            <span class="keywordtype">long</span> penalty = getPenaltyScore(qrcode);</div>
+<div class="line"><span class="lineno">  270</span>            <span class="keywordflow">if</span> (penalty &lt; minPenalty) {</div>
+<div class="line"><span class="lineno">  271</span>                mask = msk;</div>
+<div class="line"><span class="lineno">  272</span>                minPenalty = penalty;</div>
+<div class="line"><span class="lineno">  273</span>            }</div>
+<div class="line"><span class="lineno">  274</span>            applyMask(tempBuffer, qrcode, msk);  <span class="comment">// Undoes the mask due to XOR</span></div>
+<div class="line"><span class="lineno">  275</span>        }</div>
+<div class="line"><span class="lineno">  276</span>    }</div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(0 &lt;= (<span class="keywordtype">int</span>)mask &amp;&amp; (<span class="keywordtype">int</span>)mask &lt;= 7);</div>
+<div class="line"><span class="lineno">  278</span>    applyMask(tempBuffer, qrcode, mask);</div>
+<div class="line"><span class="lineno">  279</span>    drawFormatBits(ecl, mask, qrcode);</div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  281</span>}</div>
+<div class="ttc" id="aqrcodegen_8c_html_a1770960166ba425470648e0bb2c4d147"><div class="ttname"><a href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a></div><div class="ttdeci">testable void appendBitsToBuffer(unsigned int val, int numBits, uint8_t buffer[], int *bitLen)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00184">qrcodegen.c:184</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_a26abd9af78a1ebc168486c698e29e539"><div class="ttname"><a href="qrcodegen_8c.html#a26abd9af78a1ebc168486c698e29e539">addEccAndInterleave</a></div><div class="ttdeci">testable void addEccAndInterleave(uint8_t data[], int version, enum qrcodegen_Ecc ecl, uint8_t result[])</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00291">qrcodegen.c:291</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_a2a6584906b509f7a7833d20473de86e9"><div class="ttname"><a href="qrcodegen_8c.html#a2a6584906b509f7a7833d20473de86e9">getTotalBits</a></div><div class="ttdeci">testable int getTotalBits(const struct qrcodegen_Segment segs[], size_t len, int version)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00976">qrcodegen.c:976</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_a687c2ba705ea43d61e3cb6bd79cb0f41"><div class="ttname"><a href="qrcodegen_8c.html#a687c2ba705ea43d61e3cb6bd79cb0f41">initializeFunctionModules</a></div><div class="ttdeci">testable void initializeFunctionModules(int version, uint8_t qrcode[])</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00413">qrcodegen.c:413</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_a8725e511e96e40dda99377e2f89bcda5"><div class="ttname"><a href="qrcodegen_8c.html#a8725e511e96e40dda99377e2f89bcda5">getNumRawDataModules</a></div><div class="ttdeci">testable int getNumRawDataModules(int ver)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00336">qrcodegen.c:336</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_ae3402527eaf904babc6f218acd6195af"><div class="ttname"><a href="qrcodegen_8c.html#ae3402527eaf904babc6f218acd6195af">getNumDataCodewords</a></div><div class="ttdeci">testable int getNumDataCodewords(int version, enum qrcodegen_Ecc ecl)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00324">qrcodegen.c:324</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_a44e02d707085c5157c9a4d1293786aaf"><div class="ttname"><a href="#a44e02d707085c5157c9a4d1293786aaf">qrcodegen_BUFFER_LEN_FOR_VERSION</a></div><div class="ttdeci">#define qrcodegen_BUFFER_LEN_FOR_VERSION(n)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00139">qrcodegen.h:139</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_a4823d2c403f1e1ae151939d14003b65c"><div class="ttname"><a href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></div><div class="ttdeci">qrcodegen_Ecc</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00057">qrcodegen.h:57</a></div></div>
+<div class="ttc" id="aqrcodegen_8h_html_ab76629ca36a731ee5fdd02ab06f6952e"><div class="ttname"><a href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a></div><div class="ttdeci">qrcodegen_Mask</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00070">qrcodegen.h:70</a></div></div>
+<div class="ttc" id="astructqrcodegen__Segment_html_a0e9cd1915812ada8e06cfd49be30f8b9"><div class="ttname"><a href="structqrcodegen__Segment.html#a0e9cd1915812ada8e06cfd49be30f8b9">qrcodegen_Segment::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00120">qrcodegen.h:120</a></div></div>
+<div class="ttc" id="astructqrcodegen__Segment_html_a36a92341f466a3a13acc56449943634c"><div class="ttname"><a href="structqrcodegen__Segment.html#a36a92341f466a3a13acc56449943634c">qrcodegen_Segment::numChars</a></div><div class="ttdeci">int numChars</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00116">qrcodegen.h:116</a></div></div>
+<div class="ttc" id="astructqrcodegen__Segment_html_a3f9c0e922dbb1a8aa5f8fea7fbe90ad3"><div class="ttname"><a href="structqrcodegen__Segment.html#a3f9c0e922dbb1a8aa5f8fea7fbe90ad3">qrcodegen_Segment::bitLength</a></div><div class="ttdeci">int bitLength</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8h_source.html#l00125">qrcodegen.h:125</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00291">addEccAndInterleave()</a>, <a class="el" href="qrcodegen_8c_source.html#l00184">appendBitsToBuffer()</a>, <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="qrcodegen_8c_source.html#l00324">getNumDataCodewords()</a>, <a class="el" href="qrcodegen_8c_source.html#l00336">getNumRawDataModules()</a>, <a class="el" href="qrcodegen_8c_source.html#l00976">getTotalBits()</a>, <a class="el" href="qrcodegen_8c_source.html#l00413">initializeFunctionModules()</a>, <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8h_source.html#l00139">qrcodegen_BUFFER_LEN_FOR_VERSION</a>, <a class="el" href="qrcodegen_8h_source.html#l00063">qrcodegen_Ecc_HIGH</a>, <a class="el" href="qrcodegen_8h_source.html#l00061">qrcodegen_Ecc_MEDIUM</a>, <a class="el" href="qrcodegen_8h_source.html#l00073">qrcodegen_Mask_AUTO</a>, <a class="el" href="qrcodegen_8h_source.html#l00133">qrcodegen_VERSION_MAX</a> y <a class="el" href="qrcodegen_8h_source.html#l00132">qrcodegen_VERSION_MIN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00166">qrcodegen_encodeBinary()</a>, <a class="el" href="qrcodegen_8c_source.html#l00195">qrcodegen_encodeSegments()</a> y <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a>.</p>
+
+</div>
+</div>
+<a id="a2eb79247b6f8bed92514c1815fe0079c" name="a2eb79247b6f8bed92514c1815fe0079c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb79247b6f8bed92514c1815fe0079c">&#9670;&#160;</a></span>qrcodegen_encodeText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_encodeText </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>tempBuffer</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>qrcode</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></td>          <td class="paramname"><span class="paramname"><em>ecl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>minVersion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxVersion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="#ab76629ca36a731ee5fdd02ab06f6952e">qrcodegen_Mask</a></td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>boostEcl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00128">128</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                                                                                         {</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordtype">size_t</span> textLen = strlen(text);</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span> (textLen == 0)</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="qrcodegen_8c.html#a7df325ca1714e2a5a1305b9b75436f8f">qrcodegen_encodeSegmentsAdvanced</a>(NULL, 0, ecl, minVersion, maxVersion, mask, boostEcl, tempBuffer, qrcode);</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">size_t</span> bufLen = <a class="code hl_define" href="#a44e02d707085c5157c9a4d1293786aaf">qrcodegen_BUFFER_LEN_FOR_VERSION</a>(maxVersion);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> seg;</div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="qrcodegen_8c.html#aa873e0a91056118719064ea4f2a15013">qrcodegen_isNumeric</a>(text)) {</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="qrcodegen_8c.html#a15e9a13d5e49596089d6506558f6e506">qrcodegen_calcSegmentBufferSize</a>(<a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6">qrcodegen_Mode_NUMERIC</a>, textLen) &gt; bufLen)</div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">goto</span> fail;</div>
+<div class="line"><span class="lineno">  140</span>        seg = <a class="code hl_function" href="qrcodegen_8c.html#aa1c8b8a85f121c8cd1be89ddab684d43">qrcodegen_makeNumeric</a>(text, tempBuffer);</div>
+<div class="line"><span class="lineno">  141</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="qrcodegen_8c.html#a25856a1d9c76851f8b83640ba3c6a3fc">qrcodegen_isAlphanumeric</a>(text)) {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="qrcodegen_8c.html#a15e9a13d5e49596089d6506558f6e506">qrcodegen_calcSegmentBufferSize</a>(<a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1">qrcodegen_Mode_ALPHANUMERIC</a>, textLen) &gt; bufLen)</div>
+<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">goto</span> fail;</div>
+<div class="line"><span class="lineno">  144</span>        seg = <a class="code hl_function" href="qrcodegen_8c.html#aaed32d45f095ce02e6718c8a48f4393d">qrcodegen_makeAlphanumeric</a>(text, tempBuffer);</div>
+<div class="line"><span class="lineno">  145</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> (textLen &gt; bufLen)</div>
+<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">goto</span> fail;</div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; textLen; i++)</div>
+<div class="line"><span class="lineno">  149</span>            tempBuffer[i] = (uint8_t)text[i];</div>
+<div class="line"><span class="lineno">  150</span>        seg.mode = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a>;</div>
+<div class="line"><span class="lineno">  151</span>        seg.bitLength = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(seg.mode, textLen);</div>
+<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">if</span> (seg.bitLength == -1)</div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">goto</span> fail;</div>
+<div class="line"><span class="lineno">  154</span>        seg.numChars = (int)textLen;</div>
+<div class="line"><span class="lineno">  155</span>        seg.data = tempBuffer;</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="qrcodegen_8c.html#a7df325ca1714e2a5a1305b9b75436f8f">qrcodegen_encodeSegmentsAdvanced</a>(&amp;seg, 1, ecl, minVersion, maxVersion, mask, boostEcl, tempBuffer, qrcode);</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>fail:</div>
+<div class="line"><span class="lineno">  160</span>    qrcode[0] = 0;  <span class="comment">// Set size to invalid value for safety</span></div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  162</span>}</div>
+<div class="ttc" id="aqrcodegen_8c_html_a15e9a13d5e49596089d6506558f6e506"><div class="ttname"><a href="qrcodegen_8c.html#a15e9a13d5e49596089d6506558f6e506">qrcodegen_calcSegmentBufferSize</a></div><div class="ttdeci">size_t qrcodegen_calcSegmentBufferSize(enum qrcodegen_Mode mode, size_t numChars)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00819">qrcodegen.c:819</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_a25856a1d9c76851f8b83640ba3c6a3fc"><div class="ttname"><a href="qrcodegen_8c.html#a25856a1d9c76851f8b83640ba3c6a3fc">qrcodegen_isAlphanumeric</a></div><div class="ttdeci">bool qrcodegen_isAlphanumeric(const char *text)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00797">qrcodegen.c:797</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_aa1c8b8a85f121c8cd1be89ddab684d43"><div class="ttname"><a href="qrcodegen_8c.html#aa1c8b8a85f121c8cd1be89ddab684d43">qrcodegen_makeNumeric</a></div><div class="ttdeci">struct qrcodegen_Segment qrcodegen_makeNumeric(const char *digits, uint8_t buf[])</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00878">qrcodegen.c:878</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_aa873e0a91056118719064ea4f2a15013"><div class="ttname"><a href="qrcodegen_8c.html#aa873e0a91056118719064ea4f2a15013">qrcodegen_isNumeric</a></div><div class="ttdeci">bool qrcodegen_isNumeric(const char *text)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00808">qrcodegen.c:808</a></div></div>
+<div class="ttc" id="aqrcodegen_8c_html_aaed32d45f095ce02e6718c8a48f4393d"><div class="ttname"><a href="qrcodegen_8c.html#aaed32d45f095ce02e6718c8a48f4393d">qrcodegen_makeAlphanumeric</a></div><div class="ttdeci">struct qrcodegen_Segment qrcodegen_makeAlphanumeric(const char *text, uint8_t buf[])</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00912">qrcodegen.c:912</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8h_source.html#l00139">qrcodegen_BUFFER_LEN_FOR_VERSION</a>, <a class="el" href="qrcodegen_8c_source.html#l00819">qrcodegen_calcSegmentBufferSize()</a>, <a class="el" href="qrcodegen_8c_source.html#l00203">qrcodegen_encodeSegmentsAdvanced()</a>, <a class="el" href="qrcodegen_8c_source.html#l00797">qrcodegen_isAlphanumeric()</a>, <a class="el" href="qrcodegen_8c_source.html#l00808">qrcodegen_isNumeric()</a>, <a class="el" href="qrcodegen_8c_source.html#l00912">qrcodegen_makeAlphanumeric()</a>, <a class="el" href="qrcodegen_8c_source.html#l00878">qrcodegen_makeNumeric()</a>, <a class="el" href="qrcodegen_8h_source.html#l00091">qrcodegen_Mode_ALPHANUMERIC</a>, <a class="el" href="qrcodegen_8h_source.html#l00092">qrcodegen_Mode_BYTE</a> y <a class="el" href="qrcodegen_8h_source.html#l00090">qrcodegen_Mode_NUMERIC</a>.</p>
+
+</div>
+</div>
+<a id="ac90fae8dd32872553aa99a20978dc22c" name="ac90fae8dd32872553aa99a20978dc22c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac90fae8dd32872553aa99a20978dc22c">&#9670;&#160;</a></span>qrcodegen_getMinFitVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qrcodegen_getMinFitVersion </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="#a4823d2c403f1e1ae151939d14003b65c">qrcodegen_Ecc</a></td>          <td class="paramname"><span class="paramname"><em>ecl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>dataLen</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l01012">1012</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1013</span>{</div>
+<div class="line"><span class="lineno"> 1014</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> seg;</div>
+<div class="line"><span class="lineno"> 1015</span>    seg.<a class="code hl_variable" href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">mode</a> = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a>;</div>
+<div class="line"><span class="lineno"> 1016</span>    seg.bitLength = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(seg.mode, dataLen);</div>
+<div class="line"><span class="lineno"> 1017</span>    seg.numChars = (int)dataLen;</div>
+<div class="line"><span class="lineno"> 1018</span> </div>
+<div class="line"><span class="lineno"> 1019</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> version = <a class="code hl_define" href="#a8d1f6f0044dde26b3cda74b815be3f2c">qrcodegen_VERSION_MIN</a>; version &lt;= <a class="code hl_define" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>; version++) {</div>
+<div class="line"><span class="lineno"> 1020</span>        <span class="keywordtype">int</span> dataCapacityBits = <a class="code hl_function" href="qrcodegen_8c.html#ae3402527eaf904babc6f218acd6195af">getNumDataCodewords</a>(version, ecl) * 8;  <span class="comment">// Number of data bits available</span></div>
+<div class="line"><span class="lineno"> 1021</span>        <span class="keywordtype">int</span> dataUsedBits = <a class="code hl_function" href="qrcodegen_8c.html#a2a6584906b509f7a7833d20473de86e9">getTotalBits</a>(&amp;seg, 1, version);</div>
+<div class="line"><span class="lineno"> 1022</span>        <span class="keywordflow">if</span> (dataUsedBits != -1 &amp;&amp; dataUsedBits &lt;= dataCapacityBits)</div>
+<div class="line"><span class="lineno"> 1023</span>            <span class="keywordflow">return</span> version;</div>
+<div class="line"><span class="lineno"> 1024</span>    }</div>
+<div class="line"><span class="lineno"> 1025</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno"> 1026</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="qrcodegen_8c_source.html#l00324">getNumDataCodewords()</a>, <a class="el" href="qrcodegen_8c_source.html#l00976">getTotalBits()</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8h_source.html#l00092">qrcodegen_Mode_BYTE</a>, <a class="el" href="qrcodegen_8h_source.html#l00133">qrcodegen_VERSION_MAX</a> y <a class="el" href="qrcodegen_8h_source.html#l00132">qrcodegen_VERSION_MIN</a>.</p>
+
+</div>
+</div>
+<a id="a495cb24d97c9b90a9c1e8a62903debf5" name="a495cb24d97c9b90a9c1e8a62903debf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a495cb24d97c9b90a9c1e8a62903debf5">&#9670;&#160;</a></span>qrcodegen_getModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_getModule </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>qrcode</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00749">749</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  749</span>                                                               {</div>
+<div class="line"><span class="lineno">  750</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(qrcode != NULL);</div>
+<div class="line"><span class="lineno">  751</span>    <span class="keywordtype">int</span> qrsize = qrcode[0];</div>
+<div class="line"><span class="lineno">  752</span>    <span class="keywordflow">return</span> (0 &lt;= x &amp;&amp; x &lt; qrsize &amp;&amp; 0 &lt;= y &amp;&amp; y &lt; qrsize) &amp;&amp; <a class="code hl_function" href="qrcodegen_8c.html#aa5e9c1e3dba75fbe2ad23258d8223a8e">getModule</a>(qrcode, x, y);</div>
+<div class="line"><span class="lineno">  753</span>}</div>
+<div class="ttc" id="aqrcodegen_8c_html_aa5e9c1e3dba75fbe2ad23258d8223a8e"><div class="ttname"><a href="qrcodegen_8c.html#aa5e9c1e3dba75fbe2ad23258d8223a8e">getModule</a></div><div class="ttdeci">testable bool getModule(const uint8_t qrcode[], int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="qrcodegen_8c_source.html#l00757">qrcodegen.c:757</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00757">getModule()</a> y <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="afe30b8ff2b6218f37a2945871e6f11b8" name="afe30b8ff2b6218f37a2945871e6f11b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe30b8ff2b6218f37a2945871e6f11b8">&#9670;&#160;</a></span>qrcodegen_getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qrcodegen_getSize </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>qrcode</em></span>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00739">739</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  739</span>                                              {</div>
+<div class="line"><span class="lineno">  740</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(qrcode != NULL);</div>
+<div class="line"><span class="lineno">  741</span>    <span class="keywordtype">int</span> result = qrcode[0];</div>
+<div class="line"><span class="lineno">  742</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>((<a class="code hl_define" href="#a8d1f6f0044dde26b3cda74b815be3f2c">qrcodegen_VERSION_MIN</a> * 4 + 17) &lt;= result</div>
+<div class="line"><span class="lineno">  743</span>        &amp;&amp; result &lt;= (<a class="code hl_define" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a> * 4 + 17));</div>
+<div class="line"><span class="lineno">  744</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  745</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00133">qrcodegen_VERSION_MAX</a> y <a class="el" href="qrcodegen_8h_source.html#l00132">qrcodegen_VERSION_MIN</a>.</p>
+
+</div>
+</div>
+<a id="a25856a1d9c76851f8b83640ba3c6a3fc" name="a25856a1d9c76851f8b83640ba3c6a3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25856a1d9c76851f8b83640ba3c6a3fc">&#9670;&#160;</a></span>qrcodegen_isAlphanumeric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_isAlphanumeric </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00797">797</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  797</span>                                                {</div>
+<div class="line"><span class="lineno">  798</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(text != NULL);</div>
+<div class="line"><span class="lineno">  799</span>    <span class="keywordflow">for</span> (; *text != <span class="charliteral">&#39;\0&#39;</span>; text++) {</div>
+<div class="line"><span class="lineno">  800</span>        <span class="keywordflow">if</span> (strchr(ALPHANUMERIC_CHARSET, *text) == NULL)</div>
+<div class="line"><span class="lineno">  801</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  802</span>    }</div>
+<div class="line"><span class="lineno">  803</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  804</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a>.</p>
+
+</div>
+</div>
+<a id="aa873e0a91056118719064ea4f2a15013" name="aa873e0a91056118719064ea4f2a15013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa873e0a91056118719064ea4f2a15013">&#9670;&#160;</a></span>qrcodegen_isNumeric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool qrcodegen_isNumeric </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00808">808</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  808</span>                                           {</div>
+<div class="line"><span class="lineno">  809</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(text != NULL);</div>
+<div class="line"><span class="lineno">  810</span>    <span class="keywordflow">for</span> (; *text != <span class="charliteral">&#39;\0&#39;</span>; text++) {</div>
+<div class="line"><span class="lineno">  811</span>        <span class="keywordflow">if</span> (*text &lt; <span class="charliteral">&#39;0&#39;</span> || *text &gt; <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><span class="lineno">  812</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  813</span>    }</div>
+<div class="line"><span class="lineno">  814</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  815</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a>.</p>
+
+</div>
+</div>
+<a id="aaed32d45f095ce02e6718c8a48f4393d" name="aaed32d45f095ce02e6718c8a48f4393d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed32d45f095ce02e6718c8a48f4393d">&#9670;&#160;</a></span>qrcodegen_makeAlphanumeric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> qrcodegen_makeAlphanumeric </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00912">912</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  912</span>                                                                                     {</div>
+<div class="line"><span class="lineno">  913</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(text != NULL);</div>
+<div class="line"><span class="lineno">  914</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> result;</div>
+<div class="line"><span class="lineno">  915</span>    <span class="keywordtype">size_t</span> len = strlen(text);</div>
+<div class="line"><span class="lineno">  916</span>    result.mode = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097ba37a682a91826e7b640c70b85e679b9d1">qrcodegen_Mode_ALPHANUMERIC</a>;</div>
+<div class="line"><span class="lineno">  917</span>    <span class="keywordtype">int</span> bitLen = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(result.mode, len);</div>
+<div class="line"><span class="lineno">  918</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(bitLen != -1);</div>
+<div class="line"><span class="lineno">  919</span>    result.numChars = (int)len;</div>
+<div class="line"><span class="lineno">  920</span>    <span class="keywordflow">if</span> (bitLen &gt; 0)</div>
+<div class="line"><span class="lineno">  921</span>        memset(buf, 0, ((<span class="keywordtype">size_t</span>)bitLen + 7) / 8 * <span class="keyword">sizeof</span>(buf[0]));</div>
+<div class="line"><span class="lineno">  922</span>    result.bitLength = 0;</div>
+<div class="line"><span class="lineno">  923</span> </div>
+<div class="line"><span class="lineno">  924</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> accumData = 0;</div>
+<div class="line"><span class="lineno">  925</span>    <span class="keywordtype">int</span> accumCount = 0;</div>
+<div class="line"><span class="lineno">  926</span>    <span class="keywordflow">for</span> (; *text != <span class="charliteral">&#39;\0&#39;</span>; text++) {</div>
+<div class="line"><span class="lineno">  927</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> *temp = strchr(ALPHANUMERIC_CHARSET, *text);</div>
+<div class="line"><span class="lineno">  928</span>        <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(temp != NULL);</div>
+<div class="line"><span class="lineno">  929</span>        accumData = accumData * 45 + (<span class="keywordtype">unsigned</span> int)(temp - ALPHANUMERIC_CHARSET);</div>
+<div class="line"><span class="lineno">  930</span>        accumCount++;</div>
+<div class="line"><span class="lineno">  931</span>        <span class="keywordflow">if</span> (accumCount == 2) {</div>
+<div class="line"><span class="lineno">  932</span>            <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(accumData, 11, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  933</span>            accumData = 0;</div>
+<div class="line"><span class="lineno">  934</span>            accumCount = 0;</div>
+<div class="line"><span class="lineno">  935</span>        }</div>
+<div class="line"><span class="lineno">  936</span>    }</div>
+<div class="line"><span class="lineno">  937</span>    <span class="keywordflow">if</span> (accumCount &gt; 0)  <span class="comment">// 1 character remaining</span></div>
+<div class="line"><span class="lineno">  938</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(accumData, 6, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  939</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(result.bitLength == bitLen);</div>
+<div class="line"><span class="lineno">  940</span>    result.data = buf;</div>
+<div class="line"><span class="lineno">  941</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  942</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00184">appendBitsToBuffer()</a>, <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8c_source.html#l00912">qrcodegen_makeAlphanumeric()</a> y <a class="el" href="qrcodegen_8h_source.html#l00091">qrcodegen_Mode_ALPHANUMERIC</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a> y <a class="el" href="qrcodegen_8c_source.html#l00912">qrcodegen_makeAlphanumeric()</a>.</p>
+
+</div>
+</div>
+<a id="a5b28f0f89765839d8f4c8a803edc4ad4" name="a5b28f0f89765839d8f4c8a803edc4ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b28f0f89765839d8f4c8a803edc4ad4">&#9670;&#160;</a></span>qrcodegen_makeBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> qrcodegen_makeBytes </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00863">863</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  863</span>                                                                                              {</div>
+<div class="line"><span class="lineno">  864</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(data != NULL || len == 0);</div>
+<div class="line"><span class="lineno">  865</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> result;</div>
+<div class="line"><span class="lineno">  866</span>    result.<a class="code hl_variable" href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">mode</a> = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baa1e2b04937fdae040e1107bf3d31ea2d">qrcodegen_Mode_BYTE</a>;</div>
+<div class="line"><span class="lineno">  867</span>    result.bitLength = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(result.mode, len);</div>
+<div class="line"><span class="lineno">  868</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(result.bitLength != -1);</div>
+<div class="line"><span class="lineno">  869</span>    result.numChars = (int)len;</div>
+<div class="line"><span class="lineno">  870</span>    <span class="keywordflow">if</span> (len &gt; 0)</div>
+<div class="line"><span class="lineno">  871</span>        memcpy(buf, <a class="code hl_variable" href="structqrcodegen__Segment.html#a0e9cd1915812ada8e06cfd49be30f8b9">data</a>, len * <span class="keyword">sizeof</span>(buf[0]));</div>
+<div class="line"><span class="lineno">  872</span>    result.data = buf;</div>
+<div class="line"><span class="lineno">  873</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  874</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8c_source.html#l00863">qrcodegen_makeBytes()</a> y <a class="el" href="qrcodegen_8h_source.html#l00092">qrcodegen_Mode_BYTE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00863">qrcodegen_makeBytes()</a>.</p>
+
+</div>
+</div>
+<a id="a27c3b3d01e91f9532689adbb01c1ff2c" name="a27c3b3d01e91f9532689adbb01c1ff2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c3b3d01e91f9532689adbb01c1ff2c">&#9670;&#160;</a></span>qrcodegen_makeEci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> qrcodegen_makeEci </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>assignVal</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00946">946</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  946</span>                                                                          {</div>
+<div class="line"><span class="lineno">  947</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> result;</div>
+<div class="line"><span class="lineno">  948</span>    result.<a class="code hl_variable" href="structqrcodegen__Segment.html#aec23b42bfdb2a0468bfffca96343b513">mode</a> = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097baeb08ea4e31c49946cfbf032946fea4e5">qrcodegen_Mode_ECI</a>;</div>
+<div class="line"><span class="lineno">  949</span>    result.numChars = 0;</div>
+<div class="line"><span class="lineno">  950</span>    result.bitLength = 0;</div>
+<div class="line"><span class="lineno">  951</span>    <span class="keywordflow">if</span> (assignVal &lt; 0) {</div>
+<div class="line"><span class="lineno">  952</span>        <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  953</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (assignVal &lt; (1 &lt;&lt; 7)) {</div>
+<div class="line"><span class="lineno">  954</span>        memset(buf, 0, 1 * <span class="keyword">sizeof</span>(buf[0]));</div>
+<div class="line"><span class="lineno">  955</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(assignVal, 8, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  956</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (assignVal &lt; (1 &lt;&lt; 14)) {</div>
+<div class="line"><span class="lineno">  957</span>        memset(buf, 0, 2 * <span class="keyword">sizeof</span>(buf[0]));</div>
+<div class="line"><span class="lineno">  958</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(2, 2, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  959</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(assignVal, 14, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  960</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (assignVal &lt; 1000000L) {</div>
+<div class="line"><span class="lineno">  961</span>        memset(buf, 0, 3 * <span class="keyword">sizeof</span>(buf[0]));</div>
+<div class="line"><span class="lineno">  962</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(6, 3, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  963</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(assignVal &gt;&gt; 10, 11, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  964</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(assignVal &amp; 0x3FF, 10, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  965</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  966</span>        <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  967</span>    }</div>
+<div class="line"><span class="lineno">  968</span>    result.data = buf;</div>
+<div class="line"><span class="lineno">  969</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  970</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00184">appendBitsToBuffer()</a>, <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8c_source.html#l00946">qrcodegen_makeEci()</a> y <a class="el" href="qrcodegen_8h_source.html#l00094">qrcodegen_Mode_ECI</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00946">qrcodegen_makeEci()</a>.</p>
+
+</div>
+</div>
+<a id="aa1c8b8a85f121c8cd1be89ddab684d43" name="aa1c8b8a85f121c8cd1be89ddab684d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c8b8a85f121c8cd1be89ddab684d43">&#9670;&#160;</a></span>qrcodegen_makeNumeric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> qrcodegen_makeNumeric </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>digits</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l00878">878</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  878</span>                                                                                  {</div>
+<div class="line"><span class="lineno">  879</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(digits != NULL);</div>
+<div class="line"><span class="lineno">  880</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structqrcodegen__Segment.html">qrcodegen_Segment</a> result;</div>
+<div class="line"><span class="lineno">  881</span>    <span class="keywordtype">size_t</span> len = strlen(digits);</div>
+<div class="line"><span class="lineno">  882</span>    result.mode = <a class="code hl_enumvalue" href="#abc07959354ad4ea91d2a97be2cce097ba309c8f7c2e85eb9f9510488e70f36fc6">qrcodegen_Mode_NUMERIC</a>;</div>
+<div class="line"><span class="lineno">  883</span>    <span class="keywordtype">int</span> bitLen = <a class="code hl_function" href="qrcodegen_8c.html#ae34ade648f24fea23665ebe784556a62">calcSegmentBitLength</a>(result.mode, len);</div>
+<div class="line"><span class="lineno">  884</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(bitLen != -1);</div>
+<div class="line"><span class="lineno">  885</span>    result.numChars = (int)len;</div>
+<div class="line"><span class="lineno">  886</span>    <span class="keywordflow">if</span> (bitLen &gt; 0)</div>
+<div class="line"><span class="lineno">  887</span>        memset(buf, 0, ((<span class="keywordtype">size_t</span>)bitLen + 7) / 8 * <span class="keyword">sizeof</span>(buf[0]));</div>
+<div class="line"><span class="lineno">  888</span>    result.bitLength = 0;</div>
+<div class="line"><span class="lineno">  889</span> </div>
+<div class="line"><span class="lineno">  890</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> accumData = 0;</div>
+<div class="line"><span class="lineno">  891</span>    <span class="keywordtype">int</span> accumCount = 0;</div>
+<div class="line"><span class="lineno">  892</span>    <span class="keywordflow">for</span> (; *digits != <span class="charliteral">&#39;\0&#39;</span>; digits++) {</div>
+<div class="line"><span class="lineno">  893</span>        <span class="keywordtype">char</span> c = *digits;</div>
+<div class="line"><span class="lineno">  894</span>        <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(<span class="charliteral">&#39;0&#39;</span> &lt;= c &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>);</div>
+<div class="line"><span class="lineno">  895</span>        accumData = accumData * 10 + (<span class="keywordtype">unsigned</span> int)(c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  896</span>        accumCount++;</div>
+<div class="line"><span class="lineno">  897</span>        <span class="keywordflow">if</span> (accumCount == 3) {</div>
+<div class="line"><span class="lineno">  898</span>            <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(accumData, 10, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  899</span>            accumData = 0;</div>
+<div class="line"><span class="lineno">  900</span>            accumCount = 0;</div>
+<div class="line"><span class="lineno">  901</span>        }</div>
+<div class="line"><span class="lineno">  902</span>    }</div>
+<div class="line"><span class="lineno">  903</span>    <span class="keywordflow">if</span> (accumCount &gt; 0)  <span class="comment">// 1 or 2 digits remaining</span></div>
+<div class="line"><span class="lineno">  904</span>        <a class="code hl_function" href="qrcodegen_8c.html#a1770960166ba425470648e0bb2c4d147">appendBitsToBuffer</a>(accumData, accumCount * 3 + 1, buf, &amp;result.bitLength);</div>
+<div class="line"><span class="lineno">  905</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(result.bitLength == bitLen);</div>
+<div class="line"><span class="lineno">  906</span>    result.data = buf;</div>
+<div class="line"><span class="lineno">  907</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  908</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8c_source.html#l00184">appendBitsToBuffer()</a>, <a class="el" href="qrcodegen_8h_source.html#l00125">qrcodegen_Segment::bitLength</a>, <a class="el" href="qrcodegen_8c_source.html#l00836">calcSegmentBitLength()</a>, <a class="el" href="qrcodegen_8h_source.html#l00120">qrcodegen_Segment::data</a>, <a class="el" href="lv__assert_8h_source.html#l00037">LV_ASSERT</a>, <a class="el" href="qrcodegen_8h_source.html#l00111">qrcodegen_Segment::mode</a>, <a class="el" href="qrcodegen_8h_source.html#l00116">qrcodegen_Segment::numChars</a>, <a class="el" href="qrcodegen_8c_source.html#l00878">qrcodegen_makeNumeric()</a> y <a class="el" href="qrcodegen_8h_source.html#l00090">qrcodegen_Mode_NUMERIC</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="qrcodegen_8c_source.html#l00128">qrcodegen_encodeText()</a> y <a class="el" href="qrcodegen_8c_source.html#l00878">qrcodegen_makeNumeric()</a>.</p>
+
+</div>
+</div>
+<a id="af4c81f8d440eaa1a5aebf17a4d8ab51b" name="af4c81f8d440eaa1a5aebf17a4d8ab51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c81f8d440eaa1a5aebf17a4d8ab51b">&#9670;&#160;</a></span>qrcodegen_version2size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int qrcodegen_version2size </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>version</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="qrcodegen_8c_source.html#l01028">1028</a> del archivo <a class="el" href="qrcodegen_8c_source.html">qrcodegen.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1029</span>{</div>
+<div class="line"><span class="lineno"> 1030</span>    <span class="keywordflow">if</span> (version &lt; qrcodegen_VERSION_MIN || version &gt; <a class="code hl_define" href="#a347f93227050ed89e6f70f0b1cfb64fe">qrcodegen_VERSION_MAX</a>) {</div>
+<div class="line"><span class="lineno"> 1031</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno"> 1032</span>    }</div>
+<div class="line"><span class="lineno"> 1033</span> </div>
+<div class="line"><span class="lineno"> 1034</span>    <span class="keywordflow">return</span> ((version - 1)*4 + 21);</div>
+<div class="line"><span class="lineno"> 1035</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="qrcodegen_8h_source.html#l00133">qrcodegen_VERSION_MAX</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_93aa2dddec5f27376870b3d9b97d09df.html">libs</a></li><li class="navelem"><a href="dir_470616ca9d5dea02ce7a2d7a4f1af99d.html">qrcode</a></li><li class="navelem"><a href="qrcodegen_8h.html">qrcodegen.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/extra/widgets/animimg/lv_animimg.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__animimg_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_animimg.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__animimg_8h_source.html">lv_animimg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../../../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__img__decoder_8h_source.html">../../../draw/lv_img_decoder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__fs_8h_source.html">../../../misc/lv_fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__txt_8h_source.html">../../../misc/lv_txt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">../../../misc/lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">../../../misc/lv_log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__anim_8h_source.html">../../../misc/lv_anim.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__animimg_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a83df207eaff4e11ccadd9bbd50994918" id="r_a83df207eaff4e11ccadd9bbd50994918"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83df207eaff4e11ccadd9bbd50994918">LV_OBJX_NAME</a>&#160;&#160;&#160;&quot;lv_animimg&quot;</td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#a12c53c4ecb9674e661e56fcae0a8e042">lv_animimg_class</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab28b662bd3a35e485e22dfe9fc9d7cf0" id="r_ab28b662bd3a35e485e22dfe9fc9d7cf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab28b662bd3a35e485e22dfe9fc9d7cf0">lv_animimg_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:a6ac40f50683a07a3abf82f16fceee1a8" id="r_a6ac40f50683a07a3abf82f16fceee1a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ac40f50683a07a3abf82f16fceee1a8">lv_animimg_set_duration</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint32_t duration)</td></tr>
+<tr class="memitem:a2c3b828644cc4671917df99437b0a336" id="r_a2c3b828644cc4671917df99437b0a336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c3b828644cc4671917df99437b0a336">lv_animimg_set_repeat_count</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t count)</td></tr>
+<tr class="memitem:a53ca8bc4909c8c0c5280536ffe5a8a14" id="r_a53ca8bc4909c8c0c5280536ffe5a8a14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53ca8bc4909c8c0c5280536ffe5a8a14">lv_animimg_set_src</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const void *dsc[], uint8_t num)</td></tr>
+<tr class="memitem:a0a00a2187bf49d067726b87751aae526" id="r_a0a00a2187bf49d067726b87751aae526"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a00a2187bf49d067726b87751aae526">lv_animimg_start</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a12c53c4ecb9674e661e56fcae0a8e042" id="r_a12c53c4ecb9674e661e56fcae0a8e042"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12c53c4ecb9674e661e56fcae0a8e042">lv_animimg_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a83df207eaff4e11ccadd9bbd50994918" name="a83df207eaff4e11ccadd9bbd50994918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83df207eaff4e11ccadd9bbd50994918">&#9670;&#160;</a></span>LV_OBJX_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_OBJX_NAME&#160;&#160;&#160;&quot;lv_animimg&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00028">28</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+
+</div>
+</div>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#a12c53c4ecb9674e661e56fcae0a8e042">lv_animimg_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00030">30</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ab28b662bd3a35e485e22dfe9fc9d7cf0" name="ab28b662bd3a35e485e22dfe9fc9d7cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab28b662bd3a35e485e22dfe9fc9d7cf0">&#9670;&#160;</a></span>lv_animimg_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_animimg_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create an animation image objects </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to an object, it will be the parent of the new button </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the created animation image object </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00059">59</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(&amp;<a class="code hl_variable" href="#a12c53c4ecb9674e661e56fcae0a8e042">lv_animimg_class</a>, parent);</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   65</span>}</div>
+<div class="ttc" id="alv__animimg_8c_html_a12c53c4ecb9674e661e56fcae0a8e042"><div class="ttname"><a href="#a12c53c4ecb9674e661e56fcae0a8e042">lv_animimg_class</a></div><div class="ttdeci">const lv_obj_class_t lv_animimg_class</div><div class="ttdef"><b>Definition</b> <a href="lv__animimg_8c_source.html#l00045">lv_animimg.c:45</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__animimg_8c_source.html#l00045">lv_animimg_class</a>, <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a> y <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__animimg__1_8c_source.html#l00013">lv_example_animimg_1()</a>.</p>
+
+</div>
+</div>
+<a id="a6ac40f50683a07a3abf82f16fceee1a8" name="a6ac40f50683a07a3abf82f16fceee1a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac40f50683a07a3abf82f16fceee1a8">&#9670;&#160;</a></span>lv_animimg_set_duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_animimg_set_duration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>img</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the image animation duration time. unit:ms </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>pointer to an animation image object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00087">87</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> * animimg = (<a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   91</span>    lv_anim_set_time(&amp;animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a534e4115b19de9143ceb3e1b5aad44a4">anim</a>, duration);</div>
+<div class="line"><span class="lineno">   92</span>    lv_anim_set_playback_delay(&amp;animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a534e4115b19de9143ceb3e1b5aad44a4">anim</a>, duration);</div>
+<div class="line"><span class="lineno">   93</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="astructlv__animimg__t_html"><div class="ttname"><a href="structlv__animimg__t.html">lv_animimg_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__animimg_8h_source.html#l00036">lv_animimg.h:36</a></div></div>
+<div class="ttc" id="astructlv__animimg__t_html_a534e4115b19de9143ceb3e1b5aad44a4"><div class="ttname"><a href="structlv__animimg__t.html#a534e4115b19de9143ceb3e1b5aad44a4">lv_animimg_t::anim</a></div><div class="ttdeci">lv_anim_t anim</div><div class="ttdef"><b>Definition</b> <a href="lv__animimg_8h_source.html#l00038">lv_animimg.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__animimg_8h_source.html#l00038">lv_animimg_t::anim</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__animimg__1_8c_source.html#l00013">lv_example_animimg_1()</a>.</p>
+
+</div>
+</div>
+<a id="a2c3b828644cc4671917df99437b0a336" name="a2c3b828644cc4671917df99437b0a336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3b828644cc4671917df99437b0a336">&#9670;&#160;</a></span>lv_animimg_set_repeat_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_animimg_set_repeat_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>img</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the image animation reapeatly play times. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>pointer to an animation image object </td></tr>
+    <tr><td class="paramname">count</td><td>the number of times to repeat the animation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00095">95</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> * animimg = (<a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   99</span>    lv_anim_set_repeat_count(&amp;animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a534e4115b19de9143ceb3e1b5aad44a4">anim</a>, count);</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__animimg_8h_source.html#l00038">lv_animimg_t::anim</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__animimg__1_8c_source.html#l00013">lv_example_animimg_1()</a>.</p>
+
+</div>
+</div>
+<a id="a53ca8bc4909c8c0c5280536ffe5a8a14" name="a53ca8bc4909c8c0c5280536ffe5a8a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ca8bc4909c8c0c5280536ffe5a8a14">&#9670;&#160;</a></span>lv_animimg_set_src()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_animimg_set_src </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>img</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the image animation images source. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img</td><td>pointer to an animation image object </td></tr>
+    <tr><td class="paramname">dsc</td><td>pointer to a series images </td></tr>
+    <tr><td class="paramname">num</td><td>images' number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00067">67</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> * animimg = (<a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   71</span>    animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a4528d8686a5630e3bcdd49ab5700318b">dsc</a> = dsc;</div>
+<div class="line"><span class="lineno">   72</span>    animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a4fdc885dcc31d617be328898dd68b619">pic_count</a> = num;</div>
+<div class="line"><span class="lineno">   73</span>    lv_anim_set_values(&amp;animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a534e4115b19de9143ceb3e1b5aad44a4">anim</a>, 0, num);</div>
+<div class="line"><span class="lineno">   74</span>}</div>
+<div class="ttc" id="astructlv__animimg__t_html_a4528d8686a5630e3bcdd49ab5700318b"><div class="ttname"><a href="structlv__animimg__t.html#a4528d8686a5630e3bcdd49ab5700318b">lv_animimg_t::dsc</a></div><div class="ttdeci">const void ** dsc</div><div class="ttdef"><b>Definition</b> <a href="lv__animimg_8h_source.html#l00040">lv_animimg.h:40</a></div></div>
+<div class="ttc" id="astructlv__animimg__t_html_a4fdc885dcc31d617be328898dd68b619"><div class="ttname"><a href="structlv__animimg__t.html#a4fdc885dcc31d617be328898dd68b619">lv_animimg_t::pic_count</a></div><div class="ttdeci">int8_t pic_count</div><div class="ttdef"><b>Definition</b> <a href="lv__animimg_8h_source.html#l00041">lv_animimg.h:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__animimg_8h_source.html#l00038">lv_animimg_t::anim</a>, <a class="el" href="lv__animimg_8h_source.html#l00040">lv_animimg_t::dsc</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__animimg_8h_source.html#l00041">lv_animimg_t::pic_count</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__animimg__1_8c_source.html#l00013">lv_example_animimg_1()</a>.</p>
+
+</div>
+</div>
+<a id="a0a00a2187bf49d067726b87751aae526" name="a0a00a2187bf49d067726b87751aae526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a00a2187bf49d067726b87751aae526">&#9670;&#160;</a></span>lv_animimg_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_animimg_start </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Startup the image animation. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an animation image object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00076">76</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> * animimg = (<a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_function" href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a>(&amp;animimg-&gt;<a class="code hl_variable" href="structlv__animimg__t.html#a534e4115b19de9143ceb3e1b5aad44a4">anim</a>);</div>
+<div class="line"><span class="lineno">   81</span>}</div>
+<div class="ttc" id="alv__anim_8c_html_a51a27d8a0a7d7337a08c9416217b9d02"><div class="ttname"><a href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a></div><div class="ttdeci">lv_anim_t * lv_anim_start(const lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00076">lv_anim.c:76</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__animimg_8h_source.html#l00038">lv_animimg_t::anim</a>, <a class="el" href="lv__anim_8c_source.html#l00076">lv_anim_start()</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__animimg__1_8c_source.html#l00013">lv_example_animimg_1()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a12c53c4ecb9674e661e56fcae0a8e042" name="a12c53c4ecb9674e661e56fcae0a8e042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c53c4ecb9674e661e56fcae0a8e042">&#9670;&#160;</a></span>lv_animimg_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_animimg_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_animimg_constructor,</div>
+<div class="line">    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a>),</div>
+<div class="line">    .base_class = &amp;<a class="code hl_variable" href="lv__img_8c.html#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></div>
+<div class="line">}</div>
+<div class="ttc" id="alv__img_8c_html_a8f1d39441a4aab884e50cbfaf312a419"><div class="ttname"><a href="lv__img_8c.html#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></div><div class="ttdeci">const lv_obj_class_t lv_img_class</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8c_source.html#l00040">lv_img.c:40</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__animimg_8c_source.html#l00045">45</a> del archivo <a class="el" href="lv__animimg_8c_source.html">lv_animimg.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                        {</div>
+<div class="line"><span class="lineno">   46</span>    .constructor_cb = lv_animimg_constructor,</div>
+<div class="line"><span class="lineno">   47</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__animimg__t.html">lv_animimg_t</a>),</div>
+<div class="line"><span class="lineno">   48</span>    .base_class = &amp;<a class="code hl_variable" href="lv__img_8c.html#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></div>
+<div class="line"><span class="lineno">   49</span>};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__animimg_8c_source.html#l00059">lv_animimg_create()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_9e157b4913999cc4d4f22086cdca63d9.html">animimg</a></li><li class="navelem"><a href="lv__animimg_8c.html">lv_animimg.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

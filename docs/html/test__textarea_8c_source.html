@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/tests/src/test_cases/test_textarea.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('test__textarea_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">test_textarea.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="test__textarea_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#if LV_BUILD_TEST</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../lvgl.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="unity_8h.html">unity/unity.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * active_screen = NULL;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * textarea = NULL;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * textarea_default_text = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">void</span> setUp(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    active_screen = lv_scr_act();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    textarea = <a class="code hl_function" href="lv__textarea_8c.html#ac9d2e7a81c0c6aac74614db3feac832c">lv_textarea_create</a>(active_screen);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> tearDown(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">/* Function run after every test */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> test_textarea_should_have_valid_documented_defualt_values(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    TEST_ASSERT(<a class="code hl_function" href="lv__textarea_8c.html#ac2df6217bce4b8fee2eb479e725982e3">lv_textarea_get_cursor_click_pos</a>(textarea));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    TEST_ASSERT_EQUAL(0U, <a class="code hl_function" href="lv__textarea_8c.html#a85aff0a0aa3698128cbd4fd518026c19">lv_textarea_get_one_line</a>(textarea));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/* No placeholder text should be set on widget creation */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    TEST_ASSERT_EQUAL_STRING(textarea_default_text, <a class="code hl_function" href="lv__textarea_8c.html#a74787567c7e59b16ce7bcfb7cd5f4662">lv_textarea_get_placeholder_text</a>(textarea));</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    TEST_ASSERT_EQUAL_STRING(textarea_default_text, <a class="code hl_function" href="lv__textarea_8c.html#abebded565ef81dcfc22405f0a4462c8c">lv_textarea_get_text</a>(textarea));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/* When in password mode the lv_textarea_get_text function returns</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * the actual text, not the bullet characters. */</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> test_textarea_should_return_actual_text_when_password_mode_is_enabled(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * text = <span class="stringliteral">&quot;Hello LVGL!&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="lv__textarea_8c.html#a5c675b8c0c2d366ce1b04182ff52606a">lv_textarea_add_text</a>(textarea, text);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="lv__textarea_8c.html#ad667bc93313ee673183b30396aceba67">lv_textarea_set_password_mode</a>(textarea, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    TEST_ASSERT_TRUE(<a class="code hl_function" href="lv__textarea_8c.html#a0da1826580fd6b75556a76cdf8faa957">lv_textarea_get_password_mode</a>(textarea));</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    TEST_ASSERT_EQUAL_STRING(text, <a class="code hl_function" href="lv__textarea_8c.html#abebded565ef81dcfc22405f0a4462c8c">lv_textarea_get_text</a>(textarea));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> test_textarea_should_update_label_style_with_one_line_enabled(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_struct" href="structlv__textarea__t.html">lv_textarea_t</a> * txt_ptr = (<a class="code hl_struct" href="structlv__textarea__t.html">lv_textarea_t</a> *) textarea;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="lv__textarea_8c.html#a5c675b8c0c2d366ce1b04182ff52606a">lv_textarea_add_text</a>(textarea, <span class="stringliteral">&quot;Hi&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_function" href="lv__textarea_8c.html#ac18b5648b95741dc3ae9c305cf14301e">lv_textarea_set_one_line</a>(textarea, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> left_padding = lv_obj_get_style_pad_left(txt_ptr-&gt;<a class="code hl_variable" href="structlv__textarea__t.html#aa9ca1925b1cad4f774967ed302bdf283">label</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> right_padding = lv_obj_get_style_pad_right(txt_ptr-&gt;<a class="code hl_variable" href="structlv__textarea__t.html#aa9ca1925b1cad4f774967ed302bdf283">label</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> line_width = <a class="code hl_function" href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a>(txt_ptr-&gt;<a class="code hl_variable" href="structlv__textarea__t.html#aa9ca1925b1cad4f774967ed302bdf283">label</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> expected_size = left_padding + right_padding + line_width;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    TEST_ASSERT(<a class="code hl_function" href="lv__textarea_8c.html#a85aff0a0aa3698128cbd4fd518026c19">lv_textarea_get_one_line</a>(textarea));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    TEST_ASSERT_EQUAL_UINT16(expected_size, <a class="code hl_function" href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a>(txt_ptr-&gt;<a class="code hl_variable" href="structlv__textarea__t.html#aa9ca1925b1cad4f774967ed302bdf283">label</a>));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    TEST_ASSERT_EQUAL_UINT16(lv_pct(100), lv_obj_get_style_min_width(txt_ptr-&gt;<a class="code hl_variable" href="structlv__textarea__t.html#aa9ca1925b1cad4f774967ed302bdf283">label</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> test_textarea_cursor_click_pos_field_update(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="lv__textarea_8c.html#a5b98f5314187fb4cb878f96aef4f390f">lv_textarea_set_cursor_click_pos</a>(textarea, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    TEST_ASSERT_FALSE(<a class="code hl_function" href="lv__textarea_8c.html#ac2df6217bce4b8fee2eb479e725982e3">lv_textarea_get_cursor_click_pos</a>(textarea));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> test_textarea_should_update_placeholder_text(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * new_placeholder = <span class="stringliteral">&quot;LVGL Rocks!!!!!&quot;</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * text = <span class="stringliteral">&quot;Hello LVGL!&quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">/* Allocating memory for placeholder text */</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="lv__textarea_8c.html#a09f9449e1f83d3f77e075dc982f9e6a7">lv_textarea_set_placeholder_text</a>(textarea, text);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    TEST_ASSERT_EQUAL_STRING(text, <a class="code hl_function" href="lv__textarea_8c.html#a74787567c7e59b16ce7bcfb7cd5f4662">lv_textarea_get_placeholder_text</a>(textarea));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">/* Reallocating memory for the new placeholder text */</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="lv__textarea_8c.html#a09f9449e1f83d3f77e075dc982f9e6a7">lv_textarea_set_placeholder_text</a>(textarea, new_placeholder);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    TEST_ASSERT_EQUAL_STRING(new_placeholder, <a class="code hl_function" href="lv__textarea_8c.html#a74787567c7e59b16ce7bcfb7cd5f4662">lv_textarea_get_placeholder_text</a>(textarea));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">/* Freeing allocated memory for placeholder text */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="lv__textarea_8c.html#a09f9449e1f83d3f77e075dc982f9e6a7">lv_textarea_set_placeholder_text</a>(textarea, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    TEST_ASSERT_EQUAL_STRING(<span class="stringliteral">&quot;&quot;</span>, <a class="code hl_function" href="lv__textarea_8c.html#a74787567c7e59b16ce7bcfb7cd5f4662">lv_textarea_get_placeholder_text</a>(textarea));</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> test_textarea_should_keep_only_accepted_chars(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * accepted_list = <span class="stringliteral">&quot;abcd&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="lv__textarea_8c.html#ad22627f685c20a24dd228d4020d61433">lv_textarea_set_accepted_chars</a>(textarea, accepted_list);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="lv__textarea_8c.html#a08adbdd5ba257b71e3b1bbda0f722700">lv_textarea_set_text</a>(textarea, <span class="stringliteral">&quot;abcde&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    TEST_ASSERT_EQUAL_STRING(accepted_list, <a class="code hl_function" href="lv__textarea_8c.html#abebded565ef81dcfc22405f0a4462c8c">lv_textarea_get_text</a>(textarea));</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">void</span> test_textarea_in_one_line_mode_should_ignore_line_break_characters(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_function" href="lv__textarea_8c.html#ac18b5648b95741dc3ae9c305cf14301e">lv_textarea_set_one_line</a>(textarea, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_function" href="lv__textarea_8c.html#ad588512e6e393024062306c369014040">lv_textarea_add_char</a>(textarea, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    TEST_ASSERT_EQUAL_STRING(textarea_default_text, <a class="code hl_function" href="lv__textarea_8c.html#abebded565ef81dcfc22405f0a4462c8c">lv_textarea_get_text</a>(textarea));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_function" href="lv__textarea_8c.html#ad588512e6e393024062306c369014040">lv_textarea_add_char</a>(textarea, <span class="charliteral">&#39;\r&#39;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    TEST_ASSERT_EQUAL_STRING(textarea_default_text, <a class="code hl_function" href="lv__textarea_8c.html#abebded565ef81dcfc22405f0a4462c8c">lv_textarea_get_text</a>(textarea));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a></div><div class="ttdeci">@ LV_PART_MAIN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00069">lv_obj.h:69</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a118b18e487255be1d8729239e9ddbee1"><div class="ttname"><a href="lv__obj__pos_8c.html#a118b18e487255be1d8729239e9ddbee1">lv_obj_get_width</a></div><div class="ttdeci">lv_coord_t lv_obj_get_width(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00555">lv_obj_pos.c:555</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a08adbdd5ba257b71e3b1bbda0f722700"><div class="ttname"><a href="lv__textarea_8c.html#a08adbdd5ba257b71e3b1bbda0f722700">lv_textarea_set_text</a></div><div class="ttdeci">void lv_textarea_set_text(lv_obj_t *obj, const char *txt)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00268">lv_textarea.c:268</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a09f9449e1f83d3f77e075dc982f9e6a7"><div class="ttname"><a href="lv__textarea_8c.html#a09f9449e1f83d3f77e075dc982f9e6a7">lv_textarea_set_placeholder_text</a></div><div class="ttdeci">void lv_textarea_set_placeholder_text(lv_obj_t *obj, const char *txt)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00315">lv_textarea.c:315</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a0da1826580fd6b75556a76cdf8faa957"><div class="ttname"><a href="lv__textarea_8c.html#a0da1826580fd6b75556a76cdf8faa957">lv_textarea_get_password_mode</a></div><div class="ttdeci">bool lv_textarea_get_password_mode(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00615">lv_textarea.c:615</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a5b98f5314187fb4cb878f96aef4f390f"><div class="ttname"><a href="lv__textarea_8c.html#a5b98f5314187fb4cb878f96aef4f390f">lv_textarea_set_cursor_click_pos</a></div><div class="ttdeci">void lv_textarea_set_cursor_click_pos(lv_obj_t *obj, bool en)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00396">lv_textarea.c:396</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a5c675b8c0c2d366ce1b04182ff52606a"><div class="ttname"><a href="lv__textarea_8c.html#a5c675b8c0c2d366ce1b04182ff52606a">lv_textarea_add_text</a></div><div class="ttdeci">void lv_textarea_add_text(lv_obj_t *obj, const char *txt)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00161">lv_textarea.c:161</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a74787567c7e59b16ce7bcfb7cd5f4662"><div class="ttname"><a href="lv__textarea_8c.html#a74787567c7e59b16ce7bcfb7cd5f4662">lv_textarea_get_placeholder_text</a></div><div class="ttdeci">const char * lv_textarea_get_placeholder_text(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00582">lv_textarea.c:582</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a85aff0a0aa3698128cbd4fd518026c19"><div class="ttname"><a href="lv__textarea_8c.html#a85aff0a0aa3698128cbd4fd518026c19">lv_textarea_get_one_line</a></div><div class="ttdeci">bool lv_textarea_get_one_line(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00640">lv_textarea.c:640</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_abebded565ef81dcfc22405f0a4462c8c"><div class="ttname"><a href="lv__textarea_8c.html#abebded565ef81dcfc22405f0a4462c8c">lv_textarea_get_text</a></div><div class="ttdeci">const char * lv_textarea_get_text(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00565">lv_textarea.c:565</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_ac18b5648b95741dc3ae9c305cf14301e"><div class="ttname"><a href="lv__textarea_8c.html#ac18b5648b95741dc3ae9c305cf14301e">lv_textarea_set_one_line</a></div><div class="ttdeci">void lv_textarea_set_one_line(lv_obj_t *obj, bool en)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00468">lv_textarea.c:468</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_ac2df6217bce4b8fee2eb479e725982e3"><div class="ttname"><a href="lv__textarea_8c.html#ac2df6217bce4b8fee2eb479e725982e3">lv_textarea_get_cursor_click_pos</a></div><div class="ttdeci">bool lv_textarea_get_cursor_click_pos(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00607">lv_textarea.c:607</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_ac9d2e7a81c0c6aac74614db3feac832c"><div class="ttname"><a href="lv__textarea_8c.html#ac9d2e7a81c0c6aac74614db3feac832c">lv_textarea_create</a></div><div class="ttdeci">lv_obj_t * lv_textarea_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00088">lv_textarea.c:88</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_ad22627f685c20a24dd228d4020d61433"><div class="ttname"><a href="lv__textarea_8c.html#ad22627f685c20a24dd228d4020d61433">lv_textarea_set_accepted_chars</a></div><div class="ttdeci">void lv_textarea_set_accepted_chars(lv_obj_t *obj, const char *list)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00492">lv_textarea.c:492</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_ad588512e6e393024062306c369014040"><div class="ttname"><a href="lv__textarea_8c.html#ad588512e6e393024062306c369014040">lv_textarea_add_char</a></div><div class="ttdeci">void lv_textarea_add_char(lv_obj_t *obj, uint32_t c)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00100">lv_textarea.c:100</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_ad667bc93313ee673183b30396aceba67"><div class="ttname"><a href="lv__textarea_8c.html#ad667bc93313ee673183b30396aceba67">lv_textarea_set_password_mode</a></div><div class="ttdeci">void lv_textarea_set_password_mode(lv_obj_t *obj, bool en)</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00404">lv_textarea.c:404</a></div></div>
+<div class="ttc" id="astructlv__textarea__t_html"><div class="ttname"><a href="structlv__textarea__t.html">lv_textarea_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8h_source.html#l00040">lv_textarea.h:40</a></div></div>
+<div class="ttc" id="astructlv__textarea__t_html_aa9ca1925b1cad4f774967ed302bdf283"><div class="ttname"><a href="structlv__textarea__t.html#aa9ca1925b1cad4f774967ed302bdf283">lv_textarea_t::label</a></div><div class="ttdeci">lv_obj_t * label</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8h_source.html#l00042">lv_textarea.h:42</a></div></div>
+<div class="ttc" id="aunity_8h_html"><div class="ttname"><a href="unity_8h.html">unity.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_f070bc0cb73a4ad1c4c8f9e7fda9a852.html">tests</a></li><li class="navelem"><a href="dir_a8f6ecb5f84b153223432d96815f1a7f.html">src</a></li><li class="navelem"><a href="dir_63195b95730c5d28a547b107ac71870d.html">test_cases</a></li><li class="navelem"><a href="test__textarea_8c.html">test_textarea.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

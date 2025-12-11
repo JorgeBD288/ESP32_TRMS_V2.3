@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/TFT_Drivers/HX8357B_Init.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('HX8357B__Init_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">HX8357B_Init.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="HX8357B__Init_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// This is the command sequence that initialises the HX8357B driver</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// This setup information uses simple 8-bit SPI writecommand() and writedata() functions</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// See ST7735_Setup.h file for an alternative format</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Configure HX8357-B display</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">   10</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0x11);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a3758807f7de3f3b2b779e026eefc3b2e">   11</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a3758807f7de3f3b2b779e026eefc3b2e">delay</a>(20);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a24c87d767026755dde6e19686358b7f1">   12</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0xD0);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#ae4480a9f5778a5c43f49ae5072c1288c">   13</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x07);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a10ab79eb3386ec0377bca7da06153e7f">   14</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x42);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a9f4515cd711e04d4694d1d071a32f787">   15</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x18);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a7ee462d8db10cfa1470aca90acaa3b75">   17</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0xD1);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a117983314f43a26372b2140c9c5b6a3d">   18</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x07);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a0701bd6e9b62d98965638367e9a24b41">   20</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x10);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a856051e4814a3cd0b6d032bd76a54b58">   22</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0xD2);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a3020f73e9ce63112d161324ad07ddaa6">   23</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x01);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#aab85ee38a194456dccffb9031d405c32">   24</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x02);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#ac6c1ca3fa2a099426e0ec5a904f1ebb2">   26</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0xC0);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x10);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a724f0b225ddf90a2142b7439fea58348">   28</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x3B);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x02);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#ab3fba390e58514f63be9f62215baadee">   31</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x11);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#ab71353a2f819b6df3750adfdc6bb0f41">   33</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0xC5);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#aab21271eead38d91f54b33b2612e7886">   34</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x08);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a9f7eb9f2dfb5762f78544298c41d3150">   36</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0xC8);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a46ea8015ac4218cd93593b1ba81ed538">   38</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x32);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a8f449df66f871720ca8eca67d07b9bee">   39</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x36);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a961d6b467a8fdf86a866d5d143e35dd1">   40</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x45);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a8e9fb979e20cade0e00393b92aeed496">   41</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x06);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#ab751ccd879bd6613f49f936f7d45a5b1">   42</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x16);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a29e3501430b47e6da1106de839af2dc3">   43</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x37);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#aab2525027f17f8d4eaf05b0a74a07836">   44</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x75);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#ac1122d1eeb7dc128fb4bfe32f840a77e">   45</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x77);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a2375a03dd3d44d5957607a2ecc7c8dde">   46</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x54);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a505dadd9d7c2181f0beeb33fdfd7ea6b">   47</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x0C);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a7aa1fe43c4747616e0fb19f31a342fb9">   50</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0x36);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a3c49dd60892e49b9e8e15f1ddfdaa2fd">   51</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x0a);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a2329f3a6f2fc09d87581c27320d924ee">   53</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0x3A);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a31e6e69b4213289025412c560de8222e">   54</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x55);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a405f1f15a1517faa8065ae676e33476b">   56</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0x2A);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x01);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a3c3d56c49b1c9cd5bc8a4e38b35de146">   60</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x3F);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#aefba6cb7d5c8b539a385d7a9df323280">   62</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0x2B);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x01);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a3e65bc53b0686b52a362ba5c2d546a9b">   66</a></span>    <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xDF);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">   68</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a3758807f7de3f3b2b779e026eefc3b2e">delay</a>(120);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#a4538306c4487bbd3d2157d27a798c12c">   69</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a>(0x29);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="HX8357B__Init_8h.html#afe896e33b1af6f901b88b4ed56622c02">   71</a></span>    <a class="code hl_function" href="HX8357B__Init_8h.html#a3758807f7de3f3b2b779e026eefc3b2e">delay</a>(25);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">// End of HX8357B display configuration</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="ttc" id="aHX8357B__Init_8h_html_a3758807f7de3f3b2b779e026eefc3b2e"><div class="ttname"><a href="HX8357B__Init_8h.html#a3758807f7de3f3b2b779e026eefc3b2e">delay</a></div><div class="ttdeci">delay(20)</div></div>
+<div class="ttc" id="aHX8357B__Init_8h_html_a5627137e489d29f01c11404862e24c43"><div class="ttname"><a href="HX8357B__Init_8h.html#a5627137e489d29f01c11404862e24c43">writecommand</a></div><div class="ttdeci">writecommand(0x11)</div></div>
+<div class="ttc" id="aSSD1351__Rotation_8h_html_a7ae4c31940f3d0cbb0ee848cb9755311"><div class="ttname"><a href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a></div><div class="ttdeci">writedata(rotation&lt; 2 ? TFT_HEIGHT :0)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d19c1635db4add2e0d306898bb016224.html">TFT_Drivers</a></li><li class="navelem"><a href="HX8357B__Init_8h.html">HX8357B_Init.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

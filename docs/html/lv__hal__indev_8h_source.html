@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/hal/lv_hal_indev.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__hal__indev_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_hal_indev.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__hal__indev_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_hal_indev.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @description Input Device HAL interface layer header file</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef LV_HAL_INDEV_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define LV_HAL_INDEV_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="lv__conf__internal_8h.html">../lv_conf_internal.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="lv__area_8h.html">../misc/lv_area.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="lv__timer_8h.html">../misc/lv_timer.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/*Drag threshold in pixels*/</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a6c11dc29dd264a3ed76a9f1f82f18dae">   30</a></span><span class="preprocessor">#define LV_INDEV_DEF_SCROLL_LIMIT         10</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/*Drag throw slow-down in [%]. Greater value -&gt; faster slow-down*/</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#ac1d790fb88a8c190f96f6076ebccffeb">   33</a></span><span class="preprocessor">#define LV_INDEV_DEF_SCROLL_THROW         10</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/*Long press time in milliseconds.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> *Time to send `LV_EVENT_LONG_PRESSSED`)*/</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#ad16957755a6385ad573904cfa708f34c">   37</a></span><span class="preprocessor">#define LV_INDEV_DEF_LONG_PRESS_TIME      400</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/*Repeated trigger period in long press [ms]</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> *Time between `LV_EVENT_LONG_PRESSED_REPEAT*/</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#af8519184202d4cf5fe87f9e0a9a5780a">   41</a></span><span class="preprocessor">#define LV_INDEV_DEF_LONG_PRESS_REP_TIME  100</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/*Gesture threshold in pixels*/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#ac38cb5636e60b8db59ef708369a062b4">   45</a></span><span class="preprocessor">#define LV_INDEV_DEF_GESTURE_LIMIT        50</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/*Gesture min velocity at release before swipe (pixels)*/</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a1dc6b8fc890e148f07836108323c57f1">   48</a></span><span class="preprocessor">#define LV_INDEV_DEF_GESTURE_MIN_VELOCITY 3</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__obj__t.html">_lv_obj_t</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__disp__t.html">_lv_disp_t</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__group__t.html">_lv_group_t</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__t.html">_lv_indev_t</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"></span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/** Possible input device types*/</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5b">   62</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba5c2a83039d7a8073d24569b85b6048f4">   63</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba5c2a83039d7a8073d24569b85b6048f4">LV_INDEV_TYPE_NONE</a>,    <span class="comment">/**&lt; Uninitialized state*/</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba266ddfccb1f31d538489eea5667ebebf">   64</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba266ddfccb1f31d538489eea5667ebebf">LV_INDEV_TYPE_POINTER</a>, <span class="comment">/**&lt; Touch pad, mouse, external button*/</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba9f8299c12ea91ab8e7a6e783b9b0664d">   65</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba9f8299c12ea91ab8e7a6e783b9b0664d">LV_INDEV_TYPE_KEYPAD</a>,  <span class="comment">/**&lt; Keypad or keyboard*/</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5baa9b43a6f629907e83436dd9cf7973f84">   66</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5baa9b43a6f629907e83436dd9cf7973f84">LV_INDEV_TYPE_BUTTON</a>,  <span class="comment">/**&lt; External (hardware button) which is assigned to a specific point of the screen*/</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5bac14b17fb683f428c1bb935748ce0d5aa">   67</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5bac14b17fb683f428c1bb935748ce0d5aa">LV_INDEV_TYPE_ENCODER</a>, <span class="comment">/**&lt; Encoder with only Left, Right turn and a Button*/</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <a class="code hl_enumeration" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5b">lv_indev_type_t</a>;</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">/** States for input devices*/</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956">   71</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">   72</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">LV_INDEV_STATE_RELEASED</a> = 0,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">   73</a></span>    <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>} <a class="code hl_enumeration" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956">lv_indev_state_t</a>;</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"></span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/** Data structure passed to an input driver to fill*/</span></div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html">   77</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257">   78</a></span>    <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257">point</a>; <span class="comment">/**&lt; For LV_INDEV_TYPE_POINTER the currently pressed point*/</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html#a5f93f90c6ffe0f7db54a0fc43a1cef9c">   79</a></span>    uint32_t <a class="code hl_variable" href="structlv__indev__data__t.html#a5f93f90c6ffe0f7db54a0fc43a1cef9c">key</a>;     <span class="comment">/**&lt; For LV_INDEV_TYPE_KEYPAD the currently pressed key*/</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html#a5c9452fed20a2e6f91bfff86d0bcc6d6">   80</a></span>    uint32_t <a class="code hl_variable" href="structlv__indev__data__t.html#a5c9452fed20a2e6f91bfff86d0bcc6d6">btn_id</a>;  <span class="comment">/**&lt; For LV_INDEV_TYPE_BUTTON the currently pressed button*/</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html#a13b86f5548c334dc240f85a74c96195e">   81</a></span>    int16_t <a class="code hl_variable" href="structlv__indev__data__t.html#a13b86f5548c334dc240f85a74c96195e">enc_diff</a>; <span class="comment">/**&lt; For LV_INDEV_TYPE_ENCODER number of steps since the previous read*/</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">   83</a></span>    <a class="code hl_enumeration" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956">lv_indev_state_t</a> <a class="code hl_variable" href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">state</a>; <span class="comment">/**&lt; LV_INDEV_STATE_REL or LV_INDEV_STATE_PR*/</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structlv__indev__data__t.html#aa8048e6188372c0050640b1eb341f093">   84</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structlv__indev__data__t.html#aa8048e6188372c0050640b1eb341f093">continue_reading</a>;  <span class="comment">/**&lt; If set to true, the read callback is invoked again*/</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>} <a class="code hl_struct" href="structlv__indev__data__t.html">lv_indev_data_t</a>;</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"></span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">/** Initialized by the user and registered by &#39;lv_indev_add()&#39;*/</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="};">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html">   88</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"></span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">    /**&lt; Input device type*/</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#afcf65997bfa34ba6277814d214b5ef55">   91</a></span>    <a class="code hl_enumeration" href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5b">lv_indev_type_t</a> <a class="code hl_variable" href="struct__lv__indev__drv__t.html#afcf65997bfa34ba6277814d214b5ef55">type</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment"></span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    /**&lt; Function pointer to read input device data.*/</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#ae3f9071086d4722198c38c40b6c15f57">   94</a></span>    void (*<a class="code hl_variable" href="struct__lv__indev__drv__t.html#ae3f9071086d4722198c38c40b6c15f57">read_cb</a>)(<span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> * indev_drv, <a class="code hl_struct" href="structlv__indev__data__t.html">lv_indev_data_t</a> * data);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment"></span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">    /** Called when an action happened on the input device.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">     * The second parameter is the event from `lv_event_t`*/</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a2761f98ff5415e7522b7a389f3b89e70">   98</a></span>    void (*<a class="code hl_variable" href="struct__lv__indev__drv__t.html#a2761f98ff5415e7522b7a389f3b89e70">feedback_cb</a>)(<span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> *, uint8_t);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#if LV_USE_USER_DATA</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a2fc7943377dc5518efad848ae659c5a9">  101</a></span>    <span class="keywordtype">void</span> * <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a2fc7943377dc5518efad848ae659c5a9">user_data</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"></span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">    /**&lt; Pointer to the assigned display*/</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a4d308304de2658bd31a9c5826cd16480">  105</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__disp__t.html">_lv_disp_t</a> * <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a4d308304de2658bd31a9c5826cd16480">disp</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"></span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">    /**&lt; Timer to periodically read the input device*/</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a2bec6f260af2d2568d85dc73d5874bdf">  108</a></span>    <a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a2bec6f260af2d2568d85dc73d5874bdf">read_timer</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"></span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">    /**&lt; Number of pixels to slide before actually drag the object*/</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a54861fb3efdb2e9c8037ec5dbdd5c7a0">  111</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a54861fb3efdb2e9c8037ec5dbdd5c7a0">scroll_limit</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment"></span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">    /**&lt; Drag throw slow-down in [%]. Greater value means faster slow-down*/</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a23226c4cd9c78a7e8c6672b810eb45d8">  114</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a23226c4cd9c78a7e8c6672b810eb45d8">scroll_throw</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"></span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">    /**&lt; At least this difference should be between two points to evaluate as gesture*/</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a881f1834d3f8666fb3d86c37734f0e3a">  117</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a881f1834d3f8666fb3d86c37734f0e3a">gesture_min_velocity</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"></span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    /**&lt; At least this difference should be to send a gesture*/</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a2e83d20954f4d4056e2f21b67893ac7b">  120</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a2e83d20954f4d4056e2f21b67893ac7b">gesture_limit</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"></span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">    /**&lt; Long press time in milliseconds*/</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#aed13a62b3f85ab444db64e8f6e9fa215">  123</a></span>    uint16_t <a class="code hl_variable" href="struct__lv__indev__drv__t.html#aed13a62b3f85ab444db64e8f6e9fa215">long_press_time</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment"></span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">    /**&lt; Repeated trigger period in long press [ms]*/</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="struct__lv__indev__drv__t.html#a29c124547dcfa94a1f119ff90bbf416b">  126</a></span>    uint16_t <a class="code hl_variable" href="struct__lv__indev__drv__t.html#a29c124547dcfa94a1f119ff90bbf416b">long_press_repeat_time</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">  127</a></span>} <a class="code hl_typedef" href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">lv_indev_drv_t</a>;</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment"></span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/** Run time data of input devices</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"> * Internally used by the library, you should not need to touch it.</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html">  132</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8">  133</a></span>    <a class="code hl_enumeration" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956">lv_indev_state_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8">state</a>; <span class="comment">/**&lt; Current state of the input device.*/</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">/*Flags*/</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a69c492deb716c6f9e9ce7bd1e691c19d">  135</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a69c492deb716c6f9e9ce7bd1e691c19d">long_pr_sent</a> : 1;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">  136</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">reset_query</a> : 1;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#af72a80aed5ad581416e5c33dfe3e93f8">  137</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#af72a80aed5ad581416e5c33dfe3e93f8">disabled</a> : 1;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#affc96e7c25e11f103573f7d9e5fd102f">  138</a></span>    uint8_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#affc96e7c25e11f103573f7d9e5fd102f">wait_until_release</a> : 1;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="comment">/*Pointer and button data*/</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a07c31da6ce2d8bf13495979a4cfde167">  143</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a07c31da6ce2d8bf13495979a4cfde167">act_point</a>; <span class="comment">/**&lt; Current point of input device.*/</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a88c082dcae7f6fe55c81aaaad15e534e">  144</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a88c082dcae7f6fe55c81aaaad15e534e">indev_point</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a1cdaaba80366c5e69643ce39e9ccfe54">  145</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a1cdaaba80366c5e69643ce39e9ccfe54">last_point</a>; <span class="comment">/**&lt; Last point of input device.*/</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a5ef2276c058ae14671e0b2c95fcd0efd">  146</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a5ef2276c058ae14671e0b2c95fcd0efd">last_raw_point</a>; <span class="comment">/**&lt; Last point read from read_cb. */</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">  147</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">vect</a>; <span class="comment">/**&lt; Difference between `act_point` and `last_point`.*/</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a6dcf864ff00cce45de9ad7da54c25db8">  148</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a6dcf864ff00cce45de9ad7da54c25db8">scroll_sum</a>; <span class="comment">/*Count the dragged pixels to check LV_INDEV_DEF_SCROLL_LIMIT*/</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">  149</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">scroll_throw_vect</a>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#afded21d1887b4ca6c8f14669846c2152">  150</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#afded21d1887b4ca6c8f14669846c2152">scroll_throw_vect_ori</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a418af1d0a3452e6c97d22f6a690c2927">  151</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__obj__t.html">_lv_obj_t</a> * <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a418af1d0a3452e6c97d22f6a690c2927">act_obj</a>;      <span class="comment">/*The object being pressed*/</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a31f25629da14f973a050f3723b47bb53">  152</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__obj__t.html">_lv_obj_t</a> * <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31f25629da14f973a050f3723b47bb53">last_obj</a>;     <span class="comment">/*The last object which was pressed*/</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">  153</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__obj__t.html">_lv_obj_t</a> * <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">scroll_obj</a>;   <span class="comment">/*The object being scrolled*/</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a989c1d45df566aef0219fbc90f2ab628">  154</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__obj__t.html">_lv_obj_t</a> * <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a989c1d45df566aef0219fbc90f2ab628">last_pressed</a>; <span class="comment">/*The lastly pressed object*/</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a3ed7b15fc351350fc9cd3044d36cca11">  155</a></span>            <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a3ed7b15fc351350fc9cd3044d36cca11">scroll_area</a>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#ac1a0645fa105c22698920de514f3fb9b">  157</a></span>            <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#ac1a0645fa105c22698920de514f3fb9b">gesture_sum</a>; <span class="comment">/*Count the gesture pixels to check LV_INDEV_DEF_GESTURE_LIMIT*/</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="comment">/*Flags*/</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">  159</a></span>            <a class="code hl_typedef" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">scroll_dir</a> : 4;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a9511db2f0bed58a7ceca5b338154dfd5">  160</a></span>            <a class="code hl_typedef" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a9511db2f0bed58a7ceca5b338154dfd5">gesture_dir</a> : 4;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a3c3fc31c7153e86968d25218c36aa2d9">  161</a></span>            uint8_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a3c3fc31c7153e86968d25218c36aa2d9">gesture_sent</a> : 1;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">  162</a></span>        } <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">pointer</a>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="comment">/*Keypad data*/</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a85c684f0eccad01a4f7cfe4ab4ebab89">  165</a></span>            <a class="code hl_enumeration" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956">lv_indev_state_t</a> <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a85c684f0eccad01a4f7cfe4ab4ebab89">last_state</a>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#af5b18f4a595a9a1b74a7665b5e55f42b">  166</a></span>            uint32_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#af5b18f4a595a9a1b74a7665b5e55f42b">last_key</a>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a86da7503c066d4043c45cf622d8d2394">  167</a></span>        } <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a86da7503c066d4043c45cf622d8d2394">keypad</a>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">  168</a></span>    } <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">types</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a610fbc71cd450b55c0ad5fdf38dfaf5a">  170</a></span>    uint32_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a610fbc71cd450b55c0ad5fdf38dfaf5a">pr_timestamp</a>;         <span class="comment">/**&lt; Pressed time stamp*/</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="struct__lv__indev__proc__t.html#a943cbd9cf549902dc4cfae4fbcea181f">  171</a></span>    uint32_t <a class="code hl_variable" href="struct__lv__indev__proc__t.html#a943cbd9cf549902dc4cfae4fbcea181f">longpr_rep_timestamp</a>; <span class="comment">/**&lt; Long press repeat time stamp*/</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a1f362694bc0ad34e5c8689ac7b35cc58">  172</a></span>} <a class="code hl_struct" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a>;</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment"></span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">/** The main input device descriptor with driver, runtime data (&#39;proc&#39;) and some additional</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment"> * information*/</span></div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="};">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="struct__lv__indev__t.html">  176</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__t.html">_lv_indev_t</a> {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="struct__lv__indev__t.html#a5aed39e0d1027712f3894e1ba5e89d7a">  177</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> * <a class="code hl_variable" href="struct__lv__indev__t.html#a5aed39e0d1027712f3894e1ba5e89d7a">driver</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">  178</a></span>    <a class="code hl_struct" href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a> <a class="code hl_variable" href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">proc</a>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="struct__lv__indev__t.html#afca94f9275c3ca669979477d56fd884d">  179</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__obj__t.html">_lv_obj_t</a> * <a class="code hl_variable" href="struct__lv__indev__t.html#afca94f9275c3ca669979477d56fd884d">cursor</a>;     <span class="comment">/**&lt; Cursor for LV_INPUT_TYPE_POINTER*/</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="struct__lv__indev__t.html#abe81eefe10ba7f66ff9ffe3a48db3a31">  180</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__group__t.html">_lv_group_t</a> * <a class="code hl_variable" href="struct__lv__indev__t.html#abe81eefe10ba7f66ff9ffe3a48db3a31">group</a>;    <span class="comment">/**&lt; Keypad destination group*/</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="struct__lv__indev__t.html#aa7c40dc6d671c802427db39a7181237b">  181</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> * <a class="code hl_variable" href="struct__lv__indev__t.html#aa7c40dc6d671c802427db39a7181237b">btn_points</a>; <span class="comment">/**&lt; Array points assigned to the button ()screen will be pressed</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">                                      here by the buttons*/</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">  183</a></span>} <a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a>;</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment"> * GLOBAL PROTOTYPES</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment"></span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment"> * Initialize an input device driver with default values.</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment"> * It is used to surely have known values in the fields and not memory junk.</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment"> * After it you can set the fields.</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment"> * @param driver pointer to driver variable to initialize</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__hal__indev_8h.html#a84785b93e8b9e127d3bb0e742f4f2fc5">lv_indev_drv_init</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> * driver);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment"></span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment"> * Register an initialized input device driver.</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment"> * @param driver pointer to an initialized &#39;lv_indev_drv_t&#39; variable (can be local variable)</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment"> * @return pointer to the new input device or NULL on error</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * <a class="code hl_function" href="lv__hal__indev_8h.html#a03f4a523d8d2915da53adffab6d903f6">lv_indev_drv_register</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> * driver);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment"></span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment"> * Update the driver in run time.</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment"> * @param indev pointer to an input device. (return value of `lv_indev_drv_register`)</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment"> * @param new_drv pointer to the new driver</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__hal__indev_8h.html#a4e3a5f1579c8114a1435785c22b43de4">lv_indev_drv_update</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev, <span class="keyword">struct</span> <a class="code hl_struct" href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a> * new_drv);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment"></span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">* Remove the provided input device. Make sure not to use the provided input device afterwards anymore.</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">* @param indev pointer to delete</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__hal__indev_8h.html#a15a817e6f1ce962760106c056abcf1b0">lv_indev_delete</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment"></span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment"> * Get the next input device.</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment"> * @param indev pointer to the current input device. NULL to initialize.</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"> * @return the next input device or NULL if there are no more. Provide the first input device when</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment"> * the parameter is NULL</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * <a class="code hl_function" href="lv__hal__indev_8h.html#a5ac34da1402e8d7540b17627d262ac01">lv_indev_get_next</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment"></span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment"> * Read data from an input device.</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment"> * @param indev pointer to an input device</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment"> * @param data input device will write its data here</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__hal__indev_8h.html#a9ca30c7936b17a3dc9bb3d8fb205585a">_lv_indev_read</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev, <a class="code hl_struct" href="structlv__indev__data__t.html">lv_indev_data_t</a> * data);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>} <span class="comment">/*extern &quot;C&quot;*/</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__area_8h_html"><div class="ttname"><a href="lv__area_8h.html">lv_area.h</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ae805e7334672ed782d8140eb200330eb"><div class="ttname"><a href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a></div><div class="ttdeci">uint8_t lv_dir_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00089">lv_area.h:89</a></div></div>
+<div class="ttc" id="alv__conf__internal_8h_html"><div class="ttname"><a href="lv__conf__internal_8h.html">lv_conf_internal.h</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a03f4a523d8d2915da53adffab6d903f6"><div class="ttname"><a href="lv__hal__indev_8h.html#a03f4a523d8d2915da53adffab6d903f6">lv_indev_drv_register</a></div><div class="ttdeci">lv_indev_t * lv_indev_drv_register(struct _lv_indev_drv_t *driver)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00076">lv_hal_indev.c:76</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a11213c9864502e382d5f19b9e6b2de5b"><div class="ttname"><a href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5b">lv_indev_type_t</a></div><div class="ttdeci">lv_indev_type_t</div><div class="ttdef"><b>Definition</b> <a href="#l00062">lv_hal_indev.h:62</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a11213c9864502e382d5f19b9e6b2de5ba266ddfccb1f31d538489eea5667ebebf"><div class="ttname"><a href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba266ddfccb1f31d538489eea5667ebebf">LV_INDEV_TYPE_POINTER</a></div><div class="ttdeci">@ LV_INDEV_TYPE_POINTER</div><div class="ttdef"><b>Definition</b> <a href="#l00064">lv_hal_indev.h:64</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a11213c9864502e382d5f19b9e6b2de5ba5c2a83039d7a8073d24569b85b6048f4"><div class="ttname"><a href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba5c2a83039d7a8073d24569b85b6048f4">LV_INDEV_TYPE_NONE</a></div><div class="ttdeci">@ LV_INDEV_TYPE_NONE</div><div class="ttdef"><b>Definition</b> <a href="#l00063">lv_hal_indev.h:63</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a11213c9864502e382d5f19b9e6b2de5ba9f8299c12ea91ab8e7a6e783b9b0664d"><div class="ttname"><a href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5ba9f8299c12ea91ab8e7a6e783b9b0664d">LV_INDEV_TYPE_KEYPAD</a></div><div class="ttdeci">@ LV_INDEV_TYPE_KEYPAD</div><div class="ttdef"><b>Definition</b> <a href="#l00065">lv_hal_indev.h:65</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a11213c9864502e382d5f19b9e6b2de5baa9b43a6f629907e83436dd9cf7973f84"><div class="ttname"><a href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5baa9b43a6f629907e83436dd9cf7973f84">LV_INDEV_TYPE_BUTTON</a></div><div class="ttdeci">@ LV_INDEV_TYPE_BUTTON</div><div class="ttdef"><b>Definition</b> <a href="#l00066">lv_hal_indev.h:66</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a11213c9864502e382d5f19b9e6b2de5bac14b17fb683f428c1bb935748ce0d5aa"><div class="ttname"><a href="lv__hal__indev_8h.html#a11213c9864502e382d5f19b9e6b2de5bac14b17fb683f428c1bb935748ce0d5aa">LV_INDEV_TYPE_ENCODER</a></div><div class="ttdeci">@ LV_INDEV_TYPE_ENCODER</div><div class="ttdef"><b>Definition</b> <a href="#l00067">lv_hal_indev.h:67</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a15a817e6f1ce962760106c056abcf1b0"><div class="ttname"><a href="lv__hal__indev_8h.html#a15a817e6f1ce962760106c056abcf1b0">lv_indev_delete</a></div><div class="ttdeci">void lv_indev_delete(lv_indev_t *indev)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00133">lv_hal_indev.c:133</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a4e3a5f1579c8114a1435785c22b43de4"><div class="ttname"><a href="lv__hal__indev_8h.html#a4e3a5f1579c8114a1435785c22b43de4">lv_indev_drv_update</a></div><div class="ttdeci">void lv_indev_drv_update(lv_indev_t *indev, struct _lv_indev_drv_t *new_drv)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00106">lv_hal_indev.c:106</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a5ac34da1402e8d7540b17627d262ac01"><div class="ttname"><a href="lv__hal__indev_8h.html#a5ac34da1402e8d7540b17627d262ac01">lv_indev_get_next</a></div><div class="ttdeci">lv_indev_t * lv_indev_get_next(lv_indev_t *indev)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00152">lv_hal_indev.c:152</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a7fc4c271f4ad53b4949e26b2999a1785"><div class="ttname"><a href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a></div><div class="ttdeci">struct _lv_indev_t lv_indev_t</div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a84785b93e8b9e127d3bb0e742f4f2fc5"><div class="ttname"><a href="lv__hal__indev_8h.html#a84785b93e8b9e127d3bb0e742f4f2fc5">lv_indev_drv_init</a></div><div class="ttdeci">void lv_indev_drv_init(struct _lv_indev_drv_t *driver)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00057">lv_hal_indev.c:57</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a9ca30c7936b17a3dc9bb3d8fb205585a"><div class="ttname"><a href="lv__hal__indev_8h.html#a9ca30c7936b17a3dc9bb3d8fb205585a">_lv_indev_read</a></div><div class="ttdeci">void _lv_indev_read(lv_indev_t *indev, lv_indev_data_t *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8c_source.html#l00165">lv_hal_indev.c:165</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aa608bb96b6aeff54d2f1c2280f4e970d"><div class="ttname"><a href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">lv_indev_drv_t</a></div><div class="ttdeci">struct _lv_indev_drv_t lv_indev_drv_t</div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aacdf3efce400e71895f5efb42ee24956"><div class="ttname"><a href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956">lv_indev_state_t</a></div><div class="ttdeci">lv_indev_state_t</div><div class="ttdef"><b>Definition</b> <a href="#l00071">lv_hal_indev.h:71</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e"><div class="ttname"><a href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">LV_INDEV_STATE_RELEASED</a></div><div class="ttdeci">@ LV_INDEV_STATE_RELEASED</div><div class="ttdef"><b>Definition</b> <a href="#l00072">lv_hal_indev.h:72</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39"><div class="ttname"><a href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a></div><div class="ttdeci">@ LV_INDEV_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="#l00073">lv_hal_indev.h:73</a></div></div>
+<div class="ttc" id="alv__timer_8h_html"><div class="ttname"><a href="lv__timer_8h.html">lv_timer.h</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_aab341e84d977d67aec9b766ccd6d3173"><div class="ttname"><a href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a></div><div class="ttdeci">struct _lv_timer_t lv_timer_t</div></div>
+<div class="ttc" id="astruct__lv__disp__t_html"><div class="ttname"><a href="struct__lv__disp__t.html">_lv_disp_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__hal__disp_8h_source.html#l00159">lv_hal_disp.h:159</a></div></div>
+<div class="ttc" id="astruct__lv__group__t_html"><div class="ttname"><a href="struct__lv__group__t.html">_lv_group_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__group_8h_source.html#l00059">lv_group.h:59</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html"><div class="ttname"><a href="struct__lv__indev__drv__t.html">_lv_indev_drv_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00088">lv_hal_indev.h:88</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a23226c4cd9c78a7e8c6672b810eb45d8"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a23226c4cd9c78a7e8c6672b810eb45d8">_lv_indev_drv_t::scroll_throw</a></div><div class="ttdeci">uint8_t scroll_throw</div><div class="ttdef"><b>Definition</b> <a href="#l00114">lv_hal_indev.h:114</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a2761f98ff5415e7522b7a389f3b89e70"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a2761f98ff5415e7522b7a389f3b89e70">_lv_indev_drv_t::feedback_cb</a></div><div class="ttdeci">void(* feedback_cb)(struct _lv_indev_drv_t *, uint8_t)</div><div class="ttdef"><b>Definition</b> <a href="#l00098">lv_hal_indev.h:98</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a29c124547dcfa94a1f119ff90bbf416b"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a29c124547dcfa94a1f119ff90bbf416b">_lv_indev_drv_t::long_press_repeat_time</a></div><div class="ttdeci">uint16_t long_press_repeat_time</div><div class="ttdef"><b>Definition</b> <a href="#l00126">lv_hal_indev.h:126</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a2bec6f260af2d2568d85dc73d5874bdf"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a2bec6f260af2d2568d85dc73d5874bdf">_lv_indev_drv_t::read_timer</a></div><div class="ttdeci">lv_timer_t * read_timer</div><div class="ttdef"><b>Definition</b> <a href="#l00108">lv_hal_indev.h:108</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a2e83d20954f4d4056e2f21b67893ac7b"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a2e83d20954f4d4056e2f21b67893ac7b">_lv_indev_drv_t::gesture_limit</a></div><div class="ttdeci">uint8_t gesture_limit</div><div class="ttdef"><b>Definition</b> <a href="#l00120">lv_hal_indev.h:120</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a2fc7943377dc5518efad848ae659c5a9"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a2fc7943377dc5518efad848ae659c5a9">_lv_indev_drv_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="#l00101">lv_hal_indev.h:101</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a4d308304de2658bd31a9c5826cd16480"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a4d308304de2658bd31a9c5826cd16480">_lv_indev_drv_t::disp</a></div><div class="ttdeci">struct _lv_disp_t * disp</div><div class="ttdef"><b>Definition</b> <a href="#l00105">lv_hal_indev.h:105</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a54861fb3efdb2e9c8037ec5dbdd5c7a0"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a54861fb3efdb2e9c8037ec5dbdd5c7a0">_lv_indev_drv_t::scroll_limit</a></div><div class="ttdeci">uint8_t scroll_limit</div><div class="ttdef"><b>Definition</b> <a href="#l00111">lv_hal_indev.h:111</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_a881f1834d3f8666fb3d86c37734f0e3a"><div class="ttname"><a href="struct__lv__indev__drv__t.html#a881f1834d3f8666fb3d86c37734f0e3a">_lv_indev_drv_t::gesture_min_velocity</a></div><div class="ttdeci">uint8_t gesture_min_velocity</div><div class="ttdef"><b>Definition</b> <a href="#l00117">lv_hal_indev.h:117</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_ae3f9071086d4722198c38c40b6c15f57"><div class="ttname"><a href="struct__lv__indev__drv__t.html#ae3f9071086d4722198c38c40b6c15f57">_lv_indev_drv_t::read_cb</a></div><div class="ttdeci">void(* read_cb)(struct _lv_indev_drv_t *indev_drv, lv_indev_data_t *data)</div><div class="ttdef"><b>Definition</b> <a href="#l00094">lv_hal_indev.h:94</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_aed13a62b3f85ab444db64e8f6e9fa215"><div class="ttname"><a href="struct__lv__indev__drv__t.html#aed13a62b3f85ab444db64e8f6e9fa215">_lv_indev_drv_t::long_press_time</a></div><div class="ttdeci">uint16_t long_press_time</div><div class="ttdef"><b>Definition</b> <a href="#l00123">lv_hal_indev.h:123</a></div></div>
+<div class="ttc" id="astruct__lv__indev__drv__t_html_afcf65997bfa34ba6277814d214b5ef55"><div class="ttname"><a href="struct__lv__indev__drv__t.html#afcf65997bfa34ba6277814d214b5ef55">_lv_indev_drv_t::type</a></div><div class="ttdeci">lv_indev_type_t type</div><div class="ttdef"><b>Definition</b> <a href="#l00091">lv_hal_indev.h:91</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html"><div class="ttname"><a href="struct__lv__indev__proc__t.html">_lv_indev_proc_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00132">lv_hal_indev.h:132</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a07c31da6ce2d8bf13495979a4cfde167"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a07c31da6ce2d8bf13495979a4cfde167">_lv_indev_proc_t::act_point</a></div><div class="ttdeci">lv_point_t act_point</div><div class="ttdef"><b>Definition</b> <a href="#l00143">lv_hal_indev.h:143</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a1a831877520ad18e9c57bb3f2563bd39"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a1a831877520ad18e9c57bb3f2563bd39">_lv_indev_proc_t::scroll_obj</a></div><div class="ttdeci">struct _lv_obj_t * scroll_obj</div><div class="ttdef"><b>Definition</b> <a href="#l00153">lv_hal_indev.h:153</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a1cdaaba80366c5e69643ce39e9ccfe54"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a1cdaaba80366c5e69643ce39e9ccfe54">_lv_indev_proc_t::last_point</a></div><div class="ttdeci">lv_point_t last_point</div><div class="ttdef"><b>Definition</b> <a href="#l00145">lv_hal_indev.h:145</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a311ca773c25e7719b27ec09a36bf17e1"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1">_lv_indev_proc_t::vect</a></div><div class="ttdeci">lv_point_t vect</div><div class="ttdef"><b>Definition</b> <a href="#l00147">lv_hal_indev.h:147</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a31d5ff29f413a09c9cd7d1a418a1ab0f"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a31d5ff29f413a09c9cd7d1a418a1ab0f">_lv_indev_proc_t::pointer</a></div><div class="ttdeci">struct _lv_indev_proc_t::@322357127026317264073165272352035321176077221312::@212032016224320153357151046024141073241055165265 pointer</div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a31f25629da14f973a050f3723b47bb53"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a31f25629da14f973a050f3723b47bb53">_lv_indev_proc_t::last_obj</a></div><div class="ttdeci">struct _lv_obj_t * last_obj</div><div class="ttdef"><b>Definition</b> <a href="#l00152">lv_hal_indev.h:152</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a3c3fc31c7153e86968d25218c36aa2d9"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a3c3fc31c7153e86968d25218c36aa2d9">_lv_indev_proc_t::gesture_sent</a></div><div class="ttdeci">uint8_t gesture_sent</div><div class="ttdef"><b>Definition</b> <a href="#l00161">lv_hal_indev.h:161</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a3ed7b15fc351350fc9cd3044d36cca11"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a3ed7b15fc351350fc9cd3044d36cca11">_lv_indev_proc_t::scroll_area</a></div><div class="ttdeci">lv_area_t scroll_area</div><div class="ttdef"><b>Definition</b> <a href="#l00155">lv_hal_indev.h:155</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a418af1d0a3452e6c97d22f6a690c2927"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a418af1d0a3452e6c97d22f6a690c2927">_lv_indev_proc_t::act_obj</a></div><div class="ttdeci">struct _lv_obj_t * act_obj</div><div class="ttdef"><b>Definition</b> <a href="#l00151">lv_hal_indev.h:151</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a5ef2276c058ae14671e0b2c95fcd0efd"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a5ef2276c058ae14671e0b2c95fcd0efd">_lv_indev_proc_t::last_raw_point</a></div><div class="ttdeci">lv_point_t last_raw_point</div><div class="ttdef"><b>Definition</b> <a href="#l00146">lv_hal_indev.h:146</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a600b34a836cc33e0b73d61e861adab13"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a600b34a836cc33e0b73d61e861adab13">_lv_indev_proc_t::types</a></div><div class="ttdeci">union _lv_indev_proc_t::@322357127026317264073165272352035321176077221312 types</div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a610fbc71cd450b55c0ad5fdf38dfaf5a"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a610fbc71cd450b55c0ad5fdf38dfaf5a">_lv_indev_proc_t::pr_timestamp</a></div><div class="ttdeci">uint32_t pr_timestamp</div><div class="ttdef"><b>Definition</b> <a href="#l00170">lv_hal_indev.h:170</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a69c492deb716c6f9e9ce7bd1e691c19d"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a69c492deb716c6f9e9ce7bd1e691c19d">_lv_indev_proc_t::long_pr_sent</a></div><div class="ttdeci">uint8_t long_pr_sent</div><div class="ttdef"><b>Definition</b> <a href="#l00135">lv_hal_indev.h:135</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a6dcf864ff00cce45de9ad7da54c25db8"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a6dcf864ff00cce45de9ad7da54c25db8">_lv_indev_proc_t::scroll_sum</a></div><div class="ttdeci">lv_point_t scroll_sum</div><div class="ttdef"><b>Definition</b> <a href="#l00148">lv_hal_indev.h:148</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a85c684f0eccad01a4f7cfe4ab4ebab89"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a85c684f0eccad01a4f7cfe4ab4ebab89">_lv_indev_proc_t::last_state</a></div><div class="ttdeci">lv_indev_state_t last_state</div><div class="ttdef"><b>Definition</b> <a href="#l00165">lv_hal_indev.h:165</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a86da7503c066d4043c45cf622d8d2394"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a86da7503c066d4043c45cf622d8d2394">_lv_indev_proc_t::keypad</a></div><div class="ttdeci">struct _lv_indev_proc_t::@322357127026317264073165272352035321176077221312::@143354234010217013100071147270231254040310150201 keypad</div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a88c082dcae7f6fe55c81aaaad15e534e"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a88c082dcae7f6fe55c81aaaad15e534e">_lv_indev_proc_t::indev_point</a></div><div class="ttdeci">lv_point_t indev_point</div><div class="ttdef"><b>Definition</b> <a href="#l00144">lv_hal_indev.h:144</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a943cbd9cf549902dc4cfae4fbcea181f"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a943cbd9cf549902dc4cfae4fbcea181f">_lv_indev_proc_t::longpr_rep_timestamp</a></div><div class="ttdeci">uint32_t longpr_rep_timestamp</div><div class="ttdef"><b>Definition</b> <a href="#l00171">lv_hal_indev.h:171</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a9511db2f0bed58a7ceca5b338154dfd5"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a9511db2f0bed58a7ceca5b338154dfd5">_lv_indev_proc_t::gesture_dir</a></div><div class="ttdeci">lv_dir_t gesture_dir</div><div class="ttdef"><b>Definition</b> <a href="#l00160">lv_hal_indev.h:160</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a989c1d45df566aef0219fbc90f2ab628"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a989c1d45df566aef0219fbc90f2ab628">_lv_indev_proc_t::last_pressed</a></div><div class="ttdeci">struct _lv_obj_t * last_pressed</div><div class="ttdef"><b>Definition</b> <a href="#l00154">lv_hal_indev.h:154</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a993ced14d531f55381346cebf8a978d8"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8">_lv_indev_proc_t::state</a></div><div class="ttdeci">lv_indev_state_t state</div><div class="ttdef"><b>Definition</b> <a href="#l00133">lv_hal_indev.h:133</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_a9bb0b055f6a7b857c3d0f77bb652cb97"><div class="ttname"><a href="struct__lv__indev__proc__t.html#a9bb0b055f6a7b857c3d0f77bb652cb97">_lv_indev_proc_t::scroll_throw_vect</a></div><div class="ttdeci">lv_point_t scroll_throw_vect</div><div class="ttdef"><b>Definition</b> <a href="#l00149">lv_hal_indev.h:149</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_ab7a4b61acd0befd72fd772d2e51704f5"><div class="ttname"><a href="struct__lv__indev__proc__t.html#ab7a4b61acd0befd72fd772d2e51704f5">_lv_indev_proc_t::reset_query</a></div><div class="ttdeci">uint8_t reset_query</div><div class="ttdef"><b>Definition</b> <a href="#l00136">lv_hal_indev.h:136</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_ac1a0645fa105c22698920de514f3fb9b"><div class="ttname"><a href="struct__lv__indev__proc__t.html#ac1a0645fa105c22698920de514f3fb9b">_lv_indev_proc_t::gesture_sum</a></div><div class="ttdeci">lv_point_t gesture_sum</div><div class="ttdef"><b>Definition</b> <a href="#l00157">lv_hal_indev.h:157</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_acbfc138ec3c3b93a38aae9ea5d48cb23"><div class="ttname"><a href="struct__lv__indev__proc__t.html#acbfc138ec3c3b93a38aae9ea5d48cb23">_lv_indev_proc_t::scroll_dir</a></div><div class="ttdeci">lv_dir_t scroll_dir</div><div class="ttdef"><b>Definition</b> <a href="#l00159">lv_hal_indev.h:159</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_af5b18f4a595a9a1b74a7665b5e55f42b"><div class="ttname"><a href="struct__lv__indev__proc__t.html#af5b18f4a595a9a1b74a7665b5e55f42b">_lv_indev_proc_t::last_key</a></div><div class="ttdeci">uint32_t last_key</div><div class="ttdef"><b>Definition</b> <a href="#l00166">lv_hal_indev.h:166</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_af72a80aed5ad581416e5c33dfe3e93f8"><div class="ttname"><a href="struct__lv__indev__proc__t.html#af72a80aed5ad581416e5c33dfe3e93f8">_lv_indev_proc_t::disabled</a></div><div class="ttdeci">uint8_t disabled</div><div class="ttdef"><b>Definition</b> <a href="#l00137">lv_hal_indev.h:137</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_afded21d1887b4ca6c8f14669846c2152"><div class="ttname"><a href="struct__lv__indev__proc__t.html#afded21d1887b4ca6c8f14669846c2152">_lv_indev_proc_t::scroll_throw_vect_ori</a></div><div class="ttdeci">lv_point_t scroll_throw_vect_ori</div><div class="ttdef"><b>Definition</b> <a href="#l00150">lv_hal_indev.h:150</a></div></div>
+<div class="ttc" id="astruct__lv__indev__proc__t_html_affc96e7c25e11f103573f7d9e5fd102f"><div class="ttname"><a href="struct__lv__indev__proc__t.html#affc96e7c25e11f103573f7d9e5fd102f">_lv_indev_proc_t::wait_until_release</a></div><div class="ttdeci">uint8_t wait_until_release</div><div class="ttdef"><b>Definition</b> <a href="#l00138">lv_hal_indev.h:138</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html"><div class="ttname"><a href="struct__lv__indev__t.html">_lv_indev_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00176">lv_hal_indev.h:176</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_a532e74e74e6a183ee3e0fde02c9b2beb"><div class="ttname"><a href="struct__lv__indev__t.html#a532e74e74e6a183ee3e0fde02c9b2beb">_lv_indev_t::proc</a></div><div class="ttdeci">_lv_indev_proc_t proc</div><div class="ttdef"><b>Definition</b> <a href="#l00178">lv_hal_indev.h:178</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_a5aed39e0d1027712f3894e1ba5e89d7a"><div class="ttname"><a href="struct__lv__indev__t.html#a5aed39e0d1027712f3894e1ba5e89d7a">_lv_indev_t::driver</a></div><div class="ttdeci">struct _lv_indev_drv_t * driver</div><div class="ttdef"><b>Definition</b> <a href="#l00177">lv_hal_indev.h:177</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_aa7c40dc6d671c802427db39a7181237b"><div class="ttname"><a href="struct__lv__indev__t.html#aa7c40dc6d671c802427db39a7181237b">_lv_indev_t::btn_points</a></div><div class="ttdeci">const lv_point_t * btn_points</div><div class="ttdef"><b>Definition</b> <a href="#l00181">lv_hal_indev.h:181</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_abe81eefe10ba7f66ff9ffe3a48db3a31"><div class="ttname"><a href="struct__lv__indev__t.html#abe81eefe10ba7f66ff9ffe3a48db3a31">_lv_indev_t::group</a></div><div class="ttdeci">struct _lv_group_t * group</div><div class="ttdef"><b>Definition</b> <a href="#l00180">lv_hal_indev.h:180</a></div></div>
+<div class="ttc" id="astruct__lv__indev__t_html_afca94f9275c3ca669979477d56fd884d"><div class="ttname"><a href="struct__lv__indev__t.html#afca94f9275c3ca669979477d56fd884d">_lv_indev_t::cursor</a></div><div class="ttdeci">struct _lv_obj_t * cursor</div><div class="ttdef"><b>Definition</b> <a href="#l00179">lv_hal_indev.h:179</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html"><div class="ttname"><a href="struct__lv__obj__t.html">_lv_obj_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00174">lv_obj.h:174</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html"><div class="ttname"><a href="structlv__indev__data__t.html">lv_indev_data_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00077">lv_hal_indev.h:77</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_a13b86f5548c334dc240f85a74c96195e"><div class="ttname"><a href="structlv__indev__data__t.html#a13b86f5548c334dc240f85a74c96195e">lv_indev_data_t::enc_diff</a></div><div class="ttdeci">int16_t enc_diff</div><div class="ttdef"><b>Definition</b> <a href="#l00081">lv_hal_indev.h:81</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_a5c9452fed20a2e6f91bfff86d0bcc6d6"><div class="ttname"><a href="structlv__indev__data__t.html#a5c9452fed20a2e6f91bfff86d0bcc6d6">lv_indev_data_t::btn_id</a></div><div class="ttdeci">uint32_t btn_id</div><div class="ttdef"><b>Definition</b> <a href="#l00080">lv_hal_indev.h:80</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_a5f93f90c6ffe0f7db54a0fc43a1cef9c"><div class="ttname"><a href="structlv__indev__data__t.html#a5f93f90c6ffe0f7db54a0fc43a1cef9c">lv_indev_data_t::key</a></div><div class="ttdeci">uint32_t key</div><div class="ttdef"><b>Definition</b> <a href="#l00079">lv_hal_indev.h:79</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_aa8048e6188372c0050640b1eb341f093"><div class="ttname"><a href="structlv__indev__data__t.html#aa8048e6188372c0050640b1eb341f093">lv_indev_data_t::continue_reading</a></div><div class="ttdeci">bool continue_reading</div><div class="ttdef"><b>Definition</b> <a href="#l00084">lv_hal_indev.h:84</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_aed0de26ed88301e92bc3d95020a9893b"><div class="ttname"><a href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">lv_indev_data_t::state</a></div><div class="ttdeci">lv_indev_state_t state</div><div class="ttdef"><b>Definition</b> <a href="#l00083">lv_hal_indev.h:83</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_afaecb3fba20bd3d6f798dea8b207f257"><div class="ttname"><a href="structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257">lv_indev_data_t::point</a></div><div class="ttdeci">lv_point_t point</div><div class="ttdef"><b>Definition</b> <a href="#l00078">lv_hal_indev.h:78</a></div></div>
+<div class="ttc" id="astructlv__point__t_html"><div class="ttname"><a href="structlv__point__t.html">lv_point_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00037">lv_area.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_017614725141a2c376f9107dbca61d43.html">hal</a></li><li class="navelem"><a href="lv__hal__indev_8h.html">lv_hal_indev.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/core/lv_obj_tree.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__obj__tree_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_obj_tree.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div>
+<p><a href="lv__obj__tree_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:ad704dc1cca55014a50b8216240cfbc96" id="r_ad704dc1cca55014a50b8216240cfbc96"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159">lv_obj_tree_walk_res_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad704dc1cca55014a50b8216240cfbc96">lv_obj_tree_walk_cb_t</a>) (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *, void *)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:ade3b8b8706f4ae3264d8ce741135e159" id="r_ade3b8b8706f4ae3264d8ce741135e159"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159">lv_obj_tree_walk_res_t</a> { <a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159a199951835ae79367dc67bab483fcca8b">LV_OBJ_TREE_WALK_NEXT</a>
+, <a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159af653c8c94068f0424a81423107c1e445">LV_OBJ_TREE_WALK_SKIP_CHILDREN</a>
+, <a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159afb1122a5bf7892aee011a407a540c676">LV_OBJ_TREE_WALK_END</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:af6806d33da746f1f84d1e0dcb57fb5e2" id="r_af6806d33da746f1f84d1e0dcb57fb5e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6806d33da746f1f84d1e0dcb57fb5e2">lv_obj_clean</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:acc42ae5706d6f38929e02ac8fb252e3c" id="r_acc42ae5706d6f38929e02ac8fb252e3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc42ae5706d6f38929e02ac8fb252e3c">lv_obj_del</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:aea6f2d4b966b06c06658c12aac2fa254" id="r_aea6f2d4b966b06c06658c12aac2fa254"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea6f2d4b966b06c06658c12aac2fa254">lv_obj_del_anim_ready_cb</a> (<a class="el" href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a> *<a class="el" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>)</td></tr>
+<tr class="memitem:a0080923cccf80af7b1756b0e418db547" id="r_a0080923cccf80af7b1756b0e418db547"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0080923cccf80af7b1756b0e418db547">lv_obj_del_async</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a57ae00997cdc472ff4d9a17f0358b5ca" id="r_a57ae00997cdc472ff4d9a17f0358b5ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57ae00997cdc472ff4d9a17f0358b5ca">lv_obj_del_delayed</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj, uint32_t delay_ms)</td></tr>
+<tr class="memitem:a98240fbf5e810aa982715c04a67eee24" id="r_a98240fbf5e810aa982715c04a67eee24"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a> (const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj, int32_t id)</td></tr>
+<tr class="memitem:ab90a8d473553c32ba4c63146cd853725" id="r_ab90a8d473553c32ba4c63146cd853725"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab90a8d473553c32ba4c63146cd853725">lv_obj_get_child_cnt</a> (const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a02424dd0e5dd91bf4ce76017fa14e60a" id="r_a02424dd0e5dd91bf4ce76017fa14e60a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02424dd0e5dd91bf4ce76017fa14e60a">lv_obj_get_disp</a> (const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a29a6bf149c29cedc42b6c7f884fbf7ed" id="r_a29a6bf149c29cedc42b6c7f884fbf7ed"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29a6bf149c29cedc42b6c7f884fbf7ed">lv_obj_get_index</a> (const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ae70ca6695b2d91cb6d80f5413a9c39fb" id="r_ae70ca6695b2d91cb6d80f5413a9c39fb"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae70ca6695b2d91cb6d80f5413a9c39fb">lv_obj_get_parent</a> (const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ace38c4ec054d6cc43a84714c8d4a3242" id="r_ace38c4ec054d6cc43a84714c8d4a3242"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace38c4ec054d6cc43a84714c8d4a3242">lv_obj_get_screen</a> (const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:aa44c67732da59bf2e02c23e5af4baa3e" id="r_aa44c67732da59bf2e02c23e5af4baa3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa44c67732da59bf2e02c23e5af4baa3e">lv_obj_move_to_index</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj, int32_t index)</td></tr>
+<tr class="memitem:aa82c43e7a34925013855301d476e9c37" id="r_aa82c43e7a34925013855301d476e9c37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa82c43e7a34925013855301d476e9c37">lv_obj_set_parent</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj, struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:a36c297ea117c384778fc25e72467c6c2" id="r_a36c297ea117c384778fc25e72467c6c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36c297ea117c384778fc25e72467c6c2">lv_obj_swap</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj1, struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *obj2)</td></tr>
+<tr class="memitem:ad06bef5b3a86e7a076aabe4577408157" id="r_ad06bef5b3a86e7a076aabe4577408157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad06bef5b3a86e7a076aabe4577408157">lv_obj_tree_walk</a> (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *start_obj, <a class="el" href="#ad704dc1cca55014a50b8216240cfbc96">lv_obj_tree_walk_cb_t</a> cb, void *user_data)</td></tr>
+</table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de «typedef»</h2>
+<a id="ad704dc1cca55014a50b8216240cfbc96" name="ad704dc1cca55014a50b8216240cfbc96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad704dc1cca55014a50b8216240cfbc96">&#9670;&#160;</a></span>lv_obj_tree_walk_cb_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159">lv_obj_tree_walk_res_t</a>(* lv_obj_tree_walk_cb_t) (struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *, void *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8h_source.html#l00037">37</a> del archivo <a class="el" href="lv__obj__tree_8h_source.html">lv_obj_tree.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="ade3b8b8706f4ae3264d8ce741135e159" name="ade3b8b8706f4ae3264d8ce741135e159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3b8b8706f4ae3264d8ce741135e159">&#9670;&#160;</a></span>lv_obj_tree_walk_res_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ade3b8b8706f4ae3264d8ce741135e159">lv_obj_tree_walk_res_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="ade3b8b8706f4ae3264d8ce741135e159a199951835ae79367dc67bab483fcca8b" name="ade3b8b8706f4ae3264d8ce741135e159a199951835ae79367dc67bab483fcca8b"></a>LV_OBJ_TREE_WALK_NEXT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ade3b8b8706f4ae3264d8ce741135e159af653c8c94068f0424a81423107c1e445" name="ade3b8b8706f4ae3264d8ce741135e159af653c8c94068f0424a81423107c1e445"></a>LV_OBJ_TREE_WALK_SKIP_CHILDREN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ade3b8b8706f4ae3264d8ce741135e159afb1122a5bf7892aee011a407a540c676" name="ade3b8b8706f4ae3264d8ce741135e159afb1122a5bf7892aee011a407a540c676"></a>LV_OBJ_TREE_WALK_END&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8h_source.html#l00031">31</a> del archivo <a class="el" href="lv__obj__tree_8h_source.html">lv_obj_tree.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>             {</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_enumvalue" href="#ade3b8b8706f4ae3264d8ce741135e159a199951835ae79367dc67bab483fcca8b">LV_OBJ_TREE_WALK_NEXT</a>,</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="#ade3b8b8706f4ae3264d8ce741135e159af653c8c94068f0424a81423107c1e445">LV_OBJ_TREE_WALK_SKIP_CHILDREN</a>,</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_enumvalue" href="#ade3b8b8706f4ae3264d8ce741135e159afb1122a5bf7892aee011a407a540c676">LV_OBJ_TREE_WALK_END</a>,</div>
+<div class="line"><span class="lineno">   35</span>} <a class="code hl_enumeration" href="#ade3b8b8706f4ae3264d8ce741135e159">lv_obj_tree_walk_res_t</a>;</div>
+<div class="ttc" id="alv__obj__tree_8h_html_ade3b8b8706f4ae3264d8ce741135e159"><div class="ttname"><a href="#ade3b8b8706f4ae3264d8ce741135e159">lv_obj_tree_walk_res_t</a></div><div class="ttdeci">lv_obj_tree_walk_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8h_source.html#l00031">lv_obj_tree.h:31</a></div></div>
+<div class="ttc" id="alv__obj__tree_8h_html_ade3b8b8706f4ae3264d8ce741135e159a199951835ae79367dc67bab483fcca8b"><div class="ttname"><a href="#ade3b8b8706f4ae3264d8ce741135e159a199951835ae79367dc67bab483fcca8b">LV_OBJ_TREE_WALK_NEXT</a></div><div class="ttdeci">@ LV_OBJ_TREE_WALK_NEXT</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8h_source.html#l00032">lv_obj_tree.h:32</a></div></div>
+<div class="ttc" id="alv__obj__tree_8h_html_ade3b8b8706f4ae3264d8ce741135e159af653c8c94068f0424a81423107c1e445"><div class="ttname"><a href="#ade3b8b8706f4ae3264d8ce741135e159af653c8c94068f0424a81423107c1e445">LV_OBJ_TREE_WALK_SKIP_CHILDREN</a></div><div class="ttdeci">@ LV_OBJ_TREE_WALK_SKIP_CHILDREN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8h_source.html#l00033">lv_obj_tree.h:33</a></div></div>
+<div class="ttc" id="alv__obj__tree_8h_html_ade3b8b8706f4ae3264d8ce741135e159afb1122a5bf7892aee011a407a540c676"><div class="ttname"><a href="#ade3b8b8706f4ae3264d8ce741135e159afb1122a5bf7892aee011a407a540c676">LV_OBJ_TREE_WALK_END</a></div><div class="ttdeci">@ LV_OBJ_TREE_WALK_END</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8h_source.html#l00034">lv_obj_tree.h:34</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="af6806d33da746f1f84d1e0dcb57fb5e2" name="af6806d33da746f1f84d1e0dcb57fb5e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6806d33da746f1f84d1e0dcb57fb5e2">&#9670;&#160;</a></span>lv_obj_clean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_clean </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete all children of an object. Also remove the objects from their group and remove all animations (if any). Send <span class="tt">LV_EVENT_DELETED</span> to deleted objects. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00080">80</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;begin (delete %p)&quot;</span>, (<span class="keywordtype">void</span> *)obj);</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * child = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(obj, 0);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">while</span>(child) {</div>
+<div class="line"><span class="lineno">   89</span>        obj_del_core(child);</div>
+<div class="line"><span class="lineno">   90</span>        child = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(obj, 0);</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">/*Just to remove scroll animations if any*/</span></div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#a00be04866f7abbe45862d0d3b079dadf">lv_obj_scroll_to</a>(obj, 0, 0, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42">LV_ANIM_OFF</a>);</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>) {</div>
+<div class="line"><span class="lineno">   95</span>        obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a777cd35b43ca269c6d695a1578fec43e">scroll</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = 0;</div>
+<div class="line"><span class="lineno">   96</span>        obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a777cd35b43ca269c6d695a1578fec43e">scroll</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = 0;</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_define" href="lv__assert_8h.html#af38d38ce6d4c4d4f2c59c2887be633ca">LV_ASSERT_MEM_INTEGRITY</a>();</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;finished (delete %p)&quot;</span>, (<span class="keywordtype">void</span> *)obj);</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71a64690995c13aa084264daf0244796d42">LV_ANIM_OFF</a></div><div class="ttdeci">@ LV_ANIM_OFF</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00038">lv_anim.h:38</a></div></div>
+<div class="ttc" id="alv__assert_8h_html_af38d38ce6d4c4d4f2c59c2887be633ca"><div class="ttname"><a href="lv__assert_8h.html#af38d38ce6d4c4d4f2c59c2887be633ca">LV_ASSERT_MEM_INTEGRITY</a></div><div class="ttdeci">#define LV_ASSERT_MEM_INTEGRITY()</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00072">lv_assert.h:72</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a1deeb0e317c6314c573ee8730321afd0"><div class="ttname"><a href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a></div><div class="ttdeci">#define LV_LOG_TRACE(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00093">lv_log.h:93</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a00be04866f7abbe45862d0d3b079dadf"><div class="ttname"><a href="lv__obj__scroll_8c.html#a00be04866f7abbe45862d0d3b079dadf">lv_obj_scroll_to</a></div><div class="ttdeci">void lv_obj_scroll_to(lv_obj_t *obj, lv_coord_t x, lv_coord_t y, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00362">lv_obj_scroll.c:362</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_a708b3eb8efc7d0ac06d1b924dcd9b651"><div class="ttname"><a href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_child(const lv_obj_t *obj, int32_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00293">lv_obj_tree.c:293</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_a777cd35b43ca269c6d695a1578fec43e"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#a777cd35b43ca269c6d695a1578fec43e">_lv_obj_spec_attr_t::scroll</a></div><div class="ttdeci">lv_point_t scroll</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00161">lv_obj.h:161</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_acf5de681bc9200fd454f868c6820f3f0"><div class="ttname"><a href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">_lv_obj_t::spec_attr</a></div><div class="ttdeci">_lv_obj_spec_attr_t * spec_attr</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00177">lv_obj.h:177</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__anim_8h_source.html#l00038">LV_ANIM_OFF</a>, <a class="el" href="lv__assert_8h_source.html#l00072">LV_ASSERT_MEM_INTEGRITY</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00293">lv_obj_get_child()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00362">lv_obj_scroll_to()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__obj_8h_source.html#l00161">_lv_obj_spec_attr_t::scroll</a>, <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+</div>
+</div>
+<a id="acc42ae5706d6f38929e02ac8fb252e3c" name="acc42ae5706d6f38929e02ac8fb252e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc42ae5706d6f38929e02ac8fb252e3c">&#9670;&#160;</a></span>lv_obj_del()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_del </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete an object and all of its children. Also remove the objects from their group and remove all animations (if any). Send <span class="tt">LV_EVENT_DELETED</span> to deleted objects. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00045">45</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;begin (delete %p)&quot;</span>, (<span class="keywordtype">void</span> *)obj);</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * par = <a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp = NULL;</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">bool</span> act_scr_del = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span>(par == NULL) {</div>
+<div class="line"><span class="lineno">   56</span>        disp = <a class="code hl_function" href="lv__obj__tree_8c.html#a01ed5090703139c77edd07611a5ed148">lv_obj_get_disp</a>(obj);</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span>(!disp) <span class="keywordflow">return</span>;   <span class="comment">/*Shouldn&#39;t happen*/</span></div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span>(disp-&gt;<a class="code hl_variable" href="struct__lv__disp__t.html#aecb603a4d3699a2af7beb0943edb0026">act_scr</a> == obj) act_scr_del = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    obj_del_core(obj);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">/*Call the ancestor&#39;s event handler to the parent to notify it about the child delete*/</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span>(par) {</div>
+<div class="line"><span class="lineno">   65</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#af65cc55c73a3e90235a23739c90cb3ea">lv_obj_scrollbar_invalidate</a>(par);</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(par, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a>, NULL);</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(par, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59d992c22d0b9f9b55e05b63cfd65a1e">LV_EVENT_CHILD_DELETED</a>, NULL);</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">/*Handle if the active screen was deleted*/</span></div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span>(act_scr_del) {</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;the active screen was deleted&quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>        disp-&gt;<a class="code hl_variable" href="struct__lv__disp__t.html#aecb603a4d3699a2af7beb0943edb0026">act_scr</a> = NULL;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_define" href="lv__assert_8h.html#af38d38ce6d4c4d4f2c59c2887be633ca">LV_ASSERT_MEM_INTEGRITY</a>();</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;finished (delete %p)&quot;</span>, (<span class="keywordtype">void</span> *)obj);</div>
+<div class="line"><span class="lineno">   78</span>}</div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a59d992c22d0b9f9b55e05b63cfd65a1e"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59d992c22d0b9f9b55e05b63cfd65a1e">LV_EVENT_CHILD_DELETED</a></div><div class="ttdeci">@ LV_EVENT_CHILD_DELETED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00077">lv_event.h:77</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a></div><div class="ttdeci">@ LV_EVENT_CHILD_CHANGED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00075">lv_event.h:75</a></div></div>
+<div class="ttc" id="alv__hal__disp_8h_html_a38e817df2a5f77f36d3fe4975cf58129"><div class="ttname"><a href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a></div><div class="ttdeci">struct _lv_disp_t lv_disp_t</div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_af65cc55c73a3e90235a23739c90cb3ea"><div class="ttname"><a href="lv__obj__scroll_8c.html#af65cc55c73a3e90235a23739c90cb3ea">lv_obj_scrollbar_invalidate</a></div><div class="ttdeci">void lv_obj_scrollbar_invalidate(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00622">lv_obj_scroll.c:622</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_a01ed5090703139c77edd07611a5ed148"><div class="ttname"><a href="lv__obj__tree_8c.html#a01ed5090703139c77edd07611a5ed148">lv_obj_get_disp</a></div><div class="ttdeci">lv_disp_t * lv_obj_get_disp(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00264">lv_obj_tree.c:264</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ae57dc586fb19ae81c4c9f70d8e7eec7d"><div class="ttname"><a href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_parent(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00285">lv_obj_tree.c:285</a></div></div>
+<div class="ttc" id="astruct__lv__disp__t_html_aecb603a4d3699a2af7beb0943edb0026"><div class="ttname"><a href="struct__lv__disp__t.html#aecb603a4d3699a2af7beb0943edb0026">_lv_disp_t::act_scr</a></div><div class="ttdeci">struct _lv_obj_t * act_scr</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__disp_8h_source.html#l00171">lv_hal_disp.h:171</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__hal__disp_8h_source.html#l00171">_lv_disp_t::act_scr</a>, <a class="el" href="lv__assert_8h_source.html#l00072">LV_ASSERT_MEM_INTEGRITY</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8h_source.html#l00075">LV_EVENT_CHILD_CHANGED</a>, <a class="el" href="lv__event_8h_source.html#l00077">LV_EVENT_CHILD_DELETED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00264">lv_obj_get_disp()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00622">lv_obj_scrollbar_invalidate()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00059">_ui_screen_delete()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00291">lv_disp_remove()</a>, <a class="el" href="lv__example__label__4_8c_source.html#l00032">lv_example_label_4()</a>, <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00189">lv_msgbox_close()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00116">lv_obj_del_anim_ready_cb()</a>, <a class="el" href="lv__disp_8c_source.html#l00221">lv_scr_load_anim()</a> y <a class="el" href="ui__helpers_8c_source.html#l00123">scr_unloaded_delete_cb()</a>.</p>
+
+</div>
+</div>
+<a id="aea6f2d4b966b06c06658c12aac2fa254" name="aea6f2d4b966b06c06658c12aac2fa254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea6f2d4b966b06c06658c12aac2fa254">&#9670;&#160;</a></span>lv_obj_del_anim_ready_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_del_anim_ready_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a> *</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A function to be easily used in animation ready callback to delete an object when the animation is ready </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer to the animation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00116">116</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>{</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="lv__obj__tree_8c.html#aa6dcfe74a8884599d8db6b4c9ad76467">lv_obj_del</a>(<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>-&gt;var);</div>
+<div class="line"><span class="lineno">  119</span>}</div>
+<div class="ttc" id="alv__example__anim__3_8c_html_a734ce3ff48b2bdc8e7cc09dd6faee06f"><div class="ttname"><a href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a></div><div class="ttdeci">lv_anim_t a</div><div class="ttdef"><b>Definition</b> <a href="lv__example__anim__3_8c_source.html#l00024">lv_example_anim_3.c:24</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_aa6dcfe74a8884599d8db6b4c9ad76467"><div class="ttname"><a href="lv__obj__tree_8c.html#aa6dcfe74a8884599d8db6b4c9ad76467">lv_obj_del</a></div><div class="ttdeci">void lv_obj_del(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00045">lv_obj_tree.c:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__example__anim__3_8c_source.html#l00024">a</a> y <a class="el" href="lv__obj__tree_8c_source.html#l00045">lv_obj_del()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__tree_8c_source.html#l00104">lv_obj_del_delayed()</a>.</p>
+
+</div>
+</div>
+<a id="a0080923cccf80af7b1756b0e418db547" name="a0080923cccf80af7b1756b0e418db547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0080923cccf80af7b1756b0e418db547">&#9670;&#160;</a></span>lv_obj_del_async()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_del_async </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function for asynchronously deleting objects. Useful for cases where you can't delete an object directly in an <span class="tt"><a class="el" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a2b6e10a27dd52c80f3ed04e4bc3ced2b">LV_EVENT_DELETE</a></span> handler (i.e. parent). </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>object to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="lv__async_8c.html#aee44e660e597215583d71f76f9ce2564">lv_async_call</a> </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00121">121</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>{</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_function" href="lv__async_8c.html#aee44e660e597215583d71f76f9ce2564">lv_async_call</a>(lv_obj_del_async_cb, obj);</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="alv__async_8c_html_aee44e660e597215583d71f76f9ce2564"><div class="ttname"><a href="lv__async_8c.html#aee44e660e597215583d71f76f9ce2564">lv_async_call</a></div><div class="ttdeci">lv_res_t lv_async_call(lv_async_cb_t async_xcb, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__async_8c_source.html#l00045">lv_async.c:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__async_8c_source.html#l00045">lv_async_call()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__msgbox_8c_source.html#l00195">lv_msgbox_close_async()</a>.</p>
+
+</div>
+</div>
+<a id="a57ae00997cdc472ff4d9a17f0358b5ca" name="a57ae00997cdc472ff4d9a17f0358b5ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ae00997cdc472ff4d9a17f0358b5ca">&#9670;&#160;</a></span>lv_obj_del_delayed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_del_delayed </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>delay_ms</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete an object after some delay </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+    <tr><td class="paramname">delay_ms</td><td>time to wait before delete in milliseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00104">104</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_typedef" href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a> <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>;</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="lv__anim_8c.html#ab47f0c3139bbd759c1ccae268fc297e6">lv_anim_init</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  108</span>    lv_anim_set_var(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, obj);</div>
+<div class="line"><span class="lineno">  109</span>    lv_anim_set_exec_cb(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, NULL);</div>
+<div class="line"><span class="lineno">  110</span>    lv_anim_set_time(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, 1);</div>
+<div class="line"><span class="lineno">  111</span>    lv_anim_set_delay(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, delay_ms);</div>
+<div class="line"><span class="lineno">  112</span>    lv_anim_set_ready_cb(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, <a class="code hl_function" href="lv__obj__tree_8c.html#aea6f2d4b966b06c06658c12aac2fa254">lv_obj_del_anim_ready_cb</a>);</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><span class="lineno">  114</span>}</div>
+<div class="ttc" id="alv__anim_8c_html_a51a27d8a0a7d7337a08c9416217b9d02"><div class="ttname"><a href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a></div><div class="ttdeci">lv_anim_t * lv_anim_start(const lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00076">lv_anim.c:76</a></div></div>
+<div class="ttc" id="alv__anim_8c_html_ab47f0c3139bbd759c1ccae268fc297e6"><div class="ttname"><a href="lv__anim_8c.html#ab47f0c3139bbd759c1ccae268fc297e6">lv_anim_init</a></div><div class="ttdeci">void lv_anim_init(lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00065">lv_anim.c:65</a></div></div>
+<div class="ttc" id="alv__anim_8h_html_a94df93c022dc57ee917b4757e50ebe22"><div class="ttname"><a href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a></div><div class="ttdeci">struct _lv_anim_t lv_anim_t</div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_aea6f2d4b966b06c06658c12aac2fa254"><div class="ttname"><a href="lv__obj__tree_8c.html#aea6f2d4b966b06c06658c12aac2fa254">lv_obj_del_anim_ready_cb</a></div><div class="ttdeci">void lv_obj_del_anim_ready_cb(lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00116">lv_obj_tree.c:116</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__example__anim__3_8c_source.html#l00024">a</a>, <a class="el" href="lv__anim_8c_source.html#l00065">lv_anim_init()</a>, <a class="el" href="lv__anim_8c_source.html#l00076">lv_anim_start()</a> y <a class="el" href="lv__obj__tree_8c_source.html#l00116">lv_obj_del_anim_ready_cb()</a>.</p>
+
+</div>
+</div>
+<a id="a98240fbf5e810aa982715c04a67eee24" name="a98240fbf5e810aa982715c04a67eee24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98240fbf5e810aa982715c04a67eee24">&#9670;&#160;</a></span>lv_obj_get_child()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> * lv_obj_get_child </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the child of an object by the child's index. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object whose child should be get </td></tr>
+    <tr><td class="paramname">id</td><td>the index of the child. 0: the oldest (firstly created) child 1: the second oldest child count-1: the youngest -1: the youngest -2: the second youngest </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the child or NULL if the index was invalid </dd></dl>
+
+</div>
+</div>
+<a id="ab90a8d473553c32ba4c63146cd853725" name="ab90a8d473553c32ba4c63146cd853725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90a8d473553c32ba4c63146cd853725">&#9670;&#160;</a></span>lv_obj_get_child_cnt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t lv_obj_get_child_cnt </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of children </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the number of children </dd></dl>
+
+</div>
+</div>
+<a id="a02424dd0e5dd91bf4ce76017fa14e60a" name="a02424dd0e5dd91bf4ce76017fa14e60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02424dd0e5dd91bf4ce76017fa14e60a">&#9670;&#160;</a></span>lv_obj_get_disp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * lv_obj_get_disp </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the display of the object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the object's display </dd></dl>
+
+</div>
+</div>
+<a id="a29a6bf149c29cedc42b6c7f884fbf7ed" name="a29a6bf149c29cedc42b6c7f884fbf7ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a6bf149c29cedc42b6c7f884fbf7ed">&#9670;&#160;</a></span>lv_obj_get_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t lv_obj_get_index </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the index of a child. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the child index of the object. E.g. 0: the oldest (firstly created child) </dd></dl>
+
+</div>
+</div>
+<a id="ae70ca6695b2d91cb6d80f5413a9c39fb" name="ae70ca6695b2d91cb6d80f5413a9c39fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70ca6695b2d91cb6d80f5413a9c39fb">&#9670;&#160;</a></span>lv_obj_get_parent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> * lv_obj_get_parent </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the parent of an object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the parent of the object. (NULL if <span class="tt">obj</span> was a screen) </dd></dl>
+
+</div>
+</div>
+<a id="ace38c4ec054d6cc43a84714c8d4a3242" name="ace38c4ec054d6cc43a84714c8d4a3242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace38c4ec054d6cc43a84714c8d4a3242">&#9670;&#160;</a></span>lv_obj_get_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> * lv_obj_get_screen </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the screen of an object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the object's screen </dd></dl>
+
+</div>
+</div>
+<a id="aa44c67732da59bf2e02c23e5af4baa3e" name="aa44c67732da59bf2e02c23e5af4baa3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44c67732da59bf2e02c23e5af4baa3e">&#9670;&#160;</a></span>lv_obj_move_to_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_move_to_index </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>moves the object to the given index in its parent. When used in listboxes, it can be used to sort the listbox items. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to the object to be moved. </td></tr>
+    <tr><td class="paramname">index</td><td>new index in parent. -1 to count from the back </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Nota</dt><dd>to move to the background: lv_obj_move_to_index(obj, 0) </dd>
+<dd>
+to move forward (up): lv_obj_move_to_index(obj, lv_obj_get_index(obj) - 1) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00184">184</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>{</div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span>(index &lt; 0) {</div>
+<div class="line"><span class="lineno">  189</span>        index = <a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(<a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj)) + index;</div>
+<div class="line"><span class="lineno">  190</span>    }</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keyword">const</span> int32_t old_index = <a class="code hl_function" href="lv__obj__tree_8c.html#ac6d4d6b1db3cc107ce79c58a2c3d86d2">lv_obj_get_index</a>(obj);</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent = <a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj);</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">if</span>(index &lt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">if</span>(index &gt;= (int32_t) <a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(parent)) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">if</span>(index == old_index) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>    int32_t i = old_index;</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span>(index &lt; old_index) {</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">while</span>(i &gt; index)  {</div>
+<div class="line"><span class="lineno">  203</span>            parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[i] = parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[i - 1];</div>
+<div class="line"><span class="lineno">  204</span>            i--;</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">while</span>(i &lt; index) {</div>
+<div class="line"><span class="lineno">  209</span>            parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[i] = parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[i + 1];</div>
+<div class="line"><span class="lineno">  210</span>            i++;</div>
+<div class="line"><span class="lineno">  211</span>        }</div>
+<div class="line"><span class="lineno">  212</span>    }</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[index] = obj;</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a>, NULL);</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(parent);</div>
+<div class="line"><span class="lineno">  217</span>}</div>
+<div class="ttc" id="alv__obj__tree_8c_html_aa70909493dbfa20500193fb3934ebdb4"><div class="ttname"><a href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a></div><div class="ttdeci">uint32_t lv_obj_get_child_cnt(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00313">lv_obj_tree.c:313</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ac6d4d6b1db3cc107ce79c58a2c3d86d2"><div class="ttname"><a href="lv__obj__tree_8c.html#ac6d4d6b1db3cc107ce79c58a2c3d86d2">lv_obj_get_index</a></div><div class="ttdeci">uint32_t lv_obj_get_index(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00320">lv_obj_tree.c:320</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_a24899261813fe9686805031d6e753145"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">_lv_obj_spec_attr_t::children</a></div><div class="ttdeci">struct _lv_obj_t ** children</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00156">lv_obj.h:156</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00156">_lv_obj_spec_attr_t::children</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8h_source.html#l00075">LV_EVENT_CHILD_CHANGED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00313">lv_obj_get_child_cnt()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00320">lv_obj_get_index()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__dropdown_8c_source.html#l00455">lv_dropdown_open()</a> y <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>.</p>
+
+</div>
+</div>
+<a id="aa82c43e7a34925013855301d476e9c37" name="aa82c43e7a34925013855301d476e9c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa82c43e7a34925013855301d476e9c37">&#9670;&#160;</a></span>lv_obj_set_parent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_parent </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Move the parent of an object. The relative coordinates will be kept.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object whose parent needs to be changed </td></tr>
+    <tr><td class="paramname">parent</td><td>pointer to the new parent </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00127">127</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(parent, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span>(obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#abf27a654be0ee86860391c9104a4d098">parent</a> == NULL) {</div>
+<div class="line"><span class="lineno">  133</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Can&#39;t set the parent of a screen&quot;</span>);</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span>(parent == NULL) {</div>
+<div class="line"><span class="lineno">  138</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Can&#39;t set parent == NULL to an object&quot;</span>);</div>
+<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  140</span>    }</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_function" href="lv__obj_8c.html#a1b734607bd80d900ba862375d08227cf">lv_obj_allocate_spec_attr</a>(parent);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * old_parent = obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#abf27a654be0ee86860391c9104a4d098">parent</a>;</div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">/*Remove the object from the old parent&#39;s child list*/</span></div>
+<div class="line"><span class="lineno">  148</span>    int32_t i;</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">for</span>(i = <a class="code hl_function" href="lv__obj__tree_8c.html#ac6d4d6b1db3cc107ce79c58a2c3d86d2">lv_obj_get_index</a>(obj); i &lt;= (int32_t)<a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(old_parent) - 2; i++) {</div>
+<div class="line"><span class="lineno">  150</span>        old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[i] = old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[i + 1];</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="line"><span class="lineno">  152</span>    old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f">child_cnt</a>--;</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span>(old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f">child_cnt</a>) {</div>
+<div class="line"><span class="lineno">  154</span>        old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a> = <a class="code hl_function" href="lv__mem_8c.html#a2d1d6c69551f4c9f2c21960de8bd2242">lv_mem_realloc</a>(old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>,</div>
+<div class="line"><span class="lineno">  155</span>                                                         old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f">child_cnt</a> * (<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *)));</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>);</div>
+<div class="line"><span class="lineno">  159</span>        old_parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a> = NULL;</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="comment">/*Add the child to the new parent as the last (newest child)*/</span></div>
+<div class="line"><span class="lineno">  163</span>    parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f">child_cnt</a>++;</div>
+<div class="line"><span class="lineno">  164</span>    parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a> = <a class="code hl_function" href="lv__mem_8c.html#a2d1d6c69551f4c9f2c21960de8bd2242">lv_mem_realloc</a>(parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>,</div>
+<div class="line"><span class="lineno">  165</span>                                                 parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f">child_cnt</a> * (<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *)));</div>
+<div class="line"><span class="lineno">  166</span>    parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[<a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(parent) - 1] = obj;</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    obj-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#abf27a654be0ee86860391c9104a4d098">parent</a> = parent;</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="comment">/*Notify the original parent because one of its children is lost*/</span></div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#af65cc55c73a3e90235a23739c90cb3ea">lv_obj_scrollbar_invalidate</a>(old_parent);</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(old_parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a>, obj);</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(old_parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59d992c22d0b9f9b55e05b63cfd65a1e">LV_EVENT_CHILD_DELETED</a>, NULL);</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    <span class="comment">/*Notify the new parent about the child*/</span></div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a>, obj);</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a3d9004315da68a3a5b4dd57d07b810eb">LV_EVENT_CHILD_CREATED</a>, NULL);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(obj);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a3d9004315da68a3a5b4dd57d07b810eb"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a3d9004315da68a3a5b4dd57d07b810eb">LV_EVENT_CHILD_CREATED</a></div><div class="ttdeci">@ LV_EVENT_CHILD_CREATED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00076">lv_event.h:76</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a2d1d6c69551f4c9f2c21960de8bd2242"><div class="ttname"><a href="lv__mem_8c.html#a2d1d6c69551f4c9f2c21960de8bd2242">lv_mem_realloc</a></div><div class="ttdeci">void * lv_mem_realloc(void *data_p, size_t new_size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00194">lv_mem.c:194</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a1b734607bd80d900ba862375d08227cf"><div class="ttname"><a href="lv__obj_8c.html#a1b734607bd80d900ba862375d08227cf">lv_obj_allocate_spec_attr</a></div><div class="ttdeci">void lv_obj_allocate_spec_attr(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00358">lv_obj.c:358</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aa5cb16ea6fdd8ff7ae6838a4e3b6f826"><div class="ttname"><a href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a></div><div class="ttdeci">void lv_obj_mark_layout_as_dirty(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00288">lv_obj_pos.c:288</a></div></div>
+<div class="ttc" id="astruct__lv__obj__spec__attr__t_html_a4e00767c29ba01c4f7be7e4ca5f1d52f"><div class="ttname"><a href="struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f">_lv_obj_spec_attr_t::child_cnt</a></div><div class="ttdeci">uint32_t child_cnt</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00157">lv_obj.h:157</a></div></div>
+<div class="ttc" id="astruct__lv__obj__t_html_abf27a654be0ee86860391c9104a4d098"><div class="ttname"><a href="struct__lv__obj__t.html#abf27a654be0ee86860391c9104a4d098">_lv_obj_t::parent</a></div><div class="ttdeci">struct _lv_obj_t * parent</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00176">lv_obj.h:176</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00157">_lv_obj_spec_attr_t::child_cnt</a>, <a class="el" href="lv__obj_8h_source.html#l00156">_lv_obj_spec_attr_t::children</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8h_source.html#l00075">LV_EVENT_CHILD_CHANGED</a>, <a class="el" href="lv__event_8h_source.html#l00076">LV_EVENT_CHILD_CREATED</a>, <a class="el" href="lv__event_8h_source.html#l00077">LV_EVENT_CHILD_DELETED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__mem_8c_source.html#l00194">lv_mem_realloc()</a>, <a class="el" href="lv__obj_8c_source.html#l00358">lv_obj_allocate_spec_attr()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00313">lv_obj_get_child_cnt()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00320">lv_obj_get_index()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00288">lv_obj_mark_layout_as_dirty()</a>, <a class="el" href="lv__obj__scroll_8c_source.html#l00622">lv_obj_scrollbar_invalidate()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__obj_8h_source.html#l00176">_lv_obj_t::parent</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__dropdown_8c_source.html#l00455">lv_dropdown_open()</a>, <a class="el" href="lv__indev_8c_source.html#l00196">lv_indev_set_cursor()</a>, <a class="el" href="lv__menu_8c_source.html#l00192">lv_menu_set_page()</a> y <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>.</p>
+
+</div>
+</div>
+<a id="a36c297ea117c384778fc25e72467c6c2" name="a36c297ea117c384778fc25e72467c6c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c297ea117c384778fc25e72467c6c2">&#9670;&#160;</a></span>lv_obj_swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_swap </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Swap the positions of two objects. When used in listboxes, it can be used to sort the listbox items. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj1</td><td>pointer to the first object </td></tr>
+    <tr><td class="paramname">obj2</td><td>pointer to the second object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00219">219</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  220</span>{</div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj1, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj2, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent = <a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj1);</div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent2 = <a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj2);</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    uint_fast32_t index1 = <a class="code hl_function" href="lv__obj__tree_8c.html#ac6d4d6b1db3cc107ce79c58a2c3d86d2">lv_obj_get_index</a>(obj1);</div>
+<div class="line"><span class="lineno">  228</span>    uint_fast32_t index2 = <a class="code hl_function" href="lv__obj__tree_8c.html#ac6d4d6b1db3cc107ce79c58a2c3d86d2">lv_obj_get_index</a>(obj2);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent2, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59d992c22d0b9f9b55e05b63cfd65a1e">LV_EVENT_CHILD_DELETED</a>, obj2);</div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a59d992c22d0b9f9b55e05b63cfd65a1e">LV_EVENT_CHILD_DELETED</a>, obj1);</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    parent-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[index1] = obj2;</div>
+<div class="line"><span class="lineno">  234</span>    parent2-&gt;<a class="code hl_variable" href="struct__lv__obj__t.html#acf5de681bc9200fd454f868c6820f3f0">spec_attr</a>-&gt;<a class="code hl_variable" href="struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145">children</a>[index2] = obj1;</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a>, obj2);</div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a3d9004315da68a3a5b4dd57d07b810eb">LV_EVENT_CHILD_CREATED</a>, obj2);</div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent2, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771af81b48195620887d89c54c1af98a2b06">LV_EVENT_CHILD_CHANGED</a>, obj1);</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(parent2, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a3d9004315da68a3a5b4dd57d07b810eb">LV_EVENT_CHILD_CREATED</a>, obj1);</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(parent);</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">if</span>(parent != parent2) {</div>
+<div class="line"><span class="lineno">  244</span>        <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(parent2);</div>
+<div class="line"><span class="lineno">  245</span>    }</div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_function" href="lv__group_8c.html#aa061dceb32f6727af000ef3392792e1a">lv_group_swap_obj</a>(obj1, obj2);</div>
+<div class="line"><span class="lineno">  247</span>}</div>
+<div class="ttc" id="alv__group_8c_html_aa061dceb32f6727af000ef3392792e1a"><div class="ttname"><a href="lv__group_8c.html#aa061dceb32f6727af000ef3392792e1a">lv_group_swap_obj</a></div><div class="ttdeci">void lv_group_swap_obj(lv_obj_t *obj1, lv_obj_t *obj2)</div><div class="ttdef"><b>Definition</b> <a href="lv__group_8c_source.html#l00156">lv_group.c:156</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00156">_lv_obj_spec_attr_t::children</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8h_source.html#l00075">LV_EVENT_CHILD_CHANGED</a>, <a class="el" href="lv__event_8h_source.html#l00076">LV_EVENT_CHILD_CREATED</a>, <a class="el" href="lv__event_8h_source.html#l00077">LV_EVENT_CHILD_DELETED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__group_8c_source.html#l00156">lv_group_swap_obj()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00320">lv_obj_get_index()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__obj_8h_source.html#l00177">_lv_obj_t::spec_attr</a>.</p>
+
+</div>
+</div>
+<a id="ad06bef5b3a86e7a076aabe4577408157" name="ad06bef5b3a86e7a076aabe4577408157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad06bef5b3a86e7a076aabe4577408157">&#9670;&#160;</a></span>lv_obj_tree_walk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_tree_walk </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__obj__t.html">_lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>start_obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ad704dc1cca55014a50b8216240cfbc96">lv_obj_tree_walk_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>user_data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Iterate through all children of any object. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_obj</td><td>start integrating from this object </td></tr>
+    <tr><td class="paramname">cb</td><td>call this callback on the objects </td></tr>
+    <tr><td class="paramname">user_data</td><td>pointer to any user related data (will be passed to <span class="tt">cb</span>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__obj__tree_8c_source.html#l00335">335</a> del archivo <a class="el" href="lv__obj__tree_8c_source.html">lv_obj_tree.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  336</span>{</div>
+<div class="line"><span class="lineno">  337</span>    walk_core(start_obj, cb, user_data);</div>
+<div class="line"><span class="lineno">  338</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__hal__disp_8c_source.html#l00250">lv_disp_drv_update()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_347ffc2652095edf055753e6ba2d2213.html">core</a></li><li class="navelem"><a href="lv__obj__tree_8h.html">lv_obj_tree.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

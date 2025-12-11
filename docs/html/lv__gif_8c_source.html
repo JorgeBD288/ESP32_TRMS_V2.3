@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/extra/libs/gif/lv_gif.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__gif_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_gif.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__gif_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_gifenc.c</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lv__gif_8h.html">lv_gif.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#if LV_USE_GIF</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="gifdec_8h.html">gifdec.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MY_CLASS    &amp;lv_gif_class</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  STATIC PROTOTYPES</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_gif_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_gif_destructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">static</span> <span class="keywordtype">void</span> next_frame_task_cb(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * t);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  STATIC VARIABLES</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_gif_class = {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    .constructor_cb = lv_gif_constructor,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    .destructor_cb = lv_gif_destructor,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    .instance_size = <span class="keyword">sizeof</span>(lv_gif_t),</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    .base_class = &amp;<a class="code hl_variable" href="lv__img_8c.html#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_gif_create(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> lv_gif_set_src(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <span class="keyword">const</span> <span class="keywordtype">void</span> * src)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    lv_gif_t * gifobj = (lv_gif_t *) obj;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">/*Close previous gif if any*/</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span>(gifobj-&gt;gif) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="lv__img__cache_8c.html#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a>(&amp;gifobj-&gt;imgdsc);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        gd_close_gif(gifobj-&gt;gif);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        gifobj-&gt;gif = NULL;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        gifobj-&gt;imgdsc.data = NULL;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a>(src) == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> * img_dsc = src;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        gifobj-&gt;gif = gd_open_gif_data(img_dsc-&gt;<a class="code hl_variable" href="structlv__img__dsc__t.html#a09900b90ae9c9888e341616b611df3a0">data</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a>(src) == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        gifobj-&gt;gif = gd_open_gif_file(src);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span>(gifobj-&gt;gif == NULL) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Could&#39;t load the source&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    gifobj-&gt;imgdsc.data = gifobj-&gt;gif-&gt;canvas;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    gifobj-&gt;imgdsc.header.always_zero = 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    gifobj-&gt;imgdsc.header.cf = <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185">LV_IMG_CF_TRUE_COLOR_ALPHA</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    gifobj-&gt;imgdsc.header.h = gifobj-&gt;gif-&gt;height;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    gifobj-&gt;imgdsc.header.w = gifobj-&gt;gif-&gt;width;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    gifobj-&gt;last_call = <a class="code hl_function" href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a>(obj, &amp;gifobj-&gt;imgdsc);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="lv__timer_8c.html#a25ed72d3306a02d08e65f9f265f6958c">lv_timer_resume</a>(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="lv__timer_8c.html#ab1d0f47b0ce4cc897f99fe7426a3b252">lv_timer_reset</a>(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    next_frame_task_cb(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> lv_gif_restart(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    lv_gif_t * gifobj = (lv_gif_t *) obj;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    gd_rewind(gifobj-&gt;gif);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_function" href="lv__timer_8c.html#a25ed72d3306a02d08e65f9f265f6958c">lv_timer_resume</a>(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_function" href="lv__timer_8c.html#ab1d0f47b0ce4cc897f99fe7426a3b252">lv_timer_reset</a>(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"> *   STATIC FUNCTIONS</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_gif_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(class_p);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    lv_gif_t * gifobj = (lv_gif_t *) obj;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    gifobj-&gt;gif = NULL;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    gifobj-&gt;timer = <a class="code hl_function" href="lv__timer_8c.html#a9f92d3830e2336b96d0459199b87ff18">lv_timer_create</a>(next_frame_task_cb, 10, obj);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_function" href="lv__timer_8c.html#a90e10e2ab69ab89747b9b20face7f038">lv_timer_pause</a>(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_gif_destructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(class_p);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    lv_gif_t * gifobj = (lv_gif_t *) obj;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="lv__img__cache_8c.html#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a>(&amp;gifobj-&gt;imgdsc);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span>(gifobj-&gt;gif)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        gd_close_gif(gifobj-&gt;gif);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_function" href="lv__timer_8c.html#a4d916c26471670716c5b698698e08fab">lv_timer_del</a>(gifobj-&gt;timer);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">static</span> <span class="keywordtype">void</span> next_frame_task_cb(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * t)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = t-&gt;<a class="code hl_variable" href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">user_data</a>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    lv_gif_t * gifobj = (lv_gif_t *) obj;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    uint32_t elaps = <a class="code hl_function" href="lv__hal__tick_8c.html#a632b8bf9b03d3a809d053508c06dc6d9">lv_tick_elaps</a>(gifobj-&gt;last_call);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span>(elaps &lt; gifobj-&gt;gif-&gt;gce.delay * 10) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    gifobj-&gt;last_call = <a class="code hl_function" href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">int</span> has_next = gd_get_frame(gifobj-&gt;gif);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span>(has_next == 0) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="comment">/*It was the last repeat*/</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(obj, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a21db384437206787e67a96e4e1a03b5d">LV_EVENT_READY</a>, NULL);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <a class="code hl_function" href="lv__timer_8c.html#a90e10e2ab69ab89747b9b20face7f038">lv_timer_pause</a>(t);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    gd_render_frame(gifobj-&gt;gif, (uint8_t *)gifobj-&gt;imgdsc.data);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_function" href="lv__img__cache_8c.html#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a>(<a class="code hl_function" href="lv__img_8c.html#aef08850e16c9853f2060b6f75fe25d21">lv_img_get_src</a>(obj));</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_GIF*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agifdec_8h_html"><div class="ttname"><a href="gifdec_8h.html">gifdec.h</a></div></div>
+<div class="ttc" id="alv__draw__img_8c_html_ad1749598689c14b0b65ed7a81bc48148"><div class="ttname"><a href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a></div><div class="ttdeci">lv_img_src_t lv_img_src_get_type(const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__img_8c_source.html#l00195">lv_draw_img.c:195</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a21db384437206787e67a96e4e1a03b5d"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a21db384437206787e67a96e4e1a03b5d">LV_EVENT_READY</a></div><div class="ttdeci">@ LV_EVENT_READY</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00070">lv_event.h:70</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9"><div class="ttname"><a href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a></div><div class="ttdeci">@ LV_FS_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00035">lv_fs.h:35</a></div></div>
+<div class="ttc" id="alv__gif_8h_html"><div class="ttname"><a href="lv__gif_8h.html">lv_gif.h</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a051c47bcfb48282a75834d8dd0a8470c"><div class="ttname"><a href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a></div><div class="ttdeci">uint32_t lv_tick_get(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00060">lv_hal_tick.c:60</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a632b8bf9b03d3a809d053508c06dc6d9"><div class="ttname"><a href="lv__hal__tick_8c.html#a632b8bf9b03d3a809d053508c06dc6d9">lv_tick_elaps</a></div><div class="ttdeci">uint32_t lv_tick_elaps(uint32_t prev_tick)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00086">lv_hal_tick.c:86</a></div></div>
+<div class="ttc" id="alv__img_8c_html_a8f1d39441a4aab884e50cbfaf312a419"><div class="ttname"><a href="lv__img_8c.html#a8f1d39441a4aab884e50cbfaf312a419">lv_img_class</a></div><div class="ttdeci">const lv_obj_class_t lv_img_class</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8c_source.html#l00040">lv_img.c:40</a></div></div>
+<div class="ttc" id="alv__img_8c_html_aee1e48c0fc36b804ceb8d2127d01ccac"><div class="ttname"><a href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a></div><div class="ttdeci">void lv_img_set_src(lv_obj_t *obj, const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8c_source.html#l00070">lv_img.c:70</a></div></div>
+<div class="ttc" id="alv__img_8c_html_aef08850e16c9853f2060b6f75fe25d21"><div class="ttname"><a href="lv__img_8c.html#aef08850e16c9853f2060b6f75fe25d21">lv_img_get_src</a></div><div class="ttdeci">const void * lv_img_get_src(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8c_source.html#l00311">lv_img.c:311</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185">LV_IMG_CF_TRUE_COLOR_ALPHA</a></div><div class="ttdeci">@ LV_IMG_CF_TRUE_COLOR_ALPHA</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00065">lv_img_buf.h:65</a></div></div>
+<div class="ttc" id="alv__img__cache_8c_html_a958506ba24cd5caea94613788c4be8b6"><div class="ttname"><a href="lv__img__cache_8c.html#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a></div><div class="ttdeci">void lv_img_cache_invalidate_src(const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8c_source.html#l00180">lv_img_cache.c:180</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a></div><div class="ttdeci">@ LV_IMG_SRC_FILE</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00036">lv_img_decoder.h:36</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a></div><div class="ttdeci">@ LV_IMG_SRC_VARIABLE</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00035">lv_img_decoder.h:35</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a45f1eead6ce2fb12e215ea3e0558f168"><div class="ttname"><a href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a></div><div class="ttdeci">struct _lv_obj_class_t lv_obj_class_t</div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a25ed72d3306a02d08e65f9f265f6958c"><div class="ttname"><a href="lv__timer_8c.html#a25ed72d3306a02d08e65f9f265f6958c">lv_timer_resume</a></div><div class="ttdeci">void lv_timer_resume(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00218">lv_timer.c:218</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a4d916c26471670716c5b698698e08fab"><div class="ttname"><a href="lv__timer_8c.html#a4d916c26471670716c5b698698e08fab">lv_timer_del</a></div><div class="ttdeci">void lv_timer_del(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00201">lv_timer.c:201</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a90e10e2ab69ab89747b9b20face7f038"><div class="ttname"><a href="lv__timer_8c.html#a90e10e2ab69ab89747b9b20face7f038">lv_timer_pause</a></div><div class="ttdeci">void lv_timer_pause(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00213">lv_timer.c:213</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a9f92d3830e2336b96d0459199b87ff18"><div class="ttname"><a href="lv__timer_8c.html#a9f92d3830e2336b96d0459199b87ff18">lv_timer_create</a></div><div class="ttdeci">lv_timer_t * lv_timer_create(lv_timer_cb_t timer_xcb, uint32_t period, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00167">lv_timer.c:167</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_ab1d0f47b0ce4cc897f99fe7426a3b252"><div class="ttname"><a href="lv__timer_8c.html#ab1d0f47b0ce4cc897f99fe7426a3b252">lv_timer_reset</a></div><div class="ttdeci">void lv_timer_reset(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00257">lv_timer.c:257</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_aab341e84d977d67aec9b766ccd6d3173"><div class="ttname"><a href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a></div><div class="ttdeci">struct _lv_timer_t lv_timer_t</div></div>
+<div class="ttc" id="alv__types_8h_html_a5c71f43250ed3699f40a8b634e342228"><div class="ttname"><a href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a></div><div class="ttdeci">uint8_t lv_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00047">lv_types.h:47</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_a0c23b96fd727574d57d84e6b0c3f9119"><div class="ttname"><a href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">_lv_timer_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8h_source.html#l00048">lv_timer.h:48</a></div></div>
+<div class="ttc" id="astructlv__img__dsc__t_html"><div class="ttname"><a href="structlv__img__dsc__t.html">lv_img_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00141">lv_img_buf.h:141</a></div></div>
+<div class="ttc" id="astructlv__img__dsc__t_html_a09900b90ae9c9888e341616b611df3a0"><div class="ttname"><a href="structlv__img__dsc__t.html#a09900b90ae9c9888e341616b611df3a0">lv_img_dsc_t::data</a></div><div class="ttdeci">const uint8_t * data</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00144">lv_img_buf.h:144</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_93aa2dddec5f27376870b3d9b97d09df.html">libs</a></li><li class="navelem"><a href="dir_e2d70c02aa3d6ff5b6feb73498def1df.html">gif</a></li><li class="navelem"><a href="lv__gif_8c.html">lv_gif.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

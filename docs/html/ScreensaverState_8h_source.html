@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/Custom_Libraries/ScreensaverState.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ScreensaverState_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ScreensaverState.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ScreensaverState_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// ScreensaverState.h</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Identificador de la pantalla anterior</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22">    7</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">    8</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a> = 0,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">    9</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a>,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">   10</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a>,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">   11</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a>,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">   12</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a>,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">   13</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a>,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">   14</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">   15</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">   16</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">   17</a></span>    <a class="code hl_enumvalue" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// añade más si tienes más pantallas</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Variables globales compartidas</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a> <a class="code hl_variable" href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> <span class="keywordtype">bool</span>         <a class="code hl_variable" href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Declaración de la función</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="ScreensaverState_8h.html#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a>();</div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a></div><div class="ttdeci">PrevScreenId</div><div class="ttdef"><b>Definition</b> <a href="#l00007">ScreensaverState.h:7</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a></div><div class="ttdeci">@ SCR_6</div><div class="ttdef"><b>Definition</b> <a href="#l00014">ScreensaverState.h:14</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a></div><div class="ttdeci">@ SCR_1</div><div class="ttdef"><b>Definition</b> <a href="#l00009">ScreensaverState.h:9</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a></div><div class="ttdeci">@ SCR_5</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ScreensaverState.h:13</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a></div><div class="ttdeci">@ SCR_2</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ScreensaverState.h:10</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a></div><div class="ttdeci">@ SCR_7</div><div class="ttdef"><b>Definition</b> <a href="#l00015">ScreensaverState.h:15</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a></div><div class="ttdeci">@ SCR_8</div><div class="ttdef"><b>Definition</b> <a href="#l00016">ScreensaverState.h:16</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a></div><div class="ttdeci">@ SCR_9</div><div class="ttdef"><b>Definition</b> <a href="#l00017">ScreensaverState.h:17</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a></div><div class="ttdeci">@ SCR_3</div><div class="ttdef"><b>Definition</b> <a href="#l00011">ScreensaverState.h:11</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a></div><div class="ttdeci">@ SCR_4</div><div class="ttdef"><b>Definition</b> <a href="#l00012">ScreensaverState.h:12</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a"><div class="ttname"><a href="ScreensaverState_8h.html#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a></div><div class="ttdeci">@ SCR_NONE</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ScreensaverState.h:8</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a81fc9d089912642873dd9e9ddb324a90"><div class="ttname"><a href="ScreensaverState_8h.html#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a></div><div class="ttdeci">void RegisterActivity()</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00009">ScreensaverState.cpp:9</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad00e7da8b0a922bb82451c2a9281d0dd"><div class="ttname"><a href="main_8cpp.html#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a></div><div class="ttdeci">PrevScreenId g_prevScreenId</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00004">ScreensaverState.cpp:4</a></div></div>
+<div class="ttc" id="amain_8cpp_html_addce1751b09ea6eee45c994725cf5125"><div class="ttname"><a href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a></div><div class="ttdeci">bool g_screensaverActive</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00005">ScreensaverState.cpp:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="ScreensaverState_8h.html">ScreensaverState.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

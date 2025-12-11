@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/Custom_Libraries/Navigation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Navigation_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Navigation.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Navigation_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;lvgl.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="MotorControl_8h.html">MotorControl.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="PID__Parameters_8h.html">PID_Parameters.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="IRControl_8h.html">IRControl.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a23b8a5e5034c0dd82a785d488234d11c">HandleIRNavigation</a>(<a class="code hl_enumeration" href="IRControl_8h.html#a83a16191e31f58deefd166301da9306a">IRNavKey</a> nav);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#ac11e52f500450eb7502b1838c590d50c">HandleDeltaSlider</a>(<span class="keywordtype">int</span> delta);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a1b67a298aed30b12927c07b5cf9d6d19">HandleNumericDigit</a>(<span class="keywordtype">int</span> digit);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#adf1a547177c52379936d880a3fb8f416">HandleNumericMinus</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#ab88d6e2f8034879c102653da0e572ba6">SetupScreen1Nav</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a038b1a4e5ec04d8c4df366fb8605666f">SetupScreen2Nav</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a0c4290d8269fee34c91a878b3d7c8206">SetupScreen3Nav</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#aa285fe63c2448e81fe2201c7ca2cb596">SetupScreen4Nav</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a28c7f43000729d34bf41f3e83733ae91">SetupScreen5Nav</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a34f796818457f840c3d66273f5799a92">SetupScreen6Nav</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#add45b242be8de76306c1c5d1cd01d765">SetupScreen7Nav</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#ac77e18cf8bd2ceb3edc976baff70175f">SetupScreen8Nav</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="Navigation_8h.html#a84832d060980b8efa8b8abd88e364063">SetupScreen9Nav</a>();</div>
+<div class="ttc" id="aIRControl_8h_html"><div class="ttname"><a href="IRControl_8h.html">IRControl.h</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306a"><div class="ttname"><a href="IRControl_8h.html#a83a16191e31f58deefd166301da9306a">IRNavKey</a></div><div class="ttdeci">IRNavKey</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00018">IRControl.h:18</a></div></div>
+<div class="ttc" id="aMotorControl_8h_html"><div class="ttname"><a href="MotorControl_8h.html">MotorControl.h</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a038b1a4e5ec04d8c4df366fb8605666f"><div class="ttname"><a href="Navigation_8h.html#a038b1a4e5ec04d8c4df366fb8605666f">SetupScreen2Nav</a></div><div class="ttdeci">void SetupScreen2Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00376">Navigation.cpp:376</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a0c4290d8269fee34c91a878b3d7c8206"><div class="ttname"><a href="Navigation_8h.html#a0c4290d8269fee34c91a878b3d7c8206">SetupScreen3Nav</a></div><div class="ttdeci">void SetupScreen3Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00396">Navigation.cpp:396</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a1b67a298aed30b12927c07b5cf9d6d19"><div class="ttname"><a href="Navigation_8h.html#a1b67a298aed30b12927c07b5cf9d6d19">HandleNumericDigit</a></div><div class="ttdeci">void HandleNumericDigit(int digit)</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00246">Navigation.cpp:246</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a23b8a5e5034c0dd82a785d488234d11c"><div class="ttname"><a href="Navigation_8h.html#a23b8a5e5034c0dd82a785d488234d11c">HandleIRNavigation</a></div><div class="ttdeci">void HandleIRNavigation(IRNavKey nav)</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00025">Navigation.cpp:25</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a28c7f43000729d34bf41f3e83733ae91"><div class="ttname"><a href="Navigation_8h.html#a28c7f43000729d34bf41f3e83733ae91">SetupScreen5Nav</a></div><div class="ttdeci">void SetupScreen5Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00473">Navigation.cpp:473</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a34f796818457f840c3d66273f5799a92"><div class="ttname"><a href="Navigation_8h.html#a34f796818457f840c3d66273f5799a92">SetupScreen6Nav</a></div><div class="ttdeci">void SetupScreen6Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00491">Navigation.cpp:491</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_a84832d060980b8efa8b8abd88e364063"><div class="ttname"><a href="Navigation_8h.html#a84832d060980b8efa8b8abd88e364063">SetupScreen9Nav</a></div><div class="ttdeci">void SetupScreen9Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00555">Navigation.cpp:555</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_aa285fe63c2448e81fe2201c7ca2cb596"><div class="ttname"><a href="Navigation_8h.html#aa285fe63c2448e81fe2201c7ca2cb596">SetupScreen4Nav</a></div><div class="ttdeci">void SetupScreen4Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00418">Navigation.cpp:418</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_ab88d6e2f8034879c102653da0e572ba6"><div class="ttname"><a href="Navigation_8h.html#ab88d6e2f8034879c102653da0e572ba6">SetupScreen1Nav</a></div><div class="ttdeci">void SetupScreen1Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00358">Navigation.cpp:358</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_ac11e52f500450eb7502b1838c590d50c"><div class="ttname"><a href="Navigation_8h.html#ac11e52f500450eb7502b1838c590d50c">HandleDeltaSlider</a></div><div class="ttdeci">void HandleDeltaSlider(int delta)</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00096">Navigation.cpp:96</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_ac77e18cf8bd2ceb3edc976baff70175f"><div class="ttname"><a href="Navigation_8h.html#ac77e18cf8bd2ceb3edc976baff70175f">SetupScreen8Nav</a></div><div class="ttdeci">void SetupScreen8Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00537">Navigation.cpp:537</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_add45b242be8de76306c1c5d1cd01d765"><div class="ttname"><a href="Navigation_8h.html#add45b242be8de76306c1c5d1cd01d765">SetupScreen7Nav</a></div><div class="ttdeci">void SetupScreen7Nav()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00513">Navigation.cpp:513</a></div></div>
+<div class="ttc" id="aNavigation_8h_html_adf1a547177c52379936d880a3fb8f416"><div class="ttname"><a href="Navigation_8h.html#adf1a547177c52379936d880a3fb8f416">HandleNumericMinus</a></div><div class="ttdeci">void HandleNumericMinus()</div><div class="ttdef"><b>Definition</b> <a href="Navigation_8cpp_source.html#l00309">Navigation.cpp:309</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html"><div class="ttname"><a href="PID__Parameters_8h.html">PID_Parameters.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="Navigation_8h.html">Navigation.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

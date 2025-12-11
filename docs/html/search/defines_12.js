@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['r_5fbaseline_0',['R_BASELINE',['../TFT__eSPI_8h.html#a0deee3f947ff8b137adef497be019e8f',1,'TFT_eSPI.h']]],
+  ['radius_5fdefault_1',['RADIUS_DEFAULT',['../lv__theme__default_8c.html#a6dfedc9b51c224902aba429949ec2d17',1,'lv_theme_default.c']]],
+  ['raw_5fbuffer_5flength_2',['RAW_BUFFER_LENGTH',['../IRremoteInt_8h.html#a589aa40429eeb37b6e83a2c09854a47b',1,'IRremoteInt.h']]],
+  ['raw_5fdata_5farray_5fsize_3',['RAW_DATA_ARRAY_SIZE',['../IRProtocol_8h.html#a1ad0810b4eae20c260180a1c4d9f359e',1,'IRProtocol.h']]],
+  ['rawbuf_4',['RAWBUF',['../IRremote_8hpp.html#abb919079668bcc14433d4c857ab8a196',1,'IRremote.hpp']]],
+  ['rc5_5frc6_5fkhz_5',['RC5_RC6_KHZ',['../IRProtocol_8h.html#a1e8fcd1e00b7fa15e99fae5ea30f35ae',1,'IRProtocol.h']]],
+  ['rd_5fh_6',['RD_H',['../TFT__eSPI__RP2040_8h.html#aff218045a82bf49680c3aba16c38a26b',1,'RD_H:&#160;TFT_eSPI_RP2040.h'],['../TFT__eSPI__STM32_8h.html#aff218045a82bf49680c3aba16c38a26b',1,'RD_H:&#160;TFT_eSPI_STM32.h']]],
+  ['rd_5fl_7',['RD_L',['../TFT__eSPI__RP2040_8h.html#a49afbc423c45c7e8ab9627cf24d6cdba',1,'RD_L:&#160;TFT_eSPI_RP2040.h'],['../TFT__eSPI__STM32_8h.html#a49afbc423c45c7e8ab9627cf24d6cdba',1,'RD_L:&#160;TFT_eSPI_STM32.h']]],
+  ['record_5fgap_5fmicros_8',['RECORD_GAP_MICROS',['../IRremote_8hpp.html#a2eb6de0bae8bc6f19f3832c00e91f499',1,'IRremote.hpp']]],
+  ['record_5fgap_5fmicros_5fwarning_5fthreshold_9',['RECORD_GAP_MICROS_WARNING_THRESHOLD',['../IRremote_8hpp.html#a6afa54ea105253cce361d8c571da5fa9',1,'IRremote.hpp']]],
+  ['record_5fgap_5fticks_10',['RECORD_GAP_TICKS',['../IRremote_8hpp.html#a1ba5a08e87f922d04e6acb5c07867386',1,'IRremote.hpp']]],
+  ['refr_5ftrace_11',['REFR_TRACE',['../lv__refr_8c.html#a265063cd503d2e0d2c15ba6586609ddc',1,'lv_refr.c']]],
+  ['repeat_12',['REPEAT',['../IRremote_8hpp.html#a2c9384c67919c632913b8db2088f8341',1,'IRremote.hpp']]],
+  ['repeat8_13',['REPEAT8',['../lv__mem_8c.html#a8ea5542f198b072bb6e512e57dda7231',1,'lv_mem.c']]],
+  ['return_5fif_5fstop_14',['RETURN_IF_STOP',['../IRCommandDispatcher_8h.html#aa4b15657ea4a36c11429646bbff737de',1,'IRCommandDispatcher.h']]],
+  ['rh_5fwink_5fpin_15',['RH_WINK_PIN',['../Animated__Eyes__1_2config_8h.html#a4de727256a5a6db9a26f9a38f1147aa4',1,'RH_WINK_PIN:&#160;config.h'],['../Animated__Eyes__2_2config_8h.html#a4de727256a5a6db9a26f9a38f1147aa4',1,'RH_WINK_PIN:&#160;config.h']]],
+  ['rm68140_5fdriver_16',['RM68140_DRIVER',['../Setup19__RM68140__Parallel_8h.html#a87edd0d4e76e293dde1c95f62a255e2a',1,'Setup19_RM68140_Parallel.h']]],
+  ['rp2040_5fdma_17',['RP2040_DMA',['../TFT__eSPI__RP2040_8h.html#af32df918c85d38e7c1a40b84573ee2bb',1,'TFT_eSPI_RP2040.h']]],
+  ['rp2040_5fpio_5fclk_5fdiv_18',['RP2040_PIO_CLK_DIV',['../Setup108__RP2040__ST7735_8h.html#a618ec26cad2f998fbeebc7595994c682',1,'Setup108_RP2040_ST7735.h']]],
+  ['rp2040_5fpio_5fspi_19',['RP2040_PIO_SPI',['../Setup61__RP2040__ILI9341__PIO__SPI_8h.html#a97c02b42bd48577bf79b24e841779bba',1,'Setup61_RP2040_ILI9341_PIO_SPI.h']]],
+  ['rpi_5fdisplay_5ftype_20',['RPI_DISPLAY_TYPE',['../Setup10__RPi__touch__ILI9486_8h.html#a81692db199467c4060b9cd862e7aaad1',1,'RPI_DISPLAY_TYPE:&#160;Setup10_RPi_touch_ILI9486.h'],['../Setup11__RPi__touch__ILI9486_8h.html#a81692db199467c4060b9cd862e7aaad1',1,'RPI_DISPLAY_TYPE:&#160;Setup11_RPi_touch_ILI9486.h'],['../Setup27__RPi__ST7796__ESP32_8h.html#a81692db199467c4060b9cd862e7aaad1',1,'RPI_DISPLAY_TYPE:&#160;Setup27_RPi_ST7796_ESP32.h'],['../Setup28__RPi__ST7796__ESP8266_8h.html#a81692db199467c4060b9cd862e7aaad1',1,'RPI_DISPLAY_TYPE:&#160;Setup28_RPi_ST7796_ESP8266.h'],['../Setup33__RPi__ILI9486__STM32_8h.html#a81692db199467c4060b9cd862e7aaad1',1,'RPI_DISPLAY_TYPE:&#160;Setup33_RPi_ILI9486_STM32.h'],['../Setup36__RPi__touch__ST7796_8h.html#a81692db199467c4060b9cd862e7aaad1',1,'RPI_DISPLAY_TYPE:&#160;Setup36_RPi_touch_ST7796.h']]],
+  ['rpi_5fili9486_5fdriver_21',['RPI_ILI9486_DRIVER',['../Setup5__RPi__ILI9486_8h.html#aff4a122e7920483ae2181f7ba4c5f000',1,'RPI_ILI9486_DRIVER:&#160;Setup5_RPi_ILI9486.h'],['../Setup6__RPi__Wr__ILI9486_8h.html#aff4a122e7920483ae2181f7ba4c5f000',1,'RPI_ILI9486_DRIVER:&#160;Setup6_RPi_Wr_ILI9486.h']]],
+  ['rs_22',['Rs',['../LiquidCrystal__I2C_8h.html#a345d1a871beb9e772c3bf9ef75412bb5',1,'LiquidCrystal_I2C.h']]],
+  ['rw_23',['Rw',['../LiquidCrystal__I2C_8h.html#a98b6a2661a04ebbc1b3f38da70306814',1,'LiquidCrystal_I2C.h']]]
+];

@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia de la estructura IRData</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('structIRData.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la estructura IRData</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Campos de datos</h2></td></tr>
+<tr class="memitem:a1255a5b7d704d34fda83dcabcb903d4c" id="r_a1255a5b7d704d34fda83dcabcb903d4c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1255a5b7d704d34fda83dcabcb903d4c">address</a></td></tr>
+<tr class="memdesc:a1255a5b7d704d34fda83dcabcb903d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoded address, Distance protocol (tMarkTicksLong (if tMarkTicksLong == 0, then tMarkTicksShort) &lt;&lt; 8) | tSpaceTicksLong.  <br /></td></tr>
+<tr class="memitem:ab0ce2b36765ea429e8c4bfa0706a45e7" id="r_ab0ce2b36765ea429e8c4bfa0706a45e7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0ce2b36765ea429e8c4bfa0706a45e7">command</a></td></tr>
+<tr class="memdesc:ab0ce2b36765ea429e8c4bfa0706a45e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoded command, Distance protocol (tMarkTicksShort &lt;&lt; 8) | tSpaceTicksShort.  <br /></td></tr>
+<tr class="memitem:a1aca80950279db7f8631f96268f012d9" id="r_a1aca80950279db7f8631f96268f012d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="IRremoteInt_8h.html#a5f80a14df19acb8907b21cd1ee154d53">IRRawDataType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1aca80950279db7f8631f96268f012d9">decodedRawData</a></td></tr>
+<tr class="memdesc:a1aca80950279db7f8631f96268f012d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Up to 32/64 bit decoded raw data, to be used for send functions.  <br /></td></tr>
+<tr class="memitem:a0b71fa1a17e3ab0ae9bc9462b795213f" id="r_a0b71fa1a17e3ab0ae9bc9462b795213f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b71fa1a17e3ab0ae9bc9462b795213f">extra</a></td></tr>
+<tr class="memdesc:a0b71fa1a17e3ab0ae9bc9462b795213f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains upper 16 bit of Magiquest WandID, Kaseikyo unknown vendor ID and Distance protocol (HeaderMarkTicks &lt;&lt; 8) | HeaderSpaceTicks.  <br /></td></tr>
+<tr class="memitem:aaaad48fc0d90e5c6daec601987848a51" id="r_aaaad48fc0d90e5c6daec601987848a51"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaad48fc0d90e5c6daec601987848a51">flags</a></td></tr>
+<tr class="memdesc:aaaad48fc0d90e5c6daec601987848a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRDATA_FLAGS_IS_REPEAT, IRDATA_FLAGS_WAS_OVERFLOW etc. See IRDATA_FLAGS_* definitions above.  <br /></td></tr>
+<tr class="memitem:a39cdcb814880cd9af21f79b53669e824" id="r_a39cdcb814880cd9af21f79b53669e824"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39cdcb814880cd9af21f79b53669e824">initialGapTicks</a></td></tr>
+<tr class="memdesc:a39cdcb814880cd9af21f79b53669e824"><td class="mdescLeft">&#160;</td><td class="mdescRight">contains the initial gap (pre 4.4: the value in rawbuf[0]) of the last received frame.  <br /></td></tr>
+<tr class="memitem:a945c41b8463a36cf00b0f38b0aa73200" id="r_a945c41b8463a36cf00b0f38b0aa73200"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a945c41b8463a36cf00b0f38b0aa73200">numberOfBits</a></td></tr>
+<tr class="memdesc:a945c41b8463a36cf00b0f38b0aa73200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bits received for data (address + command + parity) - to determine protocol length if different length are possible.  <br /></td></tr>
+<tr class="memitem:a703592faec26bab5cbe465f53ef14245" id="r_a703592faec26bab5cbe465f53ef14245"><td class="memItemLeft" align="right" valign="top"><a class="el" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fad">decode_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a703592faec26bab5cbe465f53ef14245">protocol</a></td></tr>
+<tr class="memdesc:a703592faec26bab5cbe465f53ef14245"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNKNOWN, NEC, SONY, RC5, PULSE_DISTANCE, ...  <br /></td></tr>
+<tr class="memitem:a8d7c987d63874731ff2e1120b21a1a08" id="r_a8d7c987d63874731ff2e1120b21a1a08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structirparams__struct.html">irparams_struct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d7c987d63874731ff2e1120b21a1a08">rawDataPtr</a></td></tr>
+<tr class="memdesc:a8d7c987d63874731ff2e1120b21a1a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer of the raw timing data to be decoded. Mainly the OverflowFlag and the data buffer filled by receiving ISR.  <br /></td></tr>
+<tr class="memitem:a8a17562431120ffc7f8964e56e5db27e" id="r_a8a17562431120ffc7f8964e56e5db27e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="IRremoteInt_8h.html#a8f3582a3489d865ffa5e2f612511c363">IRRawlenType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a17562431120ffc7f8964e56e5db27e">rawlen</a></td></tr>
+<tr class="memdesc:a8a17562431120ffc7f8964e56e5db27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">counter of entries in rawbuf of last received frame.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Data structure for the user application, available as decodedIRData. Filled by decoders and read by print functions or user application. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00109">109</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de campos</h2>
+<a id="a1255a5b7d704d34fda83dcabcb903d4c" name="a1255a5b7d704d34fda83dcabcb903d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1255a5b7d704d34fda83dcabcb903d4c">&#9670;&#160;</a></span>address</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t IRData::address</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decoded address, Distance protocol (tMarkTicksLong (if tMarkTicksLong == 0, then tMarkTicksShort) &lt;&lt; 8) | tSpaceTicksLong. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00111">111</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a> y <a class="el" href="IRSend_8hpp_source.html#l00170">IRsend::write()</a>.</p>
+
+</div>
+</div>
+<a id="ab0ce2b36765ea429e8c4bfa0706a45e7" name="ab0ce2b36765ea429e8c4bfa0706a45e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ce2b36765ea429e8c4bfa0706a45e7">&#9670;&#160;</a></span>command</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t IRData::command</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decoded command, Distance protocol (tMarkTicksShort &lt;&lt; 8) | tSpaceTicksShort. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00112">112</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a> y <a class="el" href="IRSend_8hpp_source.html#l00170">IRsend::write()</a>.</p>
+
+</div>
+</div>
+<a id="a1aca80950279db7f8631f96268f012d9" name="a1aca80950279db7f8631f96268f012d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aca80950279db7f8631f96268f012d9">&#9670;&#160;</a></span>decodedRawData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="IRremoteInt_8h.html#a5f80a14df19acb8907b21cd1ee154d53">IRRawDataType</a> IRData::decodedRawData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Up to 32/64 bit decoded raw data, to be used for send functions. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00114">114</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a> y <a class="el" href="IRSend_8hpp_source.html#l00170">IRsend::write()</a>.</p>
+
+</div>
+</div>
+<a id="a0b71fa1a17e3ab0ae9bc9462b795213f" name="a0b71fa1a17e3ab0ae9bc9462b795213f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b71fa1a17e3ab0ae9bc9462b795213f">&#9670;&#160;</a></span>extra</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t IRData::extra</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contains upper 16 bit of Magiquest WandID, Kaseikyo unknown vendor ID and Distance protocol (HeaderMarkTicks &lt;&lt; 8) | HeaderSpaceTicks. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00113">113</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a>.</p>
+
+</div>
+</div>
+<a id="aaaad48fc0d90e5c6daec601987848a51" name="aaaad48fc0d90e5c6daec601987848a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaad48fc0d90e5c6daec601987848a51">&#9670;&#160;</a></span>flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t IRData::flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IRDATA_FLAGS_IS_REPEAT, IRDATA_FLAGS_WAS_OVERFLOW etc. See IRDATA_FLAGS_* definitions above. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00121">121</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a> y <a class="el" href="IRSend_8hpp_source.html#l00170">IRsend::write()</a>.</p>
+
+</div>
+</div>
+<a id="a39cdcb814880cd9af21f79b53669e824" name="a39cdcb814880cd9af21f79b53669e824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39cdcb814880cd9af21f79b53669e824">&#9670;&#160;</a></span>initialGapTicks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t IRData::initialGapTicks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>contains the initial gap (pre 4.4: the value in rawbuf[0]) of the last received frame. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00130">130</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a>.</p>
+
+</div>
+</div>
+<a id="a945c41b8463a36cf00b0f38b0aa73200" name="a945c41b8463a36cf00b0f38b0aa73200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945c41b8463a36cf00b0f38b0aa73200">&#9670;&#160;</a></span>numberOfBits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t IRData::numberOfBits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of bits received for data (address + command + parity) - to determine protocol length if different length are possible. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00120">120</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a> y <a class="el" href="IRSend_8hpp_source.html#l00170">IRsend::write()</a>.</p>
+
+</div>
+</div>
+<a id="a703592faec26bab5cbe465f53ef14245" name="a703592faec26bab5cbe465f53ef14245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703592faec26bab5cbe465f53ef14245">&#9670;&#160;</a></span>protocol</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fad">decode_type_t</a> IRData::protocol</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UNKNOWN, NEC, SONY, RC5, PULSE_DISTANCE, ... </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00110">110</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a> y <a class="el" href="IRSend_8hpp_source.html#l00170">IRsend::write()</a>.</p>
+
+</div>
+</div>
+<a id="a8d7c987d63874731ff2e1120b21a1a08" name="a8d7c987d63874731ff2e1120b21a1a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7c987d63874731ff2e1120b21a1a08">&#9670;&#160;</a></span>rawDataPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structirparams__struct.html">irparams_struct</a>* IRData::rawDataPtr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer of the raw timing data to be decoded. Mainly the OverflowFlag and the data buffer filled by receiving ISR. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00132">132</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a17562431120ffc7f8964e56e5db27e" name="a8a17562431120ffc7f8964e56e5db27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a17562431120ffc7f8964e56e5db27e">&#9670;&#160;</a></span>rawlen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="IRremoteInt_8h.html#a8f3582a3489d865ffa5e2f612511c363">IRRawlenType</a> IRData::rawlen</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>counter of entries in rawbuf of last received frame. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRProtocol_8h_source.html#l00129">129</a> del archivo <a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRProtocol_8hpp_source.html#l00163">printIRResultShort()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta estructura está generada del siguiente archivo:<ul>
+<li>lib/IRremote/src/<a class="el" href="IRProtocol_8h_source.html">IRProtocol.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="structIRData.html">IRData</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

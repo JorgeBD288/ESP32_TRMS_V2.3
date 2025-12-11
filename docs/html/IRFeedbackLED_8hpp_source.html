@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/IRremote/src/IRFeedbackLED.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('IRFeedbackLED_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IRFeedbackLED.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="IRFeedbackLED_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file IRFeedbackLED.hpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @brief All Feedback LED specific functions are contained in this file.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  This file is part of Arduino-IRremote https://github.com/Arduino-IRremote/Arduino-IRremote.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *************************************************************************************</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * MIT License</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * Copyright (c) 2021-2022 Armin Joachimsmeyer</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * copies of the Software, and to permit persons to whom the Software is furnished</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> ************************************************************************************</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#ifndef _IR_FEEDBACK_LED_HPP</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define _IR_FEEDBACK_LED_HPP</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"></span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/** \addtogroup FeedbackLEDFunctions Feedback LED functions</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * @{</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * Contains pin number and enable status of the feedback LED</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structFeedbackLEDControlStruct.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structFeedbackLEDControlStruct.html">FeedbackLEDControlStruct</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structFeedbackLEDControlStruct.html#a759f018b8bdb93695bd4ebb0d61a3c4c">   43</a></span>    uint8_t <a class="code hl_variable" href="structFeedbackLEDControlStruct.html#a759f018b8bdb93695bd4ebb0d61a3c4c">FeedbackLEDPin</a>;         <span class="comment">///&lt; if 0, then take board specific FEEDBACK_LED_ON() and FEEDBACK_LED_OFF() functions</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structFeedbackLEDControlStruct.html#aaca16b47301e6cc0fcd0c76216f76417">   44</a></span>    uint8_t <a class="code hl_variable" href="structFeedbackLEDControlStruct.html#aaca16b47301e6cc0fcd0c76216f76417">LedFeedbackEnabled</a>; <span class="comment">///&lt; LED_FEEDBACK_ENABLED_FOR_RECEIVE or LED_FEEDBACK_ENABLED_FOR_SEND -&gt; enable blinking of pin on IR processing</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">   47</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structFeedbackLEDControlStruct.html">FeedbackLEDControlStruct</a> <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>; <span class="comment">///&lt; The feedback LED control instance</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * Enable blinking of feedback LED (LED_BUILTIN is taken as default) on IR sending and receiving</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * Cannot disable it here!!! Use disableLEDFeedbackForReceive() or disableLEDFeedbackForSend()</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> * @param aFeedbackLEDPin If aFeedbackLEDPin == 0, then take board specific FEEDBACK_LED_ON() and FEEDBACK_LED_ON() and FEEDBACK_LED_OFF() functions</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> *                        If FeedbackLEDPin == 0 and no LED_BUILTIN defined, disable LED feedback</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * @param aEnableLEDFeedback If LED_FEEDBACK_ENABLED_FOR_RECEIVE or LED_FEEDBACK_ENABLED_FOR_SEND -&gt; enable blinking of Feedback LED</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">setLEDFeedback</a>(uint8_t aFeedbackLEDPin, uint8_t aEnableLEDFeedback) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin = aFeedbackLEDPin; <span class="comment">// default is 0 -&gt; use LED_BUILTIN if available, else disable feedback</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (aEnableLEDFeedback != <a class="code hl_define" href="IRremoteInt_8h.html#a20df6d7738730db43a872d88e744b411">DO_NOT_ENABLE_LED_FEEDBACK</a>) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled |= aEnableLEDFeedback;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (aFeedbackLEDPin != <a class="code hl_define" href="IRremoteInt_8h.html#a575e74508c30d1ccf92f7e142a43dd3d">USE_DEFAULT_FEEDBACK_LED_PIN</a>) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a>(aFeedbackLEDPin, OUTPUT);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#if defined(LED_BUILTIN)</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a>(LED_BUILTIN, OUTPUT);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled = <a class="code hl_define" href="IRremoteInt_8h.html#a72176857aa388ce2705ca50d62327809">LED_FEEDBACK_DISABLED_COMPLETELY</a>; <span class="comment">// we have no LED_BUILTIN available</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"> * Direct replacement for blink13()</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga53e5ec641a900f2c572c8bffd42da921">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">setLEDFeedback</a>(<span class="keywordtype">bool</span> aEnableLEDFeedback) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">bool</span> tEnableLEDFeedback = <a class="code hl_define" href="IRremoteInt_8h.html#a72176857aa388ce2705ca50d62327809">LED_FEEDBACK_DISABLED_COMPLETELY</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (aEnableLEDFeedback) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        tEnableLEDFeedback = <a class="code hl_define" href="IRremoteInt_8h.html#a98da0891dfea82ad6fa9b7769afe550e">LED_FEEDBACK_ENABLED_FOR_SEND</a> | <a class="code hl_define" href="IRremoteInt_8h.html#a89f956d1675afae9fe0e421c322af7c9">LED_FEEDBACK_ENABLED_FOR_RECEIVE</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">setLEDFeedback</a>(<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin, tEnableLEDFeedback);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga1150b1e371cd7d424d53dbcae6619e54">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#ga1150b1e371cd7d424d53dbcae6619e54">enableLEDFeedback</a>() {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled |= <a class="code hl_define" href="IRremoteInt_8h.html#a89f956d1675afae9fe0e421c322af7c9">LED_FEEDBACK_ENABLED_FOR_RECEIVE</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#gab72e6123a449de7feaaa1c3dcb9f8630">   89</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gab72e6123a449de7feaaa1c3dcb9f8630">disableLEDFeedback</a>() {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled &amp;= ~(<a class="code hl_define" href="IRremoteInt_8h.html#a89f956d1675afae9fe0e421c322af7c9">LED_FEEDBACK_ENABLED_FOR_RECEIVE</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga69bc794d3cfd1600a264a1dbbdd28ef7">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#ga69bc794d3cfd1600a264a1dbbdd28ef7">enableLEDFeedbackForSend</a>() {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled |= <a class="code hl_define" href="IRremoteInt_8h.html#a98da0891dfea82ad6fa9b7769afe550e">LED_FEEDBACK_ENABLED_FOR_SEND</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga880ead90165a961244c8fc7da2375083">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#ga880ead90165a961244c8fc7da2375083">disableLEDFeedbackForSend</a>() {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled &amp;= ~(<a class="code hl_define" href="IRremoteInt_8h.html#a98da0891dfea82ad6fa9b7769afe550e">LED_FEEDBACK_ENABLED_FOR_SEND</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"></span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"> * Flash LED while receiving or sending IR data. Does not check if enabled, this must be done by the caller.</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> * Handles the 0 value of FeedbackLEDPin and the macro FEEDBACK_LED_IS_ACTIVE_LOW.</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#if defined(ESP32) || defined(ESP8266)</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>IRAM_ATTR</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga072624eeba964d8aa105822da00090ba">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#ga072624eeba964d8aa105822da00090ba">setFeedbackLED</a>(<span class="keywordtype">bool</span> aSwitchLedOn) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (aSwitchLedOn) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin != <a class="code hl_define" href="IRremoteInt_8h.html#a575e74508c30d1ccf92f7e142a43dd3d">USE_DEFAULT_FEEDBACK_LED_PIN</a>) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#if defined(FEEDBACK_LED_IS_ACTIVE_LOW)</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin, LOW); <span class="comment">// Turn user defined pin LED on</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin, HIGH); <span class="comment">// Turn user defined pin LED on</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#if defined(LED_BUILTIN) </span><span class="comment">// use fast macros here</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#  if defined(FEEDBACK_LED_IS_ACTIVE_LOW)</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(LED_BUILTIN, LOW); <span class="comment">// For AVR, this generates a single cbi command</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(LED_BUILTIN, HIGH); <span class="comment">// For AVR, this generates a single sbi command</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin != <a class="code hl_define" href="IRremoteInt_8h.html#a575e74508c30d1ccf92f7e142a43dd3d">USE_DEFAULT_FEEDBACK_LED_PIN</a>) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#if defined(FEEDBACK_LED_IS_ACTIVE_LOW)</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin, HIGH); <span class="comment">// Turn user defined pin LED off</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin, LOW); <span class="comment">// Turn user defined pin LED off</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#if defined(LED_BUILTIN)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#  if defined(FEEDBACK_LED_IS_ACTIVE_LOW)</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(LED_BUILTIN, HIGH); <span class="comment">// For AVR, this generates a single sbi command</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(LED_BUILTIN, LOW); <span class="comment">// For AVR, this generates a single cbi command</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment"></span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"> * Old deprecated function name for setLEDFeedback() or enableLEDFeedback() / disableLEDFeedback()</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#gac7fc50c7e08b8c339b2c1c912a0c6e89">  147</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gac7fc50c7e08b8c339b2c1c912a0c6e89">IRrecv::blink13</a>(uint8_t aEnableLEDFeedback) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">setLEDFeedback</a>(<a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.FeedbackLEDPin, aEnableLEDFeedback);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}<span class="comment"></span></div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment"> * Old deprecated function name for setLEDFeedback()</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="group__FeedbackLEDFunctions.html#ga5f1d479f43dcd56febf146e97a3904db">  153</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__FeedbackLEDFunctions.html#ga5f1d479f43dcd56febf146e97a3904db">setBlinkPin</a>(uint8_t aBlinkPin) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_function" href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">setLEDFeedback</a>(aBlinkPin, <a class="code hl_variable" href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a>.LedFeedbackEnabled);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment"></span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">/** @}*/</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif </span><span class="comment">// _IR_FEEDBACK_LED_HPP</span></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a20df6d7738730db43a872d88e744b411"><div class="ttname"><a href="IRremoteInt_8h.html#a20df6d7738730db43a872d88e744b411">DO_NOT_ENABLE_LED_FEEDBACK</a></div><div class="ttdeci">#define DO_NOT_ENABLE_LED_FEEDBACK</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00389">IRremoteInt.h:389</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a575e74508c30d1ccf92f7e142a43dd3d"><div class="ttname"><a href="IRremoteInt_8h.html#a575e74508c30d1ccf92f7e142a43dd3d">USE_DEFAULT_FEEDBACK_LED_PIN</a></div><div class="ttdeci">#define USE_DEFAULT_FEEDBACK_LED_PIN</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00064">IRremoteInt.h:64</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a72176857aa388ce2705ca50d62327809"><div class="ttname"><a href="IRremoteInt_8h.html#a72176857aa388ce2705ca50d62327809">LED_FEEDBACK_DISABLED_COMPLETELY</a></div><div class="ttdeci">#define LED_FEEDBACK_DISABLED_COMPLETELY</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00390">IRremoteInt.h:390</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a89f956d1675afae9fe0e421c322af7c9"><div class="ttname"><a href="IRremoteInt_8h.html#a89f956d1675afae9fe0e421c322af7c9">LED_FEEDBACK_ENABLED_FOR_RECEIVE</a></div><div class="ttdeci">#define LED_FEEDBACK_ENABLED_FOR_RECEIVE</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00391">IRremoteInt.h:391</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a98da0891dfea82ad6fa9b7769afe550e"><div class="ttname"><a href="IRremoteInt_8h.html#a98da0891dfea82ad6fa9b7769afe550e">LED_FEEDBACK_ENABLED_FOR_SEND</a></div><div class="ttdeci">#define LED_FEEDBACK_ENABLED_FOR_SEND</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00392">IRremoteInt.h:392</a></div></div>
+<div class="ttc" id="adigitalWriteFast_8h_html_a99fa3e1d72f2f1a9ffba996b06767a39"><div class="ttname"><a href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a></div><div class="ttdeci">#define pinModeFast</div><div class="ttdef"><b>Definition</b> <a href="digitalWriteFast_8h_source.html#l00375">digitalWriteFast.h:375</a></div></div>
+<div class="ttc" id="adigitalWriteFast_8h_html_a9bef074dfc5a83ffbb27929185ef9597"><div class="ttname"><a href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a></div><div class="ttdeci">#define digitalWriteFast</div><div class="ttdef"><b>Definition</b> <a href="digitalWriteFast_8h_source.html#l00343">digitalWriteFast.h:343</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_ga072624eeba964d8aa105822da00090ba"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#ga072624eeba964d8aa105822da00090ba">setFeedbackLED</a></div><div class="ttdeci">void setFeedbackLED(bool aSwitchLedOn)</div><div class="ttdef"><b>Definition</b> <a href="#l00108">IRFeedbackLED.hpp:108</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_ga1150b1e371cd7d424d53dbcae6619e54"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#ga1150b1e371cd7d424d53dbcae6619e54">enableLEDFeedback</a></div><div class="ttdeci">void enableLEDFeedback()</div><div class="ttdef"><b>Definition</b> <a href="#l00085">IRFeedbackLED.hpp:85</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_ga456f04616e9881e7d85eb56c941942d2"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#ga456f04616e9881e7d85eb56c941942d2">FeedbackLEDControl</a></div><div class="ttdeci">struct FeedbackLEDControlStruct FeedbackLEDControl</div><div class="ttdoc">The feedback LED control instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">IRFeedbackLED.hpp:47</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_ga5f1d479f43dcd56febf146e97a3904db"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#ga5f1d479f43dcd56febf146e97a3904db">setBlinkPin</a></div><div class="ttdeci">void setBlinkPin(uint8_t aBlinkPin)</div><div class="ttdef"><b>Definition</b> <a href="#l00153">IRFeedbackLED.hpp:153</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_ga69bc794d3cfd1600a264a1dbbdd28ef7"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#ga69bc794d3cfd1600a264a1dbbdd28ef7">enableLEDFeedbackForSend</a></div><div class="ttdeci">void enableLEDFeedbackForSend()</div><div class="ttdef"><b>Definition</b> <a href="#l00093">IRFeedbackLED.hpp:93</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_ga880ead90165a961244c8fc7da2375083"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#ga880ead90165a961244c8fc7da2375083">disableLEDFeedbackForSend</a></div><div class="ttdeci">void disableLEDFeedbackForSend()</div><div class="ttdef"><b>Definition</b> <a href="#l00097">IRFeedbackLED.hpp:97</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_gab72e6123a449de7feaaa1c3dcb9f8630"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#gab72e6123a449de7feaaa1c3dcb9f8630">disableLEDFeedback</a></div><div class="ttdeci">void disableLEDFeedback()</div><div class="ttdef"><b>Definition</b> <a href="#l00089">IRFeedbackLED.hpp:89</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_gac7fc50c7e08b8c339b2c1c912a0c6e89"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#gac7fc50c7e08b8c339b2c1c912a0c6e89">IRrecv::blink13</a></div><div class="ttdeci">void blink13(uint8_t aEnableLEDFeedback) __attribute__((deprecated(&quot;Please use setLEDFeedback() or enableLEDFeedback() / disableLEDFeedback().&quot;)))</div><div class="ttdef"><b>Definition</b> <a href="#l00147">IRFeedbackLED.hpp:147</a></div></div>
+<div class="ttc" id="agroup__FeedbackLEDFunctions_html_gae8f13aac6ecee8b3c1e59d4a2e0bb019"><div class="ttname"><a href="group__FeedbackLEDFunctions.html#gae8f13aac6ecee8b3c1e59d4a2e0bb019">setLEDFeedback</a></div><div class="ttdeci">void setLEDFeedback(uint8_t aFeedbackLEDPin, uint8_t aEnableLEDFeedback)</div><div class="ttdef"><b>Definition</b> <a href="#l00056">IRFeedbackLED.hpp:56</a></div></div>
+<div class="ttc" id="astructFeedbackLEDControlStruct_html"><div class="ttname"><a href="structFeedbackLEDControlStruct.html">FeedbackLEDControlStruct</a></div><div class="ttdef"><b>Definition</b> <a href="#l00042">IRFeedbackLED.hpp:42</a></div></div>
+<div class="ttc" id="astructFeedbackLEDControlStruct_html_a759f018b8bdb93695bd4ebb0d61a3c4c"><div class="ttname"><a href="structFeedbackLEDControlStruct.html#a759f018b8bdb93695bd4ebb0d61a3c4c">FeedbackLEDControlStruct::FeedbackLEDPin</a></div><div class="ttdeci">uint8_t FeedbackLEDPin</div><div class="ttdoc">if 0, then take board specific FEEDBACK_LED_ON() and FEEDBACK_LED_OFF() functions</div><div class="ttdef"><b>Definition</b> <a href="#l00043">IRFeedbackLED.hpp:43</a></div></div>
+<div class="ttc" id="astructFeedbackLEDControlStruct_html_aaca16b47301e6cc0fcd0c76216f76417"><div class="ttname"><a href="structFeedbackLEDControlStruct.html#aaca16b47301e6cc0fcd0c76216f76417">FeedbackLEDControlStruct::LedFeedbackEnabled</a></div><div class="ttdeci">uint8_t LedFeedbackEnabled</div><div class="ttdoc">LED_FEEDBACK_ENABLED_FOR_RECEIVE or LED_FEEDBACK_ENABLED_FOR_SEND -&gt; enable blinking of pin on IR pro...</div><div class="ttdef"><b>Definition</b> <a href="#l00044">IRFeedbackLED.hpp:44</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_88c0bcaa7fd8df08d0f5885e4eb57ee3.html">src</a></li><li class="navelem"><a href="IRFeedbackLED_8hpp.html">IRFeedbackLED.hpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

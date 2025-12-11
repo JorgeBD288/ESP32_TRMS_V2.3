@@ -1,0 +1,25 @@
+var struct__lv__disp__t =
+[
+    [ "act_scr", "struct__lv__disp__t.html#aecb603a4d3699a2af7beb0943edb0026", null ],
+    [ "bg_color", "struct__lv__disp__t.html#ab53e72a2fd135350fca97392d34aef13", null ],
+    [ "bg_img", "struct__lv__disp__t.html#ac24be8f60aabb76d6922ea0cd96c151e", null ],
+    [ "bg_opa", "struct__lv__disp__t.html#ab237e70d6d48769e59efd25c0086cce8", null ],
+    [ "del_prev", "struct__lv__disp__t.html#a0baab85f68b677246a0be429caaa18c3", null ],
+    [ "draw_prev_over_act", "struct__lv__disp__t.html#ac536b30b1848bef83d946ef627955180", null ],
+    [ "driver", "struct__lv__disp__t.html#afc56043919c168bc664daa81c31a80e8", null ],
+    [ "inv_area_joined", "struct__lv__disp__t.html#aa076b7623aa47b6f820b67debeb0282d", null ],
+    [ "inv_areas", "struct__lv__disp__t.html#abb3662915362da5728234388d298f7b8", null ],
+    [ "inv_en_cnt", "struct__lv__disp__t.html#acb6bc95fa011172380d6233831ab625c", null ],
+    [ "inv_p", "struct__lv__disp__t.html#a836c66c6db7a9277fce7eaebc9d4d0ce", null ],
+    [ "last_activity_time", "struct__lv__disp__t.html#a7218ab0ed1cf13427681ab492f1411cc", null ],
+    [ "prev_scr", "struct__lv__disp__t.html#afe1c856999354e4b1d503af3a9a32a17", null ],
+    [ "refr_timer", "struct__lv__disp__t.html#acbc2184a1dbdecdb0c575dfd9fd98238", null ],
+    [ "rendering_in_progress", "struct__lv__disp__t.html#a1888eac6bc93602b7ce2dd6893df16a3", null ],
+    [ "scr_to_load", "struct__lv__disp__t.html#aea061accb103f7fcb207296566cf8482", null ],
+    [ "screen_cnt", "struct__lv__disp__t.html#a9b0e29f211f611b32607c8af55b30c47", null ],
+    [ "screens", "struct__lv__disp__t.html#a2721d7c9aa569c24c2a65537385abafc", null ],
+    [ "sync_areas", "struct__lv__disp__t.html#a965d69d020752b3e4701d94da8383155", null ],
+    [ "sys_layer", "struct__lv__disp__t.html#a6b4790d8da37e46506fa44f1e344c650", null ],
+    [ "theme", "struct__lv__disp__t.html#a3ab3e959aceae19fd8b07d06acc92479", null ],
+    [ "top_layer", "struct__lv__disp__t.html#affbf46abc4c8a3631733b41c8cefaeff", null ]
+];

@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/misc/lv_lru.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__lru_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_lru.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__lru_8h_source.html">lv_lru.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__mem_8h_source.html">lv_mem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">lv_log.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__lru_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:_5Flv_5Flru_5Fitem_5Ft" id="r__5Flv_5Flru_5Fitem_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__lv__lru__item__t.html">_lv_lru_item_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:abe112f508bf07c054463bb7f11fb115c" id="r_abe112f508bf07c054463bb7f11fb115c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe112f508bf07c054463bb7f11fb115c">error_for</a>(conditions,  error)</td></tr>
+<tr class="memitem:a5b6561ef47b9987d9c78884bbcc7478a" id="r_a5b6561ef47b9987d9c78884bbcc7478a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b6561ef47b9987d9c78884bbcc7478a">test_for_missing_cache</a>()</td></tr>
+<tr class="memitem:af0f3670e208fb1ba1502bfe70d6ad47d" id="r_af0f3670e208fb1ba1502bfe70d6ad47d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0f3670e208fb1ba1502bfe70d6ad47d">test_for_missing_key</a>()</td></tr>
+<tr class="memitem:ae1c289030dcffb5ba376d1f3b09fa498" id="r_ae1c289030dcffb5ba376d1f3b09fa498"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1c289030dcffb5ba376d1f3b09fa498">test_for_missing_value</a>()</td></tr>
+<tr class="memitem:ac4757b7fd8999ed06c8849e6ee43b96f" id="r_ac4757b7fd8999ed06c8849e6ee43b96f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4757b7fd8999ed06c8849e6ee43b96f">test_for_value_too_large</a>()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a1d1c3e90bb6666332356b6e5f0223ef6" id="r_a1d1c3e90bb6666332356b6e5f0223ef6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d1c3e90bb6666332356b6e5f0223ef6">lv_lru_create</a> (size_t cache_size, size_t average_length, <a class="el" href="lv__lru_8h.html#a24f17b9ad10af22f079ccbddb7610bcb">lv_lru_free_t</a> *value_free, <a class="el" href="lv__lru_8h.html#a24f17b9ad10af22f079ccbddb7610bcb">lv_lru_free_t</a> *key_free)</td></tr>
+<tr class="memitem:a8fbde2c950663c579beba2c929c3a226" id="r_a8fbde2c950663c579beba2c929c3a226"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fbde2c950663c579beba2c929c3a226">lv_lru_del</a> (<a class="el" href="structlv__lru__t.html">lv_lru_t</a> *cache)</td></tr>
+<tr class="memitem:a3e93f2a35e5ed31f486aca8b4c2869da" id="r_a3e93f2a35e5ed31f486aca8b4c2869da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651f">lv_lru_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e93f2a35e5ed31f486aca8b4c2869da">lv_lru_get</a> (<a class="el" href="structlv__lru__t.html">lv_lru_t</a> *cache, const void *key, size_t key_size, void **value)</td></tr>
+<tr class="memitem:a6b88c627d0ced87bc504195dc046aa71" id="r_a6b88c627d0ced87bc504195dc046aa71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651f">lv_lru_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b88c627d0ced87bc504195dc046aa71">lv_lru_remove</a> (<a class="el" href="structlv__lru__t.html">lv_lru_t</a> *cache, const void *key, size_t key_size)</td></tr>
+<tr class="memitem:a9075eea287cbb4c74aefa191dba2f2b3" id="r_a9075eea287cbb4c74aefa191dba2f2b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9075eea287cbb4c74aefa191dba2f2b3">lv_lru_remove_lru_item</a> (<a class="el" href="structlv__lru__t.html">lv_lru_t</a> *cache)</td></tr>
+<tr class="memitem:a07ab90f9588d1943ed37827e81c9f0f4" id="r_a07ab90f9588d1943ed37827e81c9f0f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651f">lv_lru_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ab90f9588d1943ed37827e81c9f0f4">lv_lru_set</a> (<a class="el" href="structlv__lru__t.html">lv_lru_t</a> *cache, const void *key, size_t key_length, void *value, size_t value_length)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><dl class="section see"><dt>Ver también</dt><dd><a href="https://github.com/willcannings/C-LRU-Cache">https://github.com/willcannings/C-LRU-Cache</a> </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="abe112f508bf07c054463bb7f11fb115c" name="abe112f508bf07c054463bb7f11fb115c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe112f508bf07c054463bb7f11fb115c">&#9670;&#160;</a></span>error_for</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define error_for</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>conditions</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span>(conditions) {<span class="keywordflow">return</span> error;}</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00063">63</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+
+</div>
+</div>
+<a id="a5b6561ef47b9987d9c78884bbcc7478a" name="a5b6561ef47b9987d9c78884bbcc7478a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6561ef47b9987d9c78884bbcc7478a">&#9670;&#160;</a></span>test_for_missing_cache</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define test_for_missing_cache</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abe112f508bf07c054463bb7f11fb115c">error_for</a>(!cache, <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa565ed0f0651a61bb1bb85c490e436e64">LV_LRU_MISSING_CACHE</a>)</div>
+<div class="ttc" id="alv__lru_8c_html_abe112f508bf07c054463bb7f11fb115c"><div class="ttname"><a href="#abe112f508bf07c054463bb7f11fb115c">error_for</a></div><div class="ttdeci">#define error_for(conditions, error)</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00063">lv_lru.c:63</a></div></div>
+<div class="ttc" id="alv__lru_8h_html_a548d8f986f50af8fa6bfc2c5f919651fa565ed0f0651a61bb1bb85c490e436e64"><div class="ttname"><a href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa565ed0f0651a61bb1bb85c490e436e64">LV_LRU_MISSING_CACHE</a></div><div class="ttdeci">@ LV_LRU_MISSING_CACHE</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00035">lv_lru.h:35</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00064">64</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__lru_8c_source.html#l00192">lv_lru_get()</a>, <a class="el" href="lv__lru_8c_source.html#l00215">lv_lru_remove()</a> y <a class="el" href="lv__lru_8c_source.html#l00139">lv_lru_set()</a>.</p>
+
+</div>
+</div>
+<a id="af0f3670e208fb1ba1502bfe70d6ad47d" name="af0f3670e208fb1ba1502bfe70d6ad47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f3670e208fb1ba1502bfe70d6ad47d">&#9670;&#160;</a></span>test_for_missing_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define test_for_missing_key</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abe112f508bf07c054463bb7f11fb115c">error_for</a>(!key, <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa19af4f25af285d11881ff1cc97588a76">LV_LRU_MISSING_KEY</a>)</div>
+<div class="ttc" id="alv__lru_8h_html_a548d8f986f50af8fa6bfc2c5f919651fa19af4f25af285d11881ff1cc97588a76"><div class="ttname"><a href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa19af4f25af285d11881ff1cc97588a76">LV_LRU_MISSING_KEY</a></div><div class="ttdeci">@ LV_LRU_MISSING_KEY</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00036">lv_lru.h:36</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00065">65</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__lru_8c_source.html#l00192">lv_lru_get()</a>, <a class="el" href="lv__lru_8c_source.html#l00215">lv_lru_remove()</a> y <a class="el" href="lv__lru_8c_source.html#l00139">lv_lru_set()</a>.</p>
+
+</div>
+</div>
+<a id="ae1c289030dcffb5ba376d1f3b09fa498" name="ae1c289030dcffb5ba376d1f3b09fa498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c289030dcffb5ba376d1f3b09fa498">&#9670;&#160;</a></span>test_for_missing_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define test_for_missing_value</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abe112f508bf07c054463bb7f11fb115c">error_for</a>(!value || value_length == 0, <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa426e0481a9a1da79027a2f6f32495a9c">LV_LRU_MISSING_VALUE</a>)</div>
+<div class="ttc" id="alv__lru_8h_html_a548d8f986f50af8fa6bfc2c5f919651fa426e0481a9a1da79027a2f6f32495a9c"><div class="ttname"><a href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa426e0481a9a1da79027a2f6f32495a9c">LV_LRU_MISSING_VALUE</a></div><div class="ttdeci">@ LV_LRU_MISSING_VALUE</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00037">lv_lru.h:37</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00066">66</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__lru_8c_source.html#l00139">lv_lru_set()</a>.</p>
+
+</div>
+</div>
+<a id="ac4757b7fd8999ed06c8849e6ee43b96f" name="ac4757b7fd8999ed06c8849e6ee43b96f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4757b7fd8999ed06c8849e6ee43b96f">&#9670;&#160;</a></span>test_for_value_too_large</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define test_for_value_too_large</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#abe112f508bf07c054463bb7f11fb115c">error_for</a>(value_length &gt; cache-&gt;total_memory, <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa7048cc37c6d9ee4e2009c854eedfd217">LV_LRU_VALUE_TOO_LARGE</a>)</div>
+<div class="ttc" id="alv__lru_8h_html_a548d8f986f50af8fa6bfc2c5f919651fa7048cc37c6d9ee4e2009c854eedfd217"><div class="ttname"><a href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa7048cc37c6d9ee4e2009c854eedfd217">LV_LRU_VALUE_TOO_LARGE</a></div><div class="ttdeci">@ LV_LRU_VALUE_TOO_LARGE</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00039">lv_lru.h:39</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00067">67</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__lru_8c_source.html#l00139">lv_lru_set()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a1d1c3e90bb6666332356b6e5f0223ef6" name="a1d1c3e90bb6666332356b6e5f0223ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1c3e90bb6666332356b6e5f0223ef6">&#9670;&#160;</a></span>lv_lru_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> * lv_lru_create </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>cache_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>average_length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__lru_8h.html#a24f17b9ad10af22f079ccbddb7610bcb">lv_lru_free_t</a> *</td>          <td class="paramname"><span class="paramname"><em>value_free</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__lru_8h.html#a24f17b9ad10af22f079ccbddb7610bcb">lv_lru_free_t</a> *</td>          <td class="paramname"><span class="paramname"><em>key_free</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00073">73</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
+<div class="line"><span class="lineno">   76</span>    <span class="comment">// create the cache</span></div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_struct" href="structlv__lru__t.html">lv_lru_t</a> * cache = (<a class="code hl_struct" href="structlv__lru__t.html">lv_lru_t</a> *) <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__lru__t.html">lv_lru_t</a>));</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(cache, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__lru__t.html">lv_lru_t</a>));</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span>(!cache) {</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;LRU Cache unable to create cache object&quot;</span>);</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span>    cache-&gt;hash_table_size = cache_size / average_length;</div>
+<div class="line"><span class="lineno">   84</span>    cache-&gt;average_item_length = average_length;</div>
+<div class="line"><span class="lineno">   85</span>    cache-&gt;free_memory = cache_size;</div>
+<div class="line"><span class="lineno">   86</span>    cache-&gt;total_memory = cache_size;</div>
+<div class="line"><span class="lineno">   87</span>    cache-&gt;seed = <a class="code hl_function" href="lv__math_8c.html#ac1bd8f75fea405a2a693b7bae62d128a">lv_rand</a>(1, UINT32_MAX);</div>
+<div class="line"><span class="lineno">   88</span>    cache-&gt;value_free = value_free ? value_free : <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>;</div>
+<div class="line"><span class="lineno">   89</span>    cache-&gt;key_free = key_free ? key_free : <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="comment">// size the hash table to a guestimate of the number of slots required (assuming a perfect hash)</span></div>
+<div class="line"><span class="lineno">   92</span>    cache-&gt;items = (<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> **) <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) * cache-&gt;hash_table_size);</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(cache-&gt;items, <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) * cache-&gt;hash_table_size);</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span>(!cache-&gt;items) {</div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;LRU Cache unable to create cache hash table&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(cache);</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> cache;</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__lru_8h_html_a5990cc8b1cafca927220402af44963d8"><div class="ttname"><a href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a></div><div class="ttdeci">struct _lv_lru_item_t lv_lru_item_t</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00043">lv_lru.h:43</a></div></div>
+<div class="ttc" id="alv__math_8c_html_ac1bd8f75fea405a2a693b7bae62d128a"><div class="ttname"><a href="lv__math_8c.html#ac1bd8f75fea405a2a693b7bae62d128a">lv_rand</a></div><div class="ttdeci">uint32_t lv_rand(uint32_t min, uint32_t max)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8c_source.html#l00257">lv_math.c:257</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="astructlv__lru__t_html"><div class="ttname"><a href="structlv__lru__t.html">lv_lru_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00045">lv_lru.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a> y <a class="el" href="lv__math_8c_source.html#l00257">lv_rand()</a>.</p>
+
+</div>
+</div>
+<a id="a8fbde2c950663c579beba2c929c3a226" name="a8fbde2c950663c579beba2c929c3a226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fbde2c950663c579beba2c929c3a226">&#9670;&#160;</a></span>lv_lru_del()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_lru_del </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00103">103</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(cache);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment">// free each of the cached items, and the hash table</span></div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> * item = NULL, *next = NULL;</div>
+<div class="line"><span class="lineno">  109</span>    uint32_t i = 0;</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span>(cache-&gt;items) {</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">for</span>(; i &lt; cache-&gt;hash_table_size; i++) {</div>
+<div class="line"><span class="lineno">  112</span>            item = cache-&gt;items[i];</div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">while</span>(item) {</div>
+<div class="line"><span class="lineno">  114</span>                next = (<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">next</a>;</div>
+<div class="line"><span class="lineno">  115</span>                cache-&gt;value_free(item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a78d350d1499470d5085e63996dac28d0">value</a>);</div>
+<div class="line"><span class="lineno">  116</span>                cache-&gt;key_free(item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a0682d7d78ef62c99e06801a0e31d4c34">key</a>);</div>
+<div class="line"><span class="lineno">  117</span>                cache-&gt;free_memory += item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#af995c06e361151a9531d738171ab2c25">value_length</a>;</div>
+<div class="line"><span class="lineno">  118</span>                <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(item);</div>
+<div class="line"><span class="lineno">  119</span>                item = next;</div>
+<div class="line"><span class="lineno">  120</span>            }</div>
+<div class="line"><span class="lineno">  121</span>        }</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(cache-&gt;items);</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span>(cache-&gt;free_items) {</div>
+<div class="line"><span class="lineno">  126</span>        item = cache-&gt;free_items;</div>
+<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">while</span>(item) {</div>
+<div class="line"><span class="lineno">  128</span>            next = (<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">next</a>;</div>
+<div class="line"><span class="lineno">  129</span>            <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(item);</div>
+<div class="line"><span class="lineno">  130</span>            item = next;</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <span class="comment">// free the cache</span></div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(cache);</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a3fe9ba05eba3d37b7cd1d3765c34487d"><div class="ttname"><a href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a></div><div class="ttdeci">#define LV_ASSERT_NULL(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00058">lv_assert.h:58</a></div></div>
+<div class="ttc" id="astruct__lv__lru__item__t_html_a0682d7d78ef62c99e06801a0e31d4c34"><div class="ttname"><a href="struct__lv__lru__item__t.html#a0682d7d78ef62c99e06801a0e31d4c34">_lv_lru_item_t::key</a></div><div class="ttdeci">void * key</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00027">lv_lru.c:27</a></div></div>
+<div class="ttc" id="astruct__lv__lru__item__t_html_a09bbb3fc28b3e04c7cd246602b7bf872"><div class="ttname"><a href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">_lv_lru_item_t::next</a></div><div class="ttdeci">struct _lv_lru_item_t * next</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00031">lv_lru.c:31</a></div></div>
+<div class="ttc" id="astruct__lv__lru__item__t_html_a78d350d1499470d5085e63996dac28d0"><div class="ttname"><a href="struct__lv__lru__item__t.html#a78d350d1499470d5085e63996dac28d0">_lv_lru_item_t::value</a></div><div class="ttdeci">void * value</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00026">lv_lru.c:26</a></div></div>
+<div class="ttc" id="astruct__lv__lru__item__t_html_af995c06e361151a9531d738171ab2c25"><div class="ttname"><a href="struct__lv__lru__item__t.html#af995c06e361151a9531d738171ab2c25">_lv_lru_item_t::value_length</a></div><div class="ttdeci">size_t value_length</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00028">lv_lru.c:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__lru_8c_source.html#l00027">_lv_lru_item_t::key</a>, <a class="el" href="lv__assert_8h_source.html#l00058">LV_ASSERT_NULL</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__lru_8c_source.html#l00031">_lv_lru_item_t::next</a>, <a class="el" href="lv__lru_8c_source.html#l00026">_lv_lru_item_t::value</a> y <a class="el" href="lv__lru_8c_source.html#l00028">_lv_lru_item_t::value_length</a>.</p>
+
+</div>
+</div>
+<a id="a3e93f2a35e5ed31f486aca8b4c2869da" name="a3e93f2a35e5ed31f486aca8b4c2869da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e93f2a35e5ed31f486aca8b4c2869da">&#9670;&#160;</a></span>lv_lru_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651f">lv_lru_res_t</a> lv_lru_get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>key_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00192">192</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>{</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_define" href="#a5b6561ef47b9987d9c78884bbcc7478a">test_for_missing_cache</a>();</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_define" href="#af0f3670e208fb1ba1502bfe70d6ad47d">test_for_missing_key</a>();</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    <span class="comment">// loop until we find the item, or hit the end of a chain</span></div>
+<div class="line"><span class="lineno">  198</span>    uint32_t hash_index = lv_lru_hash(cache, key, key_size);</div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> * item = cache-&gt;items[hash_index];</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">while</span>(item &amp;&amp; lv_lru_cmp_keys(item, key, key_size))</div>
+<div class="line"><span class="lineno">  202</span>        item = (<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">next</a>;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span>(item) {</div>
+<div class="line"><span class="lineno">  205</span>        *value = item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a78d350d1499470d5085e63996dac28d0">value</a>;</div>
+<div class="line"><span class="lineno">  206</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a9e9e28c15da2f23adade7f9ed494616a">access_count</a> = ++cache-&gt;access_count;</div>
+<div class="line"><span class="lineno">  207</span>    }</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  209</span>        *value = NULL;</div>
+<div class="line"><span class="lineno">  210</span>    }</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa250f8a3d27798d86f646749b47c3a481">LV_LRU_OK</a>;</div>
+<div class="line"><span class="lineno">  213</span>}</div>
+<div class="ttc" id="alv__lru_8c_html_a5b6561ef47b9987d9c78884bbcc7478a"><div class="ttname"><a href="#a5b6561ef47b9987d9c78884bbcc7478a">test_for_missing_cache</a></div><div class="ttdeci">#define test_for_missing_cache()</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00064">lv_lru.c:64</a></div></div>
+<div class="ttc" id="alv__lru_8c_html_af0f3670e208fb1ba1502bfe70d6ad47d"><div class="ttname"><a href="#af0f3670e208fb1ba1502bfe70d6ad47d">test_for_missing_key</a></div><div class="ttdeci">#define test_for_missing_key()</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00065">lv_lru.c:65</a></div></div>
+<div class="ttc" id="alv__lru_8h_html_a548d8f986f50af8fa6bfc2c5f919651fa250f8a3d27798d86f646749b47c3a481"><div class="ttname"><a href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa250f8a3d27798d86f646749b47c3a481">LV_LRU_OK</a></div><div class="ttdeci">@ LV_LRU_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8h_source.html#l00034">lv_lru.h:34</a></div></div>
+<div class="ttc" id="astruct__lv__lru__item__t_html_a9e9e28c15da2f23adade7f9ed494616a"><div class="ttname"><a href="struct__lv__lru__item__t.html#a9e9e28c15da2f23adade7f9ed494616a">_lv_lru_item_t::access_count</a></div><div class="ttdeci">uint64_t access_count</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00030">lv_lru.c:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__lru_8c_source.html#l00030">_lv_lru_item_t::access_count</a>, <a class="el" href="lv__lru_8c_source.html#l00027">_lv_lru_item_t::key</a>, <a class="el" href="lv__lru_8h_source.html#l00034">LV_LRU_OK</a>, <a class="el" href="lv__lru_8c_source.html#l00031">_lv_lru_item_t::next</a>, <a class="el" href="lv__lru_8c_source.html#l00064">test_for_missing_cache</a>, <a class="el" href="lv__lru_8c_source.html#l00065">test_for_missing_key</a> y <a class="el" href="lv__lru_8c_source.html#l00026">_lv_lru_item_t::value</a>.</p>
+
+</div>
+</div>
+<a id="a6b88c627d0ced87bc504195dc046aa71" name="a6b88c627d0ced87bc504195dc046aa71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b88c627d0ced87bc504195dc046aa71">&#9670;&#160;</a></span>lv_lru_remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651f">lv_lru_res_t</a> lv_lru_remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>key_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00215">215</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>{</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_define" href="#a5b6561ef47b9987d9c78884bbcc7478a">test_for_missing_cache</a>();</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_define" href="#af0f3670e208fb1ba1502bfe70d6ad47d">test_for_missing_key</a>();</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="comment">// loop until we find the item, or hit the end of a chain</span></div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> * item = NULL, *prev = NULL;</div>
+<div class="line"><span class="lineno">  222</span>    uint32_t hash_index = lv_lru_hash(cache, key, key_size);</div>
+<div class="line"><span class="lineno">  223</span>    item = cache-&gt;items[hash_index];</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">while</span>(item &amp;&amp; lv_lru_cmp_keys(item, key, key_size)) {</div>
+<div class="line"><span class="lineno">  226</span>        prev = item;</div>
+<div class="line"><span class="lineno">  227</span>        item = (<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">next</a>;</div>
+<div class="line"><span class="lineno">  228</span>    }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">if</span>(item) {</div>
+<div class="line"><span class="lineno">  231</span>        lv_lru_remove_item(cache, prev, item, hash_index);</div>
+<div class="line"><span class="lineno">  232</span>    }</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa250f8a3d27798d86f646749b47c3a481">LV_LRU_OK</a>;</div>
+<div class="line"><span class="lineno">  235</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__lru_8c_source.html#l00027">_lv_lru_item_t::key</a>, <a class="el" href="lv__lru_8h_source.html#l00034">LV_LRU_OK</a>, <a class="el" href="lv__lru_8c_source.html#l00031">_lv_lru_item_t::next</a>, <a class="el" href="lv__lru_8c_source.html#l00064">test_for_missing_cache</a> y <a class="el" href="lv__lru_8c_source.html#l00065">test_for_missing_key</a>.</p>
+
+</div>
+</div>
+<a id="a9075eea287cbb4c74aefa191dba2f2b3" name="a9075eea287cbb4c74aefa191dba2f2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9075eea287cbb4c74aefa191dba2f2b3">&#9670;&#160;</a></span>lv_lru_remove_lru_item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_lru_remove_lru_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>remove the least recently used item</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Tareas pendientes</a></b></dt><dd>we can optimise this by finding the n lru items, where n = required_space / average_length </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00237">237</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>{</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> * min_item = NULL, *min_prev = NULL;</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> * item = NULL, *prev = NULL;</div>
+<div class="line"><span class="lineno">  241</span>    uint32_t i = 0, min_index = -1;</div>
+<div class="line"><span class="lineno">  242</span>    uint64_t min_access_count = -1;</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">for</span>(; i &lt; cache-&gt;hash_table_size; i++) {</div>
+<div class="line"><span class="lineno">  245</span>        item = cache-&gt;items[i];</div>
+<div class="line"><span class="lineno">  246</span>        prev = NULL;</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordflow">while</span>(item) {</div>
+<div class="line"><span class="lineno">  249</span>            <span class="keywordflow">if</span>(item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a9e9e28c15da2f23adade7f9ed494616a">access_count</a> &lt; min_access_count || (int64_t) min_access_count == -1) {</div>
+<div class="line"><span class="lineno">  250</span>                min_access_count = item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a9e9e28c15da2f23adade7f9ed494616a">access_count</a>;</div>
+<div class="line"><span class="lineno">  251</span>                min_item = item;</div>
+<div class="line"><span class="lineno">  252</span>                min_prev = prev;</div>
+<div class="line"><span class="lineno">  253</span>                min_index = i;</div>
+<div class="line"><span class="lineno">  254</span>            }</div>
+<div class="line"><span class="lineno">  255</span>            prev = item;</div>
+<div class="line"><span class="lineno">  256</span>            item = item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">next</a>;</div>
+<div class="line"><span class="lineno">  257</span>        }</div>
+<div class="line"><span class="lineno">  258</span>    }</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">if</span>(min_item) {</div>
+<div class="line"><span class="lineno">  261</span>        lv_lru_remove_item(cache, min_prev, min_item, min_index);</div>
+<div class="line"><span class="lineno">  262</span>    }</div>
+<div class="line"><span class="lineno">  263</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__lru_8c_source.html#l00030">_lv_lru_item_t::access_count</a> y <a class="el" href="lv__lru_8c_source.html#l00031">_lv_lru_item_t::next</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__lru_8c_source.html#l00139">lv_lru_set()</a>.</p>
+
+</div>
+</div>
+<a id="a07ab90f9588d1943ed37827e81c9f0f4" name="a07ab90f9588d1943ed37827e81c9f0f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ab90f9588d1943ed37827e81c9f0f4">&#9670;&#160;</a></span>lv_lru_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651f">lv_lru_res_t</a> lv_lru_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__lru__t.html">lv_lru_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>key_length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>value_length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__lru_8c_source.html#l00139">139</a> del archivo <a class="el" href="lv__lru_8c_source.html">lv_lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_define" href="#a5b6561ef47b9987d9c78884bbcc7478a">test_for_missing_cache</a>();</div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_define" href="#af0f3670e208fb1ba1502bfe70d6ad47d">test_for_missing_key</a>();</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_define" href="#ae1c289030dcffb5ba376d1f3b09fa498">test_for_missing_value</a>();</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_define" href="#ac4757b7fd8999ed06c8849e6ee43b96f">test_for_value_too_large</a>();</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <span class="comment">// see if the key already exists</span></div>
+<div class="line"><span class="lineno">  147</span>    uint32_t hash_index = lv_lru_hash(cache, key, key_length);</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordtype">int</span> required = 0;</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> * item = NULL, *prev = NULL;</div>
+<div class="line"><span class="lineno">  150</span>    item = cache-&gt;items[hash_index];</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">while</span>(item &amp;&amp; lv_lru_cmp_keys(item, key, key_length)) {</div>
+<div class="line"><span class="lineno">  153</span>        prev = item;</div>
+<div class="line"><span class="lineno">  154</span>        item = (<a class="code hl_typedef" href="lv__lru_8h.html#a5990cc8b1cafca927220402af44963d8">lv_lru_item_t</a> *) item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a09bbb3fc28b3e04c7cd246602b7bf872">next</a>;</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span>(item) {</div>
+<div class="line"><span class="lineno">  158</span>        <span class="comment">// update the value and value_lengths</span></div>
+<div class="line"><span class="lineno">  159</span>        required = (int)(value_length - item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#af995c06e361151a9531d738171ab2c25">value_length</a>);</div>
+<div class="line"><span class="lineno">  160</span>        cache-&gt;value_free(item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a78d350d1499470d5085e63996dac28d0">value</a>);</div>
+<div class="line"><span class="lineno">  161</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a78d350d1499470d5085e63996dac28d0">value</a> = value;</div>
+<div class="line"><span class="lineno">  162</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#af995c06e361151a9531d738171ab2c25">value_length</a> = value_length;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    }</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  166</span>        <span class="comment">// insert a new item</span></div>
+<div class="line"><span class="lineno">  167</span>        item = lv_lru_pop_or_create_item(cache);</div>
+<div class="line"><span class="lineno">  168</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a78d350d1499470d5085e63996dac28d0">value</a> = value;</div>
+<div class="line"><span class="lineno">  169</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a0682d7d78ef62c99e06801a0e31d4c34">key</a> = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(key_length);</div>
+<div class="line"><span class="lineno">  170</span>        memcpy(item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a0682d7d78ef62c99e06801a0e31d4c34">key</a>, key, key_length);</div>
+<div class="line"><span class="lineno">  171</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#af995c06e361151a9531d738171ab2c25">value_length</a> = value_length;</div>
+<div class="line"><span class="lineno">  172</span>        item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a30dca1eab7bef29ba5bf072095f83c9f">key_length</a> = key_length;</div>
+<div class="line"><span class="lineno">  173</span>        required = (int) value_length;</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">if</span>(prev)</div>
+<div class="line"><span class="lineno">  176</span>            prev-&gt;next = item;</div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  178</span>            cache-&gt;items[hash_index] = item;</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
+<div class="line"><span class="lineno">  180</span>    item-&gt;<a class="code hl_variable" href="struct__lv__lru__item__t.html#a9e9e28c15da2f23adade7f9ed494616a">access_count</a> = ++cache-&gt;access_count;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="comment">// remove as many items as necessary to free enough space</span></div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span>(required &gt; 0 &amp;&amp; (<span class="keywordtype">size_t</span>) required &gt; cache-&gt;free_memory) {</div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">while</span>(cache-&gt;free_memory &lt; (<span class="keywordtype">size_t</span>) required)</div>
+<div class="line"><span class="lineno">  185</span>            <a class="code hl_function" href="#a9075eea287cbb4c74aefa191dba2f2b3">lv_lru_remove_lru_item</a>(cache);</div>
+<div class="line"><span class="lineno">  186</span>    }</div>
+<div class="line"><span class="lineno">  187</span>    cache-&gt;free_memory -= required;</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__lru_8h.html#a548d8f986f50af8fa6bfc2c5f919651fa250f8a3d27798d86f646749b47c3a481">LV_LRU_OK</a>;</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="ttc" id="alv__lru_8c_html_a9075eea287cbb4c74aefa191dba2f2b3"><div class="ttname"><a href="#a9075eea287cbb4c74aefa191dba2f2b3">lv_lru_remove_lru_item</a></div><div class="ttdeci">void lv_lru_remove_lru_item(lv_lru_t *cache)</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00237">lv_lru.c:237</a></div></div>
+<div class="ttc" id="alv__lru_8c_html_ac4757b7fd8999ed06c8849e6ee43b96f"><div class="ttname"><a href="#ac4757b7fd8999ed06c8849e6ee43b96f">test_for_value_too_large</a></div><div class="ttdeci">#define test_for_value_too_large()</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00067">lv_lru.c:67</a></div></div>
+<div class="ttc" id="alv__lru_8c_html_ae1c289030dcffb5ba376d1f3b09fa498"><div class="ttname"><a href="#ae1c289030dcffb5ba376d1f3b09fa498">test_for_missing_value</a></div><div class="ttdeci">#define test_for_missing_value()</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00066">lv_lru.c:66</a></div></div>
+<div class="ttc" id="astruct__lv__lru__item__t_html_a30dca1eab7bef29ba5bf072095f83c9f"><div class="ttname"><a href="struct__lv__lru__item__t.html#a30dca1eab7bef29ba5bf072095f83c9f">_lv_lru_item_t::key_length</a></div><div class="ttdeci">size_t key_length</div><div class="ttdef"><b>Definition</b> <a href="lv__lru_8c_source.html#l00029">lv_lru.c:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__lru_8c_source.html#l00030">_lv_lru_item_t::access_count</a>, <a class="el" href="lv__lru_8c_source.html#l00027">_lv_lru_item_t::key</a>, <a class="el" href="lv__lru_8c_source.html#l00029">_lv_lru_item_t::key_length</a>, <a class="el" href="lv__lru_8h_source.html#l00034">LV_LRU_OK</a>, <a class="el" href="lv__lru_8c_source.html#l00237">lv_lru_remove_lru_item()</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__lru_8c_source.html#l00031">_lv_lru_item_t::next</a>, <a class="el" href="lv__lru_8c_source.html#l00064">test_for_missing_cache</a>, <a class="el" href="lv__lru_8c_source.html#l00065">test_for_missing_key</a>, <a class="el" href="lv__lru_8c_source.html#l00066">test_for_missing_value</a>, <a class="el" href="lv__lru_8c_source.html#l00067">test_for_value_too_large</a>, <a class="el" href="lv__lru_8c_source.html#l00026">_lv_lru_item_t::value</a> y <a class="el" href="lv__lru_8c_source.html#l00028">_lv_lru_item_t::value_length</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__lru_8c.html">lv_lru.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

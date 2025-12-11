@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/extra/widgets/spinner/lv_spinner.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__spinner_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_spinner.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__spinner_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_spinner.c</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lv__spinner_8h.html">lv_spinner.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#if LV_USE_SPINNER</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  STATIC PROTOTYPES</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_spinner_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">static</span> <span class="keywordtype">void</span> arc_anim_start_angle(<span class="keywordtype">void</span> * obj, int32_t v);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">static</span> <span class="keywordtype">void</span> arc_anim_end_angle(<span class="keywordtype">void</span> * obj, int32_t v);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  STATIC VARIABLES</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> **********************/</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="lv__spinner_8c.html#a20ea85a72046df92757274347928e91e">   30</a></span><span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__spinner_8c.html#a20ea85a72046df92757274347928e91e">lv_spinner_class</a> = {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    .base_class = &amp;<a class="code hl_variable" href="lv__arc_8c.html#a14745341ffe9bbce2021ee26b9fa310f">lv_arc_class</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    .constructor_cb = lv_spinner_constructor</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">static</span> uint32_t time_param;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">static</span> uint32_t arc_length_param;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"></span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * Create a spinner object</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * @param parent pointer to an object, it will be the parent of the new spinner</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * @return pointer to the created spinner</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="lv__spinner_8c.html#a869db5f75b431e64b793efe2b82ea7bd">   51</a></span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__spinner_8c.html#a869db5f75b431e64b793efe2b82ea7bd">lv_spinner_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent, uint32_t time, uint32_t arc_length)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    time_param = time;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    arc_length_param = arc_length;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(&amp;<a class="code hl_variable" href="lv__spinner_8c.html#a20ea85a72046df92757274347928e91e">lv_spinner_class</a>, parent);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"> *   STATIC FUNCTIONS</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">static</span> <span class="keywordtype">void</span> lv_spinner_constructor(<span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> * class_p, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_define" href="lv__obj_8h.html#a89e646eee81f5c8570c7e6adc7d664a9">LV_TRACE_OBJ_CREATE</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(class_p);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_function" href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eab9ba97b9e1ae0b3a4a5eca3d763e263b">LV_OBJ_FLAG_CLICKABLE</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_typedef" href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a> <a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="lv__anim_8c.html#ab47f0c3139bbd759c1ccae268fc297e6">lv_anim_init</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    lv_anim_set_var(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, obj);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    lv_anim_set_exec_cb(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, arc_anim_end_angle);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    lv_anim_set_repeat_count(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, <a class="code hl_define" href="lv__anim_8h.html#afa32040e71befa6e806501861a7a61da">LV_ANIM_REPEAT_INFINITE</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    lv_anim_set_time(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, time_param);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    lv_anim_set_values(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, arc_length_param, 360 + arc_length_param);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_function" href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    lv_anim_set_path_cb(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, <a class="code hl_function" href="lv__anim_8c.html#aa276989eca9f5bd11b2dc16d7e29c6d7">lv_anim_path_ease_in_out</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    lv_anim_set_values(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, 0, 360);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    lv_anim_set_exec_cb(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>, arc_anim_start_angle);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a>(&amp;<a class="code hl_variable" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="lv__arc_8c.html#a7602a335417bae5ad60ed80603de6782">lv_arc_set_bg_angles</a>(obj, 0, 360);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="lv__arc_8c.html#a5b480fbea5f93a6fddc749a123df2ff4">lv_arc_set_rotation</a>(obj, 270);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">static</span> <span class="keywordtype">void</span> arc_anim_start_angle(<span class="keywordtype">void</span> * obj, int32_t v)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="lv__arc_8c.html#a768d58c4fa15492477aad1c1f11f76c5">lv_arc_set_start_angle</a>(obj, (uint16_t) v);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">static</span> <span class="keywordtype">void</span> arc_anim_end_angle(<span class="keywordtype">void</span> * obj, int32_t v)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_function" href="lv__arc_8c.html#a3e67a97ef73eb3d6ef71ef2620201bb0">lv_arc_set_end_angle</a>(obj, (uint16_t) v);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_SPINNER*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alv__anim_8c_html_a51a27d8a0a7d7337a08c9416217b9d02"><div class="ttname"><a href="lv__anim_8c.html#a51a27d8a0a7d7337a08c9416217b9d02">lv_anim_start</a></div><div class="ttdeci">lv_anim_t * lv_anim_start(const lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00076">lv_anim.c:76</a></div></div>
+<div class="ttc" id="alv__anim_8c_html_aa276989eca9f5bd11b2dc16d7e29c6d7"><div class="ttname"><a href="lv__anim_8c.html#aa276989eca9f5bd11b2dc16d7e29c6d7">lv_anim_path_ease_in_out</a></div><div class="ttdeci">int32_t lv_anim_path_ease_in_out(const lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00255">lv_anim.c:255</a></div></div>
+<div class="ttc" id="alv__anim_8c_html_ab47f0c3139bbd759c1ccae268fc297e6"><div class="ttname"><a href="lv__anim_8c.html#ab47f0c3139bbd759c1ccae268fc297e6">lv_anim_init</a></div><div class="ttdeci">void lv_anim_init(lv_anim_t *a)</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8c_source.html#l00065">lv_anim.c:65</a></div></div>
+<div class="ttc" id="alv__anim_8h_html_a94df93c022dc57ee917b4757e50ebe22"><div class="ttname"><a href="lv__anim_8h.html#a94df93c022dc57ee917b4757e50ebe22">lv_anim_t</a></div><div class="ttdeci">struct _lv_anim_t lv_anim_t</div></div>
+<div class="ttc" id="alv__anim_8h_html_afa32040e71befa6e806501861a7a61da"><div class="ttname"><a href="lv__anim_8h.html#afa32040e71befa6e806501861a7a61da">LV_ANIM_REPEAT_INFINITE</a></div><div class="ttdeci">#define LV_ANIM_REPEAT_INFINITE</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00026">lv_anim.h:26</a></div></div>
+<div class="ttc" id="alv__arc_8c_html_a14745341ffe9bbce2021ee26b9fa310f"><div class="ttname"><a href="lv__arc_8c.html#a14745341ffe9bbce2021ee26b9fa310f">lv_arc_class</a></div><div class="ttdeci">const lv_obj_class_t lv_arc_class</div><div class="ttdef"><b>Definition</b> <a href="lv__arc_8c_source.html#l00052">lv_arc.c:52</a></div></div>
+<div class="ttc" id="alv__arc_8c_html_a3e67a97ef73eb3d6ef71ef2620201bb0"><div class="ttname"><a href="lv__arc_8c.html#a3e67a97ef73eb3d6ef71ef2620201bb0">lv_arc_set_end_angle</a></div><div class="ttdeci">void lv_arc_set_end_angle(lv_obj_t *obj, uint16_t end)</div><div class="ttdef"><b>Definition</b> <a href="lv__arc_8c_source.html#l00112">lv_arc.c:112</a></div></div>
+<div class="ttc" id="alv__arc_8c_html_a5b480fbea5f93a6fddc749a123df2ff4"><div class="ttname"><a href="lv__arc_8c.html#a5b480fbea5f93a6fddc749a123df2ff4">lv_arc_set_rotation</a></div><div class="ttdeci">void lv_arc_set_rotation(lv_obj_t *obj, uint16_t rotation)</div><div class="ttdef"><b>Definition</b> <a href="lv__arc_8c_source.html#l00191">lv_arc.c:191</a></div></div>
+<div class="ttc" id="alv__arc_8c_html_a7602a335417bae5ad60ed80603de6782"><div class="ttname"><a href="lv__arc_8c.html#a7602a335417bae5ad60ed80603de6782">lv_arc_set_bg_angles</a></div><div class="ttdeci">void lv_arc_set_bg_angles(lv_obj_t *obj, uint16_t start, uint16_t end)</div><div class="ttdef"><b>Definition</b> <a href="lv__arc_8c_source.html#l00185">lv_arc.c:185</a></div></div>
+<div class="ttc" id="alv__arc_8c_html_a768d58c4fa15492477aad1c1f11f76c5"><div class="ttname"><a href="lv__arc_8c.html#a768d58c4fa15492477aad1c1f11f76c5">lv_arc_set_start_angle</a></div><div class="ttdeci">void lv_arc_set_start_angle(lv_obj_t *obj, uint16_t start)</div><div class="ttdef"><b>Definition</b> <a href="lv__arc_8c_source.html#l00088">lv_arc.c:88</a></div></div>
+<div class="ttc" id="alv__example__anim__3_8c_html_a734ce3ff48b2bdc8e7cc09dd6faee06f"><div class="ttname"><a href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a></div><div class="ttdeci">lv_anim_t a</div><div class="ttdef"><b>Definition</b> <a href="lv__example__anim__3_8c_source.html#l00024">lv_example_anim_3.c:24</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a8a45a671b0fb07c0e99639c180d25fba"><div class="ttname"><a href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a></div><div class="ttdeci">void lv_obj_clear_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00266">lv_obj.c:266</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a89e646eee81f5c8570c7e6adc7d664a9"><div class="ttname"><a href="lv__obj_8h.html#a89e646eee81f5c8570c7e6adc7d664a9">LV_TRACE_OBJ_CREATE</a></div><div class="ttdeci">#define LV_TRACE_OBJ_CREATE(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00401">lv_obj.h:401</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10eab9ba97b9e1ae0b3a4a5eca3d763e263b"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eab9ba97b9e1ae0b3a4a5eca3d763e263b">LV_OBJ_FLAG_CLICKABLE</a></div><div class="ttdeci">@ LV_OBJ_FLAG_CLICKABLE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00091">lv_obj.h:91</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a45f1eead6ce2fb12e215ea3e0558f168"><div class="ttname"><a href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a></div><div class="ttdeci">struct _lv_obj_class_t lv_obj_class_t</div></div>
+<div class="ttc" id="alv__spinner_8c_html_a20ea85a72046df92757274347928e91e"><div class="ttname"><a href="lv__spinner_8c.html#a20ea85a72046df92757274347928e91e">lv_spinner_class</a></div><div class="ttdeci">const lv_obj_class_t lv_spinner_class</div><div class="ttdef"><b>Definition</b> <a href="#l00030">lv_spinner.c:30</a></div></div>
+<div class="ttc" id="alv__spinner_8c_html_a869db5f75b431e64b793efe2b82ea7bd"><div class="ttname"><a href="lv__spinner_8c.html#a869db5f75b431e64b793efe2b82ea7bd">lv_spinner_create</a></div><div class="ttdeci">lv_obj_t * lv_spinner_create(lv_obj_t *parent, uint32_t time, uint32_t arc_length)</div><div class="ttdef"><b>Definition</b> <a href="#l00051">lv_spinner.c:51</a></div></div>
+<div class="ttc" id="alv__spinner_8h_html"><div class="ttname"><a href="lv__spinner_8h.html">lv_spinner.h</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_60ebf1c02dd5cf25e65a81c457755e7a.html">spinner</a></li><li class="navelem"><a href="lv__spinner_8c.html">lv_spinner.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

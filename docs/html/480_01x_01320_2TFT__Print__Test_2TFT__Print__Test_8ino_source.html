@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/examples/480 x 320/TFT_Print_Test/TFT_Print_Test.ino</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('480_01x_01320_2TFT__Print__Test_2TFT__Print__Test_8ino_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">TFT_Print_Test.ino</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="480_01x_01320_2TFT__Print__Test_2TFT__Print__Test_8ino.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>/*  </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> Test the tft.print() viz. the libraries embedded write() function</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> This sketch used font 2, 4, 7</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> Make sure all the required fonts are loaded by editing the</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> User_Setup.h file in the TFT_eSPI library folder.</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  #########################################################################</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  ###### DON&#39;T FORGET TO UPDATE THE User_Setup.h FILE IN THE LIBRARY ######</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  #########################################################################</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> */</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>#include &lt;SPI.h&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>#include &lt;TFT_eSPI.h&gt; // Hardware-specific library</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>TFT_eSPI tft = TFT_eSPI();       // Invoke custom library</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>#define TFT_GREY 0x5AEB // New colour</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>void setup(void) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  tft.init();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  tft.setRotation(2);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>void loop() {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  // Fill screen with random colour so we can see the effect of printing with and without </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  // a background colour defined</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  tft.fillScreen(random(0xFFFF));</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  // Set &quot;cursor&quot; at top left corner of display (0,0) and select font 2</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  // (cursor will move to next line automatically during printing with &#39;tft.println&#39;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  //  or stay on the line is there is room for the text with tft.print)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  tft.setCursor(0, 0, 2);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  // Set the font colour to be white with a black background, set text size multiplier to 1</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  tft.setTextColor(TFT_WHITE,TFT_BLACK);  tft.setTextSize(1);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  // We can now plot text on screen using the &quot;print&quot; class</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  tft.println(&quot;Hello World!&quot;);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  // Set the font colour to be yellow with no background, set to font 7</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  tft.setTextColor(TFT_YELLOW); tft.setTextFont(7);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  tft.println(1234.56);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  // Set the font colour to be red with black background, set to font 4</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  tft.setTextColor(TFT_RED,TFT_BLACK);    tft.setTextFont(4);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  tft.println((long)3735928559, HEX); // Should print DEADBEEF</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  // Set the font colour to be green with black background, set to font 4</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  tft.setTextColor(TFT_GREEN,TFT_BLACK);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  tft.setTextFont(4);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  tft.println(&quot;Groop&quot;);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  tft.println(&quot;I implore thee,&quot;);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  // Change to font 2</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  tft.setTextFont(2);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  tft.println(F(&quot;my foonting turlingdromes.&quot;)); // Can store strings in FLASH to save RAM</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  tft.println(&quot;And hooptiously drangle me&quot;);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  tft.println(&quot;with crinkly bindlewurdles,&quot;);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  // This next line is deliberately made too long for the display width to test</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  // automatic text wrapping onto the next line</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  tft.println(&quot;Or I will rend thee in the gobberwarts with my blurglecruncheon, see if I don&#39;t!&quot;);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  // Test some print formatting functions</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  float fnumber = 123.45;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   // Set the font colour to be blue with no background, set to font 4</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  tft.setTextColor(TFT_BLUE);    tft.setTextFont(4);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  tft.print(&quot;Float = &quot;); tft.println(fnumber);           // Print floating point number</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  tft.print(&quot;Binary = &quot;); tft.println((int)fnumber, BIN); // Print as integer value in binary</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  tft.print(&quot;Hexadecimal = &quot;); tft.println((int)fnumber, HEX); // Print as integer number in Hexadecimal</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  delay(10000);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d834161b10c57611f417f859026dded1.html">examples</a></li><li class="navelem"><a href="dir_68f334ce8327780f10f8efc5ad181454.html">480 x 320</a></li><li class="navelem"><a href="dir_15a9be3ee2fb55f9e5c671778b16b716.html">TFT_Print_Test</a></li><li class="navelem"><a href="480_01x_01320_2TFT__Print__Test_2TFT__Print__Test_8ino.html">TFT_Print_Test.ino</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

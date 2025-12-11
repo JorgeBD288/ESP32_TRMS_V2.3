@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['wr_5fh_0',['WR_H',['../TFT__eSPI__ESP32_8h.html#a8f4df8c8872416fd4fd2499e750d9944',1,'WR_H:&#160;TFT_eSPI_ESP32.h'],['../TFT__eSPI__ESP32__C3_8h.html#a8f4df8c8872416fd4fd2499e750d9944',1,'WR_H:&#160;TFT_eSPI_ESP32_C3.h'],['../TFT__eSPI__ESP32__S3_8h.html#a8f4df8c8872416fd4fd2499e750d9944',1,'WR_H:&#160;TFT_eSPI_ESP32_S3.h']]],
+  ['wr_5fl_1',['WR_L',['../TFT__eSPI__ESP32_8h.html#a0369d3654ae5b74e04ac262d77166495',1,'WR_L:&#160;TFT_eSPI_ESP32.h'],['../TFT__eSPI__ESP32__C3_8h.html#a0369d3654ae5b74e04ac262d77166495',1,'WR_L:&#160;TFT_eSPI_ESP32_C3.h'],['../TFT__eSPI__ESP32__S3_8h.html#a0369d3654ae5b74e04ac262d77166495',1,'WR_L:&#160;TFT_eSPI_ESP32_S3.h']]]
+];

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/TFT_Drivers/SSD1351_Init.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('SSD1351__Init_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SSD1351_Init.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="SSD1351__Init_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>{</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xFD); <span class="comment">// COMMANDLOCK</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a91b08cdd8cd1ac2776dd14d5fc591584">    3</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x12);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">    4</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xFD); <span class="comment">// COMMANDLOCK</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a28cc73005558f07fd1adc166c3c9ca36">    5</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xB1);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a10c3d58cd05e866b6bdfafd2dffb755e">    6</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xAE); <span class="comment">// DISPLAYOFF</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a15569077aa856113592eb3ea2f8ba491">    7</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xB3); <span class="comment">// CLOCKDIV</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a03cb1e30850269a025090266d7741252">    8</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xF1);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#af4935d8b47fa8d08f73830c46e8277bd">    9</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xCA); <span class="comment">// MUXRATIO</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a0030e316370f76f9006a8b99bd0d25a0">   10</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(127);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a460ba978ffcf1c35ac29ab6d31a45a30">   11</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xA2); <span class="comment">// DISPLAYOFFSET</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a117983314f43a26372b2140c9c5b6a3d">   12</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a1813ec5387b9d6147b3fba80621686e4">   13</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xB5); <span class="comment">// SETGPIO</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x00);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a532b93b4501ca33c0268d3488603ba46">   15</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xAB); <span class="comment">// FUNCTIONSELECT</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a3020f73e9ce63112d161324ad07ddaa6">   16</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x01);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#aadc01b653dec0698821e19cdccb899f9">   17</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xB1); <span class="comment">// PRECHARGE</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a46ea8015ac4218cd93593b1ba81ed538">   18</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x32);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a530efd902eb751d172adb792a19e98e1">   19</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xBE); <span class="comment">// VCOMH</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#af396b993a7ea6687e3652a0da135fd30">   20</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x05);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a092d8aab7b625b3597fbc0cfa8f2fd86">   21</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xA6); <span class="comment">// NORMALDISPLAY</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a1280f705ee6a2bd3b534426c09089353">   22</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xC1); <span class="comment">// CONTRASTABC</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a507560ee511eec8657653bd68d24917b">   23</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xC8);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a71df36d4b929f658909bf1dd5e2d44ad">   24</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x80);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xC8);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#af5cd860eadc5b365b28f45056dc3551b">   26</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xC7); <span class="comment">// CONTRASTMASTER</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#aa3639a3406de356a82cf87f4497f0dc5">   27</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x0F);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#ac83a0b1cf0938571ded3c6b0b09cfec9">   28</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xB4); <span class="comment">// SETVSL</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#aa54fe2b84ed59e6f7f88f7d9b3e31f23">   29</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xA0);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#abb716a7a76c9e154c2a8ab2de07952b0">   30</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xB5);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a31e6e69b4213289025412c560de8222e">   31</a></span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x55);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#ad15ef3f7f74fdf98253f8cf360c76042">   32</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xB6); <span class="comment">// PRECHARGE2</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0x01);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="SSD1351__Init_8h.html#a286c9afe2d2f4816995c7ed61390b84f">   34</a></span>  <a class="code hl_function" href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a>(0xAF); <span class="comment">// DISPLAYON</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aSSD1351__Init_8h_html_ab423ff32d7b311e7488be9b9d7ee3f85"><div class="ttname"><a href="SSD1351__Init_8h.html#ab423ff32d7b311e7488be9b9d7ee3f85">writecommand</a></div><div class="ttdeci">writecommand(0xFD)</div></div>
+<div class="ttc" id="aSSD1351__Rotation_8h_html_a7ae4c31940f3d0cbb0ee848cb9755311"><div class="ttname"><a href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a></div><div class="ttdeci">writedata(rotation&lt; 2 ? TFT_HEIGHT :0)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d19c1635db4add2e0d306898bb016224.html">TFT_Drivers</a></li><li class="navelem"><a href="SSD1351__Init_8h.html">SSD1351_Init.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/TFT_eSPI/TFT_eSPI.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('TFT__eSPI_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo TFT_eSPI.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &lt;Print.h&gt;</code><br />
+<code>#include &lt;SPI.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="User__Setup__Select_8h_source.html">User_Setup_Select.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TFT__eSPI__Generic_8h_source.html">Processors/TFT_eSPI_Generic.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="glcdfont_8c_source.html">Fonts/glcdfont.c</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="Font16_8h_source.html">Fonts/Font16.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="Font32rle_8h_source.html">Fonts/Font32rle.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="Font64rle_8h_source.html">Fonts/Font64rle.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="Font7srle_8h_source.html">Fonts/Font7srle.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="Font72rle_8h_source.html">Fonts/Font72rle.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="gfxfont_8h_source.html">Fonts/GFXFF/gfxfont.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="User__Custom__Fonts_8h_source.html">User_Setups/User_Custom_Fonts.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Touch_8h_source.html">Extensions/Touch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Smooth__font_8h_source.html">Extensions/Smooth_font.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Button_8h_source.html">Extensions/Button.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Sprite_8h_source.html">Extensions/Sprite.h</a>&quot;</code><br />
+</div>
+<p><a href="TFT__eSPI_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:fontinfo" id="r_fontinfo"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfontinfo.html">fontinfo</a></td></tr>
+<tr class="memitem:setup_5Ft" id="r_setup_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsetup__t.html">setup_t</a></td></tr>
+<tr class="memitem:TFT_5FeSPI" id="r_TFT_5FeSPI"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTFT__eSPI.html">TFT_eSPI</a></td></tr>
+<tr class="memitem:TFT_5FeSPI_3A_3AfontMetrics" id="r_TFT_5FeSPI_3A_3AfontMetrics"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTFT__eSPI_1_1fontMetrics.html">TFT_eSPI::fontMetrics</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a882a52131a92930c848d2f274921e3bf" id="r_a882a52131a92930c848d2f274921e3bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882a52131a92930c848d2f274921e3bf">BC_DATUM</a>&#160;&#160;&#160;7</td></tr>
+<tr class="memitem:a4ee36ba2273938a1db0500b0b71dcaea" id="r_a4ee36ba2273938a1db0500b0b71dcaea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ee36ba2273938a1db0500b0b71dcaea">BL_DATUM</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memitem:ae56faab3cba6c288ec7e4557839cc0f4" id="r_ae56faab3cba6c288ec7e4557839cc0f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae56faab3cba6c288ec7e4557839cc0f4">BR_DATUM</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:a4d918f1b657829566f2d4aef388ca0d5" id="r_a4d918f1b657829566f2d4aef388ca0d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d918f1b657829566f2d4aef388ca0d5">C_BASELINE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a24b35f4dc07dc3d940ce6748798cc6b5" id="r_a24b35f4dc07dc3d940ce6748798cc6b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24b35f4dc07dc3d940ce6748798cc6b5">CC_DATUM</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memitem:a447ae768718c409378aed50f408e4cb5" id="r_a447ae768718c409378aed50f408e4cb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a447ae768718c409378aed50f408e4cb5">CL_DATUM</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memitem:a02ce6530e8193bd6e80010a236e9f61e" id="r_a02ce6530e8193bd6e80010a236e9f61e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02ce6530e8193bd6e80010a236e9f61e">CP437_SWITCH</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:ad379b7054e339635a61408ab818288f8" id="r_ad379b7054e339635a61408ab818288f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad379b7054e339635a61408ab818288f8">CR_DATUM</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:a780f666c1c08bdf36d4cf359d84d615d" id="r_a780f666c1c08bdf36d4cf359d84d615d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a780f666c1c08bdf36d4cf359d84d615d">GENERIC_PROCESSOR</a></td></tr>
+<tr class="memitem:ac3075bcd6a9916ded3f9fe301c10b1ab" id="r_ac3075bcd6a9916ded3f9fe301c10b1ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3075bcd6a9916ded3f9fe301c10b1ab">L_BASELINE</a>&#160;&#160;&#160;9</td></tr>
+<tr class="memitem:aa28fa901605f43bcdf1e4eac801fba98" id="r_aa28fa901605f43bcdf1e4eac801fba98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa28fa901605f43bcdf1e4eac801fba98">LOAD_RLE</a></td></tr>
+<tr class="memitem:af24d5c2d5858ad69bc73418a0518dbfd" id="r_af24d5c2d5858ad69bc73418a0518dbfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af24d5c2d5858ad69bc73418a0518dbfd">MC_DATUM</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memitem:a8f19ebd74e298e2a123f31066b75aa91" id="r_a8f19ebd74e298e2a123f31066b75aa91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f19ebd74e298e2a123f31066b75aa91">ML_DATUM</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memitem:a7ebbac6b4b6c760970d7e2384d3b374f" id="r_a7ebbac6b4b6c760970d7e2384d3b374f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ebbac6b4b6c760970d7e2384d3b374f">MR_DATUM</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:a2fbcc74e9fcf029507e016c73c0b3218" id="r_a2fbcc74e9fcf029507e016c73c0b3218"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a></td></tr>
+<tr class="memitem:a268ea7de8f06c0a9973e68609c8a15bc" id="r_a268ea7de8f06c0a9973e68609c8a15bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a268ea7de8f06c0a9973e68609c8a15bc">PSRAM_ENABLE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memitem:a0deee3f947ff8b137adef497be019e8f" id="r_a0deee3f947ff8b137adef497be019e8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0deee3f947ff8b137adef497be019e8f">R_BASELINE</a>&#160;&#160;&#160;11</td></tr>
+<tr class="memitem:a0fa5d2673ca326dd1e34b87b142a956a" id="r_a0fa5d2673ca326dd1e34b87b142a956a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fa5d2673ca326dd1e34b87b142a956a">SPI_BUSY_CHECK</a></td></tr>
+<tr class="memitem:a0cc14290d9ebf3466613fed04ec63588" id="r_a0cc14290d9ebf3466613fed04ec63588"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cc14290d9ebf3466613fed04ec63588">TAB_COLOUR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a88855d5e62c7b3ee2c16ee2006e1638e" id="r_a88855d5e62c7b3ee2c16ee2006e1638e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88855d5e62c7b3ee2c16ee2006e1638e">TC_DATUM</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a54c6607f6fd422d8f7b10f6543a72dc9" id="r_a54c6607f6fd422d8f7b10f6543a72dc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54c6607f6fd422d8f7b10f6543a72dc9">TFT_BLACK</a>&#160;&#160;&#160;0x0000      /*   0,   0,   0 */</td></tr>
+<tr class="memitem:a1b0d9ea18153e18ef6d46997f30b3599" id="r_a1b0d9ea18153e18ef6d46997f30b3599"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b0d9ea18153e18ef6d46997f30b3599">TFT_BLUE</a>&#160;&#160;&#160;0x001F      /*   0,   0, 255 */</td></tr>
+<tr class="memitem:abae47f6ca48e1ef6061d3a6e003aae0f" id="r_abae47f6ca48e1ef6061d3a6e003aae0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abae47f6ca48e1ef6061d3a6e003aae0f">TFT_BROWN</a>&#160;&#160;&#160;0x9A60      /* 150,  75,   0 */</td></tr>
+<tr class="memitem:a603cf67262323c2e5ebff82276f08079" id="r_a603cf67262323c2e5ebff82276f08079"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a603cf67262323c2e5ebff82276f08079">TFT_CYAN</a>&#160;&#160;&#160;0x07FF      /*   0, 255, 255 */</td></tr>
+<tr class="memitem:ab8515b3bcbd0fd5c5658eb1bc08c76a6" id="r_ab8515b3bcbd0fd5c5658eb1bc08c76a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8515b3bcbd0fd5c5658eb1bc08c76a6">TFT_DARKCYAN</a>&#160;&#160;&#160;0x03EF      /*   0, 128, 128 */</td></tr>
+<tr class="memitem:a94cb39b7a572c3168526d8666c1e0ef8" id="r_a94cb39b7a572c3168526d8666c1e0ef8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94cb39b7a572c3168526d8666c1e0ef8">TFT_DARKGREEN</a>&#160;&#160;&#160;0x03E0      /*   0, 128,   0 */</td></tr>
+<tr class="memitem:a73263eb7427797afed340330f791fdcf" id="r_a73263eb7427797afed340330f791fdcf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73263eb7427797afed340330f791fdcf">TFT_DARKGREY</a>&#160;&#160;&#160;0x7BEF      /* 128, 128, 128 */</td></tr>
+<tr class="memitem:aaa6bce92d11cde1a19c8a3be6c0dacdd" id="r_aaa6bce92d11cde1a19c8a3be6c0dacdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa6bce92d11cde1a19c8a3be6c0dacdd">TFT_ESPI_FEATURES</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a9f92ee6529aef58b4471a197cce5386e" id="r_a9f92ee6529aef58b4471a197cce5386e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f92ee6529aef58b4471a197cce5386e">TFT_ESPI_VERSION</a>&#160;&#160;&#160;&quot;2.5.43&quot;</td></tr>
+<tr class="memitem:a7c21b359a3690e813a3eb91ad401f25d" id="r_a7c21b359a3690e813a3eb91ad401f25d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c21b359a3690e813a3eb91ad401f25d">TFT_GOLD</a>&#160;&#160;&#160;0xFEA0      /* 255, 215,   0 */</td></tr>
+<tr class="memitem:a87698ed955e7f55acb2ee0ef78505efb" id="r_a87698ed955e7f55acb2ee0ef78505efb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87698ed955e7f55acb2ee0ef78505efb">TFT_GREEN</a>&#160;&#160;&#160;0x07E0      /*   0, 255,   0 */</td></tr>
+<tr class="memitem:a14a8a03a7fc8788332ba6057d92c10a2" id="r_a14a8a03a7fc8788332ba6057d92c10a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14a8a03a7fc8788332ba6057d92c10a2">TFT_GREENYELLOW</a>&#160;&#160;&#160;0xB7E0      /* 180, 255,   0 */</td></tr>
+<tr class="memitem:aee8b2e8667a7f2797891245721609e01" id="r_aee8b2e8667a7f2797891245721609e01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee8b2e8667a7f2797891245721609e01">TFT_LIGHTGREY</a>&#160;&#160;&#160;0xD69A      /* 211, 211, 211 */</td></tr>
+<tr class="memitem:af2fbaec76755673a3ec2ea5c60d04a72" id="r_af2fbaec76755673a3ec2ea5c60d04a72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2fbaec76755673a3ec2ea5c60d04a72">TFT_MAGENTA</a>&#160;&#160;&#160;0xF81F      /* 255,   0, 255 */</td></tr>
+<tr class="memitem:a243766b2d94454693b0108895261dde1" id="r_a243766b2d94454693b0108895261dde1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a243766b2d94454693b0108895261dde1">TFT_MAROON</a>&#160;&#160;&#160;0x7800      /* 128,   0,   0 */</td></tr>
+<tr class="memitem:a70dc003700c5e64a0754ccaa9a68373c" id="r_a70dc003700c5e64a0754ccaa9a68373c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70dc003700c5e64a0754ccaa9a68373c">TFT_NAVY</a>&#160;&#160;&#160;0x000F      /*   0,   0, 128 */</td></tr>
+<tr class="memitem:af4546b001e72210a6cddadc6c75468a8" id="r_af4546b001e72210a6cddadc6c75468a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4546b001e72210a6cddadc6c75468a8">TFT_OLIVE</a>&#160;&#160;&#160;0x7BE0      /* 128, 128,   0 */</td></tr>
+<tr class="memitem:a61c3af07250ddcbc8f021c3d4a8e7f5a" id="r_a61c3af07250ddcbc8f021c3d4a8e7f5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61c3af07250ddcbc8f021c3d4a8e7f5a">TFT_ORANGE</a>&#160;&#160;&#160;0xFDA0      /* 255, 180,   0 */</td></tr>
+<tr class="memitem:abf61ab3df51b37d6c110380eae6bc266" id="r_abf61ab3df51b37d6c110380eae6bc266"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf61ab3df51b37d6c110380eae6bc266">TFT_PINK</a>&#160;&#160;&#160;0xFE19      /* 255, 192, 203 */</td></tr>
+<tr class="memitem:a37db41894f946817ce3c2082a781b0bd" id="r_a37db41894f946817ce3c2082a781b0bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37db41894f946817ce3c2082a781b0bd">TFT_PURPLE</a>&#160;&#160;&#160;0x780F      /* 128,   0, 128 */</td></tr>
+<tr class="memitem:aa5be28988e93afff36b1eaa8e71d8ba0" id="r_aa5be28988e93afff36b1eaa8e71d8ba0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5be28988e93afff36b1eaa8e71d8ba0">TFT_RED</a>&#160;&#160;&#160;0xF800      /* 255,   0,   0 */</td></tr>
+<tr class="memitem:a0f7abafb5f8ebff66a5bd4d6545ba5d8" id="r_a0f7abafb5f8ebff66a5bd4d6545ba5d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f7abafb5f8ebff66a5bd4d6545ba5d8">TFT_SILVER</a>&#160;&#160;&#160;0xC618      /* 192, 192, 192 */</td></tr>
+<tr class="memitem:ad9a8c6835f5cca872a327e3633eac7a9" id="r_ad9a8c6835f5cca872a327e3633eac7a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9a8c6835f5cca872a327e3633eac7a9">TFT_SKYBLUE</a>&#160;&#160;&#160;0x867D      /* 135, 206, 235 */</td></tr>
+<tr class="memitem:a2c5c8f522a276631bd17f631d41c8e8b" id="r_a2c5c8f522a276631bd17f631d41c8e8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c5c8f522a276631bd17f631d41c8e8b">TFT_SPI_MODE</a>&#160;&#160;&#160;SPI_MODE0</td></tr>
+<tr class="memitem:a77a71d79bb53b6afe29b5dad0015bfa7" id="r_a77a71d79bb53b6afe29b5dad0015bfa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a71d79bb53b6afe29b5dad0015bfa7">TFT_TRANSPARENT</a>&#160;&#160;&#160;0x0120</td></tr>
+<tr class="memitem:aa3b1bfac2da8732854088659d33bc8f3" id="r_aa3b1bfac2da8732854088659d33bc8f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3b1bfac2da8732854088659d33bc8f3">TFT_VIOLET</a>&#160;&#160;&#160;0x915C      /* 180,  46, 226 */</td></tr>
+<tr class="memitem:a93a49fb8bd9e8e94baf96cd836954467" id="r_a93a49fb8bd9e8e94baf96cd836954467"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a49fb8bd9e8e94baf96cd836954467">TFT_WHITE</a>&#160;&#160;&#160;0xFFFF      /* 255, 255, 255 */</td></tr>
+<tr class="memitem:ac78e892de281930707051f9a90cbf612" id="r_ac78e892de281930707051f9a90cbf612"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac78e892de281930707051f9a90cbf612">TFT_YELLOW</a>&#160;&#160;&#160;0xFFE0      /* 255, 255,   0 */</td></tr>
+<tr class="memitem:ab5e3647e20719a695e2557fad717b54a" id="r_ab5e3647e20719a695e2557fad717b54a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5e3647e20719a695e2557fad717b54a">TL_DATUM</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:add267d7a315077bbc47f2dfe149fa163" id="r_add267d7a315077bbc47f2dfe149fa163"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add267d7a315077bbc47f2dfe149fa163">TR_DATUM</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:ad0ad5bfaec32bf27d8abe6e6ac376fcc" id="r_ad0ad5bfaec32bf27d8abe6e6ac376fcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0ad5bfaec32bf27d8abe6e6ac376fcc">UTF8_SWITCH</a>&#160;&#160;&#160;2</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:aeb6d281c8005ef27b13ddcd17502ed8a" id="r_aeb6d281c8005ef27b13ddcd17502ed8a"><td class="memItemLeft" align="right" valign="top">typedef uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb6d281c8005ef27b13ddcd17502ed8a">getColorCallback</a>) (uint16_t x, uint16_t y)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5e53638383862c40edcf880098868d4a" id="r_a5e53638383862c40edcf880098868d4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e53638383862c40edcf880098868d4a">chr_null</a> [1] = {0}</td></tr>
+<tr class="memitem:add320a79d7cbfb55650ab417fc29effb" id="r_add320a79d7cbfb55650ab417fc29effb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> const uint8_t *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a> [1] = {<a class="el" href="#a5e53638383862c40edcf880098868d4a">chr_null</a>}</td></tr>
+<tr class="memitem:a18fc38bf8e3bb20c8cb8c1218b453722" id="r_a18fc38bf8e3bb20c8cb8c1218b453722"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> <a class="el" href="structfontinfo.html">fontinfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18fc38bf8e3bb20c8cb8c1218b453722">fontdata</a> []</td></tr>
+<tr class="memitem:a6500a9cb4b5826d1c668bc5b959ca9e0" id="r_a6500a9cb4b5826d1c668bc5b959ca9e0"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a> [1] = {0}</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a882a52131a92930c848d2f274921e3bf" name="a882a52131a92930c848d2f274921e3bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882a52131a92930c848d2f274921e3bf">&#9670;&#160;</a></span>BC_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BC_DATUM&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00295">295</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a4ee36ba2273938a1db0500b0b71dcaea" name="a4ee36ba2273938a1db0500b0b71dcaea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee36ba2273938a1db0500b0b71dcaea">&#9670;&#160;</a></span>BL_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BL_DATUM&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00294">294</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="ae56faab3cba6c288ec7e4557839cc0f4" name="ae56faab3cba6c288ec7e4557839cc0f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56faab3cba6c288ec7e4557839cc0f4">&#9670;&#160;</a></span>BR_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BR_DATUM&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00296">296</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a4d918f1b657829566f2d4aef388ca0d5" name="a4d918f1b657829566f2d4aef388ca0d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d918f1b657829566f2d4aef388ca0d5">&#9670;&#160;</a></span>C_BASELINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define C_BASELINE&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00298">298</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a24b35f4dc07dc3d940ce6748798cc6b5" name="a24b35f4dc07dc3d940ce6748798cc6b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b35f4dc07dc3d940ce6748798cc6b5">&#9670;&#160;</a></span>CC_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC_DATUM&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00291">291</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a447ae768718c409378aed50f408e4cb5" name="a447ae768718c409378aed50f408e4cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a447ae768718c409378aed50f408e4cb5">&#9670;&#160;</a></span>CL_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CL_DATUM&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00289">289</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a02ce6530e8193bd6e80010a236e9f61e" name="a02ce6530e8193bd6e80010a236e9f61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ce6530e8193bd6e80010a236e9f61e">&#9670;&#160;</a></span>CP437_SWITCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CP437_SWITCH&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00812">812</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l04881">TFT_eSPI::getAttribute()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l04853">TFT_eSPI::setAttribute()</a>.</p>
+
+</div>
+</div>
+<a id="ad379b7054e339635a61408ab818288f8" name="ad379b7054e339635a61408ab818288f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad379b7054e339635a61408ab818288f8">&#9670;&#160;</a></span>CR_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CR_DATUM&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00293">293</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a780f666c1c08bdf36d4cf359d84d615d" name="a780f666c1c08bdf36d4cf359d84d615d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780f666c1c08bdf36d4cf359d84d615d">&#9670;&#160;</a></span>GENERIC_PROCESSOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GENERIC_PROCESSOR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00110">110</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3075bcd6a9916ded3f9fe301c10b1ab" name="ac3075bcd6a9916ded3f9fe301c10b1ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3075bcd6a9916ded3f9fe301c10b1ab">&#9670;&#160;</a></span>L_BASELINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L_BASELINE&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00297">297</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="aa28fa901605f43bcdf1e4eac801fba98" name="aa28fa901605f43bcdf1e4eac801fba98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28fa901605f43bcdf1e4eac801fba98">&#9670;&#160;</a></span>LOAD_RLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOAD_RLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00182">182</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="af24d5c2d5858ad69bc73418a0518dbfd" name="af24d5c2d5858ad69bc73418a0518dbfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24d5c2d5858ad69bc73418a0518dbfd">&#9670;&#160;</a></span>MC_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MC_DATUM&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00290">290</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a> y <a class="el" href="Button_8cpp_source.html#l00005">TFT_eSPI_Button::TFT_eSPI_Button()</a>.</p>
+
+</div>
+</div>
+<a id="a8f19ebd74e298e2a123f31066b75aa91" name="a8f19ebd74e298e2a123f31066b75aa91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f19ebd74e298e2a123f31066b75aa91">&#9670;&#160;</a></span>ML_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ML_DATUM&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00288">288</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a7ebbac6b4b6c760970d7e2384d3b374f" name="a7ebbac6b4b6c760970d7e2384d3b374f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebbac6b4b6c760970d7e2384d3b374f">&#9670;&#160;</a></span>MR_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MR_DATUM&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00292">292</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a2fbcc74e9fcf029507e016c73c0b3218" name="a2fbcc74e9fcf029507e016c73c0b3218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbcc74e9fcf029507e016c73c0b3218">&#9670;&#160;</a></span>PROGMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const GFXfont TomThumb PROGMEM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  (uint8_t  *)myFont32pt8bBitmaps,</div>
+<div class="line">  (GFXglyph *)myFont32pt8bGlyphs,</div>
+<div class="line">  0x20, 0xFF, 72 }</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00091">91</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a268ea7de8f06c0a9973e68609c8a15bc" name="a268ea7de8f06c0a9973e68609c8a15bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268ea7de8f06c0a9973e68609c8a15bc">&#9670;&#160;</a></span>PSRAM_ENABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSRAM_ENABLE&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00814">814</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l04881">TFT_eSPI::getAttribute()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l04853">TFT_eSPI::setAttribute()</a>.</p>
+
+</div>
+</div>
+<a id="a0deee3f947ff8b137adef497be019e8f" name="a0deee3f947ff8b137adef497be019e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0deee3f947ff8b137adef497be019e8f">&#9670;&#160;</a></span>R_BASELINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R_BASELINE&#160;&#160;&#160;11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00299">299</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a0fa5d2673ca326dd1e34b87b142a956a" name="a0fa5d2673ca326dd1e34b87b142a956a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fa5d2673ca326dd1e34b87b142a956a">&#9670;&#160;</a></span>SPI_BUSY_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_BUSY_CHECK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00145">145</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l00116">TFT_eSPI::end_nin_write()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03790">TFT_eSPI::pushColor()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l03360">TFT_eSPI::setWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a0cc14290d9ebf3466613fed04ec63588" name="a0cc14290d9ebf3466613fed04ec63588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cc14290d9ebf3466613fed04ec63588">&#9670;&#160;</a></span>TAB_COLOUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TAB_COLOUR&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00117">117</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8h_source.html#l00427">TFT_eSPI::TFT_eSprite</a>.</p>
+
+</div>
+</div>
+<a id="a88855d5e62c7b3ee2c16ee2006e1638e" name="a88855d5e62c7b3ee2c16ee2006e1638e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88855d5e62c7b3ee2c16ee2006e1638e">&#9670;&#160;</a></span>TC_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TC_DATUM&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00286">286</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05738">TFT_eSPI::drawCentreString()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="a54c6607f6fd422d8f7b10f6543a72dc9" name="a54c6607f6fd422d8f7b10f6543a72dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c6607f6fd422d8f7b10f6543a72dc9">&#9670;&#160;</a></span>TFT_BLACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_BLACK&#160;&#160;&#160;0x0000      /*   0,   0,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00305">305</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="classTFT__eSprite.html#ab703fb051b5b8b72fe8e438ef01eda34">TFT_eSprite::createPalette()</a>, <a class="el" href="Sprite_8cpp_source.html#l00051">TFT_eSprite::createSprite()</a>, <a class="el" href="DisplayTouch_8cpp_source.html#l00142">DisplayTouch_begin()</a>, <a class="el" href="Load__Screen_8cpp_source.html#l00014">DrawTRMSFigure()</a> y <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="a1b0d9ea18153e18ef6d46997f30b3599" name="a1b0d9ea18153e18ef6d46997f30b3599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0d9ea18153e18ef6d46997f30b3599">&#9670;&#160;</a></span>TFT_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_BLUE&#160;&#160;&#160;0x001F      /*   0,   0, 255 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00314">314</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="abae47f6ca48e1ef6061d3a6e003aae0f" name="abae47f6ca48e1ef6061d3a6e003aae0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abae47f6ca48e1ef6061d3a6e003aae0f">&#9670;&#160;</a></span>TFT_BROWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_BROWN&#160;&#160;&#160;0x9A60      /* 150,  75,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00324">324</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a603cf67262323c2e5ebff82276f08079" name="a603cf67262323c2e5ebff82276f08079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603cf67262323c2e5ebff82276f08079">&#9670;&#160;</a></span>TFT_CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_CYAN&#160;&#160;&#160;0x07FF      /*   0, 255, 255 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00316">316</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8515b3bcbd0fd5c5658eb1bc08c76a6" name="ab8515b3bcbd0fd5c5658eb1bc08c76a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8515b3bcbd0fd5c5658eb1bc08c76a6">&#9670;&#160;</a></span>TFT_DARKCYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_DARKCYAN&#160;&#160;&#160;0x03EF      /*   0, 128, 128 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00308">308</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a94cb39b7a572c3168526d8666c1e0ef8" name="a94cb39b7a572c3168526d8666c1e0ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cb39b7a572c3168526d8666c1e0ef8">&#9670;&#160;</a></span>TFT_DARKGREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_DARKGREEN&#160;&#160;&#160;0x03E0      /*   0, 128,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00307">307</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a73263eb7427797afed340330f791fdcf" name="a73263eb7427797afed340330f791fdcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73263eb7427797afed340330f791fdcf">&#9670;&#160;</a></span>TFT_DARKGREY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_DARKGREY&#160;&#160;&#160;0x7BEF      /* 128, 128, 128 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00313">313</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa6bce92d11cde1a19c8a3be6c0dacdd" name="aaa6bce92d11cde1a19c8a3be6c0dacdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6bce92d11cde1a19c8a3be6c0dacdd">&#9670;&#160;</a></span>TFT_ESPI_FEATURES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_ESPI_FEATURES&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00023">23</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a9f92ee6529aef58b4471a197cce5386e" name="a9f92ee6529aef58b4471a197cce5386e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f92ee6529aef58b4471a197cce5386e">&#9670;&#160;</a></span>TFT_ESPI_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_ESPI_VERSION&#160;&#160;&#160;&quot;2.5.43&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00019">19</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a7c21b359a3690e813a3eb91ad401f25d" name="a7c21b359a3690e813a3eb91ad401f25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c21b359a3690e813a3eb91ad401f25d">&#9670;&#160;</a></span>TFT_GOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_GOLD&#160;&#160;&#160;0xFEA0      /* 255, 215,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00325">325</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a87698ed955e7f55acb2ee0ef78505efb" name="a87698ed955e7f55acb2ee0ef78505efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87698ed955e7f55acb2ee0ef78505efb">&#9670;&#160;</a></span>TFT_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_GREEN&#160;&#160;&#160;0x07E0      /*   0, 255,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00315">315</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a> y <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="a14a8a03a7fc8788332ba6057d92c10a2" name="a14a8a03a7fc8788332ba6057d92c10a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a8a03a7fc8788332ba6057d92c10a2">&#9670;&#160;</a></span>TFT_GREENYELLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_GREENYELLOW&#160;&#160;&#160;0xB7E0      /* 180, 255,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00322">322</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="aee8b2e8667a7f2797891245721609e01" name="aee8b2e8667a7f2797891245721609e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8b2e8667a7f2797891245721609e01">&#9670;&#160;</a></span>TFT_LIGHTGREY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_LIGHTGREY&#160;&#160;&#160;0xD69A      /* 211, 211, 211 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00312">312</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="af2fbaec76755673a3ec2ea5c60d04a72" name="af2fbaec76755673a3ec2ea5c60d04a72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2fbaec76755673a3ec2ea5c60d04a72">&#9670;&#160;</a></span>TFT_MAGENTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_MAGENTA&#160;&#160;&#160;0xF81F      /* 255,   0, 255 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00318">318</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a243766b2d94454693b0108895261dde1" name="a243766b2d94454693b0108895261dde1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243766b2d94454693b0108895261dde1">&#9670;&#160;</a></span>TFT_MAROON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_MAROON&#160;&#160;&#160;0x7800      /* 128,   0,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00309">309</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a70dc003700c5e64a0754ccaa9a68373c" name="a70dc003700c5e64a0754ccaa9a68373c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70dc003700c5e64a0754ccaa9a68373c">&#9670;&#160;</a></span>TFT_NAVY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_NAVY&#160;&#160;&#160;0x000F      /*   0,   0, 128 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00306">306</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="af4546b001e72210a6cddadc6c75468a8" name="af4546b001e72210a6cddadc6c75468a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4546b001e72210a6cddadc6c75468a8">&#9670;&#160;</a></span>TFT_OLIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_OLIVE&#160;&#160;&#160;0x7BE0      /* 128, 128,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00311">311</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a61c3af07250ddcbc8f021c3d4a8e7f5a" name="a61c3af07250ddcbc8f021c3d4a8e7f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c3af07250ddcbc8f021c3d4a8e7f5a">&#9670;&#160;</a></span>TFT_ORANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_ORANGE&#160;&#160;&#160;0xFDA0      /* 255, 180,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00321">321</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Load__Screen_8cpp_source.html#l00128">Load_bar()</a> y <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="abf61ab3df51b37d6c110380eae6bc266" name="abf61ab3df51b37d6c110380eae6bc266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf61ab3df51b37d6c110380eae6bc266">&#9670;&#160;</a></span>TFT_PINK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_PINK&#160;&#160;&#160;0xFE19      /* 255, 192, 203 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00323">323</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a37db41894f946817ce3c2082a781b0bd" name="a37db41894f946817ce3c2082a781b0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37db41894f946817ce3c2082a781b0bd">&#9670;&#160;</a></span>TFT_PURPLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_PURPLE&#160;&#160;&#160;0x780F      /* 128,   0, 128 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00310">310</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5be28988e93afff36b1eaa8e71d8ba0" name="aa5be28988e93afff36b1eaa8e71d8ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5be28988e93afff36b1eaa8e71d8ba0">&#9670;&#160;</a></span>TFT_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_RED&#160;&#160;&#160;0xF800      /* 255,   0,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00317">317</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Load__Screen_8cpp_source.html#l00014">DrawTRMSFigure()</a> y <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="a0f7abafb5f8ebff66a5bd4d6545ba5d8" name="a0f7abafb5f8ebff66a5bd4d6545ba5d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7abafb5f8ebff66a5bd4d6545ba5d8">&#9670;&#160;</a></span>TFT_SILVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_SILVER&#160;&#160;&#160;0xC618      /* 192, 192, 192 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00326">326</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="ad9a8c6835f5cca872a327e3633eac7a9" name="ad9a8c6835f5cca872a327e3633eac7a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a8c6835f5cca872a327e3633eac7a9">&#9670;&#160;</a></span>TFT_SKYBLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_SKYBLUE&#160;&#160;&#160;0x867D      /* 135, 206, 235 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00327">327</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c5c8f522a276631bd17f631d41c8e8b" name="a2c5c8f522a276631bd17f631d41c8e8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5c8f522a276631bd17f631d41c8e8b">&#9670;&#160;</a></span>TFT_SPI_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_SPI_MODE&#160;&#160;&#160;SPI_MODE0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00135">135</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00086">TFT_eSPI::begin_nin_write()</a>.</p>
+
+</div>
+</div>
+<a id="a77a71d79bb53b6afe29b5dad0015bfa7" name="a77a71d79bb53b6afe29b5dad0015bfa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a71d79bb53b6afe29b5dad0015bfa7">&#9670;&#160;</a></span>TFT_TRANSPARENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_TRANSPARENT&#160;&#160;&#160;0x0120</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00333">333</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3b1bfac2da8732854088659d33bc8f3" name="aa3b1bfac2da8732854088659d33bc8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b1bfac2da8732854088659d33bc8f3">&#9670;&#160;</a></span>TFT_VIOLET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_VIOLET&#160;&#160;&#160;0x915C      /* 180,  46, 226 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00328">328</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="a93a49fb8bd9e8e94baf96cd836954467" name="a93a49fb8bd9e8e94baf96cd836954467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a49fb8bd9e8e94baf96cd836954467">&#9670;&#160;</a></span>TFT_WHITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_WHITE&#160;&#160;&#160;0xFFFF      /* 255, 255, 255 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00320">320</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="ac78e892de281930707051f9a90cbf612" name="ac78e892de281930707051f9a90cbf612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78e892de281930707051f9a90cbf612">&#9670;&#160;</a></span>TFT_YELLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_YELLOW&#160;&#160;&#160;0xFFE0      /* 255, 255,   0 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00319">319</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5e3647e20719a695e2557fad717b54a" name="ab5e3647e20719a695e2557fad717b54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e3647e20719a695e2557fad717b54a">&#9670;&#160;</a></span>TL_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TL_DATUM&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00285">285</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00439">TFT_eSPI::TFT_eSPI()</a>.</p>
+
+</div>
+</div>
+<a id="add267d7a315077bbc47f2dfe149fa163" name="add267d7a315077bbc47f2dfe149fa163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add267d7a315077bbc47f2dfe149fa163">&#9670;&#160;</a></span>TR_DATUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TR_DATUM&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00287">287</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05761">TFT_eSPI::drawRightString()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>.</p>
+
+</div>
+</div>
+<a id="ad0ad5bfaec32bf27d8abe6e6ac376fcc" name="ad0ad5bfaec32bf27d8abe6e6ac376fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ad5bfaec32bf27d8abe6e6ac376fcc">&#9670;&#160;</a></span>UTF8_SWITCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UTF8_SWITCH&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00813">813</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l04881">TFT_eSPI::getAttribute()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l04853">TFT_eSPI::setAttribute()</a>.</p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de «typedef»</h2>
+<a id="aeb6d281c8005ef27b13ddcd17502ed8a" name="aeb6d281c8005ef27b13ddcd17502ed8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb6d281c8005ef27b13ddcd17502ed8a">&#9670;&#160;</a></span>getColorCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t(* getColorCallback) (uint16_t x, uint16_t y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00424">424</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a5e53638383862c40edcf880098868d4a" name="a5e53638383862c40edcf880098868d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e53638383862c40edcf880098868d4a">&#9670;&#160;</a></span>chr_null</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> const uint8_t chr_null[1] = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00222">222</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>{0};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="add320a79d7cbfb55650ab417fc29effb" name="add320a79d7cbfb55650ab417fc29effb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add320a79d7cbfb55650ab417fc29effb">&#9670;&#160;</a></span>chrtbl_null</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> const uint8_t* const chrtbl_null[1] = {<a class="el" href="#a5e53638383862c40edcf880098868d4a">chr_null</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00223">223</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>{<a class="code hl_variable" href="#a5e53638383862c40edcf880098868d4a">chr_null</a>};</div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a5e53638383862c40edcf880098868d4a"><div class="ttname"><a href="#a5e53638383862c40edcf880098868d4a">chr_null</a></div><div class="ttdeci">PROGMEM const uint8_t chr_null[1]</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00222">TFT_eSPI.h:222</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18fc38bf8e3bb20c8cb8c1218b453722" name="a18fc38bf8e3bb20c8cb8c1218b453722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18fc38bf8e3bb20c8cb8c1218b453722">&#9670;&#160;</a></span>fontdata</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a> <a class="el" href="structfontinfo.html">fontinfo</a> fontdata[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00235">235</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  235</span>                                     {</div>
+<div class="line"><span class="lineno">  236</span><span class="preprocessor">  #ifdef LOAD_GLCD</span></div>
+<div class="line"><span class="lineno">  237</span>   { (<span class="keyword">const</span> uint8_t *)font, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  238</span><span class="preprocessor">  #else</span></div>
+<div class="line"><span class="lineno">  239</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  240</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">  241</span>   <span class="comment">// GLCD font (Font 1) does not have all parameters</span></div>
+<div class="line"><span class="lineno">  242</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 8, 7 },</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span><span class="preprocessor">  #ifdef LOAD_FONT2</span></div>
+<div class="line"><span class="lineno">  245</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="Font16_8c.html#a7c369fa08c0d21f49f4ef74112d065dd">chrtbl_f16</a>, <a class="code hl_variable" href="Font16_8c.html#a7cf6dc7ccc0fe772b061cc474792d2fd">widtbl_f16</a>, <a class="code hl_define" href="Font16_8h.html#a54b0587968d60d30dc08db103f006041">chr_hgt_f16</a>, <a class="code hl_define" href="Font16_8h.html#a68d19ec8dcbc3f2e2d994d3658a07cbe">baseline_f16</a>},</div>
+<div class="line"><span class="lineno">  246</span><span class="preprocessor">  #else</span></div>
+<div class="line"><span class="lineno">  247</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  248</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>   <span class="comment">// Font 3 current unused</span></div>
+<div class="line"><span class="lineno">  251</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span><span class="preprocessor">  #ifdef LOAD_FONT4</span></div>
+<div class="line"><span class="lineno">  254</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="Font32rle_8c.html#a4df26c5e16a7dd33e8ed8881ffba0c98">chrtbl_f32</a>, <a class="code hl_variable" href="Font32rle_8c.html#aa52df88e7cded07e6e89c4ebdaf97383">widtbl_f32</a>, <a class="code hl_define" href="Font32rle_8h.html#aed305a93f9baa67a47c06b079d709ddd">chr_hgt_f32</a>, <a class="code hl_define" href="Font32rle_8h.html#a10e83ed72b27f577f80f19576fd27556">baseline_f32</a>},</div>
+<div class="line"><span class="lineno">  255</span><span class="preprocessor">  #else</span></div>
+<div class="line"><span class="lineno">  256</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  257</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>   <span class="comment">// Font 5 current unused</span></div>
+<div class="line"><span class="lineno">  260</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span><span class="preprocessor">  #ifdef LOAD_FONT6</span></div>
+<div class="line"><span class="lineno">  263</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="Font64rle_8c.html#a7bf67d1ac19caf74148ea0c3a4e3089e">chrtbl_f64</a>, <a class="code hl_variable" href="Font64rle_8c.html#a12916a644174a7b3edfc4b0ed2ab51fc">widtbl_f64</a>, <a class="code hl_define" href="Font64rle_8h.html#a2f4f84defc3ffd3e0c0911ad26d1e3c8">chr_hgt_f64</a>, <a class="code hl_define" href="Font64rle_8h.html#a6d5f16f1bb9b90c2fee6799d4f9c5248">baseline_f64</a>},</div>
+<div class="line"><span class="lineno">  264</span><span class="preprocessor">  #else</span></div>
+<div class="line"><span class="lineno">  265</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  266</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span><span class="preprocessor">  #ifdef LOAD_FONT7</span></div>
+<div class="line"><span class="lineno">  269</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="Font7srle_8c.html#a5425843d21d0d78ff63ef392eac73e06">chrtbl_f7s</a>, <a class="code hl_variable" href="Font7srle_8c.html#a31803f0504cd7ecf82c9dd316dec0263">widtbl_f7s</a>, <a class="code hl_define" href="Font7srle_8h.html#af904f93ee94090bf56f0a74327c1ea6c">chr_hgt_f7s</a>, <a class="code hl_define" href="Font7srle_8h.html#a0d072891cdc895992590a3f3be3a7236">baseline_f7s</a>},</div>
+<div class="line"><span class="lineno">  270</span><span class="preprocessor">  #else</span></div>
+<div class="line"><span class="lineno">  271</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 },</div>
+<div class="line"><span class="lineno">  272</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span><span class="preprocessor">  #ifdef LOAD_FONT8</span></div>
+<div class="line"><span class="lineno">  275</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="Font72rle_8c.html#a9b87968e71c38dc17f39df8d938bfbc2">chrtbl_f72</a>, <a class="code hl_variable" href="Font72rle_8c.html#ad2f7250326f58bbc8ecdefe62824bced">widtbl_f72</a>, <a class="code hl_define" href="Font72rle_8h.html#a73fab038b5fb2cf0b8a8ba2a9de33129">chr_hgt_f72</a>, <a class="code hl_define" href="Font72rle_8h.html#a8a3ac3bfc24a5142922070590eb999fc">baseline_f72</a>}</div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor">  #else</span></div>
+<div class="line"><span class="lineno">  277</span>   { (<span class="keyword">const</span> uint8_t *)<a class="code hl_variable" href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a>, <a class="code hl_variable" href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a>, 0, 0 }</div>
+<div class="line"><span class="lineno">  278</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">  279</span>};</div>
+<div class="ttc" id="aFont16_8c_html_a7c369fa08c0d21f49f4ef74112d065dd"><div class="ttname"><a href="Font16_8c.html#a7c369fa08c0d21f49f4ef74112d065dd">chrtbl_f16</a></div><div class="ttdeci">PROGMEM const unsigned char *const chrtbl_f16[96]</div><div class="ttdef"><b>Definition</b> <a href="Font16_8c_source.html#l00618">Font16.c:618</a></div></div>
+<div class="ttc" id="aFont16_8c_html_a7cf6dc7ccc0fe772b061cc474792d2fd"><div class="ttname"><a href="Font16_8c.html#a7cf6dc7ccc0fe772b061cc474792d2fd">widtbl_f16</a></div><div class="ttdeci">PROGMEM const unsigned char widtbl_f16[96]</div><div class="ttdef"><b>Definition</b> <a href="Font16_8c_source.html#l00013">Font16.c:13</a></div></div>
+<div class="ttc" id="aFont16_8h_html_a54b0587968d60d30dc08db103f006041"><div class="ttname"><a href="Font16_8h.html#a54b0587968d60d30dc08db103f006041">chr_hgt_f16</a></div><div class="ttdeci">#define chr_hgt_f16</div><div class="ttdef"><b>Definition</b> <a href="Font16_8h_source.html#l00004">Font16.h:4</a></div></div>
+<div class="ttc" id="aFont16_8h_html_a68d19ec8dcbc3f2e2d994d3658a07cbe"><div class="ttname"><a href="Font16_8h.html#a68d19ec8dcbc3f2e2d994d3658a07cbe">baseline_f16</a></div><div class="ttdeci">#define baseline_f16</div><div class="ttdef"><b>Definition</b> <a href="Font16_8h_source.html#l00005">Font16.h:5</a></div></div>
+<div class="ttc" id="aFont32rle_8c_html_a4df26c5e16a7dd33e8ed8881ffba0c98"><div class="ttname"><a href="Font32rle_8c.html#a4df26c5e16a7dd33e8ed8881ffba0c98">chrtbl_f32</a></div><div class="ttdeci">PROGMEM const unsigned char *const chrtbl_f32[96]</div><div class="ttdef"><b>Definition</b> <a href="Font32rle_8c_source.html#l01051">Font32rle.c:1051</a></div></div>
+<div class="ttc" id="aFont32rle_8c_html_aa52df88e7cded07e6e89c4ebdaf97383"><div class="ttname"><a href="Font32rle_8c.html#aa52df88e7cded07e6e89c4ebdaf97383">widtbl_f32</a></div><div class="ttdeci">PROGMEM const unsigned char widtbl_f32[96]</div><div class="ttdef"><b>Definition</b> <a href="Font32rle_8c_source.html#l00010">Font32rle.c:10</a></div></div>
+<div class="ttc" id="aFont32rle_8h_html_a10e83ed72b27f577f80f19576fd27556"><div class="ttname"><a href="Font32rle_8h.html#a10e83ed72b27f577f80f19576fd27556">baseline_f32</a></div><div class="ttdeci">#define baseline_f32</div><div class="ttdef"><b>Definition</b> <a href="Font32rle_8h_source.html#l00005">Font32rle.h:5</a></div></div>
+<div class="ttc" id="aFont32rle_8h_html_aed305a93f9baa67a47c06b079d709ddd"><div class="ttname"><a href="Font32rle_8h.html#aed305a93f9baa67a47c06b079d709ddd">chr_hgt_f32</a></div><div class="ttdeci">#define chr_hgt_f32</div><div class="ttdef"><b>Definition</b> <a href="Font32rle_8h_source.html#l00004">Font32rle.h:4</a></div></div>
+<div class="ttc" id="aFont64rle_8c_html_a12916a644174a7b3edfc4b0ed2ab51fc"><div class="ttname"><a href="Font64rle_8c.html#a12916a644174a7b3edfc4b0ed2ab51fc">widtbl_f64</a></div><div class="ttdeci">PROGMEM const unsigned char widtbl_f64[96]</div><div class="ttdef"><b>Definition</b> <a href="Font64rle_8c_source.html#l00010">Font64rle.c:10</a></div></div>
+<div class="ttc" id="aFont64rle_8c_html_a7bf67d1ac19caf74148ea0c3a4e3089e"><div class="ttname"><a href="Font64rle_8c.html#a7bf67d1ac19caf74148ea0c3a4e3089e">chrtbl_f64</a></div><div class="ttdeci">PROGMEM const unsigned char *const chrtbl_f64[96]</div><div class="ttdef"><b>Definition</b> <a href="Font64rle_8c_source.html#l00285">Font64rle.c:285</a></div></div>
+<div class="ttc" id="aFont64rle_8h_html_a2f4f84defc3ffd3e0c0911ad26d1e3c8"><div class="ttname"><a href="Font64rle_8h.html#a2f4f84defc3ffd3e0c0911ad26d1e3c8">chr_hgt_f64</a></div><div class="ttdeci">#define chr_hgt_f64</div><div class="ttdef"><b>Definition</b> <a href="Font64rle_8h_source.html#l00004">Font64rle.h:4</a></div></div>
+<div class="ttc" id="aFont64rle_8h_html_a6d5f16f1bb9b90c2fee6799d4f9c5248"><div class="ttname"><a href="Font64rle_8h.html#a6d5f16f1bb9b90c2fee6799d4f9c5248">baseline_f64</a></div><div class="ttdeci">#define baseline_f64</div><div class="ttdef"><b>Definition</b> <a href="Font64rle_8h_source.html#l00005">Font64rle.h:5</a></div></div>
+<div class="ttc" id="aFont72rle_8c_html_a9b87968e71c38dc17f39df8d938bfbc2"><div class="ttname"><a href="Font72rle_8c.html#a9b87968e71c38dc17f39df8d938bfbc2">chrtbl_f72</a></div><div class="ttdeci">PROGMEM const unsigned char *const chrtbl_f72[96]</div><div class="ttdef"><b>Definition</b> <a href="Font72rle_8c_source.html#l00355">Font72rle.c:355</a></div></div>
+<div class="ttc" id="aFont72rle_8c_html_ad2f7250326f58bbc8ecdefe62824bced"><div class="ttname"><a href="Font72rle_8c.html#ad2f7250326f58bbc8ecdefe62824bced">widtbl_f72</a></div><div class="ttdeci">PROGMEM const unsigned char widtbl_f72[96]</div><div class="ttdef"><b>Definition</b> <a href="Font72rle_8c_source.html#l00010">Font72rle.c:10</a></div></div>
+<div class="ttc" id="aFont72rle_8h_html_a73fab038b5fb2cf0b8a8ba2a9de33129"><div class="ttname"><a href="Font72rle_8h.html#a73fab038b5fb2cf0b8a8ba2a9de33129">chr_hgt_f72</a></div><div class="ttdeci">#define chr_hgt_f72</div><div class="ttdef"><b>Definition</b> <a href="Font72rle_8h_source.html#l00004">Font72rle.h:4</a></div></div>
+<div class="ttc" id="aFont72rle_8h_html_a8a3ac3bfc24a5142922070590eb999fc"><div class="ttname"><a href="Font72rle_8h.html#a8a3ac3bfc24a5142922070590eb999fc">baseline_f72</a></div><div class="ttdeci">#define baseline_f72</div><div class="ttdef"><b>Definition</b> <a href="Font72rle_8h_source.html#l00005">Font72rle.h:5</a></div></div>
+<div class="ttc" id="aFont7srle_8c_html_a31803f0504cd7ecf82c9dd316dec0263"><div class="ttname"><a href="Font7srle_8c.html#a31803f0504cd7ecf82c9dd316dec0263">widtbl_f7s</a></div><div class="ttdeci">PROGMEM const unsigned char widtbl_f7s[96]</div><div class="ttdef"><b>Definition</b> <a href="Font7srle_8c_source.html#l00010">Font7srle.c:10</a></div></div>
+<div class="ttc" id="aFont7srle_8c_html_a5425843d21d0d78ff63ef392eac73e06"><div class="ttname"><a href="Font7srle_8c.html#a5425843d21d0d78ff63ef392eac73e06">chrtbl_f7s</a></div><div class="ttdeci">PROGMEM const unsigned char *const chrtbl_f7s[96]</div><div class="ttdef"><b>Definition</b> <a href="Font7srle_8c_source.html#l00252">Font7srle.c:252</a></div></div>
+<div class="ttc" id="aFont7srle_8h_html_a0d072891cdc895992590a3f3be3a7236"><div class="ttname"><a href="Font7srle_8h.html#a0d072891cdc895992590a3f3be3a7236">baseline_f7s</a></div><div class="ttdeci">#define baseline_f7s</div><div class="ttdef"><b>Definition</b> <a href="Font7srle_8h_source.html#l00005">Font7srle.h:5</a></div></div>
+<div class="ttc" id="aFont7srle_8h_html_af904f93ee94090bf56f0a74327c1ea6c"><div class="ttname"><a href="Font7srle_8h.html#af904f93ee94090bf56f0a74327c1ea6c">chr_hgt_f7s</a></div><div class="ttdeci">#define chr_hgt_f7s</div><div class="ttdef"><b>Definition</b> <a href="Font7srle_8h_source.html#l00004">Font7srle.h:4</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a6500a9cb4b5826d1c668bc5b959ca9e0"><div class="ttname"><a href="#a6500a9cb4b5826d1c668bc5b959ca9e0">widtbl_null</a></div><div class="ttdeci">const uint8_t widtbl_null[1]</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00221">TFT_eSPI.h:221</a></div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_add320a79d7cbfb55650ab417fc29effb"><div class="ttname"><a href="#add320a79d7cbfb55650ab417fc29effb">chrtbl_null</a></div><div class="ttdeci">PROGMEM const uint8_t *const chrtbl_null[1]</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00223">TFT_eSPI.h:223</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05192">TFT_eSPI::drawChar()</a>, <a class="el" href="Sprite_8cpp_source.html#l02151">TFT_eSprite::drawChar()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l05504">TFT_eSPI::drawString()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03156">TFT_eSPI::fontHeight()</a>, <a class="el" href="stb__truetype__htcw_8h.html#a76ec14e5c7e57981dc5a409d89b5e92f">stbtt_FindMatchingFont()</a>, <a class="el" href="stb__truetype__htcw_8h.html#ae70e9e09a74359133d5f282e032d5aa7">stbtt_GetCodepointSDF()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03073">TFT_eSPI::textWidth()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l05058">TFT_eSPI::write()</a>.</p>
+
+</div>
+</div>
+<a id="a6500a9cb4b5826d1c668bc5b959ca9e0" name="a6500a9cb4b5826d1c668bc5b959ca9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6500a9cb4b5826d1c668bc5b959ca9e0">&#9670;&#160;</a></span>widtbl_null</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t widtbl_null[1] = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI_8h_source.html#l00221">221</a> del archivo <a class="el" href="TFT__eSPI_8h_source.html">TFT_eSPI.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  221</span>{0};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="TFT__eSPI_8h.html">TFT_eSPI.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

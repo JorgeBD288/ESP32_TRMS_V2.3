@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/examples/DMA test/boing_ball/boing_ball.ino</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('boing__ball_8ino_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">boing_ball.ino</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="boing__ball_8ino.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>// &#39;Boing&#39; ball demo</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>// STM32F767 55MHz SPI 170 fps without DMA</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>// STM32F767 55MHz SPI 227 fps with DMA</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>// STM32F446 55MHz SPI 110 fps without DMA</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>// STM32F446 55MHz SPI 187 fps with DMA</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>// STM32F401 55MHz SPI  56 fps without DMA</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>// STM32F401 55MHz SPI 120 fps with DMA</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>// STM32F767 27MHz SPI  99 fps without DMA</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>// STM32F767 27MHz SPI 120 fps with DMA</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>// STM32F446 27MHz SPI  73 fps without DMA</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>// STM32F446 27MHz SPI  97 fps with DMA</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>// STM32F401 27MHz SPI  51 fps without DMA</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>// STM32F401 27MHz SPI  90 fps with DMA</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>// Blue Pill - 36MHz SPI *no* DMA 36 fps</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>// Blue Pill - 36MHz SPI with DMA 67 fps</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>// Blue Pill overclocked to 128MHz *no* DMA - 32MHz SPI  64 fps</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>// Blue Pill overclocked to 128MHz with DMA - 32MHz SPI 116 fps</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>// ESP32     - 8-bit parallel     110 fps (no DMA)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>// ESP32     - 40MHz SPI *no* DMA  93 fps</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>// ESP32     - 40MHz SPI with DMA 112 fps</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>#define SCREENWIDTH 320</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>#define SCREENHEIGHT 240</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>#include &quot;graphic.h&quot;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>#include &lt;TFT_eSPI.h&gt; // Hardware-specific library</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>TFT_eSPI tft = TFT_eSPI();       // Invoke custom library</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>#define BGCOLOR    0xAD75</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>#define GRIDCOLOR  0xA815</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>#define BGSHADOW   0x5285</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>#define GRIDSHADOW 0x600C</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>#define RED        0xF800</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>#define WHITE      0xFFFF</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>#define YBOTTOM  123  // Ball Y coordinate at bottom</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>#define YBOUNCE -3.5  // Upward velocity on ball bounce</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>// Ball coordinates are stored floating-point because screen refresh</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>// is so quick, whole-pixel movements are just too fast!</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>float ballx     = 20.0, bally     = YBOTTOM, // Current ball position</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      ballvx    =  0.8, ballvy    = YBOUNCE, // Ball velocity</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      ballframe = 3;                         // Ball animation frame #</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>int   balloldx  = ballx, balloldy = bally;   // Prior ball position</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>// Working buffer for ball rendering...2 scan lines that alternate,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>// one is rendered while the other is transferred via DMA.</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>uint16_t renderbuf[2][SCREENWIDTH];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>uint16_t palette[16]; // Color table for ball rotation effect</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>uint32_t startTime, frame = 0; // For frames-per-second estimate</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>void setup() {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  Serial.begin(115200);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>//  while(!Serial);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  tft.begin();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  tft.setRotation(3); // Landscape orientation, USB at bottom right</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  tft.setSwapBytes(false);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  // Draw initial frame buffer contents:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  //tft.setBitmapColor(GRIDCOLOR, BGCOLOR);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  tft.fillScreen(BGCOLOR);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  tft.initDMA();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  tft.drawBitmap(0, 0, (const uint8_t *)background, SCREENWIDTH, SCREENHEIGHT, GRIDCOLOR);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  startTime = millis();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>void loop() {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  balloldx = (int16_t)ballx; // Save prior position</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  balloldy = (int16_t)bally;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  ballx   += ballvx;         // Update position</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  bally   += ballvy;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  ballvy  += 0.06;          // Update Y velocity</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  if((ballx &lt;= 15) || (ballx &gt;= SCREENWIDTH - BALLWIDTH))</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    ballvx *= -1;            // Left/right bounce</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  if(bally &gt;= YBOTTOM) {     // Hit ground?</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    bally  = YBOTTOM;        // Clip and</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    ballvy = YBOUNCE;        // bounce up</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  // Determine screen area to update.  This is the bounds of the ball&#39;s</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  // prior and current positions, so the old ball is fully erased and new</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  // ball is fully drawn.</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  int16_t minx, miny, maxx, maxy, width, height;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  // Determine bounds of prior and new positions</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  minx = ballx;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  if(balloldx &lt; minx)                    minx = balloldx;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  miny = bally;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  if(balloldy &lt; miny)                    miny = balloldy;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  maxx = ballx + BALLWIDTH  - 1;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  if((balloldx + BALLWIDTH  - 1) &gt; maxx) maxx = balloldx + BALLWIDTH  - 1;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  maxy = bally + BALLHEIGHT - 1;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  if((balloldy + BALLHEIGHT - 1) &gt; maxy) maxy = balloldy + BALLHEIGHT - 1;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  width  = maxx - minx + 1;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  height = maxy - miny + 1;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  // Ball animation frame # is incremented opposite the ball&#39;s X velocity</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  ballframe -= ballvx * 0.5;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  if(ballframe &lt; 0)        ballframe += 14; // Constrain from 0 to 13</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  else if(ballframe &gt;= 14) ballframe -= 14;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  // Set 7 palette entries to white, 7 to red, based on frame number.</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  // This makes the ball spin</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  for(uint8_t i=0; i&lt;14; i++) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    palette[i+2] = ((((int)ballframe + i) % 14) &lt; 7) ? WHITE : RED;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    // Palette entries 0 and 1 aren&#39;t used (clear and shadow, respectively)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  // Only the changed rectangle is drawn into the &#39;renderbuf&#39; array...</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  uint16_t c, *destPtr;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  int16_t  bx  = minx - (int)ballx, // X relative to ball bitmap (can be negative)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>           by  = miny - (int)bally, // Y relative to ball bitmap (can be negative)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>           bgx = minx,              // X relative to background bitmap (&gt;= 0)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>           bgy = miny,              // Y relative to background bitmap (&gt;= 0)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>           x, y, bx1, bgx1;         // Loop counters and working vars</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  uint8_t  p;                       // &#39;packed&#39; value of 2 ball pixels</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  int8_t bufIdx = 0;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  // Start SPI transaction and drop TFT_CS - avoids transaction overhead in loop</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  tft.startWrite();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  // Set window area to pour pixels into</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  tft.setAddrWindow(minx, miny, width, height);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  // Draw line by line loop</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  for(y=0; y&lt;height; y++) { // For each row...</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    destPtr = &amp;renderbuf[bufIdx][0];</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    bx1  = bx;  // Need to keep the original bx and bgx values,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    bgx1 = bgx; // so copies of them are made here (and changed in loop below)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    for(x=0; x&lt;width; x++) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      if((bx1 &gt;= 0) &amp;&amp; (bx1 &lt; BALLWIDTH) &amp;&amp;  // Is current pixel row/column</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>         (by  &gt;= 0) &amp;&amp; (by  &lt; BALLHEIGHT)) { // inside the ball bitmap area?</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        // Yes, do ball compositing math...</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        p = ball[by][bx1 / 2];                // Get packed value (2 pixels)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        c = (bx1 &amp; 1) ? (p &amp; 0xF) : (p &gt;&gt; 4); // Unpack high or low nibble</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        if(c == 0) { // Outside ball - just draw grid</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>          c = background[bgy][bgx1 / 8] &amp; (0x80 &gt;&gt; (bgx1 &amp; 7)) ? GRIDCOLOR : BGCOLOR;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        } else if(c &gt; 1) { // In ball area...</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>          c = palette[c];</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        } else { // In shadow area...</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>          c = background[bgy][bgx1 / 8] &amp; (0x80 &gt;&gt; (bgx1 &amp; 7)) ? GRIDSHADOW : BGSHADOW;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      } else { // Outside ball bitmap, just draw background bitmap...</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        c = background[bgy][bgx1 / 8] &amp; (0x80 &gt;&gt; (bgx1 &amp; 7)) ? GRIDCOLOR : BGCOLOR;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      *destPtr++ = c&lt;&lt;8 | c&gt;&gt;8; // Store pixel colour</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      bx1++;  // Increment bitmap position counters (X axis)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      bgx1++;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    tft.pushPixelsDMA(&amp;renderbuf[bufIdx][0], width); // Push line to screen</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    // Push line to screen (swap bytes false for STM/ESP32)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    //tft.pushPixels(&amp;renderbuf[bufIdx][0], width);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    bufIdx = 1 - bufIdx;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    by++; // Increment bitmap position counters (Y axis)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    bgy++;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  //if (random(100) == 1) delay(2000);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  tft.endWrite();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  //delay(5);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  // Show approximate frame rate</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  if(!(++frame &amp; 255)) { // Every 256 frames...</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    uint32_t elapsed = (millis() - startTime) / 1000; // Seconds</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    if(elapsed) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      Serial.print(frame / elapsed);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      Serial.println(&quot; fps&quot;);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d834161b10c57611f417f859026dded1.html">examples</a></li><li class="navelem"><a href="dir_49d153054aae1f4bdf1409bc210500f3.html">DMA test</a></li><li class="navelem"><a href="dir_d1279bb3a0850b447ffa684c1d0f1271.html">boing_ball</a></li><li class="navelem"><a href="boing__ball_8ino.html">boing_ball.ino</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

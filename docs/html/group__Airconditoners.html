@@ -1,0 +1,1428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Air conditioner special code</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('group__Airconditoners.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Air conditioner special code </div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:Aircondition_5FLG" id="r_Aircondition_5FLG"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAircondition__LG.html">Aircondition_LG</a></td></tr>
+<tr class="memitem:LGProtocol" id="r_LGProtocol"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionLGProtocol.html">LGProtocol</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ga5e3517bd87cdd71f3faedd5648f3869a" id="r_ga5e3517bd87cdd71f3faedd5648f3869a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5e3517bd87cdd71f3faedd5648f3869a">AC_MODE_AUTO</a>&#160;&#160;&#160;'<a class="el" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>'</td></tr>
+<tr class="memitem:gad40cb179d8947abb261c66c4025d6f5c" id="r_gad40cb179d8947abb261c66c4025d6f5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad40cb179d8947abb261c66c4025d6f5c">AC_MODE_COOLING</a>&#160;&#160;&#160;'c'</td></tr>
+<tr class="memitem:ga3c73605f2e327ae30c0cb5cb90fdade5" id="r_ga3c73605f2e327ae30c0cb5cb90fdade5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3c73605f2e327ae30c0cb5cb90fdade5">AC_MODE_DEHUMIDIFIYING</a>&#160;&#160;&#160;'d'</td></tr>
+<tr class="memitem:gaa95639ff20eae994eac17c04cd1af46a" id="r_gaa95639ff20eae994eac17c04cd1af46a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa95639ff20eae994eac17c04cd1af46a">AC_MODE_FAN</a>&#160;&#160;&#160;'f'</td></tr>
+<tr class="memitem:ga4d1f100bd13d68bbff9165cfeb1d011c" id="r_ga4d1f100bd13d68bbff9165cfeb1d011c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d1f100bd13d68bbff9165cfeb1d011c">AC_MODE_HEATING</a>&#160;&#160;&#160;'h'</td></tr>
+<tr class="memitem:ga23c78d99597e1fb79900c2c2162703ed" id="r_ga23c78d99597e1fb79900c2c2162703ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga23c78d99597e1fb79900c2c2162703ed">LG_ADDRESS</a>&#160;&#160;&#160;0x88</td></tr>
+<tr class="memitem:ga61b4e884ce7bb6f44749e52af3fe93dc" id="r_ga61b4e884ce7bb6f44749e52af3fe93dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga61b4e884ce7bb6f44749e52af3fe93dc">LG_AUTO_CLEAN_OFF</a>&#160;&#160;&#160;0xC00C</td></tr>
+<tr class="memitem:ga3f6636d07bce14c9610e5acd74e4c32c" id="r_ga3f6636d07bce14c9610e5acd74e4c32c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f6636d07bce14c9610e5acd74e4c32c">LG_AUTO_CLEAN_ON</a>&#160;&#160;&#160;0xC00B</td></tr>
+<tr class="memitem:gabbff1ff71274f875aab9304e201697a9" id="r_gabbff1ff71274f875aab9304e201697a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabbff1ff71274f875aab9304e201697a9">LG_CLEAR_ALL</a>&#160;&#160;&#160;0xB000</td></tr>
+<tr class="memitem:ga718a9952e98c9ff0db43168edff9f9e1" id="r_ga718a9952e98c9ff0db43168edff9f9e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga718a9952e98c9ff0db43168edff9f9e1">LG_COMMAND_AUTO_CLEAN</a>&#160;&#160;&#160;'<a class="el" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>'</td></tr>
+<tr class="memitem:gaf1ec2778dd50f24b0eee7e2141a74de2" id="r_gaf1ec2778dd50f24b0eee7e2141a74de2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf1ec2778dd50f24b0eee7e2141a74de2">LG_COMMAND_CLEAR_ALL</a>&#160;&#160;&#160;'C'</td></tr>
+<tr class="memitem:ga78b9d595527aac3bc74b16079f6a5875" id="r_ga78b9d595527aac3bc74b16079f6a5875"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78b9d595527aac3bc74b16079f6a5875">LG_COMMAND_ENERGY</a>&#160;&#160;&#160;'e'</td></tr>
+<tr class="memitem:ga7476ae7bbae7d8bbc85101df2481e928" id="r_ga7476ae7bbae7d8bbc85101df2481e928"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7476ae7bbae7d8bbc85101df2481e928">LG_COMMAND_FAN_SPEED</a>&#160;&#160;&#160;'f'</td></tr>
+<tr class="memitem:ga64f924ab6a2a070627ca40bb8ea718a2" id="r_ga64f924ab6a2a070627ca40bb8ea718a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga64f924ab6a2a070627ca40bb8ea718a2">LG_COMMAND_JET</a>&#160;&#160;&#160;'j'</td></tr>
+<tr class="memitem:ga96e898832dfdd0788ba0d188eefed0c9" id="r_ga96e898832dfdd0788ba0d188eefed0c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96e898832dfdd0788ba0d188eefed0c9">LG_COMMAND_LIGHT</a>&#160;&#160;&#160;'l'</td></tr>
+<tr class="memitem:ga8da7f66cacc866d8f7e50bfe1b80bab1" id="r_ga8da7f66cacc866d8f7e50bfe1b80bab1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8da7f66cacc866d8f7e50bfe1b80bab1">LG_COMMAND_MODE</a>&#160;&#160;&#160;'m'</td></tr>
+<tr class="memitem:ga24fd67c4d0d7bf87fd4a7d788070a226" id="r_ga24fd67c4d0d7bf87fd4a7d788070a226"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24fd67c4d0d7bf87fd4a7d788070a226">LG_COMMAND_OFF</a>&#160;&#160;&#160;'0'</td></tr>
+<tr class="memitem:ga79162224c70f14abcb2a2dba386148c1" id="r_ga79162224c70f14abcb2a2dba386148c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga79162224c70f14abcb2a2dba386148c1">LG_COMMAND_ON</a>&#160;&#160;&#160;'1'</td></tr>
+<tr class="memitem:gaded0337c0d938ef82caaf8c2f1c59283" id="r_gaded0337c0d938ef82caaf8c2f1c59283"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaded0337c0d938ef82caaf8c2f1c59283">LG_COMMAND_SLEEP</a>&#160;&#160;&#160;'S'</td></tr>
+<tr class="memitem:ga82d5b518dba56f050e6563f22d9c2206" id="r_ga82d5b518dba56f050e6563f22d9c2206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga82d5b518dba56f050e6563f22d9c2206">LG_COMMAND_SWING</a>&#160;&#160;&#160;'s'</td></tr>
+<tr class="memitem:gaee4c1f6351dff61efa70ac0f59c301b9" id="r_gaee4c1f6351dff61efa70ac0f59c301b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaee4c1f6351dff61efa70ac0f59c301b9">LG_COMMAND_TEMPERATURE</a>&#160;&#160;&#160;'t'</td></tr>
+<tr class="memitem:gad15f415d50b1f65322b15ea607d718d7" id="r_gad15f415d50b1f65322b15ea607d718d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad15f415d50b1f65322b15ea607d718d7">LG_COMMAND_TEMPERATURE_MINUS</a>&#160;&#160;&#160;'-'</td></tr>
+<tr class="memitem:ga26bce5b8f0b1f61c21135f7ce116bd0e" id="r_ga26bce5b8f0b1f61c21135f7ce116bd0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26bce5b8f0b1f61c21135f7ce116bd0e">LG_COMMAND_TEMPERATURE_PLUS</a>&#160;&#160;&#160;'+'</td></tr>
+<tr class="memitem:ga2a765b54db1abe3e11c72f19feaa071f" id="r_ga2a765b54db1abe3e11c72f19feaa071f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2a765b54db1abe3e11c72f19feaa071f">LG_COMMAND_TIMER_OFF</a>&#160;&#160;&#160;'O'</td></tr>
+<tr class="memitem:ga414f526948aba8247f62b560d75834d6" id="r_ga414f526948aba8247f62b560d75834d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga414f526948aba8247f62b560d75834d6">LG_COMMAND_TIMER_ON</a>&#160;&#160;&#160;'T'</td></tr>
+<tr class="memitem:gaa04556b565d50612183d76a1cf17162a" id="r_gaa04556b565d50612183d76a1cf17162a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa04556b565d50612183d76a1cf17162a">LG_ENERGY_SAVING_OFF</a>&#160;&#160;&#160;0x1005</td></tr>
+<tr class="memitem:ga50a68c01f30d77719bd0965849eb9432" id="r_ga50a68c01f30d77719bd0965849eb9432"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50a68c01f30d77719bd0965849eb9432">LG_ENERGY_SAVING_ON</a>&#160;&#160;&#160;0x1004</td></tr>
+<tr class="memitem:gac832ef74f7acce9703cf4bfe3af9c62c" id="r_gac832ef74f7acce9703cf4bfe3af9c62c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac832ef74f7acce9703cf4bfe3af9c62c">LG_JET_ON</a>&#160;&#160;&#160;0x1008</td></tr>
+<tr class="memitem:gafc7cc7b8e3f42b30e478d80f917c917c" id="r_gafc7cc7b8e3f42b30e478d80f917c917c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc7cc7b8e3f42b30e478d80f917c917c">LG_LIGHT</a>&#160;&#160;&#160;0xC00A</td></tr>
+<tr class="memitem:ga7474777d5b8f60c2871b141c4c8febdc" id="r_ga7474777d5b8f60c2871b141c4c8febdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7474777d5b8f60c2871b141c4c8febdc">LG_MODE_AUTO</a>&#160;&#160;&#160;0x0B00</td></tr>
+<tr class="memitem:gaae2e0db9a5ce4151112a6906bfb1090c" id="r_gaae2e0db9a5ce4151112a6906bfb1090c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaae2e0db9a5ce4151112a6906bfb1090c">LG_MODE_COOLING</a>&#160;&#160;&#160;0x0800</td></tr>
+<tr class="memitem:gac49c9a2cf24d0bac6724167416236498" id="r_gac49c9a2cf24d0bac6724167416236498"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac49c9a2cf24d0bac6724167416236498">LG_MODE_DEHUMIDIFIYING</a>&#160;&#160;&#160;0x0990</td></tr>
+<tr class="memitem:gae82f0963f74d72085d63857a33a8abfe" id="r_gae82f0963f74d72085d63857a33a8abfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae82f0963f74d72085d63857a33a8abfe">LG_MODE_FAN</a>&#160;&#160;&#160;0x0A30</td></tr>
+<tr class="memitem:ga49b7354b9ea838746bd12d44a73cbbfe" id="r_ga49b7354b9ea838746bd12d44a73cbbfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga49b7354b9ea838746bd12d44a73cbbfe">LG_MODE_HEATING</a>&#160;&#160;&#160;0x0C00</td></tr>
+<tr class="memitem:gac55cb8592c8e9e1d0d9d47e8921862d0" id="r_gac55cb8592c8e9e1d0d9d47e8921862d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac55cb8592c8e9e1d0d9d47e8921862d0">LG_POWER_DOWN</a>&#160;&#160;&#160;0xC005</td></tr>
+<tr class="memitem:gafa12114ef5d9a8113d9b812e1c3f215d" id="r_gafa12114ef5d9a8113d9b812e1c3f215d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafa12114ef5d9a8113d9b812e1c3f215d">LG_SLEEP</a>&#160;&#160;&#160;0xA000</td></tr>
+<tr class="memitem:gae948545d5555a8e1661bf9ed84f8a5bd" id="r_gae948545d5555a8e1661bf9ed84f8a5bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae948545d5555a8e1661bf9ed84f8a5bd">LG_SWING_OFF</a>&#160;&#160;&#160;0x1317</td></tr>
+<tr class="memitem:gae2aa0cea45172493aff78b178429498b" id="r_gae2aa0cea45172493aff78b178429498b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae2aa0cea45172493aff78b178429498b">LG_SWING_ON</a>&#160;&#160;&#160;0x1316</td></tr>
+<tr class="memitem:ga2e4ee6b0d489a06eb1115213bf8055ed" id="r_ga2e4ee6b0d489a06eb1115213bf8055ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2e4ee6b0d489a06eb1115213bf8055ed">LG_SWITCH_ON_MASK</a>&#160;&#160;&#160;0x0800</td></tr>
+<tr class="memitem:ga953e35300b777bf9b39ecb1c97fbe92b" id="r_ga953e35300b777bf9b39ecb1c97fbe92b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga953e35300b777bf9b39ecb1c97fbe92b">LG_TIMER_OFF</a>&#160;&#160;&#160;0x9000</td></tr>
+<tr class="memitem:ga0d3fa053a91e0ccdbf82607d6f191884" id="r_ga0d3fa053a91e0ccdbf82607d6f191884"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0d3fa053a91e0ccdbf82607d6f191884">LG_TIMER_ON</a>&#160;&#160;&#160;0x8000</td></tr>
+<tr class="memitem:gac4018dd9d884ac5f47a72f8f97a30013" id="r_gac4018dd9d884ac5f47a72f8f97a30013"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4018dd9d884ac5f47a72f8f97a30013">LG_WALL_SWING_OFF</a>&#160;&#160;&#160;0x1315</td></tr>
+<tr class="memitem:ga6e9da9436e1330717c4e521c3274f9e7" id="r_ga6e9da9436e1330717c4e521c3274f9e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6e9da9436e1330717c4e521c3274f9e7">LG_WALL_SWING_ON</a>&#160;&#160;&#160;0x1314</td></tr>
+<tr class="memitem:ga6d745a4e59f5d14e9983d174b6e9705a" id="r_ga6d745a4e59f5d14e9983d174b6e9705a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a>&#160;&#160;&#160;4</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ga0210285f615ce3a1ac9b26fd1af51dd9" id="r_ga0210285f615ce3a1ac9b26fd1af51dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0210285f615ce3a1ac9b26fd1af51dd9">Aircondition_LG::printMenu</a> (Print *aSerial)</td></tr>
+<tr class="memitem:ga65bba14a0302268cc515831d37e95b7a" id="r_ga65bba14a0302268cc515831d37e95b7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga65bba14a0302268cc515831d37e95b7a">Aircondition_LG::sendCommandAndParameter</a> (char aCommand, int aParameter)</td></tr>
+<tr class="memitem:ga113704b3b19c8477635210341163bf9e" id="r_ga113704b3b19c8477635210341163bf9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga113704b3b19c8477635210341163bf9e">Aircondition_LG::sendIRCommand</a> (uint16_t aCommand)</td></tr>
+<tr class="memitem:ga83d18e2597cc2ea78f25889bc6c060e3" id="r_ga83d18e2597cc2ea78f25889bc6c060e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83d18e2597cc2ea78f25889bc6c060e3">Aircondition_LG::sendTemperatureFanSpeedAndMode</a> ()</td></tr>
+<tr class="memitem:ga75056e4f4dfa299b6f328df460f3f174" id="r_ga75056e4f4dfa299b6f328df460f3f174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga75056e4f4dfa299b6f328df460f3f174">Aircondition_LG::setType</a> (bool aIsWallType)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga9e4c45659819db87363cdef65209ee56" id="r_ga9e4c45659819db87363cdef65209ee56"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9e4c45659819db87363cdef65209ee56">AC_FAN_TOWER</a> [<a class="el" href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a>] = { 0, 4, 6, 6 }</td></tr>
+<tr class="memitem:ga06d1cb86267a1aa639caa670ba813600" id="r_ga06d1cb86267a1aa639caa670ba813600"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga06d1cb86267a1aa639caa670ba813600">AC_FAN_WALL</a> [<a class="el" href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a>] = { 0, 2, 4, 5 }</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="ga5e3517bd87cdd71f3faedd5648f3869a" name="ga5e3517bd87cdd71f3faedd5648f3869a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e3517bd87cdd71f3faedd5648f3869a">&#9670;&#160;</a></span>AC_MODE_AUTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AC_MODE_AUTO&#160;&#160;&#160;'<a class="el" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00097">97</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="gad40cb179d8947abb261c66c4025d6f5c" name="gad40cb179d8947abb261c66c4025d6f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad40cb179d8947abb261c66c4025d6f5c">&#9670;&#160;</a></span>AC_MODE_COOLING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AC_MODE_COOLING&#160;&#160;&#160;'c'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00094">94</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga3c73605f2e327ae30c0cb5cb90fdade5" name="ga3c73605f2e327ae30c0cb5cb90fdade5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c73605f2e327ae30c0cb5cb90fdade5">&#9670;&#160;</a></span>AC_MODE_DEHUMIDIFIYING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AC_MODE_DEHUMIDIFIYING&#160;&#160;&#160;'d'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00095">95</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="gaa95639ff20eae994eac17c04cd1af46a" name="gaa95639ff20eae994eac17c04cd1af46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa95639ff20eae994eac17c04cd1af46a">&#9670;&#160;</a></span>AC_MODE_FAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AC_MODE_FAN&#160;&#160;&#160;'f'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00096">96</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga4d1f100bd13d68bbff9165cfeb1d011c" name="ga4d1f100bd13d68bbff9165cfeb1d011c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d1f100bd13d68bbff9165cfeb1d011c">&#9670;&#160;</a></span>AC_MODE_HEATING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AC_MODE_HEATING&#160;&#160;&#160;'h'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00098">98</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga23c78d99597e1fb79900c2c2162703ed" name="ga23c78d99597e1fb79900c2c2162703ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga23c78d99597e1fb79900c2c2162703ed">&#9670;&#160;</a></span>LG_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_ADDRESS&#160;&#160;&#160;0x88</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00042">42</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00252">Aircondition_LG::sendIRCommand()</a>.</p>
+
+</div>
+</div>
+<a id="ga61b4e884ce7bb6f44749e52af3fe93dc" name="ga61b4e884ce7bb6f44749e52af3fe93dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61b4e884ce7bb6f44749e52af3fe93dc">&#9670;&#160;</a></span>LG_AUTO_CLEAN_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_AUTO_CLEAN_OFF&#160;&#160;&#160;0xC00C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00069">69</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga3f6636d07bce14c9610e5acd74e4c32c" name="ga3f6636d07bce14c9610e5acd74e4c32c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f6636d07bce14c9610e5acd74e4c32c">&#9670;&#160;</a></span>LG_AUTO_CLEAN_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_AUTO_CLEAN_ON&#160;&#160;&#160;0xC00B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00068">68</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gabbff1ff71274f875aab9304e201697a9" name="gabbff1ff71274f875aab9304e201697a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbff1ff71274f875aab9304e201697a9">&#9670;&#160;</a></span>LG_CLEAR_ALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_CLEAR_ALL&#160;&#160;&#160;0xB000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00065">65</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga718a9952e98c9ff0db43168edff9f9e1" name="ga718a9952e98c9ff0db43168edff9f9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga718a9952e98c9ff0db43168edff9f9e1">&#9670;&#160;</a></span>LG_COMMAND_AUTO_CLEAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_AUTO_CLEAN&#160;&#160;&#160;'<a class="el" href="lv__example__anim__3_8c.html#a734ce3ff48b2bdc8e7cc09dd6faee06f">a</a>'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00077">77</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gaf1ec2778dd50f24b0eee7e2141a74de2" name="gaf1ec2778dd50f24b0eee7e2141a74de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf1ec2778dd50f24b0eee7e2141a74de2">&#9670;&#160;</a></span>LG_COMMAND_CLEAR_ALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_CLEAR_ALL&#160;&#160;&#160;'C'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00089">89</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga78b9d595527aac3bc74b16079f6a5875" name="ga78b9d595527aac3bc74b16079f6a5875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78b9d595527aac3bc74b16079f6a5875">&#9670;&#160;</a></span>LG_COMMAND_ENERGY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_ENERGY&#160;&#160;&#160;'e'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00079">79</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga7476ae7bbae7d8bbc85101df2481e928" name="ga7476ae7bbae7d8bbc85101df2481e928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7476ae7bbae7d8bbc85101df2481e928">&#9670;&#160;</a></span>LG_COMMAND_FAN_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_FAN_SPEED&#160;&#160;&#160;'f'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00081">81</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga64f924ab6a2a070627ca40bb8ea718a2" name="ga64f924ab6a2a070627ca40bb8ea718a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64f924ab6a2a070627ca40bb8ea718a2">&#9670;&#160;</a></span>LG_COMMAND_JET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_JET&#160;&#160;&#160;'j'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00078">78</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga96e898832dfdd0788ba0d188eefed0c9" name="ga96e898832dfdd0788ba0d188eefed0c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96e898832dfdd0788ba0d188eefed0c9">&#9670;&#160;</a></span>LG_COMMAND_LIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_LIGHT&#160;&#160;&#160;'l'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00080">80</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga8da7f66cacc866d8f7e50bfe1b80bab1" name="ga8da7f66cacc866d8f7e50bfe1b80bab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8da7f66cacc866d8f7e50bfe1b80bab1">&#9670;&#160;</a></span>LG_COMMAND_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_MODE&#160;&#160;&#160;'m'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00085">85</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga24fd67c4d0d7bf87fd4a7d788070a226" name="ga24fd67c4d0d7bf87fd4a7d788070a226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24fd67c4d0d7bf87fd4a7d788070a226">&#9670;&#160;</a></span>LG_COMMAND_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_OFF&#160;&#160;&#160;'0'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00074">74</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga79162224c70f14abcb2a2dba386148c1" name="ga79162224c70f14abcb2a2dba386148c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79162224c70f14abcb2a2dba386148c1">&#9670;&#160;</a></span>LG_COMMAND_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_ON&#160;&#160;&#160;'1'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00075">75</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gaded0337c0d938ef82caaf8c2f1c59283" name="gaded0337c0d938ef82caaf8c2f1c59283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaded0337c0d938ef82caaf8c2f1c59283">&#9670;&#160;</a></span>LG_COMMAND_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_SLEEP&#160;&#160;&#160;'S'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00086">86</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga82d5b518dba56f050e6563f22d9c2206" name="ga82d5b518dba56f050e6563f22d9c2206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82d5b518dba56f050e6563f22d9c2206">&#9670;&#160;</a></span>LG_COMMAND_SWING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_SWING&#160;&#160;&#160;'s'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00076">76</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gaee4c1f6351dff61efa70ac0f59c301b9" name="gaee4c1f6351dff61efa70ac0f59c301b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee4c1f6351dff61efa70ac0f59c301b9">&#9670;&#160;</a></span>LG_COMMAND_TEMPERATURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_TEMPERATURE&#160;&#160;&#160;'t'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00082">82</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gad15f415d50b1f65322b15ea607d718d7" name="gad15f415d50b1f65322b15ea607d718d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad15f415d50b1f65322b15ea607d718d7">&#9670;&#160;</a></span>LG_COMMAND_TEMPERATURE_MINUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_TEMPERATURE_MINUS&#160;&#160;&#160;'-'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00084">84</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga26bce5b8f0b1f61c21135f7ce116bd0e" name="ga26bce5b8f0b1f61c21135f7ce116bd0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26bce5b8f0b1f61c21135f7ce116bd0e">&#9670;&#160;</a></span>LG_COMMAND_TEMPERATURE_PLUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_TEMPERATURE_PLUS&#160;&#160;&#160;'+'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00083">83</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga2a765b54db1abe3e11c72f19feaa071f" name="ga2a765b54db1abe3e11c72f19feaa071f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a765b54db1abe3e11c72f19feaa071f">&#9670;&#160;</a></span>LG_COMMAND_TIMER_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_TIMER_OFF&#160;&#160;&#160;'O'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00088">88</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga414f526948aba8247f62b560d75834d6" name="ga414f526948aba8247f62b560d75834d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga414f526948aba8247f62b560d75834d6">&#9670;&#160;</a></span>LG_COMMAND_TIMER_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_COMMAND_TIMER_ON&#160;&#160;&#160;'T'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00087">87</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gaa04556b565d50612183d76a1cf17162a" name="gaa04556b565d50612183d76a1cf17162a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa04556b565d50612183d76a1cf17162a">&#9670;&#160;</a></span>LG_ENERGY_SAVING_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_ENERGY_SAVING_OFF&#160;&#160;&#160;0x1005</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00056">56</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga50a68c01f30d77719bd0965849eb9432" name="ga50a68c01f30d77719bd0965849eb9432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50a68c01f30d77719bd0965849eb9432">&#9670;&#160;</a></span>LG_ENERGY_SAVING_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_ENERGY_SAVING_ON&#160;&#160;&#160;0x1004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00055">55</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gac832ef74f7acce9703cf4bfe3af9c62c" name="gac832ef74f7acce9703cf4bfe3af9c62c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac832ef74f7acce9703cf4bfe3af9c62c">&#9670;&#160;</a></span>LG_JET_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_JET_ON&#160;&#160;&#160;0x1008</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00057">57</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gafc7cc7b8e3f42b30e478d80f917c917c" name="gafc7cc7b8e3f42b30e478d80f917c917c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc7cc7b8e3f42b30e478d80f917c917c">&#9670;&#160;</a></span>LG_LIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_LIGHT&#160;&#160;&#160;0xC00A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00067">67</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga7474777d5b8f60c2871b141c4c8febdc" name="ga7474777d5b8f60c2871b141c4c8febdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7474777d5b8f60c2871b141c4c8febdc">&#9670;&#160;</a></span>LG_MODE_AUTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_MODE_AUTO&#160;&#160;&#160;0x0B00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00053">53</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="gaae2e0db9a5ce4151112a6906bfb1090c" name="gaae2e0db9a5ce4151112a6906bfb1090c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae2e0db9a5ce4151112a6906bfb1090c">&#9670;&#160;</a></span>LG_MODE_COOLING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_MODE_COOLING&#160;&#160;&#160;0x0800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00050">50</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="gac49c9a2cf24d0bac6724167416236498" name="gac49c9a2cf24d0bac6724167416236498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac49c9a2cf24d0bac6724167416236498">&#9670;&#160;</a></span>LG_MODE_DEHUMIDIFIYING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_MODE_DEHUMIDIFIYING&#160;&#160;&#160;0x0990</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00051">51</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="gae82f0963f74d72085d63857a33a8abfe" name="gae82f0963f74d72085d63857a33a8abfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae82f0963f74d72085d63857a33a8abfe">&#9670;&#160;</a></span>LG_MODE_FAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_MODE_FAN&#160;&#160;&#160;0x0A30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00052">52</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga49b7354b9ea838746bd12d44a73cbbfe" name="ga49b7354b9ea838746bd12d44a73cbbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49b7354b9ea838746bd12d44a73cbbfe">&#9670;&#160;</a></span>LG_MODE_HEATING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_MODE_HEATING&#160;&#160;&#160;0x0C00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00054">54</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="gac55cb8592c8e9e1d0d9d47e8921862d0" name="gac55cb8592c8e9e1d0d9d47e8921862d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac55cb8592c8e9e1d0d9d47e8921862d0">&#9670;&#160;</a></span>LG_POWER_DOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_POWER_DOWN&#160;&#160;&#160;0xC005</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00066">66</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gafa12114ef5d9a8113d9b812e1c3f215d" name="gafa12114ef5d9a8113d9b812e1c3f215d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa12114ef5d9a8113d9b812e1c3f215d">&#9670;&#160;</a></span>LG_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_SLEEP&#160;&#160;&#160;0xA000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00064">64</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gae948545d5555a8e1661bf9ed84f8a5bd" name="gae948545d5555a8e1661bf9ed84f8a5bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae948545d5555a8e1661bf9ed84f8a5bd">&#9670;&#160;</a></span>LG_SWING_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_SWING_OFF&#160;&#160;&#160;0x1317</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00061">61</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gae2aa0cea45172493aff78b178429498b" name="gae2aa0cea45172493aff78b178429498b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2aa0cea45172493aff78b178429498b">&#9670;&#160;</a></span>LG_SWING_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_SWING_ON&#160;&#160;&#160;0x1316</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00060">60</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga2e4ee6b0d489a06eb1115213bf8055ed" name="ga2e4ee6b0d489a06eb1115213bf8055ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e4ee6b0d489a06eb1115213bf8055ed">&#9670;&#160;</a></span>LG_SWITCH_ON_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_SWITCH_ON_MASK&#160;&#160;&#160;0x0800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00049">49</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga953e35300b777bf9b39ecb1c97fbe92b" name="ga953e35300b777bf9b39ecb1c97fbe92b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga953e35300b777bf9b39ecb1c97fbe92b">&#9670;&#160;</a></span>LG_TIMER_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_TIMER_OFF&#160;&#160;&#160;0x9000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00063">63</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga0d3fa053a91e0ccdbf82607d6f191884" name="ga0d3fa053a91e0ccdbf82607d6f191884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d3fa053a91e0ccdbf82607d6f191884">&#9670;&#160;</a></span>LG_TIMER_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_TIMER_ON&#160;&#160;&#160;0x8000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00062">62</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="gac4018dd9d884ac5f47a72f8f97a30013" name="gac4018dd9d884ac5f47a72f8f97a30013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4018dd9d884ac5f47a72f8f97a30013">&#9670;&#160;</a></span>LG_WALL_SWING_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_WALL_SWING_OFF&#160;&#160;&#160;0x1315</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00059">59</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga6e9da9436e1330717c4e521c3274f9e7" name="ga6e9da9436e1330717c4e521c3274f9e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e9da9436e1330717c4e521c3274f9e7">&#9670;&#160;</a></span>LG_WALL_SWING_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LG_WALL_SWING_ON&#160;&#160;&#160;0x1314</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8h_source.html#l00058">58</a> del archivo <a class="el" href="ac__LG_8h_source.html">ac_LG.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga6d745a4e59f5d14e9983d174b6e9705a" name="ga6d745a4e59f5d14e9983d174b6e9705a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d745a4e59f5d14e9983d174b6e9705a">&#9670;&#160;</a></span>SIZE_OF_FAN_SPEED_MAPPING_TABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SIZE_OF_FAN_SPEED_MAPPING_TABLE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00060">60</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">Aircondition_LG::sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ga0210285f615ce3a1ac9b26fd1af51dd9" name="ga0210285f615ce3a1ac9b26fd1af51dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0210285f615ce3a1ac9b26fd1af51dd9">&#9670;&#160;</a></span>printMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Aircondition_LG::printMenu </td>
+          <td>(</td>
+          <td class="paramtype">Print *</td>          <td class="paramname"><span class="paramname"><em>aSerial</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00072">72</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>                                              {</div>
+<div class="line"><span class="lineno">   73</span>    aSerial-&gt;println();</div>
+<div class="line"><span class="lineno">   74</span>    aSerial-&gt;println();</div>
+<div class="line"><span class="lineno">   75</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;Type command and optional parameter without a separator&quot;</span>));</div>
+<div class="line"><span class="lineno">   76</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;0 Off&quot;</span>));</div>
+<div class="line"><span class="lineno">   77</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;1 On&quot;</span>));</div>
+<div class="line"><span class="lineno">   78</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;s Swing &lt;0 or 1&gt;&quot;</span>));</div>
+<div class="line"><span class="lineno">   79</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;a Auto clean &lt;0 or 1&gt;&quot;</span>));</div>
+<div class="line"><span class="lineno">   80</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;j Jet on&quot;</span>));</div>
+<div class="line"><span class="lineno">   81</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;e Energy saving &lt;0 or 1&gt;&quot;</span>));</div>
+<div class="line"><span class="lineno">   82</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;l Lights toggle&quot;</span>));</div>
+<div class="line"><span class="lineno">   83</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;f Fan speed &lt;0 to 2 or 3 for cycle&gt;&quot;</span>));</div>
+<div class="line"><span class="lineno">   84</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;t Temperature &lt;18 to 30&gt; degree&quot;</span>));</div>
+<div class="line"><span class="lineno">   85</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;+ Temperature + 1&quot;</span>));</div>
+<div class="line"><span class="lineno">   86</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;- Temperature - 1&quot;</span>));</div>
+<div class="line"><span class="lineno">   87</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;m &lt;c(ool) or a(uto) or d(ehumidifying) or h(eating) or f(an) mode&gt;&quot;</span>));</div>
+<div class="line"><span class="lineno">   88</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;S Sleep after &lt;0 to 420&gt; minutes&quot;</span>));</div>
+<div class="line"><span class="lineno">   89</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;T Timer on after &lt;0 to 1439&gt; minutes&quot;</span>));</div>
+<div class="line"><span class="lineno">   90</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;O Timer off after &lt;0 to 1439&gt; minutes&quot;</span>));</div>
+<div class="line"><span class="lineno">   91</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;C Clear all timer and sleep&quot;</span>));</div>
+<div class="line"><span class="lineno">   92</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;e.g. \&quot;s1\&quot; or \&quot;t23\&quot; or \&quot;mc\&quot; or \&quot;O60\&quot; or \&quot;+\&quot;&quot;</span>));</div>
+<div class="line"><span class="lineno">   93</span>    aSerial-&gt;println(F(<span class="stringliteral">&quot;No plausibility check is made!&quot;</span>));</div>
+<div class="line"><span class="lineno">   94</span>    aSerial-&gt;println();</div>
+<div class="line"><span class="lineno">   95</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga65bba14a0302268cc515831d37e95b7a" name="ga65bba14a0302268cc515831d37e95b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65bba14a0302268cc515831d37e95b7a">&#9670;&#160;</a></span>sendCommandAndParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Aircondition_LG::sendCommandAndParameter </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>aParameter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00102">102</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                                           {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">// Commands without parameter</span></div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">switch</span> (aCommand) {</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga24fd67c4d0d7bf87fd4a7d788070a226">LG_COMMAND_OFF</a>: <span class="comment">// off</span></div>
+<div class="line"><span class="lineno">  106</span>        <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gac55cb8592c8e9e1d0d9d47e8921862d0">LG_POWER_DOWN</a>);</div>
+<div class="line"><span class="lineno">  107</span>        <a class="code hl_variable" href="classAircondition__LG.html#a4550e9ef869119bdd82f3bbdbd0a4bf0">PowerIsOn</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga79162224c70f14abcb2a2dba386148c1">LG_COMMAND_ON</a>: <span class="comment">// on</span></div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classAircondition__LG.html#a4550e9ef869119bdd82f3bbdbd0a4bf0">PowerIsOn</a> = <span class="keyword">false</span>; <span class="comment">// set to false in order to suppress on bit</span></div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_function" href="#ga83d18e2597cc2ea78f25889bc6c060e3">sendTemperatureFanSpeedAndMode</a>();</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga64f924ab6a2a070627ca40bb8ea718a2">LG_COMMAND_JET</a>:</div>
+<div class="line"><span class="lineno">  116</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(F(<span class="stringliteral">&quot;Send jet on&quot;</span>));</div>
+<div class="line"><span class="lineno">  117</span>        <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gac832ef74f7acce9703cf4bfe3af9c62c">LG_JET_ON</a>);</div>
+<div class="line"><span class="lineno">  118</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga96e898832dfdd0788ba0d188eefed0c9">LG_COMMAND_LIGHT</a>:</div>
+<div class="line"><span class="lineno">  121</span>        <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gafc7cc7b8e3f42b30e478d80f917c917c">LG_LIGHT</a>);</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#gaf1ec2778dd50f24b0eee7e2141a74de2">LG_COMMAND_CLEAR_ALL</a>:</div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gabbff1ff71274f875aab9304e201697a9">LG_CLEAR_ALL</a>);</div>
+<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga26bce5b8f0b1f61c21135f7ce116bd0e">LG_COMMAND_TEMPERATURE_PLUS</a>:</div>
+<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">if</span> (18 &lt;= <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a> &amp;&amp; <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a> &lt;= 29) {</div>
+<div class="line"><span class="lineno">  130</span>            <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a>++;</div>
+<div class="line"><span class="lineno">  131</span>            <a class="code hl_function" href="#ga83d18e2597cc2ea78f25889bc6c060e3">sendTemperatureFanSpeedAndMode</a>();</div>
+<div class="line"><span class="lineno">  132</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  134</span>        }</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#gad15f415d50b1f65322b15ea607d718d7">LG_COMMAND_TEMPERATURE_MINUS</a>:</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">if</span> (19 &lt;= <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a> &amp;&amp; <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a> &lt;= 30) {</div>
+<div class="line"><span class="lineno">  139</span>            <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a>--;</div>
+<div class="line"><span class="lineno">  140</span>            <a class="code hl_function" href="#ga83d18e2597cc2ea78f25889bc6c060e3">sendTemperatureFanSpeedAndMode</a>();</div>
+<div class="line"><span class="lineno">  141</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_variable" href="classAircondition__LG.html#a4550e9ef869119bdd82f3bbdbd0a4bf0">PowerIsOn</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  151</span><span class="comment">     * Now the commands which require a parameter</span></div>
+<div class="line"><span class="lineno">  152</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (aParameter &lt; 0) {</div>
+<div class="line"><span class="lineno">  154</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Error: Parameter is less than 0&quot;</span>));</div>
+<div class="line"><span class="lineno">  155</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">switch</span> (aCommand) {</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga8da7f66cacc866d8f7e50bfe1b80bab1">LG_COMMAND_MODE</a>:</div>
+<div class="line"><span class="lineno">  160</span>        <a class="code hl_variable" href="classAircondition__LG.html#a953f8d7dd483a1c406cf808a9c1ffe9a">Mode</a> = aParameter + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  161</span>        <a class="code hl_function" href="#ga83d18e2597cc2ea78f25889bc6c060e3">sendTemperatureFanSpeedAndMode</a>();</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga82d5b518dba56f050e6563f22d9c2206">LG_COMMAND_SWING</a>:</div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Send air swing=&quot;</span>));</div>
+<div class="line"><span class="lineno">  166</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(aParameter);</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classAircondition__LG.html#aa4afac70cfc80f7915b26bbd1c269bc9">ACIsWallType</a>) {</div>
+<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">if</span> (aParameter) {</div>
+<div class="line"><span class="lineno">  169</span>                <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#ga6e9da9436e1330717c4e521c3274f9e7">LG_WALL_SWING_ON</a>);</div>
+<div class="line"><span class="lineno">  170</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  171</span>                <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gac4018dd9d884ac5f47a72f8f97a30013">LG_WALL_SWING_OFF</a>);</div>
+<div class="line"><span class="lineno">  172</span>            }</div>
+<div class="line"><span class="lineno">  173</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">if</span> (aParameter) {</div>
+<div class="line"><span class="lineno">  175</span>                <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gae2aa0cea45172493aff78b178429498b">LG_SWING_ON</a>);</div>
+<div class="line"><span class="lineno">  176</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  177</span>                <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gae948545d5555a8e1661bf9ed84f8a5bd">LG_SWING_OFF</a>);</div>
+<div class="line"><span class="lineno">  178</span>            }</div>
+<div class="line"><span class="lineno">  179</span>        }</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga718a9952e98c9ff0db43168edff9f9e1">LG_COMMAND_AUTO_CLEAN</a>:</div>
+<div class="line"><span class="lineno">  183</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Send auto clean=&quot;</span>));</div>
+<div class="line"><span class="lineno">  184</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(aParameter);</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">if</span> (aParameter) {</div>
+<div class="line"><span class="lineno">  186</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#ga3f6636d07bce14c9610e5acd74e4c32c">LG_AUTO_CLEAN_ON</a>);</div>
+<div class="line"><span class="lineno">  187</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  188</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#ga61b4e884ce7bb6f44749e52af3fe93dc">LG_AUTO_CLEAN_OFF</a>);</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga78b9d595527aac3bc74b16079f6a5875">LG_COMMAND_ENERGY</a>:</div>
+<div class="line"><span class="lineno">  193</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Send energy saving on=&quot;</span>));</div>
+<div class="line"><span class="lineno">  194</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(aParameter);</div>
+<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">if</span> (aParameter) {</div>
+<div class="line"><span class="lineno">  196</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#ga50a68c01f30d77719bd0965849eb9432">LG_ENERGY_SAVING_ON</a>);</div>
+<div class="line"><span class="lineno">  197</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  198</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gaa04556b565d50612183d76a1cf17162a">LG_ENERGY_SAVING_OFF</a>);</div>
+<div class="line"><span class="lineno">  199</span>        }</div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga7476ae7bbae7d8bbc85101df2481e928">LG_COMMAND_FAN_SPEED</a>:</div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">if</span> (aParameter &lt; <a class="code hl_define" href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a>) {</div>
+<div class="line"><span class="lineno">  204</span>            <a class="code hl_variable" href="classAircondition__LG.html#a285204d81a347cf3017ed98a60621b9e">FanIntensity</a> = aParameter;</div>
+<div class="line"><span class="lineno">  205</span>            <a class="code hl_function" href="#ga83d18e2597cc2ea78f25889bc6c060e3">sendTemperatureFanSpeedAndMode</a>();</div>
+<div class="line"><span class="lineno">  206</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#gaee4c1f6351dff61efa70ac0f59c301b9">LG_COMMAND_TEMPERATURE</a>:</div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">if</span> (18 &lt;= aParameter &amp;&amp; aParameter &lt;= 30) {</div>
+<div class="line"><span class="lineno">  213</span>            <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a> = aParameter;</div>
+<div class="line"><span class="lineno">  214</span>            <a class="code hl_function" href="#ga83d18e2597cc2ea78f25889bc6c060e3">sendTemperatureFanSpeedAndMode</a>();</div>
+<div class="line"><span class="lineno">  215</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  216</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  217</span>        }</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#gaded0337c0d938ef82caaf8c2f1c59283">LG_COMMAND_SLEEP</a>:</div>
+<div class="line"><span class="lineno">  221</span>        <span class="comment">// 420 = maximum I have recorded</span></div>
+<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">if</span> (aParameter &lt;= 420) {</div>
+<div class="line"><span class="lineno">  223</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#gafa12114ef5d9a8113d9b812e1c3f215d">LG_SLEEP</a> + aParameter);</div>
+<div class="line"><span class="lineno">  224</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  226</span>        }</div>
+<div class="line"><span class="lineno">  227</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga414f526948aba8247f62b560d75834d6">LG_COMMAND_TIMER_ON</a>:</div>
+<div class="line"><span class="lineno">  230</span>        <span class="comment">// 1440 = minutes of a day</span></div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">if</span> (aParameter &lt;= 1439) {</div>
+<div class="line"><span class="lineno">  232</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#ga0d3fa053a91e0ccdbf82607d6f191884">LG_TIMER_ON</a> + aParameter);</div>
+<div class="line"><span class="lineno">  233</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga2a765b54db1abe3e11c72f19feaa071f">LG_COMMAND_TIMER_OFF</a>:</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">if</span> (aParameter &lt;= 1439) {</div>
+<div class="line"><span class="lineno">  240</span>            <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(<a class="code hl_define" href="#ga953e35300b777bf9b39ecb1c97fbe92b">LG_TIMER_OFF</a> + aParameter);</div>
+<div class="line"><span class="lineno">  241</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  242</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  243</span>        }</div>
+<div class="line"><span class="lineno">  244</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  248</span>    }</div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  250</span>}</div>
+<div class="ttc" id="aIRremoteInt_8h_html_a093a1c04e9dd4d6845a48163554143a0"><div class="ttname"><a href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a></div><div class="ttdeci">#define IR_DEBUG_PRINT(...)</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00163">IRremoteInt.h:163</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_aebf95fa57eb370cfe65ce6a9728b6e1f"><div class="ttname"><a href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a></div><div class="ttdeci">#define IR_DEBUG_PRINTLN(...)</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00167">IRremoteInt.h:167</a></div></div>
+<div class="ttc" id="aclassAircondition__LG_html_a285204d81a347cf3017ed98a60621b9e"><div class="ttname"><a href="classAircondition__LG.html#a285204d81a347cf3017ed98a60621b9e">Aircondition_LG::FanIntensity</a></div><div class="ttdeci">uint8_t FanIntensity</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00131">ac_LG.h:131</a></div></div>
+<div class="ttc" id="aclassAircondition__LG_html_a4550e9ef869119bdd82f3bbdbd0a4bf0"><div class="ttname"><a href="classAircondition__LG.html#a4550e9ef869119bdd82f3bbdbd0a4bf0">Aircondition_LG::PowerIsOn</a></div><div class="ttdeci">bool PowerIsOn</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00128">ac_LG.h:128</a></div></div>
+<div class="ttc" id="aclassAircondition__LG_html_a5339d1ec7928c685eb345a50b0c3781f"><div class="ttname"><a href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Aircondition_LG::Temperature</a></div><div class="ttdeci">uint8_t Temperature</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00132">ac_LG.h:132</a></div></div>
+<div class="ttc" id="aclassAircondition__LG_html_a953f8d7dd483a1c406cf808a9c1ffe9a"><div class="ttname"><a href="classAircondition__LG.html#a953f8d7dd483a1c406cf808a9c1ffe9a">Aircondition_LG::Mode</a></div><div class="ttdeci">uint8_t Mode</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00133">ac_LG.h:133</a></div></div>
+<div class="ttc" id="aclassAircondition__LG_html_aa4afac70cfc80f7915b26bbd1c269bc9"><div class="ttname"><a href="classAircondition__LG.html#aa4afac70cfc80f7915b26bbd1c269bc9">Aircondition_LG::ACIsWallType</a></div><div class="ttdeci">bool ACIsWallType</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00127">ac_LG.h:127</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga0d3fa053a91e0ccdbf82607d6f191884"><div class="ttname"><a href="#ga0d3fa053a91e0ccdbf82607d6f191884">LG_TIMER_ON</a></div><div class="ttdeci">#define LG_TIMER_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00062">ac_LG.h:62</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga113704b3b19c8477635210341163bf9e"><div class="ttname"><a href="#ga113704b3b19c8477635210341163bf9e">Aircondition_LG::sendIRCommand</a></div><div class="ttdeci">void sendIRCommand(uint16_t aCommand)</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8hpp_source.html#l00252">ac_LG.hpp:252</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga24fd67c4d0d7bf87fd4a7d788070a226"><div class="ttname"><a href="#ga24fd67c4d0d7bf87fd4a7d788070a226">LG_COMMAND_OFF</a></div><div class="ttdeci">#define LG_COMMAND_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00074">ac_LG.h:74</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga26bce5b8f0b1f61c21135f7ce116bd0e"><div class="ttname"><a href="#ga26bce5b8f0b1f61c21135f7ce116bd0e">LG_COMMAND_TEMPERATURE_PLUS</a></div><div class="ttdeci">#define LG_COMMAND_TEMPERATURE_PLUS</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00083">ac_LG.h:83</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga2a765b54db1abe3e11c72f19feaa071f"><div class="ttname"><a href="#ga2a765b54db1abe3e11c72f19feaa071f">LG_COMMAND_TIMER_OFF</a></div><div class="ttdeci">#define LG_COMMAND_TIMER_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00088">ac_LG.h:88</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga3f6636d07bce14c9610e5acd74e4c32c"><div class="ttname"><a href="#ga3f6636d07bce14c9610e5acd74e4c32c">LG_AUTO_CLEAN_ON</a></div><div class="ttdeci">#define LG_AUTO_CLEAN_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00068">ac_LG.h:68</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga414f526948aba8247f62b560d75834d6"><div class="ttname"><a href="#ga414f526948aba8247f62b560d75834d6">LG_COMMAND_TIMER_ON</a></div><div class="ttdeci">#define LG_COMMAND_TIMER_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00087">ac_LG.h:87</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga50a68c01f30d77719bd0965849eb9432"><div class="ttname"><a href="#ga50a68c01f30d77719bd0965849eb9432">LG_ENERGY_SAVING_ON</a></div><div class="ttdeci">#define LG_ENERGY_SAVING_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00055">ac_LG.h:55</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga61b4e884ce7bb6f44749e52af3fe93dc"><div class="ttname"><a href="#ga61b4e884ce7bb6f44749e52af3fe93dc">LG_AUTO_CLEAN_OFF</a></div><div class="ttdeci">#define LG_AUTO_CLEAN_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00069">ac_LG.h:69</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga64f924ab6a2a070627ca40bb8ea718a2"><div class="ttname"><a href="#ga64f924ab6a2a070627ca40bb8ea718a2">LG_COMMAND_JET</a></div><div class="ttdeci">#define LG_COMMAND_JET</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00078">ac_LG.h:78</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga6d745a4e59f5d14e9983d174b6e9705a"><div class="ttname"><a href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a></div><div class="ttdeci">#define SIZE_OF_FAN_SPEED_MAPPING_TABLE</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8hpp_source.html#l00060">ac_LG.hpp:60</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga6e9da9436e1330717c4e521c3274f9e7"><div class="ttname"><a href="#ga6e9da9436e1330717c4e521c3274f9e7">LG_WALL_SWING_ON</a></div><div class="ttdeci">#define LG_WALL_SWING_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00058">ac_LG.h:58</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga718a9952e98c9ff0db43168edff9f9e1"><div class="ttname"><a href="#ga718a9952e98c9ff0db43168edff9f9e1">LG_COMMAND_AUTO_CLEAN</a></div><div class="ttdeci">#define LG_COMMAND_AUTO_CLEAN</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00077">ac_LG.h:77</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga7476ae7bbae7d8bbc85101df2481e928"><div class="ttname"><a href="#ga7476ae7bbae7d8bbc85101df2481e928">LG_COMMAND_FAN_SPEED</a></div><div class="ttdeci">#define LG_COMMAND_FAN_SPEED</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00081">ac_LG.h:81</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga78b9d595527aac3bc74b16079f6a5875"><div class="ttname"><a href="#ga78b9d595527aac3bc74b16079f6a5875">LG_COMMAND_ENERGY</a></div><div class="ttdeci">#define LG_COMMAND_ENERGY</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00079">ac_LG.h:79</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga79162224c70f14abcb2a2dba386148c1"><div class="ttname"><a href="#ga79162224c70f14abcb2a2dba386148c1">LG_COMMAND_ON</a></div><div class="ttdeci">#define LG_COMMAND_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00075">ac_LG.h:75</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga82d5b518dba56f050e6563f22d9c2206"><div class="ttname"><a href="#ga82d5b518dba56f050e6563f22d9c2206">LG_COMMAND_SWING</a></div><div class="ttdeci">#define LG_COMMAND_SWING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00076">ac_LG.h:76</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga83d18e2597cc2ea78f25889bc6c060e3"><div class="ttname"><a href="#ga83d18e2597cc2ea78f25889bc6c060e3">Aircondition_LG::sendTemperatureFanSpeedAndMode</a></div><div class="ttdeci">void sendTemperatureFanSpeedAndMode()</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8hpp_source.html#l00267">ac_LG.hpp:267</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga8da7f66cacc866d8f7e50bfe1b80bab1"><div class="ttname"><a href="#ga8da7f66cacc866d8f7e50bfe1b80bab1">LG_COMMAND_MODE</a></div><div class="ttdeci">#define LG_COMMAND_MODE</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00085">ac_LG.h:85</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga953e35300b777bf9b39ecb1c97fbe92b"><div class="ttname"><a href="#ga953e35300b777bf9b39ecb1c97fbe92b">LG_TIMER_OFF</a></div><div class="ttdeci">#define LG_TIMER_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00063">ac_LG.h:63</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga96e898832dfdd0788ba0d188eefed0c9"><div class="ttname"><a href="#ga96e898832dfdd0788ba0d188eefed0c9">LG_COMMAND_LIGHT</a></div><div class="ttdeci">#define LG_COMMAND_LIGHT</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00080">ac_LG.h:80</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gaa04556b565d50612183d76a1cf17162a"><div class="ttname"><a href="#gaa04556b565d50612183d76a1cf17162a">LG_ENERGY_SAVING_OFF</a></div><div class="ttdeci">#define LG_ENERGY_SAVING_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00056">ac_LG.h:56</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gabbff1ff71274f875aab9304e201697a9"><div class="ttname"><a href="#gabbff1ff71274f875aab9304e201697a9">LG_CLEAR_ALL</a></div><div class="ttdeci">#define LG_CLEAR_ALL</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00065">ac_LG.h:65</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gac4018dd9d884ac5f47a72f8f97a30013"><div class="ttname"><a href="#gac4018dd9d884ac5f47a72f8f97a30013">LG_WALL_SWING_OFF</a></div><div class="ttdeci">#define LG_WALL_SWING_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00059">ac_LG.h:59</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gac55cb8592c8e9e1d0d9d47e8921862d0"><div class="ttname"><a href="#gac55cb8592c8e9e1d0d9d47e8921862d0">LG_POWER_DOWN</a></div><div class="ttdeci">#define LG_POWER_DOWN</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00066">ac_LG.h:66</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gac832ef74f7acce9703cf4bfe3af9c62c"><div class="ttname"><a href="#gac832ef74f7acce9703cf4bfe3af9c62c">LG_JET_ON</a></div><div class="ttdeci">#define LG_JET_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00057">ac_LG.h:57</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gad15f415d50b1f65322b15ea607d718d7"><div class="ttname"><a href="#gad15f415d50b1f65322b15ea607d718d7">LG_COMMAND_TEMPERATURE_MINUS</a></div><div class="ttdeci">#define LG_COMMAND_TEMPERATURE_MINUS</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00084">ac_LG.h:84</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gaded0337c0d938ef82caaf8c2f1c59283"><div class="ttname"><a href="#gaded0337c0d938ef82caaf8c2f1c59283">LG_COMMAND_SLEEP</a></div><div class="ttdeci">#define LG_COMMAND_SLEEP</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00086">ac_LG.h:86</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gae2aa0cea45172493aff78b178429498b"><div class="ttname"><a href="#gae2aa0cea45172493aff78b178429498b">LG_SWING_ON</a></div><div class="ttdeci">#define LG_SWING_ON</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00060">ac_LG.h:60</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gae948545d5555a8e1661bf9ed84f8a5bd"><div class="ttname"><a href="#gae948545d5555a8e1661bf9ed84f8a5bd">LG_SWING_OFF</a></div><div class="ttdeci">#define LG_SWING_OFF</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00061">ac_LG.h:61</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gaee4c1f6351dff61efa70ac0f59c301b9"><div class="ttname"><a href="#gaee4c1f6351dff61efa70ac0f59c301b9">LG_COMMAND_TEMPERATURE</a></div><div class="ttdeci">#define LG_COMMAND_TEMPERATURE</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00082">ac_LG.h:82</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gaf1ec2778dd50f24b0eee7e2141a74de2"><div class="ttname"><a href="#gaf1ec2778dd50f24b0eee7e2141a74de2">LG_COMMAND_CLEAR_ALL</a></div><div class="ttdeci">#define LG_COMMAND_CLEAR_ALL</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00089">ac_LG.h:89</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gafa12114ef5d9a8113d9b812e1c3f215d"><div class="ttname"><a href="#gafa12114ef5d9a8113d9b812e1c3f215d">LG_SLEEP</a></div><div class="ttdeci">#define LG_SLEEP</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00064">ac_LG.h:64</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gafc7cc7b8e3f42b30e478d80f917c917c"><div class="ttname"><a href="#gafc7cc7b8e3f42b30e478d80f917c917c">LG_LIGHT</a></div><div class="ttdeci">#define LG_LIGHT</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00067">ac_LG.h:67</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="ac__LG_8h_source.html#l00127">ACIsWallType</a>, <a class="el" href="ac__LG_8h_source.html#l00131">FanIntensity</a>, <a class="el" href="IRremoteInt_8h_source.html#l00163">IR_DEBUG_PRINT</a>, <a class="el" href="IRremoteInt_8h_source.html#l00167">IR_DEBUG_PRINTLN</a>, <a class="el" href="ac__LG_8h_source.html#l00069">LG_AUTO_CLEAN_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00068">LG_AUTO_CLEAN_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00065">LG_CLEAR_ALL</a>, <a class="el" href="ac__LG_8h_source.html#l00077">LG_COMMAND_AUTO_CLEAN</a>, <a class="el" href="ac__LG_8h_source.html#l00089">LG_COMMAND_CLEAR_ALL</a>, <a class="el" href="ac__LG_8h_source.html#l00079">LG_COMMAND_ENERGY</a>, <a class="el" href="ac__LG_8h_source.html#l00081">LG_COMMAND_FAN_SPEED</a>, <a class="el" href="ac__LG_8h_source.html#l00078">LG_COMMAND_JET</a>, <a class="el" href="ac__LG_8h_source.html#l00080">LG_COMMAND_LIGHT</a>, <a class="el" href="ac__LG_8h_source.html#l00085">LG_COMMAND_MODE</a>, <a class="el" href="ac__LG_8h_source.html#l00074">LG_COMMAND_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00075">LG_COMMAND_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00086">LG_COMMAND_SLEEP</a>, <a class="el" href="ac__LG_8h_source.html#l00076">LG_COMMAND_SWING</a>, <a class="el" href="ac__LG_8h_source.html#l00082">LG_COMMAND_TEMPERATURE</a>, <a class="el" href="ac__LG_8h_source.html#l00084">LG_COMMAND_TEMPERATURE_MINUS</a>, <a class="el" href="ac__LG_8h_source.html#l00083">LG_COMMAND_TEMPERATURE_PLUS</a>, <a class="el" href="ac__LG_8h_source.html#l00088">LG_COMMAND_TIMER_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00087">LG_COMMAND_TIMER_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00056">LG_ENERGY_SAVING_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00055">LG_ENERGY_SAVING_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00057">LG_JET_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00067">LG_LIGHT</a>, <a class="el" href="ac__LG_8h_source.html#l00066">LG_POWER_DOWN</a>, <a class="el" href="ac__LG_8h_source.html#l00064">LG_SLEEP</a>, <a class="el" href="ac__LG_8h_source.html#l00061">LG_SWING_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00060">LG_SWING_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00063">LG_TIMER_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00062">LG_TIMER_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00059">LG_WALL_SWING_OFF</a>, <a class="el" href="ac__LG_8h_source.html#l00058">LG_WALL_SWING_ON</a>, <a class="el" href="ac__LG_8h_source.html#l00133">Mode</a>, <a class="el" href="ac__LG_8h_source.html#l00128">PowerIsOn</a>, <a class="el" href="ac__LG_8hpp_source.html#l00252">sendIRCommand()</a>, <a class="el" href="ac__LG_8hpp_source.html#l00267">sendTemperatureFanSpeedAndMode()</a>, <a class="el" href="ac__LG_8hpp_source.html#l00060">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a> y <a class="el" href="ac__LG_8h_source.html#l00132">Temperature</a>.</p>
+
+</div>
+</div>
+<a id="ga113704b3b19c8477635210341163bf9e" name="ga113704b3b19c8477635210341163bf9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga113704b3b19c8477635210341163bf9e">&#9670;&#160;</a></span>sendIRCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Aircondition_LG::sendIRCommand </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00252">252</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>                                                     {</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span><span class="preprocessor">#if defined(LOCAL_INFO)</span></div>
+<div class="line"><span class="lineno">  255</span>    Serial.print(F(<span class="stringliteral">&quot;Send code=0x&quot;</span>));</div>
+<div class="line"><span class="lineno">  256</span>    Serial.print(aCommand, HEX);</div>
+<div class="line"><span class="lineno">  257</span>    Serial.print(F(<span class="stringliteral">&quot; | 0b&quot;</span>));</div>
+<div class="line"><span class="lineno">  258</span>    Serial.println(aCommand, BIN);</div>
+<div class="line"><span class="lineno">  259</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_variable" href="group__Sending.html#gafba8232b747be85f72c1c4612780d5cf">IrSender</a>.<a class="code hl_function" href="group__Decoder.html#gad8b3a7ce5ae5adb098ca0dc004b7b71b">sendLG2</a>((uint8_t) <a class="code hl_define" href="#ga23c78d99597e1fb79900c2c2162703ed">LG_ADDRESS</a>, aCommand, 0);</div>
+<div class="line"><span class="lineno">  262</span>}</div>
+<div class="ttc" id="agroup__Airconditoners_html_ga23c78d99597e1fb79900c2c2162703ed"><div class="ttname"><a href="#ga23c78d99597e1fb79900c2c2162703ed">LG_ADDRESS</a></div><div class="ttdeci">#define LG_ADDRESS</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00042">ac_LG.h:42</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gad8b3a7ce5ae5adb098ca0dc004b7b71b"><div class="ttname"><a href="group__Decoder.html#gad8b3a7ce5ae5adb098ca0dc004b7b71b">IRsend::sendLG2</a></div><div class="ttdeci">void sendLG2(uint8_t aAddress, uint16_t aCommand, int_fast8_t aNumberOfRepeats)</div><div class="ttdef"><b>Definition</b> <a href="ir__LG_8hpp_source.html#l00172">ir_LG.hpp:172</a></div></div>
+<div class="ttc" id="agroup__Sending_html_gafba8232b747be85f72c1c4612780d5cf"><div class="ttname"><a href="group__Sending.html#gafba8232b747be85f72c1c4612780d5cf">IrSender</a></div><div class="ttdeci">IRsend IrSender</div><div class="ttdef"><b>Definition</b> <a href="IRSend_8hpp_source.html#l00065">IRSend.hpp:65</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="IRSend_8hpp_source.html#l00065">IrSender</a> y <a class="el" href="ac__LG_8h_source.html#l00042">LG_ADDRESS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">sendCommandAndParameter()</a> y <a class="el" href="ac__LG_8hpp_source.html#l00267">sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga83d18e2597cc2ea78f25889bc6c060e3" name="ga83d18e2597cc2ea78f25889bc6c060e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83d18e2597cc2ea78f25889bc6c060e3">&#9670;&#160;</a></span>sendTemperatureFanSpeedAndMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Aircondition_LG::sendTemperatureFanSpeedAndMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00267">267</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>                                                     {</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>    uint8_t tTemperature = <a class="code hl_variable" href="classAircondition__LG.html#a5339d1ec7928c685eb345a50b0c3781f">Temperature</a>;</div>
+<div class="line"><span class="lineno">  270</span><span class="preprocessor">#if defined(LOCAL_INFO)</span></div>
+<div class="line"><span class="lineno">  271</span>    Serial.print(F(<span class="stringliteral">&quot;Send temperature=&quot;</span>));</div>
+<div class="line"><span class="lineno">  272</span>    Serial.print(tTemperature);</div>
+<div class="line"><span class="lineno">  273</span>    Serial.print(F(<span class="stringliteral">&quot; fan intensity=&quot;</span>));</div>
+<div class="line"><span class="lineno">  274</span>    Serial.print(<a class="code hl_variable" href="classAircondition__LG.html#a285204d81a347cf3017ed98a60621b9e">FanIntensity</a>);</div>
+<div class="line"><span class="lineno">  275</span>    Serial.print(F(<span class="stringliteral">&quot; mode=&quot;</span>));</div>
+<div class="line"><span class="lineno">  276</span>    Serial.println((<span class="keywordtype">char</span> )<a class="code hl_variable" href="classAircondition__LG.html#a953f8d7dd483a1c406cf808a9c1ffe9a">Mode</a>);</div>
+<div class="line"><span class="lineno">  277</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>    WordUnion tIRCommand;</div>
+<div class="line"><span class="lineno">  280</span>    tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#ac72da7d551c05ed98fe75c8d239d9e23">UWord</a> = 0;</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>    <span class="comment">// Temperature is coded in the upper nibble of the LowByte</span></div>
+<div class="line"><span class="lineno">  283</span>    tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ade13e75ba3678d0b5b0590906156d9ec">LowByte</a> = ((tTemperature - 15) &lt;&lt; 4); <span class="comment">// 16 -&gt; 0x00, 18 -&gt; 0x30, 30 -&gt; 0xF0</span></div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="comment">// Fan intensity is coded in the lower nibble of the LowByte</span></div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classAircondition__LG.html#aa4afac70cfc80f7915b26bbd1c269bc9">ACIsWallType</a>) {</div>
+<div class="line"><span class="lineno">  287</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ade13e75ba3678d0b5b0590906156d9ec">LowByte</a> |= <a class="code hl_variable" href="#ga06d1cb86267a1aa639caa670ba813600">AC_FAN_WALL</a>[<a class="code hl_variable" href="classAircondition__LG.html#a285204d81a347cf3017ed98a60621b9e">FanIntensity</a>];</div>
+<div class="line"><span class="lineno">  288</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  289</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ade13e75ba3678d0b5b0590906156d9ec">LowByte</a> |= <a class="code hl_variable" href="#ga9e4c45659819db87363cdef65209ee56">AC_FAN_TOWER</a>[<a class="code hl_variable" href="classAircondition__LG.html#a285204d81a347cf3017ed98a60621b9e">FanIntensity</a>];</div>
+<div class="line"><span class="lineno">  290</span>    }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classAircondition__LG.html#a953f8d7dd483a1c406cf808a9c1ffe9a">Mode</a>) {</div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#gad40cb179d8947abb261c66c4025d6f5c">AC_MODE_COOLING</a>:</div>
+<div class="line"><span class="lineno">  294</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ae019b50052979f252f4a9f209ed4e618">HighByte</a> = <a class="code hl_define" href="#gaae2e0db9a5ce4151112a6906bfb1090c">LG_MODE_COOLING</a> &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  295</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga4d1f100bd13d68bbff9165cfeb1d011c">AC_MODE_HEATING</a>:</div>
+<div class="line"><span class="lineno">  297</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ae019b50052979f252f4a9f209ed4e618">HighByte</a> = <a class="code hl_define" href="#ga49b7354b9ea838746bd12d44a73cbbfe">LG_MODE_HEATING</a> &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga5e3517bd87cdd71f3faedd5648f3869a">AC_MODE_AUTO</a>:</div>
+<div class="line"><span class="lineno">  300</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ae019b50052979f252f4a9f209ed4e618">HighByte</a> = <a class="code hl_define" href="#ga7474777d5b8f60c2871b141c4c8febdc">LG_MODE_AUTO</a> &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#gaa95639ff20eae994eac17c04cd1af46a">AC_MODE_FAN</a>:</div>
+<div class="line"><span class="lineno">  303</span>        tTemperature = 18;</div>
+<div class="line"><span class="lineno">  304</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ae019b50052979f252f4a9f209ed4e618">HighByte</a> = <a class="code hl_define" href="#gae82f0963f74d72085d63857a33a8abfe">LG_MODE_FAN</a> &gt;&gt; 8;</div>
+<div class="line"><span class="lineno">  305</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  306</span>    <span class="keywordflow">case</span> <a class="code hl_define" href="#ga3c73605f2e327ae30c0cb5cb90fdade5">AC_MODE_DEHUMIDIFIYING</a>:</div>
+<div class="line"><span class="lineno">  307</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#ac72da7d551c05ed98fe75c8d239d9e23">UWord</a> = <a class="code hl_define" href="#gac49c9a2cf24d0bac6724167416236498">LG_MODE_DEHUMIDIFIYING</a>;</div>
+<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  310</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+<div class="line"><span class="lineno">  312</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classAircondition__LG.html#a4550e9ef869119bdd82f3bbdbd0a4bf0">PowerIsOn</a>) {</div>
+<div class="line"><span class="lineno">  313</span>        <span class="comment">// switch on requires masked bit</span></div>
+<div class="line"><span class="lineno">  314</span>        tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">UByte</a>.<a class="code hl_variable" href="unionWordUnion.html#ae019b50052979f252f4a9f209ed4e618">HighByte</a> &amp;= ~(<a class="code hl_define" href="#ga2e4ee6b0d489a06eb1115213bf8055ed">LG_SWITCH_ON_MASK</a> &gt;&gt; 8);</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
+<div class="line"><span class="lineno">  316</span>    <a class="code hl_variable" href="classAircondition__LG.html#a4550e9ef869119bdd82f3bbdbd0a4bf0">PowerIsOn</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <a class="code hl_function" href="#ga113704b3b19c8477635210341163bf9e">sendIRCommand</a>(tIRCommand.<a class="code hl_variable" href="unionWordUnion.html#ac72da7d551c05ed98fe75c8d239d9e23">UWord</a>);</div>
+<div class="line"><span class="lineno">  319</span>}</div>
+<div class="ttc" id="agroup__Airconditoners_html_ga06d1cb86267a1aa639caa670ba813600"><div class="ttname"><a href="#ga06d1cb86267a1aa639caa670ba813600">AC_FAN_WALL</a></div><div class="ttdeci">const int AC_FAN_WALL[SIZE_OF_FAN_SPEED_MAPPING_TABLE]</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8hpp_source.html#l00062">ac_LG.hpp:62</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga2e4ee6b0d489a06eb1115213bf8055ed"><div class="ttname"><a href="#ga2e4ee6b0d489a06eb1115213bf8055ed">LG_SWITCH_ON_MASK</a></div><div class="ttdeci">#define LG_SWITCH_ON_MASK</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00049">ac_LG.h:49</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga3c73605f2e327ae30c0cb5cb90fdade5"><div class="ttname"><a href="#ga3c73605f2e327ae30c0cb5cb90fdade5">AC_MODE_DEHUMIDIFIYING</a></div><div class="ttdeci">#define AC_MODE_DEHUMIDIFIYING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00095">ac_LG.h:95</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga49b7354b9ea838746bd12d44a73cbbfe"><div class="ttname"><a href="#ga49b7354b9ea838746bd12d44a73cbbfe">LG_MODE_HEATING</a></div><div class="ttdeci">#define LG_MODE_HEATING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00054">ac_LG.h:54</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga4d1f100bd13d68bbff9165cfeb1d011c"><div class="ttname"><a href="#ga4d1f100bd13d68bbff9165cfeb1d011c">AC_MODE_HEATING</a></div><div class="ttdeci">#define AC_MODE_HEATING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00098">ac_LG.h:98</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga5e3517bd87cdd71f3faedd5648f3869a"><div class="ttname"><a href="#ga5e3517bd87cdd71f3faedd5648f3869a">AC_MODE_AUTO</a></div><div class="ttdeci">#define AC_MODE_AUTO</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00097">ac_LG.h:97</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga7474777d5b8f60c2871b141c4c8febdc"><div class="ttname"><a href="#ga7474777d5b8f60c2871b141c4c8febdc">LG_MODE_AUTO</a></div><div class="ttdeci">#define LG_MODE_AUTO</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00053">ac_LG.h:53</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_ga9e4c45659819db87363cdef65209ee56"><div class="ttname"><a href="#ga9e4c45659819db87363cdef65209ee56">AC_FAN_TOWER</a></div><div class="ttdeci">const int AC_FAN_TOWER[SIZE_OF_FAN_SPEED_MAPPING_TABLE]</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8hpp_source.html#l00061">ac_LG.hpp:61</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gaa95639ff20eae994eac17c04cd1af46a"><div class="ttname"><a href="#gaa95639ff20eae994eac17c04cd1af46a">AC_MODE_FAN</a></div><div class="ttdeci">#define AC_MODE_FAN</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00096">ac_LG.h:96</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gaae2e0db9a5ce4151112a6906bfb1090c"><div class="ttname"><a href="#gaae2e0db9a5ce4151112a6906bfb1090c">LG_MODE_COOLING</a></div><div class="ttdeci">#define LG_MODE_COOLING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00050">ac_LG.h:50</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gac49c9a2cf24d0bac6724167416236498"><div class="ttname"><a href="#gac49c9a2cf24d0bac6724167416236498">LG_MODE_DEHUMIDIFIYING</a></div><div class="ttdeci">#define LG_MODE_DEHUMIDIFIYING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00051">ac_LG.h:51</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gad40cb179d8947abb261c66c4025d6f5c"><div class="ttname"><a href="#gad40cb179d8947abb261c66c4025d6f5c">AC_MODE_COOLING</a></div><div class="ttdeci">#define AC_MODE_COOLING</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00094">ac_LG.h:94</a></div></div>
+<div class="ttc" id="agroup__Airconditoners_html_gae82f0963f74d72085d63857a33a8abfe"><div class="ttname"><a href="#gae82f0963f74d72085d63857a33a8abfe">LG_MODE_FAN</a></div><div class="ttdeci">#define LG_MODE_FAN</div><div class="ttdef"><b>Definition</b> <a href="ac__LG_8h_source.html#l00052">ac_LG.h:52</a></div></div>
+<div class="ttc" id="aunionWordUnion_html_a65f48edc7d7986ece5891fa2ba46a33b"><div class="ttname"><a href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">WordUnion::UByte</a></div><div class="ttdeci">struct WordUnion::@324203241206374305152304252076062336236075371170 UByte</div></div>
+<div class="ttc" id="aunionWordUnion_html_ac72da7d551c05ed98fe75c8d239d9e23"><div class="ttname"><a href="unionWordUnion.html#ac72da7d551c05ed98fe75c8d239d9e23">WordUnion::UWord</a></div><div class="ttdeci">uint16_t UWord</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00047">LongUnion.h:47</a></div></div>
+<div class="ttc" id="aunionWordUnion_html_ade13e75ba3678d0b5b0590906156d9ec"><div class="ttname"><a href="unionWordUnion.html#ade13e75ba3678d0b5b0590906156d9ec">WordUnion::LowByte</a></div><div class="ttdeci">uint8_t LowByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00038">LongUnion.h:38</a></div></div>
+<div class="ttc" id="aunionWordUnion_html_ae019b50052979f252f4a9f209ed4e618"><div class="ttname"><a href="unionWordUnion.html#ae019b50052979f252f4a9f209ed4e618">WordUnion::HighByte</a></div><div class="ttdeci">uint8_t HighByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00039">LongUnion.h:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="ac__LG_8hpp_source.html#l00061">AC_FAN_TOWER</a>, <a class="el" href="ac__LG_8hpp_source.html#l00062">AC_FAN_WALL</a>, <a class="el" href="ac__LG_8h_source.html#l00097">AC_MODE_AUTO</a>, <a class="el" href="ac__LG_8h_source.html#l00094">AC_MODE_COOLING</a>, <a class="el" href="ac__LG_8h_source.html#l00095">AC_MODE_DEHUMIDIFIYING</a>, <a class="el" href="ac__LG_8h_source.html#l00096">AC_MODE_FAN</a>, <a class="el" href="ac__LG_8h_source.html#l00098">AC_MODE_HEATING</a>, <a class="el" href="ac__LG_8h_source.html#l00127">ACIsWallType</a>, <a class="el" href="ac__LG_8h_source.html#l00131">FanIntensity</a>, <a class="el" href="LongUnion_8h_source.html#l00039">WordUnion::HighByte</a>, <a class="el" href="ac__LG_8h_source.html#l00053">LG_MODE_AUTO</a>, <a class="el" href="ac__LG_8h_source.html#l00050">LG_MODE_COOLING</a>, <a class="el" href="ac__LG_8h_source.html#l00051">LG_MODE_DEHUMIDIFIYING</a>, <a class="el" href="ac__LG_8h_source.html#l00052">LG_MODE_FAN</a>, <a class="el" href="ac__LG_8h_source.html#l00054">LG_MODE_HEATING</a>, <a class="el" href="ac__LG_8h_source.html#l00049">LG_SWITCH_ON_MASK</a>, <a class="el" href="LongUnion_8h_source.html#l00038">WordUnion::LowByte</a>, <a class="el" href="ac__LG_8h_source.html#l00133">Mode</a>, <a class="el" href="ac__LG_8h_source.html#l00128">PowerIsOn</a>, <a class="el" href="ac__LG_8hpp_source.html#l00252">sendIRCommand()</a>, <a class="el" href="ac__LG_8h_source.html#l00132">Temperature</a>, <a class="el" href="unionWordUnion.html#a65f48edc7d7986ece5891fa2ba46a33b">WordUnion::UByte</a> y <a class="el" href="LongUnion_8h_source.html#l00047">WordUnion::UWord</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00102">sendCommandAndParameter()</a>.</p>
+
+</div>
+</div>
+<a id="ga75056e4f4dfa299b6f328df460f3f174" name="ga75056e4f4dfa299b6f328df460f3f174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga75056e4f4dfa299b6f328df460f3f174">&#9670;&#160;</a></span>setType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Aircondition_LG::setType </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>aIsWallType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00064">64</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                              {</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="classAircondition__LG.html#aa4afac70cfc80f7915b26bbd1c269bc9">ACIsWallType</a> = aIsWallType;</div>
+<div class="line"><span class="lineno">   66</span><span class="preprocessor">#if defined(LOCAL_INFO)</span></div>
+<div class="line"><span class="lineno">   67</span>    Serial.print(F(<span class="stringliteral">&quot;Set wall type to &quot;</span>));</div>
+<div class="line"><span class="lineno">   68</span>    Serial.println(aIsWallType);</div>
+<div class="line"><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   70</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="ac__LG_8h_source.html#l00127">ACIsWallType</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ga9e4c45659819db87363cdef65209ee56" name="ga9e4c45659819db87363cdef65209ee56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e4c45659819db87363cdef65209ee56">&#9670;&#160;</a></span>AC_FAN_TOWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int AC_FAN_TOWER[<a class="el" href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a>] = { 0, 4, 6, 6 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00061">61</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{ 0, 4, 6, 6 }; <span class="comment">// last dummy entry to avoid out of bounds access</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+<a id="ga06d1cb86267a1aa639caa670ba813600" name="ga06d1cb86267a1aa639caa670ba813600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga06d1cb86267a1aa639caa670ba813600">&#9670;&#160;</a></span>AC_FAN_WALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int AC_FAN_WALL[<a class="el" href="#ga6d745a4e59f5d14e9983d174b6e9705a">SIZE_OF_FAN_SPEED_MAPPING_TABLE</a>] = { 0, 2, 4, 5 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ac__LG_8hpp_source.html#l00062">62</a> del archivo <a class="el" href="ac__LG_8hpp_source.html">ac_LG.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{ 0, 2, 4, 5 }; <span class="comment">// 0 -&gt; low, 4 high, 5 -&gt; cycle</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="ac__LG_8hpp_source.html#l00267">Aircondition_LG::sendTemperatureFanSpeedAndMode()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

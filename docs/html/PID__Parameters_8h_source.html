@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/Custom_Libraries/PID_Parameters.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('PID__Parameters_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PID_Parameters.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="PID__Parameters_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*Este archivo, y su correspondiente &quot;.cpp&quot; son para establecer los parámetros que controlan el </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">funcionamiento del control PID*/</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;lvgl.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="ui_8h.html">ui.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// ==============================</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Estructuras de parámetros PID</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// ==============================</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// Valores actuales (CURR)</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structPID__CURR.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPID__CURR.html">PID_CURR</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a7e0b01611579675de8c79b5ad7f59c43">   16</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a7e0b01611579675de8c79b5ad7f59c43">KpvvCurr</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ae456955304f534076d6eed9e82be4954">   17</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ae456955304f534076d6eed9e82be4954">KpvhCurr</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ab453add7e9f65e7f7cc737e6455f5bdf">   18</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ab453add7e9f65e7f7cc737e6455f5bdf">KivvCurr</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a4c38a543e60fc41ef3ef08e20d4406b7">   19</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a4c38a543e60fc41ef3ef08e20d4406b7">KivhCurr</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ae221a3874f05da1f7e344215e81a262b">   20</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ae221a3874f05da1f7e344215e81a262b">KdvvCurr</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a6a3362e6106341acbb67cde2b8345ad7">   21</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a6a3362e6106341acbb67cde2b8345ad7">KdvhCurr</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structPID__CURR.html#aab346837cc9cafe66cde7e0305f79546">   23</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#aab346837cc9cafe66cde7e0305f79546">KphvCurr</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structPID__CURR.html#aa343b30147b4de808c04990e8fec36f4">   24</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#aa343b30147b4de808c04990e8fec36f4">KphhCurr</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ae1d0cbaf4e6c34766ddf39812b556f16">   25</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ae1d0cbaf4e6c34766ddf39812b556f16">KihvCurr</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a429a0e090460a0ce8b24495a58960607">   26</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a429a0e090460a0ce8b24495a58960607">KihhCurr</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ae85d8b4bc43e55e8c9c94ebb6cc1f43c">   27</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ae85d8b4bc43e55e8c9c94ebb6cc1f43c">KdhvCurr</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a29a25ab145b8a2c10b2b5271a3ca9a33">   28</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a29a25ab145b8a2c10b2b5271a3ca9a33">KdhhCurr</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a66b1c3e413da7e4eb6db7b729ccab940">   30</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a66b1c3e413da7e4eb6db7b729ccab940">IsatvvCurr</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a26665d3563105ea988063647b9ac1758">   31</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a26665d3563105ea988063647b9ac1758">IsatvhCurr</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a76eba41817c94e388e64197c7c2fe29d">   32</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a76eba41817c94e388e64197c7c2fe29d">IsathvCurr</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ac0247aa18959055fa989bc82ee0710b8">   33</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ac0247aa18959055fa989bc82ee0710b8">IsathhCurr</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structPID__CURR.html#a4e6ad4525ba7a414d1d02971855645ff">   35</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#a4e6ad4525ba7a414d1d02971855645ff">UvmaxCurr</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structPID__CURR.html#ac0f03a96047cedbc8b029c5696dd846d">   36</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__CURR.html#ac0f03a96047cedbc8b029c5696dd846d">UhmaxCurr</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Valores mínimos (MIN)</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structPID__MIN.html">   40</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPID__MIN.html">PID_MIN</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structPID__MIN.html#ac6418684958319367c16535d49a5f6d7">   41</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#ac6418684958319367c16535d49a5f6d7">KpvvMin</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structPID__MIN.html#ad6a076f0208499bb0855f71746c7a7bd">   42</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#ad6a076f0208499bb0855f71746c7a7bd">KpvhMin</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structPID__MIN.html#aa7b56834e48d66da97f2742194898725">   43</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#aa7b56834e48d66da97f2742194898725">KivvMin</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structPID__MIN.html#aeff4e71183650ef11dccebf009bce3a1">   44</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#aeff4e71183650ef11dccebf009bce3a1">KivhMin</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structPID__MIN.html#a3918f9e01e53dc1d9fbed5e641984330">   45</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#a3918f9e01e53dc1d9fbed5e641984330">KdvvMin</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structPID__MIN.html#a6016ac40884288ec54f6a882d39fd0b2">   46</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#a6016ac40884288ec54f6a882d39fd0b2">KdvhMin</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structPID__MIN.html#ab8d9e7fc2edbe73ab5ff8d714b6cb282">   48</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#ab8d9e7fc2edbe73ab5ff8d714b6cb282">KphvMin</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structPID__MIN.html#a7ec33e8eee8e68e7ef969e416136ee89">   49</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#a7ec33e8eee8e68e7ef969e416136ee89">KphhMin</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structPID__MIN.html#a6aa12091ef1dcd4907d7a8cf5b6648a6">   50</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#a6aa12091ef1dcd4907d7a8cf5b6648a6">KihvMin</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structPID__MIN.html#adc03285d595aef1c9aeea1dc792e6203">   51</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#adc03285d595aef1c9aeea1dc792e6203">KihhMin</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structPID__MIN.html#af7135752faa8c170cc5cb0c3b298e942">   52</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#af7135752faa8c170cc5cb0c3b298e942">KdhvMin</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structPID__MIN.html#aea4ade79ca5f108e6c6f7d13fe490476">   53</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#aea4ade79ca5f108e6c6f7d13fe490476">KdhhMin</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structPID__MIN.html#ae0c78cb76b1c4e79628795fc96ba5271">   55</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#ae0c78cb76b1c4e79628795fc96ba5271">IsatvvMin</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structPID__MIN.html#a907ef5cad9a135502d22306e52025ee8">   56</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#a907ef5cad9a135502d22306e52025ee8">IsatvhMin</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structPID__MIN.html#af0a8418ae25c43586e5650e241db3a4b">   57</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#af0a8418ae25c43586e5650e241db3a4b">IsathvMin</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structPID__MIN.html#a79e5b38fa2552a05ece53a0bc28c9d7c">   58</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#a79e5b38fa2552a05ece53a0bc28c9d7c">IsathhMin</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structPID__MIN.html#ac76e2d8d3f71a823403600e9c3c99e36">   60</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#ac76e2d8d3f71a823403600e9c3c99e36">UvmaxMin</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structPID__MIN.html#afef20fa58d1a4b28a35a8db870cd5e57">   61</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MIN.html#afef20fa58d1a4b28a35a8db870cd5e57">UhmaxMin</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// Valores máximos (MAX)</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structPID__MAX.html">   65</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPID__MAX.html">PID_MAX</a> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structPID__MAX.html#af2bef37f62c60b63dd58e237cbd87766">   66</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#af2bef37f62c60b63dd58e237cbd87766">KpvvMax</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a67b5c9ed85a16591af7c344453b0a95d">   67</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a67b5c9ed85a16591af7c344453b0a95d">KpvhMax</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structPID__MAX.html#ae5b6ffd8eea0adc2e25e30caf38fb5ca">   68</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#ae5b6ffd8eea0adc2e25e30caf38fb5ca">KivvMax</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a6ab414e327c613f1f1141bf4c5f550b0">   69</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a6ab414e327c613f1f1141bf4c5f550b0">KivhMax</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structPID__MAX.html#aff32e4ce5ac8117c528c16df6f431f3e">   70</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#aff32e4ce5ac8117c528c16df6f431f3e">KdvvMax</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a28d6eba058d74dc9b2d052e5585648da">   71</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a28d6eba058d74dc9b2d052e5585648da">KdvhMax</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a5e1371f7987ba0d5920372cd42f54109">   73</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a5e1371f7987ba0d5920372cd42f54109">KphvMax</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a94711a81751280e4aef7f794f3f77d08">   74</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a94711a81751280e4aef7f794f3f77d08">KphhMax</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structPID__MAX.html#ae1c79a0e9a7828204c406746e6d50960">   75</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#ae1c79a0e9a7828204c406746e6d50960">KihvMax</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a479307b1ef8d79748bf2e9b36dbbbd51">   76</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a479307b1ef8d79748bf2e9b36dbbbd51">KihhMax</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structPID__MAX.html#ac4bcde88b62005dfd8a9115af2f7dcff">   77</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#ac4bcde88b62005dfd8a9115af2f7dcff">KdhvMax</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a567bf567a14f4dbc0e3284449e036e19">   78</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a567bf567a14f4dbc0e3284449e036e19">KdhhMax</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a2372c6d17700d27d020acb61fb9c2aae">   80</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a2372c6d17700d27d020acb61fb9c2aae">IsatvvMax</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structPID__MAX.html#ab9a8ab4d3ccaccac98a658d6751b7dce">   81</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#ab9a8ab4d3ccaccac98a658d6751b7dce">IsatvhMax</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structPID__MAX.html#ac720b48455757b8e0d593f679288b499">   82</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#ac720b48455757b8e0d593f679288b499">IsathvMax</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a9622d17c72478895f1a82fc03245cd58">   83</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a9622d17c72478895f1a82fc03245cd58">IsathhMax</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a6368efc90768d7c08126ae709240f168">   85</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a6368efc90768d7c08126ae709240f168">UvmaxMax</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structPID__MAX.html#a41c8677c9207787c21f2d0cfc5e62975">   86</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structPID__MAX.html#a41c8677c9207787c21f2d0cfc5e62975">UhmaxMax</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">// ==============================</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">// Declaración de instancias</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">// (se definirán en Parameters.cpp)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">// ==============================</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">extern</span> <a class="code hl_struct" href="structPID__CURR.html">PID_CURR</a> <a class="code hl_variable" href="PID__Parameters_8cpp.html#aba95a72a8c1f37e1a379225d01e1a032">g_pidCurr</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">extern</span> <a class="code hl_struct" href="structPID__MIN.html">PID_MIN</a>  <a class="code hl_variable" href="PID__Parameters_8cpp.html#a26acda68f4ee1257773b57619d16dafb">g_pidMin</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">extern</span> <a class="code hl_struct" href="structPID__MAX.html">PID_MAX</a>  <a class="code hl_variable" href="PID__Parameters_8cpp.html#ad30a565699d3b8e3b56cae7c9b5a20b8">g_pidMax</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Parameters_8h.html#add8b0c1fcf3a93153af02e5dec1e9297">PID_LoadDefaults</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Parameters_8h.html#ad71145f010a4eccdc4de79d7b602c16b">PID_UpdateParamLabel</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * label, <span class="keywordtype">float</span> minVal, <span class="keywordtype">float</span> currVal, <span class="keywordtype">float</span> maxVal);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">// Manejo de la EEPROM</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Parameters_8h.html#ae249686b73a90f662a2d445431cd6e9c">PID_SaveToNVS</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keywordtype">void</span> <a class="code hl_function" href="PID__Parameters_8h.html#a2d940fb0f8da903ab1be3814d6e7b9fc">PID_LoadFromNVS</a>();</div>
+<div class="ttc" id="aPID__Parameters_8cpp_html_a26acda68f4ee1257773b57619d16dafb"><div class="ttname"><a href="PID__Parameters_8cpp.html#a26acda68f4ee1257773b57619d16dafb">g_pidMin</a></div><div class="ttdeci">PID_MIN g_pidMin</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00049">PID_Parameters.cpp:49</a></div></div>
+<div class="ttc" id="aPID__Parameters_8cpp_html_aba95a72a8c1f37e1a379225d01e1a032"><div class="ttname"><a href="PID__Parameters_8cpp.html#aba95a72a8c1f37e1a379225d01e1a032">g_pidCurr</a></div><div class="ttdeci">PID_CURR g_pidCurr</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00020">PID_Parameters.cpp:20</a></div></div>
+<div class="ttc" id="aPID__Parameters_8cpp_html_ad30a565699d3b8e3b56cae7c9b5a20b8"><div class="ttname"><a href="PID__Parameters_8cpp.html#ad30a565699d3b8e3b56cae7c9b5a20b8">g_pidMax</a></div><div class="ttdeci">PID_MAX g_pidMax</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00078">PID_Parameters.cpp:78</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html_a2d940fb0f8da903ab1be3814d6e7b9fc"><div class="ttname"><a href="PID__Parameters_8h.html#a2d940fb0f8da903ab1be3814d6e7b9fc">PID_LoadFromNVS</a></div><div class="ttdeci">void PID_LoadFromNVS()</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00338">PID_Parameters.cpp:338</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html_ad71145f010a4eccdc4de79d7b602c16b"><div class="ttname"><a href="PID__Parameters_8h.html#ad71145f010a4eccdc4de79d7b602c16b">PID_UpdateParamLabel</a></div><div class="ttdeci">void PID_UpdateParamLabel(lv_obj_t *label, float minVal, float currVal, float maxVal)</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00186">PID_Parameters.cpp:186</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html_add8b0c1fcf3a93153af02e5dec1e9297"><div class="ttname"><a href="PID__Parameters_8h.html#add8b0c1fcf3a93153af02e5dec1e9297">PID_LoadDefaults</a></div><div class="ttdeci">void PID_LoadDefaults()</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00105">PID_Parameters.cpp:105</a></div></div>
+<div class="ttc" id="aPID__Parameters_8h_html_ae249686b73a90f662a2d445431cd6e9c"><div class="ttname"><a href="PID__Parameters_8h.html#ae249686b73a90f662a2d445431cd6e9c">PID_SaveToNVS</a></div><div class="ttdeci">void PID_SaveToNVS()</div><div class="ttdef"><b>Definition</b> <a href="PID__Parameters_8cpp_source.html#l00254">PID_Parameters.cpp:254</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="astructPID__CURR_html"><div class="ttname"><a href="structPID__CURR.html">PID_CURR</a></div><div class="ttdef"><b>Definition</b> <a href="#l00015">PID_Parameters.h:15</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a26665d3563105ea988063647b9ac1758"><div class="ttname"><a href="structPID__CURR.html#a26665d3563105ea988063647b9ac1758">PID_CURR::IsatvhCurr</a></div><div class="ttdeci">float IsatvhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00031">PID_Parameters.h:31</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a29a25ab145b8a2c10b2b5271a3ca9a33"><div class="ttname"><a href="structPID__CURR.html#a29a25ab145b8a2c10b2b5271a3ca9a33">PID_CURR::KdhhCurr</a></div><div class="ttdeci">float KdhhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00028">PID_Parameters.h:28</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a429a0e090460a0ce8b24495a58960607"><div class="ttname"><a href="structPID__CURR.html#a429a0e090460a0ce8b24495a58960607">PID_CURR::KihhCurr</a></div><div class="ttdeci">float KihhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00026">PID_Parameters.h:26</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a4c38a543e60fc41ef3ef08e20d4406b7"><div class="ttname"><a href="structPID__CURR.html#a4c38a543e60fc41ef3ef08e20d4406b7">PID_CURR::KivhCurr</a></div><div class="ttdeci">float KivhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00019">PID_Parameters.h:19</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a4e6ad4525ba7a414d1d02971855645ff"><div class="ttname"><a href="structPID__CURR.html#a4e6ad4525ba7a414d1d02971855645ff">PID_CURR::UvmaxCurr</a></div><div class="ttdeci">float UvmaxCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00035">PID_Parameters.h:35</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a66b1c3e413da7e4eb6db7b729ccab940"><div class="ttname"><a href="structPID__CURR.html#a66b1c3e413da7e4eb6db7b729ccab940">PID_CURR::IsatvvCurr</a></div><div class="ttdeci">float IsatvvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00030">PID_Parameters.h:30</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a6a3362e6106341acbb67cde2b8345ad7"><div class="ttname"><a href="structPID__CURR.html#a6a3362e6106341acbb67cde2b8345ad7">PID_CURR::KdvhCurr</a></div><div class="ttdeci">float KdvhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00021">PID_Parameters.h:21</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a76eba41817c94e388e64197c7c2fe29d"><div class="ttname"><a href="structPID__CURR.html#a76eba41817c94e388e64197c7c2fe29d">PID_CURR::IsathvCurr</a></div><div class="ttdeci">float IsathvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00032">PID_Parameters.h:32</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_a7e0b01611579675de8c79b5ad7f59c43"><div class="ttname"><a href="structPID__CURR.html#a7e0b01611579675de8c79b5ad7f59c43">PID_CURR::KpvvCurr</a></div><div class="ttdeci">float KpvvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00016">PID_Parameters.h:16</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_aa343b30147b4de808c04990e8fec36f4"><div class="ttname"><a href="structPID__CURR.html#aa343b30147b4de808c04990e8fec36f4">PID_CURR::KphhCurr</a></div><div class="ttdeci">float KphhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00024">PID_Parameters.h:24</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_aab346837cc9cafe66cde7e0305f79546"><div class="ttname"><a href="structPID__CURR.html#aab346837cc9cafe66cde7e0305f79546">PID_CURR::KphvCurr</a></div><div class="ttdeci">float KphvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00023">PID_Parameters.h:23</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ab453add7e9f65e7f7cc737e6455f5bdf"><div class="ttname"><a href="structPID__CURR.html#ab453add7e9f65e7f7cc737e6455f5bdf">PID_CURR::KivvCurr</a></div><div class="ttdeci">float KivvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00018">PID_Parameters.h:18</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ac0247aa18959055fa989bc82ee0710b8"><div class="ttname"><a href="structPID__CURR.html#ac0247aa18959055fa989bc82ee0710b8">PID_CURR::IsathhCurr</a></div><div class="ttdeci">float IsathhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00033">PID_Parameters.h:33</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ac0f03a96047cedbc8b029c5696dd846d"><div class="ttname"><a href="structPID__CURR.html#ac0f03a96047cedbc8b029c5696dd846d">PID_CURR::UhmaxCurr</a></div><div class="ttdeci">float UhmaxCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00036">PID_Parameters.h:36</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ae1d0cbaf4e6c34766ddf39812b556f16"><div class="ttname"><a href="structPID__CURR.html#ae1d0cbaf4e6c34766ddf39812b556f16">PID_CURR::KihvCurr</a></div><div class="ttdeci">float KihvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00025">PID_Parameters.h:25</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ae221a3874f05da1f7e344215e81a262b"><div class="ttname"><a href="structPID__CURR.html#ae221a3874f05da1f7e344215e81a262b">PID_CURR::KdvvCurr</a></div><div class="ttdeci">float KdvvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00020">PID_Parameters.h:20</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ae456955304f534076d6eed9e82be4954"><div class="ttname"><a href="structPID__CURR.html#ae456955304f534076d6eed9e82be4954">PID_CURR::KpvhCurr</a></div><div class="ttdeci">float KpvhCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00017">PID_Parameters.h:17</a></div></div>
+<div class="ttc" id="astructPID__CURR_html_ae85d8b4bc43e55e8c9c94ebb6cc1f43c"><div class="ttname"><a href="structPID__CURR.html#ae85d8b4bc43e55e8c9c94ebb6cc1f43c">PID_CURR::KdhvCurr</a></div><div class="ttdeci">float KdhvCurr</div><div class="ttdef"><b>Definition</b> <a href="#l00027">PID_Parameters.h:27</a></div></div>
+<div class="ttc" id="astructPID__MAX_html"><div class="ttname"><a href="structPID__MAX.html">PID_MAX</a></div><div class="ttdef"><b>Definition</b> <a href="#l00065">PID_Parameters.h:65</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a2372c6d17700d27d020acb61fb9c2aae"><div class="ttname"><a href="structPID__MAX.html#a2372c6d17700d27d020acb61fb9c2aae">PID_MAX::IsatvvMax</a></div><div class="ttdeci">float IsatvvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00080">PID_Parameters.h:80</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a28d6eba058d74dc9b2d052e5585648da"><div class="ttname"><a href="structPID__MAX.html#a28d6eba058d74dc9b2d052e5585648da">PID_MAX::KdvhMax</a></div><div class="ttdeci">float KdvhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00071">PID_Parameters.h:71</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a41c8677c9207787c21f2d0cfc5e62975"><div class="ttname"><a href="structPID__MAX.html#a41c8677c9207787c21f2d0cfc5e62975">PID_MAX::UhmaxMax</a></div><div class="ttdeci">float UhmaxMax</div><div class="ttdef"><b>Definition</b> <a href="#l00086">PID_Parameters.h:86</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a479307b1ef8d79748bf2e9b36dbbbd51"><div class="ttname"><a href="structPID__MAX.html#a479307b1ef8d79748bf2e9b36dbbbd51">PID_MAX::KihhMax</a></div><div class="ttdeci">float KihhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00076">PID_Parameters.h:76</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a567bf567a14f4dbc0e3284449e036e19"><div class="ttname"><a href="structPID__MAX.html#a567bf567a14f4dbc0e3284449e036e19">PID_MAX::KdhhMax</a></div><div class="ttdeci">float KdhhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00078">PID_Parameters.h:78</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a5e1371f7987ba0d5920372cd42f54109"><div class="ttname"><a href="structPID__MAX.html#a5e1371f7987ba0d5920372cd42f54109">PID_MAX::KphvMax</a></div><div class="ttdeci">float KphvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00073">PID_Parameters.h:73</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a6368efc90768d7c08126ae709240f168"><div class="ttname"><a href="structPID__MAX.html#a6368efc90768d7c08126ae709240f168">PID_MAX::UvmaxMax</a></div><div class="ttdeci">float UvmaxMax</div><div class="ttdef"><b>Definition</b> <a href="#l00085">PID_Parameters.h:85</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a67b5c9ed85a16591af7c344453b0a95d"><div class="ttname"><a href="structPID__MAX.html#a67b5c9ed85a16591af7c344453b0a95d">PID_MAX::KpvhMax</a></div><div class="ttdeci">float KpvhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00067">PID_Parameters.h:67</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a6ab414e327c613f1f1141bf4c5f550b0"><div class="ttname"><a href="structPID__MAX.html#a6ab414e327c613f1f1141bf4c5f550b0">PID_MAX::KivhMax</a></div><div class="ttdeci">float KivhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00069">PID_Parameters.h:69</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a94711a81751280e4aef7f794f3f77d08"><div class="ttname"><a href="structPID__MAX.html#a94711a81751280e4aef7f794f3f77d08">PID_MAX::KphhMax</a></div><div class="ttdeci">float KphhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00074">PID_Parameters.h:74</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_a9622d17c72478895f1a82fc03245cd58"><div class="ttname"><a href="structPID__MAX.html#a9622d17c72478895f1a82fc03245cd58">PID_MAX::IsathhMax</a></div><div class="ttdeci">float IsathhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00083">PID_Parameters.h:83</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_ab9a8ab4d3ccaccac98a658d6751b7dce"><div class="ttname"><a href="structPID__MAX.html#ab9a8ab4d3ccaccac98a658d6751b7dce">PID_MAX::IsatvhMax</a></div><div class="ttdeci">float IsatvhMax</div><div class="ttdef"><b>Definition</b> <a href="#l00081">PID_Parameters.h:81</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_ac4bcde88b62005dfd8a9115af2f7dcff"><div class="ttname"><a href="structPID__MAX.html#ac4bcde88b62005dfd8a9115af2f7dcff">PID_MAX::KdhvMax</a></div><div class="ttdeci">float KdhvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00077">PID_Parameters.h:77</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_ac720b48455757b8e0d593f679288b499"><div class="ttname"><a href="structPID__MAX.html#ac720b48455757b8e0d593f679288b499">PID_MAX::IsathvMax</a></div><div class="ttdeci">float IsathvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00082">PID_Parameters.h:82</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_ae1c79a0e9a7828204c406746e6d50960"><div class="ttname"><a href="structPID__MAX.html#ae1c79a0e9a7828204c406746e6d50960">PID_MAX::KihvMax</a></div><div class="ttdeci">float KihvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00075">PID_Parameters.h:75</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_ae5b6ffd8eea0adc2e25e30caf38fb5ca"><div class="ttname"><a href="structPID__MAX.html#ae5b6ffd8eea0adc2e25e30caf38fb5ca">PID_MAX::KivvMax</a></div><div class="ttdeci">float KivvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00068">PID_Parameters.h:68</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_af2bef37f62c60b63dd58e237cbd87766"><div class="ttname"><a href="structPID__MAX.html#af2bef37f62c60b63dd58e237cbd87766">PID_MAX::KpvvMax</a></div><div class="ttdeci">float KpvvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00066">PID_Parameters.h:66</a></div></div>
+<div class="ttc" id="astructPID__MAX_html_aff32e4ce5ac8117c528c16df6f431f3e"><div class="ttname"><a href="structPID__MAX.html#aff32e4ce5ac8117c528c16df6f431f3e">PID_MAX::KdvvMax</a></div><div class="ttdeci">float KdvvMax</div><div class="ttdef"><b>Definition</b> <a href="#l00070">PID_Parameters.h:70</a></div></div>
+<div class="ttc" id="astructPID__MIN_html"><div class="ttname"><a href="structPID__MIN.html">PID_MIN</a></div><div class="ttdef"><b>Definition</b> <a href="#l00040">PID_Parameters.h:40</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_a3918f9e01e53dc1d9fbed5e641984330"><div class="ttname"><a href="structPID__MIN.html#a3918f9e01e53dc1d9fbed5e641984330">PID_MIN::KdvvMin</a></div><div class="ttdeci">float KdvvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00045">PID_Parameters.h:45</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_a6016ac40884288ec54f6a882d39fd0b2"><div class="ttname"><a href="structPID__MIN.html#a6016ac40884288ec54f6a882d39fd0b2">PID_MIN::KdvhMin</a></div><div class="ttdeci">float KdvhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00046">PID_Parameters.h:46</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_a6aa12091ef1dcd4907d7a8cf5b6648a6"><div class="ttname"><a href="structPID__MIN.html#a6aa12091ef1dcd4907d7a8cf5b6648a6">PID_MIN::KihvMin</a></div><div class="ttdeci">float KihvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00050">PID_Parameters.h:50</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_a79e5b38fa2552a05ece53a0bc28c9d7c"><div class="ttname"><a href="structPID__MIN.html#a79e5b38fa2552a05ece53a0bc28c9d7c">PID_MIN::IsathhMin</a></div><div class="ttdeci">float IsathhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00058">PID_Parameters.h:58</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_a7ec33e8eee8e68e7ef969e416136ee89"><div class="ttname"><a href="structPID__MIN.html#a7ec33e8eee8e68e7ef969e416136ee89">PID_MIN::KphhMin</a></div><div class="ttdeci">float KphhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00049">PID_Parameters.h:49</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_a907ef5cad9a135502d22306e52025ee8"><div class="ttname"><a href="structPID__MIN.html#a907ef5cad9a135502d22306e52025ee8">PID_MIN::IsatvhMin</a></div><div class="ttdeci">float IsatvhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00056">PID_Parameters.h:56</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_aa7b56834e48d66da97f2742194898725"><div class="ttname"><a href="structPID__MIN.html#aa7b56834e48d66da97f2742194898725">PID_MIN::KivvMin</a></div><div class="ttdeci">float KivvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00043">PID_Parameters.h:43</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_ab8d9e7fc2edbe73ab5ff8d714b6cb282"><div class="ttname"><a href="structPID__MIN.html#ab8d9e7fc2edbe73ab5ff8d714b6cb282">PID_MIN::KphvMin</a></div><div class="ttdeci">float KphvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00048">PID_Parameters.h:48</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_ac6418684958319367c16535d49a5f6d7"><div class="ttname"><a href="structPID__MIN.html#ac6418684958319367c16535d49a5f6d7">PID_MIN::KpvvMin</a></div><div class="ttdeci">float KpvvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00041">PID_Parameters.h:41</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_ac76e2d8d3f71a823403600e9c3c99e36"><div class="ttname"><a href="structPID__MIN.html#ac76e2d8d3f71a823403600e9c3c99e36">PID_MIN::UvmaxMin</a></div><div class="ttdeci">float UvmaxMin</div><div class="ttdef"><b>Definition</b> <a href="#l00060">PID_Parameters.h:60</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_ad6a076f0208499bb0855f71746c7a7bd"><div class="ttname"><a href="structPID__MIN.html#ad6a076f0208499bb0855f71746c7a7bd">PID_MIN::KpvhMin</a></div><div class="ttdeci">float KpvhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00042">PID_Parameters.h:42</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_adc03285d595aef1c9aeea1dc792e6203"><div class="ttname"><a href="structPID__MIN.html#adc03285d595aef1c9aeea1dc792e6203">PID_MIN::KihhMin</a></div><div class="ttdeci">float KihhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00051">PID_Parameters.h:51</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_ae0c78cb76b1c4e79628795fc96ba5271"><div class="ttname"><a href="structPID__MIN.html#ae0c78cb76b1c4e79628795fc96ba5271">PID_MIN::IsatvvMin</a></div><div class="ttdeci">float IsatvvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00055">PID_Parameters.h:55</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_aea4ade79ca5f108e6c6f7d13fe490476"><div class="ttname"><a href="structPID__MIN.html#aea4ade79ca5f108e6c6f7d13fe490476">PID_MIN::KdhhMin</a></div><div class="ttdeci">float KdhhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00053">PID_Parameters.h:53</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_aeff4e71183650ef11dccebf009bce3a1"><div class="ttname"><a href="structPID__MIN.html#aeff4e71183650ef11dccebf009bce3a1">PID_MIN::KivhMin</a></div><div class="ttdeci">float KivhMin</div><div class="ttdef"><b>Definition</b> <a href="#l00044">PID_Parameters.h:44</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_af0a8418ae25c43586e5650e241db3a4b"><div class="ttname"><a href="structPID__MIN.html#af0a8418ae25c43586e5650e241db3a4b">PID_MIN::IsathvMin</a></div><div class="ttdeci">float IsathvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00057">PID_Parameters.h:57</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_af7135752faa8c170cc5cb0c3b298e942"><div class="ttname"><a href="structPID__MIN.html#af7135752faa8c170cc5cb0c3b298e942">PID_MIN::KdhvMin</a></div><div class="ttdeci">float KdhvMin</div><div class="ttdef"><b>Definition</b> <a href="#l00052">PID_Parameters.h:52</a></div></div>
+<div class="ttc" id="astructPID__MIN_html_afef20fa58d1a4b28a35a8db870cd5e57"><div class="ttname"><a href="structPID__MIN.html#afef20fa58d1a4b28a35a8db870cd5e57">PID_MIN::UhmaxMin</a></div><div class="ttdeci">float UhmaxMin</div><div class="ttdef"><b>Definition</b> <a href="#l00061">PID_Parameters.h:61</a></div></div>
+<div class="ttc" id="aui_8h_html"><div class="ttname"><a href="ui_8h.html">ui.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="PID__Parameters_8h.html">PID_Parameters.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

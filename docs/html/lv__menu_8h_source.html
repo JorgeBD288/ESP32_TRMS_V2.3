@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/extra/widgets/menu/lv_menu.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__menu_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_menu.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__menu_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_menu.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LV_MENU_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define LV_MENU_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="lv__obj_8h.html">../../../core/lv_obj.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#if LV_USE_MENU</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a6f6a2af9f15a9536e99e3c3947563475">   29</a></span>    <a class="code hl_enumvalue" href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a6f6a2af9f15a9536e99e3c3947563475">LV_MENU_HEADER_TOP_FIXED</a>, <span class="comment">/* Header is positioned at the top */</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a0286026be17d842277b704852c965901">   30</a></span>    <a class="code hl_enumvalue" href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a0286026be17d842277b704852c965901">LV_MENU_HEADER_TOP_UNFIXED</a>, <span class="comment">/* Header is positioned at the top and can be scrolled out of view*/</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a7eefd7e014f35f1a2d3d64572bb0a2df">   31</a></span>    <a class="code hl_enumvalue" href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a7eefd7e014f35f1a2d3d64572bb0a2df">LV_MENU_HEADER_BOTTOM_FIXED</a> <span class="comment">/* Header is positioned at the bottom */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#ac1351edfc824b546ed4f7c753e34c05b">   33</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="lv__menu_8h.html#ac1351edfc824b546ed4f7c753e34c05b">lv_menu_mode_header_t</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#add659a45bf934e38130ec9b6a5bd591eac38c847aa3e700834452ffc316096b81">   36</a></span>    <a class="code hl_enumvalue" href="lv__menu_8h.html#add659a45bf934e38130ec9b6a5bd591eac38c847aa3e700834452ffc316096b81">LV_MENU_ROOT_BACK_BTN_DISABLED</a>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#add659a45bf934e38130ec9b6a5bd591ea4894e962f88e4fa4c61dc798dbd30d72">   37</a></span>    <a class="code hl_enumvalue" href="lv__menu_8h.html#add659a45bf934e38130ec9b6a5bd591ea4894e962f88e4fa4c61dc798dbd30d72">LV_MENU_ROOT_BACK_BTN_ENABLED</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#a22f3a94e850b6184fab7d657279cdc70">   39</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="lv__menu_8h.html#a22f3a94e850b6184fab7d657279cdc70">lv_menu_mode_root_back_btn_t</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structlv__menu__load__page__event__data__t.html">   41</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structlv__menu__load__page__event__data__t.html">lv_menu_load_page_event_data_t</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structlv__menu__load__page__event__data__t.html#ac496505cd63fbb315c83f9e03f5a57e0">   42</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__load__page__event__data__t.html#ac496505cd63fbb315c83f9e03f5a57e0">menu</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structlv__menu__load__page__event__data__t.html#a7d92888a696bd4c5b56a6ec91f49b17c">   43</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__load__page__event__data__t.html#a7d92888a696bd4c5b56a6ec91f49b17c">page</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="lv__menu_8h.html#a30ce10d289290f62b3d91fdb2b47424f">   44</a></span>} <a class="code hl_struct" href="structlv__menu__load__page__event__data__t.html">lv_menu_load_page_event_data_t</a>;</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structlv__menu__history__t.html">   46</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structlv__menu__history__t.html#adb67c7b19cce150014baaf66d7a3e56a">   47</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__history__t.html#adb67c7b19cce150014baaf66d7a3e56a">page</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <a class="code hl_struct" href="structlv__menu__history__t.html">lv_menu_history_t</a>;</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structlv__menu__t.html">   50</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a7090b11f882aef436bf2d324540e93b8">   51</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> <a class="code hl_variable" href="structlv__menu__t.html#a7090b11f882aef436bf2d324540e93b8">obj</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a4039810fa3e4e8e449d3e96f3324d52b">   52</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#a4039810fa3e4e8e449d3e96f3324d52b">storage</a>; <span class="comment">/* a pointer to obj that is the parent of all pages not displayed */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a33a5bcc47e8c27eab4e97e78d6b7ac1a">   53</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#a33a5bcc47e8c27eab4e97e78d6b7ac1a">main</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a8483a5a32574a092f76deccff4e1a6e6">   54</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#a8483a5a32574a092f76deccff4e1a6e6">main_page</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#aa33752b89c50f8e32d3e99f5e9a1b397">   55</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#aa33752b89c50f8e32d3e99f5e9a1b397">main_header</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a43ccad90969e96951bb6fd31a38b5d03">   57</a></span>    <a class="code hl_variable" href="structlv__menu__t.html#a43ccad90969e96951bb6fd31a38b5d03">main_header_back_btn</a>; <span class="comment">/* a pointer to obj that on click triggers back btn event handler, can be same as &#39;main_header&#39; */</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#acea9714c810cd44f56906d01f505930c">   58</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#acea9714c810cd44f56906d01f505930c">main_header_title</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#af514c309ef9b589c186684cb9cb75d03">   59</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#af514c309ef9b589c186684cb9cb75d03">sidebar</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a93d020a93eb9d89e0601ccd9a398e6d9">   60</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#a93d020a93eb9d89e0601ccd9a398e6d9">sidebar_page</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a7c4a6ae93d3b6abc953748ba8f15734a">   61</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#a7c4a6ae93d3b6abc953748ba8f15734a">sidebar_header</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#afa407fdd93e23b73b3e9e4426222c806">   63</a></span>    <a class="code hl_variable" href="structlv__menu__t.html#afa407fdd93e23b73b3e9e4426222c806">sidebar_header_back_btn</a>; <span class="comment">/* a pointer to obj that on click triggers back btn event handler, can be same as &#39;sidebar_header&#39; */</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a6baa5cc9c214b780f5d5af197a9134d8">   64</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#a6baa5cc9c214b780f5d5af197a9134d8">sidebar_header_title</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#ab84ba293427f472ef3d87d800be70520">   65</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="structlv__menu__t.html#ab84ba293427f472ef3d87d800be70520">selected_tab</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a8fbc95ae80b0d4694b4d435fad86af62">   66</a></span>    <a class="code hl_struct" href="structlv__ll__t.html">lv_ll_t</a> <a class="code hl_variable" href="structlv__menu__t.html#a8fbc95ae80b0d4694b4d435fad86af62">history_ll</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a223728e04867b7ac157bffba18419a99">   67</a></span>    uint8_t <a class="code hl_variable" href="structlv__menu__t.html#a223728e04867b7ac157bffba18419a99">cur_depth</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a529cbb89284be1078604d172e8386c45">   68</a></span>    uint8_t <a class="code hl_variable" href="structlv__menu__t.html#a529cbb89284be1078604d172e8386c45">prev_depth</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#aa53498cf9d4aef526e6a02958816c465">   69</a></span>    uint8_t <a class="code hl_variable" href="structlv__menu__t.html#aa53498cf9d4aef526e6a02958816c465">sidebar_generated</a> : 1;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a26448551cf0acf5949923656328eeda6">   70</a></span>    <a class="code hl_typedef" href="lv__menu_8h.html#ac1351edfc824b546ed4f7c753e34c05b">lv_menu_mode_header_t</a> <a class="code hl_variable" href="structlv__menu__t.html#a26448551cf0acf5949923656328eeda6">mode_header</a> : 2;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structlv__menu__t.html#a93e492b764f8767bba694089ada99959">   71</a></span>    <a class="code hl_typedef" href="lv__menu_8h.html#a22f3a94e850b6184fab7d657279cdc70">lv_menu_mode_root_back_btn_t</a> <a class="code hl_variable" href="structlv__menu__t.html#a93e492b764f8767bba694089ada99959">mode_root_back_btn</a> : 1;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} <a class="code hl_struct" href="structlv__menu__t.html">lv_menu_t</a>;</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structlv__menu__page__t.html">   74</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structlv__menu__page__t.html#aef5952976a9e747b2e6393cf344b77bd">   75</a></span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> <a class="code hl_variable" href="structlv__menu__page__t.html#aef5952976a9e747b2e6393cf344b77bd">obj</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structlv__menu__page__t.html#a61f7d282998a9c22c31f889207407d5e">   76</a></span>    <span class="keywordtype">char</span> * <a class="code hl_variable" href="structlv__menu__page__t.html#a61f7d282998a9c22c31f889207407d5e">title</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>} <a class="code hl_struct" href="structlv__menu__page__t.html">lv_menu_page_t</a>;</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#a3b8f9a3a831403ac9658b6f83f2b519e">lv_menu_class</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#aa8df158b1b7e979fb84fbe3ac9c2e7c2">lv_menu_page_class</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#af89403ab9179b3d61686c25ca2c85289">lv_menu_cont_class</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#aba2223d3da70ae0ee163d0ccc3adc354">lv_menu_section_class</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#a1ad88eb7ea1bb0ac38933dd1d251f253">lv_menu_separator_class</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#a6057aa340cdc7d1509af8657d164feb3">lv_menu_sidebar_cont_class</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#a94d1be8b9e957083aeb334aa9e041fa2">lv_menu_main_cont_class</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#a822bfcca7c0c69f2af8e7d332455c2b4">lv_menu_sidebar_header_cont_class</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> <a class="code hl_variable" href="lv__menu_8c.html#ac4fa24fb09db635594f8a56993afcdcc">lv_menu_main_header_cont_class</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"> * GLOBAL PROTOTYPES</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"></span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"> * Create a menu object</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment"> * @param parent pointer to an object, it will be the parent of the new menu</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment"> * @return pointer to the created menu</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a89896b67e2a73748453ed313a565f9b3">lv_menu_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment"></span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"> * Create a menu page object</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment"> * @param parent pointer to menu object</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"> * @param title pointer to text for title in header (NULL to not display title)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> * @return pointer to the created menu page</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a9e5fe441ad14b597c4db1d90b7476136">lv_menu_page_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent, <span class="keywordtype">char</span> * title);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"></span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"> * Create a menu cont object</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"> * @param parent pointer to an object, it will be the parent of the new menu cont object</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment"> * @return pointer to the created menu cont</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a87a5bc6797a4cb75520948655ae997b6">lv_menu_cont_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment"></span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"> * Create a menu section object</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment"> * @param parent pointer to an object, it will be the parent of the new menu section object</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"> * @return pointer to the created menu section</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#ac2a98082651d40257c2a6b9d59848fdd">lv_menu_section_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment"> * Create a menu separator object</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment"> * @param parent pointer to an object, it will be the parent of the new menu separator object</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment"> * @return pointer to the created menu separator</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a752419b14c904c0217703fa83cea1f03">lv_menu_separator_create</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">/*=====================</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment"> * Setter functions</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment"> *====================*/</span><span class="comment"></span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"> * Set menu page to display in main</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment"> * @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"> * @param page pointer to the menu page to set (NULL to clear main and clear menu history)</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__menu_8h.html#ae90f8351b5d0f6c59626e6d4279f2189">lv_menu_set_page</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * page);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"></span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment"> * Set menu page to display in sidebar</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment"> * @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment"> * @param page pointer to the menu page to set (NULL to clear sidebar)</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__menu_8h.html#a85ef980564e9f6b6f80c9e607f77c6f7">lv_menu_set_sidebar_page</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * page);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment"></span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"> * Set the how the header should behave and its position</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment"> * @param obj pointer to a menu</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment"> * @param mode_header</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__menu_8h.html#a983dfd10e0ac121df182ca2ff55c1ec3">lv_menu_set_mode_header</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <a class="code hl_typedef" href="lv__menu_8h.html#ac1351edfc824b546ed4f7c753e34c05b">lv_menu_mode_header_t</a> mode_header);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment"></span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment"> * Set whether back button should appear at root</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment"> * @param obj pointer to a menu</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment"> * @param mode_root_back_btn</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__menu_8h.html#aa48cdc9bcc4fad0b280f824f9743b41a">lv_menu_set_mode_root_back_btn</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <a class="code hl_typedef" href="lv__menu_8h.html#a22f3a94e850b6184fab7d657279cdc70">lv_menu_mode_root_back_btn_t</a> mode_root_back_btn);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment"></span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment"> * Add menu to the menu item</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment"> * @param menu pointer to the menu</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment"> * @param obj pointer to the obj</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment"> * @param page pointer to the page to load when obj is clicked</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__menu_8h.html#a4c3d3768e8673a35e06cf686e87ee0ca">lv_menu_set_load_page_event</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * menu, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * page);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">/*=====================</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment"> * Getter functions</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment"> *====================*/</span><span class="comment"></span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">* Get a pointer to menu page that is currently displayed in main</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">* @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">* @return pointer to current page</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a3d90989e97d3d73d32711e1ca6a72274">lv_menu_get_cur_main_page</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment"></span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">* Get a pointer to menu page that is currently displayed in sidebar</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">* @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">* @return pointer to current page</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a13efba5f87f3e6c3f7787edb32cf1327">lv_menu_get_cur_sidebar_page</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment"></span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">* Get a pointer to main header obj</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">* @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">* @return pointer to main header obj</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a58123cc46f090aaa6cbb5f513e74de0d">lv_menu_get_main_header</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment"></span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">* Get a pointer to main header back btn obj</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">* @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">* @return pointer to main header back btn obj</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a8999be7f45bc23d273e6c2a352c1ffb1">lv_menu_get_main_header_back_btn</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment"></span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment">* Get a pointer to sidebar header obj</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">* @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">* @return pointer to sidebar header obj</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a9329822c72843c01f6e3fef54f42372a">lv_menu_get_sidebar_header</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment"></span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">* Get a pointer to sidebar header obj</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">* @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">* @return pointer to sidebar header back btn obj</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_function" href="lv__menu_8h.html#a01a585f01760682899ef2810bd1866e8">lv_menu_get_sidebar_header_back_btn</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment"></span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment"> * Check if an obj is a root back btn</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment"> * @param menu pointer to the menu</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment"> * @return true if it is a root back btn</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keywordtype">bool</span> <a class="code hl_function" href="lv__menu_8h.html#a4670f45247a7bfc5db2b66ac272e2974">lv_menu_back_btn_is_root</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * menu, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment"></span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment"> * Clear menu history</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment"> * @param obj pointer to the menu</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__menu_8h.html#a4bd2972cdb8e2b2e91c99cd260f7fae0">lv_menu_clear_history</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_MENU*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>} <span class="comment">/*extern &quot;C&quot;*/</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">#endif </span><span class="comment">/*LV_MENU_H*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alv__menu_8c_html_a1ad88eb7ea1bb0ac38933dd1d251f253"><div class="ttname"><a href="lv__menu_8c.html#a1ad88eb7ea1bb0ac38933dd1d251f253">lv_menu_separator_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_separator_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00069">lv_menu.c:69</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_a3b8f9a3a831403ac9658b6f83f2b519e"><div class="ttname"><a href="lv__menu_8c.html#a3b8f9a3a831403ac9658b6f83f2b519e">lv_menu_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00038">lv_menu.c:38</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_a6057aa340cdc7d1509af8657d164feb3"><div class="ttname"><a href="lv__menu_8c.html#a6057aa340cdc7d1509af8657d164feb3">lv_menu_sidebar_cont_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_sidebar_cont_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00075">lv_menu.c:75</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_a822bfcca7c0c69f2af8e7d332455c2b4"><div class="ttname"><a href="lv__menu_8c.html#a822bfcca7c0c69f2af8e7d332455c2b4">lv_menu_sidebar_header_cont_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_sidebar_header_cont_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00087">lv_menu.c:87</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_a94d1be8b9e957083aeb334aa9e041fa2"><div class="ttname"><a href="lv__menu_8c.html#a94d1be8b9e957083aeb334aa9e041fa2">lv_menu_main_cont_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_main_cont_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00079">lv_menu.c:79</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_aa8df158b1b7e979fb84fbe3ac9c2e7c2"><div class="ttname"><a href="lv__menu_8c.html#aa8df158b1b7e979fb84fbe3ac9c2e7c2">lv_menu_page_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_page_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00046">lv_menu.c:46</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_aba2223d3da70ae0ee163d0ccc3adc354"><div class="ttname"><a href="lv__menu_8c.html#aba2223d3da70ae0ee163d0ccc3adc354">lv_menu_section_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_section_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00062">lv_menu.c:62</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_ac4fa24fb09db635594f8a56993afcdcc"><div class="ttname"><a href="lv__menu_8c.html#ac4fa24fb09db635594f8a56993afcdcc">lv_menu_main_header_cont_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_main_header_cont_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00083">lv_menu.c:83</a></div></div>
+<div class="ttc" id="alv__menu_8c_html_af89403ab9179b3d61686c25ca2c85289"><div class="ttname"><a href="lv__menu_8c.html#af89403ab9179b3d61686c25ca2c85289">lv_menu_cont_class</a></div><div class="ttdeci">const lv_obj_class_t lv_menu_cont_class</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00055">lv_menu.c:55</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a01a585f01760682899ef2810bd1866e8"><div class="ttname"><a href="lv__menu_8h.html#a01a585f01760682899ef2810bd1866e8">lv_menu_get_sidebar_header_back_btn</a></div><div class="ttdeci">lv_obj_t * lv_menu_get_sidebar_header_back_btn(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00430">lv_menu.c:430</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a13efba5f87f3e6c3f7787edb32cf1327"><div class="ttname"><a href="lv__menu_8h.html#a13efba5f87f3e6c3f7787edb32cf1327">lv_menu_get_cur_sidebar_page</a></div><div class="ttdeci">lv_obj_t * lv_menu_get_cur_sidebar_page(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00398">lv_menu.c:398</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a22f3a94e850b6184fab7d657279cdc70"><div class="ttname"><a href="lv__menu_8h.html#a22f3a94e850b6184fab7d657279cdc70">lv_menu_mode_root_back_btn_t</a></div><div class="ttdeci">uint8_t lv_menu_mode_root_back_btn_t</div><div class="ttdef"><b>Definition</b> <a href="#l00039">lv_menu.h:39</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a3d90989e97d3d73d32711e1ca6a72274"><div class="ttname"><a href="lv__menu_8h.html#a3d90989e97d3d73d32711e1ca6a72274">lv_menu_get_cur_main_page</a></div><div class="ttdeci">lv_obj_t * lv_menu_get_cur_main_page(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00390">lv_menu.c:390</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a4670f45247a7bfc5db2b66ac272e2974"><div class="ttname"><a href="lv__menu_8h.html#a4670f45247a7bfc5db2b66ac272e2974">lv_menu_back_btn_is_root</a></div><div class="ttdeci">bool lv_menu_back_btn_is_root(lv_obj_t *menu, lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00438">lv_menu.c:438</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a4bd2972cdb8e2b2e91c99cd260f7fae0"><div class="ttname"><a href="lv__menu_8h.html#a4bd2972cdb8e2b2e91c99cd260f7fae0">lv_menu_clear_history</a></div><div class="ttdeci">void lv_menu_clear_history(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00453">lv_menu.c:453</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a4c3d3768e8673a35e06cf686e87ee0ca"><div class="ttname"><a href="lv__menu_8h.html#a4c3d3768e8673a35e06cf686e87ee0ca">lv_menu_set_load_page_event</a></div><div class="ttdeci">void lv_menu_set_load_page_event(lv_obj_t *menu, lv_obj_t *obj, lv_obj_t *page)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00365">lv_menu.c:365</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a58123cc46f090aaa6cbb5f513e74de0d"><div class="ttname"><a href="lv__menu_8h.html#a58123cc46f090aaa6cbb5f513e74de0d">lv_menu_get_main_header</a></div><div class="ttdeci">lv_obj_t * lv_menu_get_main_header(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00406">lv_menu.c:406</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a752419b14c904c0217703fa83cea1f03"><div class="ttname"><a href="lv__menu_8h.html#a752419b14c904c0217703fa83cea1f03">lv_menu_separator_create</a></div><div class="ttdeci">lv_obj_t * lv_menu_separator_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00156">lv_menu.c:156</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a85ef980564e9f6b6f80c9e607f77c6f7"><div class="ttname"><a href="lv__menu_8h.html#a85ef980564e9f6b6f80c9e607f77c6f7">lv_menu_set_sidebar_page</a></div><div class="ttdeci">void lv_menu_set_sidebar_page(lv_obj_t *obj, lv_obj_t *page)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00277">lv_menu.c:277</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a87a5bc6797a4cb75520948655ae997b6"><div class="ttname"><a href="lv__menu_8h.html#a87a5bc6797a4cb75520948655ae997b6">lv_menu_cont_create</a></div><div class="ttdeci">lv_obj_t * lv_menu_cont_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00140">lv_menu.c:140</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a89896b67e2a73748453ed313a565f9b3"><div class="ttname"><a href="lv__menu_8h.html#a89896b67e2a73748453ed313a565f9b3">lv_menu_create</a></div><div class="ttdeci">lv_obj_t * lv_menu_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00112">lv_menu.c:112</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a8999be7f45bc23d273e6c2a352c1ffb1"><div class="ttname"><a href="lv__menu_8h.html#a8999be7f45bc23d273e6c2a352c1ffb1">lv_menu_get_main_header_back_btn</a></div><div class="ttdeci">lv_obj_t * lv_menu_get_main_header_back_btn(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00414">lv_menu.c:414</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a9329822c72843c01f6e3fef54f42372a"><div class="ttname"><a href="lv__menu_8h.html#a9329822c72843c01f6e3fef54f42372a">lv_menu_get_sidebar_header</a></div><div class="ttdeci">lv_obj_t * lv_menu_get_sidebar_header(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00422">lv_menu.c:422</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a983dfd10e0ac121df182ca2ff55c1ec3"><div class="ttname"><a href="lv__menu_8h.html#a983dfd10e0ac121df182ca2ff55c1ec3">lv_menu_set_mode_header</a></div><div class="ttdeci">void lv_menu_set_mode_header(lv_obj_t *obj, lv_menu_mode_header_t mode_header)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00340">lv_menu.c:340</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a9a2755ac5bb28017a24cbb4d3c47a8a1a0286026be17d842277b704852c965901"><div class="ttname"><a href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a0286026be17d842277b704852c965901">LV_MENU_HEADER_TOP_UNFIXED</a></div><div class="ttdeci">@ LV_MENU_HEADER_TOP_UNFIXED</div><div class="ttdef"><b>Definition</b> <a href="#l00030">lv_menu.h:30</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a9a2755ac5bb28017a24cbb4d3c47a8a1a6f6a2af9f15a9536e99e3c3947563475"><div class="ttname"><a href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a6f6a2af9f15a9536e99e3c3947563475">LV_MENU_HEADER_TOP_FIXED</a></div><div class="ttdeci">@ LV_MENU_HEADER_TOP_FIXED</div><div class="ttdef"><b>Definition</b> <a href="#l00029">lv_menu.h:29</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a9a2755ac5bb28017a24cbb4d3c47a8a1a7eefd7e014f35f1a2d3d64572bb0a2df"><div class="ttname"><a href="lv__menu_8h.html#a9a2755ac5bb28017a24cbb4d3c47a8a1a7eefd7e014f35f1a2d3d64572bb0a2df">LV_MENU_HEADER_BOTTOM_FIXED</a></div><div class="ttdeci">@ LV_MENU_HEADER_BOTTOM_FIXED</div><div class="ttdef"><b>Definition</b> <a href="#l00031">lv_menu.h:31</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_a9e5fe441ad14b597c4db1d90b7476136"><div class="ttname"><a href="lv__menu_8h.html#a9e5fe441ad14b597c4db1d90b7476136">lv_menu_page_create</a></div><div class="ttdeci">lv_obj_t * lv_menu_page_create(lv_obj_t *parent, char *title)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00120">lv_menu.c:120</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_aa48cdc9bcc4fad0b280f824f9743b41a"><div class="ttname"><a href="lv__menu_8h.html#aa48cdc9bcc4fad0b280f824f9743b41a">lv_menu_set_mode_root_back_btn</a></div><div class="ttdeci">void lv_menu_set_mode_root_back_btn(lv_obj_t *obj, lv_menu_mode_root_back_btn_t mode_root_back_btn)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00353">lv_menu.c:353</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_ac1351edfc824b546ed4f7c753e34c05b"><div class="ttname"><a href="lv__menu_8h.html#ac1351edfc824b546ed4f7c753e34c05b">lv_menu_mode_header_t</a></div><div class="ttdeci">uint8_t lv_menu_mode_header_t</div><div class="ttdef"><b>Definition</b> <a href="#l00033">lv_menu.h:33</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_ac2a98082651d40257c2a6b9d59848fdd"><div class="ttname"><a href="lv__menu_8h.html#ac2a98082651d40257c2a6b9d59848fdd">lv_menu_section_create</a></div><div class="ttdeci">lv_obj_t * lv_menu_section_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00148">lv_menu.c:148</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_add659a45bf934e38130ec9b6a5bd591ea4894e962f88e4fa4c61dc798dbd30d72"><div class="ttname"><a href="lv__menu_8h.html#add659a45bf934e38130ec9b6a5bd591ea4894e962f88e4fa4c61dc798dbd30d72">LV_MENU_ROOT_BACK_BTN_ENABLED</a></div><div class="ttdeci">@ LV_MENU_ROOT_BACK_BTN_ENABLED</div><div class="ttdef"><b>Definition</b> <a href="#l00037">lv_menu.h:37</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_add659a45bf934e38130ec9b6a5bd591eac38c847aa3e700834452ffc316096b81"><div class="ttname"><a href="lv__menu_8h.html#add659a45bf934e38130ec9b6a5bd591eac38c847aa3e700834452ffc316096b81">LV_MENU_ROOT_BACK_BTN_DISABLED</a></div><div class="ttdeci">@ LV_MENU_ROOT_BACK_BTN_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="#l00036">lv_menu.h:36</a></div></div>
+<div class="ttc" id="alv__menu_8h_html_ae90f8351b5d0f6c59626e6d4279f2189"><div class="ttname"><a href="lv__menu_8h.html#ae90f8351b5d0f6c59626e6d4279f2189">lv_menu_set_page</a></div><div class="ttdeci">void lv_menu_set_page(lv_obj_t *obj, lv_obj_t *page)</div><div class="ttdef"><b>Definition</b> <a href="lv__menu_8c_source.html#l00192">lv_menu.c:192</a></div></div>
+<div class="ttc" id="alv__obj_8h_html"><div class="ttname"><a href="lv__obj_8h.html">lv_obj.h</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a45f1eead6ce2fb12e215ea3e0558f168"><div class="ttname"><a href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a></div><div class="ttdeci">struct _lv_obj_class_t lv_obj_class_t</div></div>
+<div class="ttc" id="astructlv__ll__t_html"><div class="ttname"><a href="structlv__ll__t.html">lv_ll_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00032">lv_ll.h:32</a></div></div>
+<div class="ttc" id="astructlv__menu__history__t_html"><div class="ttname"><a href="structlv__menu__history__t.html">lv_menu_history_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00046">lv_menu.h:46</a></div></div>
+<div class="ttc" id="astructlv__menu__history__t_html_adb67c7b19cce150014baaf66d7a3e56a"><div class="ttname"><a href="structlv__menu__history__t.html#adb67c7b19cce150014baaf66d7a3e56a">lv_menu_history_t::page</a></div><div class="ttdeci">lv_obj_t * page</div><div class="ttdef"><b>Definition</b> <a href="#l00047">lv_menu.h:47</a></div></div>
+<div class="ttc" id="astructlv__menu__load__page__event__data__t_html"><div class="ttname"><a href="structlv__menu__load__page__event__data__t.html">lv_menu_load_page_event_data_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00041">lv_menu.h:41</a></div></div>
+<div class="ttc" id="astructlv__menu__load__page__event__data__t_html_a7d92888a696bd4c5b56a6ec91f49b17c"><div class="ttname"><a href="structlv__menu__load__page__event__data__t.html#a7d92888a696bd4c5b56a6ec91f49b17c">lv_menu_load_page_event_data_t::page</a></div><div class="ttdeci">lv_obj_t * page</div><div class="ttdef"><b>Definition</b> <a href="#l00043">lv_menu.h:43</a></div></div>
+<div class="ttc" id="astructlv__menu__load__page__event__data__t_html_ac496505cd63fbb315c83f9e03f5a57e0"><div class="ttname"><a href="structlv__menu__load__page__event__data__t.html#ac496505cd63fbb315c83f9e03f5a57e0">lv_menu_load_page_event_data_t::menu</a></div><div class="ttdeci">lv_obj_t * menu</div><div class="ttdef"><b>Definition</b> <a href="#l00042">lv_menu.h:42</a></div></div>
+<div class="ttc" id="astructlv__menu__page__t_html"><div class="ttname"><a href="structlv__menu__page__t.html">lv_menu_page_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00074">lv_menu.h:74</a></div></div>
+<div class="ttc" id="astructlv__menu__page__t_html_a61f7d282998a9c22c31f889207407d5e"><div class="ttname"><a href="structlv__menu__page__t.html#a61f7d282998a9c22c31f889207407d5e">lv_menu_page_t::title</a></div><div class="ttdeci">char * title</div><div class="ttdef"><b>Definition</b> <a href="#l00076">lv_menu.h:76</a></div></div>
+<div class="ttc" id="astructlv__menu__page__t_html_aef5952976a9e747b2e6393cf344b77bd"><div class="ttname"><a href="structlv__menu__page__t.html#aef5952976a9e747b2e6393cf344b77bd">lv_menu_page_t::obj</a></div><div class="ttdeci">lv_obj_t obj</div><div class="ttdef"><b>Definition</b> <a href="#l00075">lv_menu.h:75</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html"><div class="ttname"><a href="structlv__menu__t.html">lv_menu_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00050">lv_menu.h:50</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a223728e04867b7ac157bffba18419a99"><div class="ttname"><a href="structlv__menu__t.html#a223728e04867b7ac157bffba18419a99">lv_menu_t::cur_depth</a></div><div class="ttdeci">uint8_t cur_depth</div><div class="ttdef"><b>Definition</b> <a href="#l00067">lv_menu.h:67</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a26448551cf0acf5949923656328eeda6"><div class="ttname"><a href="structlv__menu__t.html#a26448551cf0acf5949923656328eeda6">lv_menu_t::mode_header</a></div><div class="ttdeci">lv_menu_mode_header_t mode_header</div><div class="ttdef"><b>Definition</b> <a href="#l00070">lv_menu.h:70</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a33a5bcc47e8c27eab4e97e78d6b7ac1a"><div class="ttname"><a href="structlv__menu__t.html#a33a5bcc47e8c27eab4e97e78d6b7ac1a">lv_menu_t::main</a></div><div class="ttdeci">lv_obj_t * main</div><div class="ttdef"><b>Definition</b> <a href="#l00053">lv_menu.h:53</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a4039810fa3e4e8e449d3e96f3324d52b"><div class="ttname"><a href="structlv__menu__t.html#a4039810fa3e4e8e449d3e96f3324d52b">lv_menu_t::storage</a></div><div class="ttdeci">lv_obj_t * storage</div><div class="ttdef"><b>Definition</b> <a href="#l00052">lv_menu.h:52</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a43ccad90969e96951bb6fd31a38b5d03"><div class="ttname"><a href="structlv__menu__t.html#a43ccad90969e96951bb6fd31a38b5d03">lv_menu_t::main_header_back_btn</a></div><div class="ttdeci">lv_obj_t * main_header_back_btn</div><div class="ttdef"><b>Definition</b> <a href="#l00057">lv_menu.h:57</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a529cbb89284be1078604d172e8386c45"><div class="ttname"><a href="structlv__menu__t.html#a529cbb89284be1078604d172e8386c45">lv_menu_t::prev_depth</a></div><div class="ttdeci">uint8_t prev_depth</div><div class="ttdef"><b>Definition</b> <a href="#l00068">lv_menu.h:68</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a6baa5cc9c214b780f5d5af197a9134d8"><div class="ttname"><a href="structlv__menu__t.html#a6baa5cc9c214b780f5d5af197a9134d8">lv_menu_t::sidebar_header_title</a></div><div class="ttdeci">lv_obj_t * sidebar_header_title</div><div class="ttdef"><b>Definition</b> <a href="#l00064">lv_menu.h:64</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a7090b11f882aef436bf2d324540e93b8"><div class="ttname"><a href="structlv__menu__t.html#a7090b11f882aef436bf2d324540e93b8">lv_menu_t::obj</a></div><div class="ttdeci">lv_obj_t obj</div><div class="ttdef"><b>Definition</b> <a href="#l00051">lv_menu.h:51</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a7c4a6ae93d3b6abc953748ba8f15734a"><div class="ttname"><a href="structlv__menu__t.html#a7c4a6ae93d3b6abc953748ba8f15734a">lv_menu_t::sidebar_header</a></div><div class="ttdeci">lv_obj_t * sidebar_header</div><div class="ttdef"><b>Definition</b> <a href="#l00061">lv_menu.h:61</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a8483a5a32574a092f76deccff4e1a6e6"><div class="ttname"><a href="structlv__menu__t.html#a8483a5a32574a092f76deccff4e1a6e6">lv_menu_t::main_page</a></div><div class="ttdeci">lv_obj_t * main_page</div><div class="ttdef"><b>Definition</b> <a href="#l00054">lv_menu.h:54</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a8fbc95ae80b0d4694b4d435fad86af62"><div class="ttname"><a href="structlv__menu__t.html#a8fbc95ae80b0d4694b4d435fad86af62">lv_menu_t::history_ll</a></div><div class="ttdeci">lv_ll_t history_ll</div><div class="ttdef"><b>Definition</b> <a href="#l00066">lv_menu.h:66</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a93d020a93eb9d89e0601ccd9a398e6d9"><div class="ttname"><a href="structlv__menu__t.html#a93d020a93eb9d89e0601ccd9a398e6d9">lv_menu_t::sidebar_page</a></div><div class="ttdeci">lv_obj_t * sidebar_page</div><div class="ttdef"><b>Definition</b> <a href="#l00060">lv_menu.h:60</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_a93e492b764f8767bba694089ada99959"><div class="ttname"><a href="structlv__menu__t.html#a93e492b764f8767bba694089ada99959">lv_menu_t::mode_root_back_btn</a></div><div class="ttdeci">lv_menu_mode_root_back_btn_t mode_root_back_btn</div><div class="ttdef"><b>Definition</b> <a href="#l00071">lv_menu.h:71</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_aa33752b89c50f8e32d3e99f5e9a1b397"><div class="ttname"><a href="structlv__menu__t.html#aa33752b89c50f8e32d3e99f5e9a1b397">lv_menu_t::main_header</a></div><div class="ttdeci">lv_obj_t * main_header</div><div class="ttdef"><b>Definition</b> <a href="#l00055">lv_menu.h:55</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_aa53498cf9d4aef526e6a02958816c465"><div class="ttname"><a href="structlv__menu__t.html#aa53498cf9d4aef526e6a02958816c465">lv_menu_t::sidebar_generated</a></div><div class="ttdeci">uint8_t sidebar_generated</div><div class="ttdef"><b>Definition</b> <a href="#l00069">lv_menu.h:69</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_ab84ba293427f472ef3d87d800be70520"><div class="ttname"><a href="structlv__menu__t.html#ab84ba293427f472ef3d87d800be70520">lv_menu_t::selected_tab</a></div><div class="ttdeci">lv_obj_t * selected_tab</div><div class="ttdef"><b>Definition</b> <a href="#l00065">lv_menu.h:65</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_acea9714c810cd44f56906d01f505930c"><div class="ttname"><a href="structlv__menu__t.html#acea9714c810cd44f56906d01f505930c">lv_menu_t::main_header_title</a></div><div class="ttdeci">lv_obj_t * main_header_title</div><div class="ttdef"><b>Definition</b> <a href="#l00058">lv_menu.h:58</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_af514c309ef9b589c186684cb9cb75d03"><div class="ttname"><a href="structlv__menu__t.html#af514c309ef9b589c186684cb9cb75d03">lv_menu_t::sidebar</a></div><div class="ttdeci">lv_obj_t * sidebar</div><div class="ttdef"><b>Definition</b> <a href="#l00059">lv_menu.h:59</a></div></div>
+<div class="ttc" id="astructlv__menu__t_html_afa407fdd93e23b73b3e9e4426222c806"><div class="ttname"><a href="structlv__menu__t.html#afa407fdd93e23b73b3e9e4426222c806">lv_menu_t::sidebar_header_back_btn</a></div><div class="ttdeci">lv_obj_t * sidebar_header_back_btn</div><div class="ttdef"><b>Definition</b> <a href="#l00063">lv_menu.h:63</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_ed994074b3b11ea8ca70a9e3eec966b2.html">menu</a></li><li class="navelem"><a href="lv__menu_8h.html">lv_menu.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

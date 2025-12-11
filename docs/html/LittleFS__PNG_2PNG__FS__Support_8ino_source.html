@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/examples/PNG Images/LittleFS_PNG/PNG_FS_Support.ino</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('LittleFS__PNG_2PNG__FS__Support_8ino_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PNG_FS_Support.ino</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="LittleFS__PNG_2PNG__FS__Support_8ino.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>// Here are the callback functions that the decPNG library</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>// will use to open files, fetch data and close the file.</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>File pngfile;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>void * pngOpen(const char *filename, int32_t *size) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  Serial.printf(&quot;Attempting to open %s\n&quot;, filename);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  pngfile = FileSys.open(filename, &quot;r&quot;);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  *size = pngfile.size();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  return &amp;pngfile;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>void pngClose(void *handle) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  File pngfile = *((File*)handle);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  if (pngfile) pngfile.close();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>int32_t pngRead(PNGFILE *page, uint8_t *buffer, int32_t length) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  if (!pngfile) return 0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  page = page; // Avoid warning</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  return pngfile.read(buffer, length);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>int32_t pngSeek(PNGFILE *page, int32_t position) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  if (!pngfile) return 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  page = page; // Avoid warning</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  return pngfile.seek(position);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d834161b10c57611f417f859026dded1.html">examples</a></li><li class="navelem"><a href="dir_12540daaa7777746ebf5ab7e44f54ff0.html">PNG Images</a></li><li class="navelem"><a href="dir_dd16e79d3dfc9a5b6a6f89d2d2e77dc7.html">LittleFS_PNG</a></li><li class="navelem"><a href="LittleFS__PNG_2PNG__FS__Support_8ino.html">PNG_FS_Support.ino</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

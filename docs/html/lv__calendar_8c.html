@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/extra/widgets/calendar/lv_calendar.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__calendar_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_calendar.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__calendar_8h_source.html">lv_calendar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="src_2lvgl_8h_source.html">../../../lvgl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../../../misc/lv_assert.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__calendar_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a400492190f883be9366a3b474745b6d7" id="r_a400492190f883be9366a3b474745b6d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a400492190f883be9366a3b474745b6d7">LV_CALENDAR_CTRL_HIGHLIGHT</a>&#160;&#160;&#160;<a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a2a7b07b1557d7e7a09df030307418b5f">LV_BTNMATRIX_CTRL_CUSTOM_2</a></td></tr>
+<tr class="memitem:ad85074271fb1658c3dbed861193c0cb4" id="r_ad85074271fb1658c3dbed861193c0cb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad85074271fb1658c3dbed861193c0cb4">LV_CALENDAR_CTRL_TODAY</a>&#160;&#160;&#160;<a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2ac7d7e20136fced89552d3b525eb078a7">LV_BTNMATRIX_CTRL_CUSTOM_1</a></td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#ac85e0a2a9b39cae50fdecc0191909efb">lv_calendar_class</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a20955372b28e24b9076c4e201f87be6f" id="r_a20955372b28e24b9076c4e201f87be6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20955372b28e24b9076c4e201f87be6f">lv_calendar_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:ae21ea1ebe9d1aa371ee83b70c58e0577" id="r_ae21ea1ebe9d1aa371ee83b70c58e0577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae21ea1ebe9d1aa371ee83b70c58e0577">lv_calendar_get_btnmatrix</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a1bba8a6ee37b053da5c231b38ddc4ba1" id="r_a1bba8a6ee37b053da5c231b38ddc4ba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bba8a6ee37b053da5c231b38ddc4ba1">lv_calendar_get_highlighted_dates</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a16816f64df66307c130aa2103dd22599" id="r_a16816f64df66307c130aa2103dd22599"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16816f64df66307c130aa2103dd22599">lv_calendar_get_highlighted_dates_num</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:aa23623961af36c589e176b9cb0015af5" id="r_aa23623961af36c589e176b9cb0015af5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa23623961af36c589e176b9cb0015af5">lv_calendar_get_pressed_date</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> *date)</td></tr>
+<tr class="memitem:a52ce4fe2da5506d3270adf79f047434c" id="r_a52ce4fe2da5506d3270adf79f047434c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52ce4fe2da5506d3270adf79f047434c">lv_calendar_get_showed_date</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ac3ffcece4e8a24de649109932fa2d315" id="r_ac3ffcece4e8a24de649109932fa2d315"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3ffcece4e8a24de649109932fa2d315">lv_calendar_get_today_date</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:af651741153d8b3c636d9ac5499a40258" id="r_af651741153d8b3c636d9ac5499a40258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af651741153d8b3c636d9ac5499a40258">lv_calendar_set_day_names</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const char *day_names[])</td></tr>
+<tr class="memitem:a4b7b2a179dcc2ea1cf90fa9f6507dfb3" id="r_a4b7b2a179dcc2ea1cf90fa9f6507dfb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b7b2a179dcc2ea1cf90fa9f6507dfb3">lv_calendar_set_highlighted_dates</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> highlighted[], uint16_t date_num)</td></tr>
+<tr class="memitem:a9da92fad3c0597ecbb678435ff177072" id="r_a9da92fad3c0597ecbb678435ff177072"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9da92fad3c0597ecbb678435ff177072">lv_calendar_set_showed_date</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint32_t year, uint32_t month)</td></tr>
+<tr class="memitem:a49b93def5d18e72b854e2007f6f3297b" id="r_a49b93def5d18e72b854e2007f6f3297b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49b93def5d18e72b854e2007f6f3297b">lv_calendar_set_today_date</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint32_t year, uint32_t month, uint32_t day)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac85e0a2a9b39cae50fdecc0191909efb" id="r_ac85e0a2a9b39cae50fdecc0191909efb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac85e0a2a9b39cae50fdecc0191909efb">lv_calendar_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a400492190f883be9366a3b474745b6d7" name="a400492190f883be9366a3b474745b6d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400492190f883be9366a3b474745b6d7">&#9670;&#160;</a></span>LV_CALENDAR_CTRL_HIGHLIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_CALENDAR_CTRL_HIGHLIGHT&#160;&#160;&#160;<a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a2a7b07b1557d7e7a09df030307418b5f">LV_BTNMATRIX_CTRL_CUSTOM_2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00019">19</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+
+</div>
+</div>
+<a id="ad85074271fb1658c3dbed861193c0cb4" name="ad85074271fb1658c3dbed861193c0cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad85074271fb1658c3dbed861193c0cb4">&#9670;&#160;</a></span>LV_CALENDAR_CTRL_TODAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_CALENDAR_CTRL_TODAY&#160;&#160;&#160;<a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2ac7d7e20136fced89552d3b525eb078a7">LV_BTNMATRIX_CTRL_CUSTOM_1</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00018">18</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+
+</div>
+</div>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#ac85e0a2a9b39cae50fdecc0191909efb">lv_calendar_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00021">21</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a20955372b28e24b9076c4e201f87be6f" name="a20955372b28e24b9076c4e201f87be6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20955372b28e24b9076c4e201f87be6f">&#9670;&#160;</a></span>lv_calendar_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_calendar_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00060">60</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(&amp;<a class="code hl_variable" href="#ac85e0a2a9b39cae50fdecc0191909efb">lv_calendar_class</a>, parent);</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+<div class="ttc" id="alv__calendar_8c_html_ac85e0a2a9b39cae50fdecc0191909efb"><div class="ttname"><a href="#ac85e0a2a9b39cae50fdecc0191909efb">lv_calendar_class</a></div><div class="ttdeci">const lv_obj_class_t lv_calendar_class</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8c_source.html#l00041">lv_calendar.c:41</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8c_source.html#l00041">lv_calendar_class</a>, <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a> y <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__calendar__1_8c_source.html#l00017">lv_example_calendar_1()</a>.</p>
+
+</div>
+</div>
+<a id="ae21ea1ebe9d1aa371ee83b70c58e0577" name="ae21ea1ebe9d1aa371ee83b70c58e0577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21ea1ebe9d1aa371ee83b70c58e0577">&#9670;&#160;</a></span>lv_calendar_get_btnmatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_calendar_get_btnmatrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the button matrix object of the calendar. It shows the dates and day names. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a calendar object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to a the button matrix </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00172">172</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>{</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span> calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>;</div>
+<div class="line"><span class="lineno">  177</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="astructlv__calendar__t_html"><div class="ttname"><a href="structlv__calendar__t.html">lv_calendar_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00038">lv_calendar.h:38</a></div></div>
+<div class="ttc" id="astructlv__calendar__t_html_a2aa70cf63747a9e694bb7c3620008bb1"><div class="ttname"><a href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">lv_calendar_t::btnm</a></div><div class="ttdeci">lv_obj_t * btnm</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00040">lv_calendar.h:40</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00040">lv_calendar_t::btnm</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a1bba8a6ee37b053da5c231b38ddc4ba1" name="a1bba8a6ee37b053da5c231b38ddc4ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bba8a6ee37b053da5c231b38ddc4ba1">&#9670;&#160;</a></span>lv_calendar_get_highlighted_dates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> * lv_calendar_get_highlighted_dates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>calendar</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the highlighted dates </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calendar</td><td>pointer to a calendar object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to an <span class="tt"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a></span> array containing the dates. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00195">195</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>{</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a83ec4aa1624a988f5e6a1c1430ef68a0">highlighted_dates</a>;</div>
+<div class="line"><span class="lineno">  201</span>}</div>
+<div class="ttc" id="astructlv__calendar__t_html_a83ec4aa1624a988f5e6a1c1430ef68a0"><div class="ttname"><a href="structlv__calendar__t.html#a83ec4aa1624a988f5e6a1c1430ef68a0">lv_calendar_t::highlighted_dates</a></div><div class="ttdeci">lv_calendar_date_t * highlighted_dates</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00045">lv_calendar.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00045">lv_calendar_t::highlighted_dates</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a16816f64df66307c130aa2103dd22599" name="a16816f64df66307c130aa2103dd22599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16816f64df66307c130aa2103dd22599">&#9670;&#160;</a></span>lv_calendar_get_highlighted_dates_num()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lv_calendar_get_highlighted_dates_num </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>calendar</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of the highlighted dates </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calendar</td><td>pointer to a calendar object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>number of highlighted days </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00203">203</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>{</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2a3849dbdb81d80382acc01c9137ffd3">highlighted_dates_num</a>;</div>
+<div class="line"><span class="lineno">  209</span>}</div>
+<div class="ttc" id="astructlv__calendar__t_html_a2a3849dbdb81d80382acc01c9137ffd3"><div class="ttname"><a href="structlv__calendar__t.html#a2a3849dbdb81d80382acc01c9137ffd3">lv_calendar_t::highlighted_dates_num</a></div><div class="ttdeci">uint16_t highlighted_dates_num</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00046">lv_calendar.h:46</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00046">lv_calendar_t::highlighted_dates_num</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="aa23623961af36c589e176b9cb0015af5" name="aa23623961af36c589e176b9cb0015af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23623961af36c589e176b9cb0015af5">&#9670;&#160;</a></span>lv_calendar_get_pressed_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_calendar_get_pressed_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>calendar</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the currently pressed day </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calendar</td><td>pointer to a calendar object </td></tr>
+    <tr><td class="paramname">date</td><td>store the pressed date here </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: there is a valid pressed date; LV_RES_INV: there is no pressed data </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00211">211</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>{</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    uint16_t d = <a class="code hl_function" href="lv__btnmatrix_8c.html#ab597f57b85824b31003b4ed6e0d4cfa6">lv_btnmatrix_get_selected_btn</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>);</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">if</span>(d == <a class="code hl_define" href="lv__btnmatrix_8h.html#a6726d21381e2aeede2b3a766d8aace91">LV_BTNMATRIX_BTN_NONE</a>) {</div>
+<div class="line"><span class="lineno">  218</span>        date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a> = 0;</div>
+<div class="line"><span class="lineno">  219</span>        date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a> = 0;</div>
+<div class="line"><span class="lineno">  220</span>        date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a> = 0;</div>
+<div class="line"><span class="lineno">  221</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  222</span>    }</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * txt = <a class="code hl_function" href="lv__btnmatrix_8c.html#aaf80838b5ce46cffeb824500317a2bdd">lv_btnmatrix_get_btn_text</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>, <a class="code hl_function" href="lv__btnmatrix_8c.html#ab597f57b85824b31003b4ed6e0d4cfa6">lv_btnmatrix_get_selected_btn</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>));</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">if</span>(txt[1] == 0) date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a> = txt[0] - <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">else</span> date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a> = (txt[0] - <span class="charliteral">&#39;0&#39;</span>) * 10 + (txt[1] - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a> = calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>;</div>
+<div class="line"><span class="lineno">  230</span>    date-&gt;<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a> = calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a>;</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  233</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8c_html_aaf80838b5ce46cffeb824500317a2bdd"><div class="ttname"><a href="lv__btnmatrix_8c.html#aaf80838b5ce46cffeb824500317a2bdd">lv_btnmatrix_get_btn_text</a></div><div class="ttdeci">const char * lv_btnmatrix_get_btn_text(const lv_obj_t *obj, uint16_t btn_id)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00326">lv_btnmatrix.c:326</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8c_html_ab597f57b85824b31003b4ed6e0d4cfa6"><div class="ttname"><a href="lv__btnmatrix_8c.html#ab597f57b85824b31003b4ed6e0d4cfa6">lv_btnmatrix_get_selected_btn</a></div><div class="ttdeci">uint16_t lv_btnmatrix_get_selected_btn(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00318">lv_btnmatrix.c:318</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8h_html_a6726d21381e2aeede2b3a766d8aace91"><div class="ttname"><a href="lv__btnmatrix_8h.html#a6726d21381e2aeede2b3a766d8aace91">LV_BTNMATRIX_BTN_NONE</a></div><div class="ttdeci">#define LV_BTNMATRIX_BTN_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00025">lv_btnmatrix.h:25</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a></div><div class="ttdeci">@ LV_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00045">lv_types.h:45</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a></div><div class="ttdeci">@ LV_RES_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00043">lv_types.h:43</a></div></div>
+<div class="ttc" id="astructlv__calendar__date__t_html_a0b137706ff796020a1964e992ba16cfa"><div class="ttname"><a href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">lv_calendar_date_t::year</a></div><div class="ttdeci">uint16_t year</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00032">lv_calendar.h:32</a></div></div>
+<div class="ttc" id="astructlv__calendar__date__t_html_ae68253cbbafedd37d6845a4f0b21cdc7"><div class="ttname"><a href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">lv_calendar_date_t::month</a></div><div class="ttdeci">int8_t month</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00033">lv_calendar.h:33</a></div></div>
+<div class="ttc" id="astructlv__calendar__date__t_html_aeae1ffad6ab67d62fe52724d243db62c"><div class="ttname"><a href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">lv_calendar_date_t::day</a></div><div class="ttdeci">int8_t day</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00034">lv_calendar.h:34</a></div></div>
+<div class="ttc" id="astructlv__calendar__t_html_ab6be6d8e30ba4c113aed36054b0a387f"><div class="ttname"><a href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">lv_calendar_t::showed_date</a></div><div class="ttdeci">lv_calendar_date_t showed_date</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00043">lv_calendar.h:43</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00040">lv_calendar_t::btnm</a>, <a class="el" href="lv__calendar_8h_source.html#l00034">lv_calendar_date_t::day</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00025">LV_BTNMATRIX_BTN_NONE</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00326">lv_btnmatrix_get_btn_text()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00318">lv_btnmatrix_get_selected_btn()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__calendar_8h_source.html#l00033">lv_calendar_date_t::month</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__calendar_8h_source.html#l00043">lv_calendar_t::showed_date</a> y <a class="el" href="lv__calendar_8h_source.html#l00032">lv_calendar_date_t::year</a>.</p>
+
+</div>
+</div>
+<a id="a52ce4fe2da5506d3270adf79f047434c" name="a52ce4fe2da5506d3270adf79f047434c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ce4fe2da5506d3270adf79f047434c">&#9670;&#160;</a></span>lv_calendar_get_showed_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> * lv_calendar_get_showed_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>calendar</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the currently showed </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calendar</td><td>pointer to a calendar object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to an <span class="tt"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a></span> variable containing the date is being shown. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00187">187</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>{</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> &amp;calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>;</div>
+<div class="line"><span class="lineno">  193</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__calendar_8h_source.html#l00043">lv_calendar_t::showed_date</a>.</p>
+
+</div>
+</div>
+<a id="ac3ffcece4e8a24de649109932fa2d315" name="ac3ffcece4e8a24de649109932fa2d315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3ffcece4e8a24de649109932fa2d315">&#9670;&#160;</a></span>lv_calendar_get_today_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> * lv_calendar_get_today_date </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>calendar</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the today's date </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">calendar</td><td>pointer to a calendar object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>return pointer to an <span class="tt"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a></span> variable containing the date of today. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00179">179</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>{</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">return</span> &amp;calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a3d4be51a152db6c6bda11baedc883c63">today</a>;</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+<div class="ttc" id="astructlv__calendar__t_html_a3d4be51a152db6c6bda11baedc883c63"><div class="ttname"><a href="structlv__calendar__t.html#a3d4be51a152db6c6bda11baedc883c63">lv_calendar_t::today</a></div><div class="ttdeci">lv_calendar_date_t today</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00042">lv_calendar.h:42</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__calendar_8h_source.html#l00042">lv_calendar_t::today</a>.</p>
+
+</div>
+</div>
+<a id="af651741153d8b3c636d9ac5499a40258" name="af651741153d8b3c636d9ac5499a40258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af651741153d8b3c636d9ac5499a40258">&#9670;&#160;</a></span>lv_calendar_set_day_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_calendar_set_day_names </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>day_names</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00072">72</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    uint32_t i;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">for</span>(i = 0; i &lt; 7; i++) {</div>
+<div class="line"><span class="lineno">   79</span>        calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#acba32ad994f1657f203535cf9404ee6a">map</a>[i] = day_names[i];</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+<div class="ttc" id="astructlv__calendar__t_html_acba32ad994f1657f203535cf9404ee6a"><div class="ttname"><a href="structlv__calendar__t.html#acba32ad994f1657f203535cf9404ee6a">lv_calendar_t::map</a></div><div class="ttdeci">const char * map[8 *7]</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00047">lv_calendar.h:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__calendar_8h_source.html#l00047">lv_calendar_t::map</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a4b7b2a179dcc2ea1cf90fa9f6507dfb3" name="a4b7b2a179dcc2ea1cf90fa9f6507dfb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7b2a179dcc2ea1cf90fa9f6507dfb3">&#9670;&#160;</a></span>lv_calendar_set_highlighted_dates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_calendar_set_highlighted_dates </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a></td>          <td class="paramname"><span class="paramname"><em>highlighted</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>date_num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the highlighted dates </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a calendar object </td></tr>
+    <tr><td class="paramname">highlighted</td><td>pointer to an <span class="tt"><a class="el" href="structlv__calendar__date__t.html">lv_calendar_date_t</a></span> array containing the dates. Only the pointer will be saved so this variable can't be local which will be destroyed later. </td></tr>
+    <tr><td class="paramname">date_num</td><td>number of dates in the array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00096">96</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(highlighted);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a83ec4aa1624a988f5e6a1c1430ef68a0">highlighted_dates</a>     = highlighted;</div>
+<div class="line"><span class="lineno">  104</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2a3849dbdb81d80382acc01c9137ffd3">highlighted_dates_num</a> = date_num;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    highlight_update(obj);</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a3fe9ba05eba3d37b7cd1d3765c34487d"><div class="ttname"><a href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a></div><div class="ttdeci">#define LV_ASSERT_NULL(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00058">lv_assert.h:58</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00045">lv_calendar_t::highlighted_dates</a>, <a class="el" href="lv__calendar_8h_source.html#l00046">lv_calendar_t::highlighted_dates_num</a>, <a class="el" href="lv__assert_8h_source.html#l00058">LV_ASSERT_NULL</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__calendar__1_8c_source.html#l00017">lv_example_calendar_1()</a>.</p>
+
+</div>
+</div>
+<a id="a9da92fad3c0597ecbb678435ff177072" name="a9da92fad3c0597ecbb678435ff177072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da92fad3c0597ecbb678435ff177072">&#9670;&#160;</a></span>lv_calendar_set_showed_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_calendar_set_showed_date </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>month</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the currently showed </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a calendar object </td></tr>
+    <tr><td class="paramname">year</td><td>today's year </td></tr>
+    <tr><td class="paramname">month</td><td>today's month [1..12] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00109">109</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>   = year;</div>
+<div class="line"><span class="lineno">  115</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a>  = month;</div>
+<div class="line"><span class="lineno">  116</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a>    = 1;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_struct" href="structlv__calendar__date__t.html">lv_calendar_date_t</a> d;</div>
+<div class="line"><span class="lineno">  119</span>    d.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a> = calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>;</div>
+<div class="line"><span class="lineno">  120</span>    d.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a> = calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a>;</div>
+<div class="line"><span class="lineno">  121</span>    d.<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a> = calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#ab6be6d8e30ba4c113aed36054b0a387f">showed_date</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a>;</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    uint32_t i;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="comment">/*Remove the disabled state but revert it for day names*/</span></div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="lv__btnmatrix_8c.html#a7f3ec532d602c0df4cbc910f5f402147">lv_btnmatrix_clear_btn_ctrl_all</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>, <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2afc839fbe893a96e6f925f1a227bca6a3">LV_BTNMATRIX_CTRL_DISABLED</a>);</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">for</span>(i = 0; i &lt; 7; i++) {</div>
+<div class="line"><span class="lineno">  128</span>        <a class="code hl_function" href="lv__btnmatrix_8c.html#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>, i, <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2afc839fbe893a96e6f925f1a227bca6a3">LV_BTNMATRIX_CTRL_DISABLED</a>);</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    uint8_t act_mo_len = get_month_length(d.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>, d.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a>);</div>
+<div class="line"><span class="lineno">  132</span>    uint8_t day_first = get_day_of_week(d.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>, d.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a>, 1);</div>
+<div class="line"><span class="lineno">  133</span>    uint8_t c;</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">for</span>(i = day_first, c = 1; i &lt; act_mo_len + day_first; i++, c++) {</div>
+<div class="line"><span class="lineno">  135</span>        <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">nums</a>[i], <span class="keyword">sizeof</span>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">nums</a>[0]), <span class="stringliteral">&quot;%d&quot;</span>, c);</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    uint8_t prev_mo_len = get_month_length(d.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>, d.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a> - 1);</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">for</span>(i = 0, c = prev_mo_len - day_first + 1; i &lt; day_first; i++, c++) {</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">nums</a>[i], <span class="keyword">sizeof</span>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">nums</a>[0]), <span class="stringliteral">&quot;%d&quot;</span>, c);</div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="lv__btnmatrix_8c.html#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>, i + 7, <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2afc839fbe893a96e6f925f1a227bca6a3">LV_BTNMATRIX_CTRL_DISABLED</a>);</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">for</span>(i = day_first + act_mo_len, c = 1; i &lt; 6 * 7; i++, c++) {</div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">nums</a>[i], <span class="keyword">sizeof</span>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">nums</a>[0]), <span class="stringliteral">&quot;%d&quot;</span>, c);</div>
+<div class="line"><span class="lineno">  146</span>        <a class="code hl_function" href="lv__btnmatrix_8c.html#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>, i + 7, <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2afc839fbe893a96e6f925f1a227bca6a3">LV_BTNMATRIX_CTRL_DISABLED</a>);</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    highlight_update(obj);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">/*Reset the focused button if the days changes*/</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__btnmatrix_8c.html#ab597f57b85824b31003b4ed6e0d4cfa6">lv_btnmatrix_get_selected_btn</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>) != <a class="code hl_define" href="lv__btnmatrix_8h.html#a6726d21381e2aeede2b3a766d8aace91">LV_BTNMATRIX_BTN_NONE</a>) {</div>
+<div class="line"><span class="lineno">  153</span>        <a class="code hl_function" href="lv__btnmatrix_8c.html#ac887783607642c29fdcc31b34da7ed10">lv_btnmatrix_set_selected_btn</a>(calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>, day_first + 7);</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="comment">/* The children of the calendar are probably headers.</span></div>
+<div class="line"><span class="lineno">  159</span><span class="comment">     * Notify them to let the headers updated to the new date*/</span></div>
+<div class="line"><span class="lineno">  160</span>    uint32_t child_cnt = <a class="code hl_function" href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a>(obj);</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span>(i = 0; i &lt; child_cnt; i++) {</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * child = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(obj, i);</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">if</span>(child == calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a2aa70cf63747a9e694bb7c3620008bb1">btnm</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(child, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>, obj);</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8c_html_a5dc6dae51c983371337b415f2330c71c"><div class="ttname"><a href="lv__btnmatrix_8c.html#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a></div><div class="ttdeci">void lv_btnmatrix_set_btn_ctrl(lv_obj_t *obj, uint16_t btn_id, lv_btnmatrix_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00207">lv_btnmatrix.c:207</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8c_html_a7f3ec532d602c0df4cbc910f5f402147"><div class="ttname"><a href="lv__btnmatrix_8c.html#a7f3ec532d602c0df4cbc910f5f402147">lv_btnmatrix_clear_btn_ctrl_all</a></div><div class="ttdeci">void lv_btnmatrix_clear_btn_ctrl_all(lv_obj_t *obj, lv_btnmatrix_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00272">lv_btnmatrix.c:272</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8c_html_ac887783607642c29fdcc31b34da7ed10"><div class="ttname"><a href="lv__btnmatrix_8c.html#ac887783607642c29fdcc31b34da7ed10">lv_btnmatrix_set_selected_btn</a></div><div class="ttdeci">void lv_btnmatrix_set_selected_btn(lv_obj_t *obj, uint16_t btn_id)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00194">lv_btnmatrix.c:194</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8h_html_afedbbeb3c1adfce72b350e8fed608bf2afc839fbe893a96e6f925f1a227bca6a3"><div class="ttname"><a href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2afc839fbe893a96e6f925f1a227bca6a3">LV_BTNMATRIX_CTRL_DISABLED</a></div><div class="ttdeci">@ LV_BTNMATRIX_CTRL_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00038">lv_btnmatrix.h:38</a></div></div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a></div><div class="ttdeci">@ LV_EVENT_VALUE_CHANGED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00067">lv_event.h:67</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_a708b3eb8efc7d0ac06d1b924dcd9b651"><div class="ttname"><a href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_child(const lv_obj_t *obj, int32_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00293">lv_obj_tree.c:293</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_aa70909493dbfa20500193fb3934ebdb4"><div class="ttname"><a href="lv__obj__tree_8c.html#aa70909493dbfa20500193fb3934ebdb4">lv_obj_get_child_cnt</a></div><div class="ttdeci">uint32_t lv_obj_get_child_cnt(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00313">lv_obj_tree.c:313</a></div></div>
+<div class="ttc" id="alv__printf_8c_html_a5480d8503f8285409692a6116c7df5e7"><div class="ttname"><a href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a></div><div class="ttdeci">int lv_snprintf(char *buffer, size_t count, const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8c_source.html#l00865">lv_printf.c:865</a></div></div>
+<div class="ttc" id="astructlv__calendar__date__t_html"><div class="ttname"><a href="structlv__calendar__date__t.html">lv_calendar_date_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00031">lv_calendar.h:31</a></div></div>
+<div class="ttc" id="astructlv__calendar__t_html_a5670bac623feeb1e731fb3c0b0ff3b2f"><div class="ttname"><a href="structlv__calendar__t.html#a5670bac623feeb1e731fb3c0b0ff3b2f">lv_calendar_t::nums</a></div><div class="ttdeci">char nums[7 *6][4]</div><div class="ttdef"><b>Definition</b> <a href="lv__calendar_8h_source.html#l00048">lv_calendar.h:48</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00040">lv_calendar_t::btnm</a>, <a class="el" href="lv__calendar_8h_source.html#l00034">lv_calendar_date_t::day</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00025">LV_BTNMATRIX_BTN_NONE</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00272">lv_btnmatrix_clear_btn_ctrl_all()</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00038">LV_BTNMATRIX_CTRL_DISABLED</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00318">lv_btnmatrix_get_selected_btn()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00207">lv_btnmatrix_set_btn_ctrl()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00194">lv_btnmatrix_set_selected_btn()</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="lv__event_8h_source.html#l00067">LV_EVENT_VALUE_CHANGED</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00293">lv_obj_get_child()</a>, <a class="el" href="lv__obj__tree_8c_source.html#l00313">lv_obj_get_child_cnt()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__printf_8c_source.html#l00865">lv_snprintf()</a>, <a class="el" href="lv__calendar_8h_source.html#l00033">lv_calendar_date_t::month</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__calendar_8h_source.html#l00048">lv_calendar_t::nums</a>, <a class="el" href="lv__calendar_8h_source.html#l00043">lv_calendar_t::showed_date</a> y <a class="el" href="lv__calendar_8h_source.html#l00032">lv_calendar_date_t::year</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__calendar__1_8c_source.html#l00017">lv_example_calendar_1()</a>.</p>
+
+</div>
+</div>
+<a id="a49b93def5d18e72b854e2007f6f3297b" name="a49b93def5d18e72b854e2007f6f3297b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b93def5d18e72b854e2007f6f3297b">&#9670;&#160;</a></span>lv_calendar_set_today_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_calendar_set_today_date </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the today's date </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a calendar object </td></tr>
+    <tr><td class="paramname">year</td><td>today's year </td></tr>
+    <tr><td class="paramname">month</td><td>today's month [1..12] </td></tr>
+    <tr><td class="paramname">day</td><td>today's day [1..31] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00084">84</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> * calendar = (<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a3d4be51a152db6c6bda11baedc883c63">today</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#a0b137706ff796020a1964e992ba16cfa">year</a>         = year;</div>
+<div class="line"><span class="lineno">   90</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a3d4be51a152db6c6bda11baedc883c63">today</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#ae68253cbbafedd37d6845a4f0b21cdc7">month</a>        = month;</div>
+<div class="line"><span class="lineno">   91</span>    calendar-&gt;<a class="code hl_variable" href="structlv__calendar__t.html#a3d4be51a152db6c6bda11baedc883c63">today</a>.<a class="code hl_variable" href="structlv__calendar__date__t.html#aeae1ffad6ab67d62fe52724d243db62c">day</a>          = day;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    highlight_update(obj);</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__calendar_8h_source.html#l00034">lv_calendar_date_t::day</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__calendar_8h_source.html#l00033">lv_calendar_date_t::month</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>, <a class="el" href="lv__calendar_8h_source.html#l00042">lv_calendar_t::today</a> y <a class="el" href="lv__calendar_8h_source.html#l00032">lv_calendar_date_t::year</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__calendar__1_8c_source.html#l00017">lv_example_calendar_1()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ac85e0a2a9b39cae50fdecc0191909efb" name="ac85e0a2a9b39cae50fdecc0191909efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac85e0a2a9b39cae50fdecc0191909efb">&#9670;&#160;</a></span>lv_calendar_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_calendar_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_calendar_constructor,</div>
+<div class="line">    .width_def = (<a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> * 3) / 2,</div>
+<div class="line">    .height_def = (<a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> * 3) / 2,</div>
+<div class="line">    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a>,</div>
+<div class="line">    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a>),</div>
+<div class="line">    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line">}</div>
+<div class="ttc" id="alv__conf_8h_html_aadf0386c6d60d0c07153b38654f6b6d3"><div class="ttname"><a href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a></div><div class="ttdeci">#define LV_DPI_DEF</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00099">lv_conf.h:99</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a424ca3b432ad82f98c4b05950b597d44"><div class="ttname"><a href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div><div class="ttdeci">const lv_obj_class_t lv_obj_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00073">lv_obj.c:73</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef"><div class="ttname"><a href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_GROUP_DEF_TRUE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00040">lv_obj_class.h:40</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__calendar_8c_source.html#l00041">41</a> del archivo <a class="el" href="lv__calendar_8c_source.html">lv_calendar.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                         {</div>
+<div class="line"><span class="lineno">   42</span>    .constructor_cb = lv_calendar_constructor,</div>
+<div class="line"><span class="lineno">   43</span>    .width_def = (<a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> * 3) / 2,</div>
+<div class="line"><span class="lineno">   44</span>    .height_def = (<a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> * 3) / 2,</div>
+<div class="line"><span class="lineno">   45</span>    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a>,</div>
+<div class="line"><span class="lineno">   46</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__calendar__t.html">lv_calendar_t</a>),</div>
+<div class="line"><span class="lineno">   47</span>    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line"><span class="lineno">   48</span>};</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="lv__calendar_8c_source.html#l00060">lv_calendar_create()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_7e933415d16d9eae3f2791188a86ac0c.html">calendar</a></li><li class="navelem"><a href="lv__calendar_8c.html">lv_calendar.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

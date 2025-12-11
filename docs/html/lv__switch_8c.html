@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/widgets/lv_switch.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__switch_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_switch.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__switch_8h_source.html">lv_switch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">../misc/lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__anim_8h_source.html">../misc/lv_anim.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__indev_8h_source.html">../core/lv_indev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__disp_8h_source.html">../core/lv_disp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__img_8h_source.html">lv_img.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__switch_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3ca16e829d354d4f77fd0d995524a976" id="r_a3ca16e829d354d4f77fd0d995524a976"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ca16e829d354d4f77fd0d995524a976">LV_SWITCH_ANIM_STATE_END</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memitem:a0e834b4f946832a36d6970bc9532ddb5" id="r_a0e834b4f946832a36d6970bc9532ddb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e834b4f946832a36d6970bc9532ddb5">LV_SWITCH_ANIM_STATE_INV</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memitem:a26efa46cd8ba677c14909c94823cece8" id="r_a26efa46cd8ba677c14909c94823cece8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26efa46cd8ba677c14909c94823cece8">LV_SWITCH_ANIM_STATE_START</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a865bf4ecadfc2ccd4201b96bbc41936e" id="r_a865bf4ecadfc2ccd4201b96bbc41936e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a865bf4ecadfc2ccd4201b96bbc41936e">LV_SWITCH_IS_ANIMATING</a>(sw)</td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#a842326b50134c965af077f7f13e95c9f">lv_switch_class</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a1fb910fe0bffa92d8d9db41e04ce7b52" id="r_a1fb910fe0bffa92d8d9db41e04ce7b52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fb910fe0bffa92d8d9db41e04ce7b52">lv_switch_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a842326b50134c965af077f7f13e95c9f" id="r_a842326b50134c965af077f7f13e95c9f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a842326b50134c965af077f7f13e95c9f">lv_switch_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a3ca16e829d354d4f77fd0d995524a976" name="a3ca16e829d354d4f77fd0d995524a976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca16e829d354d4f77fd0d995524a976">&#9670;&#160;</a></span>LV_SWITCH_ANIM_STATE_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_SWITCH_ANIM_STATE_END&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Switch animation end value. (Not the real value of the switch just indicates process animation) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00031">31</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+
+</div>
+</div>
+<a id="a0e834b4f946832a36d6970bc9532ddb5" name="a0e834b4f946832a36d6970bc9532ddb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e834b4f946832a36d6970bc9532ddb5">&#9670;&#160;</a></span>LV_SWITCH_ANIM_STATE_INV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_SWITCH_ANIM_STATE_INV&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mark no animation is in progress </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00034">34</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+
+</div>
+</div>
+<a id="a26efa46cd8ba677c14909c94823cece8" name="a26efa46cd8ba677c14909c94823cece8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26efa46cd8ba677c14909c94823cece8">&#9670;&#160;</a></span>LV_SWITCH_ANIM_STATE_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_SWITCH_ANIM_STATE_START&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Switch animation start value. (Not the real value of the switch just indicates process animation) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00028">28</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+
+</div>
+</div>
+<a id="a865bf4ecadfc2ccd4201b96bbc41936e" name="a865bf4ecadfc2ccd4201b96bbc41936e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a865bf4ecadfc2ccd4201b96bbc41936e">&#9670;&#160;</a></span>LV_SWITCH_IS_ANIMATING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_SWITCH_IS_ANIMATING</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>sw</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">(((sw)-&gt;anim_state) != <a class="code hl_define" href="#a0e834b4f946832a36d6970bc9532ddb5">LV_SWITCH_ANIM_STATE_INV</a>)</div>
+<div class="ttc" id="alv__switch_8c_html_a0e834b4f946832a36d6970bc9532ddb5"><div class="ttname"><a href="#a0e834b4f946832a36d6970bc9532ddb5">LV_SWITCH_ANIM_STATE_INV</a></div><div class="ttdeci">#define LV_SWITCH_ANIM_STATE_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__switch_8c_source.html#l00034">lv_switch.c:34</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00025">25</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+
+</div>
+</div>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#a842326b50134c965af077f7f13e95c9f">lv_switch_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00023">23</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a1fb910fe0bffa92d8d9db41e04ce7b52" name="a1fb910fe0bffa92d8d9db41e04ce7b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb910fe0bffa92d8d9db41e04ce7b52">&#9670;&#160;</a></span>lv_switch_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_switch_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a switch object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to an object, it will be the parent of the new switch </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the created switch </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00073">73</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   79</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__anim__1_8c_source.html#l00040">lv_example_anim_1()</a>, <a class="el" href="lv__example__scroll__2_8c_source.html#l00020">lv_example_scroll_2()</a> y <a class="el" href="lv__example__switch__1_8c_source.html#l00013">lv_example_switch_1()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a842326b50134c965af077f7f13e95c9f" name="a842326b50134c965af077f7f13e95c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a842326b50134c965af077f7f13e95c9f">&#9670;&#160;</a></span>lv_switch_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_switch_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_switch_constructor,</div>
+<div class="line">    .destructor_cb = lv_switch_destructor,</div>
+<div class="line">    .event_cb = lv_switch_event,</div>
+<div class="line">    .width_def = (4 * <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>) / 10,</div>
+<div class="line">    .height_def = (4 * <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>) / 17,</div>
+<div class="line">    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a>,</div>
+<div class="line">    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__switch__t.html">lv_switch_t</a>),</div>
+<div class="line">    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line">}</div>
+<div class="ttc" id="alv__conf_8h_html_aadf0386c6d60d0c07153b38654f6b6d3"><div class="ttname"><a href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a></div><div class="ttdeci">#define LV_DPI_DEF</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00099">lv_conf.h:99</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a424ca3b432ad82f98c4b05950b597d44"><div class="ttname"><a href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div><div class="ttdeci">const lv_obj_class_t lv_obj_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00073">lv_obj.c:73</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef"><div class="ttname"><a href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_GROUP_DEF_TRUE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00040">lv_obj_class.h:40</a></div></div>
+<div class="ttc" id="astructlv__switch__t_html"><div class="ttname"><a href="structlv__switch__t.html">lv_switch_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__switch_8h_source.html#l00033">lv_switch.h:33</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__switch_8c_source.html#l00054">54</a> del archivo <a class="el" href="lv__switch_8c_source.html">lv_switch.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                       {</div>
+<div class="line"><span class="lineno">   55</span>    .constructor_cb = lv_switch_constructor,</div>
+<div class="line"><span class="lineno">   56</span>    .destructor_cb = lv_switch_destructor,</div>
+<div class="line"><span class="lineno">   57</span>    .event_cb = lv_switch_event,</div>
+<div class="line"><span class="lineno">   58</span>    .width_def = (4 * <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>) / 10,</div>
+<div class="line"><span class="lineno">   59</span>    .height_def = (4 * <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>) / 17,</div>
+<div class="line"><span class="lineno">   60</span>    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a>,</div>
+<div class="line"><span class="lineno">   61</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__switch__t.html">lv_switch_t</a>),</div>
+<div class="line"><span class="lineno">   62</span>    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line"><span class="lineno">   63</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_20066d84f6aea438deed21abfc1118ef.html">widgets</a></li><li class="navelem"><a href="lv__switch_8c.html">lv_switch.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

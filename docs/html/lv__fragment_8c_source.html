@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/extra/others/fragment/lv_fragment.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__fragment_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_fragment.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__fragment_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_fragment.c</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="lv__fragment_8h.html">lv_fragment.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#if LV_USE_FRAGMENT</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *  STATIC PROTOTYPES</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">static</span> <span class="keywordtype">void</span> cb_delete_assertion(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * event);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>lv_fragment_t * lv_fragment_create(<span class="keyword">const</span> lv_fragment_class_t * cls, <span class="keywordtype">void</span> * args)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(cls);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(cls-&gt;create_obj_cb);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(cls-&gt;instance_size &gt; 0);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    lv_fragment_t * instance = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(cls-&gt;instance_size);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(instance, cls-&gt;instance_size);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    instance-&gt;cls = cls;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    instance-&gt;child_manager = lv_fragment_manager_create(instance);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span>(cls-&gt;constructor_cb) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        cls-&gt;constructor_cb(instance, args);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> instance;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> lv_fragment_del(lv_fragment_t * fragment)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span>(fragment-&gt;managed) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        lv_fragment_manager_remove(fragment-&gt;managed-&gt;manager, fragment);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span>(fragment-&gt;obj) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        lv_fragment_del_obj(fragment);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">/* Objects will leak if this function called before objects deleted */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> lv_fragment_class_t * cls = fragment-&gt;cls;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span>(cls-&gt;destructor_cb) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        cls-&gt;destructor_cb(fragment);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    lv_fragment_manager_del(fragment-&gt;child_manager);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(fragment);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>lv_fragment_manager_t * lv_fragment_get_manager(lv_fragment_t * fragment)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment-&gt;managed);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> fragment-&gt;managed-&gt;manager;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <span class="keyword">const</span> * lv_fragment_get_container(lv_fragment_t * fragment)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment-&gt;managed);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> fragment-&gt;managed-&gt;container;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>lv_fragment_t * lv_fragment_get_parent(lv_fragment_t * fragment)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment-&gt;managed);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> lv_fragment_manager_get_parent_fragment(fragment-&gt;managed-&gt;manager);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_fragment_create_obj(lv_fragment_t * fragment, <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * container)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    lv_fragment_managed_states_t * states = fragment-&gt;managed;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span>(states) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        states-&gt;destroying_obj = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> lv_fragment_class_t * cls = fragment-&gt;cls;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = cls-&gt;create_obj_cb(fragment, container);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(obj);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    fragment-&gt;obj = obj;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    lv_fragment_manager_create_obj(fragment-&gt;child_manager);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span>(states) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        states-&gt;obj_created = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_function" href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a>(obj, cb_delete_assertion, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a2b6e10a27dd52c80f3ed04e4bc3ced2b">LV_EVENT_DELETE</a>, NULL);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span>(cls-&gt;obj_created_cb) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        cls-&gt;obj_created_cb(fragment, obj);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> lv_fragment_del_obj(lv_fragment_t * fragment)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>{</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    lv_fragment_manager_del_obj(fragment-&gt;child_manager);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    lv_fragment_managed_states_t * states = fragment-&gt;managed;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span>(states) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span>(!states-&gt;obj_created) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        states-&gt;destroying_obj = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordtype">bool</span> cb_removed = <a class="code hl_function" href="lv__event_8c.html#ac8e379acaf8893441e22e28a0520b9b9">lv_obj_remove_event_cb</a>(fragment-&gt;obj, cb_delete_assertion);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_define" href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a>(cb_removed);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment-&gt;obj);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> lv_fragment_class_t * cls = fragment-&gt;cls;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span>(cls-&gt;obj_will_delete_cb) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        cls-&gt;obj_will_delete_cb(fragment, fragment-&gt;obj);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_function" href="lv__obj__tree_8c.html#aa6dcfe74a8884599d8db6b4c9ad76467">lv_obj_del</a>(fragment-&gt;obj);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span>(cls-&gt;obj_deleted_cb) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        cls-&gt;obj_deleted_cb(fragment, fragment-&gt;obj);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">if</span>(states) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        states-&gt;obj_created = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    fragment-&gt;obj = NULL;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">void</span> lv_fragment_recreate_obj(lv_fragment_t * fragment)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_define" href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a>(fragment-&gt;managed);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    lv_fragment_del_obj(fragment);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    lv_fragment_create_obj(fragment, *fragment-&gt;managed-&gt;container);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"> *   STATIC FUNCTIONS</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">static</span> <span class="keywordtype">void</span> cb_delete_assertion(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * event)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(event);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_define" href="lv__assert_8h.html#a0ec4363af9fedf7ddeaaa41d31f364bb">LV_ASSERT_MSG</a>(0, <span class="stringliteral">&quot;Please delete objects with lv_fragment_destroy_obj&quot;</span>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_FRAGMENT*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alv__assert_8h_html_a0ec4363af9fedf7ddeaaa41d31f364bb"><div class="ttname"><a href="lv__assert_8h.html#a0ec4363af9fedf7ddeaaa41d31f364bb">LV_ASSERT_MSG</a></div><div class="ttdeci">#define LV_ASSERT_MSG(expr, msg)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00045">lv_assert.h:45</a></div></div>
+<div class="ttc" id="alv__assert_8h_html_a3fe9ba05eba3d37b7cd1d3765c34487d"><div class="ttname"><a href="lv__assert_8h.html#a3fe9ba05eba3d37b7cd1d3765c34487d">LV_ASSERT_NULL</a></div><div class="ttdeci">#define LV_ASSERT_NULL(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00058">lv_assert.h:58</a></div></div>
+<div class="ttc" id="alv__assert_8h_html_a6f28be74978da222b03c2694241d3d01"><div class="ttname"><a href="lv__assert_8h.html#a6f28be74978da222b03c2694241d3d01">LV_ASSERT</a></div><div class="ttdeci">#define LV_ASSERT(expr)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00037">lv_assert.h:37</a></div></div>
+<div class="ttc" id="alv__event_8c_html_abacf41238027144749f68107a5375994"><div class="ttname"><a href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a></div><div class="ttdeci">struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00162">lv_event.c:162</a></div></div>
+<div class="ttc" id="alv__event_8c_html_ac8e379acaf8893441e22e28a0520b9b9"><div class="ttname"><a href="lv__event_8c.html#ac8e379acaf8893441e22e28a0520b9b9">lv_obj_remove_event_cb</a></div><div class="ttdeci">bool lv_obj_remove_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00180">lv_event.c:180</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a21b130dbe9349eab447cf0c891517272"><div class="ttname"><a href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a></div><div class="ttdeci">struct _lv_event_t lv_event_t</div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a2b6e10a27dd52c80f3ed04e4bc3ced2b"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a2b6e10a27dd52c80f3ed04e4bc3ced2b">LV_EVENT_DELETE</a></div><div class="ttdeci">@ LV_EVENT_DELETE</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00074">lv_event.h:74</a></div></div>
+<div class="ttc" id="alv__fragment_8h_html"><div class="ttname"><a href="lv__fragment_8h.html">lv_fragment.h</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_aa6dcfe74a8884599d8db6b4c9ad76467"><div class="ttname"><a href="lv__obj__tree_8c.html#aa6dcfe74a8884599d8db6b4c9ad76467">lv_obj_del</a></div><div class="ttdeci">void lv_obj_del(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00045">lv_obj_tree.c:45</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_0d07392e6b47f43addc5956f83d00ade.html">others</a></li><li class="navelem"><a href="dir_2f0d5468ea788864ec71aaf7f24f1ed1.html">fragment</a></li><li class="navelem"><a href="lv__fragment_8c.html">lv_fragment.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

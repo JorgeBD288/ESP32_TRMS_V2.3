@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/TFT_Drivers/ST7735_Init.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ST7735__Init_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ST7735_Init.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ST7735__Init_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// This is the command sequence that initialises the ST7735 driver</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// This setup information is in a format accepted by the commandList() function</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// which reduces FLASH space, but on an ESP8266 there is plenty available!</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// See ILI9341_Setup.h file for an alternative simpler format</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// Initialization commands for ST7735 screens</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code hl_define" href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  Bcmd[] = {                  <span class="comment">// Initialization commands for 7735B screens</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    18,                       <span class="comment">// 18 commands in list:</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a2816f2fce9a937ced8567b2c2797767b">ST7735_SWRESET</a>,   <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  1: Software reset, no args, w/delay</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      50,                     <span class="comment">//     50 ms delay</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aa061cfc0b8f0fea3e70b59d72f6e1caa">ST7735_SLPOUT</a> ,   <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  2: Out of sleep mode, no args, w/delay</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      255,                    <span class="comment">//     255 = 500 ms delay</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a9caf06c78cdaba66cea553668103b759">ST7735_COLMOD</a> , 1+<a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  3: Set color mode, 1 arg + delay:</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      0x05,                   <span class="comment">//     16-bit color</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aeb5c49fcdd239ab153f5d9b15304ca9c">ST7735_FRMCTR1</a>, 3+<a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  4: Frame rate control, 3 args + delay:</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      0x00,                   <span class="comment">//     fastest refresh</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      0x06,                   <span class="comment">//     6 lines front porch</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      0x03,                   <span class="comment">//     3 lines back porch</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a74afa388731002f70e250770901f90a2">ST7735_MADCTL</a> , 1      ,  <span class="comment">//  5: Memory access ctrl (directions), 1 arg:</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      0x40 | <a class="code hl_define" href="HX8357B__Defines_8h.html#a11deac2a9d703010dd25e6aa3b817841">TFT_MAD_COLOR_ORDER</a>, <span class="comment">//     Row addr/col addr, bottom to top refresh</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ace47a845775310352dc7e2fae3e1586a">ST7735_DISSET5</a>, 2      ,  <span class="comment">//  6: Display settings #5, 2 args, no delay:</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      0x15,                   <span class="comment">//     1 clk cycle nonoverlap, 2 cycle gate</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                              <span class="comment">//     rise, 3 cycle osc equalize</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      0x02,                   <span class="comment">//     Fix on VTL</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#addfb44b70c2b60a0d04e3d22611d54ee">ST7735_INVCTR</a> , 1      ,  <span class="comment">//  7: Display inversion control, 1 arg:</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      0x0,                    <span class="comment">//     Line inversion</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ab4294b48d705690347bf0fed4af82697">ST7735_PWCTR1</a> , 2+<a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  8: Power control, 2 args + delay:</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      0x02,                   <span class="comment">//     GVDD = 4.7V</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      0x70,                   <span class="comment">//     1.0uA</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aef4c5d9e00b07b6fc601f8ad2dbbb101">ST7735_PWCTR2</a> , 1      ,  <span class="comment">//  9: Power control, 1 arg, no delay:</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      0x05,                   <span class="comment">//     VGH = 14.7V, VGL = -7.35V</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ac69d092c9c2693807a2a992dbf297f24">ST7735_PWCTR3</a> , 2      ,  <span class="comment">// 10: Power control, 2 args, no delay:</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      0x01,                   <span class="comment">//     Opamp current small</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      0x02,                   <span class="comment">//     Boost frequency</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aa4d4dfc0e9e5b75add3eb42fd7987c29">ST7735_VMCTR1</a> , 2+<a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">// 11: Power control, 2 args + delay:</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      0x3C,                   <span class="comment">//     VCOMH = 4V</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      0x38,                   <span class="comment">//     VCOML = -1.1V</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a13453718ec9240ae7966d0d8995d0c8a">ST7735_PWCTR6</a> , 2      ,  <span class="comment">// 12: Power control, 2 args, no delay:</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      0x11, 0x15,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ad90bd9bbed9c95192a2b44b8f63f86e5">ST7735_GMCTRP1</a>,16      ,  <span class="comment">// 13: Magical unicorn dust, 16 args, no delay:</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      0x09, 0x16, 0x09, 0x20, <span class="comment">//     (seriously though, not sure what</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      0x21, 0x1B, 0x13, 0x19, <span class="comment">//      these config values represent)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      0x17, 0x15, 0x1E, 0x2B,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      0x04, 0x05, 0x02, 0x0E,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aad3c0783af31cd4c4e33bf8748e961fa">ST7735_GMCTRN1</a>,16+<a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">// 14: Sparkles and rainbows, 16 args + delay:</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      0x0B, 0x14, 0x08, 0x1E, <span class="comment">//     (ditto)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      0x22, 0x1D, 0x18, 0x1E,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      0x1B, 0x1A, 0x24, 0x2B,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      0x06, 0x06, 0x02, 0x0F,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a484d38defdf6303f4a8d19f994d0593d">ST7735_CASET</a>  , 4      ,  <span class="comment">// 15: Column addr set, 4 args, no delay:</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      0x00, 0x02,             <span class="comment">//     XSTART = 2</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      0x00, 0x81,             <span class="comment">//     XEND = 129</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ae879d0b7f5639d5ecd3d265d9971c979">ST7735_RASET</a>  , 4      ,  <span class="comment">// 16: Row addr set, 4 args, no delay:</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      0x00, 0x02,             <span class="comment">//     XSTART = 1</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      0x00, 0x81,             <span class="comment">//     XEND = 160</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a9e059398ac81ef081169997c28f908cb">ST7735_NORON</a>  ,   <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">// 17: Normal display on, no args, w/delay</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a1afa532348b3d081b7b1ecdfa9ba17e0">ST7735_DISPON</a> ,   <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">// 18: Main screen turn on, no args, w/delay</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      255 },                  <span class="comment">//     255 = 500 ms delay</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  Rcmd1[] = {                 <span class="comment">// Init for 7735R, part 1 (red or green tab)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    15,                       <span class="comment">// 15 commands in list:</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a2816f2fce9a937ced8567b2c2797767b">ST7735_SWRESET</a>,   <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  1: Software reset, 0 args, w/delay</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      150,                    <span class="comment">//     150 ms delay</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aa061cfc0b8f0fea3e70b59d72f6e1caa">ST7735_SLPOUT</a> ,   <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>,  <span class="comment">//  2: Out of sleep mode, 0 args, w/delay</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      255,                    <span class="comment">//     500 ms delay</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aeb5c49fcdd239ab153f5d9b15304ca9c">ST7735_FRMCTR1</a>, 3      ,  <span class="comment">//  3: Frame rate ctrl - normal mode, 3 args:</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      0x01, 0x2C, 0x2D,       <span class="comment">//     Rate = fosc/(1x2+40) * (LINE+2C+2D)</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a3b416f231bb6eedec8cfcf277c6d36d3">ST7735_FRMCTR2</a>, 3      ,  <span class="comment">//  4: Frame rate control - idle mode, 3 args:</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      0x01, 0x2C, 0x2D,       <span class="comment">//     Rate = fosc/(1x2+40) * (LINE+2C+2D)</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a4afe2b326d709aaeb70c657f8210ea2b">ST7735_FRMCTR3</a>, 6      ,  <span class="comment">//  5: Frame rate ctrl - partial mode, 6 args:</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      0x01, 0x2C, 0x2D,       <span class="comment">//     Dot inversion mode</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      0x01, 0x2C, 0x2D,       <span class="comment">//     Line inversion mode</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#addfb44b70c2b60a0d04e3d22611d54ee">ST7735_INVCTR</a> , 1      ,  <span class="comment">//  6: Display inversion ctrl, 1 arg, no delay:</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      0x07,                   <span class="comment">//     No inversion</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ab4294b48d705690347bf0fed4af82697">ST7735_PWCTR1</a> , 3      ,  <span class="comment">//  7: Power control, 3 args, no delay:</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      0xA2,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      0x02,                   <span class="comment">//     -4.6V</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      0x84,                   <span class="comment">//     AUTO mode</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aef4c5d9e00b07b6fc601f8ad2dbbb101">ST7735_PWCTR2</a> , 1      ,  <span class="comment">//  8: Power control, 1 arg, no delay:</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      0xC5,                   <span class="comment">//     VGH25 = 2.4C VGSEL = -10 VGH = 3 * AVDD</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ac69d092c9c2693807a2a992dbf297f24">ST7735_PWCTR3</a> , 2      ,  <span class="comment">//  9: Power control, 2 args, no delay:</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      0x0A,                   <span class="comment">//     Opamp current small</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      0x00,                   <span class="comment">//     Boost frequency</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a95b55308b48e83b1a3e2cf51393030f1">ST7735_PWCTR4</a> , 2      ,  <span class="comment">// 10: Power control, 2 args, no delay:</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      0x8A,                   <span class="comment">//     BCLK/2, Opamp current small &amp; Medium low</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      0x2A,  </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a91cc0e141903ca80ad7fc6f108988184">ST7735_PWCTR5</a> , 2      ,  <span class="comment">// 11: Power control, 2 args, no delay:</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      0x8A, 0xEE,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aa4d4dfc0e9e5b75add3eb42fd7987c29">ST7735_VMCTR1</a> , 1      ,  <span class="comment">// 12: Power control, 1 arg, no delay:</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      0x0E,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ad66cc531ec897ce0465ff21d152b756a">ST7735_INVOFF</a> , 0      ,  <span class="comment">// 13: Don&#39;t invert display, no args, no delay</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a74afa388731002f70e250770901f90a2">ST7735_MADCTL</a> , 1      ,  <span class="comment">// 14: Memory access control (directions), 1 arg:</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      0xC0 | <a class="code hl_define" href="HX8357B__Defines_8h.html#a11deac2a9d703010dd25e6aa3b817841">TFT_MAD_COLOR_ORDER</a>, <span class="comment">//     row addr/col addr, bottom to top refresh</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a9caf06c78cdaba66cea553668103b759">ST7735_COLMOD</a> , 1      ,  <span class="comment">// 15: set color mode, 1 arg, no delay:</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      0x05 },                 <span class="comment">//     16-bit color</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  Rcmd2green[] = {            <span class="comment">// Init for 7735R, part 2 (green tab only)</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    2,                        <span class="comment">//  2 commands in list:</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a484d38defdf6303f4a8d19f994d0593d">ST7735_CASET</a>  , 4      ,  <span class="comment">//  1: Column addr set, 4 args, no delay:</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      0x00, 0x02,             <span class="comment">//     XSTART = 0</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      0x00, 0x7F+0x02,        <span class="comment">//     XEND = 127</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ae879d0b7f5639d5ecd3d265d9971c979">ST7735_RASET</a>  , 4      ,  <span class="comment">//  2: Row addr set, 4 args, no delay:</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      0x00, 0x01,             <span class="comment">//     XSTART = 0</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      0x00, 0x9F+0x01 },      <span class="comment">//     XEND = 159</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  Rcmd2red[] = {              <span class="comment">// Init for 7735R, part 2 (red tab only)</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    2,                        <span class="comment">//  2 commands in list:</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a484d38defdf6303f4a8d19f994d0593d">ST7735_CASET</a>  , 4      ,  <span class="comment">//  1: Column addr set, 4 args, no delay:</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      0x00, 0x00,             <span class="comment">//     XSTART = 0</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      0x00, 0x7F,             <span class="comment">//     XEND = 127</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ae879d0b7f5639d5ecd3d265d9971c979">ST7735_RASET</a>  , 4      ,  <span class="comment">//  2: Row addr set, 4 args, no delay:</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      0x00, 0x00,             <span class="comment">//     XSTART = 0</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      0x00, 0x9F },           <span class="comment">//     XEND = 159</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="comment">// Frame control init for RobotLCD, taken from https://github.com/arduino-libraries/TFT, Adafruit_ST7735.cpp l. 263, commit 61b8a7e</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  Rcmd3RobotLCD[] = {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      3,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      <a class="code hl_define" href="ST7735__Defines_8h.html#aeb5c49fcdd239ab153f5d9b15304ca9c">ST7735_FRMCTR1</a>, 2    ,  <span class="comment">//  1: Frame rate ctrl - normal mode, 2 args</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        0x0B, 0x14,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <a class="code hl_define" href="ST7735__Defines_8h.html#a3b416f231bb6eedec8cfcf277c6d36d3">ST7735_FRMCTR2</a>, 2    ,  <span class="comment">//  2: Frame rate ctrl - idle mode, 2 args</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        0x0B, 0x14,</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <a class="code hl_define" href="ST7735__Defines_8h.html#a4afe2b326d709aaeb70c657f8210ea2b">ST7735_FRMCTR3</a>, 4    ,  <span class="comment">//  3: Frame rate ctrl - partial mode, 4 args</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        0x0B, 0x14,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        0x0B, 0x14 },</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  Rcmd3[] = {                 <span class="comment">// Init for 7735R, part 3 (red or green tab)</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    4,                        <span class="comment">//  4 commands in list:</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#ad90bd9bbed9c95192a2b44b8f63f86e5">ST7735_GMCTRP1</a>, 16      , <span class="comment">//  1: 16 args, no delay:</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      0x02, 0x1c, 0x07, 0x12,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      0x37, 0x32, 0x29, 0x2d,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      0x29, 0x25, 0x2B, 0x39,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      0x00, 0x01, 0x03, 0x10,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#aad3c0783af31cd4c4e33bf8748e961fa">ST7735_GMCTRN1</a>, 16      , <span class="comment">//  2: 16 args, no delay:</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      0x03, 0x1d, 0x07, 0x06,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      0x2E, 0x2C, 0x29, 0x2D,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      0x2E, 0x2E, 0x37, 0x3F,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      0x00, 0x00, 0x02, 0x10,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a9e059398ac81ef081169997c28f908cb">ST7735_NORON</a>  ,    <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>, <span class="comment">//  3: Normal display on, no args, w/delay</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      10,                     <span class="comment">//     10 ms delay</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_define" href="ST7735__Defines_8h.html#a1afa532348b3d081b7b1ecdfa9ba17e0">ST7735_DISPON</a> ,    <a class="code hl_define" href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a>, <span class="comment">//  4: Main screen turn on, no args w/delay</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      100 };                  <span class="comment">//     100 ms delay</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="ST7735__Init_8h.html#a5a626930d8f0dd98814d45961ebf56a3">  154</a></span>     <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#a5399b363079f4e99b3dbbd8b1f2be6d7">INITB</a>)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>     {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>       <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Bcmd);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>     }</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="ST7735__Init_8h.html#a0544c3fe466e421738dae463968b70ba">  158</a></span>     <span class="keywordflow">else</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>     {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd1);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>       <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#a8482c50b5e4da7ef9cc27ec7f16aa374">INITR_GREENTAB</a>)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>       {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>         colstart = 2;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>         rowstart = 1;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>       }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#a092d30bb30a7c3b4f67c87f2b8da8e48">INITR_GREENTAB2</a>)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>       {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>         <a class="code hl_function" href="GC9A01__Init_8h.html#a81f99a4c26399044d6eb9fa5a93ff448">writecommand</a>(<a class="code hl_define" href="ST7735__Defines_8h.html#a74afa388731002f70e250770901f90a2">ST7735_MADCTL</a>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>         <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xC0 | <a class="code hl_define" href="HX8357B__Defines_8h.html#a11deac2a9d703010dd25e6aa3b817841">TFT_MAD_COLOR_ORDER</a>);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>         colstart = 2;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>         rowstart = 1;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>       }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#ad3bb85ef7b8c83156fd684667a9cc015">INITR_GREENTAB3</a>)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>       {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>         colstart = 2;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>         rowstart = 3;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>       }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#a4c4878da048adc574e474a191831645c">INITR_GREENTAB128</a>)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>       {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>         colstart = 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>         rowstart = 32;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>       }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#af6e0dc892c16642a75b7e218c69e6b08">INITR_GREENTAB160x80</a>)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>       {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>         <a class="code hl_function" href="GC9A01__Init_8h.html#a81f99a4c26399044d6eb9fa5a93ff448">writecommand</a>(<a class="code hl_define" href="EPD__Defines_8h.html#a51e1c3c43d6be5dc251620395218cda2">TFT_INVON</a>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>         colstart = 26;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>         rowstart = 1;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>       }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#a3d3a325144cb615a5cb373e2b847224a">INITR_ROBOTLCD</a>)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>       {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd3RobotLCD);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>       }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#af803afbe824a84fa3e2674bd6d8f1867">INITR_REDTAB160x80</a>)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>       {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2green);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>         colstart = 24;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>         rowstart = 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>       }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#ac861596d7089b7620395cdad635c9307">INITR_REDTAB</a>)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>       {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>         <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd2red);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>       }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>       <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabcolor == <a class="code hl_define" href="ST7735__Defines_8h.html#a385ddeae12a0bcd313507bbe58f66e9a">INITR_BLACKTAB</a>)</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>       {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>         <a class="code hl_function" href="GC9A01__Init_8h.html#a81f99a4c26399044d6eb9fa5a93ff448">writecommand</a>(<a class="code hl_define" href="ST7735__Defines_8h.html#a74afa388731002f70e250770901f90a2">ST7735_MADCTL</a>);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>         <a class="code hl_function" href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a>(0xC0 | <a class="code hl_define" href="HX8357B__Defines_8h.html#a11deac2a9d703010dd25e6aa3b817841">TFT_MAD_COLOR_ORDER</a>);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>       }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">  216</a></span>       <a class="code hl_function" href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a>(Rcmd3);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>     }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>}</div>
+<div class="ttc" id="aEPD__Defines_8h_html_a51e1c3c43d6be5dc251620395218cda2"><div class="ttname"><a href="EPD__Defines_8h.html#a51e1c3c43d6be5dc251620395218cda2">TFT_INVON</a></div><div class="ttdeci">#define TFT_INVON</div><div class="ttdef"><b>Definition</b> <a href="EPD__Defines_8h_source.html#l00027">EPD_Defines.h:27</a></div></div>
+<div class="ttc" id="aEPD__Defines_8h_html_a7c67dbbb7a1eaed92026ac6590220f0a"><div class="ttname"><a href="EPD__Defines_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a">TFT_INIT_DELAY</a></div><div class="ttdeci">#define TFT_INIT_DELAY</div><div class="ttdef"><b>Definition</b> <a href="EPD__Defines_8h_source.html#l00005">EPD_Defines.h:5</a></div></div>
+<div class="ttc" id="aGC9A01__Init_8h_html_a81f99a4c26399044d6eb9fa5a93ff448"><div class="ttname"><a href="GC9A01__Init_8h.html#a81f99a4c26399044d6eb9fa5a93ff448">writecommand</a></div><div class="ttdeci">writecommand(0xEB)</div></div>
+<div class="ttc" id="aHX8357B__Defines_8h_html_a11deac2a9d703010dd25e6aa3b817841"><div class="ttname"><a href="HX8357B__Defines_8h.html#a11deac2a9d703010dd25e6aa3b817841">TFT_MAD_COLOR_ORDER</a></div><div class="ttdeci">#define TFT_MAD_COLOR_ORDER</div><div class="ttdef"><b>Definition</b> <a href="HX8357B__Defines_8h_source.html#l00049">HX8357B_Defines.h:49</a></div></div>
+<div class="ttc" id="aSSD1351__Rotation_8h_html_a7ae4c31940f3d0cbb0ee848cb9755311"><div class="ttname"><a href="SSD1351__Rotation_8h.html#a7ae4c31940f3d0cbb0ee848cb9755311">writedata</a></div><div class="ttdeci">writedata(rotation&lt; 2 ? TFT_HEIGHT :0)</div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a092d30bb30a7c3b4f67c87f2b8da8e48"><div class="ttname"><a href="ST7735__Defines_8h.html#a092d30bb30a7c3b4f67c87f2b8da8e48">INITR_GREENTAB2</a></div><div class="ttdeci">#define INITR_GREENTAB2</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00015">ST7735_Defines.h:15</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a13453718ec9240ae7966d0d8995d0c8a"><div class="ttname"><a href="ST7735__Defines_8h.html#a13453718ec9240ae7966d0d8995d0c8a">ST7735_PWCTR6</a></div><div class="ttdeci">#define ST7735_PWCTR6</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00176">ST7735_Defines.h:176</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a1afa532348b3d081b7b1ecdfa9ba17e0"><div class="ttname"><a href="ST7735__Defines_8h.html#a1afa532348b3d081b7b1ecdfa9ba17e0">ST7735_DISPON</a></div><div class="ttdeci">#define ST7735_DISPON</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00148">ST7735_Defines.h:148</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a2816f2fce9a937ced8567b2c2797767b"><div class="ttname"><a href="ST7735__Defines_8h.html#a2816f2fce9a937ced8567b2c2797767b">ST7735_SWRESET</a></div><div class="ttdeci">#define ST7735_SWRESET</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00136">ST7735_Defines.h:136</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a385ddeae12a0bcd313507bbe58f66e9a"><div class="ttname"><a href="ST7735__Defines_8h.html#a385ddeae12a0bcd313507bbe58f66e9a">INITR_BLACKTAB</a></div><div class="ttdeci">#define INITR_BLACKTAB</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00014">ST7735_Defines.h:14</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a3b416f231bb6eedec8cfcf277c6d36d3"><div class="ttname"><a href="ST7735__Defines_8h.html#a3b416f231bb6eedec8cfcf277c6d36d3">ST7735_FRMCTR2</a></div><div class="ttdeci">#define ST7735_FRMCTR2</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00159">ST7735_Defines.h:159</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a3d3a325144cb615a5cb373e2b847224a"><div class="ttname"><a href="ST7735__Defines_8h.html#a3d3a325144cb615a5cb373e2b847224a">INITR_ROBOTLCD</a></div><div class="ttdeci">#define INITR_ROBOTLCD</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00020">ST7735_Defines.h:20</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a484d38defdf6303f4a8d19f994d0593d"><div class="ttname"><a href="ST7735__Defines_8h.html#a484d38defdf6303f4a8d19f994d0593d">ST7735_CASET</a></div><div class="ttdeci">#define ST7735_CASET</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00149">ST7735_Defines.h:149</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a4afe2b326d709aaeb70c657f8210ea2b"><div class="ttname"><a href="ST7735__Defines_8h.html#a4afe2b326d709aaeb70c657f8210ea2b">ST7735_FRMCTR3</a></div><div class="ttdeci">#define ST7735_FRMCTR3</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00160">ST7735_Defines.h:160</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a4c4878da048adc574e474a191831645c"><div class="ttname"><a href="ST7735__Defines_8h.html#a4c4878da048adc574e474a191831645c">INITR_GREENTAB128</a></div><div class="ttdeci">#define INITR_GREENTAB128</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00017">ST7735_Defines.h:17</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a5399b363079f4e99b3dbbd8b1f2be6d7"><div class="ttname"><a href="ST7735__Defines_8h.html#a5399b363079f4e99b3dbbd8b1f2be6d7">INITB</a></div><div class="ttdeci">#define INITB</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00021">ST7735_Defines.h:21</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a74afa388731002f70e250770901f90a2"><div class="ttname"><a href="ST7735__Defines_8h.html#a74afa388731002f70e250770901f90a2">ST7735_MADCTL</a></div><div class="ttdeci">#define ST7735_MADCTL</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00156">ST7735_Defines.h:156</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a8482c50b5e4da7ef9cc27ec7f16aa374"><div class="ttname"><a href="ST7735__Defines_8h.html#a8482c50b5e4da7ef9cc27ec7f16aa374">INITR_GREENTAB</a></div><div class="ttdeci">#define INITR_GREENTAB</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00012">ST7735_Defines.h:12</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a91cc0e141903ca80ad7fc6f108988184"><div class="ttname"><a href="ST7735__Defines_8h.html#a91cc0e141903ca80ad7fc6f108988184">ST7735_PWCTR5</a></div><div class="ttdeci">#define ST7735_PWCTR5</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00168">ST7735_Defines.h:168</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a95b55308b48e83b1a3e2cf51393030f1"><div class="ttname"><a href="ST7735__Defines_8h.html#a95b55308b48e83b1a3e2cf51393030f1">ST7735_PWCTR4</a></div><div class="ttdeci">#define ST7735_PWCTR4</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00167">ST7735_Defines.h:167</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a9caf06c78cdaba66cea553668103b759"><div class="ttname"><a href="ST7735__Defines_8h.html#a9caf06c78cdaba66cea553668103b759">ST7735_COLMOD</a></div><div class="ttdeci">#define ST7735_COLMOD</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00155">ST7735_Defines.h:155</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_a9e059398ac81ef081169997c28f908cb"><div class="ttname"><a href="ST7735__Defines_8h.html#a9e059398ac81ef081169997c28f908cb">ST7735_NORON</a></div><div class="ttdeci">#define ST7735_NORON</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00143">ST7735_Defines.h:143</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_aa061cfc0b8f0fea3e70b59d72f6e1caa"><div class="ttname"><a href="ST7735__Defines_8h.html#aa061cfc0b8f0fea3e70b59d72f6e1caa">ST7735_SLPOUT</a></div><div class="ttdeci">#define ST7735_SLPOUT</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00141">ST7735_Defines.h:141</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_aa4d4dfc0e9e5b75add3eb42fd7987c29"><div class="ttname"><a href="ST7735__Defines_8h.html#aa4d4dfc0e9e5b75add3eb42fd7987c29">ST7735_VMCTR1</a></div><div class="ttdeci">#define ST7735_VMCTR1</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00169">ST7735_Defines.h:169</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_aad3c0783af31cd4c4e33bf8748e961fa"><div class="ttname"><a href="ST7735__Defines_8h.html#aad3c0783af31cd4c4e33bf8748e961fa">ST7735_GMCTRN1</a></div><div class="ttdeci">#define ST7735_GMCTRN1</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00179">ST7735_Defines.h:179</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ab4294b48d705690347bf0fed4af82697"><div class="ttname"><a href="ST7735__Defines_8h.html#ab4294b48d705690347bf0fed4af82697">ST7735_PWCTR1</a></div><div class="ttdeci">#define ST7735_PWCTR1</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00164">ST7735_Defines.h:164</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ac69d092c9c2693807a2a992dbf297f24"><div class="ttname"><a href="ST7735__Defines_8h.html#ac69d092c9c2693807a2a992dbf297f24">ST7735_PWCTR3</a></div><div class="ttdeci">#define ST7735_PWCTR3</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00166">ST7735_Defines.h:166</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ac861596d7089b7620395cdad635c9307"><div class="ttname"><a href="ST7735__Defines_8h.html#ac861596d7089b7620395cdad635c9307">INITR_REDTAB</a></div><div class="ttdeci">#define INITR_REDTAB</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00013">ST7735_Defines.h:13</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ace47a845775310352dc7e2fae3e1586a"><div class="ttname"><a href="ST7735__Defines_8h.html#ace47a845775310352dc7e2fae3e1586a">ST7735_DISSET5</a></div><div class="ttdeci">#define ST7735_DISSET5</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00162">ST7735_Defines.h:162</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ad3bb85ef7b8c83156fd684667a9cc015"><div class="ttname"><a href="ST7735__Defines_8h.html#ad3bb85ef7b8c83156fd684667a9cc015">INITR_GREENTAB3</a></div><div class="ttdeci">#define INITR_GREENTAB3</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00016">ST7735_Defines.h:16</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ad66cc531ec897ce0465ff21d152b756a"><div class="ttname"><a href="ST7735__Defines_8h.html#ad66cc531ec897ce0465ff21d152b756a">ST7735_INVOFF</a></div><div class="ttdeci">#define ST7735_INVOFF</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00145">ST7735_Defines.h:145</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ad90bd9bbed9c95192a2b44b8f63f86e5"><div class="ttname"><a href="ST7735__Defines_8h.html#ad90bd9bbed9c95192a2b44b8f63f86e5">ST7735_GMCTRP1</a></div><div class="ttdeci">#define ST7735_GMCTRP1</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00178">ST7735_Defines.h:178</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_addfb44b70c2b60a0d04e3d22611d54ee"><div class="ttname"><a href="ST7735__Defines_8h.html#addfb44b70c2b60a0d04e3d22611d54ee">ST7735_INVCTR</a></div><div class="ttdeci">#define ST7735_INVCTR</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00161">ST7735_Defines.h:161</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_ae879d0b7f5639d5ecd3d265d9971c979"><div class="ttname"><a href="ST7735__Defines_8h.html#ae879d0b7f5639d5ecd3d265d9971c979">ST7735_RASET</a></div><div class="ttdeci">#define ST7735_RASET</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00150">ST7735_Defines.h:150</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_aeb5c49fcdd239ab153f5d9b15304ca9c"><div class="ttname"><a href="ST7735__Defines_8h.html#aeb5c49fcdd239ab153f5d9b15304ca9c">ST7735_FRMCTR1</a></div><div class="ttdeci">#define ST7735_FRMCTR1</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00158">ST7735_Defines.h:158</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_aef4c5d9e00b07b6fc601f8ad2dbbb101"><div class="ttname"><a href="ST7735__Defines_8h.html#aef4c5d9e00b07b6fc601f8ad2dbbb101">ST7735_PWCTR2</a></div><div class="ttdeci">#define ST7735_PWCTR2</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00165">ST7735_Defines.h:165</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_af6e0dc892c16642a75b7e218c69e6b08"><div class="ttname"><a href="ST7735__Defines_8h.html#af6e0dc892c16642a75b7e218c69e6b08">INITR_GREENTAB160x80</a></div><div class="ttdeci">#define INITR_GREENTAB160x80</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00018">ST7735_Defines.h:18</a></div></div>
+<div class="ttc" id="aST7735__Defines_8h_html_af803afbe824a84fa3e2674bd6d8f1867"><div class="ttname"><a href="ST7735__Defines_8h.html#af803afbe824a84fa3e2674bd6d8f1867">INITR_REDTAB160x80</a></div><div class="ttdeci">#define INITR_REDTAB160x80</div><div class="ttdef"><b>Definition</b> <a href="ST7735__Defines_8h_source.html#l00019">ST7735_Defines.h:19</a></div></div>
+<div class="ttc" id="aST7735__Init_8h_html_af53cd49e7a6e4e1a5c9ecdac64159610"><div class="ttname"><a href="ST7735__Init_8h.html#af53cd49e7a6e4e1a5c9ecdac64159610">commandList</a></div><div class="ttdeci">commandList(Rcmd3)</div></div>
+<div class="ttc" id="aTFT__eSPI_8h_html_a2fbcc74e9fcf029507e016c73c0b3218"><div class="ttname"><a href="TFT__eSPI_8h.html#a2fbcc74e9fcf029507e016c73c0b3218">PROGMEM</a></div><div class="ttdeci">#define PROGMEM</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI_8h_source.html#l00091">TFT_eSPI.h:91</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_d19c1635db4add2e0d306898bb016224.html">TFT_Drivers</a></li><li class="navelem"><a href="ST7735__Init_8h.html">ST7735_Init.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

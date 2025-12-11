@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/extra/layouts/flex/lv_flex.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__flex_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_flex.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__layouts_8h_source.html">../lv_layouts.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__flex_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:flex_5Ft" id="r_flex_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structflex__t.html">flex_t</a></td></tr>
+<tr class="memitem:grow_5Fdsc_5Ft" id="r_grow_5Fdsc_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgrow__dsc__t.html">grow_dsc_t</a></td></tr>
+<tr class="memitem:track_5Ft" id="r_track_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrack__t.html">track_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:adc17494d2a747e76966581dced09fd74" id="r_adc17494d2a747e76966581dced09fd74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc17494d2a747e76966581dced09fd74">lv_flex_init</a> (void)</td></tr>
+<tr class="memitem:a6065b5f7d677ff023d382e95039012bf" id="r_a6065b5f7d677ff023d382e95039012bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6065b5f7d677ff023d382e95039012bf">lv_obj_set_flex_align</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> main_place, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> cross_place, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> track_place)</td></tr>
+<tr class="memitem:afe0e90502eefb9f215b641a818bceb50" id="r_afe0e90502eefb9f215b641a818bceb50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe0e90502eefb9f215b641a818bceb50">lv_obj_set_flex_flow</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a> flow)</td></tr>
+<tr class="memitem:a5aa092bfcef60f9e61eb84b66c266878" id="r_a5aa092bfcef60f9e61eb84b66c266878"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aa092bfcef60f9e61eb84b66c266878">lv_obj_set_flex_grow</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint8_t grow)</td></tr>
+<tr class="memitem:af622908bd7135ca054bae03c2b6f81f5" id="r_af622908bd7135ca054bae03c2b6f81f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af622908bd7135ca054bae03c2b6f81f5">lv_obj_set_style_flex_cross_place</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> value, <a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a> selector)</td></tr>
+<tr class="memitem:a558ca369ea4fe2b35959e5d06143ca7b" id="r_a558ca369ea4fe2b35959e5d06143ca7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a558ca369ea4fe2b35959e5d06143ca7b">lv_obj_set_style_flex_flow</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a> value, <a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a> selector)</td></tr>
+<tr class="memitem:ace0240cd1bed7d0fb783babf431705d6" id="r_ace0240cd1bed7d0fb783babf431705d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace0240cd1bed7d0fb783babf431705d6">lv_obj_set_style_flex_grow</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint8_t value, <a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a> selector)</td></tr>
+<tr class="memitem:a98c850945fdc21610a783484eba8b60e" id="r_a98c850945fdc21610a783484eba8b60e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98c850945fdc21610a783484eba8b60e">lv_obj_set_style_flex_main_place</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> value, <a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a> selector)</td></tr>
+<tr class="memitem:ae41110e75313f908edb93e8786e4bdd6" id="r_ae41110e75313f908edb93e8786e4bdd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae41110e75313f908edb93e8786e4bdd6">lv_obj_set_style_flex_track_place</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> value, <a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a> selector)</td></tr>
+<tr class="memitem:a502cd7f75f4ceab5d6903f5680173c6c" id="r_a502cd7f75f4ceab5d6903f5680173c6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a502cd7f75f4ceab5d6903f5680173c6c">lv_style_set_flex_cross_place</a> (<a class="el" href="structlv__style__t.html">lv_style_t</a> *style, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> value)</td></tr>
+<tr class="memitem:afc8290e7bbf9df2fe6dfc8ff18b7e36a" id="r_afc8290e7bbf9df2fe6dfc8ff18b7e36a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc8290e7bbf9df2fe6dfc8ff18b7e36a">lv_style_set_flex_flow</a> (<a class="el" href="structlv__style__t.html">lv_style_t</a> *style, <a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a> value)</td></tr>
+<tr class="memitem:adc0fcc295a5b244667955584ed09ceda" id="r_adc0fcc295a5b244667955584ed09ceda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc0fcc295a5b244667955584ed09ceda">lv_style_set_flex_grow</a> (<a class="el" href="structlv__style__t.html">lv_style_t</a> *style, uint8_t value)</td></tr>
+<tr class="memitem:ae2db65defb6316bcac5e1316accbcdab" id="r_ae2db65defb6316bcac5e1316accbcdab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2db65defb6316bcac5e1316accbcdab">lv_style_set_flex_main_place</a> (<a class="el" href="structlv__style__t.html">lv_style_t</a> *style, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> value)</td></tr>
+<tr class="memitem:a364102c949ec1973218bc804d92c7590" id="r_a364102c949ec1973218bc804d92c7590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a364102c949ec1973218bc804d92c7590">lv_style_set_flex_track_place</a> (<a class="el" href="structlv__style__t.html">lv_style_t</a> *style, <a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a> value)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac6e849ced3f8c6c75dc758f25ac9979d" id="r_ac6e849ced3f8c6c75dc758f25ac9979d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6e849ced3f8c6c75dc758f25ac9979d">LV_LAYOUT_FLEX</a></td></tr>
+<tr class="memitem:afbd141557d590d83e2a53f2aeccbb78a" id="r_afbd141557d590d83e2a53f2aeccbb78a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbd141557d590d83e2a53f2aeccbb78a">LV_STYLE_FLEX_CROSS_PLACE</a></td></tr>
+<tr class="memitem:a94c2f9434a821701a63b4352c51e7c1d" id="r_a94c2f9434a821701a63b4352c51e7c1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94c2f9434a821701a63b4352c51e7c1d">LV_STYLE_FLEX_FLOW</a></td></tr>
+<tr class="memitem:ad2de1ff10fd59340f57bb14b9cd74ccd" id="r_ad2de1ff10fd59340f57bb14b9cd74ccd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2de1ff10fd59340f57bb14b9cd74ccd">LV_STYLE_FLEX_GROW</a></td></tr>
+<tr class="memitem:abf7893d5c6892f827625188d7cc82eeb" id="r_abf7893d5c6892f827625188d7cc82eeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf7893d5c6892f827625188d7cc82eeb">LV_STYLE_FLEX_MAIN_PLACE</a></td></tr>
+<tr class="memitem:a72a7b499fcf6fdd24cfe95515163ec9f" id="r_a72a7b499fcf6fdd24cfe95515163ec9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72a7b499fcf6fdd24cfe95515163ec9f">LV_STYLE_FLEX_TRACK_PLACE</a></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="adc17494d2a747e76966581dced09fd74" name="adc17494d2a747e76966581dced09fd74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc17494d2a747e76966581dced09fd74">&#9670;&#160;</a></span>lv_flex_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_flex_init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize a flex layout the default values </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flex</td><td>pointer to a flex layout descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00092">92</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="#ac6e849ced3f8c6c75dc758f25ac9979d">LV_LAYOUT_FLEX</a> = <a class="code hl_function" href="lv__obj__pos_8c.html#af06b67c5d6f402cc311a092cda4ee079">lv_layout_register</a>(flex_update, NULL);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="#a94c2f9434a821701a63b4352c51e7c1d">LV_STYLE_FLEX_FLOW</a> = <a class="code hl_function" href="lv__style_8c.html#ace023b040b9b555b1dcf276a08603fae">lv_style_register_prop</a>(<a class="code hl_define" href="lv__style_8h.html#a14b51ae635ab7b008f1e198fb757d078">LV_STYLE_PROP_FLAG_NONE</a>);</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="#abf7893d5c6892f827625188d7cc82eeb">LV_STYLE_FLEX_MAIN_PLACE</a> = <a class="code hl_function" href="lv__style_8c.html#ace023b040b9b555b1dcf276a08603fae">lv_style_register_prop</a>(<a class="code hl_define" href="lv__style_8h.html#a14019157429c1bcd498443d50f1f695a">LV_STYLE_PROP_LAYOUT_REFR</a>);</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_variable" href="#afbd141557d590d83e2a53f2aeccbb78a">LV_STYLE_FLEX_CROSS_PLACE</a> = <a class="code hl_function" href="lv__style_8c.html#ace023b040b9b555b1dcf276a08603fae">lv_style_register_prop</a>(<a class="code hl_define" href="lv__style_8h.html#a14019157429c1bcd498443d50f1f695a">LV_STYLE_PROP_LAYOUT_REFR</a>);</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_variable" href="#a72a7b499fcf6fdd24cfe95515163ec9f">LV_STYLE_FLEX_TRACK_PLACE</a> = <a class="code hl_function" href="lv__style_8c.html#ace023b040b9b555b1dcf276a08603fae">lv_style_register_prop</a>(<a class="code hl_define" href="lv__style_8h.html#a14019157429c1bcd498443d50f1f695a">LV_STYLE_PROP_LAYOUT_REFR</a>);</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="#ad2de1ff10fd59340f57bb14b9cd74ccd">LV_STYLE_FLEX_GROW</a> = <a class="code hl_function" href="lv__style_8c.html#ace023b040b9b555b1dcf276a08603fae">lv_style_register_prop</a>(<a class="code hl_define" href="lv__style_8h.html#a14019157429c1bcd498443d50f1f695a">LV_STYLE_PROP_LAYOUT_REFR</a>);</div>
+<div class="line"><span class="lineno">  101</span>}</div>
+<div class="ttc" id="alv__flex_8c_html_a72a7b499fcf6fdd24cfe95515163ec9f"><div class="ttname"><a href="#a72a7b499fcf6fdd24cfe95515163ec9f">LV_STYLE_FLEX_TRACK_PLACE</a></div><div class="ttdeci">lv_style_prop_t LV_STYLE_FLEX_TRACK_PLACE</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00072">lv_flex.c:72</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_a94c2f9434a821701a63b4352c51e7c1d"><div class="ttname"><a href="#a94c2f9434a821701a63b4352c51e7c1d">LV_STYLE_FLEX_FLOW</a></div><div class="ttdeci">lv_style_prop_t LV_STYLE_FLEX_FLOW</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00069">lv_flex.c:69</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_abf7893d5c6892f827625188d7cc82eeb"><div class="ttname"><a href="#abf7893d5c6892f827625188d7cc82eeb">LV_STYLE_FLEX_MAIN_PLACE</a></div><div class="ttdeci">lv_style_prop_t LV_STYLE_FLEX_MAIN_PLACE</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00070">lv_flex.c:70</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_ac6e849ced3f8c6c75dc758f25ac9979d"><div class="ttname"><a href="#ac6e849ced3f8c6c75dc758f25ac9979d">LV_LAYOUT_FLEX</a></div><div class="ttdeci">uint16_t LV_LAYOUT_FLEX</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00068">lv_flex.c:68</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_ad2de1ff10fd59340f57bb14b9cd74ccd"><div class="ttname"><a href="#ad2de1ff10fd59340f57bb14b9cd74ccd">LV_STYLE_FLEX_GROW</a></div><div class="ttdeci">lv_style_prop_t LV_STYLE_FLEX_GROW</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00073">lv_flex.c:73</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_afbd141557d590d83e2a53f2aeccbb78a"><div class="ttname"><a href="#afbd141557d590d83e2a53f2aeccbb78a">LV_STYLE_FLEX_CROSS_PLACE</a></div><div class="ttdeci">lv_style_prop_t LV_STYLE_FLEX_CROSS_PLACE</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00071">lv_flex.c:71</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_af06b67c5d6f402cc311a092cda4ee079"><div class="ttname"><a href="lv__obj__pos_8c.html#af06b67c5d6f402cc311a092cda4ee079">lv_layout_register</a></div><div class="ttdeci">uint32_t lv_layout_register(lv_layout_update_cb_t cb, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00323">lv_obj_pos.c:323</a></div></div>
+<div class="ttc" id="alv__style_8c_html_ace023b040b9b555b1dcf276a08603fae"><div class="ttname"><a href="lv__style_8c.html#ace023b040b9b555b1dcf276a08603fae">lv_style_register_prop</a></div><div class="ttdeci">lv_style_prop_t lv_style_register_prop(uint8_t flag)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00181">lv_style.c:181</a></div></div>
+<div class="ttc" id="alv__style_8h_html_a14019157429c1bcd498443d50f1f695a"><div class="ttname"><a href="lv__style_8h.html#a14019157429c1bcd498443d50f1f695a">LV_STYLE_PROP_LAYOUT_REFR</a></div><div class="ttdeci">#define LV_STYLE_PROP_LAYOUT_REFR</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00041">lv_style.h:41</a></div></div>
+<div class="ttc" id="alv__style_8h_html_a14b51ae635ab7b008f1e198fb757d078"><div class="ttname"><a href="lv__style_8h.html#a14b51ae635ab7b008f1e198fb757d078">LV_STYLE_PROP_FLAG_NONE</a></div><div class="ttdeci">#define LV_STYLE_PROP_FLAG_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00038">lv_style.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00068">LV_LAYOUT_FLEX</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00323">lv_layout_register()</a>, <a class="el" href="lv__flex_8c_source.html#l00071">LV_STYLE_FLEX_CROSS_PLACE</a>, <a class="el" href="lv__flex_8c_source.html#l00069">LV_STYLE_FLEX_FLOW</a>, <a class="el" href="lv__flex_8c_source.html#l00073">LV_STYLE_FLEX_GROW</a>, <a class="el" href="lv__flex_8c_source.html#l00070">LV_STYLE_FLEX_MAIN_PLACE</a>, <a class="el" href="lv__flex_8c_source.html#l00072">LV_STYLE_FLEX_TRACK_PLACE</a>, <a class="el" href="lv__style_8h_source.html#l00038">LV_STYLE_PROP_FLAG_NONE</a>, <a class="el" href="lv__style_8h_source.html#l00041">LV_STYLE_PROP_LAYOUT_REFR</a> y <a class="el" href="lv__style_8c_source.html#l00181">lv_style_register_prop()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__extra_8c_source.html#l00035">lv_extra_init()</a>.</p>
+
+</div>
+</div>
+<a id="a6065b5f7d677ff023d382e95039012bf" name="a6065b5f7d677ff023d382e95039012bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6065b5f7d677ff023d382e95039012bf">&#9670;&#160;</a></span>lv_obj_set_flex_align()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_flex_align </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>main_place</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>cross_place</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>track_cross_place</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set how to place (where to align) the items and tracks </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flex</td><td>pointer: to a flex layout descriptor </td></tr>
+    <tr><td class="paramname">main_place</td><td>where to place the items on main axis (in their track). Any value of <span class="tt"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></span>. </td></tr>
+    <tr><td class="paramname">cross_place</td><td>where to place the item in their track on the cross axis. <span class="tt">LV_FLEX_ALIGN_START/END/CENTER</span> </td></tr>
+    <tr><td class="paramname">track_place</td><td>where to place the tracks in the cross direction. Any value of <span class="tt"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00109">109</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_function" href="#a98c850945fdc21610a783484eba8b60e">lv_obj_set_style_flex_main_place</a>(obj, main_place, 0);</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="#af622908bd7135ca054bae03c2b6f81f5">lv_obj_set_style_flex_cross_place</a>(obj, cross_place, 0);</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_function" href="#ae41110e75313f908edb93e8786e4bdd6">lv_obj_set_style_flex_track_place</a>(obj, track_place, 0);</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="lv__obj__style__gen_8c.html#a06e1b33fa1e54f22cf3218eced4e6eeb">lv_obj_set_style_layout</a>(obj, <a class="code hl_variable" href="#ac6e849ced3f8c6c75dc758f25ac9979d">LV_LAYOUT_FLEX</a>, 0);</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="alv__flex_8c_html_a98c850945fdc21610a783484eba8b60e"><div class="ttname"><a href="#a98c850945fdc21610a783484eba8b60e">lv_obj_set_style_flex_main_place</a></div><div class="ttdeci">void lv_obj_set_style_flex_main_place(lv_obj_t *obj, lv_flex_align_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00174">lv_flex.c:174</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_ae41110e75313f908edb93e8786e4bdd6"><div class="ttname"><a href="#ae41110e75313f908edb93e8786e4bdd6">lv_obj_set_style_flex_track_place</a></div><div class="ttdeci">void lv_obj_set_style_flex_track_place(lv_obj_t *obj, lv_flex_align_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00190">lv_flex.c:190</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_af622908bd7135ca054bae03c2b6f81f5"><div class="ttname"><a href="#af622908bd7135ca054bae03c2b6f81f5">lv_obj_set_style_flex_cross_place</a></div><div class="ttdeci">void lv_obj_set_style_flex_cross_place(lv_obj_t *obj, lv_flex_align_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00182">lv_flex.c:182</a></div></div>
+<div class="ttc" id="alv__obj__style__gen_8c_html_a06e1b33fa1e54f22cf3218eced4e6eeb"><div class="ttname"><a href="lv__obj__style__gen_8c.html#a06e1b33fa1e54f22cf3218eced4e6eeb">lv_obj_set_style_layout</a></div><div class="ttdeci">void lv_obj_set_style_layout(struct _lv_obj_t *obj, uint16_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style__gen_8c_source.html#l00667">lv_obj_style_gen.c:667</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00068">LV_LAYOUT_FLEX</a>, <a class="el" href="lv__flex_8c_source.html#l00182">lv_obj_set_style_flex_cross_place()</a>, <a class="el" href="lv__flex_8c_source.html#l00174">lv_obj_set_style_flex_main_place()</a>, <a class="el" href="lv__flex_8c_source.html#l00190">lv_obj_set_style_flex_track_place()</a> y <a class="el" href="lv__obj__style__gen_8c_source.html#l00667">lv_obj_set_style_layout()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__anim__timeline__1_8c_source.html#l00137">lv_example_anim_timeline_1()</a>, <a class="el" href="lv__example__checkbox__1_8c_source.html#l00015">lv_example_checkbox_1()</a>, <a class="el" href="lv__example__switch__1_8c_source.html#l00013">lv_example_switch_1()</a> y <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a>.</p>
+
+</div>
+</div>
+<a id="afe0e90502eefb9f215b641a818bceb50" name="afe0e90502eefb9f215b641a818bceb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0e90502eefb9f215b641a818bceb50">&#9670;&#160;</a></span>lv_obj_set_flex_flow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_flex_flow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a></td>          <td class="paramname"><span class="paramname"><em>flow</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set hot the item should flow </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flex</td><td>pointer to a flex layout descriptor </td></tr>
+    <tr><td class="paramname">flow</td><td>an element of <span class="tt"><a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a></span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00103">103</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="#a558ca369ea4fe2b35959e5d06143ca7b">lv_obj_set_style_flex_flow</a>(obj, flow, 0);</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="lv__obj__style__gen_8c.html#a06e1b33fa1e54f22cf3218eced4e6eeb">lv_obj_set_style_layout</a>(obj, <a class="code hl_variable" href="#ac6e849ced3f8c6c75dc758f25ac9979d">LV_LAYOUT_FLEX</a>, 0);</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="alv__flex_8c_html_a558ca369ea4fe2b35959e5d06143ca7b"><div class="ttname"><a href="#a558ca369ea4fe2b35959e5d06143ca7b">lv_obj_set_style_flex_flow</a></div><div class="ttdeci">void lv_obj_set_style_flex_flow(lv_obj_t *obj, lv_flex_flow_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00166">lv_flex.c:166</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00068">LV_LAYOUT_FLEX</a>, <a class="el" href="lv__flex_8c_source.html#l00166">lv_obj_set_style_flex_flow()</a> y <a class="el" href="lv__obj__style__gen_8c_source.html#l00667">lv_obj_set_style_layout()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__anim__timeline__1_8c_source.html#l00137">lv_example_anim_timeline_1()</a>, <a class="el" href="lv__example__checkbox__1_8c_source.html#l00015">lv_example_checkbox_1()</a>, <a class="el" href="lv__example__checkbox__2_8c_source.html#l00040">lv_example_checkbox_2()</a>, <a class="el" href="lv__example__event__3_8c_source.html#l00022">lv_example_event_3()</a>, <a class="el" href="lv__example__flex__1_8c_source.html#l00007">lv_example_flex_1()</a>, <a class="el" href="lv__example__flex__3_8c_source.html#l00007">lv_example_flex_3()</a>, <a class="el" href="lv__example__flex__4_8c_source.html#l00007">lv_example_flex_4()</a>, <a class="el" href="lv__example__flex__5_8c_source.html#l00017">lv_example_flex_5()</a>, <a class="el" href="lv__example__flex__6_8c_source.html#l00008">lv_example_flex_6()</a>, <a class="el" href="lv__example__list__2_8c_source.html#l00115">lv_example_list_2()</a>, <a class="el" href="lv__example__scroll__2_8c_source.html#l00020">lv_example_scroll_2()</a>, <a class="el" href="lv__example__scroll__6_8c_source.html#l00051">lv_example_scroll_6()</a>, <a class="el" href="lv__example__switch__1_8c_source.html#l00013">lv_example_switch_1()</a>, <a class="el" href="lv__list_8c_source.html#l00076">lv_list_add_btn()</a>, <a class="el" href="lv__list_8c_source.html#l00056">lv_list_create()</a>, <a class="el" href="lv__menu_8c_source.html#l00277">lv_menu_set_sidebar_page()</a> y <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a>.</p>
+
+</div>
+</div>
+<a id="a5aa092bfcef60f9e61eb84b66c266878" name="a5aa092bfcef60f9e61eb84b66c266878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa092bfcef60f9e61eb84b66c266878">&#9670;&#160;</a></span>lv_obj_set_flex_grow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_flex_grow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>grow</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the width or height (on main axis) to grow the object in order fill the free space </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an object. The parent must have flex layout else nothing will happen. </td></tr>
+    <tr><td class="paramname">grow</td><td>a value to set how much free space to take proportionally to other growing items. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00118">118</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_function" href="#ace0240cd1bed7d0fb783babf431705d6">lv_obj_set_style_flex_grow</a>(obj, grow, 0);</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a>(<a class="code hl_function" href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a>(obj));</div>
+<div class="line"><span class="lineno">  122</span>}</div>
+<div class="ttc" id="alv__flex_8c_html_ace0240cd1bed7d0fb783babf431705d6"><div class="ttname"><a href="#ace0240cd1bed7d0fb783babf431705d6">lv_obj_set_style_flex_grow</a></div><div class="ttdeci">void lv_obj_set_style_flex_grow(lv_obj_t *obj, uint8_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00198">lv_flex.c:198</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aa5cb16ea6fdd8ff7ae6838a4e3b6f826"><div class="ttname"><a href="lv__obj__pos_8c.html#aa5cb16ea6fdd8ff7ae6838a4e3b6f826">lv_obj_mark_layout_as_dirty</a></div><div class="ttdeci">void lv_obj_mark_layout_as_dirty(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00288">lv_obj_pos.c:288</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_ae57dc586fb19ae81c4c9f70d8e7eec7d"><div class="ttname"><a href="lv__obj__tree_8c.html#ae57dc586fb19ae81c4c9f70d8e7eec7d">lv_obj_get_parent</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_parent(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00285">lv_obj_tree.c:285</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__tree_8c_source.html#l00285">lv_obj_get_parent()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00288">lv_obj_mark_layout_as_dirty()</a> y <a class="el" href="lv__flex_8c_source.html#l00198">lv_obj_set_style_flex_grow()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__flex__3_8c_source.html#l00007">lv_example_flex_3()</a>, <a class="el" href="lv__list_8c_source.html#l00076">lv_list_add_btn()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a> y <a class="el" href="lv__win_8c_source.html#l00055">lv_win_add_title()</a>.</p>
+
+</div>
+</div>
+<a id="af622908bd7135ca054bae03c2b6f81f5" name="af622908bd7135ca054bae03c2b6f81f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af622908bd7135ca054bae03c2b6f81f5">&#9670;&#160;</a></span>lv_obj_set_style_flex_cross_place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_style_flex_cross_place </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a></td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00182">182</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>{</div>
+<div class="line"><span class="lineno">  184</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  185</span>        .num = (int32_t) value</div>
+<div class="line"><span class="lineno">  186</span>    };</div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_function" href="lv__obj__style_8c.html#a389d4fc608057670c38aa91cac6b1934">lv_obj_set_local_style_prop</a>(obj, <a class="code hl_variable" href="#afbd141557d590d83e2a53f2aeccbb78a">LV_STYLE_FLEX_CROSS_PLACE</a>, v, selector);</div>
+<div class="line"><span class="lineno">  188</span>}</div>
+<div class="ttc" id="alv__obj__style_8c_html_a389d4fc608057670c38aa91cac6b1934"><div class="ttname"><a href="lv__obj__style_8c.html#a389d4fc608057670c38aa91cac6b1934">lv_obj_set_local_style_prop</a></div><div class="ttdeci">void lv_obj_set_local_style_prop(lv_obj_t *obj, lv_style_prop_t prop, lv_style_value_t value, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style_8c_source.html#l00270">lv_obj_style.c:270</a></div></div>
+<div class="ttc" id="aunionlv__style__value__t_html"><div class="ttname"><a href="unionlv__style__value__t.html">lv_style_value_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00167">lv_style.h:167</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__style_8c_source.html#l00270">lv_obj_set_local_style_prop()</a> y <a class="el" href="lv__flex_8c_source.html#l00071">LV_STYLE_FLEX_CROSS_PLACE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00109">lv_obj_set_flex_align()</a>.</p>
+
+</div>
+</div>
+<a id="a558ca369ea4fe2b35959e5d06143ca7b" name="a558ca369ea4fe2b35959e5d06143ca7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a558ca369ea4fe2b35959e5d06143ca7b">&#9670;&#160;</a></span>lv_obj_set_style_flex_flow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_style_flex_flow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a></td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00166">166</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  169</span>        .num = (int32_t) value</div>
+<div class="line"><span class="lineno">  170</span>    };</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="lv__obj__style_8c.html#a389d4fc608057670c38aa91cac6b1934">lv_obj_set_local_style_prop</a>(obj, <a class="code hl_variable" href="#a94c2f9434a821701a63b4352c51e7c1d">LV_STYLE_FLEX_FLOW</a>, v, selector);</div>
+<div class="line"><span class="lineno">  172</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__style_8c_source.html#l00270">lv_obj_set_local_style_prop()</a> y <a class="el" href="lv__flex_8c_source.html#l00069">LV_STYLE_FLEX_FLOW</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00103">lv_obj_set_flex_flow()</a>.</p>
+
+</div>
+</div>
+<a id="ace0240cd1bed7d0fb783babf431705d6" name="ace0240cd1bed7d0fb783babf431705d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0240cd1bed7d0fb783babf431705d6">&#9670;&#160;</a></span>lv_obj_set_style_flex_grow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_style_flex_grow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a></td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00198">198</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>{</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  201</span>        .num = (int32_t) value</div>
+<div class="line"><span class="lineno">  202</span>    };</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_function" href="lv__obj__style_8c.html#a389d4fc608057670c38aa91cac6b1934">lv_obj_set_local_style_prop</a>(obj, <a class="code hl_variable" href="#ad2de1ff10fd59340f57bb14b9cd74ccd">LV_STYLE_FLEX_GROW</a>, v, selector);</div>
+<div class="line"><span class="lineno">  204</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__style_8c_source.html#l00270">lv_obj_set_local_style_prop()</a> y <a class="el" href="lv__flex_8c_source.html#l00073">LV_STYLE_FLEX_GROW</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00118">lv_obj_set_flex_grow()</a>.</p>
+
+</div>
+</div>
+<a id="a98c850945fdc21610a783484eba8b60e" name="a98c850945fdc21610a783484eba8b60e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c850945fdc21610a783484eba8b60e">&#9670;&#160;</a></span>lv_obj_set_style_flex_main_place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_style_flex_main_place </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a></td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00174">174</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>{</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  177</span>        .num = (int32_t) value</div>
+<div class="line"><span class="lineno">  178</span>    };</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_function" href="lv__obj__style_8c.html#a389d4fc608057670c38aa91cac6b1934">lv_obj_set_local_style_prop</a>(obj, <a class="code hl_variable" href="#abf7893d5c6892f827625188d7cc82eeb">LV_STYLE_FLEX_MAIN_PLACE</a>, v, selector);</div>
+<div class="line"><span class="lineno">  180</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__style_8c_source.html#l00270">lv_obj_set_local_style_prop()</a> y <a class="el" href="lv__flex_8c_source.html#l00070">LV_STYLE_FLEX_MAIN_PLACE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00109">lv_obj_set_flex_align()</a>.</p>
+
+</div>
+</div>
+<a id="ae41110e75313f908edb93e8786e4bdd6" name="ae41110e75313f908edb93e8786e4bdd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41110e75313f908edb93e8786e4bdd6">&#9670;&#160;</a></span>lv_obj_set_style_flex_track_place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_obj_set_style_flex_track_place </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__obj__style_8h.html#aa0a048ecb0f26f9a0976809d5ec35693">lv_style_selector_t</a></td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00190">190</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>{</div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  193</span>        .num = (int32_t) value</div>
+<div class="line"><span class="lineno">  194</span>    };</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="lv__obj__style_8c.html#a389d4fc608057670c38aa91cac6b1934">lv_obj_set_local_style_prop</a>(obj, <a class="code hl_variable" href="#a72a7b499fcf6fdd24cfe95515163ec9f">LV_STYLE_FLEX_TRACK_PLACE</a>, v, selector);</div>
+<div class="line"><span class="lineno">  196</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj__style_8c_source.html#l00270">lv_obj_set_local_style_prop()</a> y <a class="el" href="lv__flex_8c_source.html#l00072">LV_STYLE_FLEX_TRACK_PLACE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00109">lv_obj_set_flex_align()</a>.</p>
+
+</div>
+</div>
+<a id="a502cd7f75f4ceab5d6903f5680173c6c" name="a502cd7f75f4ceab5d6903f5680173c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502cd7f75f4ceab5d6903f5680173c6c">&#9670;&#160;</a></span>lv_style_set_flex_cross_place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_style_set_flex_cross_place </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__style__t.html">lv_style_t</a> *</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00141">141</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  144</span>        .num = (int32_t)value</div>
+<div class="line"><span class="lineno">  145</span>    };</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_function" href="lv__style_8c.html#a29e7e4bbafc2bcc964bbff48942d894c">lv_style_set_prop</a>(style, <a class="code hl_variable" href="#afbd141557d590d83e2a53f2aeccbb78a">LV_STYLE_FLEX_CROSS_PLACE</a>, v);</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+<div class="ttc" id="alv__style_8c_html_a29e7e4bbafc2bcc964bbff48942d894c"><div class="ttname"><a href="lv__style_8c.html#a29e7e4bbafc2bcc964bbff48942d894c">lv_style_set_prop</a></div><div class="ttdeci">void lv_style_set_prop(lv_style_t *style, lv_style_prop_t prop, lv_style_value_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00283">lv_style.c:283</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00071">LV_STYLE_FLEX_CROSS_PLACE</a> y <a class="el" href="lv__style_8c_source.html#l00283">lv_style_set_prop()</a>.</p>
+
+</div>
+</div>
+<a id="afc8290e7bbf9df2fe6dfc8ff18b7e36a" name="afc8290e7bbf9df2fe6dfc8ff18b7e36a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc8290e7bbf9df2fe6dfc8ff18b7e36a">&#9670;&#160;</a></span>lv_style_set_flex_flow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_style_set_flex_flow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__style__t.html">lv_style_t</a> *</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187">lv_flex_flow_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00125">125</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  128</span>        .num = (int32_t)value</div>
+<div class="line"><span class="lineno">  129</span>    };</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_function" href="lv__style_8c.html#a29e7e4bbafc2bcc964bbff48942d894c">lv_style_set_prop</a>(style, <a class="code hl_variable" href="#a94c2f9434a821701a63b4352c51e7c1d">LV_STYLE_FLEX_FLOW</a>, v);</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00069">LV_STYLE_FLEX_FLOW</a> y <a class="el" href="lv__style_8c_source.html#l00283">lv_style_set_prop()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__flex__2_8c_source.html#l00007">lv_example_flex_2()</a>.</p>
+
+</div>
+</div>
+<a id="adc0fcc295a5b244667955584ed09ceda" name="adc0fcc295a5b244667955584ed09ceda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0fcc295a5b244667955584ed09ceda">&#9670;&#160;</a></span>lv_style_set_flex_grow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_style_set_flex_grow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__style__t.html">lv_style_t</a> *</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00157">157</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>{</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  160</span>        .num = (int32_t)value</div>
+<div class="line"><span class="lineno">  161</span>    };</div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_function" href="lv__style_8c.html#a29e7e4bbafc2bcc964bbff48942d894c">lv_style_set_prop</a>(style, <a class="code hl_variable" href="#ad2de1ff10fd59340f57bb14b9cd74ccd">LV_STYLE_FLEX_GROW</a>, v);</div>
+<div class="line"><span class="lineno">  163</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00073">LV_STYLE_FLEX_GROW</a> y <a class="el" href="lv__style_8c_source.html#l00283">lv_style_set_prop()</a>.</p>
+
+</div>
+</div>
+<a id="ae2db65defb6316bcac5e1316accbcdab" name="ae2db65defb6316bcac5e1316accbcdab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2db65defb6316bcac5e1316accbcdab">&#9670;&#160;</a></span>lv_style_set_flex_main_place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_style_set_flex_main_place </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__style__t.html">lv_style_t</a> *</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00133">133</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  136</span>        .num = (int32_t)value</div>
+<div class="line"><span class="lineno">  137</span>    };</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_function" href="lv__style_8c.html#a29e7e4bbafc2bcc964bbff48942d894c">lv_style_set_prop</a>(style, <a class="code hl_variable" href="#abf7893d5c6892f827625188d7cc82eeb">LV_STYLE_FLEX_MAIN_PLACE</a>, v);</div>
+<div class="line"><span class="lineno">  139</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00070">LV_STYLE_FLEX_MAIN_PLACE</a> y <a class="el" href="lv__style_8c_source.html#l00283">lv_style_set_prop()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__flex__2_8c_source.html#l00007">lv_example_flex_2()</a>.</p>
+
+</div>
+</div>
+<a id="a364102c949ec1973218bc804d92c7590" name="a364102c949ec1973218bc804d92c7590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364102c949ec1973218bc804d92c7590">&#9670;&#160;</a></span>lv_style_set_flex_track_place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_style_set_flex_track_place </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__style__t.html">lv_style_t</a> *</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__flex_8h.html#a66b5aed9b72f4e6a3a366f80619425ab">lv_flex_align_t</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00149">149</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_union" href="unionlv__style__value__t.html">lv_style_value_t</a> v = {</div>
+<div class="line"><span class="lineno">  152</span>        .num = (int32_t)value</div>
+<div class="line"><span class="lineno">  153</span>    };</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_function" href="lv__style_8c.html#a29e7e4bbafc2bcc964bbff48942d894c">lv_style_set_prop</a>(style, <a class="code hl_variable" href="#a72a7b499fcf6fdd24cfe95515163ec9f">LV_STYLE_FLEX_TRACK_PLACE</a>, v);</div>
+<div class="line"><span class="lineno">  155</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__flex_8c_source.html#l00072">LV_STYLE_FLEX_TRACK_PLACE</a> y <a class="el" href="lv__style_8c_source.html#l00283">lv_style_set_prop()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ac6e849ced3f8c6c75dc758f25ac9979d" name="ac6e849ced3f8c6c75dc758f25ac9979d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e849ced3f8c6c75dc758f25ac9979d">&#9670;&#160;</a></span>LV_LAYOUT_FLEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t LV_LAYOUT_FLEX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00068">68</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__flex__2_8c_source.html#l00007">lv_example_flex_2()</a>, <a class="el" href="lv__flex_8c_source.html#l00092">lv_flex_init()</a>, <a class="el" href="lv__flex_8c_source.html#l00109">lv_obj_set_flex_align()</a> y <a class="el" href="lv__flex_8c_source.html#l00103">lv_obj_set_flex_flow()</a>.</p>
+
+</div>
+</div>
+<a id="afbd141557d590d83e2a53f2aeccbb78a" name="afbd141557d590d83e2a53f2aeccbb78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd141557d590d83e2a53f2aeccbb78a">&#9670;&#160;</a></span>LV_STYLE_FLEX_CROSS_PLACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a> LV_STYLE_FLEX_CROSS_PLACE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00071">71</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00092">lv_flex_init()</a>, <a class="el" href="lv__flex_8c_source.html#l00182">lv_obj_set_style_flex_cross_place()</a> y <a class="el" href="lv__flex_8c_source.html#l00141">lv_style_set_flex_cross_place()</a>.</p>
+
+</div>
+</div>
+<a id="a94c2f9434a821701a63b4352c51e7c1d" name="a94c2f9434a821701a63b4352c51e7c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c2f9434a821701a63b4352c51e7c1d">&#9670;&#160;</a></span>LV_STYLE_FLEX_FLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a> LV_STYLE_FLEX_FLOW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00069">69</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00092">lv_flex_init()</a>, <a class="el" href="lv__flex_8c_source.html#l00166">lv_obj_set_style_flex_flow()</a> y <a class="el" href="lv__flex_8c_source.html#l00125">lv_style_set_flex_flow()</a>.</p>
+
+</div>
+</div>
+<a id="ad2de1ff10fd59340f57bb14b9cd74ccd" name="ad2de1ff10fd59340f57bb14b9cd74ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2de1ff10fd59340f57bb14b9cd74ccd">&#9670;&#160;</a></span>LV_STYLE_FLEX_GROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a> LV_STYLE_FLEX_GROW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00073">73</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00092">lv_flex_init()</a>, <a class="el" href="lv__flex_8c_source.html#l00198">lv_obj_set_style_flex_grow()</a> y <a class="el" href="lv__flex_8c_source.html#l00157">lv_style_set_flex_grow()</a>.</p>
+
+</div>
+</div>
+<a id="abf7893d5c6892f827625188d7cc82eeb" name="abf7893d5c6892f827625188d7cc82eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf7893d5c6892f827625188d7cc82eeb">&#9670;&#160;</a></span>LV_STYLE_FLEX_MAIN_PLACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a> LV_STYLE_FLEX_MAIN_PLACE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00070">70</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00092">lv_flex_init()</a>, <a class="el" href="lv__flex_8c_source.html#l00174">lv_obj_set_style_flex_main_place()</a> y <a class="el" href="lv__flex_8c_source.html#l00133">lv_style_set_flex_main_place()</a>.</p>
+
+</div>
+</div>
+<a id="a72a7b499fcf6fdd24cfe95515163ec9f" name="a72a7b499fcf6fdd24cfe95515163ec9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a7b499fcf6fdd24cfe95515163ec9f">&#9670;&#160;</a></span>LV_STYLE_FLEX_TRACK_PLACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__style_8h.html#a1cc3fc02ad523b88130a21e3e7d116a5">lv_style_prop_t</a> LV_STYLE_FLEX_TRACK_PLACE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__flex_8c_source.html#l00072">72</a> del archivo <a class="el" href="lv__flex_8c_source.html">lv_flex.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__flex_8c_source.html#l00092">lv_flex_init()</a>, <a class="el" href="lv__flex_8c_source.html#l00190">lv_obj_set_style_flex_track_place()</a> y <a class="el" href="lv__flex_8c_source.html#l00149">lv_style_set_flex_track_place()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_2e1cba7327cbdb3231d60fd41b28b4a7.html">layouts</a></li><li class="navelem"><a href="dir_cf820501128a077a561e07dca937f08b.html">flex</a></li><li class="navelem"><a href="lv__flex_8c.html">lv_flex.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

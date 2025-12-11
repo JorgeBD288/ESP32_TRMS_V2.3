@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/TFT_eSPI/Processors/TFT_eSPI_ESP32.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('TFT__eSPI__ESP32_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo TFT_eSPI_ESP32.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;soc/spi_reg.h&quot;</code><br />
+<code>#include &quot;driver/spi_master.h&quot;</code><br />
+<code>#include &quot;hal/gpio_ll.h&quot;</code><br />
+</div>
+<p><a href="TFT__eSPI__ESP32_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:af296159965407b5bc60d1593cea1e4ce" id="r_af296159965407b5bc60d1593cea1e4ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af296159965407b5bc60d1593cea1e4ce">CMD_BITS</a>&#160;&#160;&#160;(8-1)</td></tr>
+<tr class="memitem:a7993ddc44eb51ef5644538b2af5b70a8" id="r_a7993ddc44eb51ef5644538b2af5b70a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7993ddc44eb51ef5644538b2af5b70a8">CONFIG_IDF_TARGET_ESP32</a></td></tr>
+<tr class="memitem:a41e4d0688746fbb1f301e6b349f66e94" id="r_a41e4d0688746fbb1f301e6b349f66e94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41e4d0688746fbb1f301e6b349f66e94">CS_H</a></td></tr>
+<tr class="memitem:a94bcad9ccdc5c0c015b7bd7282220310" id="r_a94bcad9ccdc5c0c015b7bd7282220310"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94bcad9ccdc5c0c015b7bd7282220310">CS_L</a></td></tr>
+<tr class="memitem:aa9a21b8777dac5ca0a35adefd34549e7" id="r_aa9a21b8777dac5ca0a35adefd34549e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9a21b8777dac5ca0a35adefd34549e7">DAT8TO32</a>(P)</td></tr>
+<tr class="memitem:af968aaa0a6293c3129f4d12a87dc3bd2" id="r_af968aaa0a6293c3129f4d12a87dc3bd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af968aaa0a6293c3129f4d12a87dc3bd2">DC_C</a></td></tr>
+<tr class="memitem:a8ce7aa603d0ee60c8cce4835f36bf1d0" id="r_a8ce7aa603d0ee60c8cce4835f36bf1d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ce7aa603d0ee60c8cce4835f36bf1d0">DC_D</a></td></tr>
+<tr class="memitem:a6191cea82a2602a4eb54f4049c76baa7" id="r_a6191cea82a2602a4eb54f4049c76baa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6191cea82a2602a4eb54f4049c76baa7">DMA_BUSY_CHECK</a>&#160;&#160;&#160;dmaWait()</td></tr>
+<tr class="memitem:a52b9d9da34c62b228166f053237b74af" id="r_a52b9d9da34c62b228166f053237b74af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52b9d9da34c62b228166f053237b74af">ESP32_DMA</a></td></tr>
+<tr class="memitem:a963a646b9f4becfb3e1b9b7fe3e8594e" id="r_a963a646b9f4becfb3e1b9b7fe3e8594e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a963a646b9f4becfb3e1b9b7fe3e8594e">INIT_TFT_DATA_BUS</a></td></tr>
+<tr class="memitem:a74075f95668704cf2d25c7ce880fb12a" id="r_a74075f95668704cf2d25c7ce880fb12a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74075f95668704cf2d25c7ce880fb12a">PROCESSOR_ID</a>&#160;&#160;&#160;0x32</td></tr>
+<tr class="memitem:a56c9f10e7fe8d36818ad8166c2093628" id="r_a56c9f10e7fe8d36818ad8166c2093628"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56c9f10e7fe8d36818ad8166c2093628">SET_BUS_READ_MODE</a>&#160;&#160;&#160;*<a class="el" href="TFT__eSPI__ESP32__S3_8h.html#afb1eb2628f29fc3fa5b9ff6db28fd8ea">_spi_user</a> = SPI_USR_MOSI | SPI_USR_MISO | SPI_DOUTDIN | SPI_CK_OUT_EDGE</td></tr>
+<tr class="memitem:aa8cf4bde0e7056da07eb131d577c5277" id="r_aa8cf4bde0e7056da07eb131d577c5277"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cf4bde0e7056da07eb131d577c5277">SET_BUS_WRITE_MODE</a>&#160;&#160;&#160;*<a class="el" href="TFT__eSPI__ESP32__S3_8h.html#afb1eb2628f29fc3fa5b9ff6db28fd8ea">_spi_user</a> = SPI_USR_MOSI | SPI_CK_OUT_EDGE</td></tr>
+<tr class="memitem:a0fa5d2673ca326dd1e34b87b142a956a" id="r_a0fa5d2673ca326dd1e34b87b142a956a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fa5d2673ca326dd1e34b87b142a956a">SPI_BUSY_CHECK</a>&#160;&#160;&#160;while (*<a class="el" href="TFT__eSPI__ESP32__S3_8h.html#a1402c495c7a8dabbec1a3d919e67edbc">_spi_cmd</a>&amp;SPI_USR)</td></tr>
+<tr class="memitem:a8112c985f7444e82198d7571ce0a9160" id="r_a8112c985f7444e82198d7571ce0a9160"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a>&#160;&#160;&#160;<a class="el" href="TFT__eSPI__ESP32__C3_8h.html#a7a97a35227fff1674c2fe8cf0e981abf">VSPI</a></td></tr>
+<tr class="memitem:a6e17c6900cf2c788e827fe83865cd4ae" id="r_a6e17c6900cf2c788e827fe83865cd4ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e17c6900cf2c788e827fe83865cd4ae">SUPPORT_TRANSACTIONS</a></td></tr>
+<tr class="memitem:ae9d6105bbb31e739494e7709661d6051" id="r_ae9d6105bbb31e739494e7709661d6051"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9d6105bbb31e739494e7709661d6051">T_CS_H</a></td></tr>
+<tr class="memitem:acac8ae27a1ecb059078fd6cab7f8ffdc" id="r_acac8ae27a1ecb059078fd6cab7f8ffdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acac8ae27a1ecb059078fd6cab7f8ffdc">T_CS_L</a></td></tr>
+<tr class="memitem:a5f4d46ae101b77df78010c506601c87c" id="r_a5f4d46ae101b77df78010c506601c87c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memitem:ac108dd4310833bbb4afd1bce1090d55f" id="r_ac108dd4310833bbb4afd1bce1090d55f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac108dd4310833bbb4afd1bce1090d55f">TFT_MISO</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memitem:a4db639d2d88a53132a529677e6dd795c" id="r_a4db639d2d88a53132a529677e6dd795c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4db639d2d88a53132a529677e6dd795c">TFT_MOSI</a>&#160;&#160;&#160;23</td></tr>
+<tr class="memitem:a455eaaba9953a977ff9db92228aa2aa7" id="r_a455eaaba9953a977ff9db92228aa2aa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a455eaaba9953a977ff9db92228aa2aa7">tft_Read_8</a>()</td></tr>
+<tr class="memitem:a095a96cc6abc991346d7b6712f8576b5" id="r_a095a96cc6abc991346d7b6712f8576b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a095a96cc6abc991346d7b6712f8576b5">TFT_SCLK</a>&#160;&#160;&#160;18</td></tr>
+<tr class="memitem:a340b19ab56c9e3296321e6e0de9b6ed9" id="r_a340b19ab56c9e3296321e6e0de9b6ed9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a340b19ab56c9e3296321e6e0de9b6ed9">tft_Write_16</a>(C)</td></tr>
+<tr class="memitem:a4e89e69c5223372d24dd95ec71be7b77" id="r_a4e89e69c5223372d24dd95ec71be7b77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e89e69c5223372d24dd95ec71be7b77">tft_Write_16N</a>(C)</td></tr>
+<tr class="memitem:ae696469f15a43403757d83210759b962" id="r_ae696469f15a43403757d83210759b962"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae696469f15a43403757d83210759b962">tft_Write_16S</a>(C)</td></tr>
+<tr class="memitem:ac7c8923c1906a4770381b4ae9bb2e344" id="r_ac7c8923c1906a4770381b4ae9bb2e344"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7c8923c1906a4770381b4ae9bb2e344">tft_Write_32</a>(C)</td></tr>
+<tr class="memitem:a62c478a3ffa5b0ffc3b94e74f8b26945" id="r_a62c478a3ffa5b0ffc3b94e74f8b26945"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62c478a3ffa5b0ffc3b94e74f8b26945">tft_Write_32C</a>(C,  D)</td></tr>
+<tr class="memitem:a80b7d5c5fa06c5d306dd1df8f70fe64f" id="r_a80b7d5c5fa06c5d306dd1df8f70fe64f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80b7d5c5fa06c5d306dd1df8f70fe64f">tft_Write_32D</a>(C)</td></tr>
+<tr class="memitem:a9306e0d41cbd3a8f633114a71d6ba6d6" id="r_a9306e0d41cbd3a8f633114a71d6ba6d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9306e0d41cbd3a8f633114a71d6ba6d6">tft_Write_8</a>(C)</td></tr>
+<tr class="memitem:a5ef0c292af35109cf825d8c8c0728f31" id="r_a5ef0c292af35109cf825d8c8c0728f31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>(D,  B)</td></tr>
+<tr class="memitem:a8f4df8c8872416fd4fd2499e750d9944" id="r_a8f4df8c8872416fd4fd2499e750d9944"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f4df8c8872416fd4fd2499e750d9944">WR_H</a></td></tr>
+<tr class="memitem:a0369d3654ae5b74e04ac262d77166495" id="r_a0369d3654ae5b74e04ac262d77166495"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0369d3654ae5b74e04ac262d77166495">WR_L</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="af296159965407b5bc60d1593cea1e4ce" name="af296159965407b5bc60d1593cea1e4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af296159965407b5bc60d1593cea1e4ce">&#9670;&#160;</a></span>CMD_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_BITS&#160;&#160;&#160;(8-1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00084">84</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a7993ddc44eb51ef5644538b2af5b70a8" name="a7993ddc44eb51ef5644538b2af5b70a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7993ddc44eb51ef5644538b2af5b70a8">&#9670;&#160;</a></span>CONFIG_IDF_TARGET_ESP32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_IDF_TARGET_ESP32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00017">17</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a41e4d0688746fbb1f301e6b349f66e94" name="a41e4d0688746fbb1f301e6b349f66e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e4d0688746fbb1f301e6b349f66e94">&#9670;&#160;</a></span>CS_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CS_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00205">205</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00116">TFT_eSPI::end_nin_write()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01061">TFT_eSPI::readcommand8()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01136">TFT_eSPI::readPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01273">TFT_eSPI::readRect()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l02201">TFT_eSPI::readRectRGB()</a>.</p>
+
+</div>
+</div>
+<a id="a94bcad9ccdc5c0c015b7bd7282220310" name="a94bcad9ccdc5c0c015b7bd7282220310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94bcad9ccdc5c0c015b7bd7282220310">&#9670;&#160;</a></span>CS_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CS_L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00204">204</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00086">TFT_eSPI::begin_nin_write()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01061">TFT_eSPI::readcommand8()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01136">TFT_eSPI::readPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01273">TFT_eSPI::readRect()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l01043">TFT_eSPI::writedata()</a>.</p>
+
+</div>
+</div>
+<a id="aa9a21b8777dac5ca0a35adefd34549e7" name="aa9a21b8777dac5ca0a35adefd34549e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a21b8777dac5ca0a35adefd34549e7">&#9670;&#160;</a></span>DAT8TO32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DAT8TO32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>P</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">( (uint32_t)P[0]&lt;&lt;8 | P[1] | P[2]&lt;&lt;24 | P[3]&lt;&lt;16 )</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00589">589</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="af968aaa0a6293c3129f4d12a87dc3bd2" name="af968aaa0a6293c3129f4d12a87dc3bd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af968aaa0a6293c3129f4d12a87dc3bd2">&#9670;&#160;</a></span>DC_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DC_C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00148">148</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01061">TFT_eSPI::readcommand8()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03360">TFT_eSPI::setWindow()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l00980">TFT_eSPI::writecommand()</a>.</p>
+
+</div>
+</div>
+<a id="a8ce7aa603d0ee60c8cce4835f36bf1d0" name="a8ce7aa603d0ee60c8cce4835f36bf1d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce7aa603d0ee60c8cce4835f36bf1d0">&#9670;&#160;</a></span>DC_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DC_D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00149">149</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01061">TFT_eSPI::readcommand8()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03360">TFT_eSPI::setWindow()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l00980">TFT_eSPI::writecommand()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l01043">TFT_eSPI::writedata()</a>.</p>
+
+</div>
+</div>
+<a id="a6191cea82a2602a4eb54f4049c76baa7" name="a6191cea82a2602a4eb54f4049c76baa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6191cea82a2602a4eb54f4049c76baa7">&#9670;&#160;</a></span>DMA_BUSY_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA_BUSY_CHECK&#160;&#160;&#160;dmaWait()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00123">123</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03829">TFT_eSPI::endWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a52b9d9da34c62b228166f053237b74af" name="a52b9d9da34c62b228166f053237b74af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b9d9da34c62b228166f053237b74af">&#9670;&#160;</a></span>ESP32_DMA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ESP32_DMA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00121">121</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a963a646b9f4becfb3e1b9b7fe3e8594e" name="a963a646b9f4becfb3e1b9b7fe3e8594e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963a646b9f4becfb3e1b9b7fe3e8594e">&#9670;&#160;</a></span>INIT_TFT_DATA_BUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INIT_TFT_DATA_BUS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00088">88</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00611">TFT_eSPI::init()</a>.</p>
+
+</div>
+</div>
+<a id="a74075f95668704cf2d25c7ce880fb12a" name="a74075f95668704cf2d25c7ce880fb12a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74075f95668704cf2d25c7ce880fb12a">&#9670;&#160;</a></span>PROCESSOR_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROCESSOR_ID&#160;&#160;&#160;0x32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00009">9</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05974">TFT_eSPI::getSetup()</a>.</p>
+
+</div>
+</div>
+<a id="a56c9f10e7fe8d36818ad8166c2093628" name="a56c9f10e7fe8d36818ad8166c2093628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c9f10e7fe8d36818ad8166c2093628">&#9670;&#160;</a></span>SET_BUS_READ_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_BUS_READ_MODE&#160;&#160;&#160;*<a class="el" href="TFT__eSPI__ESP32__S3_8h.html#afb1eb2628f29fc3fa5b9ff6db28fd8ea">_spi_user</a> = SPI_USR_MOSI | SPI_USR_MISO | SPI_DOUTDIN | SPI_CK_OUT_EDGE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00108">108</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00116">TFT_eSPI::end_nin_write()</a>.</p>
+
+</div>
+</div>
+<a id="aa8cf4bde0e7056da07eb131d577c5277" name="aa8cf4bde0e7056da07eb131d577c5277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cf4bde0e7056da07eb131d577c5277">&#9670;&#160;</a></span>SET_BUS_WRITE_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_BUS_WRITE_MODE&#160;&#160;&#160;*<a class="el" href="TFT__eSPI__ESP32__S3_8h.html#afb1eb2628f29fc3fa5b9ff6db28fd8ea">_spi_user</a> = SPI_USR_MOSI | SPI_CK_OUT_EDGE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00107">107</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l00086">TFT_eSPI::begin_nin_write()</a>.</p>
+
+</div>
+</div>
+<a id="a0fa5d2673ca326dd1e34b87b142a956a" name="a0fa5d2673ca326dd1e34b87b142a956a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fa5d2673ca326dd1e34b87b142a956a">&#9670;&#160;</a></span>SPI_BUSY_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_BUSY_CHECK&#160;&#160;&#160;while (*<a class="el" href="TFT__eSPI__ESP32__S3_8h.html#a1402c495c7a8dabbec1a3d919e67edbc">_spi_cmd</a>&amp;SPI_USR)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00131">131</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a8112c985f7444e82198d7571ce0a9160" name="a8112c985f7444e82198d7571ce0a9160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8112c985f7444e82198d7571ce0a9160">&#9670;&#160;</a></span>SPI_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_PORT&#160;&#160;&#160;<a class="el" href="TFT__eSPI__ESP32__C3_8h.html#a7a97a35227fff1674c2fe8cf0e981abf">VSPI</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00075">75</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI__ESP32_8c_source.html#l00371">TFT_eSPI::pushPixels()</a>.</p>
+
+</div>
+</div>
+<a id="a6e17c6900cf2c788e827fe83865cd4ae" name="a6e17c6900cf2c788e827fe83865cd4ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e17c6900cf2c788e827fe83865cd4ae">&#9670;&#160;</a></span>SUPPORT_TRANSACTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUPPORT_TRANSACTIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00039">39</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="ae9d6105bbb31e739494e7709661d6051" name="ae9d6105bbb31e739494e7709661d6051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d6105bbb31e739494e7709661d6051">&#9670;&#160;</a></span>T_CS_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define T_CS_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00270">270</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="acac8ae27a1ecb059078fd6cab7f8ffdc" name="acac8ae27a1ecb059078fd6cab7f8ffdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac8ae27a1ecb059078fd6cab7f8ffdc">&#9670;&#160;</a></span>T_CS_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define T_CS_L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00269">269</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f4d46ae101b77df78010c506601c87c" name="a5f4d46ae101b77df78010c506601c87c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4d46ae101b77df78010c506601c87c">&#9670;&#160;</a></span>TFT_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_CS&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00203">203</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05974">TFT_eSPI::getSetup()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l00611">TFT_eSPI::init()</a> y <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="ac108dd4310833bbb4afd1bce1090d55f" name="ac108dd4310833bbb4afd1bce1090d55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac108dd4310833bbb4afd1bce1090d55f">&#9670;&#160;</a></span>TFT_MISO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_MISO&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00306">306</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05974">TFT_eSPI::getSetup()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l00611">TFT_eSPI::init()</a>.</p>
+
+</div>
+</div>
+<a id="a4db639d2d88a53132a529677e6dd795c" name="a4db639d2d88a53132a529677e6dd795c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db639d2d88a53132a529677e6dd795c">&#9670;&#160;</a></span>TFT_MOSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_MOSI&#160;&#160;&#160;23</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00310">310</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05974">TFT_eSPI::getSetup()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l00611">TFT_eSPI::init()</a>.</p>
+
+</div>
+</div>
+<a id="a455eaaba9953a977ff9db92228aa2aa7" name="a455eaaba9953a977ff9db92228aa2aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455eaaba9953a977ff9db92228aa2aa7">&#9670;&#160;</a></span>tft_Read_8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Read_8</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_variable" href="TFT__eSPI__ESP32_8c.html#a76680acae9f0eb3030009ea0ba3616ee">spi</a>.transfer(0)</div>
+<div class="ttc" id="aTFT__eSPI__ESP32_8c_html_a76680acae9f0eb3030009ea0ba3616ee"><div class="ttname"><a href="TFT__eSPI__ESP32_8c.html#a76680acae9f0eb3030009ea0ba3616ee">spi</a></div><div class="ttdeci">SPIClass &amp; spi</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__ESP32_8c_source.html#l00025">TFT_eSPI_ESP32.c:25</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00585">585</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l01061">TFT_eSPI::readcommand8()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01136">TFT_eSPI::readPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01273">TFT_eSPI::readRect()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l02201">TFT_eSPI::readRectRGB()</a> y <a class="el" href="TFT__eSPI_8h_source.html#l00427">TFT_eSPI::TFT_eSprite</a>.</p>
+
+</div>
+</div>
+<a id="a095a96cc6abc991346d7b6712f8576b5" name="a095a96cc6abc991346d7b6712f8576b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095a96cc6abc991346d7b6712f8576b5">&#9670;&#160;</a></span>TFT_SCLK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_SCLK&#160;&#160;&#160;18</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00318">318</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l05974">TFT_eSPI::getSetup()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l00611">TFT_eSPI::init()</a>.</p>
+
+</div>
+</div>
+<a id="a340b19ab56c9e3296321e6e0de9b6ed9" name="a340b19ab56c9e3296321e6e0de9b6ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a340b19ab56c9e3296321e6e0de9b6ed9">&#9670;&#160;</a></span>tft_Write_16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_16</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>((C)&lt;&lt;8 | (C)&gt;&gt;8, 16)</div>
+<div class="ttc" id="aTFT__eSPI__ESP32_8h_html_a5ef0c292af35109cf825d8c8c0728f31"><div class="ttname"><a href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a></div><div class="ttdeci">#define TFT_WRITE_BITS(D, B)</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__ESP32_8h_source.html#l00544">TFT_eSPI_ESP32.h:544</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00553">553</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03183">TFT_eSPI::drawChar()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l05192">TFT_eSPI::drawChar()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l03360">TFT_eSPI::setWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a4e89e69c5223372d24dd95ec71be7b77" name="a4e89e69c5223372d24dd95ec71be7b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e89e69c5223372d24dd95ec71be7b77">&#9670;&#160;</a></span>tft_Write_16N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_16N</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">                           *<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#a00f15d340421f06e8fb6d1dc2e819be3">_spi_mosi_dlen</a> = 16-1;       \</div>
+<div class="line">                           *<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#ab802678ac0dc524d2566a58544cfc11d">_spi_w</a> = ((C)&lt;&lt;8 | (C)&gt;&gt;8); \</div>
+<div class="line">                           *<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#a1402c495c7a8dabbec1a3d919e67edbc">_spi_cmd</a> = SPI_USR;</div>
+<div class="ttc" id="aTFT__eSPI__ESP32__S3_8h_html_a00f15d340421f06e8fb6d1dc2e819be3"><div class="ttname"><a href="TFT__eSPI__ESP32__S3_8h.html#a00f15d340421f06e8fb6d1dc2e819be3">_spi_mosi_dlen</a></div><div class="ttdeci">#define _spi_mosi_dlen</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__ESP32__S3_8h_source.html#l00118">TFT_eSPI_ESP32_S3.h:118</a></div></div>
+<div class="ttc" id="aTFT__eSPI__ESP32__S3_8h_html_a1402c495c7a8dabbec1a3d919e67edbc"><div class="ttname"><a href="TFT__eSPI__ESP32__S3_8h.html#a1402c495c7a8dabbec1a3d919e67edbc">_spi_cmd</a></div><div class="ttdeci">#define _spi_cmd</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__ESP32__S3_8h_source.html#l00116">TFT_eSPI_ESP32_S3.h:116</a></div></div>
+<div class="ttc" id="aTFT__eSPI__ESP32__S3_8h_html_ab802678ac0dc524d2566a58544cfc11d"><div class="ttname"><a href="TFT__eSPI__ESP32__S3_8h.html#ab802678ac0dc524d2566a58544cfc11d">_spi_w</a></div><div class="ttdeci">#define _spi_w</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__ESP32__S3_8h_source.html#l00119">TFT_eSPI_ESP32_S3.h:119</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00556">556</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  556</span><span class="preprocessor">  #define tft_Write_16N(C) *_spi_mosi_dlen = 16-1;       \</span></div>
+<div class="line"><span class="lineno">  557</span><span class="preprocessor">                           *_spi_w = ((C)&lt;&lt;8 | (C)&gt;&gt;8); \</span></div>
+<div class="line"><span class="lineno">  558</span><span class="preprocessor">                           *_spi_cmd = SPI_USR;</span></div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l03790">TFT_eSPI::pushColor()</a>.</p>
+
+</div>
+</div>
+<a id="ae696469f15a43403757d83210759b962" name="ae696469f15a43403757d83210759b962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae696469f15a43403757d83210759b962">&#9670;&#160;</a></span>tft_Write_16S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_16S</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>(C, 16)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00561">561</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7c8923c1906a4770381b4ae9bb2e344" name="ac7c8923c1906a4770381b4ae9bb2e344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c8923c1906a4770381b4ae9bb2e344">&#9670;&#160;</a></span>tft_Write_32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>(C, 32)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00564">564</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a62c478a3ffa5b0ffc3b94e74f8b26945" name="a62c478a3ffa5b0ffc3b94e74f8b26945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c478a3ffa5b0ffc3b94e74f8b26945">&#9670;&#160;</a></span>tft_Write_32C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_32C</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>D</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>((uint16_t)((D)&lt;&lt;8 | (D)&gt;&gt;8)&lt;&lt;16 | (uint16_t)((C)&lt;&lt;8 | (C)&gt;&gt;8), 32)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00567">567</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03360">TFT_eSPI::setWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a80b7d5c5fa06c5d306dd1df8f70fe64f" name="a80b7d5c5fa06c5d306dd1df8f70fe64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b7d5c5fa06c5d306dd1df8f70fe64f">&#9670;&#160;</a></span>tft_Write_32D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_32D</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>((uint16_t)((C)&lt;&lt;8 | (C)&gt;&gt;8)&lt;&lt;16 | (uint16_t)((C)&lt;&lt;8 | (C)&gt;&gt;8), 32)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00570">570</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a>.</p>
+
+</div>
+</div>
+<a id="a9306e0d41cbd3a8f633114a71d6ba6d6" name="a9306e0d41cbd3a8f633114a71d6ba6d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9306e0d41cbd3a8f633114a71d6ba6d6">&#9670;&#160;</a></span>tft_Write_8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tft_Write_8</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>C</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a5ef0c292af35109cf825d8c8c0728f31">TFT_WRITE_BITS</a>(C, 8)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00550">550</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TFT__eSPI_8cpp_source.html#l03582">TFT_eSPI::drawPixel()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l01061">TFT_eSPI::readcommand8()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l03360">TFT_eSPI::setWindow()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l00967">TFT_eSPI::spiwrite()</a>, <a class="el" href="TFT__eSPI_8cpp_source.html#l00980">TFT_eSPI::writecommand()</a> y <a class="el" href="TFT__eSPI_8cpp_source.html#l01043">TFT_eSPI::writedata()</a>.</p>
+
+</div>
+</div>
+<a id="a5ef0c292af35109cf825d8c8c0728f31" name="a5ef0c292af35109cf825d8c8c0728f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef0c292af35109cf825d8c8c0728f31">&#9670;&#160;</a></span>TFT_WRITE_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_WRITE_BITS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>D</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">                               *<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#a00f15d340421f06e8fb6d1dc2e819be3">_spi_mosi_dlen</a> = B-1;    \</div>
+<div class="line">                               *<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#ab802678ac0dc524d2566a58544cfc11d">_spi_w</a> = D;             \</div>
+<div class="line">                               *<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#a1402c495c7a8dabbec1a3d919e67edbc">_spi_cmd</a> = SPI_USR;      \</div>
+<div class="line">                        while (*<a class="code hl_define" href="TFT__eSPI__ESP32__S3_8h.html#a1402c495c7a8dabbec1a3d919e67edbc">_spi_cmd</a> &amp; SPI_USR);</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00544">544</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  544</span><span class="preprocessor">  #define TFT_WRITE_BITS(D, B) *_spi_mosi_dlen = B-1;    \</span></div>
+<div class="line"><span class="lineno">  545</span><span class="preprocessor">                               *_spi_w = D;             \</span></div>
+<div class="line"><span class="lineno">  546</span><span class="preprocessor">                               *_spi_cmd = SPI_USR;      \</span></div>
+<div class="line"><span class="lineno">  547</span><span class="preprocessor">                        while (*_spi_cmd &amp; SPI_USR);</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8f4df8c8872416fd4fd2499e750d9944" name="a8f4df8c8872416fd4fd2499e750d9944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4df8c8872416fd4fd2499e750d9944">&#9670;&#160;</a></span>WR_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WR_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00262">262</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+<a id="a0369d3654ae5b74e04ac262d77166495" name="a0369d3654ae5b74e04ac262d77166495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0369d3654ae5b74e04ac262d77166495">&#9670;&#160;</a></span>WR_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WR_L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TFT__eSPI__ESP32_8h_source.html#l00261">261</a> del archivo <a class="el" href="TFT__eSPI__ESP32_8h_source.html">TFT_eSPI_ESP32.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_2df4fa8d81df78d38139bf8169b08b6f.html">Processors</a></li><li class="navelem"><a href="TFT__eSPI__ESP32_8h.html">TFT_eSPI_ESP32.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

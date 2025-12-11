@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/misc/lv_ll.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__ll_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_ll.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__ll_8h_source.html">lv_ll.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__mem_8h_source.html">lv_mem.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__ll_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ac697b8b6519b655bc091216853afa66d" id="r_ac697b8b6519b655bc091216853afa66d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac697b8b6519b655bc091216853afa66d">LL_NEXT_P_OFFSET</a>(ll_p)</td></tr>
+<tr class="memitem:a5e854f4fd8dd9a3c3c694b2e7f50a550" id="r_a5e854f4fd8dd9a3c3c694b2e7f50a550"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e854f4fd8dd9a3c3c694b2e7f50a550">LL_NODE_META_SIZE</a>&#160;&#160;&#160;(sizeof(<a class="el" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> *) + sizeof(<a class="el" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> *))</td></tr>
+<tr class="memitem:a7162ee79621282dc279ef8a8baef18a2" id="r_a7162ee79621282dc279ef8a8baef18a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7162ee79621282dc279ef8a8baef18a2">LL_PREV_P_OFFSET</a>(ll_p)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ae9cbd92fc77a8a5181db6ab0b4b40fac" id="r_ae9cbd92fc77a8a5181db6ab0b4b40fac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9cbd92fc77a8a5181db6ab0b4b40fac">_lv_ll_chg_list</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_ori_p, <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_new_p, void *node, bool head)</td></tr>
+<tr class="memitem:a100edcf0f1651fc36ebd6d3c12238a23" id="r_a100edcf0f1651fc36ebd6d3c12238a23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100edcf0f1651fc36ebd6d3c12238a23">_lv_ll_clear</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:afa5c88b6f53beba52b97d605884f4150" id="r_afa5c88b6f53beba52b97d605884f4150"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a> (const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:a502273f22bc68d030403f152d1b12462" id="r_a502273f22bc68d030403f152d1b12462"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a502273f22bc68d030403f152d1b12462">_lv_ll_get_len</a> (const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:a7bc52b9229e0f4c86093fc3ea2f6df4b" id="r_a7bc52b9229e0f4c86093fc3ea2f6df4b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a> (const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p, const void *n_act)</td></tr>
+<tr class="memitem:a7ce37131f386894569001a033ad7c445" id="r_a7ce37131f386894569001a033ad7c445"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a> (const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p, const void *n_act)</td></tr>
+<tr class="memitem:a883ce4f0448a8fa1384fe2f4eb7b3be4" id="r_a883ce4f0448a8fa1384fe2f4eb7b3be4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a> (const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:a991a8cdd1d53fcc0b2c7e1f2e55b067b" id="r_a991a8cdd1d53fcc0b2c7e1f2e55b067b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p, uint32_t node_size)</td></tr>
+<tr class="memitem:adea28cec6b6e492dbafa3564c08d6024" id="r_adea28cec6b6e492dbafa3564c08d6024"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:ac50ef5147b9a55c1c224f8ca720835e0" id="r_ac50ef5147b9a55c1c224f8ca720835e0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac50ef5147b9a55c1c224f8ca720835e0">_lv_ll_ins_prev</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p, void *n_act)</td></tr>
+<tr class="memitem:a4ef41f959d1d70c956e9bf79920d240a" id="r_a4ef41f959d1d70c956e9bf79920d240a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ef41f959d1d70c956e9bf79920d240a">_lv_ll_ins_tail</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:a4dfeff2a4374d4bb164a45e645835484" id="r_a4dfeff2a4374d4bb164a45e645835484"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dfeff2a4374d4bb164a45e645835484">_lv_ll_is_empty</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p)</td></tr>
+<tr class="memitem:a12e06698e2ff54196525370c68c54d11" id="r_a12e06698e2ff54196525370c68c54d11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12e06698e2ff54196525370c68c54d11">_lv_ll_move_before</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p, void *n_act, void *n_after)</td></tr>
+<tr class="memitem:a1751f3dd6c080b86d65f304d1949753c" id="r_a1751f3dd6c080b86d65f304d1949753c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a> (<a class="el" href="structlv__ll__t.html">lv_ll_t</a> *ll_p, void *node_p)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Handle linked lists. The nodes are dynamically allocated by the 'lv_mem' module, </p>
+
+<p class="definition">Definición en el archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="ac697b8b6519b655bc091216853afa66d" name="ac697b8b6519b655bc091216853afa66d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac697b8b6519b655bc091216853afa66d">&#9670;&#160;</a></span>LL_NEXT_P_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_NEXT_P_OFFSET</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">(ll_p-&gt;n_size + <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> *))</div>
+<div class="ttc" id="alv__ll_8h_html_aaaf22c8c1939f8ea17c80be0b1e9f299"><div class="ttname"><a href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a></div><div class="ttdeci">uint8_t lv_ll_node_t</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00029">lv_ll.h:29</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00018">18</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00279">_lv_ll_get_next()</a>.</p>
+
+</div>
+</div>
+<a id="a5e854f4fd8dd9a3c3c694b2e7f50a550" name="a5e854f4fd8dd9a3c3c694b2e7f50a550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e854f4fd8dd9a3c3c694b2e7f50a550">&#9670;&#160;</a></span>LL_NODE_META_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_NODE_META_SIZE&#160;&#160;&#160;(sizeof(<a class="el" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> *) + sizeof(<a class="el" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> *))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00016">16</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00067">_lv_ll_ins_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00096">_lv_ll_ins_prev()</a> y <a class="el" href="lv__ll_8c_source.html#l00126">_lv_ll_ins_tail()</a>.</p>
+
+</div>
+</div>
+<a id="a7162ee79621282dc279ef8a8baef18a2" name="a7162ee79621282dc279ef8a8baef18a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7162ee79621282dc279ef8a8baef18a2">&#9670;&#160;</a></span>LL_PREV_P_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_PREV_P_OFFSET</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">(ll_p-&gt;n_size)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00017">17</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00294">_lv_ll_get_prev()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ae9cbd92fc77a8a5181db6ab0b4b40fac" name="ae9cbd92fc77a8a5181db6ab0b4b40fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9cbd92fc77a8a5181db6ab0b4b40fac">&#9670;&#160;</a></span>_lv_ll_chg_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_ll_chg_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_ori_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_new_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>head</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Move a node to a new linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_ori_p</td><td>pointer to the original (old) linked list </td></tr>
+    <tr><td class="paramname">ll_new_p</td><td>pointer to the new linked list </td></tr>
+    <tr><td class="paramname">node</td><td>pointer to a node </td></tr>
+    <tr><td class="paramname">head</td><td>true: be the head in the new list false be the tail in the new list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00217">217</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>{</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_function" href="#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a>(ll_ori_p, node);</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span>(head) {</div>
+<div class="line"><span class="lineno">  222</span>        <span class="comment">/*Set node as head*/</span></div>
+<div class="line"><span class="lineno">  223</span>        node_set_prev(ll_new_p, node, NULL);</div>
+<div class="line"><span class="lineno">  224</span>        node_set_next(ll_new_p, node, ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a>);</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>        <span class="keywordflow">if</span>(ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> != NULL) { <span class="comment">/*If there is old head then before it goes the new*/</span></div>
+<div class="line"><span class="lineno">  227</span>            node_set_prev(ll_new_p, ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a>, node);</div>
+<div class="line"><span class="lineno">  228</span>        }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>        ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = node;       <span class="comment">/*Set the new head in the dsc.*/</span></div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">if</span>(ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> == NULL) { <span class="comment">/*If there is no tail (first node) set the tail too*/</span></div>
+<div class="line"><span class="lineno">  232</span>            ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = node;</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="line"><span class="lineno">  234</span>    }</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  236</span>        <span class="comment">/*Set node as tail*/</span></div>
+<div class="line"><span class="lineno">  237</span>        node_set_prev(ll_new_p, node, ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a>);</div>
+<div class="line"><span class="lineno">  238</span>        node_set_next(ll_new_p, node, NULL);</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">if</span>(ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> != NULL) { <span class="comment">/*If there is old tail then after it goes the new*/</span></div>
+<div class="line"><span class="lineno">  241</span>            node_set_next(ll_new_p, ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a>, node);</div>
+<div class="line"><span class="lineno">  242</span>        }</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>        ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = node;       <span class="comment">/*Set the new tail in the dsc.*/</span></div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">if</span>(ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> == NULL) { <span class="comment">/*If there is no head (first node) set the head too*/</span></div>
+<div class="line"><span class="lineno">  246</span>            ll_new_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = node;</div>
+<div class="line"><span class="lineno">  247</span>        }</div>
+<div class="line"><span class="lineno">  248</span>    }</div>
+<div class="line"><span class="lineno">  249</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a1751f3dd6c080b86d65f304d1949753c"><div class="ttname"><a href="#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a></div><div class="ttdeci">void _lv_ll_remove(lv_ll_t *ll_p, void *node_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00154">lv_ll.c:154</a></div></div>
+<div class="ttc" id="astructlv__ll__t_html_a633fc5158edd17d0e02f108a6fe042ad"><div class="ttname"><a href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">lv_ll_t::tail</a></div><div class="ttdeci">lv_ll_node_t * tail</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00035">lv_ll.h:35</a></div></div>
+<div class="ttc" id="astructlv__ll__t_html_a9ed0ab1e930216ea787109442877abfc"><div class="ttname"><a href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">lv_ll_t::head</a></div><div class="ttdeci">lv_ll_node_t * head</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00034">lv_ll.h:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+</div>
+</div>
+<a id="a100edcf0f1651fc36ebd6d3c12238a23" name="a100edcf0f1651fc36ebd6d3c12238a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100edcf0f1651fc36ebd6d3c12238a23">&#9670;&#160;</a></span>_lv_ll_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_ll_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove and free all elements from a linked list. The list remain valid but become empty. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00191">191</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordtype">void</span> * i;</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordtype">void</span> * i_next;</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    i      = <a class="code hl_function" href="#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>(ll_p);</div>
+<div class="line"><span class="lineno">  197</span>    i_next = NULL;</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">while</span>(i != NULL) {</div>
+<div class="line"><span class="lineno">  200</span>        i_next = <a class="code hl_function" href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a>(ll_p, i);</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>        <a class="code hl_function" href="#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a>(ll_p, i);</div>
+<div class="line"><span class="lineno">  203</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(i);</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>        i = i_next;</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a7bc52b9229e0f4c86093fc3ea2f6df4b"><div class="ttname"><a href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a></div><div class="ttdeci">void * _lv_ll_get_next(const lv_ll_t *ll_p, const void *n_act)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00279">lv_ll.c:279</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_afa5c88b6f53beba52b97d605884f4150"><div class="ttname"><a href="#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a></div><div class="ttdeci">void * _lv_ll_get_head(const lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00256">lv_ll.c:256</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00279">_lv_ll_get_next()</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a> y <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__anim_8c_source.html#l00163">lv_anim_del_all()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00291">lv_disp_remove()</a>, <a class="el" href="lv__group_8c_source.html#l00072">lv_group_del()</a>, <a class="el" href="lv__group_8c_source.html#l00216">lv_group_remove_all_objs()</a> y <a class="el" href="lv__menu_8c_source.html#l00453">lv_menu_clear_history()</a>.</p>
+
+</div>
+</div>
+<a id="afa5c88b6f53beba52b97d605884f4150" name="afa5c88b6f53beba52b97d605884f4150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa5c88b6f53beba52b97d605884f4150">&#9670;&#160;</a></span>_lv_ll_get_head()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_get_head </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return with head node of the linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the head of 'll_p' </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00256">256</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  257</span>{</div>
+<div class="line"><span class="lineno">  258</span>    <span class="keywordflow">if</span>(ll_p == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">return</span> ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a>;</div>
+<div class="line"><span class="lineno">  260</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00191">_lv_ll_clear()</a>, <a class="el" href="lv__ll_8c_source.html#l00308">_lv_ll_get_len()</a>, <a class="el" href="lv__ll_8c_source.html#l00096">_lv_ll_ins_prev()</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__anim_8c_source.html#l00138">lv_anim_del()</a>, <a class="el" href="lv__chart_8c_source.html#l00428">lv_chart_get_series_next()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00541">lv_disp_get_next()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00291">lv_disp_remove()</a>, <a class="el" href="lv__group_8c_source.html#l00111">lv_group_add_obj()</a>, <a class="el" href="lv__group_8c_source.html#l00267">lv_group_focus_next()</a>, <a class="el" href="lv__group_8c_source.html#l00175">lv_group_remove_obj()</a>, <a class="el" href="lv__hal__indev_8c_source.html#l00152">lv_indev_get_next()</a>, <a class="el" href="lv__span_8c_source.html#l00391">lv_spangroup_get_expand_height()</a>, <a class="el" href="lv__span_8c_source.html#l00359">lv_spangroup_get_expand_width()</a>, <a class="el" href="lv__timer_8c_source.html#l00285">lv_timer_get_next()</a> y <a class="el" href="lv__timer_8c_source.html#l00067">lv_timer_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a502273f22bc68d030403f152d1b12462" name="a502273f22bc68d030403f152d1b12462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502273f22bc68d030403f152d1b12462">&#9670;&#160;</a></span>_lv_ll_get_len()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t _lv_ll_get_len </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return the length of the linked list. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>length of the linked list </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00308">308</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  309</span>{</div>
+<div class="line"><span class="lineno">  310</span>    uint32_t len = 0;</div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordtype">void</span> * node;</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">for</span>(node = <a class="code hl_function" href="#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>(ll_p); node != NULL; node = <a class="code hl_function" href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a>(ll_p, node)) {</div>
+<div class="line"><span class="lineno">  314</span>        len++;</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">return</span> len;</div>
+<div class="line"><span class="lineno">  318</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a> y <a class="el" href="lv__ll_8c_source.html#l00279">_lv_ll_get_next()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__chart_8c_source.html#l00270">lv_chart_get_point_pos_by_id()</a>, <a class="el" href="lv__group_8c_source.html#l00371">lv_group_get_obj_count()</a> y <a class="el" href="lv__span_8c_source.html#l00261">lv_spangroup_get_child_cnt()</a>.</p>
+
+</div>
+</div>
+<a id="a7bc52b9229e0f4c86093fc3ea2f6df4b" name="a7bc52b9229e0f4c86093fc3ea2f6df4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">&#9670;&#160;</a></span>_lv_ll_get_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_get_next </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>n_act</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return with the pointer of the next node after 'n_act' </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+    <tr><td class="paramname">n_act</td><td>pointer a node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the next node </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00279">279</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>{</div>
+<div class="line"><span class="lineno">  281</span>    <span class="comment">/*Pointer to the next node is stored in the end of this node.</span></div>
+<div class="line"><span class="lineno">  282</span><span class="comment">     *Go there and return the address found there*/</span></div>
+<div class="line"><span class="lineno">  283</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_act_d = n_act;</div>
+<div class="line"><span class="lineno">  284</span>    n_act_d += <a class="code hl_define" href="#ac697b8b6519b655bc091216853afa66d">LL_NEXT_P_OFFSET</a>(ll_p);</div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">return</span> *((<a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> **)n_act_d);</div>
+<div class="line"><span class="lineno">  286</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_ac697b8b6519b655bc091216853afa66d"><div class="ttname"><a href="#ac697b8b6519b655bc091216853afa66d">LL_NEXT_P_OFFSET</a></div><div class="ttdeci">#define LL_NEXT_P_OFFSET(ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00018">lv_ll.c:18</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00018">LL_NEXT_P_OFFSET</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00191">_lv_ll_clear()</a>, <a class="el" href="lv__ll_8c_source.html#l00308">_lv_ll_get_len()</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__anim_8c_source.html#l00138">lv_anim_del()</a>, <a class="el" href="lv__chart_8c_source.html#l00428">lv_chart_get_series_next()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00541">lv_disp_get_next()</a>, <a class="el" href="lv__group_8c_source.html#l00267">lv_group_focus_next()</a>, <a class="el" href="lv__hal__indev_8c_source.html#l00152">lv_indev_get_next()</a>, <a class="el" href="lv__span_8c_source.html#l00224">lv_spangroup_get_child()</a>, <a class="el" href="lv__span_8c_source.html#l00391">lv_spangroup_get_expand_height()</a>, <a class="el" href="lv__timer_8c_source.html#l00285">lv_timer_get_next()</a> y <a class="el" href="lv__timer_8c_source.html#l00067">lv_timer_handler()</a>.</p>
+
+</div>
+</div>
+<a id="a7ce37131f386894569001a033ad7c445" name="a7ce37131f386894569001a033ad7c445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce37131f386894569001a033ad7c445">&#9670;&#160;</a></span>_lv_ll_get_prev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_get_prev </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>n_act</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return with the pointer of the previous node before 'n_act' </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+    <tr><td class="paramname">n_act</td><td>pointer a node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the previous node </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00294">294</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  295</span>{</div>
+<div class="line"><span class="lineno">  296</span>    <span class="comment">/*Pointer to the prev. node is stored in the end of this node.</span></div>
+<div class="line"><span class="lineno">  297</span><span class="comment">     *Go there and return the address found there*/</span></div>
+<div class="line"><span class="lineno">  298</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_act_d = n_act;</div>
+<div class="line"><span class="lineno">  299</span>    n_act_d += <a class="code hl_define" href="#a7162ee79621282dc279ef8a8baef18a2">LL_PREV_P_OFFSET</a>(ll_p);</div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">return</span> *((<a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> **)n_act_d);</div>
+<div class="line"><span class="lineno">  301</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a7162ee79621282dc279ef8a8baef18a2"><div class="ttname"><a href="#a7162ee79621282dc279ef8a8baef18a2">LL_PREV_P_OFFSET</a></div><div class="ttdeci">#define LL_PREV_P_OFFSET(ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00017">lv_ll.c:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00017">LL_PREV_P_OFFSET</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00096">_lv_ll_ins_prev()</a>, <a class="el" href="lv__ll_8c_source.html#l00326">_lv_ll_move_before()</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__group_8c_source.html#l00276">lv_group_focus_prev()</a> y <a class="el" href="lv__span_8c_source.html#l00224">lv_spangroup_get_child()</a>.</p>
+
+</div>
+</div>
+<a id="a883ce4f0448a8fa1384fe2f4eb7b3be4" name="a883ce4f0448a8fa1384fe2f4eb7b3be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a883ce4f0448a8fa1384fe2f4eb7b3be4">&#9670;&#160;</a></span>_lv_ll_get_tail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_get_tail </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return with tail node of the linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the tail of 'll_p' </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00267">267</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  268</span>{</div>
+<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">if</span>(ll_p == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">return</span> ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a>;</div>
+<div class="line"><span class="lineno">  271</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00326">_lv_ll_move_before()</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__group_8c_source.html#l00276">lv_group_focus_prev()</a> y <a class="el" href="lv__group_8c_source.html#l00175">lv_group_remove_obj()</a>.</p>
+
+</div>
+</div>
+<a id="a991a8cdd1d53fcc0b2c7e1f2e55b067b" name="a991a8cdd1d53fcc0b2c7e1f2e55b067b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991a8cdd1d53fcc0b2c7e1f2e55b067b">&#9670;&#160;</a></span>_lv_ll_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_ll_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>node_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to <a class="el" href="structlv__ll__t.html">lv_ll_t</a> variable </td></tr>
+    <tr><td class="paramname">node_size</td><td>the size of 1 node in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00047">47</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = NULL;</div>
+<div class="line"><span class="lineno">   50</span>    ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = NULL;</div>
+<div class="line"><span class="lineno">   51</span><span class="preprocessor">#ifdef LV_ARCH_64</span></div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">/*Round the size up to 8*/</span></div>
+<div class="line"><span class="lineno">   53</span>    node_size = (node_size + 7) &amp; (~0x7);</div>
+<div class="line"><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">/*Round the size up to 4*/</span></div>
+<div class="line"><span class="lineno">   56</span>    node_size = (node_size + 3) &amp; (~0x3);</div>
+<div class="line"><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a8dbe5afd50ad7e26e8035330f811cb57">n_size</a> = node_size;</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="astructlv__ll__t_html_a8dbe5afd50ad7e26e8035330f811cb57"><div class="ttname"><a href="structlv__ll__t.html#a8dbe5afd50ad7e26e8035330f811cb57">lv_ll_t::n_size</a></div><div class="ttdeci">uint32_t n_size</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00033">lv_ll.h:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a>, <a class="el" href="lv__ll_8h_source.html#l00033">lv_ll_t::n_size</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__anim_8c_source.html#l00057">_lv_anim_core_init()</a>, <a class="el" href="lv__fs_8c_source.html#l00041">_lv_fs_init()</a>, <a class="el" href="lv__group_8c_source.html#l00045">_lv_group_init()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>, <a class="el" href="lv__obj__style_8c_source.html#l00071">_lv_obj_style_init()</a>, <a class="el" href="lv__timer_8c_source.html#l00055">_lv_timer_core_init()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00166">lv_disp_drv_register()</a>, <a class="el" href="lv__group_8c_source.html#l00050">lv_group_create()</a> y <a class="el" href="lv__obj_8c_source.html#l00098">lv_init()</a>.</p>
+
+</div>
+</div>
+<a id="adea28cec6b6e492dbafa3564c08d6024" name="adea28cec6b6e492dbafa3564c08d6024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adea28cec6b6e492dbafa3564c08d6024">&#9670;&#160;</a></span>_lv_ll_ins_head()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_ins_head </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add a new head to a linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the new head </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00067">67</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_new;</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    n_new = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a8dbe5afd50ad7e26e8035330f811cb57">n_size</a> + <a class="code hl_define" href="#a5e854f4fd8dd9a3c3c694b2e7f50a550">LL_NODE_META_SIZE</a>);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span>(n_new != NULL) {</div>
+<div class="line"><span class="lineno">   74</span>        node_set_prev(ll_p, n_new, NULL);       <span class="comment">/*No prev. before the new head*/</span></div>
+<div class="line"><span class="lineno">   75</span>        node_set_next(ll_p, n_new, ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a>); <span class="comment">/*After new comes the old head*/</span></div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> != NULL) { <span class="comment">/*If there is old head then before it goes the new*/</span></div>
+<div class="line"><span class="lineno">   78</span>            node_set_prev(ll_p, ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a>, n_new);</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>        ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = n_new;      <span class="comment">/*Set the new head in the dsc.*/</span></div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> == NULL) { <span class="comment">/*If there is no tail (1. node) set the tail too*/</span></div>
+<div class="line"><span class="lineno">   83</span>            ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = n_new;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">return</span> n_new;</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a5e854f4fd8dd9a3c3c694b2e7f50a550"><div class="ttname"><a href="#a5e854f4fd8dd9a3c3c694b2e7f50a550">LL_NODE_META_SIZE</a></div><div class="ttdeci">#define LL_NODE_META_SIZE</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00016">lv_ll.c:16</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a>, <a class="el" href="lv__ll_8c_source.html#l00016">LL_NODE_META_SIZE</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__ll_8h_source.html#l00033">lv_ll_t::n_size</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00096">_lv_ll_ins_prev()</a>, <a class="el" href="lv__obj__style_8c_source.html#l00325">_lv_obj_style_create_transition()</a>, <a class="el" href="lv__anim_8c_source.html#l00076">lv_anim_start()</a>, <a class="el" href="lv__chart_8c_source.html#l00448">lv_chart_add_cursor()</a>, <a class="el" href="lv__chart_8c_source.html#l00342">lv_chart_add_series()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00166">lv_disp_drv_register()</a>, <a class="el" href="lv__fs_8c_source.html#l00398">lv_fs_drv_register()</a>, <a class="el" href="lv__group_8c_source.html#l00050">lv_group_create()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00204">lv_img_decoder_create()</a>, <a class="el" href="lv__hal__indev_8c_source.html#l00076">lv_indev_drv_register()</a>, <a class="el" href="lv__menu_8c_source.html#l00192">lv_menu_set_page()</a>, <a class="el" href="lv__meter_8c_source.html#l00162">lv_meter_add_arc()</a>, <a class="el" href="lv__meter_8c_source.html#l00142">lv_meter_add_needle_img()</a>, <a class="el" href="lv__meter_8c_source.html#l00122">lv_meter_add_needle_line()</a>, <a class="el" href="lv__meter_8c_source.html#l00066">lv_meter_add_scale()</a>, <a class="el" href="lv__meter_8c_source.html#l00182">lv_meter_add_scale_lines()</a> y <a class="el" href="lv__timer_8c_source.html#l00167">lv_timer_create()</a>.</p>
+
+</div>
+</div>
+<a id="ac50ef5147b9a55c1c224f8ca720835e0" name="ac50ef5147b9a55c1c224f8ca720835e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50ef5147b9a55c1c224f8ca720835e0">&#9670;&#160;</a></span>_lv_ll_ins_prev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_ins_prev </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>n_act</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insert a new node in front of the n_act node </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+    <tr><td class="paramname">n_act</td><td>pointer a node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the new node </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00096">96</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_new;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span>(NULL == ll_p || NULL == n_act) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>(ll_p) == n_act) {</div>
+<div class="line"><span class="lineno">  103</span>        n_new = <a class="code hl_function" href="#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a>(ll_p);</div>
+<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">if</span>(n_new == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  107</span>        n_new = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a8dbe5afd50ad7e26e8035330f811cb57">n_size</a> + <a class="code hl_define" href="#a5e854f4fd8dd9a3c3c694b2e7f50a550">LL_NODE_META_SIZE</a>);</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">if</span>(n_new == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_prev;</div>
+<div class="line"><span class="lineno">  111</span>        n_prev = <a class="code hl_function" href="#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a>(ll_p, n_act);</div>
+<div class="line"><span class="lineno">  112</span>        node_set_next(ll_p, n_prev, n_new);</div>
+<div class="line"><span class="lineno">  113</span>        node_set_prev(ll_p, n_new, n_prev);</div>
+<div class="line"><span class="lineno">  114</span>        node_set_prev(ll_p, n_act, n_new);</div>
+<div class="line"><span class="lineno">  115</span>        node_set_next(ll_p, n_new, n_act);</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> n_new;</div>
+<div class="line"><span class="lineno">  119</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a7ce37131f386894569001a033ad7c445"><div class="ttname"><a href="#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a></div><div class="ttdeci">void * _lv_ll_get_prev(const lv_ll_t *ll_p, const void *n_act)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00294">lv_ll.c:294</a></div></div>
+<div class="ttc" id="alv__ll_8c_html_adea28cec6b6e492dbafa3564c08d6024"><div class="ttname"><a href="#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a></div><div class="ttdeci">void * _lv_ll_ins_head(lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00067">lv_ll.c:67</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00294">_lv_ll_get_prev()</a>, <a class="el" href="lv__ll_8c_source.html#l00067">_lv_ll_ins_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00016">LL_NODE_META_SIZE</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a> y <a class="el" href="lv__ll_8h_source.html#l00033">lv_ll_t::n_size</a>.</p>
+
+</div>
+</div>
+<a id="a4ef41f959d1d70c956e9bf79920d240a" name="a4ef41f959d1d70c956e9bf79920d240a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef41f959d1d70c956e9bf79920d240a">&#9670;&#160;</a></span>_lv_ll_ins_tail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * _lv_ll_ins_tail </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add a new tail to a linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the new tail </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00126">126</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_new;</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    n_new = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a8dbe5afd50ad7e26e8035330f811cb57">n_size</a> + <a class="code hl_define" href="#a5e854f4fd8dd9a3c3c694b2e7f50a550">LL_NODE_META_SIZE</a>);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span>(n_new != NULL) {</div>
+<div class="line"><span class="lineno">  133</span>        node_set_next(ll_p, n_new, NULL);       <span class="comment">/*No next after the new tail*/</span></div>
+<div class="line"><span class="lineno">  134</span>        node_set_prev(ll_p, n_new, ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a>); <span class="comment">/*The prev. before new is the old tail*/</span></div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> != NULL) {                <span class="comment">/*If there is old tail then the new comes after it*/</span></div>
+<div class="line"><span class="lineno">  136</span>            node_set_next(ll_p, ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a>, n_new);</div>
+<div class="line"><span class="lineno">  137</span>        }</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>        ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = n_new;      <span class="comment">/*Set the new tail in the dsc.*/</span></div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> == NULL) { <span class="comment">/*If there is no head (1. node) set the head too*/</span></div>
+<div class="line"><span class="lineno">  141</span>            ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = n_new;</div>
+<div class="line"><span class="lineno">  142</span>        }</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">return</span> n_new;</div>
+<div class="line"><span class="lineno">  146</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a>, <a class="el" href="lv__ll_8c_source.html#l00016">LL_NODE_META_SIZE</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__ll_8h_source.html#l00033">lv_ll_t::n_size</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__refr_8c_source.html#l00287">_lv_disp_refr_timer()</a>, <a class="el" href="lv__group_8c_source.html#l00111">lv_group_add_obj()</a> y <a class="el" href="lv__span_8c_source.html#l00096">lv_spangroup_new_span()</a>.</p>
+
+</div>
+</div>
+<a id="a4dfeff2a4374d4bb164a45e645835484" name="a4dfeff2a4374d4bb164a45e645835484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dfeff2a4374d4bb164a45e645835484">&#9670;&#160;</a></span>_lv_ll_is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _lv_ll_is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if a linked list is empty </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to a linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: the linked list is empty; false: not empty </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00359">359</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  360</span>{</div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">if</span>(ll_p == NULL) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  362</span> </div>
+<div class="line"><span class="lineno">  363</span>    <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> == NULL &amp;&amp; ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> == NULL) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  366</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__anim_8c_source.html#l00076">lv_anim_start()</a>.</p>
+
+</div>
+</div>
+<a id="a12e06698e2ff54196525370c68c54d11" name="a12e06698e2ff54196525370c68c54d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e06698e2ff54196525370c68c54d11">&#9670;&#160;</a></span>_lv_ll_move_before()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_ll_move_before </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>n_act</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>n_after</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Move a node before an other node in the same linked list </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to a linked list </td></tr>
+    <tr><td class="paramname">n_act</td><td>pointer to node to move </td></tr>
+    <tr><td class="paramname">n_after</td><td>pointer to a node which should be after <span class="tt">n_act</span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00326">326</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>{</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">if</span>(n_act == n_after) <span class="keywordflow">return</span>; <span class="comment">/*Can&#39;t move before itself*/</span></div>
+<div class="line"><span class="lineno">  329</span> </div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordtype">void</span> * n_before;</div>
+<div class="line"><span class="lineno">  331</span>    <span class="keywordflow">if</span>(n_after != NULL)</div>
+<div class="line"><span class="lineno">  332</span>        n_before = <a class="code hl_function" href="#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a>(ll_p, n_after);</div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  334</span>        n_before = <a class="code hl_function" href="#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a>(ll_p); <span class="comment">/*if `n_after` is NULL `n_act` should be the new tail*/</span></div>
+<div class="line"><span class="lineno">  335</span> </div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span>(n_act == n_before) <span class="keywordflow">return</span>; <span class="comment">/*Already before `n_after`*/</span></div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    <span class="comment">/*It&#39;s much easier to remove from the list and add again*/</span></div>
+<div class="line"><span class="lineno">  339</span>    <a class="code hl_function" href="#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a>(ll_p, n_act);</div>
+<div class="line"><span class="lineno">  340</span> </div>
+<div class="line"><span class="lineno">  341</span>    <span class="comment">/*Add again by setting the prev. and next nodes*/</span></div>
+<div class="line"><span class="lineno">  342</span>    node_set_next(ll_p, n_before, n_act);</div>
+<div class="line"><span class="lineno">  343</span>    node_set_prev(ll_p, n_act, n_before);</div>
+<div class="line"><span class="lineno">  344</span>    node_set_prev(ll_p, n_after, n_act);</div>
+<div class="line"><span class="lineno">  345</span>    node_set_next(ll_p, n_act, n_after);</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>    <span class="comment">/*If `n_act` was moved before NULL then it become the new tail*/</span></div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span>(n_after == NULL) ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = n_act;</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>    <span class="comment">/*If `n_act` was moved before `NULL` then it&#39;s the new head*/</span></div>
+<div class="line"><span class="lineno">  351</span>    <span class="keywordflow">if</span>(n_before == NULL) ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = n_act;</div>
+<div class="line"><span class="lineno">  352</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a883ce4f0448a8fa1384fe2f4eb7b3be4"><div class="ttname"><a href="#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a></div><div class="ttdeci">void * _lv_ll_get_tail(const lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00267">lv_ll.c:267</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00294">_lv_ll_get_prev()</a>, <a class="el" href="lv__ll_8c_source.html#l00267">_lv_ll_get_tail()</a>, <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+</div>
+</div>
+<a id="a1751f3dd6c080b86d65f304d1949753c" name="a1751f3dd6c080b86d65f304d1949753c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1751f3dd6c080b86d65f304d1949753c">&#9670;&#160;</a></span>_lv_ll_remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_ll_remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__ll__t.html">lv_ll_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ll_p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>node_p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove the node 'node_p' from 'll_p' linked list. It does not free the memory of node. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ll_p</td><td>pointer to the linked list of 'node_p' </td></tr>
+    <tr><td class="paramname">node_p</td><td>pointer to node in 'll_p' linked list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__ll_8c_source.html#l00154">154</a> del archivo <a class="el" href="lv__ll_8c_source.html">lv_ll.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>{</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span>(ll_p == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="#afa5c88b6f53beba52b97d605884f4150">_lv_ll_get_head</a>(ll_p) == node_p) {</div>
+<div class="line"><span class="lineno">  159</span>        <span class="comment">/*The new head will be the node after &#39;n_act&#39;*/</span></div>
+<div class="line"><span class="lineno">  160</span>        ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = <a class="code hl_function" href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a>(ll_p, node_p);</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> == NULL) {</div>
+<div class="line"><span class="lineno">  162</span>            ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = NULL;</div>
+<div class="line"><span class="lineno">  163</span>        }</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  165</span>            node_set_prev(ll_p, ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a>, NULL);</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="#a883ce4f0448a8fa1384fe2f4eb7b3be4">_lv_ll_get_tail</a>(ll_p) == node_p) {</div>
+<div class="line"><span class="lineno">  169</span>        <span class="comment">/*The new tail will be the node before &#39;n_act&#39;*/</span></div>
+<div class="line"><span class="lineno">  170</span>        ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> = <a class="code hl_function" href="#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a>(ll_p, node_p);</div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span>(ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a> == NULL) {</div>
+<div class="line"><span class="lineno">  172</span>            ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc">head</a> = NULL;</div>
+<div class="line"><span class="lineno">  173</span>        }</div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  175</span>            node_set_next(ll_p, ll_p-&gt;<a class="code hl_variable" href="structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad">tail</a>, NULL);</div>
+<div class="line"><span class="lineno">  176</span>        }</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_prev = <a class="code hl_function" href="#a7ce37131f386894569001a033ad7c445">_lv_ll_get_prev</a>(ll_p, node_p);</div>
+<div class="line"><span class="lineno">  180</span>        <a class="code hl_typedef" href="lv__ll_8h.html#aaaf22c8c1939f8ea17c80be0b1e9f299">lv_ll_node_t</a> * n_next = <a class="code hl_function" href="#a7bc52b9229e0f4c86093fc3ea2f6df4b">_lv_ll_get_next</a>(ll_p, node_p);</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>        node_set_next(ll_p, n_prev, n_next);</div>
+<div class="line"><span class="lineno">  183</span>        node_set_prev(ll_p, n_next, n_prev);</div>
+<div class="line"><span class="lineno">  184</span>    }</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00256">_lv_ll_get_head()</a>, <a class="el" href="lv__ll_8c_source.html#l00279">_lv_ll_get_next()</a>, <a class="el" href="lv__ll_8c_source.html#l00294">_lv_ll_get_prev()</a>, <a class="el" href="lv__ll_8c_source.html#l00267">_lv_ll_get_tail()</a>, <a class="el" href="lv__ll_8h_source.html#l00034">lv_ll_t::head</a> y <a class="el" href="lv__ll_8h_source.html#l00035">lv_ll_t::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__ll_8c_source.html#l00217">_lv_ll_chg_list()</a>, <a class="el" href="lv__ll_8c_source.html#l00191">_lv_ll_clear()</a>, <a class="el" href="lv__ll_8c_source.html#l00326">_lv_ll_move_before()</a>, <a class="el" href="lv__anim_8c_source.html#l00138">lv_anim_del()</a>, <a class="el" href="lv__chart_8c_source.html#l00342">lv_chart_add_series()</a>, <a class="el" href="lv__chart_8c_source.html#l00385">lv_chart_remove_series()</a>, <a class="el" href="lv__hal__disp_8c_source.html#l00291">lv_disp_remove()</a>, <a class="el" href="lv__group_8c_source.html#l00072">lv_group_del()</a>, <a class="el" href="lv__group_8c_source.html#l00175">lv_group_remove_obj()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00220">lv_img_decoder_delete()</a>, <a class="el" href="lv__hal__indev_8c_source.html#l00133">lv_indev_delete()</a>, <a class="el" href="lv__span_8c_source.html#l00117">lv_spangroup_del_span()</a> y <a class="el" href="lv__timer_8c_source.html#l00201">lv_timer_del()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__ll_8c.html">lv_ll.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

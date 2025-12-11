@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__imgbtn_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_imgbtn.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="src_2lvgl_8h_source.html">../../../lvgl.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__imgbtn_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:lv_5Fimgbtn_5Ft" id="r_lv_5Fimgbtn_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlv__imgbtn__t.html">lv_imgbtn_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a5086c68495b974e538c38dc1ff7d6030" id="r_a5086c68495b974e538c38dc1ff7d6030"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a> { <br />
+&#160;&#160;<a class="el" href="#a5086c68495b974e538c38dc1ff7d6030a7d6fc3727da8e02b8df0e14988513a99">LV_IMGBTN_STATE_RELEASED</a>
+, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3">LV_IMGBTN_STATE_PRESSED</a>
+, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9">LV_IMGBTN_STATE_DISABLED</a>
+, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914">LV_IMGBTN_STATE_CHECKED_RELEASED</a>
+, <br />
+&#160;&#160;<a class="el" href="#a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621">LV_IMGBTN_STATE_CHECKED_PRESSED</a>
+, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4">LV_IMGBTN_STATE_CHECKED_DISABLED</a>
+, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030ab5941c5be286ae13f14258ab6743b54f">_LV_IMGBTN_STATE_NUM</a>
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a6c58dc1915dee93dd4588ba0b3463dc5" id="r_a6c58dc1915dee93dd4588ba0b3463dc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c58dc1915dee93dd4588ba0b3463dc5">lv_imgbtn_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:af07a1e052f5a2d25f58b9bbb506945f7" id="r_af07a1e052f5a2d25f58b9bbb506945f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af07a1e052f5a2d25f58b9bbb506945f7">lv_imgbtn_set_src</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *imgbtn, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a> state, const void *src_left, const void *src_mid, const void *src_right)</td></tr>
+<tr class="memitem:a59fcb513b82e5901d977c7d85979bfed" id="r_a59fcb513b82e5901d977c7d85979bfed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59fcb513b82e5901d977c7d85979bfed">lv_imgbtn_set_state</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *imgbtn, <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a> state)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abc2a7f1ea286bac28b41110f7de5f193" id="r_abc2a7f1ea286bac28b41110f7de5f193"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc2a7f1ea286bac28b41110f7de5f193">lv_imgbtn_class</a></td></tr>
+</table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a5086c68495b974e538c38dc1ff7d6030" name="a5086c68495b974e538c38dc1ff7d6030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5086c68495b974e538c38dc1ff7d6030">&#9670;&#160;</a></span>lv_imgbtn_state_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030a7d6fc3727da8e02b8df0e14988513a99" name="a5086c68495b974e538c38dc1ff7d6030a7d6fc3727da8e02b8df0e14988513a99"></a>LV_IMGBTN_STATE_RELEASED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3" name="a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3"></a>LV_IMGBTN_STATE_PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9" name="a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9"></a>LV_IMGBTN_STATE_DISABLED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914" name="a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914"></a>LV_IMGBTN_STATE_CHECKED_RELEASED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621" name="a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621"></a>LV_IMGBTN_STATE_CHECKED_PRESSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4" name="a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4"></a>LV_IMGBTN_STATE_CHECKED_DISABLED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5086c68495b974e538c38dc1ff7d6030ab5941c5be286ae13f14258ab6743b54f" name="a5086c68495b974e538c38dc1ff7d6030ab5941c5be286ae13f14258ab6743b54f"></a>_LV_IMGBTN_STATE_NUM&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__imgbtn_8h_source.html#l00023">23</a> del archivo <a class="el" href="lv__imgbtn_8h_source.html">lv_imgbtn.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>             {</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a7d6fc3727da8e02b8df0e14988513a99">LV_IMGBTN_STATE_RELEASED</a>,</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3">LV_IMGBTN_STATE_PRESSED</a>,</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9">LV_IMGBTN_STATE_DISABLED</a>,</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914">LV_IMGBTN_STATE_CHECKED_RELEASED</a>,</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621">LV_IMGBTN_STATE_CHECKED_PRESSED</a>,</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4">LV_IMGBTN_STATE_CHECKED_DISABLED</a>,</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030ab5941c5be286ae13f14258ab6743b54f">_LV_IMGBTN_STATE_NUM</a>,</div>
+<div class="line"><span class="lineno">   31</span>} <a class="code hl_enumeration" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a>;</div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a></div><div class="ttdeci">lv_imgbtn_state_t</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00023">lv_imgbtn.h:23</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4">LV_IMGBTN_STATE_CHECKED_DISABLED</a></div><div class="ttdeci">@ LV_IMGBTN_STATE_CHECKED_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00029">lv_imgbtn.h:29</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621">LV_IMGBTN_STATE_CHECKED_PRESSED</a></div><div class="ttdeci">@ LV_IMGBTN_STATE_CHECKED_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00028">lv_imgbtn.h:28</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3">LV_IMGBTN_STATE_PRESSED</a></div><div class="ttdeci">@ LV_IMGBTN_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00025">lv_imgbtn.h:25</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9">LV_IMGBTN_STATE_DISABLED</a></div><div class="ttdeci">@ LV_IMGBTN_STATE_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00026">lv_imgbtn.h:26</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914">LV_IMGBTN_STATE_CHECKED_RELEASED</a></div><div class="ttdeci">@ LV_IMGBTN_STATE_CHECKED_RELEASED</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00027">lv_imgbtn.h:27</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030a7d6fc3727da8e02b8df0e14988513a99"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030a7d6fc3727da8e02b8df0e14988513a99">LV_IMGBTN_STATE_RELEASED</a></div><div class="ttdeci">@ LV_IMGBTN_STATE_RELEASED</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00024">lv_imgbtn.h:24</a></div></div>
+<div class="ttc" id="alv__imgbtn_8h_html_a5086c68495b974e538c38dc1ff7d6030ab5941c5be286ae13f14258ab6743b54f"><div class="ttname"><a href="#a5086c68495b974e538c38dc1ff7d6030ab5941c5be286ae13f14258ab6743b54f">_LV_IMGBTN_STATE_NUM</a></div><div class="ttdeci">@ _LV_IMGBTN_STATE_NUM</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00030">lv_imgbtn.h:30</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a6c58dc1915dee93dd4588ba0b3463dc5" name="a6c58dc1915dee93dd4588ba0b3463dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c58dc1915dee93dd4588ba0b3463dc5">&#9670;&#160;</a></span>lv_imgbtn_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_imgbtn_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create an image button object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to an object, it will be the parent of the new image button </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the created image button </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__imgbtn_8c_source.html#l00056">56</a> del archivo <a class="el" href="lv__imgbtn_8c_source.html">lv_imgbtn.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   62</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__imgbtn__1_8c_source.html#l00004">lv_example_imgbtn_1()</a>.</p>
+
+</div>
+</div>
+<a id="af07a1e052f5a2d25f58b9bbb506945f7" name="af07a1e052f5a2d25f58b9bbb506945f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07a1e052f5a2d25f58b9bbb506945f7">&#9670;&#160;</a></span>lv_imgbtn_set_src()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_imgbtn_set_src </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src_left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src_mid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src_right</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set images for a state of the image button </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgbtn</td><td>pointer to an image button object </td></tr>
+    <tr><td class="paramname">state</td><td>for which state set the new image </td></tr>
+    <tr><td class="paramname">src_left</td><td>pointer to an image source for the left side of the button (a C array or path to a file) </td></tr>
+    <tr><td class="paramname">src_mid</td><td>pointer to an image source for the middle of the button (ideally 1px wide) (a C array or path to a file) </td></tr>
+    <tr><td class="paramname">src_right</td><td>pointer to an image source for the right side of the button (a C array or path to a file)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set images for a state of the image button </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to an image button object </td></tr>
+    <tr><td class="paramname">state</td><td>for which state set the new image </td></tr>
+    <tr><td class="paramname">src_left</td><td>pointer to an image source for the left side of the button (a C array or path to a file) </td></tr>
+    <tr><td class="paramname">src_mid</td><td>pointer to an image source for the middle of the button (ideally 1px wide) (a C array or path to a file) </td></tr>
+    <tr><td class="paramname">src_right</td><td>pointer to an image source for the right side of the button (a C array or path to a file) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__imgbtn_8c_source.html#l00079">79</a> del archivo <a class="el" href="lv__imgbtn_8c_source.html">lv_imgbtn.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_struct" href="structlv__imgbtn__t.html">lv_imgbtn_t</a> * imgbtn = (<a class="code hl_struct" href="structlv__imgbtn__t.html">lv_imgbtn_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    imgbtn-&gt;<a class="code hl_variable" href="structlv__imgbtn__t.html#a7452e67f5fa5c763828604e4bacaaea8">img_src_left</a>[state] = src_left;</div>
+<div class="line"><span class="lineno">   87</span>    imgbtn-&gt;<a class="code hl_variable" href="structlv__imgbtn__t.html#a91a06ab8391563a1f785a2b7e93d2b4b">img_src_mid</a>[state] = src_mid;</div>
+<div class="line"><span class="lineno">   88</span>    imgbtn-&gt;<a class="code hl_variable" href="structlv__imgbtn__t.html#a2a98cadfe385ac783c047f255fcd4adb">img_src_right</a>[state] = src_right;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    refr_img(obj);</div>
+<div class="line"><span class="lineno">   91</span>}</div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="astructlv__imgbtn__t_html"><div class="ttname"><a href="structlv__imgbtn__t.html">lv_imgbtn_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00037">lv_imgbtn.h:37</a></div></div>
+<div class="ttc" id="astructlv__imgbtn__t_html_a2a98cadfe385ac783c047f255fcd4adb"><div class="ttname"><a href="structlv__imgbtn__t.html#a2a98cadfe385ac783c047f255fcd4adb">lv_imgbtn_t::img_src_right</a></div><div class="ttdeci">const void * img_src_right[_LV_IMGBTN_STATE_NUM]</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00041">lv_imgbtn.h:41</a></div></div>
+<div class="ttc" id="astructlv__imgbtn__t_html_a7452e67f5fa5c763828604e4bacaaea8"><div class="ttname"><a href="structlv__imgbtn__t.html#a7452e67f5fa5c763828604e4bacaaea8">lv_imgbtn_t::img_src_left</a></div><div class="ttdeci">const void * img_src_left[_LV_IMGBTN_STATE_NUM]</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00040">lv_imgbtn.h:40</a></div></div>
+<div class="ttc" id="astructlv__imgbtn__t_html_a91a06ab8391563a1f785a2b7e93d2b4b"><div class="ttname"><a href="structlv__imgbtn__t.html#a91a06ab8391563a1f785a2b7e93d2b4b">lv_imgbtn_t::img_src_mid</a></div><div class="ttdeci">const void * img_src_mid[_LV_IMGBTN_STATE_NUM]</div><div class="ttdef"><b>Definition</b> <a href="lv__imgbtn_8h_source.html#l00039">lv_imgbtn.h:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__imgbtn_8h_source.html#l00040">lv_imgbtn_t::img_src_left</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00039">lv_imgbtn_t::img_src_mid</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00041">lv_imgbtn_t::img_src_right</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__imgbtn__1_8c_source.html#l00004">lv_example_imgbtn_1()</a>.</p>
+
+</div>
+</div>
+<a id="a59fcb513b82e5901d977c7d85979bfed" name="a59fcb513b82e5901d977c7d85979bfed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59fcb513b82e5901d977c7d85979bfed">&#9670;&#160;</a></span>lv_imgbtn_set_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_imgbtn_set_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>imgbtn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a5086c68495b974e538c38dc1ff7d6030">lv_imgbtn_state_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Use this function instead of <span class="tt">lv_obj_add/clear_state</span> to set a state manually </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgbtn</td><td>pointer to an image button object </td></tr>
+    <tr><td class="paramname">state</td><td>the new state </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__imgbtn_8c_source.html#l00093">93</a> del archivo <a class="el" href="lv__imgbtn_8c_source.html">lv_imgbtn.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a> obj_state = <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a9817cb0d3c0e422c1f63901d4d92e8c3">LV_STATE_DEFAULT</a>;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span>(state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a5834d54f8b256f09c4592774671053b3">LV_IMGBTN_STATE_PRESSED</a> || state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621">LV_IMGBTN_STATE_CHECKED_PRESSED</a>) obj_state |= <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a>;</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span>(state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a674391a6548be30872eb06bc829132b9">LV_IMGBTN_STATE_DISABLED</a> || state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4">LV_IMGBTN_STATE_CHECKED_DISABLED</a>) obj_state |= <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>;</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span>(state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a14d1575c7a7fcee03b77bfc9740b4ad4">LV_IMGBTN_STATE_CHECKED_DISABLED</a> || state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a4a887374b848722989b6919a6a09e621">LV_IMGBTN_STATE_CHECKED_PRESSED</a> ||</div>
+<div class="line"><span class="lineno">  101</span>       state == <a class="code hl_enumvalue" href="#a5086c68495b974e538c38dc1ff7d6030a7c38e05600c281619ccdd01fe33ee914">LV_IMGBTN_STATE_CHECKED_RELEASED</a>) {</div>
+<div class="line"><span class="lineno">  102</span>        obj_state |= <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>;</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="lv__obj_8c.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a> | <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a> | <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="lv__obj_8c.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a>(obj, obj_state);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    refr_img(obj);</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+<div class="ttc" id="alv__obj_8c_html_ac94c26d36140c7c83da6914d60170e16"><div class="ttname"><a href="lv__obj_8c.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a></div><div class="ttdeci">void lv_obj_clear_state(lv_obj_t *obj, lv_state_t state)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00304">lv_obj.c:304</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_adbd258635d3d653e5446336764044db1"><div class="ttname"><a href="lv__obj_8c.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a></div><div class="ttdeci">void lv_obj_add_state(lv_obj_t *obj, lv_state_t state)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00294">lv_obj.c:294</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a6a2a787185848ca20a71ca29900721ff"><div class="ttname"><a href="lv__obj_8h.html#a6a2a787185848ca20a71ca29900721ff">lv_state_t</a></div><div class="ttdeci">uint16_t lv_state_t</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00060">lv_obj.h:60</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a></div><div class="ttdeci">@ LV_STATE_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00050">lv_obj.h:50</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a></div><div class="ttdeci">@ LV_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00048">lv_obj.h:48</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a></div><div class="ttdeci">@ LV_STATE_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00043">lv_obj.h:43</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a9817cb0d3c0e422c1f63901d4d92e8c3"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a9817cb0d3c0e422c1f63901d4d92e8c3">LV_STATE_DEFAULT</a></div><div class="ttdeci">@ LV_STATE_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00042">lv_obj.h:42</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00029">LV_IMGBTN_STATE_CHECKED_DISABLED</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00028">LV_IMGBTN_STATE_CHECKED_PRESSED</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00027">LV_IMGBTN_STATE_CHECKED_RELEASED</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00026">LV_IMGBTN_STATE_DISABLED</a>, <a class="el" href="lv__imgbtn_8h_source.html#l00025">LV_IMGBTN_STATE_PRESSED</a>, <a class="el" href="lv__obj_8c_source.html#l00294">lv_obj_add_state()</a>, <a class="el" href="lv__obj_8c_source.html#l00304">lv_obj_clear_state()</a>, <a class="el" href="lv__obj_8h_source.html#l00043">LV_STATE_CHECKED</a>, <a class="el" href="lv__obj_8h_source.html#l00042">LV_STATE_DEFAULT</a>, <a class="el" href="lv__obj_8h_source.html#l00050">LV_STATE_DISABLED</a>, <a class="el" href="lv__obj_8h_source.html#l00048">LV_STATE_PRESSED</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="abc2a7f1ea286bac28b41110f7de5f193" name="abc2a7f1ea286bac28b41110f7de5f193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc2a7f1ea286bac28b41110f7de5f193">&#9670;&#160;</a></span>lv_imgbtn_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_imgbtn_class</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__imgbtn_8c_source.html#l00036">36</a> del archivo <a class="el" href="lv__imgbtn_8c_source.html">lv_imgbtn.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                       {</div>
+<div class="line"><span class="lineno">   37</span>    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a>,</div>
+<div class="line"><span class="lineno">   38</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__imgbtn__t.html">lv_imgbtn_t</a>),</div>
+<div class="line"><span class="lineno">   39</span>    .constructor_cb = lv_imgbtn_constructor,</div>
+<div class="line"><span class="lineno">   40</span>    .event_cb = lv_imgbtn_event,</div>
+<div class="line"><span class="lineno">   41</span>};</div>
+<div class="ttc" id="alv__obj_8c_html_a424ca3b432ad82f98c4b05950b597d44"><div class="ttname"><a href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div><div class="ttdeci">const lv_obj_class_t lv_obj_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00073">lv_obj.c:73</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_78ac7f523fb764339ab4c85a4e589cb7.html">imgbtn</a></li><li class="navelem"><a href="lv__imgbtn_8h.html">lv_imgbtn.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

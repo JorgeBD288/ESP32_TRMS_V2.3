@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/examples/widgets/tabview/lv_example_tabview_1.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__example__tabview__1_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_example_tabview_1.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__example__tabview__1_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lv__examples_8h.html">../../lv_examples.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#if LV_USE_TABVIEW &amp;&amp; LV_BUILD_EXAMPLES</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="lv__example__widgets_8h.html#a233a91a5a9cbcef6f24bba5de42ada89">    4</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__example__tabview__1_8c.html#a233a91a5a9cbcef6f24bba5de42ada89">lv_example_tabview_1</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">/*Create a Tab view object*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tabview;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    tabview = <a class="code hl_function" href="lv__tabview_8c.html#ab9a89d64a48fc17b48e341f6cb7d3491">lv_tabview_create</a>(lv_scr_act(), <a class="code hl_enumvalue" href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea3ba8ee31c01355aa9ebaa431accf5f11">LV_DIR_TOP</a>, 50);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/*Add 3 tabs (the tabs are page (lv_page) and can be scrolled*/</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tab1 = <a class="code hl_function" href="lv__tabview_8c.html#a7561c0b343421571ef89c2eebd286b05">lv_tabview_add_tab</a>(tabview, <span class="stringliteral">&quot;Tab 1&quot;</span>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tab2 = <a class="code hl_function" href="lv__tabview_8c.html#a7561c0b343421571ef89c2eebd286b05">lv_tabview_add_tab</a>(tabview, <span class="stringliteral">&quot;Tab 2&quot;</span>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * tab3 = <a class="code hl_function" href="lv__tabview_8c.html#a7561c0b343421571ef89c2eebd286b05">lv_tabview_add_tab</a>(tabview, <span class="stringliteral">&quot;Tab 3&quot;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/*Add content to the tabs*/</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * label = <a class="code hl_function" href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a>(tab1);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(label, <span class="stringliteral">&quot;This the first tab\n\n&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                      <span class="stringliteral">&quot;If the content\n&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                      <span class="stringliteral">&quot;of a tab\n&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                      <span class="stringliteral">&quot;becomes too\n&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                      <span class="stringliteral">&quot;longer\n&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                      <span class="stringliteral">&quot;than the\n&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                      <span class="stringliteral">&quot;container\n&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                      <span class="stringliteral">&quot;then it\n&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                      <span class="stringliteral">&quot;automatically\n&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                      <span class="stringliteral">&quot;becomes\n&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                      <span class="stringliteral">&quot;scrollable.\n&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                      <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                      <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                      <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                      <span class="stringliteral">&quot;Can you see it?&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    label = <a class="code hl_function" href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a>(tab2);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(label, <span class="stringliteral">&quot;Second tab&quot;</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    label = <a class="code hl_function" href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a>(tab3);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(label, <span class="stringliteral">&quot;Third tab&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#a64a2af6a35719eeb48770e78e0a7b585">lv_obj_scroll_to_view_recursive</a>(label, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a></div><div class="ttdeci">@ LV_ANIM_ON</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00039">lv_anim.h:39</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a93b67cdfdfaf61587bbed3a729963cfea3ba8ee31c01355aa9ebaa431accf5f11"><div class="ttname"><a href="lv__area_8h.html#a93b67cdfdfaf61587bbed3a729963cfea3ba8ee31c01355aa9ebaa431accf5f11">LV_DIR_TOP</a></div><div class="ttdeci">@ LV_DIR_TOP</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00082">lv_area.h:82</a></div></div>
+<div class="ttc" id="alv__example__tabview__1_8c_html_a233a91a5a9cbcef6f24bba5de42ada89"><div class="ttname"><a href="lv__example__tabview__1_8c.html#a233a91a5a9cbcef6f24bba5de42ada89">lv_example_tabview_1</a></div><div class="ttdeci">void lv_example_tabview_1(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00004">lv_example_tabview_1.c:4</a></div></div>
+<div class="ttc" id="alv__examples_8h_html"><div class="ttname"><a href="lv__examples_8h.html">lv_examples.h</a></div></div>
+<div class="ttc" id="alv__label_8c_html_a9b7eac4c1840d44582995efda39ef466"><div class="ttname"><a href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a></div><div class="ttdeci">lv_obj_t * lv_label_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__label_8c_source.html#l00073">lv_label.c:73</a></div></div>
+<div class="ttc" id="alv__label_8c_html_ac0a3691e31b2defebc1eab701a35d63b"><div class="ttname"><a href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a></div><div class="ttdeci">void lv_label_set_text(lv_obj_t *obj, const char *text)</div><div class="ttdef"><b>Definition</b> <a href="lv__label_8c_source.html#l00085">lv_label.c:85</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a64a2af6a35719eeb48770e78e0a7b585"><div class="ttname"><a href="lv__obj__scroll_8c.html#a64a2af6a35719eeb48770e78e0a7b585">lv_obj_scroll_to_view_recursive</a></div><div class="ttdeci">void lv_obj_scroll_to_view_recursive(lv_obj_t *obj, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00397">lv_obj_scroll.c:397</a></div></div>
+<div class="ttc" id="alv__tabview_8c_html_a7561c0b343421571ef89c2eebd286b05"><div class="ttname"><a href="lv__tabview_8c.html#a7561c0b343421571ef89c2eebd286b05">lv_tabview_add_tab</a></div><div class="ttdeci">lv_obj_t * lv_tabview_add_tab(lv_obj_t *obj, const char *name)</div><div class="ttdef"><b>Definition</b> <a href="lv__tabview_8c_source.html#l00067">lv_tabview.c:67</a></div></div>
+<div class="ttc" id="alv__tabview_8c_html_ab9a89d64a48fc17b48e341f6cb7d3491"><div class="ttname"><a href="lv__tabview_8c.html#ab9a89d64a48fc17b48e341f6cb7d3491">lv_tabview_create</a></div><div class="ttdeci">lv_obj_t * lv_tabview_create(lv_obj_t *parent, lv_dir_t tab_pos, lv_coord_t tab_size)</div><div class="ttdef"><b>Definition</b> <a href="lv__tabview_8c_source.html#l00056">lv_tabview.c:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_e5da66859f2abaa21457d60ce5a09176.html">examples</a></li><li class="navelem"><a href="dir_4295e6305f0c15259038b87422dc7837.html">widgets</a></li><li class="navelem"><a href="dir_0440342cbbb56aae734d3dca4a0a4bae.html">tabview</a></li><li class="navelem"><a href="lv__example__tabview__1_8c.html">lv_example_tabview_1.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

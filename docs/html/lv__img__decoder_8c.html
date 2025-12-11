@@ -1,0 +1,1184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/draw/lv_img_decoder.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__img__decoder_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_img_decoder.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__img__decoder_8h_source.html">lv_img_decoder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__draw__img_8h_source.html">../draw/lv_draw_img.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__ll_8h_source.html">../misc/lv_ll.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__gc_8h_source.html">../misc/lv_gc.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__img__decoder_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:lv_5Fimg_5Fdecoder_5Fbuilt_5Fin_5Fdata_5Ft" id="r_lv_5Fimg_5Fdecoder_5Fbuilt_5Fin_5Fdata_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a58ca1ebfb5e14e1a92646c6aa801518f" id="r_a58ca1ebfb5e14e1a92646c6aa801518f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58ca1ebfb5e14e1a92646c6aa801518f">CF_BUILT_IN_FIRST</a>&#160;&#160;&#160;<a class="el" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373acc00dbb56f9207133c12cca0f94c4f8d">LV_IMG_CF_TRUE_COLOR</a></td></tr>
+<tr class="memitem:ac5caa74bf1a30f3e336a4bd97bde6aec" id="r_ac5caa74bf1a30f3e336a4bd97bde6aec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5caa74bf1a30f3e336a4bd97bde6aec">CF_BUILT_IN_LAST</a>&#160;&#160;&#160;<a class="el" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ad04d66bb5a69dba938b66df0b247de00">LV_IMG_CF_RGB565A8</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a2401ec660a45155ade702834a2b35bca" id="r_a2401ec660a45155ade702834a2b35bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2401ec660a45155ade702834a2b35bca">_lv_img_decoder_init</a> (void)</td></tr>
+<tr class="memitem:a3851d58ee9c3d677a925be06c3e7c886" id="r_a3851d58ee9c3d677a925be06c3e7c886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3851d58ee9c3d677a925be06c3e7c886">lv_img_decoder_built_in_close</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *dsc)</td></tr>
+<tr class="memitem:ae6ef4d47f2563b3e2d563a2c65e3deba" id="r_ae6ef4d47f2563b3e2d563a2c65e3deba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6ef4d47f2563b3e2d563a2c65e3deba">lv_img_decoder_built_in_info</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, const void *src, <a class="el" href="structlv__img__header__t.html">lv_img_header_t</a> *header)</td></tr>
+<tr class="memitem:ad919edc1516f34c4490c4f42603e8520" id="r_ad919edc1516f34c4490c4f42603e8520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad919edc1516f34c4490c4f42603e8520">lv_img_decoder_built_in_open</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *dsc)</td></tr>
+<tr class="memitem:a30e1c34d54e6d1af88b11da95b30782e" id="r_a30e1c34d54e6d1af88b11da95b30782e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30e1c34d54e6d1af88b11da95b30782e">lv_img_decoder_built_in_read_line</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *dsc, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> len, uint8_t *buf)</td></tr>
+<tr class="memitem:a43f69939ef89a85e3f7db25f12994259" id="r_a43f69939ef89a85e3f7db25f12994259"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43f69939ef89a85e3f7db25f12994259">lv_img_decoder_close</a> (<a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *dsc)</td></tr>
+<tr class="memitem:a17f3dcb104d270120b673775881e63b8" id="r_a17f3dcb104d270120b673775881e63b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17f3dcb104d270120b673775881e63b8">lv_img_decoder_create</a> (void)</td></tr>
+<tr class="memitem:a4300a1f473bc2bb4759e73c3dbda8752" id="r_a4300a1f473bc2bb4759e73c3dbda8752"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4300a1f473bc2bb4759e73c3dbda8752">lv_img_decoder_delete</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder)</td></tr>
+<tr class="memitem:a5072ea97b363d447756e68f7bdbd0baf" id="r_a5072ea97b363d447756e68f7bdbd0baf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5072ea97b363d447756e68f7bdbd0baf">lv_img_decoder_get_info</a> (const void *src, <a class="el" href="structlv__img__header__t.html">lv_img_header_t</a> *header)</td></tr>
+<tr class="memitem:a961b6c69714872e8a7ca552c3d4b2e6d" id="r_a961b6c69714872e8a7ca552c3d4b2e6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a961b6c69714872e8a7ca552c3d4b2e6d">lv_img_decoder_open</a> (<a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *dsc, const void *src, lv_color_t color, int32_t frame_id)</td></tr>
+<tr class="memitem:aa1d1b19e85278c9d5a0f02d0bbdeacc2" id="r_aa1d1b19e85278c9d5a0f02d0bbdeacc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1d1b19e85278c9d5a0f02d0bbdeacc2">lv_img_decoder_read_line</a> (<a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *dsc, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> len, uint8_t *buf)</td></tr>
+<tr class="memitem:a3be3e7a764fceea05389aeb6d0c30aa6" id="r_a3be3e7a764fceea05389aeb6d0c30aa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3be3e7a764fceea05389aeb6d0c30aa6">lv_img_decoder_set_close_cb</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#aaa98cffe806ed879540b08eebb6f21d5">lv_img_decoder_close_f_t</a> close_cb)</td></tr>
+<tr class="memitem:a7ad354bc2edc1a65ed93e1e34ca7da1d" id="r_a7ad354bc2edc1a65ed93e1e34ca7da1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ad354bc2edc1a65ed93e1e34ca7da1d">lv_img_decoder_set_info_cb</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#ad8b0c4b2e267987a97daf24ba46a0943">lv_img_decoder_info_f_t</a> info_cb)</td></tr>
+<tr class="memitem:a84de5e7107f70800033055b61c2fa454" id="r_a84de5e7107f70800033055b61c2fa454"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84de5e7107f70800033055b61c2fa454">lv_img_decoder_set_open_cb</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#acd6b23c1c1278ba67d5ff69d3198116b">lv_img_decoder_open_f_t</a> open_cb)</td></tr>
+<tr class="memitem:a917d7d1c9c59a214edcf844f378c4a33" id="r_a917d7d1c9c59a214edcf844f378c4a33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a917d7d1c9c59a214edcf844f378c4a33">lv_img_decoder_set_read_line_cb</a> (<a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *decoder, <a class="el" href="lv__img__decoder_8h.html#ad73fa4613e87cef8279fb4d2844c5932">lv_img_decoder_read_line_f_t</a> read_line_cb)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a58ca1ebfb5e14e1a92646c6aa801518f" name="a58ca1ebfb5e14e1a92646c6aa801518f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ca1ebfb5e14e1a92646c6aa801518f">&#9670;&#160;</a></span>CF_BUILT_IN_FIRST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CF_BUILT_IN_FIRST&#160;&#160;&#160;<a class="el" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373acc00dbb56f9207133c12cca0f94c4f8d">LV_IMG_CF_TRUE_COLOR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00018">18</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00273">lv_img_decoder_built_in_info()</a>.</p>
+
+</div>
+</div>
+<a id="ac5caa74bf1a30f3e336a4bd97bde6aec" name="ac5caa74bf1a30f3e336a4bd97bde6aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5caa74bf1a30f3e336a4bd97bde6aec">&#9670;&#160;</a></span>CF_BUILT_IN_LAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CF_BUILT_IN_LAST&#160;&#160;&#160;<a class="el" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ad04d66bb5a69dba938b66df0b247de00">LV_IMG_CF_RGB565A8</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00019">19</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00273">lv_img_decoder_built_in_info()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a2401ec660a45155ade702834a2b35bca" name="a2401ec660a45155ade702834a2b35bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2401ec660a45155ade702834a2b35bca">&#9670;&#160;</a></span>_lv_img_decoder_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_img_decoder_init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the image decoder module </p>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00056">56</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_decoder_ll), <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a>));</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> * decoder;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">/*Create a decoder for the built in color format*/</span></div>
+<div class="line"><span class="lineno">   63</span>    decoder = <a class="code hl_function" href="#a17f3dcb104d270120b673775881e63b8">lv_img_decoder_create</a>();</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(decoder);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span>(decoder == NULL) {</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_img_decoder_init: out of memory&quot;</span>);</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_function" href="#a7ad354bc2edc1a65ed93e1e34ca7da1d">lv_img_decoder_set_info_cb</a>(decoder, <a class="code hl_function" href="#ae6ef4d47f2563b3e2d563a2c65e3deba">lv_img_decoder_built_in_info</a>);</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="#a84de5e7107f70800033055b61c2fa454">lv_img_decoder_set_open_cb</a>(decoder, <a class="code hl_function" href="#ad919edc1516f34c4490c4f42603e8520">lv_img_decoder_built_in_open</a>);</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="#a917d7d1c9c59a214edcf844f378c4a33">lv_img_decoder_set_read_line_cb</a>(decoder, <a class="code hl_function" href="#a30e1c34d54e6d1af88b11da95b30782e">lv_img_decoder_built_in_read_line</a>);</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_function" href="#a3be3e7a764fceea05389aeb6d0c30aa6">lv_img_decoder_set_close_cb</a>(decoder, <a class="code hl_function" href="#a3851d58ee9c3d677a925be06c3e7c886">lv_img_decoder_built_in_close</a>);</div>
+<div class="line"><span class="lineno">   74</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__gc_8h_html_a56ab4f084c8075b22e02e1c99491c4cd"><div class="ttname"><a href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a></div><div class="ttdeci">#define LV_GC_ROOT(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__gc_8h_source.html#l00074">lv_gc.h:74</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a17f3dcb104d270120b673775881e63b8"><div class="ttname"><a href="#a17f3dcb104d270120b673775881e63b8">lv_img_decoder_create</a></div><div class="ttdeci">lv_img_decoder_t * lv_img_decoder_create(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00204">lv_img_decoder.c:204</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a30e1c34d54e6d1af88b11da95b30782e"><div class="ttname"><a href="#a30e1c34d54e6d1af88b11da95b30782e">lv_img_decoder_built_in_read_line</a></div><div class="ttdeci">lv_res_t lv_img_decoder_built_in_read_line(lv_img_decoder_t *decoder, lv_img_decoder_dsc_t *dsc, lv_coord_t x, lv_coord_t y, lv_coord_t len, uint8_t *buf)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00480">lv_img_decoder.c:480</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a3851d58ee9c3d677a925be06c3e7c886"><div class="ttname"><a href="#a3851d58ee9c3d677a925be06c3e7c886">lv_img_decoder_built_in_close</a></div><div class="ttdeci">void lv_img_decoder_built_in_close(lv_img_decoder_t *decoder, lv_img_decoder_dsc_t *dsc)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00516">lv_img_decoder.c:516</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a3be3e7a764fceea05389aeb6d0c30aa6"><div class="ttname"><a href="#a3be3e7a764fceea05389aeb6d0c30aa6">lv_img_decoder_set_close_cb</a></div><div class="ttdeci">void lv_img_decoder_set_close_cb(lv_img_decoder_t *decoder, lv_img_decoder_close_f_t close_cb)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00261">lv_img_decoder.c:261</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a7ad354bc2edc1a65ed93e1e34ca7da1d"><div class="ttname"><a href="#a7ad354bc2edc1a65ed93e1e34ca7da1d">lv_img_decoder_set_info_cb</a></div><div class="ttdeci">void lv_img_decoder_set_info_cb(lv_img_decoder_t *decoder, lv_img_decoder_info_f_t info_cb)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00231">lv_img_decoder.c:231</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a84de5e7107f70800033055b61c2fa454"><div class="ttname"><a href="#a84de5e7107f70800033055b61c2fa454">lv_img_decoder_set_open_cb</a></div><div class="ttdeci">void lv_img_decoder_set_open_cb(lv_img_decoder_t *decoder, lv_img_decoder_open_f_t open_cb)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00241">lv_img_decoder.c:241</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a917d7d1c9c59a214edcf844f378c4a33"><div class="ttname"><a href="#a917d7d1c9c59a214edcf844f378c4a33">lv_img_decoder_set_read_line_cb</a></div><div class="ttdeci">void lv_img_decoder_set_read_line_cb(lv_img_decoder_t *decoder, lv_img_decoder_read_line_f_t read_line_cb)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00251">lv_img_decoder.c:251</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_ad919edc1516f34c4490c4f42603e8520"><div class="ttname"><a href="#ad919edc1516f34c4490c4f42603e8520">lv_img_decoder_built_in_open</a></div><div class="ttdeci">lv_res_t lv_img_decoder_built_in_open(lv_img_decoder_t *decoder, lv_img_decoder_dsc_t *dsc)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00326">lv_img_decoder.c:326</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_ae6ef4d47f2563b3e2d563a2c65e3deba"><div class="ttname"><a href="#ae6ef4d47f2563b3e2d563a2c65e3deba">lv_img_decoder_built_in_info</a></div><div class="ttdeci">lv_res_t lv_img_decoder_built_in_info(lv_img_decoder_t *decoder, const void *src, lv_img_header_t *header)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00273">lv_img_decoder.c:273</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a361c1e354766e077601df4245892657f"><div class="ttname"><a href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a></div><div class="ttdeci">struct _lv_img_decoder_t lv_img_decoder_t</div></div>
+<div class="ttc" id="alv__ll_8c_html_a991a8cdd1d53fcc0b2c7e1f2e55b067b"><div class="ttname"><a href="lv__ll_8c.html#a991a8cdd1d53fcc0b2c7e1f2e55b067b">_lv_ll_init</a></div><div class="ttdeci">void _lv_ll_init(lv_ll_t *ll_p, uint32_t node_size)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00047">lv_ll.c:47</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00047">_lv_ll_init()</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00516">lv_img_decoder_built_in_close()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00273">lv_img_decoder_built_in_info()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00326">lv_img_decoder_built_in_open()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00480">lv_img_decoder_built_in_read_line()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00204">lv_img_decoder_create()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00261">lv_img_decoder_set_close_cb()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00231">lv_img_decoder_set_info_cb()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00241">lv_img_decoder_set_open_cb()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00251">lv_img_decoder_set_read_line_cb()</a> y <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj_8c_source.html#l00098">lv_init()</a>.</p>
+
+</div>
+</div>
+<a id="a3851d58ee9c3d677a925be06c3e7c886" name="a3851d58ee9c3d677a925be06c3e7c886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3851d58ee9c3d677a925be06c3e7c886">&#9670;&#160;</a></span>lv_img_decoder_built_in_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_built_in_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Close the pending decoding. Free resources etc. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to the decoder the function associated with </td></tr>
+    <tr><td class="paramname">dsc</td><td>pointer to decoder descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00516">516</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  517</span>{</div>
+<div class="line"><span class="lineno">  518</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(decoder); <span class="comment">/*Unused*/</span></div>
+<div class="line"><span class="lineno">  519</span> </div>
+<div class="line"><span class="lineno">  520</span>    <a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a> * user_data = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>;</div>
+<div class="line"><span class="lineno">  521</span>    <span class="keywordflow">if</span>(user_data) {</div>
+<div class="line"><span class="lineno">  522</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  523</span>            <a class="code hl_function" href="lv__fs_8c.html#a695f81fd4c47d1ace4dce3ebb536e531">lv_fs_close</a>(&amp;user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">f</a>);</div>
+<div class="line"><span class="lineno">  524</span>        }</div>
+<div class="line"><span class="lineno">  525</span>        <span class="keywordflow">if</span>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a>) <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a>);</div>
+<div class="line"><span class="lineno">  526</span>        <span class="keywordflow">if</span>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a>) <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a>);</div>
+<div class="line"><span class="lineno">  527</span> </div>
+<div class="line"><span class="lineno">  528</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(user_data);</div>
+<div class="line"><span class="lineno">  529</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> = NULL;</div>
+<div class="line"><span class="lineno">  530</span>    }</div>
+<div class="line"><span class="lineno">  531</span>}</div>
+<div class="ttc" id="alv__fs_8c_html_a695f81fd4c47d1ace4dce3ebb536e531"><div class="ttname"><a href="lv__fs_8c.html#a695f81fd4c47d1ace4dce3ebb536e531">lv_fs_close</a></div><div class="ttdeci">lv_fs_res_t lv_fs_close(lv_fs_file_t *file_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00105">lv_fs.c:105</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a></div><div class="ttdeci">@ LV_IMG_SRC_FILE</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00036">lv_img_decoder.h:36</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_a055289280caf9fc9fa2fee2736c90b28"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">_lv_img_decoder_dsc_t::src_type</a></div><div class="ttdeci">lv_img_src_t src_type</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00113">lv_img_decoder.h:113</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_af9d13759ecd7f4c6ad65aa73d553c93c"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">_lv_img_decoder_dsc_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00131">lv_img_decoder.h:131</a></div></div>
+<div class="ttc" id="astructlv__img__decoder__built__in__data__t_html"><div class="ttname"><a href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00025">lv_img_decoder.c:25</a></div></div>
+<div class="ttc" id="astructlv__img__decoder__built__in__data__t_html_a278dbb60176967a85dcdc917658b1eed"><div class="ttname"><a href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">lv_img_decoder_built_in_data_t::opa</a></div><div class="ttdeci">lv_opa_t * opa</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00028">lv_img_decoder.c:28</a></div></div>
+<div class="ttc" id="astructlv__img__decoder__built__in__data__t_html_a7d2ae1fe1fbbbbf36b564b6c9826b333"><div class="ttname"><a href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">lv_img_decoder_built_in_data_t::f</a></div><div class="ttdeci">lv_fs_file_t f</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00026">lv_img_decoder.c:26</a></div></div>
+<div class="ttc" id="astructlv__img__decoder__built__in__data__t_html_aec8983fb1fb33a5db7ed0d6ddabd5536"><div class="ttname"><a href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">lv_img_decoder_built_in_data_t::palette</a></div><div class="ttdeci">lv_color_t * palette</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00027">lv_img_decoder.c:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8c_source.html#l00026">lv_img_decoder_built_in_data_t::f</a>, <a class="el" href="lv__fs_8c_source.html#l00105">lv_fs_close()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__types_8h_source.html#l00072">LV_UNUSED</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00028">lv_img_decoder_built_in_data_t::opa</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00027">lv_img_decoder_built_in_data_t::palette</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00113">_lv_img_decoder_dsc_t::src_type</a> y <a class="el" href="lv__img__decoder_8h_source.html#l00131">_lv_img_decoder_dsc_t::user_data</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a> y <a class="el" href="lv__img__decoder_8c_source.html#l00326">lv_img_decoder_built_in_open()</a>.</p>
+
+</div>
+</div>
+<a id="ae6ef4d47f2563b3e2d563a2c65e3deba" name="ae6ef4d47f2563b3e2d563a2c65e3deba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ef4d47f2563b3e2d563a2c65e3deba">&#9670;&#160;</a></span>lv_img_decoder_built_in_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_img_decoder_built_in_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__img__header__t.html">lv_img_header_t</a> *</td>          <td class="paramname"><span class="paramname"><em>header</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get info about a built-in image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>the decoder where this function belongs </td></tr>
+    <tr><td class="paramname">src</td><td>the image source: pointer to an <span class="tt"><a class="el" href="structlv__img__dsc__t.html">lv_img_dsc_t</a></span> variable, a file path or a symbol </td></tr>
+    <tr><td class="paramname">header</td><td>store the image data here </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: the info is successfully stored in <span class="tt">header</span>; LV_RES_INV: unknown format or other error. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00273">273</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  274</span>{</div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(decoder); <span class="comment">/*Unused*/</span></div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a4a47e194ccb92c2d8bc70fa9e3655413">lv_img_src_t</a> src_type = <a class="code hl_function" href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a>(src);</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">  279</span>        <a class="code hl_typedef" href="lv__img__buf_8h.html#a3cd0b0d2269a76ecf35c65d5abc8fa2c">lv_img_cf_t</a> cf = ((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)src)-&gt;header.cf;</div>
+<div class="line"><span class="lineno">  280</span>        <span class="keywordflow">if</span>(cf &lt; CF_BUILT_IN_FIRST || cf &gt; <a class="code hl_define" href="#ac5caa74bf1a30f3e336a4bd97bde6aec">CF_BUILT_IN_LAST</a>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>        header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">w</a>  = ((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)src)-&gt;header.w;</div>
+<div class="line"><span class="lineno">  283</span>        header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">h</a>  = ((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)src)-&gt;header.h;</div>
+<div class="line"><span class="lineno">  284</span>        header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> = ((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)src)-&gt;header.cf;</div>
+<div class="line"><span class="lineno">  285</span>    }</div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  287</span>        <span class="comment">/*Support only &quot;*.bin&quot; files*/</span></div>
+<div class="line"><span class="lineno">  288</span>        <span class="keywordflow">if</span>(strcmp(<a class="code hl_function" href="lv__fs_8c.html#ad69f02629a6d9f8aabcb507d48c0fc1f">lv_fs_get_ext</a>(src), <span class="stringliteral">&quot;bin&quot;</span>)) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>        <a class="code hl_struct" href="structlv__fs__file__t.html">lv_fs_file_t</a> f;</div>
+<div class="line"><span class="lineno">  291</span>        <a class="code hl_typedef" href="lv__fs_8h.html#a677bb0a100477713ea7bded7e9c47290">lv_fs_res_t</a> res = <a class="code hl_function" href="lv__fs_8c.html#a339d0b51618dbcec593d0f4081348e5d">lv_fs_open</a>(&amp;f, src, <a class="code hl_enumvalue" href="lv__fs_8h.html#a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd">LV_FS_MODE_RD</a>);</div>
+<div class="line"><span class="lineno">  292</span>        <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  293</span>            uint32_t rn;</div>
+<div class="line"><span class="lineno">  294</span>            res = <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(&amp;f, header, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__header__t.html">lv_img_header_t</a>), &amp;rn);</div>
+<div class="line"><span class="lineno">  295</span>            <a class="code hl_function" href="lv__fs_8c.html#a695f81fd4c47d1ace4dce3ebb536e531">lv_fs_close</a>(&amp;f);</div>
+<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a> || rn != <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__header__t.html">lv_img_header_t</a>)) {</div>
+<div class="line"><span class="lineno">  297</span>                <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Image get info get read file header&quot;</span>);</div>
+<div class="line"><span class="lineno">  298</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  299</span>            }</div>
+<div class="line"><span class="lineno">  300</span>        }</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>        <span class="keywordflow">if</span>(header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> &lt; <a class="code hl_define" href="#a58ca1ebfb5e14e1a92646c6aa801518f">CF_BUILT_IN_FIRST</a> || header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> &gt; <a class="code hl_define" href="#ac5caa74bf1a30f3e336a4bd97bde6aec">CF_BUILT_IN_LAST</a>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+<div class="line"><span class="lineno">  304</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a>) {</div>
+<div class="line"><span class="lineno">  305</span>        <span class="comment">/*The size depend on the font but it is unknown here. It should be handled outside of the</span></div>
+<div class="line"><span class="lineno">  306</span><span class="comment">         *function*/</span></div>
+<div class="line"><span class="lineno">  307</span>        header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">w</a> = 1;</div>
+<div class="line"><span class="lineno">  308</span>        header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">h</a> = 1;</div>
+<div class="line"><span class="lineno">  309</span>        <span class="comment">/*Symbols always have transparent parts. Important because of cover check in the draw</span></div>
+<div class="line"><span class="lineno">  310</span><span class="comment">         *function. The actual value doesn&#39;t matter because lv_draw_label will draw it*/</span></div>
+<div class="line"><span class="lineno">  311</span>        header-&gt;<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> = <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a0704ce366200825b155639eabb098f72">LV_IMG_CF_ALPHA_1BIT</a>;</div>
+<div class="line"><span class="lineno">  312</span>    }</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  314</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Image get info found unknown src type&quot;</span>);</div>
+<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  316</span>    }</div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  318</span>}</div>
+<div class="ttc" id="alv__draw__img_8c_html_ad1749598689c14b0b65ed7a81bc48148"><div class="ttname"><a href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a></div><div class="ttdeci">lv_img_src_t lv_img_src_get_type(const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__img_8c_source.html#l00195">lv_draw_img.c:195</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_a339d0b51618dbcec593d0f4081348e5d"><div class="ttname"><a href="lv__fs_8c.html#a339d0b51618dbcec593d0f4081348e5d">lv_fs_open</a></div><div class="ttdeci">lv_fs_res_t lv_fs_open(lv_fs_file_t *file_p, const char *path, lv_fs_mode_t mode)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00057">lv_fs.c:57</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_aaeeaf5fdcf642f3d7af4828e1e74fbb7"><div class="ttname"><a href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a></div><div class="ttdeci">lv_fs_res_t lv_fs_read(lv_fs_file_t *file_p, void *buf, uint32_t btr, uint32_t *br)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00205">lv_fs.c:205</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_ad69f02629a6d9f8aabcb507d48c0fc1f"><div class="ttname"><a href="lv__fs_8c.html#ad69f02629a6d9f8aabcb507d48c0fc1f">lv_fs_get_ext</a></div><div class="ttdeci">const char * lv_fs_get_ext(const char *fn)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00437">lv_fs.c:437</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd"><div class="ttname"><a href="lv__fs_8h.html#a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd">LV_FS_MODE_RD</a></div><div class="ttdeci">@ LV_FS_MODE_RD</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00056">lv_fs.h:56</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9"><div class="ttname"><a href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a></div><div class="ttdeci">@ LV_FS_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00035">lv_fs.h:35</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a677bb0a100477713ea7bded7e9c47290"><div class="ttname"><a href="lv__fs_8h.html#a677bb0a100477713ea7bded7e9c47290">lv_fs_res_t</a></div><div class="ttdeci">uint8_t lv_fs_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00049">lv_fs.h:49</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a3cd0b0d2269a76ecf35c65d5abc8fa2c"><div class="ttname"><a href="lv__img__buf_8h.html#a3cd0b0d2269a76ecf35c65d5abc8fa2c">lv_img_cf_t</a></div><div class="ttdeci">uint8_t lv_img_cf_t</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00105">lv_img_buf.h:105</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a0704ce366200825b155639eabb098f72"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a0704ce366200825b155639eabb098f72">LV_IMG_CF_ALPHA_1BIT</a></div><div class="ttdeci">@ LV_IMG_CF_ALPHA_1BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00074">lv_img_buf.h:74</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a58ca1ebfb5e14e1a92646c6aa801518f"><div class="ttname"><a href="#a58ca1ebfb5e14e1a92646c6aa801518f">CF_BUILT_IN_FIRST</a></div><div class="ttdeci">#define CF_BUILT_IN_FIRST</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00018">lv_img_decoder.c:18</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_ac5caa74bf1a30f3e336a4bd97bde6aec"><div class="ttname"><a href="#ac5caa74bf1a30f3e336a4bd97bde6aec">CF_BUILT_IN_LAST</a></div><div class="ttdeci">#define CF_BUILT_IN_LAST</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00019">lv_img_decoder.c:19</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03ab9437e398616459e8c7bc579c22962f4">LV_IMG_SRC_SYMBOL</a></div><div class="ttdeci">@ LV_IMG_SRC_SYMBOL</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00037">lv_img_decoder.h:37</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5"><div class="ttname"><a href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a></div><div class="ttdeci">@ LV_IMG_SRC_VARIABLE</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00035">lv_img_decoder.h:35</a></div></div>
+<div class="ttc" id="alv__img__decoder_8h_html_a4a47e194ccb92c2d8bc70fa9e3655413"><div class="ttname"><a href="lv__img__decoder_8h.html#a4a47e194ccb92c2d8bc70fa9e3655413">lv_img_src_t</a></div><div class="ttdeci">uint8_t lv_img_src_t</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00041">lv_img_decoder.h:41</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a></div><div class="ttdeci">@ LV_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00045">lv_types.h:45</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a></div><div class="ttdeci">@ LV_RES_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00043">lv_types.h:43</a></div></div>
+<div class="ttc" id="astructlv__fs__file__t_html"><div class="ttname"><a href="structlv__fs__file__t.html">lv_fs_file_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00097">lv_fs.h:97</a></div></div>
+<div class="ttc" id="astructlv__img__dsc__t_html"><div class="ttname"><a href="structlv__img__dsc__t.html">lv_img_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00141">lv_img_buf.h:141</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html"><div class="ttname"><a href="structlv__img__header__t.html">lv_img_header_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00126">lv_img_buf.h:126</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html_a28513641737b777e0c546bd098eb58af"><div class="ttname"><a href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">lv_img_header_t::cf</a></div><div class="ttdeci">uint32_t cf</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00128">lv_img_buf.h:128</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html_a6553f8a9dc1a0f8c50dc51dda3aab537"><div class="ttname"><a href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">lv_img_header_t::w</a></div><div class="ttdeci">uint32_t w</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00134">lv_img_buf.h:134</a></div></div>
+<div class="ttc" id="astructlv__img__header__t_html_a7e3391cd72119d417766378f18aaae2c"><div class="ttname"><a href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">lv_img_header_t::h</a></div><div class="ttdeci">uint32_t h</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00135">lv_img_buf.h:135</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__buf_8h_source.html#l00128">lv_img_header_t::cf</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00018">CF_BUILT_IN_FIRST</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00019">CF_BUILT_IN_LAST</a>, <a class="el" href="lv__img__buf_8h_source.html#l00135">lv_img_header_t::h</a>, <a class="el" href="lv__fs_8c_source.html#l00105">lv_fs_close()</a>, <a class="el" href="lv__fs_8c_source.html#l00437">lv_fs_get_ext()</a>, <a class="el" href="lv__fs_8h_source.html#l00056">LV_FS_MODE_RD</a>, <a class="el" href="lv__fs_8c_source.html#l00057">lv_fs_open()</a>, <a class="el" href="lv__fs_8c_source.html#l00205">lv_fs_read()</a>, <a class="el" href="lv__fs_8h_source.html#l00035">LV_FS_RES_OK</a>, <a class="el" href="lv__img__buf_8h_source.html#l00074">LV_IMG_CF_ALPHA_1BIT</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__draw__img_8c_source.html#l00195">lv_img_src_get_type()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00037">LV_IMG_SRC_SYMBOL</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00035">LV_IMG_SRC_VARIABLE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__types_8h_source.html#l00072">LV_UNUSED</a> y <a class="el" href="lv__img__buf_8h_source.html#l00134">lv_img_header_t::w</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="ad919edc1516f34c4490c4f42603e8520" name="ad919edc1516f34c4490c4f42603e8520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad919edc1516f34c4490c4f42603e8520">&#9670;&#160;</a></span>lv_img_decoder_built_in_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_img_decoder_built_in_open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open a built in image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>the decoder where this function belongs </td></tr>
+    <tr><td class="paramname">dsc</td><td>pointer to decoder descriptor. <span class="tt">src</span>, <span class="tt">color</span> are already initialized in it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: the info is successfully stored in <span class="tt">header</span>; LV_RES_INV: unknown format or other error. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00326">326</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>{</div>
+<div class="line"><span class="lineno">  328</span>    <span class="comment">/*Open the file if it&#39;s a file*/</span></div>
+<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  330</span>        <span class="comment">/*Support only &quot;*.bin&quot; files*/</span></div>
+<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">if</span>(strcmp(<a class="code hl_function" href="lv__fs_8c.html#ad69f02629a6d9f8aabcb507d48c0fc1f">lv_fs_get_ext</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>), <span class="stringliteral">&quot;bin&quot;</span>)) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>        <a class="code hl_struct" href="structlv__fs__file__t.html">lv_fs_file_t</a> f;</div>
+<div class="line"><span class="lineno">  334</span>        <a class="code hl_typedef" href="lv__fs_8h.html#a677bb0a100477713ea7bded7e9c47290">lv_fs_res_t</a> res = <a class="code hl_function" href="lv__fs_8c.html#a339d0b51618dbcec593d0f4081348e5d">lv_fs_open</a>(&amp;f, dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>, <a class="code hl_enumvalue" href="lv__fs_8h.html#a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd">LV_FS_MODE_RD</a>);</div>
+<div class="line"><span class="lineno">  335</span>        <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  336</span>            <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Built-in image decoder can&#39;t open the file&quot;</span>);</div>
+<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  338</span>        }</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>        <span class="comment">/*If the file was open successfully save the file descriptor*/</span></div>
+<div class="line"><span class="lineno">  341</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> == NULL) {</div>
+<div class="line"><span class="lineno">  342</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a>));</div>
+<div class="line"><span class="lineno">  343</span>            <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>);</div>
+<div class="line"><span class="lineno">  344</span>            <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> == NULL) {</div>
+<div class="line"><span class="lineno">  345</span>                <a class="code hl_define" href="lv__log_8h.html#a4f5f1571a6bea2b8532fa6c28dbb0d92">LV_LOG_ERROR</a>(<span class="stringliteral">&quot;img_decoder_built_in_open: out of memory&quot;</span>);</div>
+<div class="line"><span class="lineno">  346</span>                <a class="code hl_function" href="lv__fs_8c.html#a695f81fd4c47d1ace4dce3ebb536e531">lv_fs_close</a>(&amp;f);</div>
+<div class="line"><span class="lineno">  347</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  348</span>            }</div>
+<div class="line"><span class="lineno">  349</span>            <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a>));</div>
+<div class="line"><span class="lineno">  350</span>        }</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>        <a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a> * user_data = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>;</div>
+<div class="line"><span class="lineno">  353</span>        lv_memcpy_small(&amp;user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">f</a>, &amp;f, <span class="keyword">sizeof</span>(f));</div>
+<div class="line"><span class="lineno">  354</span>    }</div>
+<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">  356</span>        <span class="comment">/*The variables should have valid data*/</span></div>
+<div class="line"><span class="lineno">  357</span>        <span class="keywordflow">if</span>(((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>)-&gt;data == NULL) {</div>
+<div class="line"><span class="lineno">  358</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  359</span>        }</div>
+<div class="line"><span class="lineno">  360</span>    }</div>
+<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  362</span>    <a class="code hl_typedef" href="lv__img__buf_8h.html#a3cd0b0d2269a76ecf35c65d5abc8fa2c">lv_img_cf_t</a> cf = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a>;</div>
+<div class="line"><span class="lineno">  363</span>    <span class="comment">/*Process A8,  RGB565A8, need load file to ram after https://github.com/lvgl/lvgl/pull/3337*/</span></div>
+<div class="line"><span class="lineno">  364</span>    <span class="keywordflow">if</span>(cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373aa886fdd8e02ff433765a3ac3ee3f3103">LV_IMG_CF_ALPHA_8BIT</a> || cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ad04d66bb5a69dba938b66df0b247de00">LV_IMG_CF_RGB565A8</a>) {</div>
+<div class="line"><span class="lineno">  365</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">  366</span>            <span class="comment">/*In case of uncompressed formats the image stored in the ROM/RAM.</span></div>
+<div class="line"><span class="lineno">  367</span><span class="comment">             *So simply give its pointer*/</span></div>
+<div class="line"><span class="lineno">  368</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a332cfed3d26d92ac0c9abd44ebc750b2">img_data</a> = ((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>)-&gt;data;</div>
+<div class="line"><span class="lineno">  369</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  370</span>        }</div>
+<div class="line"><span class="lineno">  371</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  372</span>            <span class="comment">/*If it&#39;s a file, read all to memory*/</span></div>
+<div class="line"><span class="lineno">  373</span>            uint32_t len = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537">w</a> * dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c">h</a>;</div>
+<div class="line"><span class="lineno">  374</span>            len *= cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ad04d66bb5a69dba938b66df0b247de00">LV_IMG_CF_RGB565A8</a> ? 3 : 1;</div>
+<div class="line"><span class="lineno">  375</span>            uint8_t * fs_buf = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(len);</div>
+<div class="line"><span class="lineno">  376</span>            <span class="keywordflow">if</span>(fs_buf == NULL) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  377</span> </div>
+<div class="line"><span class="lineno">  378</span>            <a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a> * user_data = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>;</div>
+<div class="line"><span class="lineno">  379</span>            <a class="code hl_function" href="lv__fs_8c.html#a0bfb4e9168e6d4029713ac8016dbb2a5">lv_fs_seek</a>(&amp;user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">f</a>, 4, <a class="code hl_enumvalue" href="lv__fs_8h.html#aedf4c57e970342cb1eb2ddaeac93267baeab4de99544eff8575fed2fee38cd6c5">LV_FS_SEEK_SET</a>); <span class="comment">/*+4 to skip the header*/</span></div>
+<div class="line"><span class="lineno">  380</span>            <a class="code hl_typedef" href="lv__fs_8h.html#a677bb0a100477713ea7bded7e9c47290">lv_fs_res_t</a> res = <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(&amp;user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">f</a>, fs_buf, len, NULL);</div>
+<div class="line"><span class="lineno">  381</span>            <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  382</span>                <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(fs_buf);</div>
+<div class="line"><span class="lineno">  383</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  384</span>            }</div>
+<div class="line"><span class="lineno">  385</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a332cfed3d26d92ac0c9abd44ebc750b2">img_data</a> = fs_buf;</div>
+<div class="line"><span class="lineno">  386</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  387</span>        }</div>
+<div class="line"><span class="lineno">  388</span>    }</div>
+<div class="line"><span class="lineno">  389</span>    <span class="comment">/*Process true color formats*/</span></div>
+<div class="line"><span class="lineno">  390</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373acc00dbb56f9207133c12cca0f94c4f8d">LV_IMG_CF_TRUE_COLOR</a> || cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185">LV_IMG_CF_TRUE_COLOR_ALPHA</a> ||</div>
+<div class="line"><span class="lineno">  391</span>            cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a4afaa8f28d1b38d91a4579a7fe5cd746">LV_IMG_CF_TRUE_COLOR_CHROMA_KEYED</a>) {</div>
+<div class="line"><span class="lineno">  392</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">  393</span>            <span class="comment">/*In case of uncompressed formats the image stored in the ROM/RAM.</span></div>
+<div class="line"><span class="lineno">  394</span><span class="comment">             *So simply give its pointer*/</span></div>
+<div class="line"><span class="lineno">  395</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a332cfed3d26d92ac0c9abd44ebc750b2">img_data</a> = ((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>)-&gt;data;</div>
+<div class="line"><span class="lineno">  396</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  397</span>        }</div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  399</span>            <span class="comment">/*If it&#39;s a file it need to be read line by line later*/</span></div>
+<div class="line"><span class="lineno">  400</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  401</span>        }</div>
+<div class="line"><span class="lineno">  402</span>    }</div>
+<div class="line"><span class="lineno">  403</span>    <span class="comment">/*Process indexed images. Build a palette*/</span></div>
+<div class="line"><span class="lineno">  404</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ace7d7c0dc2a98e0d1989f1c102b5ea3b">LV_IMG_CF_INDEXED_1BIT</a> || cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373aa6c3c2fdc1a2c273f50d3638ee62d775">LV_IMG_CF_INDEXED_2BIT</a> || cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ac541e5ff700cbab1422972b2124fa857">LV_IMG_CF_INDEXED_4BIT</a> ||</div>
+<div class="line"><span class="lineno">  405</span>            cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a05da196150be23ccba0bee4d64b0e13f">LV_IMG_CF_INDEXED_8BIT</a>) {</div>
+<div class="line"><span class="lineno">  406</span>        uint8_t px_size       = <a class="code hl_function" href="lv__draw__img_8c.html#a8e26314bd67791a846ceafda0d0511b4">lv_img_cf_get_px_size</a>(cf);</div>
+<div class="line"><span class="lineno">  407</span>        uint32_t palette_size = 1 &lt;&lt; px_size;</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>        <span class="comment">/*Allocate the palette*/</span></div>
+<div class="line"><span class="lineno">  410</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> == NULL) {</div>
+<div class="line"><span class="lineno">  411</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a>));</div>
+<div class="line"><span class="lineno">  412</span>            <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>);</div>
+<div class="line"><span class="lineno">  413</span>            <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> == NULL) {</div>
+<div class="line"><span class="lineno">  414</span>                <a class="code hl_define" href="lv__log_8h.html#a4f5f1571a6bea2b8532fa6c28dbb0d92">LV_LOG_ERROR</a>(<span class="stringliteral">&quot;img_decoder_built_in_open: out of memory&quot;</span>);</div>
+<div class="line"><span class="lineno">  415</span>                <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  416</span>            }</div>
+<div class="line"><span class="lineno">  417</span>            <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a>));</div>
+<div class="line"><span class="lineno">  418</span>        }</div>
+<div class="line"><span class="lineno">  419</span> </div>
+<div class="line"><span class="lineno">  420</span>        <a class="code hl_struct" href="structlv__img__decoder__built__in__data__t.html">lv_img_decoder_built_in_data_t</a> * user_data = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a>;</div>
+<div class="line"><span class="lineno">  421</span>        user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a>                         = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(palette_size * <span class="keyword">sizeof</span>(lv_color_t));</div>
+<div class="line"><span class="lineno">  422</span>        <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a>);</div>
+<div class="line"><span class="lineno">  423</span>        user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a>                             = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(palette_size * <span class="keyword">sizeof</span>(lv_opa_t));</div>
+<div class="line"><span class="lineno">  424</span>        <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a>);</div>
+<div class="line"><span class="lineno">  425</span>        <span class="keywordflow">if</span>(user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a> == NULL || user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a> == NULL) {</div>
+<div class="line"><span class="lineno">  426</span>            <a class="code hl_define" href="lv__log_8h.html#a4f5f1571a6bea2b8532fa6c28dbb0d92">LV_LOG_ERROR</a>(<span class="stringliteral">&quot;img_decoder_built_in_open: out of memory&quot;</span>);</div>
+<div class="line"><span class="lineno">  427</span>            <a class="code hl_function" href="#a3851d58ee9c3d677a925be06c3e7c886">lv_img_decoder_built_in_close</a>(decoder, dsc);</div>
+<div class="line"><span class="lineno">  428</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  429</span>        }</div>
+<div class="line"><span class="lineno">  430</span> </div>
+<div class="line"><span class="lineno">  431</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  432</span>            <span class="comment">/*Read the palette from file*/</span></div>
+<div class="line"><span class="lineno">  433</span>            <a class="code hl_function" href="lv__fs_8c.html#a0bfb4e9168e6d4029713ac8016dbb2a5">lv_fs_seek</a>(&amp;user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">f</a>, 4, <a class="code hl_enumvalue" href="lv__fs_8h.html#aedf4c57e970342cb1eb2ddaeac93267baeab4de99544eff8575fed2fee38cd6c5">LV_FS_SEEK_SET</a>); <span class="comment">/*Skip the header*/</span></div>
+<div class="line"><span class="lineno">  434</span>            <a class="code hl_union" href="unionlv__color32__t.html">lv_color32_t</a> cur_color;</div>
+<div class="line"><span class="lineno">  435</span>            uint32_t i;</div>
+<div class="line"><span class="lineno">  436</span>            <span class="keywordflow">for</span>(i = 0; i &lt; palette_size; i++) {</div>
+<div class="line"><span class="lineno">  437</span>                <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(&amp;user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a7d2ae1fe1fbbbbf36b564b6c9826b333">f</a>, &amp;cur_color, <span class="keyword">sizeof</span>(<a class="code hl_union" href="unionlv__color32__t.html">lv_color32_t</a>), NULL);</div>
+<div class="line"><span class="lineno">  438</span>                user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a>[i] = lv_color_make(cur_color.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a7e62d507ce57ce35236017591fab3224">red</a>, cur_color.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a7951b7863d314fab2ddf29df169bd483">green</a>, cur_color.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a3dfb38a077f62e782d1c63350584f6bb">blue</a>);</div>
+<div class="line"><span class="lineno">  439</span>                user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a>[i]     = cur_color.<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a5519a07b8b8d309f06683f2110d0c8e0">alpha</a>;</div>
+<div class="line"><span class="lineno">  440</span>            }</div>
+<div class="line"><span class="lineno">  441</span>        }</div>
+<div class="line"><span class="lineno">  442</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  443</span>            <span class="comment">/*The palette begins in the beginning of the image data. Just point to it.*/</span></div>
+<div class="line"><span class="lineno">  444</span>            <a class="code hl_union" href="unionlv__color32__t.html">lv_color32_t</a> * palette_p = (<a class="code hl_union" href="unionlv__color32__t.html">lv_color32_t</a> *)((<a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>)-&gt;data;</div>
+<div class="line"><span class="lineno">  445</span> </div>
+<div class="line"><span class="lineno">  446</span>            uint32_t i;</div>
+<div class="line"><span class="lineno">  447</span>            <span class="keywordflow">for</span>(i = 0; i &lt; palette_size; i++) {</div>
+<div class="line"><span class="lineno">  448</span>                user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#aec8983fb1fb33a5db7ed0d6ddabd5536">palette</a>[i] = lv_color_make(palette_p[i].ch.red, palette_p[i].ch.green, palette_p[i].ch.blue);</div>
+<div class="line"><span class="lineno">  449</span>                user_data-&gt;<a class="code hl_variable" href="structlv__img__decoder__built__in__data__t.html#a278dbb60176967a85dcdc917658b1eed">opa</a>[i]     = palette_p[i].<a class="code hl_variable" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">ch</a>.<a class="code hl_variable" href="unionlv__color32__t.html#a5519a07b8b8d309f06683f2110d0c8e0">alpha</a>;</div>
+<div class="line"><span class="lineno">  450</span>            }</div>
+<div class="line"><span class="lineno">  451</span>        }</div>
+<div class="line"><span class="lineno">  452</span> </div>
+<div class="line"><span class="lineno">  453</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">  454</span>    }</div>
+<div class="line"><span class="lineno">  455</span>    <span class="comment">/*Alpha indexed images.*/</span></div>
+<div class="line"><span class="lineno">  456</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a0704ce366200825b155639eabb098f72">LV_IMG_CF_ALPHA_1BIT</a> || cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a384013e83c460e879851d57bb335c561">LV_IMG_CF_ALPHA_2BIT</a> || cf == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a87a787a99d25627728738686b0ce3ef6">LV_IMG_CF_ALPHA_4BIT</a>) {</div>
+<div class="line"><span class="lineno">  457</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>; <span class="comment">/*Nothing to process*/</span></div>
+<div class="line"><span class="lineno">  458</span>    }</div>
+<div class="line"><span class="lineno">  459</span>    <span class="comment">/*Unknown format. Can&#39;t decode it.*/</span></div>
+<div class="line"><span class="lineno">  460</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  461</span>        <span class="comment">/*Free the potentially allocated memories*/</span></div>
+<div class="line"><span class="lineno">  462</span>        <a class="code hl_function" href="#a3851d58ee9c3d677a925be06c3e7c886">lv_img_decoder_built_in_close</a>(decoder, dsc);</div>
+<div class="line"><span class="lineno">  463</span> </div>
+<div class="line"><span class="lineno">  464</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Image decoder open: unknown color format&quot;</span>);</div>
+<div class="line"><span class="lineno">  465</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  466</span>    }</div>
+<div class="line"><span class="lineno">  467</span>}</div>
+<div class="ttc" id="alv__draw__img_8c_html_a8e26314bd67791a846ceafda0d0511b4"><div class="ttname"><a href="lv__draw__img_8c.html#a8e26314bd67791a846ceafda0d0511b4">lv_img_cf_get_px_size</a></div><div class="ttdeci">uint8_t lv_img_cf_get_px_size(lv_img_cf_t cf)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__img_8c_source.html#l00094">lv_draw_img.c:94</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_a0bfb4e9168e6d4029713ac8016dbb2a5"><div class="ttname"><a href="lv__fs_8c.html#a0bfb4e9168e6d4029713ac8016dbb2a5">lv_fs_seek</a></div><div class="ttdeci">lv_fs_res_t lv_fs_seek(lv_fs_file_t *file_p, uint32_t pos, lv_fs_whence_t whence)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00245">lv_fs.c:245</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_aedf4c57e970342cb1eb2ddaeac93267baeab4de99544eff8575fed2fee38cd6c5"><div class="ttname"><a href="lv__fs_8h.html#aedf4c57e970342cb1eb2ddaeac93267baeab4de99544eff8575fed2fee38cd6c5">LV_FS_SEEK_SET</a></div><div class="ttdeci">@ LV_FS_SEEK_SET</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00064">lv_fs.h:64</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a05da196150be23ccba0bee4d64b0e13f"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a05da196150be23ccba0bee4d64b0e13f">LV_IMG_CF_INDEXED_8BIT</a></div><div class="ttdeci">@ LV_IMG_CF_INDEXED_8BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00072">lv_img_buf.h:72</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a384013e83c460e879851d57bb335c561"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a384013e83c460e879851d57bb335c561">LV_IMG_CF_ALPHA_2BIT</a></div><div class="ttdeci">@ LV_IMG_CF_ALPHA_2BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00075">lv_img_buf.h:75</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a4afaa8f28d1b38d91a4579a7fe5cd746"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a4afaa8f28d1b38d91a4579a7fe5cd746">LV_IMG_CF_TRUE_COLOR_CHROMA_KEYED</a></div><div class="ttdeci">@ LV_IMG_CF_TRUE_COLOR_CHROMA_KEYED</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00066">lv_img_buf.h:66</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185">LV_IMG_CF_TRUE_COLOR_ALPHA</a></div><div class="ttdeci">@ LV_IMG_CF_TRUE_COLOR_ALPHA</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00065">lv_img_buf.h:65</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373a87a787a99d25627728738686b0ce3ef6"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a87a787a99d25627728738686b0ce3ef6">LV_IMG_CF_ALPHA_4BIT</a></div><div class="ttdeci">@ LV_IMG_CF_ALPHA_4BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00076">lv_img_buf.h:76</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373aa6c3c2fdc1a2c273f50d3638ee62d775"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373aa6c3c2fdc1a2c273f50d3638ee62d775">LV_IMG_CF_INDEXED_2BIT</a></div><div class="ttdeci">@ LV_IMG_CF_INDEXED_2BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00070">lv_img_buf.h:70</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373aa886fdd8e02ff433765a3ac3ee3f3103"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373aa886fdd8e02ff433765a3ac3ee3f3103">LV_IMG_CF_ALPHA_8BIT</a></div><div class="ttdeci">@ LV_IMG_CF_ALPHA_8BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00077">lv_img_buf.h:77</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373ac541e5ff700cbab1422972b2124fa857"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ac541e5ff700cbab1422972b2124fa857">LV_IMG_CF_INDEXED_4BIT</a></div><div class="ttdeci">@ LV_IMG_CF_INDEXED_4BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00071">lv_img_buf.h:71</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373acc00dbb56f9207133c12cca0f94c4f8d"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373acc00dbb56f9207133c12cca0f94c4f8d">LV_IMG_CF_TRUE_COLOR</a></div><div class="ttdeci">@ LV_IMG_CF_TRUE_COLOR</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00064">lv_img_buf.h:64</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373ace7d7c0dc2a98e0d1989f1c102b5ea3b"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ace7d7c0dc2a98e0d1989f1c102b5ea3b">LV_IMG_CF_INDEXED_1BIT</a></div><div class="ttdeci">@ LV_IMG_CF_INDEXED_1BIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00069">lv_img_buf.h:69</a></div></div>
+<div class="ttc" id="alv__img__buf_8h_html_a88a6e047d8aef63a1ff41d3747904373ad04d66bb5a69dba938b66df0b247de00"><div class="ttname"><a href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ad04d66bb5a69dba938b66df0b247de00">LV_IMG_CF_RGB565A8</a></div><div class="ttdeci">@ LV_IMG_CF_RGB565A8</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00084">lv_img_buf.h:84</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a4f5f1571a6bea2b8532fa6c28dbb0d92"><div class="ttname"><a href="lv__log_8h.html#a4f5f1571a6bea2b8532fa6c28dbb0d92">LV_LOG_ERROR</a></div><div class="ttdeci">#define LV_LOG_ERROR(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00115">lv_log.h:115</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_a332cfed3d26d92ac0c9abd44ebc750b2"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#a332cfed3d26d92ac0c9abd44ebc750b2">_lv_img_decoder_dsc_t::img_data</a></div><div class="ttdeci">const uint8_t * img_data</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00120">lv_img_decoder.h:120</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_abc78d4094f87222bdca2a7acbb2222e0"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">_lv_img_decoder_dsc_t::src</a></div><div class="ttdeci">const void * src</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00104">lv_img_decoder.h:104</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_aea8323c05ea31ca3bfa88eb3b876d40d"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">_lv_img_decoder_dsc_t::header</a></div><div class="ttdeci">lv_img_header_t header</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00116">lv_img_decoder.h:116</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html"><div class="ttname"><a href="unionlv__color32__t.html">lv_color32_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00224">lv_color.h:224</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a3dfb38a077f62e782d1c63350584f6bb"><div class="ttname"><a href="unionlv__color32__t.html#a3dfb38a077f62e782d1c63350584f6bb">lv_color32_t::blue</a></div><div class="ttdeci">uint8_t blue</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00226">lv_color.h:226</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a5519a07b8b8d309f06683f2110d0c8e0"><div class="ttname"><a href="unionlv__color32__t.html#a5519a07b8b8d309f06683f2110d0c8e0">lv_color32_t::alpha</a></div><div class="ttdeci">uint8_t alpha</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00229">lv_color.h:229</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a7951b7863d314fab2ddf29df169bd483"><div class="ttname"><a href="unionlv__color32__t.html#a7951b7863d314fab2ddf29df169bd483">lv_color32_t::green</a></div><div class="ttdeci">uint8_t green</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00227">lv_color.h:227</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a7e62d507ce57ce35236017591fab3224"><div class="ttname"><a href="unionlv__color32__t.html#a7e62d507ce57ce35236017591fab3224">lv_color32_t::red</a></div><div class="ttdeci">uint8_t red</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00228">lv_color.h:228</a></div></div>
+<div class="ttc" id="aunionlv__color32__t_html_a84c4545292a8af88ef3c03d6892c1fc8"><div class="ttname"><a href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">lv_color32_t::ch</a></div><div class="ttdeci">struct lv_color32_t::@260055066070264274003200372354347346315170016153 ch</div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__color_8h_source.html#l00229">lv_color32_t::alpha</a>, <a class="el" href="lv__color_8h_source.html#l00226">lv_color32_t::blue</a>, <a class="el" href="lv__img__buf_8h_source.html#l00128">lv_img_header_t::cf</a>, <a class="el" href="unionlv__color32__t.html#a84c4545292a8af88ef3c03d6892c1fc8">lv_color32_t::ch</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00026">lv_img_decoder_built_in_data_t::f</a>, <a class="el" href="lv__color_8h_source.html#l00227">lv_color32_t::green</a>, <a class="el" href="lv__img__buf_8h_source.html#l00135">lv_img_header_t::h</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00116">_lv_img_decoder_dsc_t::header</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00120">_lv_img_decoder_dsc_t::img_data</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__fs_8c_source.html#l00105">lv_fs_close()</a>, <a class="el" href="lv__fs_8c_source.html#l00437">lv_fs_get_ext()</a>, <a class="el" href="lv__fs_8h_source.html#l00056">LV_FS_MODE_RD</a>, <a class="el" href="lv__fs_8c_source.html#l00057">lv_fs_open()</a>, <a class="el" href="lv__fs_8c_source.html#l00205">lv_fs_read()</a>, <a class="el" href="lv__fs_8h_source.html#l00035">LV_FS_RES_OK</a>, <a class="el" href="lv__fs_8c_source.html#l00245">lv_fs_seek()</a>, <a class="el" href="lv__fs_8h_source.html#l00064">LV_FS_SEEK_SET</a>, <a class="el" href="lv__img__buf_8h_source.html#l00074">LV_IMG_CF_ALPHA_1BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00075">LV_IMG_CF_ALPHA_2BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00076">LV_IMG_CF_ALPHA_4BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00077">LV_IMG_CF_ALPHA_8BIT</a>, <a class="el" href="lv__draw__img_8c_source.html#l00094">lv_img_cf_get_px_size()</a>, <a class="el" href="lv__img__buf_8h_source.html#l00069">LV_IMG_CF_INDEXED_1BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00070">LV_IMG_CF_INDEXED_2BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00071">LV_IMG_CF_INDEXED_4BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00072">LV_IMG_CF_INDEXED_8BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00084">LV_IMG_CF_RGB565A8</a>, <a class="el" href="lv__img__buf_8h_source.html#l00064">LV_IMG_CF_TRUE_COLOR</a>, <a class="el" href="lv__img__buf_8h_source.html#l00065">LV_IMG_CF_TRUE_COLOR_ALPHA</a>, <a class="el" href="lv__img__buf_8h_source.html#l00066">LV_IMG_CF_TRUE_COLOR_CHROMA_KEYED</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00516">lv_img_decoder_built_in_close()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00035">LV_IMG_SRC_VARIABLE</a>, <a class="el" href="lv__log_8h_source.html#l00115">LV_LOG_ERROR</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00028">lv_img_decoder_built_in_data_t::opa</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00027">lv_img_decoder_built_in_data_t::palette</a>, <a class="el" href="lv__color_8h_source.html#l00228">lv_color32_t::red</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00104">_lv_img_decoder_dsc_t::src</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00113">_lv_img_decoder_dsc_t::src_type</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00131">_lv_img_decoder_dsc_t::user_data</a> y <a class="el" href="lv__img__buf_8h_source.html#l00134">lv_img_header_t::w</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="a30e1c34d54e6d1af88b11da95b30782e" name="a30e1c34d54e6d1af88b11da95b30782e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e1c34d54e6d1af88b11da95b30782e">&#9670;&#160;</a></span>lv_img_decoder_built_in_read_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_img_decoder_built_in_read_line </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decode <span class="tt">len</span> pixels starting from the given <span class="tt">x</span>, <span class="tt">y</span> coordinates and store them in <span class="tt">buf</span>. Required only if the "open" function can't return with the whole decoded pixel array. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to the decoder the function associated with </td></tr>
+    <tr><td class="paramname">dsc</td><td>pointer to decoder descriptor </td></tr>
+    <tr><td class="paramname">x</td><td>start x coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>start y coordinate </td></tr>
+    <tr><td class="paramname">len</td><td>number of pixels to decode </td></tr>
+    <tr><td class="paramname">buf</td><td>a buffer to store the decoded pixels </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: ok; LV_RES_INV: failed </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00480">480</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  482</span>{</div>
+<div class="line"><span class="lineno">  483</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(decoder); <span class="comment">/*Unused*/</span></div>
+<div class="line"><span class="lineno">  484</span> </div>
+<div class="line"><span class="lineno">  485</span>    <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  486</span> </div>
+<div class="line"><span class="lineno">  487</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373acc00dbb56f9207133c12cca0f94c4f8d">LV_IMG_CF_TRUE_COLOR</a> || dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a77b153c97241ea0312b96a3bd5d4f185">LV_IMG_CF_TRUE_COLOR_ALPHA</a> ||</div>
+<div class="line"><span class="lineno">  488</span>       dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a4afaa8f28d1b38d91a4579a7fe5cd746">LV_IMG_CF_TRUE_COLOR_CHROMA_KEYED</a>) {</div>
+<div class="line"><span class="lineno">  489</span>        <span class="comment">/*For TRUE_COLOR images read line required only for files.</span></div>
+<div class="line"><span class="lineno">  490</span><span class="comment">         *For variables the image data was returned in `open`*/</span></div>
+<div class="line"><span class="lineno">  491</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  492</span>            res = lv_img_decoder_built_in_line_true_color(dsc, x, y, len, buf);</div>
+<div class="line"><span class="lineno">  493</span>        }</div>
+<div class="line"><span class="lineno">  494</span>    }</div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a0704ce366200825b155639eabb098f72">LV_IMG_CF_ALPHA_1BIT</a> || dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a384013e83c460e879851d57bb335c561">LV_IMG_CF_ALPHA_2BIT</a> ||</div>
+<div class="line"><span class="lineno">  496</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a87a787a99d25627728738686b0ce3ef6">LV_IMG_CF_ALPHA_4BIT</a> || dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373aa886fdd8e02ff433765a3ac3ee3f3103">LV_IMG_CF_ALPHA_8BIT</a>) {</div>
+<div class="line"><span class="lineno">  497</span>        res = lv_img_decoder_built_in_line_alpha(dsc, x, y, len, buf);</div>
+<div class="line"><span class="lineno">  498</span>    }</div>
+<div class="line"><span class="lineno">  499</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ace7d7c0dc2a98e0d1989f1c102b5ea3b">LV_IMG_CF_INDEXED_1BIT</a> || dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373aa6c3c2fdc1a2c273f50d3638ee62d775">LV_IMG_CF_INDEXED_2BIT</a> ||</div>
+<div class="line"><span class="lineno">  500</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373ac541e5ff700cbab1422972b2124fa857">LV_IMG_CF_INDEXED_4BIT</a> || dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>.<a class="code hl_variable" href="structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af">cf</a> == <a class="code hl_enumvalue" href="lv__img__buf_8h.html#a88a6e047d8aef63a1ff41d3747904373a05da196150be23ccba0bee4d64b0e13f">LV_IMG_CF_INDEXED_8BIT</a>) {</div>
+<div class="line"><span class="lineno">  501</span>        res = lv_img_decoder_built_in_line_indexed(dsc, x, y, len, buf);</div>
+<div class="line"><span class="lineno">  502</span>    }</div>
+<div class="line"><span class="lineno">  503</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  504</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Built-in image decoder read not supports the color format&quot;</span>);</div>
+<div class="line"><span class="lineno">  505</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  506</span>    }</div>
+<div class="line"><span class="lineno">  507</span> </div>
+<div class="line"><span class="lineno">  508</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">  509</span>}</div>
+<div class="ttc" id="alv__types_8h_html_a5c71f43250ed3699f40a8b634e342228"><div class="ttname"><a href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a></div><div class="ttdeci">uint8_t lv_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00047">lv_types.h:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__buf_8h_source.html#l00128">lv_img_header_t::cf</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00116">_lv_img_decoder_dsc_t::header</a>, <a class="el" href="lv__img__buf_8h_source.html#l00074">LV_IMG_CF_ALPHA_1BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00075">LV_IMG_CF_ALPHA_2BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00076">LV_IMG_CF_ALPHA_4BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00077">LV_IMG_CF_ALPHA_8BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00069">LV_IMG_CF_INDEXED_1BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00070">LV_IMG_CF_INDEXED_2BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00071">LV_IMG_CF_INDEXED_4BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00072">LV_IMG_CF_INDEXED_8BIT</a>, <a class="el" href="lv__img__buf_8h_source.html#l00064">LV_IMG_CF_TRUE_COLOR</a>, <a class="el" href="lv__img__buf_8h_source.html#l00065">LV_IMG_CF_TRUE_COLOR_ALPHA</a>, <a class="el" href="lv__img__buf_8h_source.html#l00066">LV_IMG_CF_TRUE_COLOR_CHROMA_KEYED</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00072">LV_UNUSED</a> y <a class="el" href="lv__img__decoder_8h_source.html#l00113">_lv_img_decoder_dsc_t::src_type</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="a43f69939ef89a85e3f7db25f12994259" name="a43f69939ef89a85e3f7db25f12994259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f69939ef89a85e3f7db25f12994259">&#9670;&#160;</a></span>lv_img_decoder_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Close a decoding session </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsc</td><td>pointer to <span class="tt"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a></span> used in <span class="tt"><a class="el" href="#a961b6c69714872e8a7ca552c3d4b2e6d">lv_img_decoder_open</a></span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00188">188</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>{</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>) {</div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a1c149628e9f9f82bdd04cbee54c8f8ec">close_cb</a>) dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a1c149628e9f9f82bdd04cbee54c8f8ec">close_cb</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>, dsc);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  194</span>            <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>);</div>
+<div class="line"><span class="lineno">  195</span>            dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a> = NULL;</div>
+<div class="line"><span class="lineno">  196</span>        }</div>
+<div class="line"><span class="lineno">  197</span>    }</div>
+<div class="line"><span class="lineno">  198</span>}</div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_a9fcb7bc1374b7c411c8d62c281ac116a"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">_lv_img_decoder_dsc_t::decoder</a></div><div class="ttdeci">lv_img_decoder_t * decoder</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00101">lv_img_decoder.h:101</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__t_html_a1c149628e9f9f82bdd04cbee54c8f8ec"><div class="ttname"><a href="struct__lv__img__decoder__t.html#a1c149628e9f9f82bdd04cbee54c8f8ec">_lv_img_decoder_t::close_cb</a></div><div class="ttdeci">lv_img_decoder_close_f_t close_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00090">lv_img_decoder.h:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8h_source.html#l00090">_lv_img_decoder_t::close_cb</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00101">_lv_img_decoder_dsc_t::decoder</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00104">_lv_img_decoder_dsc_t::src</a> y <a class="el" href="lv__img__decoder_8h_source.html#l00113">_lv_img_decoder_dsc_t::src_type</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__cache_8c_source.html#l00063">_lv_img_cache_open()</a> y <a class="el" href="lv__img__cache_8c_source.html#l00180">lv_img_cache_invalidate_src()</a>.</p>
+
+</div>
+</div>
+<a id="a17f3dcb104d270120b673775881e63b8" name="a17f3dcb104d270120b673775881e63b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17f3dcb104d270120b673775881e63b8">&#9670;&#160;</a></span>lv_img_decoder_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> * lv_img_decoder_create </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new image decoder </p><dl class="section return"><dt>Devuelve</dt><dd>pointer to the new image decoder </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00204">204</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>{</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> * decoder;</div>
+<div class="line"><span class="lineno">  207</span>    decoder = <a class="code hl_function" href="lv__ll_8c.html#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_decoder_ll));</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(decoder);</div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">if</span>(decoder == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(decoder, <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a>));</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">return</span> decoder;</div>
+<div class="line"><span class="lineno">  214</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_adea28cec6b6e492dbafa3564c08d6024"><div class="ttname"><a href="lv__ll_8c.html#adea28cec6b6e492dbafa3564c08d6024">_lv_ll_ins_head</a></div><div class="ttdeci">void * _lv_ll_ins_head(lv_ll_t *ll_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00067">lv_ll.c:67</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00067">_lv_ll_ins_head()</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a> y <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="a4300a1f473bc2bb4759e73c3dbda8752" name="a4300a1f473bc2bb4759e73c3dbda8752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4300a1f473bc2bb4759e73c3dbda8752">&#9670;&#160;</a></span>lv_img_decoder_delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_delete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete an image decoder </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to an image decoder </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00220">220</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  221</span>{</div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_function" href="lv__ll_8c.html#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_decoder_ll), decoder);</div>
+<div class="line"><span class="lineno">  223</span>    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(decoder);</div>
+<div class="line"><span class="lineno">  224</span>}</div>
+<div class="ttc" id="alv__ll_8c_html_a1751f3dd6c080b86d65f304d1949753c"><div class="ttname"><a href="lv__ll_8c.html#a1751f3dd6c080b86d65f304d1949753c">_lv_ll_remove</a></div><div class="ttdeci">void _lv_ll_remove(lv_ll_t *ll_p, void *node_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8c_source.html#l00154">lv_ll.c:154</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8c_source.html#l00154">_lv_ll_remove()</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a> y <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>.</p>
+
+</div>
+</div>
+<a id="a5072ea97b363d447756e68f7bdbd0baf" name="a5072ea97b363d447756e68f7bdbd0baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5072ea97b363d447756e68f7bdbd0baf">&#9670;&#160;</a></span>lv_img_decoder_get_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_img_decoder_get_info </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__img__header__t.html">lv_img_header_t</a> *</td>          <td class="paramname"><span class="paramname"><em>header</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get information about an image. Try the created image decoder one by one. Once one is able to get info that info will be used. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>the image source. E.g. file name or variable. </td></tr>
+    <tr><td class="paramname">header</td><td>the image info will be stored here </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: success; LV_RES_INV: wasn't able to get info about the image </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00083">83</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(header, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__header__t.html">lv_img_header_t</a>));</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span>(src == NULL) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a4a47e194ccb92c2d8bc70fa9e3655413">lv_img_src_t</a> src_type = <a class="code hl_function" href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a>(src);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> * img_dsc = src;</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span>(img_dsc-&gt;<a class="code hl_variable" href="structlv__img__dsc__t.html#a09900b90ae9c9888e341616b611df3a0">data</a> == NULL) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> * d;</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_decoder_ll), d) {</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a3a6a2dde950b125b7ce6e0da1f02f0d5">info_cb</a>) {</div>
+<div class="line"><span class="lineno">   99</span>            res = d-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a3a6a2dde950b125b7ce6e0da1f02f0d5">info_cb</a>(d, src, header);</div>
+<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+<div class="ttc" id="alv__ll_8h_html_a95bd9fc4c0a04816cd26d8cca80e4988"><div class="ttname"><a href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a></div><div class="ttdeci">#define _LV_LL_READ(list, i)</div><div class="ttdef"><b>Definition</b> <a href="lv__ll_8h_source.html#l00159">lv_ll.h:159</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__t_html_a3a6a2dde950b125b7ce6e0da1f02f0d5"><div class="ttname"><a href="struct__lv__img__decoder__t.html#a3a6a2dde950b125b7ce6e0da1f02f0d5">_lv_img_decoder_t::info_cb</a></div><div class="ttdeci">lv_img_decoder_info_f_t info_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00087">lv_img_decoder.h:87</a></div></div>
+<div class="ttc" id="astructlv__img__dsc__t_html_a09900b90ae9c9888e341616b611df3a0"><div class="ttname"><a href="structlv__img__dsc__t.html#a09900b90ae9c9888e341616b611df3a0">lv_img_dsc_t::data</a></div><div class="ttdeci">const uint8_t * data</div><div class="ttdef"><b>Definition</b> <a href="lv__img__buf_8h_source.html#l00144">lv_img_buf.h:144</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__img__buf_8h_source.html#l00144">lv_img_dsc_t::data</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00087">_lv_img_decoder_t::info_cb</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__draw__img_8c_source.html#l00195">lv_img_src_get_type()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00035">LV_IMG_SRC_VARIABLE</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a> y <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__canvas_8c_source.html#l00596">lv_canvas_draw_img()</a> y <a class="el" href="lv__img_8c_source.html#l00070">lv_img_set_src()</a>.</p>
+
+</div>
+</div>
+<a id="a961b6c69714872e8a7ca552c3d4b2e6d" name="a961b6c69714872e8a7ca552c3d4b2e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a961b6c69714872e8a7ca552c3d4b2e6d">&#9670;&#160;</a></span>lv_img_decoder_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_img_decoder_open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>frame_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open an image. Try the created image decoders one by one. Once one is able to open the image that decoder is saved in <span class="tt">dsc</span> </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsc</td><td>describes a decoding session. Simply a pointer to an <span class="tt"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a></span> variable. </td></tr>
+    <tr><td class="paramname">src</td><td>the image source. Can be 1) File name: E.g. "S:folder/img1.png" (The drivers needs to registered via <span class="tt"><a class="el" href="lv__fs_8c.html#a96578938ba2bc5d8d95cb467148745de">lv_fs_drv_register()</a>)</span>) 2) Variable: Pointer to an <span class="tt"><a class="el" href="structlv__img__dsc__t.html">lv_img_dsc_t</a></span> variable 3) Symbol: E.g. <span class="tt"><a class="el" href="lv__symbol__def_8h.html#abbfa485495b9c32d2c7e7294acb06827">LV_SYMBOL_OK</a></span> </td></tr>
+    <tr><td class="paramname">color</td><td>The color of the image with <span class="tt">LV_IMG_CF_ALPHA_...</span> </td></tr>
+    <tr><td class="paramname">frame_id</td><td>the index of the frame. Used only with animated images, set 0 for normal images </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: opened the image. <span class="tt">dsc-&gt;img_data</span> and <span class="tt">dsc-&gt;header</span> are set. LV_RES_INV: none of the registered image decoders were able to open the image. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00107">107</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(dsc, <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a>));</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span>(src == NULL) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a4a47e194ccb92c2d8bc70fa9e3655413">lv_img_src_t</a> src_type = <a class="code hl_function" href="lv__draw__img_8c.html#ad1749598689c14b0b65ed7a81bc48148">lv_img_src_get_type</a>(src);</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span>(src_type == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03afa1cf250086dd605e6d62d0ec792d6f5">LV_IMG_SRC_VARIABLE</a>) {</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structlv__img__dsc__t.html">lv_img_dsc_t</a> * img_dsc = src;</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span>(img_dsc-&gt;<a class="code hl_variable" href="structlv__img__dsc__t.html#a09900b90ae9c9888e341616b611df3a0">data</a> == NULL) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aaff7ba2bbb1d01908d5f695ec16815fe">color</a>    = color;</div>
+<div class="line"><span class="lineno">  119</span>    dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> = src_type;</div>
+<div class="line"><span class="lineno">  120</span>    dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#ad3bea2b9ea283e5c199ebb9d7e8e689d">frame_id</a> = frame_id;</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>) {</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordtype">size_t</span> fnlen = strlen(src);</div>
+<div class="line"><span class="lineno">  124</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a> = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(fnlen + 1);</div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>);</div>
+<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a> == NULL) {</div>
+<div class="line"><span class="lineno">  127</span>            <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_img_decoder_open: out of memory&quot;</span>);</div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="line"><span class="lineno">  130</span>        strcpy((<span class="keywordtype">char</span> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>, src);</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  133</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a> = src;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_typedef" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> * decoder;</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_define" href="lv__ll_8h.html#a95bd9fc4c0a04816cd26d8cca80e4988">_LV_LL_READ</a>(&amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_decoder_ll), decoder) {</div>
+<div class="line"><span class="lineno">  140</span>        <span class="comment">/*Info and Open callbacks are required*/</span></div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">if</span>(decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a3a6a2dde950b125b7ce6e0da1f02f0d5">info_cb</a> == NULL || decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a64f4eaa6c5e029d2a343f8fdd22aa473">open_cb</a> == NULL) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>        res = decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a3a6a2dde950b125b7ce6e0da1f02f0d5">info_cb</a>(decoder, src, &amp;dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>);</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a> = decoder;</div>
+<div class="line"><span class="lineno">  147</span>        res = decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a64f4eaa6c5e029d2a343f8fdd22aa473">open_cb</a>(decoder, dsc);</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>        <span class="comment">/*Opened successfully. It is a good decoder for this image source*/</span></div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>) <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>        <span class="comment">/*Prepare for the next loop*/</span></div>
+<div class="line"><span class="lineno">  153</span>        <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(&amp;dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d">header</a>, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__img__header__t.html">lv_img_header_t</a>));</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af00965ee4c469ae804b3a9bdc4b616a0">error_msg</a> = NULL;</div>
+<div class="line"><span class="lineno">  156</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a332cfed3d26d92ac0c9abd44ebc750b2">img_data</a>  = NULL;</div>
+<div class="line"><span class="lineno">  157</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#af9d13759ecd7f4c6ad65aa73d553c93c">user_data</a> = NULL;</div>
+<div class="line"><span class="lineno">  158</span>        dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">time_to_open</a> = 0;</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a055289280caf9fc9fa2fee2736c90b28">src_type</a> == <a class="code hl_enumvalue" href="lv__img__decoder_8h.html#a09df27d8b6cf5ffdba3d54c74644dc03a18b40180a9208d2b3e8d9bbc6968d3ce">LV_IMG_SRC_FILE</a>)</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">  165</span>}</div>
+<div class="ttc" id="alv__img__decoder_8h_html_ae75d9311c4b625f44a4a7cdf3feeae8d"><div class="ttname"><a href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a></div><div class="ttdeci">struct _lv_img_decoder_dsc_t lv_img_decoder_dsc_t</div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_aaff7ba2bbb1d01908d5f695ec16815fe"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#aaff7ba2bbb1d01908d5f695ec16815fe">_lv_img_decoder_dsc_t::color</a></div><div class="ttdeci">lv_color_t color</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00107">lv_img_decoder.h:107</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_ad3bea2b9ea283e5c199ebb9d7e8e689d"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#ad3bea2b9ea283e5c199ebb9d7e8e689d">_lv_img_decoder_dsc_t::frame_id</a></div><div class="ttdeci">int32_t frame_id</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00110">lv_img_decoder.h:110</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_af00965ee4c469ae804b3a9bdc4b616a0"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#af00965ee4c469ae804b3a9bdc4b616a0">_lv_img_decoder_dsc_t::error_msg</a></div><div class="ttdeci">const char * error_msg</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00128">lv_img_decoder.h:128</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_afd95f692ebff354b62bc01f36fda1ae8"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">_lv_img_decoder_dsc_t::time_to_open</a></div><div class="ttdeci">uint32_t time_to_open</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00124">lv_img_decoder.h:124</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__t_html_a64f4eaa6c5e029d2a343f8fdd22aa473"><div class="ttname"><a href="struct__lv__img__decoder__t.html#a64f4eaa6c5e029d2a343f8fdd22aa473">_lv_img_decoder_t::open_cb</a></div><div class="ttdeci">lv_img_decoder_open_f_t open_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00088">lv_img_decoder.h:88</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__ll_8h_source.html#l00159">_LV_LL_READ</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00107">_lv_img_decoder_dsc_t::color</a>, <a class="el" href="lv__img__buf_8h_source.html#l00144">lv_img_dsc_t::data</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00101">_lv_img_decoder_dsc_t::decoder</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00128">_lv_img_decoder_dsc_t::error_msg</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00110">_lv_img_decoder_dsc_t::frame_id</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00116">_lv_img_decoder_dsc_t::header</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00120">_lv_img_decoder_dsc_t::img_data</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00087">_lv_img_decoder_t::info_cb</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00036">LV_IMG_SRC_FILE</a>, <a class="el" href="lv__draw__img_8c_source.html#l00195">lv_img_src_get_type()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00035">LV_IMG_SRC_VARIABLE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00088">_lv_img_decoder_t::open_cb</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00104">_lv_img_decoder_dsc_t::src</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00113">_lv_img_decoder_dsc_t::src_type</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00124">_lv_img_decoder_dsc_t::time_to_open</a> y <a class="el" href="lv__img__decoder_8h_source.html#l00131">_lv_img_decoder_dsc_t::user_data</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__cache_8c_source.html#l00063">_lv_img_cache_open()</a>.</p>
+
+</div>
+</div>
+<a id="aa1d1b19e85278c9d5a0f02d0bbdeacc2" name="aa1d1b19e85278c9d5a0f02d0bbdeacc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d1b19e85278c9d5a0f02d0bbdeacc2">&#9670;&#160;</a></span>lv_img_decoder_read_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_img_decoder_read_line </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read a line from an opened image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsc</td><td>pointer to <span class="tt"><a class="el" href="lv__img__decoder_8h.html#ae75d9311c4b625f44a4a7cdf3feeae8d">lv_img_decoder_dsc_t</a></span> used in <span class="tt"><a class="el" href="#a961b6c69714872e8a7ca552c3d4b2e6d">lv_img_decoder_open</a></span> </td></tr>
+    <tr><td class="paramname">x</td><td>start X coordinate (from left) </td></tr>
+    <tr><td class="paramname">y</td><td>start Y coordinate (from top) </td></tr>
+    <tr><td class="paramname">len</td><td>number of pixels to read </td></tr>
+    <tr><td class="paramname">buf</td><td>store the data here </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>LV_RES_OK: success; LV_RES_INV: an error occurred </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00176">176</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>{</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#aa52308f799de0bfb76e389a4fb3a4d8b">read_line_cb</a>) res = dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#aa52308f799de0bfb76e389a4fb3a4d8b">read_line_cb</a>(dsc-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#a9fcb7bc1374b7c411c8d62c281ac116a">decoder</a>, dsc, x, y, len, buf);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="astruct__lv__img__decoder__t_html_aa52308f799de0bfb76e389a4fb3a4d8b"><div class="ttname"><a href="struct__lv__img__decoder__t.html#aa52308f799de0bfb76e389a4fb3a4d8b">_lv_img_decoder_t::read_line_cb</a></div><div class="ttdeci">lv_img_decoder_read_line_f_t read_line_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00089">lv_img_decoder.h:89</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8h_source.html#l00101">_lv_img_decoder_dsc_t::decoder</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a> y <a class="el" href="lv__img__decoder_8h_source.html#l00089">_lv_img_decoder_t::read_line_cb</a>.</p>
+
+</div>
+</div>
+<a id="a3be3e7a764fceea05389aeb6d0c30aa6" name="a3be3e7a764fceea05389aeb6d0c30aa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be3e7a764fceea05389aeb6d0c30aa6">&#9670;&#160;</a></span>lv_img_decoder_set_close_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_set_close_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#aaa98cffe806ed879540b08eebb6f21d5">lv_img_decoder_close_f_t</a></td>          <td class="paramname"><span class="paramname"><em>close_cb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a callback to close a decoding session. E.g. close files and free other resources. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to an image decoder </td></tr>
+    <tr><td class="paramname">close_cb</td><td>a function to close a decoding session </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00261">261</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>{</div>
+<div class="line"><span class="lineno">  263</span>    decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a1c149628e9f9f82bdd04cbee54c8f8ec">close_cb</a> = close_cb;</div>
+<div class="line"><span class="lineno">  264</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8h_source.html#l00090">_lv_img_decoder_t::close_cb</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="a7ad354bc2edc1a65ed93e1e34ca7da1d" name="a7ad354bc2edc1a65ed93e1e34ca7da1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad354bc2edc1a65ed93e1e34ca7da1d">&#9670;&#160;</a></span>lv_img_decoder_set_info_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_set_info_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ad8b0c4b2e267987a97daf24ba46a0943">lv_img_decoder_info_f_t</a></td>          <td class="paramname"><span class="paramname"><em>info_cb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a callback to get information about the image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to an image decoder </td></tr>
+    <tr><td class="paramname">info_cb</td><td>a function to collect info about an image (fill an <span class="tt"><a class="el" href="structlv__img__header__t.html">lv_img_header_t</a></span> struct) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00231">231</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>{</div>
+<div class="line"><span class="lineno">  233</span>    decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a3a6a2dde950b125b7ce6e0da1f02f0d5">info_cb</a> = info_cb;</div>
+<div class="line"><span class="lineno">  234</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8h_source.html#l00087">_lv_img_decoder_t::info_cb</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="a84de5e7107f70800033055b61c2fa454" name="a84de5e7107f70800033055b61c2fa454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84de5e7107f70800033055b61c2fa454">&#9670;&#160;</a></span>lv_img_decoder_set_open_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_set_open_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#acd6b23c1c1278ba67d5ff69d3198116b">lv_img_decoder_open_f_t</a></td>          <td class="paramname"><span class="paramname"><em>open_cb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a callback to open an image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to an image decoder </td></tr>
+    <tr><td class="paramname">open_cb</td><td>a function to open an image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00241">241</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>{</div>
+<div class="line"><span class="lineno">  243</span>    decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#a64f4eaa6c5e029d2a343f8fdd22aa473">open_cb</a> = open_cb;</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8h_source.html#l00088">_lv_img_decoder_t::open_cb</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+<a id="a917d7d1c9c59a214edcf844f378c4a33" name="a917d7d1c9c59a214edcf844f378c4a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917d7d1c9c59a214edcf844f378c4a33">&#9670;&#160;</a></span>lv_img_decoder_set_read_line_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_decoder_set_read_line_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#a361c1e354766e077601df4245892657f">lv_img_decoder_t</a> *</td>          <td class="paramname"><span class="paramname"><em>decoder</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__img__decoder_8h.html#ad73fa4613e87cef8279fb4d2844c5932">lv_img_decoder_read_line_f_t</a></td>          <td class="paramname"><span class="paramname"><em>read_line_cb</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a callback to a decoded line of an image </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">decoder</td><td>pointer to an image decoder </td></tr>
+    <tr><td class="paramname">read_line_cb</td><td>a function to read a line of an image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__decoder_8c_source.html#l00251">251</a> del archivo <a class="el" href="lv__img__decoder_8c_source.html">lv_img_decoder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>{</div>
+<div class="line"><span class="lineno">  253</span>    decoder-&gt;<a class="code hl_variable" href="struct__lv__img__decoder__t.html#aa52308f799de0bfb76e389a4fb3a4d8b">read_line_cb</a> = read_line_cb;</div>
+<div class="line"><span class="lineno">  254</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__decoder_8h_source.html#l00089">_lv_img_decoder_t::read_line_cb</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__decoder_8c_source.html#l00056">_lv_img_decoder_init()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4578e5786fd81055f79ae47b0a2845be.html">draw</a></li><li class="navelem"><a href="lv__img__decoder_8c.html">lv_img_decoder.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/misc/lv_txt.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__txt_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_txt.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="lv__txt_8h_source.html">lv_txt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__txt__ap_8h_source.html">lv_txt_ap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">lv_log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__mem_8h_source.html">lv_mem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">lv_assert.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__txt_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ad1567732b2c6f4d83b9ae9cef608cd6a" id="r_ad1567732b2c6f4d83b9ae9cef608cd6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1567732b2c6f4d83b9ae9cef608cd6a">LV_IS_2BYTES_UTF8_CODE</a>(value)</td></tr>
+<tr class="memitem:a7f33ee8f30f5b98aff5ee8bc10f8b9e5" id="r_a7f33ee8f30f5b98aff5ee8bc10f8b9e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f33ee8f30f5b98aff5ee8bc10f8b9e5">LV_IS_3BYTES_UTF8_CODE</a>(value)</td></tr>
+<tr class="memitem:ac9dd62638896ed7982613307fdf5925a" id="r_ac9dd62638896ed7982613307fdf5925a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9dd62638896ed7982613307fdf5925a">LV_IS_4BYTES_UTF8_CODE</a>(value)</td></tr>
+<tr class="memitem:a89167f9a4b2cad9c7de181d12ae57dfe" id="r_a89167f9a4b2cad9c7de181d12ae57dfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89167f9a4b2cad9c7de181d12ae57dfe">LV_IS_ASCII</a>(value)</td></tr>
+<tr class="memitem:a94345fa770da58db11719acbb87d87d9" id="r_a94345fa770da58db11719acbb87d87d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94345fa770da58db11719acbb87d87d9">LV_IS_INVALID_UTF8_CODE</a>(value)</td></tr>
+<tr class="memitem:ac490fc3d5f5dddb984086a42fd21fe01" id="r_ac490fc3d5f5dddb984086a42fd21fe01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac490fc3d5f5dddb984086a42fd21fe01">NO_BREAK_FOUND</a>&#160;&#160;&#160;UINT32_MAX</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ae7c0e12204e558910a12bc4ea1cffbd5" id="r_ae7c0e12204e558910a12bc4ea1cffbd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7c0e12204e558910a12bc4ea1cffbd5">_lv_txt_cut</a> (char *txt, uint32_t pos, uint32_t len)</td></tr>
+<tr class="memitem:ad8d4e3448b4bebcbad1b45f49773fd0b" id="r_ad8d4e3448b4bebcbad1b45f49773fd0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8d4e3448b4bebcbad1b45f49773fd0b">_lv_txt_encoded_letter_next_2</a> (const char *txt, uint32_t *letter, uint32_t *letter_next, uint32_t *ofs)</td></tr>
+<tr class="memitem:a73979a956b3073351eaf1963bd8b2ff0" id="r_a73979a956b3073351eaf1963bd8b2ff0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73979a956b3073351eaf1963bd8b2ff0">_lv_txt_get_next_line</a> (const char *txt, const <a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *font, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> letter_space, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> max_width, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> *used_width, <a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a> flag)</td></tr>
+<tr class="memitem:a888219d8003e6dc66dcfe870fd8a1a91" id="r_a888219d8003e6dc66dcfe870fd8a1a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a888219d8003e6dc66dcfe870fd8a1a91">_lv_txt_ins</a> (char *txt_buf, uint32_t pos, const char *ins_txt)</td></tr>
+<tr class="memitem:a41c22de91bcc0868b121ccac65291a29" id="r_a41c22de91bcc0868b121ccac65291a29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41c22de91bcc0868b121ccac65291a29">_lv_txt_is_cmd</a> (<a class="el" href="lv__txt_8h.html#a639baeee89a6dc955b3543bdef32f0d7">lv_text_cmd_state_t</a> *state, uint32_t c)</td></tr>
+<tr class="memitem:aa75a16b095abc94ec0400ca48bb11431" id="r_aa75a16b095abc94ec0400ca48bb11431"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa75a16b095abc94ec0400ca48bb11431">_lv_txt_set_text_vfmt</a> (const char *fmt, va_list ap)</td></tr>
+<tr class="memitem:a8831104abda36f751dd1d2415170205f" id="r_a8831104abda36f751dd1d2415170205f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8831104abda36f751dd1d2415170205f">lv_txt_get_size</a> (<a class="el" href="structlv__point__t.html">lv_point_t</a> *size_res, const char *text, const <a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *font, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> letter_space, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> line_space, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> max_width, <a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a> flag)</td></tr>
+<tr class="memitem:a2156e7298d6384159c628fdc84a61df3" id="r_a2156e7298d6384159c628fdc84a61df3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2156e7298d6384159c628fdc84a61df3">lv_txt_get_width</a> (const char *txt, uint32_t length, const <a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *font, <a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> letter_space, <a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a> flag)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae7cc7bff4237db24485aae5d85780469" id="r_ae7cc7bff4237db24485aae5d85780469"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7cc7bff4237db24485aae5d85780469">_lv_txt_encoded_conv_wc</a> )(uint32_t) = lv_txt_utf8_conv_wc</td></tr>
+<tr class="memitem:a24576f7e8b53260b913ffa07cf8e829e" id="r_a24576f7e8b53260b913ffa07cf8e829e"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24576f7e8b53260b913ffa07cf8e829e">_lv_txt_encoded_get_byte_id</a> )(const char *, uint32_t) = lv_txt_utf8_get_byte_id</td></tr>
+<tr class="memitem:aa541782cfc14c074a02263e7f58e6844" id="r_aa541782cfc14c074a02263e7f58e6844"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa541782cfc14c074a02263e7f58e6844">_lv_txt_encoded_get_char_id</a> )(const char *, uint32_t) = lv_txt_utf8_get_char_id</td></tr>
+<tr class="memitem:a3fe9cd02f4ec705ef849ca1842bd4c09" id="r_a3fe9cd02f4ec705ef849ca1842bd4c09"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fe9cd02f4ec705ef849ca1842bd4c09">_lv_txt_encoded_next</a> )(const char *, uint32_t *) = lv_txt_utf8_next</td></tr>
+<tr class="memitem:a90051f66330cb40365a4e1943fd7fd07" id="r_a90051f66330cb40365a4e1943fd7fd07"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90051f66330cb40365a4e1943fd7fd07">_lv_txt_encoded_prev</a> )(const char *, uint32_t *) = lv_txt_utf8_prev</td></tr>
+<tr class="memitem:a0b6eb50707360fcc64668fdc3a706adc" id="r_a0b6eb50707360fcc64668fdc3a706adc"><td class="memItemLeft" align="right" valign="top">uint8_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b6eb50707360fcc64668fdc3a706adc">_lv_txt_encoded_size</a> )(const char *) = lv_txt_utf8_size</td></tr>
+<tr class="memitem:a3ef67d93ea8beef56697746d704a1645" id="r_a3ef67d93ea8beef56697746d704a1645"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ef67d93ea8beef56697746d704a1645">_lv_txt_get_encoded_length</a> )(const char *) = lv_txt_utf8_get_length</td></tr>
+<tr class="memitem:ae3326e8947223d3670fa583ccd4588af" id="r_ae3326e8947223d3670fa583ccd4588af"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3326e8947223d3670fa583ccd4588af">_lv_txt_unicode_to_encoded</a> )(uint32_t) = lv_txt_unicode_to_utf8</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="ad1567732b2c6f4d83b9ae9cef608cd6a" name="ad1567732b2c6f4d83b9ae9cef608cd6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1567732b2c6f4d83b9ae9cef608cd6a">&#9670;&#160;</a></span>LV_IS_2BYTES_UTF8_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IS_2BYTES_UTF8_CODE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">((value &amp; 0xE0U) == 0xC0U)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00082">82</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="a7f33ee8f30f5b98aff5ee8bc10f8b9e5" name="a7f33ee8f30f5b98aff5ee8bc10f8b9e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f33ee8f30f5b98aff5ee8bc10f8b9e5">&#9670;&#160;</a></span>LV_IS_3BYTES_UTF8_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IS_3BYTES_UTF8_CODE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">((value &amp; 0xF0U) == 0xE0U)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00083">83</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="ac9dd62638896ed7982613307fdf5925a" name="ac9dd62638896ed7982613307fdf5925a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9dd62638896ed7982613307fdf5925a">&#9670;&#160;</a></span>LV_IS_4BYTES_UTF8_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IS_4BYTES_UTF8_CODE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">((value &amp; 0xF8U) == 0xF0U)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00084">84</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="a89167f9a4b2cad9c7de181d12ae57dfe" name="a89167f9a4b2cad9c7de181d12ae57dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89167f9a4b2cad9c7de181d12ae57dfe">&#9670;&#160;</a></span>LV_IS_ASCII</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IS_ASCII</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">((value &amp; 0x80U) == 0x00U)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00081">81</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="a94345fa770da58db11719acbb87d87d9" name="a94345fa770da58db11719acbb87d87d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94345fa770da58db11719acbb87d87d9">&#9670;&#160;</a></span>LV_IS_INVALID_UTF8_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IS_INVALID_UTF8_CODE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor:</b><div class="fragment"><div class="line">((value &amp; 0xC0U) != 0x80U)</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00085">85</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="ac490fc3d5f5dddb984086a42fd21fe01" name="ac490fc3d5f5dddb984086a42fd21fe01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac490fc3d5f5dddb984086a42fd21fe01">&#9670;&#160;</a></span>NO_BREAK_FOUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_BREAK_FOUND&#160;&#160;&#160;UINT32_MAX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00020">20</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ae7c0e12204e558910a12bc4ea1cffbd5" name="ae7c0e12204e558910a12bc4ea1cffbd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c0e12204e558910a12bc4ea1cffbd5">&#9670;&#160;</a></span>_lv_txt_cut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_txt_cut </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>txt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Delete a part of a string </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>string to modify, must be '\0' terminated and should point to a heap or stack frame, not read-only memory. </td></tr>
+    <tr><td class="paramname">pos</td><td>position where to start the deleting (0: before the first char, 1: after the first char etc.) </td></tr>
+    <tr><td class="paramname">len</td><td>number of characters to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00434">434</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  435</span>{</div>
+<div class="line"><span class="lineno">  436</span>    <span class="keywordflow">if</span>(txt == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  437</span> </div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordtype">size_t</span> old_len = strlen(txt);</div>
+<div class="line"><span class="lineno">  439</span> </div>
+<div class="line"><span class="lineno">  440</span>    pos = <a class="code hl_variable" href="#a24576f7e8b53260b913ffa07cf8e829e">_lv_txt_encoded_get_byte_id</a>(txt, pos); <span class="comment">/*Convert to byte index instead of letter index*/</span></div>
+<div class="line"><span class="lineno">  441</span>    len = <a class="code hl_variable" href="#a24576f7e8b53260b913ffa07cf8e829e">_lv_txt_encoded_get_byte_id</a>(&amp;txt[pos], len);</div>
+<div class="line"><span class="lineno">  442</span> </div>
+<div class="line"><span class="lineno">  443</span>    <span class="comment">/*Copy the second part into the end to make place to text to insert*/</span></div>
+<div class="line"><span class="lineno">  444</span>    uint32_t i;</div>
+<div class="line"><span class="lineno">  445</span>    <span class="keywordflow">for</span>(i = pos; i &lt;= old_len - len; i++) {</div>
+<div class="line"><span class="lineno">  446</span>        txt[i] = txt[i + len];</div>
+<div class="line"><span class="lineno">  447</span>    }</div>
+<div class="line"><span class="lineno">  448</span>}</div>
+<div class="ttc" id="alv__txt_8c_html_a24576f7e8b53260b913ffa07cf8e829e"><div class="ttname"><a href="#a24576f7e8b53260b913ffa07cf8e829e">_lv_txt_encoded_get_byte_id</a></div><div class="ttdeci">uint32_t(* _lv_txt_encoded_get_byte_id)(const char *, uint32_t)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00062">lv_txt.c:62</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8c_source.html#l00062">_lv_txt_encoded_get_byte_id</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__label_8c_source.html#l00666">lv_label_cut_text()</a> y <a class="el" href="lv__textarea_8c_source.html#l00211">lv_textarea_del_char()</a>.</p>
+
+</div>
+</div>
+<a id="ad8d4e3448b4bebcbad1b45f49773fd0b" name="ad8d4e3448b4bebcbad1b45f49773fd0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d4e3448b4bebcbad1b45f49773fd0b">&#9670;&#160;</a></span>_lv_txt_encoded_letter_next_2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_txt_encoded_letter_next_2 </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>txt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>letter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>letter_next</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>ofs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decode two encoded character from a string. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>pointer to '\0' terminated string </td></tr>
+    <tr><td class="paramname">letter</td><td>the first decoded Unicode character or 0 on invalid data code </td></tr>
+    <tr><td class="paramname">letter_next</td><td>the second decoded Unicode character or 0 on invalid data code </td></tr>
+    <tr><td class="paramname">ofs</td><td>start index in 'txt' where to start. After the call it will point to the next encoded char in 'txt'. NULL to use txt[0] as index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00493">493</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  494</span>{</div>
+<div class="line"><span class="lineno">  495</span>    *letter = <a class="code hl_variable" href="#a3fe9cd02f4ec705ef849ca1842bd4c09">_lv_txt_encoded_next</a>(txt, ofs);</div>
+<div class="line"><span class="lineno">  496</span>    *letter_next = *letter != <span class="charliteral">&#39;\0&#39;</span> ? <a class="code hl_variable" href="#a3fe9cd02f4ec705ef849ca1842bd4c09">_lv_txt_encoded_next</a>(&amp;txt[*ofs], NULL) : 0;</div>
+<div class="line"><span class="lineno">  497</span>}</div>
+<div class="ttc" id="alv__txt_8c_html_a3fe9cd02f4ec705ef849ca1842bd4c09"><div class="ttname"><a href="#a3fe9cd02f4ec705ef849ca1842bd4c09">_lv_txt_encoded_next</a></div><div class="ttdeci">uint32_t(* _lv_txt_encoded_next)(const char *, uint32_t *)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00060">lv_txt.c:60</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8c_source.html#l00060">_lv_txt_encoded_next</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__label_8c_source.html#l00077">lv_draw_label()</a>, <a class="el" href="lv__label_8c_source.html#l00400">lv_label_get_letter_on()</a>, <a class="el" href="lv__label_8c_source.html#l00524">lv_label_is_char_under_pos()</a> y <a class="el" href="lv__txt_8c_source.html#l00343">lv_txt_get_width()</a>.</p>
+
+</div>
+</div>
+<a id="a73979a956b3073351eaf1963bd8b2ff0" name="a73979a956b3073351eaf1963bd8b2ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73979a956b3073351eaf1963bd8b2ff0">&#9670;&#160;</a></span>_lv_txt_get_next_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t _lv_txt_get_next_line </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>txt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>letter_space</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>max_width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> *</td>          <td class="paramname"><span class="paramname"><em>used_width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the next line of text. Check line length and break chars too. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>a '\0' terminated string </td></tr>
+    <tr><td class="paramname">font</td><td>pointer to a font </td></tr>
+    <tr><td class="paramname">letter_space</td><td>letter space </td></tr>
+    <tr><td class="paramname">max_width</td><td>max width of the text (break the lines to fit this size). Set COORD_MAX to avoid line breaks </td></tr>
+    <tr><td class="paramname">used_width</td><td>When used_width != NULL, save the width of this line if flag == LV_TEXT_FLAG_NONE, otherwise save -1. </td></tr>
+    <tr><td class="paramname">flags</td><td>settings for the text from 'txt_flag_type' enum </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the index of the first char of the new line (in byte index not letter index. With UTF-8 they are different) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00279">279</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>{</div>
+<div class="line"><span class="lineno">  283</span>    <span class="keywordflow">if</span>(used_width) *used_width = 0;</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">if</span>(txt == NULL) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">if</span>(txt[0] == <span class="charliteral">&#39;\0&#39;</span>) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  287</span>    <span class="keywordflow">if</span>(font == NULL) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> line_w = 0;</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>    <span class="comment">/*If max_width doesn&#39;t mater simply find the new line character</span></div>
+<div class="line"><span class="lineno">  292</span><span class="comment">     *without thinking about word wrapping*/</span></div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">if</span>((flag &amp; <a class="code hl_enumvalue" href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa520f425552fd153f0194b46d68bbd4d8">LV_TEXT_FLAG_EXPAND</a>) || (flag &amp; <a class="code hl_enumvalue" href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa723ddad1f65d5013b204ae3484375133">LV_TEXT_FLAG_FIT</a>)) {</div>
+<div class="line"><span class="lineno">  294</span>        uint32_t i;</div>
+<div class="line"><span class="lineno">  295</span>        <span class="keywordflow">for</span>(i = 0; txt[i] != <span class="charliteral">&#39;\n&#39;</span> &amp;&amp; txt[i] != <span class="charliteral">&#39;\r&#39;</span> &amp;&amp; txt[i] != <span class="charliteral">&#39;\0&#39;</span>; i++) {</div>
+<div class="line"><span class="lineno">  296</span>            <span class="comment">/*Just find the new line chars or string ends by incrementing `i`*/</span></div>
+<div class="line"><span class="lineno">  297</span>        }</div>
+<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">if</span>(txt[i] != <span class="charliteral">&#39;\0&#39;</span>) i++;    <span class="comment">/*To go beyond `\n`*/</span></div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordflow">if</span>(used_width) *used_width = -1;</div>
+<div class="line"><span class="lineno">  300</span>        <span class="keywordflow">return</span> i;</div>
+<div class="line"><span class="lineno">  301</span>    }</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span>    <span class="keywordflow">if</span>(flag &amp; <a class="code hl_enumvalue" href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa520f425552fd153f0194b46d68bbd4d8">LV_TEXT_FLAG_EXPAND</a>) max_width = <a class="code hl_define" href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a>;</div>
+<div class="line"><span class="lineno">  304</span>    <a class="code hl_typedef" href="lv__txt_8h.html#a639baeee89a6dc955b3543bdef32f0d7">lv_text_cmd_state_t</a> cmd_state = <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b">LV_TEXT_CMD_STATE_WAIT</a>;</div>
+<div class="line"><span class="lineno">  305</span>    uint32_t i = 0;                                        <span class="comment">/*Iterating index into txt*/</span></div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">while</span>(txt[i] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; max_width &gt; 0) {</div>
+<div class="line"><span class="lineno">  308</span>        uint32_t word_w = 0;</div>
+<div class="line"><span class="lineno">  309</span>        uint32_t advance = lv_txt_get_next_word(&amp;txt[i], font, letter_space, max_width, flag, &amp;word_w, &amp;cmd_state, i == 0);</div>
+<div class="line"><span class="lineno">  310</span>        max_width -= word_w;</div>
+<div class="line"><span class="lineno">  311</span>        line_w += word_w;</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>        <span class="keywordflow">if</span>(advance == 0) {</div>
+<div class="line"><span class="lineno">  314</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  315</span>        }</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>        i += advance;</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordflow">if</span>(txt[0] == <span class="charliteral">&#39;\n&#39;</span> || txt[0] == <span class="charliteral">&#39;\r&#39;</span>) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>        <span class="keywordflow">if</span>(txt[i] == <span class="charliteral">&#39;\n&#39;</span> || txt[i] == <span class="charliteral">&#39;\r&#39;</span>) {</div>
+<div class="line"><span class="lineno">  322</span>            i++;  <span class="comment">/*Include the following newline in the current line*/</span></div>
+<div class="line"><span class="lineno">  323</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  324</span>        }</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>    }</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>    <span class="comment">/*Always step at least one to avoid infinite loops*/</span></div>
+<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">if</span>(i == 0) {</div>
+<div class="line"><span class="lineno">  330</span>        uint32_t letter = <a class="code hl_variable" href="#a3fe9cd02f4ec705ef849ca1842bd4c09">_lv_txt_encoded_next</a>(txt, &amp;i);</div>
+<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">if</span>(used_width != NULL) {</div>
+<div class="line"><span class="lineno">  332</span>            line_w = <a class="code hl_function" href="lv__font_8c.html#aa5d36298f9831f65e9c6dd8dc3dfd60f">lv_font_get_glyph_width</a>(font, letter, <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line"><span class="lineno">  333</span>        }</div>
+<div class="line"><span class="lineno">  334</span>    }</div>
+<div class="line"><span class="lineno">  335</span> </div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span>(used_width != NULL) {</div>
+<div class="line"><span class="lineno">  337</span>        *used_width = line_w;</div>
+<div class="line"><span class="lineno">  338</span>    }</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">return</span> i;</div>
+<div class="line"><span class="lineno">  341</span>}</div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__area_8h_html_afd59cbd057971f697443ef3cdfd44b9d"><div class="ttname"><a href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a></div><div class="ttdeci">#define LV_COORD_MAX</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00283">lv_area.h:283</a></div></div>
+<div class="ttc" id="alv__font_8c_html_aa5d36298f9831f65e9c6dd8dc3dfd60f"><div class="ttname"><a href="lv__font_8c.html#aa5d36298f9831f65e9c6dd8dc3dfd60f">lv_font_get_glyph_width</a></div><div class="ttdeci">uint16_t lv_font_get_glyph_width(const lv_font_t *font, uint32_t letter, uint32_t letter_next)</div><div class="ttdef"><b>Definition</b> <a href="lv__font_8c_source.html#l00136">lv_font.c:136</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a639baeee89a6dc955b3543bdef32f0d7"><div class="ttname"><a href="lv__txt_8h.html#a639baeee89a6dc955b3543bdef32f0d7">lv_text_cmd_state_t</a></div><div class="ttdeci">uint8_t lv_text_cmd_state_t</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00057">lv_txt.h:57</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a65fa39831e92791b14c60c55e7bfe7baa520f425552fd153f0194b46d68bbd4d8"><div class="ttname"><a href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa520f425552fd153f0194b46d68bbd4d8">LV_TEXT_FLAG_EXPAND</a></div><div class="ttdeci">@ LV_TEXT_FLAG_EXPAND</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00045">lv_txt.h:45</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a65fa39831e92791b14c60c55e7bfe7baa723ddad1f65d5013b204ae3484375133"><div class="ttname"><a href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa723ddad1f65d5013b204ae3484375133">LV_TEXT_FLAG_FIT</a></div><div class="ttdeci">@ LV_TEXT_FLAG_FIT</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00046">lv_txt.h:46</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b"><div class="ttname"><a href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b">LV_TEXT_CMD_STATE_WAIT</a></div><div class="ttdeci">@ LV_TEXT_CMD_STATE_WAIT</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00053">lv_txt.h:53</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8c_source.html#l00060">_lv_txt_encoded_next</a>, <a class="el" href="lv__area_8h_source.html#l00283">LV_COORD_MAX</a>, <a class="el" href="lv__font_8c_source.html#l00136">lv_font_get_glyph_width()</a>, <a class="el" href="lv__txt_8h_source.html#l00053">LV_TEXT_CMD_STATE_WAIT</a>, <a class="el" href="lv__txt_8h_source.html#l00045">LV_TEXT_FLAG_EXPAND</a> y <a class="el" href="lv__txt_8h_source.html#l00046">LV_TEXT_FLAG_FIT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__label_8c_source.html#l00077">lv_draw_label()</a>, <a class="el" href="lv__label_8c_source.html#l00400">lv_label_get_letter_on()</a>, <a class="el" href="lv__label_8c_source.html#l00286">lv_label_get_letter_pos()</a>, <a class="el" href="lv__label_8c_source.html#l00524">lv_label_is_char_under_pos()</a> y <a class="el" href="lv__txt_8c_source.html#l00091">lv_txt_get_size()</a>.</p>
+
+</div>
+</div>
+<a id="a888219d8003e6dc66dcfe870fd8a1a91" name="a888219d8003e6dc66dcfe870fd8a1a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a888219d8003e6dc66dcfe870fd8a1a91">&#9670;&#160;</a></span>_lv_txt_ins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_txt_ins </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>txt_buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>ins_txt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insert a string into an other </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt_buf</td><td>the original text (must be big enough for the result text and NULL terminated) </td></tr>
+    <tr><td class="paramname">pos</td><td>position to insert (0: before the original text, 1: after the first char etc.) </td></tr>
+    <tr><td class="paramname">ins_txt</td><td>text to insert, must be '\0' terminated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00413">413</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  414</span>{</div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordflow">if</span>(txt_buf == NULL || ins_txt == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span>    <span class="keywordtype">size_t</span> old_len = strlen(txt_buf);</div>
+<div class="line"><span class="lineno">  418</span>    <span class="keywordtype">size_t</span> ins_len = strlen(ins_txt);</div>
+<div class="line"><span class="lineno">  419</span>    <span class="keywordflow">if</span>(ins_len == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  420</span> </div>
+<div class="line"><span class="lineno">  421</span>    <span class="keywordtype">size_t</span> new_len = ins_len + old_len;</div>
+<div class="line"><span class="lineno">  422</span>    pos              = <a class="code hl_variable" href="#a24576f7e8b53260b913ffa07cf8e829e">_lv_txt_encoded_get_byte_id</a>(txt_buf, pos); <span class="comment">/*Convert to byte index instead of letter index*/</span></div>
+<div class="line"><span class="lineno">  423</span> </div>
+<div class="line"><span class="lineno">  424</span>    <span class="comment">/*Copy the second part into the end to make place to text to insert*/</span></div>
+<div class="line"><span class="lineno">  425</span>    <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><span class="lineno">  426</span>    <span class="keywordflow">for</span>(i = new_len; i &gt;= pos + ins_len; i--) {</div>
+<div class="line"><span class="lineno">  427</span>        txt_buf[i] = txt_buf[i - ins_len];</div>
+<div class="line"><span class="lineno">  428</span>    }</div>
+<div class="line"><span class="lineno">  429</span> </div>
+<div class="line"><span class="lineno">  430</span>    <span class="comment">/*Copy the text into the new space*/</span></div>
+<div class="line"><span class="lineno">  431</span>    lv_memcpy_small(txt_buf + pos, ins_txt, ins_len);</div>
+<div class="line"><span class="lineno">  432</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8c_source.html#l00062">_lv_txt_encoded_get_byte_id</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__dropdown_8c_source.html#l00190">lv_dropdown_add_option()</a>, <a class="el" href="lv__label_8c_source.html#l00638">lv_label_ins_text()</a>, <a class="el" href="lv__textarea_8c_source.html#l00100">lv_textarea_add_char()</a> y <a class="el" href="lv__textarea_8c_source.html#l00161">lv_textarea_add_text()</a>.</p>
+
+</div>
+</div>
+<a id="a41c22de91bcc0868b121ccac65291a29" name="a41c22de91bcc0868b121ccac65291a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c22de91bcc0868b121ccac65291a29">&#9670;&#160;</a></span>_lv_txt_is_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _lv_txt_is_cmd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__txt_8h.html#a639baeee89a6dc955b3543bdef32f0d7">lv_text_cmd_state_t</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check next character in a string and decide if the character is part of the command or not </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>pointer to a txt_cmd_state_t variable which stores the current state of command processing </td></tr>
+    <tr><td class="paramname">c</td><td>the current character </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: the character is part of a command and should not be written, false: the character should be written </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00382">382</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  383</span>{</div>
+<div class="line"><span class="lineno">  384</span>    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  385</span> </div>
+<div class="line"><span class="lineno">  386</span>    <span class="keywordflow">if</span>(c == (uint32_t)<a class="code hl_define" href="lv__conf_8h.html#aba8ec1367cc2659baa285f32979caa31">LV_TXT_COLOR_CMD</a>[0]) {</div>
+<div class="line"><span class="lineno">  387</span>        <span class="keywordflow">if</span>(*state == <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b">LV_TEXT_CMD_STATE_WAIT</a>) { <span class="comment">/*Start char*/</span></div>
+<div class="line"><span class="lineno">  388</span>            *state = <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda7f4be2bb77c23de87f77e962fa29ab8c">LV_TEXT_CMD_STATE_PAR</a>;</div>
+<div class="line"><span class="lineno">  389</span>            ret    = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  390</span>        }</div>
+<div class="line"><span class="lineno">  391</span>        <span class="comment">/*Other start char in parameter is escaped cmd. char*/</span></div>
+<div class="line"><span class="lineno">  392</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(*state == <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda7f4be2bb77c23de87f77e962fa29ab8c">LV_TEXT_CMD_STATE_PAR</a>) {</div>
+<div class="line"><span class="lineno">  393</span>            *state = <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b">LV_TEXT_CMD_STATE_WAIT</a>;</div>
+<div class="line"><span class="lineno">  394</span>        }</div>
+<div class="line"><span class="lineno">  395</span>        <span class="comment">/*Command end*/</span></div>
+<div class="line"><span class="lineno">  396</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(*state == <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffdaf28008d7d78cceaba9308ac5fe353607">LV_TEXT_CMD_STATE_IN</a>) {</div>
+<div class="line"><span class="lineno">  397</span>            *state = <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b">LV_TEXT_CMD_STATE_WAIT</a>;</div>
+<div class="line"><span class="lineno">  398</span>            ret    = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  399</span>        }</div>
+<div class="line"><span class="lineno">  400</span>    }</div>
+<div class="line"><span class="lineno">  401</span> </div>
+<div class="line"><span class="lineno">  402</span>    <span class="comment">/*Skip the color parameter and wait the space after it*/</span></div>
+<div class="line"><span class="lineno">  403</span>    <span class="keywordflow">if</span>(*state == <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda7f4be2bb77c23de87f77e962fa29ab8c">LV_TEXT_CMD_STATE_PAR</a>) {</div>
+<div class="line"><span class="lineno">  404</span>        <span class="keywordflow">if</span>(c == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><span class="lineno">  405</span>            *state = <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffdaf28008d7d78cceaba9308ac5fe353607">LV_TEXT_CMD_STATE_IN</a>; <span class="comment">/*After the parameter the text is in the command*/</span></div>
+<div class="line"><span class="lineno">  406</span>        }</div>
+<div class="line"><span class="lineno">  407</span>        ret = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  408</span>    }</div>
+<div class="line"><span class="lineno">  409</span> </div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  411</span>}</div>
+<div class="ttc" id="alv__conf_8h_html_aba8ec1367cc2659baa285f32979caa31"><div class="ttname"><a href="lv__conf_8h.html#aba8ec1367cc2659baa285f32979caa31">LV_TXT_COLOR_CMD</a></div><div class="ttdeci">#define LV_TXT_COLOR_CMD</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00450">lv_conf.h:450</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_ab9027c352b3ce5378784a346cd601ffda7f4be2bb77c23de87f77e962fa29ab8c"><div class="ttname"><a href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda7f4be2bb77c23de87f77e962fa29ab8c">LV_TEXT_CMD_STATE_PAR</a></div><div class="ttdeci">@ LV_TEXT_CMD_STATE_PAR</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00054">lv_txt.h:54</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_ab9027c352b3ce5378784a346cd601ffdaf28008d7d78cceaba9308ac5fe353607"><div class="ttname"><a href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffdaf28008d7d78cceaba9308ac5fe353607">LV_TEXT_CMD_STATE_IN</a></div><div class="ttdeci">@ LV_TEXT_CMD_STATE_IN</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00055">lv_txt.h:55</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8h_source.html#l00055">LV_TEXT_CMD_STATE_IN</a>, <a class="el" href="lv__txt_8h_source.html#l00054">LV_TEXT_CMD_STATE_PAR</a>, <a class="el" href="lv__txt_8h_source.html#l00053">LV_TEXT_CMD_STATE_WAIT</a> y <a class="el" href="lv__conf_8h_source.html#l00450">LV_TXT_COLOR_CMD</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__label_8c_source.html#l00400">lv_label_get_letter_on()</a>, <a class="el" href="lv__label_8c_source.html#l00524">lv_label_is_char_under_pos()</a> y <a class="el" href="lv__txt_8c_source.html#l00343">lv_txt_get_width()</a>.</p>
+
+</div>
+</div>
+<a id="aa75a16b095abc94ec0400ca48bb11431" name="aa75a16b095abc94ec0400ca48bb11431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa75a16b095abc94ec0400ca48bb11431">&#9670;&#160;</a></span>_lv_txt_set_text_vfmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * _lv_txt_set_text_vfmt </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>ap</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00450">450</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  451</span>{</div>
+<div class="line"><span class="lineno">  452</span>    <span class="comment">/*Allocate space for the new text by using trick from C99 standard section 7.19.6.12*/</span></div>
+<div class="line"><span class="lineno">  453</span>    va_list ap_copy;</div>
+<div class="line"><span class="lineno">  454</span>    va_copy(ap_copy, ap);</div>
+<div class="line"><span class="lineno">  455</span>    uint32_t len = <a class="code hl_function" href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a>(NULL, 0, fmt, ap_copy);</div>
+<div class="line"><span class="lineno">  456</span>    va_end(ap_copy);</div>
+<div class="line"><span class="lineno">  457</span> </div>
+<div class="line"><span class="lineno">  458</span>    <span class="keywordtype">char</span> * text = 0;</div>
+<div class="line"><span class="lineno">  459</span><span class="preprocessor">#if LV_USE_ARABIC_PERSIAN_CHARS</span></div>
+<div class="line"><span class="lineno">  460</span>    <span class="comment">/*Put together the text according to the format string*/</span></div>
+<div class="line"><span class="lineno">  461</span>    <span class="keywordtype">char</span> * raw_txt = <a class="code hl_function" href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a>(len + 1);</div>
+<div class="line"><span class="lineno">  462</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(raw_txt);</div>
+<div class="line"><span class="lineno">  463</span>    <span class="keywordflow">if</span>(raw_txt == NULL) {</div>
+<div class="line"><span class="lineno">  464</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  465</span>    }</div>
+<div class="line"><span class="lineno">  466</span> </div>
+<div class="line"><span class="lineno">  467</span>    <a class="code hl_function" href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a>(raw_txt, len + 1, fmt, ap);</div>
+<div class="line"><span class="lineno">  468</span> </div>
+<div class="line"><span class="lineno">  469</span>    <span class="comment">/*Get the size of the Arabic text and process it*/</span></div>
+<div class="line"><span class="lineno">  470</span>    <span class="keywordtype">size_t</span> len_ap = _lv_txt_ap_calc_bytes_cnt(raw_txt);</div>
+<div class="line"><span class="lineno">  471</span>    text = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(len_ap + 1);</div>
+<div class="line"><span class="lineno">  472</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(text);</div>
+<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">if</span>(text == NULL) {</div>
+<div class="line"><span class="lineno">  474</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  475</span>    }</div>
+<div class="line"><span class="lineno">  476</span>    _lv_txt_ap_proc(raw_txt, text);</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>    <a class="code hl_function" href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a>(raw_txt);</div>
+<div class="line"><span class="lineno">  479</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  480</span>    text = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(len + 1);</div>
+<div class="line"><span class="lineno">  481</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(text);</div>
+<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">if</span>(text == NULL) {</div>
+<div class="line"><span class="lineno">  483</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  484</span>    }</div>
+<div class="line"><span class="lineno">  485</span>    text[len] = 0; <span class="comment">/*Ensure NULL termination*/</span></div>
+<div class="line"><span class="lineno">  486</span> </div>
+<div class="line"><span class="lineno">  487</span>    <a class="code hl_function" href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a>(text, len + 1, fmt, ap);</div>
+<div class="line"><span class="lineno">  488</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  489</span> </div>
+<div class="line"><span class="lineno">  490</span>    <span class="keywordflow">return</span> text;</div>
+<div class="line"><span class="lineno">  491</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a05d38dfa0f4d69de8ff082551c263815"><div class="ttname"><a href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a></div><div class="ttdeci">void * lv_mem_buf_get(uint32_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00276">lv_mem.c:276</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a92be7074012180599b9b1122a639cc86"><div class="ttname"><a href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a></div><div class="ttdeci">void lv_mem_buf_release(void *p)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00332">lv_mem.c:332</a></div></div>
+<div class="ttc" id="alv__printf_8c_html_af55dc6709f1bb7ea99ccfd7bd1f6edf2"><div class="ttname"><a href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a></div><div class="ttdeci">int lv_vsnprintf(char *buffer, size_t count, const char *format, va_list va)</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8c_source.html#l00874">lv_printf.c:874</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00276">lv_mem_buf_get()</a>, <a class="el" href="lv__mem_8c_source.html#l00332">lv_mem_buf_release()</a> y <a class="el" href="lv__printf_8c_source.html#l00874">lv_vsnprintf()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__label_8c_source.html#l00147">lv_label_set_text_fmt()</a>.</p>
+
+</div>
+</div>
+<a id="a8831104abda36f751dd1d2415170205f" name="a8831104abda36f751dd1d2415170205f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8831104abda36f751dd1d2415170205f">&#9670;&#160;</a></span>lv_txt_get_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_txt_get_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__point__t.html">lv_point_t</a> *</td>          <td class="paramname"><span class="paramname"><em>size_res</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>letter_space</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>line_space</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>max_width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get size of a text </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size_res</td><td>pointer to a 'point_t' variable to store the result </td></tr>
+    <tr><td class="paramname">text</td><td>pointer to a text </td></tr>
+    <tr><td class="paramname">font</td><td>pointer to font of the text </td></tr>
+    <tr><td class="paramname">letter_space</td><td>letter space of the text </td></tr>
+    <tr><td class="paramname">line_space</td><td>line space of the text </td></tr>
+    <tr><td class="paramname">flags</td><td>settings for the text from <a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a> </td></tr>
+    <tr><td class="paramname">max_width</td><td>max width of the text (break the lines to fit this size). Set COORD_MAX to avoid line breaks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00091">91</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
+<div class="line"><span class="lineno">   94</span>    size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = 0;</div>
+<div class="line"><span class="lineno">   95</span>    size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = 0;</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span>(text == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span>(font == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span>(flag &amp; <a class="code hl_enumvalue" href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa520f425552fd153f0194b46d68bbd4d8">LV_TEXT_FLAG_EXPAND</a>) max_width = <a class="code hl_define" href="lv__area_8h.html#afd59cbd057971f697443ef3cdfd44b9d">LV_COORD_MAX</a>;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    uint32_t line_start     = 0;</div>
+<div class="line"><span class="lineno">  103</span>    uint32_t new_line_start = 0;</div>
+<div class="line"><span class="lineno">  104</span>    uint16_t letter_height = lv_font_get_line_height(font);</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">/*Calc. the height and longest line*/</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">while</span>(text[line_start] != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><span class="lineno">  108</span>        new_line_start += <a class="code hl_function" href="#a73979a956b3073351eaf1963bd8b2ff0">_lv_txt_get_next_line</a>(&amp;text[line_start], font, letter_space, max_width, NULL, flag);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">if</span>((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> + (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)letter_height + (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)line_space &gt; <a class="code hl_define" href="lv__math_8h.html#a4b7bd6ec4f53cff919614e8f6d668cd0">LV_MAX_OF</a>(<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>)) {</div>
+<div class="line"><span class="lineno">  111</span>            <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_txt_get_size: integer overflow while calculating text height&quot;</span>);</div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  115</span>            size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> += letter_height;</div>
+<div class="line"><span class="lineno">  116</span>            size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> += line_space;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>        <span class="comment">/*Calculate the longest line*/</span></div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> act_line_length = <a class="code hl_function" href="#a2156e7298d6384159c628fdc84a61df3">lv_txt_get_width</a>(&amp;text[line_start], new_line_start - line_start, font, letter_space,</div>
+<div class="line"><span class="lineno">  121</span>                                                      flag);</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>        size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = <a class="code hl_define" href="lv__math_8h.html#a98104674a4e75ac624c0db433a05123d">LV_MAX</a>(act_line_length, size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>);</div>
+<div class="line"><span class="lineno">  124</span>        line_start  = new_line_start;</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="comment">/*Make the text one line taller if the last character is &#39;\n&#39; or &#39;\r&#39;*/</span></div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span>((line_start != 0) &amp;&amp; (text[line_start - 1] == <span class="charliteral">&#39;\n&#39;</span> || text[line_start - 1] == <span class="charliteral">&#39;\r&#39;</span>)) {</div>
+<div class="line"><span class="lineno">  129</span>        size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> += letter_height + line_space;</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment">/*Correction with the last line space or set the height manually if the text is empty*/</span></div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span>(size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> == 0)</div>
+<div class="line"><span class="lineno">  134</span>        size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = letter_height;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  136</span>        size_res-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> -= line_space;</div>
+<div class="line"><span class="lineno">  137</span>}</div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__math_8h_html_a4b7bd6ec4f53cff919614e8f6d668cd0"><div class="ttname"><a href="lv__math_8h.html#a4b7bd6ec4f53cff919614e8f6d668cd0">LV_MAX_OF</a></div><div class="ttdeci">#define LV_MAX_OF(t)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8h_source.html#l00137">lv_math.h:137</a></div></div>
+<div class="ttc" id="alv__math_8h_html_a98104674a4e75ac624c0db433a05123d"><div class="ttname"><a href="lv__math_8h.html#a98104674a4e75ac624c0db433a05123d">LV_MAX</a></div><div class="ttdeci">#define LV_MAX(a, b)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8h_source.html#l00125">lv_math.h:125</a></div></div>
+<div class="ttc" id="alv__txt_8c_html_a2156e7298d6384159c628fdc84a61df3"><div class="ttname"><a href="#a2156e7298d6384159c628fdc84a61df3">lv_txt_get_width</a></div><div class="ttdeci">lv_coord_t lv_txt_get_width(const char *txt, uint32_t length, const lv_font_t *font, lv_coord_t letter_space, lv_text_flag_t flag)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00343">lv_txt.c:343</a></div></div>
+<div class="ttc" id="alv__txt_8c_html_a73979a956b3073351eaf1963bd8b2ff0"><div class="ttname"><a href="#a73979a956b3073351eaf1963bd8b2ff0">_lv_txt_get_next_line</a></div><div class="ttdeci">uint32_t _lv_txt_get_next_line(const char *txt, const lv_font_t *font, lv_coord_t letter_space, lv_coord_t max_width, lv_coord_t *used_width, lv_text_flag_t flag)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00279">lv_txt.c:279</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8c_source.html#l00279">_lv_txt_get_next_line()</a>, <a class="el" href="lv__area_8h_source.html#l00283">LV_COORD_MAX</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__math_8h_source.html#l00125">LV_MAX</a>, <a class="el" href="lv__math_8h_source.html#l00137">LV_MAX_OF</a>, <a class="el" href="lv__txt_8h_source.html#l00045">LV_TEXT_FLAG_EXPAND</a>, <a class="el" href="lv__txt_8c_source.html#l00343">lv_txt_get_width()</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a> y <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__label_8c_source.html#l00077">lv_draw_label()</a> y <a class="el" href="lv__img_8c_source.html#l00070">lv_img_set_src()</a>.</p>
+
+</div>
+</div>
+<a id="a2156e7298d6384159c628fdc84a61df3" name="a2156e7298d6384159c628fdc84a61df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2156e7298d6384159c628fdc84a61df3">&#9670;&#160;</a></span>lv_txt_get_width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> lv_txt_get_width </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>txt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *</td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></td>          <td class="paramname"><span class="paramname"><em>letter_space</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__txt_8h.html#ade9ecc65a03df62987e7422a7a81bf42">lv_text_flag_t</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Give the length of a text with a given font </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>a '\0' terminate string </td></tr>
+    <tr><td class="paramname">length</td><td>length of 'txt' in byte count and not characters (Á is 1 character but 2 bytes in UTF-8) </td></tr>
+    <tr><td class="paramname">font</td><td>pointer to a font </td></tr>
+    <tr><td class="paramname">letter_space</td><td>letter space </td></tr>
+    <tr><td class="paramname">flags</td><td>settings for the text from 'txt_flag_t' enum </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>length of a char_num long text </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00343">343</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  345</span>{</div>
+<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">if</span>(txt == NULL) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">if</span>(font == NULL) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span>(txt[0] == <span class="charliteral">&#39;\0&#39;</span>) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>    uint32_t i                   = 0;</div>
+<div class="line"><span class="lineno">  351</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> width             = 0;</div>
+<div class="line"><span class="lineno">  352</span>    <a class="code hl_typedef" href="lv__txt_8h.html#a639baeee89a6dc955b3543bdef32f0d7">lv_text_cmd_state_t</a> cmd_state = <a class="code hl_enumvalue" href="lv__txt_8h.html#ab9027c352b3ce5378784a346cd601ffda2b5fe999a16906b4131f8eae657a293b">LV_TEXT_CMD_STATE_WAIT</a>;</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>    <span class="keywordflow">if</span>(length != 0) {</div>
+<div class="line"><span class="lineno">  355</span>        <span class="keywordflow">while</span>(i &lt; length) {</div>
+<div class="line"><span class="lineno">  356</span>            uint32_t letter;</div>
+<div class="line"><span class="lineno">  357</span>            uint32_t letter_next;</div>
+<div class="line"><span class="lineno">  358</span>            <a class="code hl_function" href="#ad8d4e3448b4bebcbad1b45f49773fd0b">_lv_txt_encoded_letter_next_2</a>(txt, &amp;letter, &amp;letter_next, &amp;i);</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>            <span class="keywordflow">if</span>((flag &amp; <a class="code hl_enumvalue" href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa0fadace61420644a94d9a952726f0ce4">LV_TEXT_FLAG_RECOLOR</a>) != 0) {</div>
+<div class="line"><span class="lineno">  361</span>                <span class="keywordflow">if</span>(<a class="code hl_function" href="#a41c22de91bcc0868b121ccac65291a29">_lv_txt_is_cmd</a>(&amp;cmd_state, letter) != <span class="keyword">false</span>) {</div>
+<div class="line"><span class="lineno">  362</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  363</span>                }</div>
+<div class="line"><span class="lineno">  364</span>            }</div>
+<div class="line"><span class="lineno">  365</span> </div>
+<div class="line"><span class="lineno">  366</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> char_width = <a class="code hl_function" href="lv__font_8c.html#aa5d36298f9831f65e9c6dd8dc3dfd60f">lv_font_get_glyph_width</a>(font, letter, letter_next);</div>
+<div class="line"><span class="lineno">  367</span>            <span class="keywordflow">if</span>(char_width &gt; 0) {</div>
+<div class="line"><span class="lineno">  368</span>                width += char_width;</div>
+<div class="line"><span class="lineno">  369</span>                width += letter_space;</div>
+<div class="line"><span class="lineno">  370</span>            }</div>
+<div class="line"><span class="lineno">  371</span>        }</div>
+<div class="line"><span class="lineno">  372</span> </div>
+<div class="line"><span class="lineno">  373</span>        <span class="keywordflow">if</span>(width &gt; 0) {</div>
+<div class="line"><span class="lineno">  374</span>            width -= letter_space; <span class="comment">/*Trim the last letter space. Important if the text is center</span></div>
+<div class="line"><span class="lineno">  375</span><span class="comment">                                      aligned*/</span></div>
+<div class="line"><span class="lineno">  376</span>        }</div>
+<div class="line"><span class="lineno">  377</span>    }</div>
+<div class="line"><span class="lineno">  378</span> </div>
+<div class="line"><span class="lineno">  379</span>    <span class="keywordflow">return</span> width;</div>
+<div class="line"><span class="lineno">  380</span>}</div>
+<div class="ttc" id="alv__txt_8c_html_a41c22de91bcc0868b121ccac65291a29"><div class="ttname"><a href="#a41c22de91bcc0868b121ccac65291a29">_lv_txt_is_cmd</a></div><div class="ttdeci">bool _lv_txt_is_cmd(lv_text_cmd_state_t *state, uint32_t c)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00382">lv_txt.c:382</a></div></div>
+<div class="ttc" id="alv__txt_8c_html_ad8d4e3448b4bebcbad1b45f49773fd0b"><div class="ttname"><a href="#ad8d4e3448b4bebcbad1b45f49773fd0b">_lv_txt_encoded_letter_next_2</a></div><div class="ttdeci">void _lv_txt_encoded_letter_next_2(const char *txt, uint32_t *letter, uint32_t *letter_next, uint32_t *ofs)</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8c_source.html#l00493">lv_txt.c:493</a></div></div>
+<div class="ttc" id="alv__txt_8h_html_a65fa39831e92791b14c60c55e7bfe7baa0fadace61420644a94d9a952726f0ce4"><div class="ttname"><a href="lv__txt_8h.html#a65fa39831e92791b14c60c55e7bfe7baa0fadace61420644a94d9a952726f0ce4">LV_TEXT_FLAG_RECOLOR</a></div><div class="ttdeci">@ LV_TEXT_FLAG_RECOLOR</div><div class="ttdef"><b>Definition</b> <a href="lv__txt_8h_source.html#l00044">lv_txt.h:44</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__txt_8c_source.html#l00493">_lv_txt_encoded_letter_next_2()</a>, <a class="el" href="lv__txt_8c_source.html#l00382">_lv_txt_is_cmd()</a>, <a class="el" href="lv__font_8c_source.html#l00136">lv_font_get_glyph_width()</a>, <a class="el" href="lv__txt_8h_source.html#l00053">LV_TEXT_CMD_STATE_WAIT</a> y <a class="el" href="lv__txt_8h_source.html#l00044">LV_TEXT_FLAG_RECOLOR</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__label_8c_source.html#l00077">lv_draw_label()</a>, <a class="el" href="lv__label_8c_source.html#l00400">lv_label_get_letter_on()</a>, <a class="el" href="lv__label_8c_source.html#l00286">lv_label_get_letter_pos()</a>, <a class="el" href="lv__label_8c_source.html#l00524">lv_label_is_char_under_pos()</a> y <a class="el" href="lv__txt_8c_source.html#l00091">lv_txt_get_size()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ae7cc7bff4237db24485aae5d85780469" name="ae7cc7bff4237db24485aae5d85780469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7cc7bff4237db24485aae5d85780469">&#9670;&#160;</a></span>_lv_txt_encoded_conv_wc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_encoded_conv_wc) (uint32_t) </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td> = lv_txt_utf8_conv_wc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a wide character, e.g. 'Á' little endian to be compatible with the encoded format. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>a wide character </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><span class="tt">c</span> in the encoded format </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00059">59</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="a24576f7e8b53260b913ffa07cf8e829e" name="a24576f7e8b53260b913ffa07cf8e829e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24576f7e8b53260b913ffa07cf8e829e">&#9670;&#160;</a></span>_lv_txt_encoded_get_byte_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_encoded_get_byte_id) (const char *, uint32_t) </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) = lv_txt_utf8_get_byte_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a letter index (in the encoded text) to byte index. E.g. in UTF-8 "AÁRT" index of 'R' is 2 but start at byte 3 because 'Á' is 2 bytes long </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>a '\0' terminated UTF-8 string </td></tr>
+    <tr><td class="paramname">enc_id</td><td>letter index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>byte index of the 'enc_id'th letter </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00062">62</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__txt_8c_source.html#l00434">_lv_txt_cut()</a>, <a class="el" href="lv__txt_8c_source.html#l00413">_lv_txt_ins()</a> y <a class="el" href="lv__label_8c_source.html#l00286">lv_label_get_letter_pos()</a>.</p>
+
+</div>
+</div>
+<a id="aa541782cfc14c074a02263e7f58e6844" name="aa541782cfc14c074a02263e7f58e6844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa541782cfc14c074a02263e7f58e6844">&#9670;&#160;</a></span>_lv_txt_encoded_get_char_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_encoded_get_char_id) (const char *, uint32_t) </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) = lv_txt_utf8_get_char_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a byte index (in an encoded text) to character index. E.g. in UTF-8 "AÁRT" index of 'R' is 2 but start at byte 3 because 'Á' is 2 bytes long </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>a '\0' terminated UTF-8 string </td></tr>
+    <tr><td class="paramname">byte_id</td><td>byte index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>character index of the letter at 'byte_id'th position </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00063">63</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__label_8c_source.html#l00077">lv_draw_label()</a>, <a class="el" href="lv__dropdown_8c_source.html#l00190">lv_dropdown_add_option()</a>, <a class="el" href="lv__label_8c_source.html#l00400">lv_label_get_letter_on()</a> y <a class="el" href="lv__label_8c_source.html#l00286">lv_label_get_letter_pos()</a>.</p>
+
+</div>
+</div>
+<a id="a3fe9cd02f4ec705ef849ca1842bd4c09" name="a3fe9cd02f4ec705ef849ca1842bd4c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe9cd02f4ec705ef849ca1842bd4c09">&#9670;&#160;</a></span>_lv_txt_encoded_next</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_encoded_next) (const char *, uint32_t *) </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) = lv_txt_utf8_next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decode the next encoded character from a string. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>pointer to '\0' terminated string </td></tr>
+    <tr><td class="paramname">i</td><td>start index in 'txt' where to start. After the call it will point to the next encoded char in 'txt'. NULL to use txt[0] as index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the decoded Unicode character or 0 on invalid data code </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00060">60</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__txt_8c_source.html#l00493">_lv_txt_encoded_letter_next_2()</a>, <a class="el" href="lv__txt_8c_source.html#l00279">_lv_txt_get_next_line()</a>, <a class="el" href="lv__span_8c_source.html#l00391">lv_spangroup_get_expand_height()</a>, <a class="el" href="lv__span_8c_source.html#l00359">lv_spangroup_get_expand_width()</a>, <a class="el" href="lv__textarea_8c_source.html#l00100">lv_textarea_add_char()</a>, <a class="el" href="lv__textarea_8c_source.html#l00161">lv_textarea_add_text()</a> y <a class="el" href="lv__textarea_8c_source.html#l00268">lv_textarea_set_text()</a>.</p>
+
+</div>
+</div>
+<a id="a90051f66330cb40365a4e1943fd7fd07" name="a90051f66330cb40365a4e1943fd7fd07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90051f66330cb40365a4e1943fd7fd07">&#9670;&#160;</a></span>_lv_txt_encoded_prev</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_encoded_prev) (const char *, uint32_t *) </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) = lv_txt_utf8_prev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the previous encoded character form a string. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>pointer to '\0' terminated string </td></tr>
+    <tr><td class="paramname">i_start</td><td>index in 'txt' where to start. After the call it will point to the previous encoded char in 'txt'. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the decoded Unicode character or 0 on invalid data </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00061">61</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__label_8c_source.html#l00400">lv_label_get_letter_on()</a> y <a class="el" href="lv__span_8c_source.html#l00391">lv_spangroup_get_expand_height()</a>.</p>
+
+</div>
+</div>
+<a id="a0b6eb50707360fcc64668fdc3a706adc" name="a0b6eb50707360fcc64668fdc3a706adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6eb50707360fcc64668fdc3a706adc">&#9670;&#160;</a></span>_lv_txt_encoded_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t(* _lv_txt_encoded_size) (const char *) </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> = lv_txt_utf8_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Give the size of an encoded character </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>pointer to a character in a string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>length of the encoded character (1,2,3 ...). O in invalid </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00057">57</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+</div>
+</div>
+<a id="a3ef67d93ea8beef56697746d704a1645" name="a3ef67d93ea8beef56697746d704a1645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef67d93ea8beef56697746d704a1645">&#9670;&#160;</a></span>_lv_txt_get_encoded_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_get_encoded_length) (const char *) </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> = lv_txt_utf8_get_length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of characters (and NOT bytes) in a string. E.g. in UTF-8 "ÁBC" is 3 characters (but 4 bytes) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>a '\0' terminated char string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>number of characters </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00064">64</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__label_8c_source.html#l00638">lv_label_ins_text()</a>, <a class="el" href="lv__textarea_8c_source.html#l00161">lv_textarea_add_text()</a> y <a class="el" href="lv__textarea_8c_source.html#l00344">lv_textarea_set_cursor_pos()</a>.</p>
+
+</div>
+</div>
+<a id="ae3326e8947223d3670fa583ccd4588af" name="ae3326e8947223d3670fa583ccd4588af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3326e8947223d3670fa583ccd4588af">&#9670;&#160;</a></span>_lv_txt_unicode_to_encoded</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(* _lv_txt_unicode_to_encoded) (uint32_t) </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> = lv_txt_unicode_to_utf8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a Unicode letter to encoded </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">letter_uni</td><td>a Unicode letter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Encoded character in Little Endian to be compatible with C chars (e.g. 'Á', 'Ü') </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__txt_8c_source.html#l00058">58</a> del archivo <a class="el" href="lv__txt_8c_source.html">lv_txt.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__textarea_8c_source.html#l00161">lv_textarea_add_text()</a> y <a class="el" href="lv__textarea_8c_source.html#l00268">lv_textarea_set_text()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__txt_8c.html">lv_txt.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

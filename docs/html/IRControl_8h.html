@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/Custom_Libraries/IRControl.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('IRControl_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo IRControl.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+</div>
+<p><a href="IRControl_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:IRControlEvent" id="r_IRControlEvent"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIRControlEvent.html">IRControlEvent</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resultado de procesar un comando IR.  <a href="structIRControlEvent.html#details">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a83a16191e31f58deefd166301da9306a" id="r_a83a16191e31f58deefd166301da9306a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a16191e31f58deefd166301da9306a">IRNavKey</a> { <br />
+&#160;&#160;<a class="el" href="#a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0
+, <a class="el" href="#a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758">LEFT</a>
+, <a class="el" href="#a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403">RIGHT</a>
+, <a class="el" href="#a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1">UP</a>
+, <br />
+&#160;&#160;<a class="el" href="#a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f">DOWN</a>
+, <a class="el" href="#a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13">ENTER</a>
+<br />
+ }</td></tr>
+<tr class="memitem:a6f8061112e4b3d3a2fac075f36b89ef1" id="r_a6f8061112e4b3d3a2fac075f36b89ef1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f8061112e4b3d3a2fac075f36b89ef1">IRScreenTarget</a> { <a class="el" href="#a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0
+, <a class="el" href="#a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb">SCREEN1</a>
+ }</td></tr>
+<tr class="memdesc:a6f8061112e4b3d3a2fac075f36b89ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pantallas que puede pedir el mando IR.  <a href="#a6f8061112e4b3d3a2fac075f36b89ef1">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a68923bc6988628bfbb5cb112a4fdbd8a" id="r_a68923bc6988628bfbb5cb112a4fdbd8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68923bc6988628bfbb5cb112a4fdbd8a">IRControl_begin</a> (uint8_t irPin)</td></tr>
+<tr class="memdesc:a68923bc6988628bfbb5cb112a4fdbd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el receptor IR.  <br /></td></tr>
+<tr class="memitem:a403613e2fe60511ba8d6717ec03ee471" id="r_a403613e2fe60511ba8d6717ec03ee471"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a403613e2fe60511ba8d6717ec03ee471">IRControl_getDigitCode</a> (uint8_t digit)</td></tr>
+<tr class="memitem:a882ca217ddf4ac0615fcbc6ec743edc9" id="r_a882ca217ddf4ac0615fcbc6ec743edc9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882ca217ddf4ac0615fcbc6ec743edc9">IRControl_getMinusCode</a> ()</td></tr>
+<tr class="memitem:ae5fd47b15df2669c217b2c0926fdc861" id="r_ae5fd47b15df2669c217b2c0926fdc861"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5fd47b15df2669c217b2c0926fdc861">IRControl_getNavCode</a> (<a class="el" href="#a83a16191e31f58deefd166301da9306a">IRNavKey</a> key)</td></tr>
+<tr class="memitem:ab1c63db70c31c567795b17b115ccd30a" id="r_ab1c63db70c31c567795b17b115ccd30a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1c63db70c31c567795b17b115ccd30a">IRControl_getPlusCode</a> ()</td></tr>
+<tr class="memitem:ac0e18024f9117fa1b89b51c4ce8583c6" id="r_ac0e18024f9117fa1b89b51c4ce8583c6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0e18024f9117fa1b89b51c4ce8583c6">IRControl_getPowerCode</a> ()</td></tr>
+<tr class="memitem:a920e6cd29a4c93df7287a1b274ab5484" id="r_a920e6cd29a4c93df7287a1b274ab5484"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a920e6cd29a4c93df7287a1b274ab5484">IRControl_loadConfigFromNVS</a> ()</td></tr>
+<tr class="memitem:a88e6a934adf9a70b24a44b545da93402" id="r_a88e6a934adf9a70b24a44b545da93402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structIRControlEvent.html">IRControlEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88e6a934adf9a70b24a44b545da93402">IRControl_poll</a> ()</td></tr>
+<tr class="memdesc:a88e6a934adf9a70b24a44b545da93402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee (no bloqueante) si ha llegado algún comando IR.  <br /></td></tr>
+<tr class="memitem:af47f29288f96924d0aa1b113e6e95cb9" id="r_af47f29288f96924d0aa1b113e6e95cb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af47f29288f96924d0aa1b113e6e95cb9">IRControl_saveConfigToNVS</a> ()</td></tr>
+<tr class="memitem:a3bd015c2b5308bb8df3d008baef63ff6" id="r_a3bd015c2b5308bb8df3d008baef63ff6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bd015c2b5308bb8df3d008baef63ff6">IRControl_setDigitCode</a> (uint8_t digit, uint32_t code)</td></tr>
+<tr class="memitem:aa31c175ea4e459567d2eaa94b3d1c38a" id="r_aa31c175ea4e459567d2eaa94b3d1c38a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa31c175ea4e459567d2eaa94b3d1c38a">IRControl_setMinusCode</a> (uint32_t code)</td></tr>
+<tr class="memitem:a7dae42f315180301ab945f7daf420acf" id="r_a7dae42f315180301ab945f7daf420acf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dae42f315180301ab945f7daf420acf">IRControl_setNavCode</a> (<a class="el" href="#a83a16191e31f58deefd166301da9306a">IRNavKey</a> key, uint32_t code)</td></tr>
+<tr class="memitem:ad90080f1f65e3adfb122314ee66f7e29" id="r_ad90080f1f65e3adfb122314ee66f7e29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad90080f1f65e3adfb122314ee66f7e29">IRControl_setPlusCode</a> (uint32_t code)</td></tr>
+<tr class="memitem:a7684f7a96a3b60c463b3c437d60a35ed" id="r_a7684f7a96a3b60c463b3c437d60a35ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7684f7a96a3b60c463b3c437d60a35ed">IRControl_setPowerCode</a> (uint32_t code)</td></tr>
+</table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a83a16191e31f58deefd166301da9306a" name="a83a16191e31f58deefd166301da9306a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a16191e31f58deefd166301da9306a">&#9670;&#160;</a></span>IRNavKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a83a16191e31f58deefd166301da9306a">IRNavKey</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693" name="a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758" name="a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403" name="a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1" name="a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1"></a>UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f" name="a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13" name="a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13"></a>ENTER&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8h_source.html#l00018">18</a> del archivo <a class="el" href="IRControl_8h_source.html">IRControl.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>                    {</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758">LEFT</a>,</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403">RIGHT</a>,</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1">UP</a>,</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f">DOWN</a>,</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13">ENTER</a></div>
+<div class="line"><span class="lineno">   25</span>};</div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403"><div class="ttname"><a href="#a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403">IRNavKey::RIGHT</a></div><div class="ttdeci">@ RIGHT</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00021">IRControl.h:21</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13"><div class="ttname"><a href="#a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13">IRNavKey::ENTER</a></div><div class="ttdeci">@ ENTER</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00024">IRControl.h:24</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758"><div class="ttname"><a href="#a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758">IRNavKey::LEFT</a></div><div class="ttdeci">@ LEFT</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00020">IRControl.h:20</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="#a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693">IRNavKey::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00019">IRControl.h:19</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f"><div class="ttname"><a href="#a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f">IRNavKey::DOWN</a></div><div class="ttdeci">@ DOWN</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00023">IRControl.h:23</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1"><div class="ttname"><a href="#a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1">IRNavKey::UP</a></div><div class="ttdeci">@ UP</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00022">IRControl.h:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6f8061112e4b3d3a2fac075f36b89ef1" name="a6f8061112e4b3d3a2fac075f36b89ef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f8061112e4b3d3a2fac075f36b89ef1">&#9670;&#160;</a></span>IRScreenTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a6f8061112e4b3d3a2fac075f36b89ef1">IRScreenTarget</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pantallas que puede pedir el mando IR. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693" name="a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb" name="a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb"></a>SCREEN1&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8h_source.html#l00013">13</a> del archivo <a class="el" href="IRControl_8h_source.html">IRControl.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                          {</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="#a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="#a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb">SCREEN1</a></div>
+<div class="line"><span class="lineno">   16</span>};</div>
+<div class="ttc" id="aIRControl_8h_html_a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb"><div class="ttname"><a href="#a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb">IRScreenTarget::SCREEN1</a></div><div class="ttdeci">@ SCREEN1</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00015">IRControl.h:15</a></div></div>
+<div class="ttc" id="aIRControl_8h_html_a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="#a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693">IRScreenTarget::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00014">IRControl.h:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a68923bc6988628bfbb5cb112a4fdbd8a" name="a68923bc6988628bfbb5cb112a4fdbd8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68923bc6988628bfbb5cb112a4fdbd8a">&#9670;&#160;</a></span>IRControl_begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_begin </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>irPin</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el receptor IR. </p>
+<p>Debe llamarse en <a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup()</a>.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">irPin</td><td>Pin donde está conectado el receptor IR. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00142">142</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                    {</div>
+<div class="line"><span class="lineno">  143</span>    s_irPin = irPin;</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_variable" href="group__Receiving.html#ga6813a2b456e5359ce674699c85a61cf9">IrReceiver</a>.begin(s_irPin, <a class="code hl_define" href="IRremoteInt_8h.html#a3033a7d78620f2d895d7268ceb685129">DISABLE_LED_FEEDBACK</a>);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    Serial.print(<span class="stringliteral">&quot;IRControl inicializado en pin &quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>    Serial.println(s_irPin);</div>
+<div class="line"><span class="lineno">  148</span>}</div>
+<div class="ttc" id="aIRremoteInt_8h_html_a3033a7d78620f2d895d7268ceb685129"><div class="ttname"><a href="IRremoteInt_8h.html#a3033a7d78620f2d895d7268ceb685129">DISABLE_LED_FEEDBACK</a></div><div class="ttdeci">#define DISABLE_LED_FEEDBACK</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00062">IRremoteInt.h:62</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga6813a2b456e5359ce674699c85a61cf9"><div class="ttname"><a href="group__Receiving.html#ga6813a2b456e5359ce674699c85a61cf9">IrReceiver</a></div><div class="ttdeci">IRrecv IrReceiver</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l00059">IRReceive.hpp:59</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="IRremoteInt_8h_source.html#l00062">DISABLE_LED_FEEDBACK</a> y <a class="el" href="IRReceive_8hpp_source.html#l00059">IrReceiver</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="a403613e2fe60511ba8d6717ec03ee471" name="a403613e2fe60511ba8d6717ec03ee471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403613e2fe60511ba8d6717ec03ee471">&#9670;&#160;</a></span>IRControl_getDigitCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t IRControl_getDigitCode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>digit</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00065">65</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (digit &lt; 10) <span class="keywordflow">return</span> s_digitCode[digit];</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a882ca217ddf4ac0615fcbc6ec743edc9" name="a882ca217ddf4ac0615fcbc6ec743edc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882ca217ddf4ac0615fcbc6ec743edc9">&#9670;&#160;</a></span>IRControl_getMinusCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t IRControl_getMinusCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00120">120</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> s_minusCode;</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae5fd47b15df2669c217b2c0926fdc861" name="ae5fd47b15df2669c217b2c0926fdc861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fd47b15df2669c217b2c0926fdc861">&#9670;&#160;</a></span>IRControl_getNavCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t IRControl_getNavCode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a83a16191e31f58deefd166301da9306a">IRNavKey</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00087">87</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">switch</span> (key) {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758">IRNavKey::LEFT</a>:   <span class="keywordflow">return</span> s_navCodeLeft;</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403">IRNavKey::RIGHT</a>:  <span class="keywordflow">return</span> s_navCodeRight;</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1">IRNavKey::UP</a>:     <span class="keywordflow">return</span> s_navCodeUp;</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f">IRNavKey::DOWN</a>:   <span class="keywordflow">return</span> s_navCodeDown;</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13">IRNavKey::ENTER</a>:  <span class="keywordflow">return</span> s_navCodeEnter;</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">default</span>:               <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="IRControl_8h_source.html#l00023">DOWN</a>, <a class="el" href="IRControl_8h_source.html#l00024">ENTER</a>, <a class="el" href="IRControl_8h_source.html#l00020">LEFT</a>, <a class="el" href="IRControl_8h_source.html#l00021">RIGHT</a> y <a class="el" href="IRControl_8h_source.html#l00022">UP</a>.</p>
+
+</div>
+</div>
+<a id="ab1c63db70c31c567795b17b115ccd30a" name="ab1c63db70c31c567795b17b115ccd30a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c63db70c31c567795b17b115ccd30a">&#9670;&#160;</a></span>IRControl_getPlusCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t IRControl_getPlusCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00107">107</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">return</span> s_plusCode;</div>
+<div class="line"><span class="lineno">  110</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac0e18024f9117fa1b89b51c4ce8583c6" name="ac0e18024f9117fa1b89b51c4ce8583c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e18024f9117fa1b89b51c4ce8583c6">&#9670;&#160;</a></span>IRControl_getPowerCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t IRControl_getPowerCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00133">133</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> s_powerCode;</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a920e6cd29a4c93df7287a1b274ab5484" name="a920e6cd29a4c93df7287a1b274ab5484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920e6cd29a4c93df7287a1b274ab5484">&#9670;&#160;</a></span>IRControl_loadConfigFromNVS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_loadConfigFromNVS </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00245">245</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>{</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">if</span> (!s_prefs.begin(<span class="stringliteral">&quot;ir_codes&quot;</span>, <span class="keyword">true</span>)) {   <span class="comment">// true = solo lectura</span></div>
+<div class="line"><span class="lineno">  248</span>        Serial.println(<span class="stringliteral">&quot;[IRControl] ERROR: no se pudo abrir NVS (ir_codes) para lectura&quot;</span>);</div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  250</span>    }</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>    <span class="comment">// Dígitos 0–9</span></div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">for</span> (uint8_t d = 0; d &lt; 10; d++) {</div>
+<div class="line"><span class="lineno">  254</span>        <span class="keywordtype">char</span> key[8];</div>
+<div class="line"><span class="lineno">  255</span>        snprintf(key, <span class="keyword">sizeof</span>(key), <span class="stringliteral">&quot;d%u&quot;</span>, d);       <span class="comment">// &quot;d0&quot;, &quot;d1&quot;, ...</span></div>
+<div class="line"><span class="lineno">  256</span>        uint32_t def = s_digitCode[d];             <span class="comment">// valor por defecto actual</span></div>
+<div class="line"><span class="lineno">  257</span>        uint32_t val = s_prefs.getUInt(key, def);  <span class="comment">// si no existe, deja el defecto</span></div>
+<div class="line"><span class="lineno">  258</span>        s_digitCode[d] = val;</div>
+<div class="line"><span class="lineno">  259</span>    }</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>    <span class="comment">// Flechas / ENTER</span></div>
+<div class="line"><span class="lineno">  262</span>    s_navCodeLeft  = s_prefs.getUInt(<span class="stringliteral">&quot;navL&quot;</span>, s_navCodeLeft);</div>
+<div class="line"><span class="lineno">  263</span>    s_navCodeRight = s_prefs.getUInt(<span class="stringliteral">&quot;navR&quot;</span>, s_navCodeRight);</div>
+<div class="line"><span class="lineno">  264</span>    s_navCodeUp    = s_prefs.getUInt(<span class="stringliteral">&quot;navU&quot;</span>, s_navCodeUp);</div>
+<div class="line"><span class="lineno">  265</span>    s_navCodeDown  = s_prefs.getUInt(<span class="stringliteral">&quot;navD&quot;</span>, s_navCodeDown);</div>
+<div class="line"><span class="lineno">  266</span>    s_navCodeEnter = s_prefs.getUInt(<span class="stringliteral">&quot;navE&quot;</span>, s_navCodeEnter);</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>    <span class="comment">// + / -</span></div>
+<div class="line"><span class="lineno">  269</span>    s_plusCode  = s_prefs.getUInt(<span class="stringliteral">&quot;plus&quot;</span>,  s_plusCode);</div>
+<div class="line"><span class="lineno">  270</span>    s_minusCode = s_prefs.getUInt(<span class="stringliteral">&quot;minus&quot;</span>, s_minusCode);</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>    <span class="comment">// POWER</span></div>
+<div class="line"><span class="lineno">  273</span>    s_powerCode = s_prefs.getUInt(<span class="stringliteral">&quot;power&quot;</span>, s_powerCode);</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>    s_prefs.end();</div>
+<div class="line"><span class="lineno">  276</span>    Serial.println(<span class="stringliteral">&quot;[IRControl] Configuración IR cargada desde NVS&quot;</span>);</div>
+<div class="line"><span class="lineno">  277</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00110">setup()</a>.</p>
+
+</div>
+</div>
+<a id="a88e6a934adf9a70b24a44b545da93402" name="a88e6a934adf9a70b24a44b545da93402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88e6a934adf9a70b24a44b545da93402">&#9670;&#160;</a></span>IRControl_poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structIRControlEvent.html">IRControlEvent</a> IRControl_poll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee (no bloqueante) si ha llegado algún comando IR. </p>
+<p>Si hay comando, devuelve <a class="el" href="structIRControlEvent.html" title="Resultado de procesar un comando IR.">IRControlEvent</a> con hasEvent = true. Si no, hasEvent = false. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00154">154</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>                                {</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_struct" href="structIRControlEvent.html">IRControlEvent</a> ev{};</div>
+<div class="line"><span class="lineno">  156</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a12eef66eb319c6bee97c7845836c58c3">hasEvent</a>    = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  157</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a76d6c36bcb9c1298d2593414d91237b9">command</a>     = 0;</div>
+<div class="line"><span class="lineno">  158</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">deltaSlider</a> = 0;</div>
+<div class="line"><span class="lineno">  159</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a0917787b8d446b38cf742db5a88a5466">screen</a>      = <a class="code hl_enumvalue" href="#a6f8061112e4b3d3a2fac075f36b89ef1ab50339a10e1de285ac99d4c3990b8693">IRScreenTarget::NONE</a>; <span class="comment">// Cambios entre pantallas</span></div>
+<div class="line"><span class="lineno">  160</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a>         = <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aab50339a10e1de285ac99d4c3990b8693">IRNavKey::NONE</a>;       <span class="comment">// Navegación utilizando flechas</span></div>
+<div class="line"><span class="lineno">  161</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a20b2fd0929ce377e7e11b5371a80d49c">digit</a>       = -1;                   <span class="comment">// Sin dígito</span></div>
+<div class="line"><span class="lineno">  162</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#ad3bdeb60b5a06d1012181b5d0cf55198">minus</a>       = <span class="keyword">false</span>;                <span class="comment">// Tecla &quot;-&quot; especial</span></div>
+<div class="line"><span class="lineno">  163</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a2007eddf8285aaa432886033c7273bff">power</a>       = <span class="keyword">false</span>;                <span class="comment">// Tecla POWER</span></div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    <span class="comment">// Si no hay datos IR, salimos</span></div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="group__Receiving.html#ga6813a2b456e5359ce674699c85a61cf9">IrReceiver</a>.decode()) {</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">return</span> ev;</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    uint32_t cmd = <a class="code hl_variable" href="group__Receiving.html#ga6813a2b456e5359ce674699c85a61cf9">IrReceiver</a>.decodedIRData.command;</div>
+<div class="line"><span class="lineno">  171</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a12eef66eb319c6bee97c7845836c58c3">hasEvent</a>  = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  172</span>    ev.<a class="code hl_variable" href="structIRControlEvent.html#a76d6c36bcb9c1298d2593414d91237b9">command</a>   = cmd;</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="comment">// Registrar actividad para cualquier comando NO CERO y NO 0x40 (ruido)</span></div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">if</span> (cmd != 0x0 &amp;&amp; cmd != 0x40) {</div>
+<div class="line"><span class="lineno">  176</span>        <a class="code hl_function" href="ScreensaverState_8cpp.html#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a>();</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>        <span class="comment">// Si el salvapantallas está activo, cualquier tecla lo quita</span></div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">// excepto el botón de &quot;inicio&quot; (0x2) que ya gestiona su propia lógica</span></div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a>) {</div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> (cmd != 0x2) {</div>
+<div class="line"><span class="lineno">  182</span>                <a class="code hl_function" href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a>(<a class="code hl_variable" href="ui_8c.html#a25f975b6722a1886f24d3ce34fe76c29">ui_Screen10</a>, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa02bc86fc8e7a7edab3634a816c19ab6">LV_EVENT_CLICKED</a>,  NULL);</div>
+<div class="line"><span class="lineno">  183</span>            }</div>
+<div class="line"><span class="lineno">  184</span>        }</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    Serial.print(<span class="stringliteral">&quot;Código IR recibido: 0x&quot;</span>);</div>
+<div class="line"><span class="lineno">  188</span>    Serial.println(cmd, HEX);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  191</span>    <span class="comment">// 1) Botón de cambio de pantalla (home)</span></div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">//    Lo dejamos fijo en 0x2, como antes</span></div>
+<div class="line"><span class="lineno">  193</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span> (cmd == 0x2) {</div>
+<div class="line"><span class="lineno">  195</span>        ev.<a class="code hl_variable" href="structIRControlEvent.html#a0917787b8d446b38cf742db5a88a5466">screen</a> = <a class="code hl_enumvalue" href="#a6f8061112e4b3d3a2fac075f36b89ef1a989c16c54ab8f7145f282a2f7d47e3eb">IRScreenTarget::SCREEN1</a>;</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  199</span>    <span class="comment">// 2) Flechas + ENTER (tabla configurable)</span></div>
+<div class="line"><span class="lineno">  200</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span>      (cmd == s_navCodeLeft)   ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a> = <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758">IRNavKey::LEFT</a>;</div>
+<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == s_navCodeRight)  ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a> = <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403">IRNavKey::RIGHT</a>;</div>
+<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == s_navCodeUp)     ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a> = <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1">IRNavKey::UP</a>;</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == s_navCodeDown)   ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a> = <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f">IRNavKey::DOWN</a>;</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == s_navCodeEnter)  ev.<a class="code hl_variable" href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">nav</a> = <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13">IRNavKey::ENTER</a>;</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  208</span>    <span class="comment">// 3) + / - (para sliders)</span></div>
+<div class="line"><span class="lineno">  209</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">if</span> (cmd == s_plusCode) {</div>
+<div class="line"><span class="lineno">  211</span>        ev.<a class="code hl_variable" href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">deltaSlider</a> = +10;</div>
+<div class="line"><span class="lineno">  212</span>    }</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (cmd == s_minusCode) {</div>
+<div class="line"><span class="lineno">  214</span>        ev.<a class="code hl_variable" href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">deltaSlider</a> = -10;</div>
+<div class="line"><span class="lineno">  215</span>        ev.<a class="code hl_variable" href="structIRControlEvent.html#ad3bdeb60b5a06d1012181b5d0cf55198">minus</a>       = <span class="keyword">true</span>;   <span class="comment">// reutilizado también para signo en labels numéricas</span></div>
+<div class="line"><span class="lineno">  216</span>    }</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  219</span>    <span class="comment">// 4) POWER</span></div>
+<div class="line"><span class="lineno">  220</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span> (s_powerCode != 0 &amp;&amp; cmd == s_powerCode) {</div>
+<div class="line"><span class="lineno">  222</span>        ev.<a class="code hl_variable" href="structIRControlEvent.html#a2007eddf8285aaa432886033c7273bff">power</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  226</span>    <span class="comment">// 5) Dígitos 0–9 (tabla configurable)</span></div>
+<div class="line"><span class="lineno">  227</span>    <span class="comment">// -----------------------------</span></div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; 10; ++d) {</div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">if</span> (cmd == s_digitCode[d]) {</div>
+<div class="line"><span class="lineno">  230</span>            ev.<a class="code hl_variable" href="structIRControlEvent.html#a20b2fd0929ce377e7e11b5371a80d49c">digit</a> = d;</div>
+<div class="line"><span class="lineno">  231</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  232</span>        }</div>
+<div class="line"><span class="lineno">  233</span>    }</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    <span class="comment">// Preparar para el próximo comando</span></div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_variable" href="group__Receiving.html#ga6813a2b456e5359ce674699c85a61cf9">IrReceiver</a>.resume();</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">return</span> ev;</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+<div class="ttc" id="aScreensaverState_8cpp_html_a81fc9d089912642873dd9e9ddb324a90"><div class="ttname"><a href="ScreensaverState_8cpp.html#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a></div><div class="ttdeci">void RegisterActivity()</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00009">ScreensaverState.cpp:9</a></div></div>
+<div class="ttc" id="alv__event_8c_html_acac721eeb38d40c0e5414ee8c97b6235"><div class="ttname"><a href="lv__event_8c.html#acac721eeb38d40c0e5414ee8c97b6235">lv_event_send</a></div><div class="ttdeci">lv_res_t lv_event_send(lv_obj_t *obj, lv_event_code_t event_code, void *param)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00052">lv_event.c:52</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771aa02bc86fc8e7a7edab3634a816c19ab6"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa02bc86fc8e7a7edab3634a816c19ab6">LV_EVENT_CLICKED</a></div><div class="ttdeci">@ LV_EVENT_CLICKED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00042">lv_event.h:42</a></div></div>
+<div class="ttc" id="amain_8cpp_html_addce1751b09ea6eee45c994725cf5125"><div class="ttname"><a href="main_8cpp.html#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a></div><div class="ttdeci">bool g_screensaverActive</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00005">ScreensaverState.cpp:5</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html"><div class="ttname"><a href="structIRControlEvent.html">IRControlEvent</a></div><div class="ttdoc">Resultado de procesar un comando IR.</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00036">IRControl.h:36</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a0917787b8d446b38cf742db5a88a5466"><div class="ttname"><a href="structIRControlEvent.html#a0917787b8d446b38cf742db5a88a5466">IRControlEvent::screen</a></div><div class="ttdeci">IRScreenTarget screen</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00040">IRControl.h:40</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a12eef66eb319c6bee97c7845836c58c3"><div class="ttname"><a href="structIRControlEvent.html#a12eef66eb319c6bee97c7845836c58c3">IRControlEvent::hasEvent</a></div><div class="ttdeci">bool hasEvent</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00037">IRControl.h:37</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a2007eddf8285aaa432886033c7273bff"><div class="ttname"><a href="structIRControlEvent.html#a2007eddf8285aaa432886033c7273bff">IRControlEvent::power</a></div><div class="ttdeci">bool power</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00045">IRControl.h:45</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a20b2fd0929ce377e7e11b5371a80d49c"><div class="ttname"><a href="structIRControlEvent.html#a20b2fd0929ce377e7e11b5371a80d49c">IRControlEvent::digit</a></div><div class="ttdeci">int8_t digit</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00043">IRControl.h:43</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a38587dc7e51186d0f70f18bf6b7bc7cb"><div class="ttname"><a href="structIRControlEvent.html#a38587dc7e51186d0f70f18bf6b7bc7cb">IRControlEvent::deltaSlider</a></div><div class="ttdeci">int8_t deltaSlider</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00039">IRControl.h:39</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a76d6c36bcb9c1298d2593414d91237b9"><div class="ttname"><a href="structIRControlEvent.html#a76d6c36bcb9c1298d2593414d91237b9">IRControlEvent::command</a></div><div class="ttdeci">uint32_t command</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00038">IRControl.h:38</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_a853889439cea6af81cbe5fbd21cd4175"><div class="ttname"><a href="structIRControlEvent.html#a853889439cea6af81cbe5fbd21cd4175">IRControlEvent::nav</a></div><div class="ttdeci">IRNavKey nav</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00041">IRControl.h:41</a></div></div>
+<div class="ttc" id="astructIRControlEvent_html_ad3bdeb60b5a06d1012181b5d0cf55198"><div class="ttname"><a href="structIRControlEvent.html#ad3bdeb60b5a06d1012181b5d0cf55198">IRControlEvent::minus</a></div><div class="ttdeci">bool minus</div><div class="ttdef"><b>Definition</b> <a href="IRControl_8h_source.html#l00044">IRControl.h:44</a></div></div>
+<div class="ttc" id="aui_8c_html_a25f975b6722a1886f24d3ce34fe76c29"><div class="ttname"><a href="ui_8c.html#a25f975b6722a1886f24d3ce34fe76c29">ui_Screen10</a></div><div class="ttdeci">lv_obj_t * ui_Screen10</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00260">ui.c:260</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="IRControl_8h_source.html#l00038">IRControlEvent::command</a>, <a class="el" href="IRControl_8h_source.html#l00039">IRControlEvent::deltaSlider</a>, <a class="el" href="IRControl_8h_source.html#l00043">IRControlEvent::digit</a>, <a class="el" href="IRControl_8h_source.html#l00023">DOWN</a>, <a class="el" href="IRControl_8h_source.html#l00024">ENTER</a>, <a class="el" href="ScreensaverState_8cpp_source.html#l00005">g_screensaverActive</a>, <a class="el" href="IRControl_8h_source.html#l00037">IRControlEvent::hasEvent</a>, <a class="el" href="IRReceive_8hpp_source.html#l00059">IrReceiver</a>, <a class="el" href="IRControl_8h_source.html#l00020">LEFT</a>, <a class="el" href="lv__event_8h_source.html#l00042">LV_EVENT_CLICKED</a>, <a class="el" href="lv__event_8c_source.html#l00052">lv_event_send()</a>, <a class="el" href="IRControl_8h_source.html#l00044">IRControlEvent::minus</a>, <a class="el" href="IRControl_8h_source.html#l00041">IRControlEvent::nav</a>, <a class="el" href="IRControl_8h_source.html#l00014">NONE</a>, <a class="el" href="IRControl_8h_source.html#l00045">IRControlEvent::power</a>, <a class="el" href="ScreensaverState_8cpp_source.html#l00009">RegisterActivity()</a>, <a class="el" href="IRControl_8h_source.html#l00021">RIGHT</a>, <a class="el" href="IRControl_8h_source.html#l00040">IRControlEvent::screen</a>, <a class="el" href="IRControl_8h_source.html#l00015">SCREEN1</a>, <a class="el" href="ui_8c_source.html#l00260">ui_Screen10</a> y <a class="el" href="IRControl_8h_source.html#l00022">UP</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8cpp_source.html#l00261">loop()</a>.</p>
+
+</div>
+</div>
+<a id="af47f29288f96924d0aa1b113e6e95cb9" name="af47f29288f96924d0aa1b113e6e95cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af47f29288f96924d0aa1b113e6e95cb9">&#9670;&#160;</a></span>IRControl_saveConfigToNVS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_saveConfigToNVS </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00279">279</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>{</div>
+<div class="line"><span class="lineno">  281</span>    <span class="keywordflow">if</span> (!s_prefs.begin(<span class="stringliteral">&quot;ir_codes&quot;</span>, <span class="keyword">false</span>)) {   <span class="comment">// false = lectura/escritura</span></div>
+<div class="line"><span class="lineno">  282</span>        Serial.println(<span class="stringliteral">&quot;[IRControl] ERROR: no se pudo abrir NVS (ir_codes) para escritura&quot;</span>);</div>
+<div class="line"><span class="lineno">  283</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  284</span>    }</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>    <span class="comment">// Dígitos 0–9</span></div>
+<div class="line"><span class="lineno">  287</span>    <span class="keywordflow">for</span> (uint8_t d = 0; d &lt; 10; d++) {</div>
+<div class="line"><span class="lineno">  288</span>        <span class="keywordtype">char</span> key[8];</div>
+<div class="line"><span class="lineno">  289</span>        snprintf(key, <span class="keyword">sizeof</span>(key), <span class="stringliteral">&quot;d%u&quot;</span>, d);</div>
+<div class="line"><span class="lineno">  290</span>        s_prefs.putUInt(key, s_digitCode[d]);</div>
+<div class="line"><span class="lineno">  291</span>    }</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    <span class="comment">// Flechas / ENTER</span></div>
+<div class="line"><span class="lineno">  294</span>    s_prefs.putUInt(<span class="stringliteral">&quot;navL&quot;</span>, s_navCodeLeft);</div>
+<div class="line"><span class="lineno">  295</span>    s_prefs.putUInt(<span class="stringliteral">&quot;navR&quot;</span>, s_navCodeRight);</div>
+<div class="line"><span class="lineno">  296</span>    s_prefs.putUInt(<span class="stringliteral">&quot;navU&quot;</span>, s_navCodeUp);</div>
+<div class="line"><span class="lineno">  297</span>    s_prefs.putUInt(<span class="stringliteral">&quot;navD&quot;</span>, s_navCodeDown);</div>
+<div class="line"><span class="lineno">  298</span>    s_prefs.putUInt(<span class="stringliteral">&quot;navE&quot;</span>, s_navCodeEnter);</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>    <span class="comment">// + / -</span></div>
+<div class="line"><span class="lineno">  301</span>    s_prefs.putUInt(<span class="stringliteral">&quot;plus&quot;</span>,  s_plusCode);</div>
+<div class="line"><span class="lineno">  302</span>    s_prefs.putUInt(<span class="stringliteral">&quot;minus&quot;</span>, s_minusCode);</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    <span class="comment">// POWER</span></div>
+<div class="line"><span class="lineno">  305</span>    s_prefs.putUInt(<span class="stringliteral">&quot;power&quot;</span>, s_powerCode);</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>    s_prefs.end();</div>
+<div class="line"><span class="lineno">  308</span>    Serial.println(<span class="stringliteral">&quot;[IRControl] Configuración IR guardada en NVS&quot;</span>);</div>
+<div class="line"><span class="lineno">  309</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="ui__events_8cpp_source.html#l00713">function_Save_Button_Config()</a>.</p>
+
+</div>
+</div>
+<a id="a3bd015c2b5308bb8df3d008baef63ff6" name="a3bd015c2b5308bb8df3d008baef63ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd015c2b5308bb8df3d008baef63ff6">&#9670;&#160;</a></span>IRControl_setDigitCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_setDigitCode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>digit</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00054">54</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (digit &lt; 10) {</div>
+<div class="line"><span class="lineno">   57</span>        s_digitCode[digit] = code;</div>
+<div class="line"><span class="lineno">   58</span>        Serial.print(<span class="stringliteral">&quot;[IRControl] Asignado código 0x&quot;</span>);</div>
+<div class="line"><span class="lineno">   59</span>        Serial.print(code, HEX);</div>
+<div class="line"><span class="lineno">   60</span>        Serial.print(<span class="stringliteral">&quot; al dígito &quot;</span>);</div>
+<div class="line"><span class="lineno">   61</span>        Serial.println(digit);</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="Remote__Diagram_8cpp_source.html#l00357">RemoteDiagram_HandleIRLearn()</a>.</p>
+
+</div>
+</div>
+<a id="aa31c175ea4e459567d2eaa94b3d1c38a" name="aa31c175ea4e459567d2eaa94b3d1c38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31c175ea4e459567d2eaa94b3d1c38a">&#9670;&#160;</a></span>IRControl_setMinusCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_setMinusCode </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00112">112</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{</div>
+<div class="line"><span class="lineno">  114</span>    s_minusCode = code;</div>
+<div class="line"><span class="lineno">  115</span>    Serial.print(<span class="stringliteral">&quot;[IRControl] Asignado código 0x&quot;</span>);</div>
+<div class="line"><span class="lineno">  116</span>    Serial.print(code, HEX);</div>
+<div class="line"><span class="lineno">  117</span>    Serial.println(<span class="stringliteral">&quot; a MINUS (-)&quot;</span>);</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="Remote__Diagram_8cpp_source.html#l00357">RemoteDiagram_HandleIRLearn()</a>.</p>
+
+</div>
+</div>
+<a id="a7dae42f315180301ab945f7daf420acf" name="a7dae42f315180301ab945f7daf420acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dae42f315180301ab945f7daf420acf">&#9670;&#160;</a></span>IRControl_setNavCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_setNavCode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a83a16191e31f58deefd166301da9306a">IRNavKey</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00071">71</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">switch</span> (key) {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa684d325a7303f52e64011467ff5c5758">IRNavKey::LEFT</a>:   s_navCodeLeft   = code; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa21507b40c80068eda19865706fdc2403">IRNavKey::RIGHT</a>:  s_navCodeRight  = code; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aafbaedde498cdead4f2780217646e9ba1">IRNavKey::UP</a>:     s_navCodeUp     = code; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aac4e0e4e3118472beeb2ae75827450f1f">IRNavKey::DOWN</a>:   s_navCodeDown   = code; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a83a16191e31f58deefd166301da9306aa331b3100a485d8cacff1d3df8e9b0c13">IRNavKey::ENTER</a>:  s_navCodeEnter  = code; <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span>    Serial.print(<span class="stringliteral">&quot;[IRControl] Asignado código 0x&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>    Serial.print(code, HEX);</div>
+<div class="line"><span class="lineno">   83</span>    Serial.print(<span class="stringliteral">&quot; a NAV key &quot;</span>);</div>
+<div class="line"><span class="lineno">   84</span>    Serial.println((<span class="keywordtype">int</span>)key);</div>
+<div class="line"><span class="lineno">   85</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="IRControl_8h_source.html#l00023">DOWN</a>, <a class="el" href="IRControl_8h_source.html#l00024">ENTER</a>, <a class="el" href="IRControl_8h_source.html#l00020">LEFT</a>, <a class="el" href="IRControl_8h_source.html#l00021">RIGHT</a> y <a class="el" href="IRControl_8h_source.html#l00022">UP</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="Remote__Diagram_8cpp_source.html#l00357">RemoteDiagram_HandleIRLearn()</a>.</p>
+
+</div>
+</div>
+<a id="ad90080f1f65e3adfb122314ee66f7e29" name="ad90080f1f65e3adfb122314ee66f7e29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad90080f1f65e3adfb122314ee66f7e29">&#9670;&#160;</a></span>IRControl_setPlusCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_setPlusCode </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00099">99</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>    s_plusCode = code;</div>
+<div class="line"><span class="lineno">  102</span>    Serial.print(<span class="stringliteral">&quot;[IRControl] Asignado código 0x&quot;</span>);</div>
+<div class="line"><span class="lineno">  103</span>    Serial.print(code, HEX);</div>
+<div class="line"><span class="lineno">  104</span>    Serial.println(<span class="stringliteral">&quot; a PLUS (+)&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="Remote__Diagram_8cpp_source.html#l00357">RemoteDiagram_HandleIRLearn()</a>.</p>
+
+</div>
+</div>
+<a id="a7684f7a96a3b60c463b3c437d60a35ed" name="a7684f7a96a3b60c463b3c437d60a35ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7684f7a96a3b60c463b3c437d60a35ed">&#9670;&#160;</a></span>IRControl_setPowerCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRControl_setPowerCode </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="IRControl_8cpp_source.html#l00125">125</a> del archivo <a class="el" href="IRControl_8cpp_source.html">IRControl.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{</div>
+<div class="line"><span class="lineno">  127</span>    s_powerCode = code;</div>
+<div class="line"><span class="lineno">  128</span>    Serial.print(<span class="stringliteral">&quot;[IRControl] Asignado código 0x&quot;</span>);</div>
+<div class="line"><span class="lineno">  129</span>    Serial.print(code, HEX);</div>
+<div class="line"><span class="lineno">  130</span>    Serial.println(<span class="stringliteral">&quot; a POWER&quot;</span>);</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenciado por <a class="el" href="Remote__Diagram_8cpp_source.html#l00357">RemoteDiagram_HandleIRLearn()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="IRControl_8h.html">IRControl.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

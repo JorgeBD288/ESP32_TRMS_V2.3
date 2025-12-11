@@ -1,0 +1,27 @@
+var structfont__header__bin =
+[
+    [ "advance_width_bits", "structfont__header__bin.html#abddf0f0fe0b177c5fd4349ceb1e87723", null ],
+    [ "advance_width_format", "structfont__header__bin.html#a85878a803d1fce00d05949f93c89c95c", null ],
+    [ "ascent", "structfont__header__bin.html#a6e3ff204c55c2034301789b6f51e8adb", null ],
+    [ "bits_per_pixel", "structfont__header__bin.html#a19763e97574da61b06d4c6df7768b1a7", null ],
+    [ "compression_id", "structfont__header__bin.html#a9ee55ccd790e05d7444582d7a8ba7593", null ],
+    [ "default_advance_width", "structfont__header__bin.html#adcfff4d7778c62075e9a7110a732012e", null ],
+    [ "descent", "structfont__header__bin.html#a1f397ccfb6be5784b3c7b926bf14538e", null ],
+    [ "font_size", "structfont__header__bin.html#a6424b930ec0bb99e6ba5514b5397a6ce", null ],
+    [ "glyph_id_format", "structfont__header__bin.html#aba5087bf96cbfb3d43e01e0cf9454566", null ],
+    [ "index_to_loc_format", "structfont__header__bin.html#a7e17540afa6c42585045a36bf5d4d456", null ],
+    [ "kerning_scale", "structfont__header__bin.html#aa8e9bf1fd9842468ce14e54fdb37dfed", null ],
+    [ "max_y", "structfont__header__bin.html#a8c1a131195c75a3ea319da4ad6c0a255", null ],
+    [ "min_y", "structfont__header__bin.html#a266cd6c2b7855bd634e8b659d545f1e1", null ],
+    [ "padding", "structfont__header__bin.html#a4bd9b3522317c057e46bec587851b00e", null ],
+    [ "subpixels_mode", "structfont__header__bin.html#a372648a1639b9656e6ef5b4847f2925e", null ],
+    [ "tables_count", "structfont__header__bin.html#aa2afbcdab35ddb46edf43b39dabfa098", null ],
+    [ "typo_ascent", "structfont__header__bin.html#aa58924590c172d679e7e76b3787bbd42", null ],
+    [ "typo_descent", "structfont__header__bin.html#a15923d071ca83f297245f2315d361c0c", null ],
+    [ "typo_line_gap", "structfont__header__bin.html#a4afd4d2b501eefd9ada8daa6272d4aa1", null ],
+    [ "underline_position", "structfont__header__bin.html#ad3bd5ada54ca0472d194839f6733e33e", null ],
+    [ "underline_thickness", "structfont__header__bin.html#aeda937b9bc8b840e4212278dd8d7aaef", null ],
+    [ "version", "structfont__header__bin.html#a989466563c1ddf620fbaa68c21534afc", null ],
+    [ "wh_bits", "structfont__header__bin.html#a8bdfcdc30089188f60e00d0efcf7c25e", null ],
+    [ "xy_bits", "structfont__header__bin.html#ab0294f4aab5f6068a7a7a39050e79913", null ]
+];

@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/font/lv_font_loader.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__font__loader_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_font_loader.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="src_2lvgl_8h_source.html">../lvgl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__fs_8h_source.html">../misc/lv_fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__font__loader_8h_source.html">lv_font_loader.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__font__loader_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:bit_5Fiterator_5Ft" id="r_bit_5Fiterator_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbit__iterator__t.html">bit_iterator_t</a></td></tr>
+<tr class="memitem:cmap_5Ftable_5Fbin" id="r_cmap_5Ftable_5Fbin"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcmap__table__bin.html">cmap_table_bin</a></td></tr>
+<tr class="memitem:font_5Fheader_5Fbin" id="r_font_5Fheader_5Fbin"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfont__header__bin.html">font_header_bin</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a7ef8808db0f38efd34650012026b80a9" id="r_a7ef8808db0f38efd34650012026b80a9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcmap__table__bin.html">cmap_table_bin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ef8808db0f38efd34650012026b80a9">cmap_table_bin_t</a></td></tr>
+<tr class="memitem:a5d2b214687681ea95ade76572992f944" id="r_a5d2b214687681ea95ade76572992f944"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structfont__header__bin.html">font_header_bin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d2b214687681ea95ade76572992f944">font_header_bin_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a1af4038f86eee3481f6c05c685c91f3c" id="r_a1af4038f86eee3481f6c05c685c91f3c"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af4038f86eee3481f6c05c685c91f3c">load_kern</a> (<a class="el" href="structlv__fs__file__t.html">lv_fs_file_t</a> *fp, <a class="el" href="structlv__font__fmt__txt__dsc__t.html">lv_font_fmt_txt_dsc_t</a> *font_dsc, uint8_t format, uint32_t start)</td></tr>
+<tr class="memitem:a76e08e6f08d6ffb162c044118f3450ba" id="r_a76e08e6f08d6ffb162c044118f3450ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76e08e6f08d6ffb162c044118f3450ba">lv_font_free</a> (<a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *font)</td></tr>
+<tr class="memitem:a0e94b64b8f9bc7d28f7814c1feb35ac6" id="r_a0e94b64b8f9bc7d28f7814c1feb35ac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e94b64b8f9bc7d28f7814c1feb35ac6">lv_font_load</a> (const char *font_name)</td></tr>
+</table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de «typedef»</h2>
+<a id="a7ef8808db0f38efd34650012026b80a9" name="a7ef8808db0f38efd34650012026b80a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef8808db0f38efd34650012026b80a9">&#9670;&#160;</a></span>cmap_table_bin_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcmap__table__bin.html">cmap_table_bin</a> <a class="el" href="#a7ef8808db0f38efd34650012026b80a9">cmap_table_bin_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d2b214687681ea95ade76572992f944" name="a5d2b214687681ea95ade76572992f944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2b214687681ea95ade76572992f944">&#9670;&#160;</a></span>font_header_bin_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structfont__header__bin.html">font_header_bin</a> <a class="el" href="#a5d2b214687681ea95ade76572992f944">font_header_bin_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a1af4038f86eee3481f6c05c685c91f3c" name="a1af4038f86eee3481f6c05c685c91f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af4038f86eee3481f6c05c685c91f3c">&#9670;&#160;</a></span>load_kern()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t load_kern </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlv__fs__file__t.html">lv_fs_file_t</a> *</td>          <td class="paramname"><span class="paramname"><em>fp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__font__fmt__txt__dsc__t.html">lv_font_fmt_txt_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>font_dsc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__font__loader_8c_source.html#l00587">587</a> del archivo <a class="el" href="lv__font__loader_8c_source.html">lv_font_loader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  588</span>{</div>
+<div class="line"><span class="lineno">  589</span>    int32_t kern_length = read_label(fp, start, <span class="stringliteral">&quot;kern&quot;</span>);</div>
+<div class="line"><span class="lineno">  590</span>    <span class="keywordflow">if</span>(kern_length &lt; 0) {</div>
+<div class="line"><span class="lineno">  591</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  592</span>    }</div>
+<div class="line"><span class="lineno">  593</span> </div>
+<div class="line"><span class="lineno">  594</span>    uint8_t kern_format_type;</div>
+<div class="line"><span class="lineno">  595</span>    int32_t padding;</div>
+<div class="line"><span class="lineno">  596</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, &amp;kern_format_type, <span class="keyword">sizeof</span>(uint8_t), NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a> ||</div>
+<div class="line"><span class="lineno">  597</span>       <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, &amp;padding, 3 * <span class="keyword">sizeof</span>(uint8_t), NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  598</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  599</span>    }</div>
+<div class="line"><span class="lineno">  600</span> </div>
+<div class="line"><span class="lineno">  601</span>    <span class="keywordflow">if</span>(0 == kern_format_type) { <span class="comment">/*sorted pairs*/</span></div>
+<div class="line"><span class="lineno">  602</span>        <a class="code hl_struct" href="structlv__font__fmt__txt__kern__pair__t.html">lv_font_fmt_txt_kern_pair_t</a> * kern_pair = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__font__fmt__txt__kern__pair__t.html">lv_font_fmt_txt_kern_pair_t</a>));</div>
+<div class="line"><span class="lineno">  603</span> </div>
+<div class="line"><span class="lineno">  604</span>        memset(kern_pair, 0, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__font__fmt__txt__kern__pair__t.html">lv_font_fmt_txt_kern_pair_t</a>));</div>
+<div class="line"><span class="lineno">  605</span> </div>
+<div class="line"><span class="lineno">  606</span>        font_dsc-&gt;kern_dsc = kern_pair;</div>
+<div class="line"><span class="lineno">  607</span>        font_dsc-&gt;kern_classes = 0;</div>
+<div class="line"><span class="lineno">  608</span> </div>
+<div class="line"><span class="lineno">  609</span>        uint32_t glyph_entries;</div>
+<div class="line"><span class="lineno">  610</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, &amp;glyph_entries, <span class="keyword">sizeof</span>(uint32_t), NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  611</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  612</span>        }</div>
+<div class="line"><span class="lineno">  613</span> </div>
+<div class="line"><span class="lineno">  614</span>        <span class="keywordtype">int</span> ids_size;</div>
+<div class="line"><span class="lineno">  615</span>        <span class="keywordflow">if</span>(format == 0) {</div>
+<div class="line"><span class="lineno">  616</span>            ids_size = <span class="keyword">sizeof</span>(int8_t) * 2 * glyph_entries;</div>
+<div class="line"><span class="lineno">  617</span>        }</div>
+<div class="line"><span class="lineno">  618</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  619</span>            ids_size = <span class="keyword">sizeof</span>(int16_t) * 2 * glyph_entries;</div>
+<div class="line"><span class="lineno">  620</span>        }</div>
+<div class="line"><span class="lineno">  621</span> </div>
+<div class="line"><span class="lineno">  622</span>        uint8_t * glyph_ids = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(ids_size);</div>
+<div class="line"><span class="lineno">  623</span>        int8_t * values = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(glyph_entries);</div>
+<div class="line"><span class="lineno">  624</span> </div>
+<div class="line"><span class="lineno">  625</span>        kern_pair-&gt;<a class="code hl_variable" href="structlv__font__fmt__txt__kern__pair__t.html#a86976db1791f3300d81365f8ce296614">glyph_ids_size</a> = format;</div>
+<div class="line"><span class="lineno">  626</span>        kern_pair-&gt;<a class="code hl_variable" href="structlv__font__fmt__txt__kern__pair__t.html#a3a5c50557f0d2cb8cd4a9b8cafeb4a1e">pair_cnt</a> = glyph_entries;</div>
+<div class="line"><span class="lineno">  627</span>        kern_pair-&gt;<a class="code hl_variable" href="structlv__font__fmt__txt__kern__pair__t.html#ae9e734b1a027e2b646157fe64155a5f3">glyph_ids</a> = glyph_ids;</div>
+<div class="line"><span class="lineno">  628</span>        kern_pair-&gt;<a class="code hl_variable" href="structlv__font__fmt__txt__kern__pair__t.html#a8ae0fd73c5c371aea43de75e630f3870">values</a> = values;</div>
+<div class="line"><span class="lineno">  629</span> </div>
+<div class="line"><span class="lineno">  630</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, glyph_ids, ids_size, NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  631</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  632</span>        }</div>
+<div class="line"><span class="lineno">  633</span> </div>
+<div class="line"><span class="lineno">  634</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, values, glyph_entries, NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  635</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  636</span>        }</div>
+<div class="line"><span class="lineno">  637</span>    }</div>
+<div class="line"><span class="lineno">  638</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(3 == kern_format_type) { <span class="comment">/*array M*N of classes*/</span></div>
+<div class="line"><span class="lineno">  639</span> </div>
+<div class="line"><span class="lineno">  640</span>        <a class="code hl_struct" href="structlv__font__fmt__txt__kern__classes__t.html">lv_font_fmt_txt_kern_classes_t</a> * kern_classes = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__font__fmt__txt__kern__classes__t.html">lv_font_fmt_txt_kern_classes_t</a>));</div>
+<div class="line"><span class="lineno">  641</span> </div>
+<div class="line"><span class="lineno">  642</span>        memset(kern_classes, 0, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__font__fmt__txt__kern__classes__t.html">lv_font_fmt_txt_kern_classes_t</a>));</div>
+<div class="line"><span class="lineno">  643</span> </div>
+<div class="line"><span class="lineno">  644</span>        font_dsc-&gt;kern_dsc = kern_classes;</div>
+<div class="line"><span class="lineno">  645</span>        font_dsc-&gt;kern_classes = 1;</div>
+<div class="line"><span class="lineno">  646</span> </div>
+<div class="line"><span class="lineno">  647</span>        uint16_t kern_class_mapping_length;</div>
+<div class="line"><span class="lineno">  648</span>        uint8_t kern_table_rows;</div>
+<div class="line"><span class="lineno">  649</span>        uint8_t kern_table_cols;</div>
+<div class="line"><span class="lineno">  650</span> </div>
+<div class="line"><span class="lineno">  651</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, &amp;kern_class_mapping_length, <span class="keyword">sizeof</span>(uint16_t), NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a> ||</div>
+<div class="line"><span class="lineno">  652</span>           <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, &amp;kern_table_rows, <span class="keyword">sizeof</span>(uint8_t), NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a> ||</div>
+<div class="line"><span class="lineno">  653</span>           <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, &amp;kern_table_cols, <span class="keyword">sizeof</span>(uint8_t), NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  654</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  655</span>        }</div>
+<div class="line"><span class="lineno">  656</span> </div>
+<div class="line"><span class="lineno">  657</span>        <span class="keywordtype">int</span> kern_values_length = <span class="keyword">sizeof</span>(int8_t) * kern_table_rows * kern_table_cols;</div>
+<div class="line"><span class="lineno">  658</span> </div>
+<div class="line"><span class="lineno">  659</span>        uint8_t * kern_left = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(kern_class_mapping_length);</div>
+<div class="line"><span class="lineno">  660</span>        uint8_t * kern_right = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(kern_class_mapping_length);</div>
+<div class="line"><span class="lineno">  661</span>        int8_t * kern_values = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(kern_values_length);</div>
+<div class="line"><span class="lineno">  662</span> </div>
+<div class="line"><span class="lineno">  663</span>        kern_classes-&gt;left_class_mapping  = kern_left;</div>
+<div class="line"><span class="lineno">  664</span>        kern_classes-&gt;right_class_mapping = kern_right;</div>
+<div class="line"><span class="lineno">  665</span>        kern_classes-&gt;left_class_cnt = kern_table_rows;</div>
+<div class="line"><span class="lineno">  666</span>        kern_classes-&gt;right_class_cnt = kern_table_cols;</div>
+<div class="line"><span class="lineno">  667</span>        kern_classes-&gt;class_pair_values = kern_values;</div>
+<div class="line"><span class="lineno">  668</span> </div>
+<div class="line"><span class="lineno">  669</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, kern_left, kern_class_mapping_length, NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a> ||</div>
+<div class="line"><span class="lineno">  670</span>           <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, kern_right, kern_class_mapping_length, NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a> ||</div>
+<div class="line"><span class="lineno">  671</span>           <a class="code hl_function" href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a>(fp, kern_values, kern_values_length, NULL) != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>) {</div>
+<div class="line"><span class="lineno">  672</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  673</span>        }</div>
+<div class="line"><span class="lineno">  674</span>    }</div>
+<div class="line"><span class="lineno">  675</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  676</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Unknown kern_format_type: %d&quot;</span>, kern_format_type);</div>
+<div class="line"><span class="lineno">  677</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  678</span>    }</div>
+<div class="line"><span class="lineno">  679</span> </div>
+<div class="line"><span class="lineno">  680</span>    <span class="keywordflow">return</span> kern_length;</div>
+<div class="line"><span class="lineno">  681</span>}</div>
+<div class="ttc" id="alv__fs_8c_html_aaeeaf5fdcf642f3d7af4828e1e74fbb7"><div class="ttname"><a href="lv__fs_8c.html#aaeeaf5fdcf642f3d7af4828e1e74fbb7">lv_fs_read</a></div><div class="ttdeci">lv_fs_res_t lv_fs_read(lv_fs_file_t *file_p, void *buf, uint32_t btr, uint32_t *br)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00205">lv_fs.c:205</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9"><div class="ttname"><a href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a></div><div class="ttdeci">@ LV_FS_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00035">lv_fs.h:35</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__kern__classes__t_html"><div class="ttname"><a href="structlv__font__fmt__txt__kern__classes__t.html">lv_font_fmt_txt_kern_classes_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00131">lv_font_fmt_txt.h:131</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__kern__pair__t_html"><div class="ttname"><a href="structlv__font__fmt__txt__kern__pair__t.html">lv_font_fmt_txt_kern_pair_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00116">lv_font_fmt_txt.h:116</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__kern__pair__t_html_a3a5c50557f0d2cb8cd4a9b8cafeb4a1e"><div class="ttname"><a href="structlv__font__fmt__txt__kern__pair__t.html#a3a5c50557f0d2cb8cd4a9b8cafeb4a1e">lv_font_fmt_txt_kern_pair_t::pair_cnt</a></div><div class="ttdeci">uint32_t pair_cnt</div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00126">lv_font_fmt_txt.h:126</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__kern__pair__t_html_a86976db1791f3300d81365f8ce296614"><div class="ttname"><a href="structlv__font__fmt__txt__kern__pair__t.html#a86976db1791f3300d81365f8ce296614">lv_font_fmt_txt_kern_pair_t::glyph_ids_size</a></div><div class="ttdeci">uint32_t glyph_ids_size</div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00127">lv_font_fmt_txt.h:127</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__kern__pair__t_html_a8ae0fd73c5c371aea43de75e630f3870"><div class="ttname"><a href="structlv__font__fmt__txt__kern__pair__t.html#a8ae0fd73c5c371aea43de75e630f3870">lv_font_fmt_txt_kern_pair_t::values</a></div><div class="ttdeci">const int8_t * values</div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00125">lv_font_fmt_txt.h:125</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__kern__pair__t_html_ae9e734b1a027e2b646157fe64155a5f3"><div class="ttname"><a href="structlv__font__fmt__txt__kern__pair__t.html#ae9e734b1a027e2b646157fe64155a5f3">lv_font_fmt_txt_kern_pair_t::glyph_ids</a></div><div class="ttdeci">const void * glyph_ids</div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00124">lv_font_fmt_txt.h:124</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__font__fmt__txt_8h_source.html#l00124">lv_font_fmt_txt_kern_pair_t::glyph_ids</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00127">lv_font_fmt_txt_kern_pair_t::glyph_ids_size</a>, <a class="el" href="lv__fs_8c_source.html#l00205">lv_fs_read()</a>, <a class="el" href="lv__fs_8h_source.html#l00035">LV_FS_RES_OK</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00126">lv_font_fmt_txt_kern_pair_t::pair_cnt</a> y <a class="el" href="lv__font__fmt__txt_8h_source.html#l00125">lv_font_fmt_txt_kern_pair_t::values</a>.</p>
+
+</div>
+</div>
+<a id="a76e08e6f08d6ffb162c044118f3450ba" name="a76e08e6f08d6ffb162c044118f3450ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e08e6f08d6ffb162c044118f3450ba">&#9670;&#160;</a></span>lv_font_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_font_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> *</td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Frees the memory allocated by the <span class="tt"><a class="el" href="#a0e94b64b8f9bc7d28f7814c1feb35ac6">lv_font_load()</a></span> function </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td><a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> object created by the lv_font_load function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__font__loader_8c_source.html#l00117">117</a> del archivo <a class="el" href="lv__font__loader_8c_source.html">lv_font_loader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span>(NULL != font) {</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_struct" href="structlv__font__fmt__txt__dsc__t.html">lv_font_fmt_txt_dsc_t</a> * dsc = (<a class="code hl_struct" href="structlv__font__fmt__txt__dsc__t.html">lv_font_fmt_txt_dsc_t</a> *)font-&gt;<a class="code hl_variable" href="struct__lv__font__t.html#aa5f86862e4ba544cb3ad4d5d247bcee8">dsc</a>;</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span>(NULL != dsc) {</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">if</span>(dsc-&gt;kern_classes == 0) {</div>
+<div class="line"><span class="lineno">  125</span>                <a class="code hl_struct" href="structlv__font__fmt__txt__kern__pair__t.html">lv_font_fmt_txt_kern_pair_t</a> * kern_dsc =</div>
+<div class="line"><span class="lineno">  126</span>                    (<a class="code hl_struct" href="structlv__font__fmt__txt__kern__pair__t.html">lv_font_fmt_txt_kern_pair_t</a> *)dsc-&gt;kern_dsc;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>                <span class="keywordflow">if</span>(NULL != kern_dsc) {</div>
+<div class="line"><span class="lineno">  129</span>                    <span class="keywordflow">if</span>(kern_dsc-&gt;glyph_ids)</div>
+<div class="line"><span class="lineno">  130</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc-&gt;glyph_ids);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>                    <span class="keywordflow">if</span>(kern_dsc-&gt;values)</div>
+<div class="line"><span class="lineno">  133</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc-&gt;values);</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>                    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc);</div>
+<div class="line"><span class="lineno">  136</span>                }</div>
+<div class="line"><span class="lineno">  137</span>            }</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  139</span>                <a class="code hl_struct" href="structlv__font__fmt__txt__kern__classes__t.html">lv_font_fmt_txt_kern_classes_t</a> * kern_dsc =</div>
+<div class="line"><span class="lineno">  140</span>                    (<a class="code hl_struct" href="structlv__font__fmt__txt__kern__classes__t.html">lv_font_fmt_txt_kern_classes_t</a> *)dsc-&gt;kern_dsc;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>                <span class="keywordflow">if</span>(NULL != kern_dsc) {</div>
+<div class="line"><span class="lineno">  143</span>                    <span class="keywordflow">if</span>(kern_dsc-&gt;class_pair_values)</div>
+<div class="line"><span class="lineno">  144</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc-&gt;class_pair_values);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>                    <span class="keywordflow">if</span>(kern_dsc-&gt;left_class_mapping)</div>
+<div class="line"><span class="lineno">  147</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc-&gt;left_class_mapping);</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>                    <span class="keywordflow">if</span>(kern_dsc-&gt;right_class_mapping)</div>
+<div class="line"><span class="lineno">  150</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc-&gt;right_class_mapping);</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>                    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)kern_dsc);</div>
+<div class="line"><span class="lineno">  153</span>                }</div>
+<div class="line"><span class="lineno">  154</span>            }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>            <a class="code hl_struct" href="structlv__font__fmt__txt__cmap__t.html">lv_font_fmt_txt_cmap_t</a> * cmaps =</div>
+<div class="line"><span class="lineno">  157</span>                (<a class="code hl_struct" href="structlv__font__fmt__txt__cmap__t.html">lv_font_fmt_txt_cmap_t</a> *)dsc-&gt;cmaps;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">if</span>(NULL != cmaps) {</div>
+<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; dsc-&gt;cmap_num; ++i) {</div>
+<div class="line"><span class="lineno">  161</span>                    <span class="keywordflow">if</span>(NULL != cmaps[i].glyph_id_ofs_list)</div>
+<div class="line"><span class="lineno">  162</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)cmaps[i].glyph_id_ofs_list);</div>
+<div class="line"><span class="lineno">  163</span>                    <span class="keywordflow">if</span>(NULL != cmaps[i].unicode_list)</div>
+<div class="line"><span class="lineno">  164</span>                        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)cmaps[i].unicode_list);</div>
+<div class="line"><span class="lineno">  165</span>                }</div>
+<div class="line"><span class="lineno">  166</span>                <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(cmaps);</div>
+<div class="line"><span class="lineno">  167</span>            }</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">if</span>(NULL != dsc-&gt;glyph_bitmap) {</div>
+<div class="line"><span class="lineno">  170</span>                <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)dsc-&gt;glyph_bitmap);</div>
+<div class="line"><span class="lineno">  171</span>            }</div>
+<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">if</span>(NULL != dsc-&gt;glyph_dsc) {</div>
+<div class="line"><span class="lineno">  173</span>                <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>((<span class="keywordtype">void</span> *)dsc-&gt;glyph_dsc);</div>
+<div class="line"><span class="lineno">  174</span>            }</div>
+<div class="line"><span class="lineno">  175</span>            <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(dsc);</div>
+<div class="line"><span class="lineno">  176</span>        }</div>
+<div class="line"><span class="lineno">  177</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(font);</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="line"><span class="lineno">  179</span>}</div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="astruct__lv__font__t_html_aa5f86862e4ba544cb3ad4d5d247bcee8"><div class="ttname"><a href="struct__lv__font__t.html#aa5f86862e4ba544cb3ad4d5d247bcee8">_lv_font_t::dsc</a></div><div class="ttdeci">const void * dsc</div><div class="ttdef"><b>Definition</b> <a href="lv__font_8h_source.html#l00079">lv_font.h:79</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__cmap__t_html"><div class="ttname"><a href="structlv__font__fmt__txt__cmap__t.html">lv_font_fmt_txt_cmap_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00063">lv_font_fmt_txt.h:63</a></div></div>
+<div class="ttc" id="astructlv__font__fmt__txt__dsc__t_html"><div class="ttname"><a href="structlv__font__fmt__txt__dsc__t.html">lv_font_fmt_txt_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__font__fmt__txt_8h_source.html#l00160">lv_font_fmt_txt.h:160</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__font__fmt__txt_8h_source.html#l00140">lv_font_fmt_txt_kern_classes_t::class_pair_values</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00182">lv_font_fmt_txt_dsc_t::cmap_num</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00169">lv_font_fmt_txt_dsc_t::cmaps</a>, <a class="el" href="lv__font_8h_source.html#l00079">_lv_font_t::dsc</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00162">lv_font_fmt_txt_dsc_t::glyph_bitmap</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00165">lv_font_fmt_txt_dsc_t::glyph_dsc</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00124">lv_font_fmt_txt_kern_pair_t::glyph_ids</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00188">lv_font_fmt_txt_dsc_t::kern_classes</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00141">lv_font_fmt_txt_kern_classes_t::left_class_mapping</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__font__fmt__txt_8h_source.html#l00142">lv_font_fmt_txt_kern_classes_t::right_class_mapping</a> y <a class="el" href="lv__font__fmt__txt_8h_source.html#l00125">lv_font_fmt_txt_kern_pair_t::values</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__font__loader_8c_source.html#l00086">lv_font_load()</a>.</p>
+
+</div>
+</div>
+<a id="a0e94b64b8f9bc7d28f7814c1feb35ac6" name="a0e94b64b8f9bc7d28f7814c1feb35ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e94b64b8f9bc7d28f7814c1feb35ac6">&#9670;&#160;</a></span>lv_font_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> * lv_font_load </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>font_name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Loads a <span class="tt"><a class="el" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a></span> object from a binary font file </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font_name</td><td>filename where the font file is located </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>a pointer to the font or NULL in case of error </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__font__loader_8c_source.html#l00086">86</a> del archivo <a class="el" href="lv__font__loader_8c_source.html">lv_font_loader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>{</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_struct" href="structlv__fs__file__t.html">lv_fs_file_t</a> file;</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_typedef" href="lv__fs_8h.html#a677bb0a100477713ea7bded7e9c47290">lv_fs_res_t</a> res = <a class="code hl_function" href="lv__fs_8c.html#a339d0b51618dbcec593d0f4081348e5d">lv_fs_open</a>(&amp;file, font_name, <a class="code hl_enumvalue" href="lv__fs_8h.html#a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd">LV_FS_MODE_RD</a>);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span>(res != <a class="code hl_enumvalue" href="lv__fs_8h.html#a2ca917ecb5549b5078b455a9458ef1faadb83c1c6f46cec603883477779145ae9">LV_FS_RES_OK</a>)</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> * font = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a>));</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span>(font) {</div>
+<div class="line"><span class="lineno">   95</span>        memset(font, 0, <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a>));</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span>(!lvgl_load_font(&amp;file, font)) {</div>
+<div class="line"><span class="lineno">   97</span>            <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Error loading font file: %s\n&quot;</span>, font_name);</div>
+<div class="line"><span class="lineno">   98</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   99</span><span class="comment">            * When `lvgl_load_font` fails it can leak some pointers.</span></div>
+<div class="line"><span class="lineno">  100</span><span class="comment">            * All non-null pointers can be assumed as allocated and</span></div>
+<div class="line"><span class="lineno">  101</span><span class="comment">            * `lv_font_free` should free them correctly.</span></div>
+<div class="line"><span class="lineno">  102</span><span class="comment">            */</span></div>
+<div class="line"><span class="lineno">  103</span>            <a class="code hl_function" href="#a76e08e6f08d6ffb162c044118f3450ba">lv_font_free</a>(font);</div>
+<div class="line"><span class="lineno">  104</span>            font = NULL;</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_function" href="lv__fs_8c.html#a695f81fd4c47d1ace4dce3ebb536e531">lv_fs_close</a>(&amp;file);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> font;</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="alv__font_8h_html_a11e3396cab33231964d98046c4e436af"><div class="ttname"><a href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a></div><div class="ttdeci">struct _lv_font_t lv_font_t</div></div>
+<div class="ttc" id="alv__font__loader_8c_html_a76e08e6f08d6ffb162c044118f3450ba"><div class="ttname"><a href="#a76e08e6f08d6ffb162c044118f3450ba">lv_font_free</a></div><div class="ttdeci">void lv_font_free(lv_font_t *font)</div><div class="ttdef"><b>Definition</b> <a href="lv__font__loader_8c_source.html#l00117">lv_font_loader.c:117</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_a339d0b51618dbcec593d0f4081348e5d"><div class="ttname"><a href="lv__fs_8c.html#a339d0b51618dbcec593d0f4081348e5d">lv_fs_open</a></div><div class="ttdeci">lv_fs_res_t lv_fs_open(lv_fs_file_t *file_p, const char *path, lv_fs_mode_t mode)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00057">lv_fs.c:57</a></div></div>
+<div class="ttc" id="alv__fs_8c_html_a695f81fd4c47d1ace4dce3ebb536e531"><div class="ttname"><a href="lv__fs_8c.html#a695f81fd4c47d1ace4dce3ebb536e531">lv_fs_close</a></div><div class="ttdeci">lv_fs_res_t lv_fs_close(lv_fs_file_t *file_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8c_source.html#l00105">lv_fs.c:105</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd"><div class="ttname"><a href="lv__fs_8h.html#a2973a4fd2e603c74cc997204932e7c44abb6092a0bb0d3cf8e1d344fcb5320bfd">LV_FS_MODE_RD</a></div><div class="ttdeci">@ LV_FS_MODE_RD</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00056">lv_fs.h:56</a></div></div>
+<div class="ttc" id="alv__fs_8h_html_a677bb0a100477713ea7bded7e9c47290"><div class="ttname"><a href="lv__fs_8h.html#a677bb0a100477713ea7bded7e9c47290">lv_fs_res_t</a></div><div class="ttdeci">uint8_t lv_fs_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00049">lv_fs.h:49</a></div></div>
+<div class="ttc" id="astructlv__fs__file__t_html"><div class="ttname"><a href="structlv__fs__file__t.html">lv_fs_file_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__fs_8h_source.html#l00097">lv_fs.h:97</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__font__loader_8c_source.html#l00117">lv_font_free()</a>, <a class="el" href="lv__fs_8c_source.html#l00105">lv_fs_close()</a>, <a class="el" href="lv__fs_8h_source.html#l00056">LV_FS_MODE_RD</a>, <a class="el" href="lv__fs_8c_source.html#l00057">lv_fs_open()</a>, <a class="el" href="lv__fs_8h_source.html#l00035">LV_FS_RES_OK</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a> y <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_ff37fc05fb52eba01cfdc93779314da3.html">font</a></li><li class="navelem"><a href="lv__font__loader_8c.html">lv_font_loader.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

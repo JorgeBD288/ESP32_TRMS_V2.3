@@ -1,0 +1,27 @@
+var Setup19__RM68140__Parallel_8h =
+[
+    [ "ESP32_PARALLEL", "Setup19__RM68140__Parallel_8h.html#afab2fe1aeed4e0f8d995480710786491", null ],
+    [ "LOAD_FONT2", "Setup19__RM68140__Parallel_8h.html#a9a64e48d3861ca909fb1eb9b39492f43", null ],
+    [ "LOAD_FONT4", "Setup19__RM68140__Parallel_8h.html#aff0ca6aaffec55fd4a03b3069a043296", null ],
+    [ "LOAD_FONT6", "Setup19__RM68140__Parallel_8h.html#a53e7079cd5578217168e9c8de3c43d56", null ],
+    [ "LOAD_FONT7", "Setup19__RM68140__Parallel_8h.html#ab824806161666b9da96b88c9fdd600aa", null ],
+    [ "LOAD_FONT8", "Setup19__RM68140__Parallel_8h.html#a3bfd3307b606101c9c9b4c4ef75f4350", null ],
+    [ "LOAD_GFXFF", "Setup19__RM68140__Parallel_8h.html#aaddd4fc72f0ef9b8f513c51b502bd95f", null ],
+    [ "LOAD_GLCD", "Setup19__RM68140__Parallel_8h.html#aee21b8f7828189468d697cc8dfadbccc", null ],
+    [ "RM68140_DRIVER", "Setup19__RM68140__Parallel_8h.html#a87edd0d4e76e293dde1c95f62a255e2a", null ],
+    [ "SMOOTH_FONT", "Setup19__RM68140__Parallel_8h.html#af8d7688f4a848a0ee8013c122abbda24", null ],
+    [ "TFT_CS", "Setup19__RM68140__Parallel_8h.html#a5f4d46ae101b77df78010c506601c87c", null ],
+    [ "TFT_D0", "Setup19__RM68140__Parallel_8h.html#a807296ec45b3ae323fd0be0ec3acc08f", null ],
+    [ "TFT_D1", "Setup19__RM68140__Parallel_8h.html#a43aaeecbe01ddbc489c3d6313864cd56", null ],
+    [ "TFT_D2", "Setup19__RM68140__Parallel_8h.html#a066916c3fbcfb5658ba2533e66ad5a17", null ],
+    [ "TFT_D3", "Setup19__RM68140__Parallel_8h.html#a106efb915b476c8e66c23c73c5e89920", null ],
+    [ "TFT_D4", "Setup19__RM68140__Parallel_8h.html#ac463b74e28cf43e0147f9f7b9abe3eca", null ],
+    [ "TFT_D5", "Setup19__RM68140__Parallel_8h.html#a1fce0b02fe2cc2c59a85abb052ccb974", null ],
+    [ "TFT_D6", "Setup19__RM68140__Parallel_8h.html#a350dbad93936422231ceb8b8f2774b30", null ],
+    [ "TFT_D7", "Setup19__RM68140__Parallel_8h.html#a2234ed90804ea83a8bf71586e756367e", null ],
+    [ "TFT_DC", "Setup19__RM68140__Parallel_8h.html#a51529307207622c113ff0d584536be13", null ],
+    [ "TFT_RD", "Setup19__RM68140__Parallel_8h.html#a83b1593fa6ca3c623ed27a7fbcb032f8", null ],
+    [ "TFT_RST", "Setup19__RM68140__Parallel_8h.html#ab40e9918d9141415a47e2a979292309c", null ],
+    [ "TFT_WR", "Setup19__RM68140__Parallel_8h.html#a4e9780bda638d268056d6996744a4e93", null ],
+    [ "USER_SETUP_ID", "Setup19__RM68140__Parallel_8h.html#a4871cad889dcc0f0ceeb0969ce8b195a", null ]
+];

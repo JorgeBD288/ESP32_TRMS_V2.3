@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/Custom_Libraries/General_Diagram.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('General__Diagram_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">General_Diagram.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="General__Diagram_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="General__Diagram_8h.html">General_Diagram.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ui_8h.html">ui.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// ====== DEFINICIONES GLOBALES ======</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a1b624cc879d00b46ce9d50404e8ab3e9">    7</a></span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="General__Diagram_8cpp.html#a1b624cc879d00b46ce9d50404e8ab3e9">ui_BtnPIDZone</a>  = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#ad4d717024a886c8aa6ce8b2dfe596841">    8</a></span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * <a class="code hl_variable" href="General__Diagram_8cpp.html#ad4d717024a886c8aa6ce8b2dfe596841">ui_BtnTRMSZone</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// ZONAS ACTIVAS (coordenadas pantalla)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// Primer cuadrado azul → PID completo</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#aab59a79330717b76cecc8e3eef1f5b62">   15</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#aab59a79330717b76cecc8e3eef1f5b62">ESQ_PID_X1</a> = 136;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a90aba44a979706dfdaaf67f945043c6c">   16</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#a90aba44a979706dfdaaf67f945043c6c">ESQ_PID_X2</a> = 182;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a388a5c3a04251262cac09eb10817670b">   17</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#a388a5c3a04251262cac09eb10817670b">ESQ_PID_Y1</a> = 30;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#ac99325ae0c91b75a31dee8c1738ad0bd">   18</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#ac99325ae0c91b75a31dee8c1738ad0bd">ESQ_PID_Y2</a> = 127;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// Segundo cuadrado azul → TRMS completo</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a0f4c6fedcfc40dbc207b797296dbe8a4">   21</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#a0f4c6fedcfc40dbc207b797296dbe8a4">ESQ_TRMS_X1</a> = 240;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#acf6c66c91329639bdc92f4e64bbfed32">   22</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#acf6c66c91329639bdc92f4e64bbfed32">ESQ_TRMS_X2</a> = 286;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#ac94b021018184ad11e6042dd64191473">   23</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#ac94b021018184ad11e6042dd64191473">ESQ_TRMS_Y1</a> = 30;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#aa93abdf31d29d1c5f51991e6464a38d5">   24</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="General__Diagram_8cpp.html#aa93abdf31d29d1c5f51991e6464a38d5">ESQ_TRMS_Y2</a> = 127;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// HELPERS INTERNOS</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">static</span> <span class="keywordtype">void</span> ShowPIDBlock()</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Ocultar esquema general</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a9e6c5f48cc5d530d8c8f0a27abae4ae7">ui_EsquemaGeneral</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Mostrar imagen del PID completo</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a>(<a class="code hl_variable" href="ui_8c.html#a073e0d4e0d142e9812701038b590a3ff">ui_EsquemaPIDCompleto</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Ocultar la otra</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a17051ba722051ccaaa377ab46b2a4f3a">ui_EsquemaTRMSCompleto</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Serial.println(<span class="stringliteral">&quot;[GeneralDiagram] Seleccionado bloque PID completo&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">static</span> <span class="keywordtype">void</span> ShowTRMSBlock()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// Ocultar esquema general</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a9e6c5f48cc5d530d8c8f0a27abae4ae7">ui_EsquemaGeneral</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// Mostrar imagen del TRMS completo</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_function" href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a>(<a class="code hl_variable" href="ui_8c.html#a17051ba722051ccaaa377ab46b2a4f3a">ui_EsquemaTRMSCompleto</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// Ocultar la otra</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a073e0d4e0d142e9812701038b590a3ff">ui_EsquemaPIDCompleto</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    Serial.println(<span class="stringliteral">&quot;[GeneralDiagram] Seleccionado bloque TRMS completo&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// CALLBACK DE EVENTO</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">static</span> <span class="keywordtype">void</span> GeneralDiagram_Event(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_enumeration" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="lv__event_8c.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a>(e);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// Solo actuamos al SOLTAR el dedo (tap)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (code != <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a57be5704cf368a6ae442eb3642b52d4b">LV_EVENT_RELEASED</a>) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// Punto táctil en coordenadas de pantalla</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_typedef" href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a> * indev = <a class="code hl_function" href="lv__indev_8c.html#afb429194dbfb22811c076955d792f73c">lv_indev_get_act</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> (!indev) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> p;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="lv__indev_8c.html#a0b8a336a876a82dbb2d24583197792a9">lv_indev_get_point</a>(indev, &amp;p);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    Serial.print(<span class="stringliteral">&quot;[GeneralDiagram] Touch (screen) x=&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    Serial.print(p.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    Serial.print(<span class="stringliteral">&quot; y=&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Serial.println(p.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// -----------------------------------------</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// Convertir a coordenadas relativas al objeto</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// -----------------------------------------</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> obj_coords;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#ac6ad8c741536203b984fc628dbb4f9f8">lv_obj_get_coords</a>(obj, &amp;obj_coords);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x_rel = p.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> - obj_coords.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y_rel = p.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> - obj_coords.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    Serial.print(<span class="stringliteral">&quot;[GeneralDiagram] Touch (obj) x=&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    Serial.print(x_rel);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    Serial.print(<span class="stringliteral">&quot; y=&quot;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    Serial.println(y_rel);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// --- 1) ¿Hemos tocado el bloque PID completo? ---</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">bool</span> hitPID =</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        (x_rel &gt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#aab59a79330717b76cecc8e3eef1f5b62">ESQ_PID_X1</a> &amp;&amp; x_rel &lt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#a90aba44a979706dfdaaf67f945043c6c">ESQ_PID_X2</a> &amp;&amp;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>         y_rel &gt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#a388a5c3a04251262cac09eb10817670b">ESQ_PID_Y1</a> &amp;&amp; y_rel &lt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#ac99325ae0c91b75a31dee8c1738ad0bd">ESQ_PID_Y2</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// --- 2) ¿Hemos tocado el bloque TRMS completo? ---</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">bool</span> hitTRMS =</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        (x_rel &gt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#a0f4c6fedcfc40dbc207b797296dbe8a4">ESQ_TRMS_X1</a> &amp;&amp; x_rel &lt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#acf6c66c91329639bdc92f4e64bbfed32">ESQ_TRMS_X2</a> &amp;&amp;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>         y_rel &gt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#ac94b021018184ad11e6042dd64191473">ESQ_TRMS_Y1</a> &amp;&amp; y_rel &lt;= <a class="code hl_variable" href="General__Diagram_8cpp.html#aa93abdf31d29d1c5f51991e6464a38d5">ESQ_TRMS_Y2</a>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (!hitPID &amp;&amp; !hitTRMS) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="comment">// Pulso fuera de las zonas interesantes</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// Ocultar esquema general</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(<a class="code hl_variable" href="ui_8c.html#a9e6c5f48cc5d530d8c8f0a27abae4ae7">ui_EsquemaGeneral</a>, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (hitPID) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">        Serial.println(&quot;[GeneralDiagram] Seleccionado bloque PID completo&quot;);</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">        // Mostrar imagen del PID completo</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">        lv_obj_clear_flag(ui_EsquemaPIDCompleto, LV_OBJ_FLAG_HIDDEN);</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">        // Asegurarnos de ocultar la otra, por si estuviera visible</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">        lv_obj_add_flag(ui_EsquemaTRMSCompleto, LV_OBJ_FLAG_HIDDEN);</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">        */</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>       ShowPIDBlock(); </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hitTRMS) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">        Serial.println(&quot;[GeneralDiagram] Seleccionado bloque TRMS completo&quot;);</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">        // Mostrar imagen del TRMS completo</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">        lv_obj_clear_flag(ui_EsquemaTRMSCompleto, LV_OBJ_FLAG_HIDDEN);</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">        // Asegurarnos de ocultar la otra, por si estuviera visible</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">        lv_obj_add_flag(ui_EsquemaPIDCompleto, LV_OBJ_FLAG_HIDDEN);</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">        */</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>       ShowTRMSBlock();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">// INICIALIZACIÓN PÚBLICA</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a4fe34b0e74b05968a549fcc5f2079aa5">  141</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="General__Diagram_8cpp.html#a4fe34b0e74b05968a549fcc5f2079aa5">GeneralDiagram_Init</a>(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * diagramImg)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// Aseguramos que la imagen del esquema general es clicable</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(diagramImg, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eab9ba97b9e1ae0b3a4a5eca3d763e263b">LV_OBJ_FLAG_CLICKABLE</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">// Registramos el callback para el evento RELEASED (tap)</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_function" href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a>(diagramImg, GeneralDiagram_Event,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                        <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a57be5704cf368a6ae442eb3642b52d4b">LV_EVENT_RELEASED</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    Serial.println(<span class="stringliteral">&quot;[GeneralDiagram] Inicializado&quot;</span>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">// API PÚBLICA PARA EL MANDO</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a06d94c1a91b4495320572e2609669f30">  157</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="General__Diagram_8cpp.html#a06d94c1a91b4495320572e2609669f30">GeneralDiagram_SelectPID</a>()</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>{</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    ShowPIDBlock();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="General__Diagram_8cpp.html#a7885b402547e6767d75fb8f36c9dae41">  162</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="General__Diagram_8cpp.html#a7885b402547e6767d75fb8f36c9dae41">GeneralDiagram_SelectTRMS</a>()</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    ShowTRMSBlock();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+</div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a06d94c1a91b4495320572e2609669f30"><div class="ttname"><a href="General__Diagram_8cpp.html#a06d94c1a91b4495320572e2609669f30">GeneralDiagram_SelectPID</a></div><div class="ttdeci">void GeneralDiagram_SelectPID()</div><div class="ttdef"><b>Definition</b> <a href="#l00157">General_Diagram.cpp:157</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a0f4c6fedcfc40dbc207b797296dbe8a4"><div class="ttname"><a href="General__Diagram_8cpp.html#a0f4c6fedcfc40dbc207b797296dbe8a4">ESQ_TRMS_X1</a></div><div class="ttdeci">const int ESQ_TRMS_X1</div><div class="ttdef"><b>Definition</b> <a href="#l00021">General_Diagram.cpp:21</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a1b624cc879d00b46ce9d50404e8ab3e9"><div class="ttname"><a href="General__Diagram_8cpp.html#a1b624cc879d00b46ce9d50404e8ab3e9">ui_BtnPIDZone</a></div><div class="ttdeci">lv_obj_t * ui_BtnPIDZone</div><div class="ttdef"><b>Definition</b> <a href="#l00007">General_Diagram.cpp:7</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a388a5c3a04251262cac09eb10817670b"><div class="ttname"><a href="General__Diagram_8cpp.html#a388a5c3a04251262cac09eb10817670b">ESQ_PID_Y1</a></div><div class="ttdeci">const int ESQ_PID_Y1</div><div class="ttdef"><b>Definition</b> <a href="#l00017">General_Diagram.cpp:17</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a4fe34b0e74b05968a549fcc5f2079aa5"><div class="ttname"><a href="General__Diagram_8cpp.html#a4fe34b0e74b05968a549fcc5f2079aa5">GeneralDiagram_Init</a></div><div class="ttdeci">void GeneralDiagram_Init(lv_obj_t *diagramImg)</div><div class="ttdef"><b>Definition</b> <a href="#l00141">General_Diagram.cpp:141</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a7885b402547e6767d75fb8f36c9dae41"><div class="ttname"><a href="General__Diagram_8cpp.html#a7885b402547e6767d75fb8f36c9dae41">GeneralDiagram_SelectTRMS</a></div><div class="ttdeci">void GeneralDiagram_SelectTRMS()</div><div class="ttdef"><b>Definition</b> <a href="#l00162">General_Diagram.cpp:162</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_a90aba44a979706dfdaaf67f945043c6c"><div class="ttname"><a href="General__Diagram_8cpp.html#a90aba44a979706dfdaaf67f945043c6c">ESQ_PID_X2</a></div><div class="ttdeci">const int ESQ_PID_X2</div><div class="ttdef"><b>Definition</b> <a href="#l00016">General_Diagram.cpp:16</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_aa93abdf31d29d1c5f51991e6464a38d5"><div class="ttname"><a href="General__Diagram_8cpp.html#aa93abdf31d29d1c5f51991e6464a38d5">ESQ_TRMS_Y2</a></div><div class="ttdeci">const int ESQ_TRMS_Y2</div><div class="ttdef"><b>Definition</b> <a href="#l00024">General_Diagram.cpp:24</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_aab59a79330717b76cecc8e3eef1f5b62"><div class="ttname"><a href="General__Diagram_8cpp.html#aab59a79330717b76cecc8e3eef1f5b62">ESQ_PID_X1</a></div><div class="ttdeci">const int ESQ_PID_X1</div><div class="ttdef"><b>Definition</b> <a href="#l00015">General_Diagram.cpp:15</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_ac94b021018184ad11e6042dd64191473"><div class="ttname"><a href="General__Diagram_8cpp.html#ac94b021018184ad11e6042dd64191473">ESQ_TRMS_Y1</a></div><div class="ttdeci">const int ESQ_TRMS_Y1</div><div class="ttdef"><b>Definition</b> <a href="#l00023">General_Diagram.cpp:23</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_ac99325ae0c91b75a31dee8c1738ad0bd"><div class="ttname"><a href="General__Diagram_8cpp.html#ac99325ae0c91b75a31dee8c1738ad0bd">ESQ_PID_Y2</a></div><div class="ttdeci">const int ESQ_PID_Y2</div><div class="ttdef"><b>Definition</b> <a href="#l00018">General_Diagram.cpp:18</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_acf6c66c91329639bdc92f4e64bbfed32"><div class="ttname"><a href="General__Diagram_8cpp.html#acf6c66c91329639bdc92f4e64bbfed32">ESQ_TRMS_X2</a></div><div class="ttdeci">const int ESQ_TRMS_X2</div><div class="ttdef"><b>Definition</b> <a href="#l00022">General_Diagram.cpp:22</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8cpp_html_ad4d717024a886c8aa6ce8b2dfe596841"><div class="ttname"><a href="General__Diagram_8cpp.html#ad4d717024a886c8aa6ce8b2dfe596841">ui_BtnTRMSZone</a></div><div class="ttdeci">lv_obj_t * ui_BtnTRMSZone</div><div class="ttdef"><b>Definition</b> <a href="#l00008">General_Diagram.cpp:8</a></div></div>
+<div class="ttc" id="aGeneral__Diagram_8h_html"><div class="ttname"><a href="General__Diagram_8h.html">General_Diagram.h</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a1c1e534267d7f818054106a10966b6f1"><div class="ttname"><a href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a></div><div class="ttdeci">lv_obj_t * lv_event_get_target(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00108">lv_event.c:108</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a9a532f570ede648810e9e36b5d3f3bb1"><div class="ttname"><a href="lv__event_8c.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a></div><div class="ttdeci">lv_event_code_t lv_event_get_code(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00118">lv_event.c:118</a></div></div>
+<div class="ttc" id="alv__event_8c_html_abacf41238027144749f68107a5375994"><div class="ttname"><a href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a></div><div class="ttdeci">struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00162">lv_event.c:162</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a21b130dbe9349eab447cf0c891517272"><div class="ttname"><a href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a></div><div class="ttdeci">struct _lv_event_t lv_event_t</div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></div><div class="ttdeci">lv_event_code_t</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00032">lv_event.h:32</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a57be5704cf368a6ae442eb3642b52d4b"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a57be5704cf368a6ae442eb3642b52d4b">LV_EVENT_RELEASED</a></div><div class="ttdeci">@ LV_EVENT_RELEASED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00043">lv_event.h:43</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_a7fc4c271f4ad53b4949e26b2999a1785"><div class="ttname"><a href="lv__hal__indev_8h.html#a7fc4c271f4ad53b4949e26b2999a1785">lv_indev_t</a></div><div class="ttdeci">struct _lv_indev_t lv_indev_t</div></div>
+<div class="ttc" id="alv__indev_8c_html_a0b8a336a876a82dbb2d24583197792a9"><div class="ttname"><a href="lv__indev_8c.html#a0b8a336a876a82dbb2d24583197792a9">lv_indev_get_point</a></div><div class="ttdeci">void lv_indev_get_point(const lv_indev_t *indev, lv_point_t *point)</div><div class="ttdef"><b>Definition</b> <a href="lv__indev_8c_source.html#l00221">lv_indev.c:221</a></div></div>
+<div class="ttc" id="alv__indev_8c_html_afb429194dbfb22811c076955d792f73c"><div class="ttname"><a href="lv__indev_8c.html#afb429194dbfb22811c076955d792f73c">lv_indev_get_act</a></div><div class="ttdeci">lv_indev_t * lv_indev_get_act(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__indev_8c_source.html#l00139">lv_indev.c:139</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a87fa70194789d48ea3dba01d1c28c984"><div class="ttname"><a href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a></div><div class="ttdeci">void lv_obj_add_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00229">lv_obj.c:229</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a8a45a671b0fb07c0e99639c180d25fba"><div class="ttname"><a href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a></div><div class="ttdeci">void lv_obj_clear_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00266">lv_obj.c:266</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a></div><div class="ttdeci">@ LV_OBJ_FLAG_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00090">lv_obj.h:90</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10eab9ba97b9e1ae0b3a4a5eca3d763e263b"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10eab9ba97b9e1ae0b3a4a5eca3d763e263b">LV_OBJ_FLAG_CLICKABLE</a></div><div class="ttdeci">@ LV_OBJ_FLAG_CLICKABLE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00091">lv_obj.h:91</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_ac6ad8c741536203b984fc628dbb4f9f8"><div class="ttname"><a href="lv__obj__pos_8c.html#ac6ad8c741536203b984fc628dbb4f9f8">lv_obj_get_coords</a></div><div class="ttdeci">void lv_obj_get_coords(const lv_obj_t *obj, lv_area_t *coords)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00487">lv_obj_pos.c:487</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a56d2e4d92428979499ff6a06e3d23cba"><div class="ttname"><a href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">lv_area_t::x1</a></div><div class="ttdeci">lv_coord_t x1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00044">lv_area.h:44</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a8e6b43ed9ab280f66ae4e00af312ca27"><div class="ttname"><a href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">lv_area_t::y1</a></div><div class="ttdeci">lv_coord_t y1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00045">lv_area.h:45</a></div></div>
+<div class="ttc" id="astructlv__point__t_html"><div class="ttname"><a href="structlv__point__t.html">lv_point_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00037">lv_area.h:37</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+<div class="ttc" id="aui_8c_html_a073e0d4e0d142e9812701038b590a3ff"><div class="ttname"><a href="ui_8c.html#a073e0d4e0d142e9812701038b590a3ff">ui_EsquemaPIDCompleto</a></div><div class="ttdeci">lv_obj_t * ui_EsquemaPIDCompleto</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00147">ui.c:147</a></div></div>
+<div class="ttc" id="aui_8c_html_a17051ba722051ccaaa377ab46b2a4f3a"><div class="ttname"><a href="ui_8c.html#a17051ba722051ccaaa377ab46b2a4f3a">ui_EsquemaTRMSCompleto</a></div><div class="ttdeci">lv_obj_t * ui_EsquemaTRMSCompleto</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00145">ui.c:145</a></div></div>
+<div class="ttc" id="aui_8c_html_a9e6c5f48cc5d530d8c8f0a27abae4ae7"><div class="ttname"><a href="ui_8c.html#a9e6c5f48cc5d530d8c8f0a27abae4ae7">ui_EsquemaGeneral</a></div><div class="ttdeci">lv_obj_t * ui_EsquemaGeneral</div><div class="ttdef"><b>Definition</b> <a href="ui_8c_source.html#l00146">ui.c:146</a></div></div>
+<div class="ttc" id="aui_8h_html"><div class="ttname"><a href="ui_8h.html">ui.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="General__Diagram_8cpp.html">General_Diagram.cpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

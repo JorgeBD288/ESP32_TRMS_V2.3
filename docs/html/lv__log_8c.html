@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/misc/lv_log.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__log_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_log.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__log_8h_source.html">lv_log.h</a>&quot;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="lv__printf_8h_source.html">lv_printf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__hal__tick_8h_source.html">../hal/lv_hal_tick.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+</div>
+<p><a href="lv__log_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a5993e38321625dd76bb4ac417de64d07" id="r_a5993e38321625dd76bb4ac417de64d07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5993e38321625dd76bb4ac417de64d07">_lv_log_add</a> (<a class="el" href="lv__log_8h.html#a197d0f37f70d0d25b7fb8a12bf5394cf">lv_log_level_t</a> level, const char *file, int line, const char *func, const char *format,...)</td></tr>
+<tr class="memitem:acf6bc842a6b0147cebd718c5a6a52a2d" id="r_acf6bc842a6b0147cebd718c5a6a52a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6bc842a6b0147cebd718c5a6a52a2d">lv_log</a> (const char *format,...)</td></tr>
+<tr class="memitem:a59975b8b340a8ccbbe8f1a2b4e1f82bf" id="r_a59975b8b340a8ccbbe8f1a2b4e1f82bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59975b8b340a8ccbbe8f1a2b4e1f82bf">lv_log_register_print_cb</a> (<a class="el" href="lv__log_8h.html#afb6b0fa28d2b9e7fa1c5a8eb3f179de3">lv_log_print_g_cb_t</a> print_cb)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a5993e38321625dd76bb4ac417de64d07" name="a5993e38321625dd76bb4ac417de64d07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5993e38321625dd76bb4ac417de64d07">&#9670;&#160;</a></span>_lv_log_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _lv_log_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__log_8h.html#a197d0f37f70d0d25b7fb8a12bf5394cf">lv_log_level_t</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add a log </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>the level of log. (From <span class="tt"><a class="el" href="lv__log_8h.html#a197d0f37f70d0d25b7fb8a12bf5394cf">lv_log_level_t</a></span> enum) </td></tr>
+    <tr><td class="paramname">file</td><td>name of the file when the log added </td></tr>
+    <tr><td class="paramname">line</td><td>line number in the source code where the log added </td></tr>
+    <tr><td class="paramname">func</td><td>name of the function when the log added </td></tr>
+    <tr><td class="paramname">format</td><td>printf-like format string </td></tr>
+    <tr><td class="paramname">...</td><td>parameters for <span class="tt">format</span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__log_8c_source.html#l00066">66</a> del archivo <a class="el" href="lv__log_8c_source.html">lv_log.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span>(level &gt;= <a class="code hl_define" href="lv__log_8h.html#a9860403b37b82c8a267fc673cb724dc6">_LV_LOG_LEVEL_NUM</a>) <span class="keywordflow">return</span>; <span class="comment">/*Invalid level*/</span></div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="keyword">static</span> uint32_t last_log_time = 0;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span>(level &gt;= <a class="code hl_define" href="lv__conf_8h.html#a32a33e8b75266521138d09e5835fbe00">LV_LOG_LEVEL</a>) {</div>
+<div class="line"><span class="lineno">   73</span>        va_list args;</div>
+<div class="line"><span class="lineno">   74</span>        va_start(args, format);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        <span class="comment">/*Use only the file name not the path*/</span></div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordtype">size_t</span> p;</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">for</span>(p = strlen(file); p &gt; 0; p--) {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">if</span>(file[p] == <span class="charliteral">&#39;/&#39;</span> || file[p] == <span class="charliteral">&#39;\\&#39;</span>) {</div>
+<div class="line"><span class="lineno">   80</span>                p++;    <span class="comment">/*Skip the slash*/</span></div>
+<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   82</span>            }</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>        uint32_t t = <a class="code hl_function" href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a>();</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * lvl_prefix[] = {<span class="stringliteral">&quot;Trace&quot;</span>, <span class="stringliteral">&quot;Info&quot;</span>, <span class="stringliteral">&quot;Warn&quot;</span>, <span class="stringliteral">&quot;Error&quot;</span>, <span class="stringliteral">&quot;User&quot;</span>};</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">#if LV_LOG_PRINTF</span></div>
+<div class="line"><span class="lineno">   89</span>        printf(<span class="stringliteral">&quot;[%s]\t(%&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;.%03&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;, +%&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;)\t %s: &quot;</span>,</div>
+<div class="line"><span class="lineno">   90</span>               lvl_prefix[level], t / 1000, t % 1000, t - last_log_time, func);</div>
+<div class="line"><span class="lineno">   91</span>        vprintf(format, args);</div>
+<div class="line"><span class="lineno">   92</span>        printf(<span class="stringliteral">&quot; \t(in %s line #%d)\n&quot;</span>, &amp;file[p], line);</div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">if</span>(custom_print_cb) {</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordtype">char</span> buf[512];</div>
+<div class="line"><span class="lineno">   96</span><span class="preprocessor">#if LV_SPRINTF_CUSTOM</span></div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordtype">char</span> msg[256];</div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_function" href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a>(msg, <span class="keyword">sizeof</span>(msg), format, args);</div>
+<div class="line"><span class="lineno">   99</span>            <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;[%s]\t(%&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;.%03&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;, +%&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;)\t %s: %s \t(in %s line #%d)\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  100</span>                        lvl_prefix[level], t / 1000, t % 1000, t - last_log_time, func, msg, &amp;file[p], line);</div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  102</span>            <a class="code hl_struct" href="structlv__vaformat__t.html">lv_vaformat_t</a> vaf = {format, &amp;args};</div>
+<div class="line"><span class="lineno">  103</span>            <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;[%s]\t(%&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;.%03&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;, +%&quot;</span> <a class="code hl_define" href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a> <span class="stringliteral">&quot;)\t %s: %pV \t(in %s line #%d)\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  104</span>                        lvl_prefix[level], t / 1000, t % 1000, t - last_log_time, func, (<span class="keywordtype">void</span> *)&amp;vaf, &amp;file[p], line);</div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  106</span>            custom_print_cb(buf);</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        last_log_time = t;</div>
+<div class="line"><span class="lineno">  111</span>        va_end(args);</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span>}</div>
+<div class="ttc" id="alv__conf_8h_html_a32a33e8b75266521138d09e5835fbe00"><div class="ttname"><a href="lv__conf_8h.html#a32a33e8b75266521138d09e5835fbe00">LV_LOG_LEVEL</a></div><div class="ttdeci">#define LV_LOG_LEVEL</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00243">lv_conf.h:243</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a051c47bcfb48282a75834d8dd0a8470c"><div class="ttname"><a href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a></div><div class="ttdeci">uint32_t lv_tick_get(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00060">lv_hal_tick.c:60</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a9860403b37b82c8a267fc673cb724dc6"><div class="ttname"><a href="lv__log_8h.html#a9860403b37b82c8a267fc673cb724dc6">_LV_LOG_LEVEL_NUM</a></div><div class="ttdeci">#define _LV_LOG_LEVEL_NUM</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00033">lv_log.h:33</a></div></div>
+<div class="ttc" id="alv__printf_8c_html_a5480d8503f8285409692a6116c7df5e7"><div class="ttname"><a href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a></div><div class="ttdeci">int lv_snprintf(char *buffer, size_t count, const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8c_source.html#l00865">lv_printf.c:865</a></div></div>
+<div class="ttc" id="alv__printf_8c_html_af55dc6709f1bb7ea99ccfd7bd1f6edf2"><div class="ttname"><a href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a></div><div class="ttdeci">int lv_vsnprintf(char *buffer, size_t count, const char *format, va_list va)</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8c_source.html#l00874">lv_printf.c:874</a></div></div>
+<div class="ttc" id="alv__printf_8h_html_acf2121e30de3a3a1b233d61603ecfb29"><div class="ttname"><a href="lv__printf_8h.html#acf2121e30de3a3a1b233d61603ecfb29">LV_PRId32</a></div><div class="ttdeci">#define LV_PRId32</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8h_source.html#l00053">lv_printf.h:53</a></div></div>
+<div class="ttc" id="astructlv__vaformat__t_html"><div class="ttname"><a href="structlv__vaformat__t.html">lv_vaformat_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8h_source.html#l00072">lv_printf.h:72</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00033">_LV_LOG_LEVEL_NUM</a>, <a class="el" href="lv__conf_8h_source.html#l00243">LV_LOG_LEVEL</a>, <a class="el" href="lv__printf_8h_source.html#l00053">LV_PRId32</a>, <a class="el" href="lv__printf_8c_source.html#l00865">lv_snprintf()</a>, <a class="el" href="lv__hal__tick_8c_source.html#l00060">lv_tick_get()</a> y <a class="el" href="lv__printf_8c_source.html#l00874">lv_vsnprintf()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__log_8h.html#a76ec47f4f308cfe3400e171aca1b1805">_lv_log_add()</a>.</p>
+
+</div>
+</div>
+<a id="acf6bc842a6b0147cebd718c5a6a52a2d" name="acf6bc842a6b0147cebd718c5a6a52a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6bc842a6b0147cebd718c5a6a52a2d">&#9670;&#160;</a></span>lv_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_log </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__log_8c_source.html#l00115">115</a> del archivo <a class="el" href="lv__log_8c_source.html">lv_log.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="lv__conf_8h.html#a32a33e8b75266521138d09e5835fbe00">LV_LOG_LEVEL</a> &gt;= <a class="code hl_define" href="lv__log_8h.html#a9d35ec5e9204e629c97b813c5fd6391c">LV_LOG_LEVEL_NONE</a>) <span class="keywordflow">return</span>; <span class="comment">/* disable log */</span></div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    va_list args;</div>
+<div class="line"><span class="lineno">  120</span>    va_start(args, format);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span><span class="preprocessor">#if LV_LOG_PRINTF</span></div>
+<div class="line"><span class="lineno">  123</span>    vprintf(format, args);</div>
+<div class="line"><span class="lineno">  124</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span>(custom_print_cb) {</div>
+<div class="line"><span class="lineno">  126</span>        <span class="keywordtype">char</span> buf[512];</div>
+<div class="line"><span class="lineno">  127</span><span class="preprocessor">#if LV_SPRINTF_CUSTOM</span></div>
+<div class="line"><span class="lineno">  128</span>        <a class="code hl_function" href="lv__printf_8c.html#af55dc6709f1bb7ea99ccfd7bd1f6edf2">lv_vsnprintf</a>(buf, <span class="keyword">sizeof</span>(buf), format, args);</div>
+<div class="line"><span class="lineno">  129</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  130</span>        <a class="code hl_struct" href="structlv__vaformat__t.html">lv_vaformat_t</a> vaf = {format, &amp;args};</div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%pV&quot;</span>, (<span class="keywordtype">void</span> *)&amp;vaf);</div>
+<div class="line"><span class="lineno">  132</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  133</span>        custom_print_cb(buf);</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  138</span>}</div>
+<div class="ttc" id="alv__log_8h_html_a9d35ec5e9204e629c97b813c5fd6391c"><div class="ttname"><a href="lv__log_8h.html#a9d35ec5e9204e629c97b813c5fd6391c">LV_LOG_LEVEL_NONE</a></div><div class="ttdeci">#define LV_LOG_LEVEL_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00032">lv_log.h:32</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__conf_8h_source.html#l00243">LV_LOG_LEVEL</a>, <a class="el" href="lv__log_8h_source.html#l00032">LV_LOG_LEVEL_NONE</a>, <a class="el" href="lv__printf_8c_source.html#l00865">lv_snprintf()</a> y <a class="el" href="lv__printf_8c_source.html#l00874">lv_vsnprintf()</a>.</p>
+
+</div>
+</div>
+<a id="a59975b8b340a8ccbbe8f1a2b4e1f82bf" name="a59975b8b340a8ccbbe8f1a2b4e1f82bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59975b8b340a8ccbbe8f1a2b4e1f82bf">&#9670;&#160;</a></span>lv_log_register_print_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_log_register_print_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__log_8h.html#afb6b0fa28d2b9e7fa1c5a8eb3f179de3">lv_log_print_g_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>print_cb</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Register custom print/write function to call when a log is added. It can format its "File path", "Line number" and "Description" as required and send the formatted log message to a console or serial port. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">print_cb</td><td>a function pointer to print a log </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__log_8c_source.html#l00052">52</a> del archivo <a class="el" href="lv__log_8c_source.html">lv_log.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    custom_print_cb = print_cb;</div>
+<div class="line"><span class="lineno">   55</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__log_8c.html">lv_log.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

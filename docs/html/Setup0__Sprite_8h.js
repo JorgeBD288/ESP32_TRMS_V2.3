@@ -1,0 +1,27 @@
+var Setup0__Sprite_8h =
+[
+    [ "LOAD_FONT2", "Setup0__Sprite_8h.html#a9a64e48d3861ca909fb1eb9b39492f43", null ],
+    [ "LOAD_FONT4", "Setup0__Sprite_8h.html#aff0ca6aaffec55fd4a03b3069a043296", null ],
+    [ "LOAD_FONT6", "Setup0__Sprite_8h.html#a53e7079cd5578217168e9c8de3c43d56", null ],
+    [ "LOAD_FONT7", "Setup0__Sprite_8h.html#ab824806161666b9da96b88c9fdd600aa", null ],
+    [ "LOAD_FONT8", "Setup0__Sprite_8h.html#a3bfd3307b606101c9c9b4c4ef75f4350", null ],
+    [ "LOAD_GFXFF", "Setup0__Sprite_8h.html#aaddd4fc72f0ef9b8f513c51b502bd95f", null ],
+    [ "LOAD_GLCD", "Setup0__Sprite_8h.html#aee21b8f7828189468d697cc8dfadbccc", null ],
+    [ "SMOOTH_FONT", "Setup0__Sprite_8h.html#af8d7688f4a848a0ee8013c122abbda24", null ],
+    [ "TFT_CASET", "Setup0__Sprite_8h.html#ab8e30268a8a9b6034eb14ec965e24007", null ],
+    [ "TFT_HEIGHT", "Setup0__Sprite_8h.html#a1c2d2e1cd167f90b809c3450fd6f3434", null ],
+    [ "TFT_IDXRD", "Setup0__Sprite_8h.html#a3e94e5c0fe6f960ff89b865ffe590962", null ],
+    [ "TFT_INIT_DELAY", "Setup0__Sprite_8h.html#a7c67dbbb7a1eaed92026ac6590220f0a", null ],
+    [ "TFT_INVOFF", "Setup0__Sprite_8h.html#a795de9a5c1c834adbe3a3d8f54938064", null ],
+    [ "TFT_INVON", "Setup0__Sprite_8h.html#a51e1c3c43d6be5dc251620395218cda2", null ],
+    [ "TFT_MISO", "Setup0__Sprite_8h.html#ac108dd4310833bbb4afd1bce1090d55f", null ],
+    [ "TFT_MOSI", "Setup0__Sprite_8h.html#a4db639d2d88a53132a529677e6dd795c", null ],
+    [ "TFT_NOP", "Setup0__Sprite_8h.html#a8265db7a8d5940d5a665e6188755520c", null ],
+    [ "TFT_PASET", "Setup0__Sprite_8h.html#a6933304a9acb207cba70285cb5577db5", null ],
+    [ "TFT_RAMRD", "Setup0__Sprite_8h.html#acfb3e534418718cffb7f32a487a38c92", null ],
+    [ "TFT_RAMWR", "Setup0__Sprite_8h.html#ae955f58d1b3cdbaf47e4cc58aff8d2cf", null ],
+    [ "TFT_SCLK", "Setup0__Sprite_8h.html#a095a96cc6abc991346d7b6712f8576b5", null ],
+    [ "TFT_SWRST", "Setup0__Sprite_8h.html#a10aa3b62accf59709f4429b56baac99d", null ],
+    [ "TFT_WIDTH", "Setup0__Sprite_8h.html#a83af0cb652728913ff58da7133c692ea", null ],
+    [ "USER_SETUP_ID", "Setup0__Sprite_8h.html#a4871cad889dcc0f0ceeb0969ce8b195a", null ]
+];

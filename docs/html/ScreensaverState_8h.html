@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/Custom_Libraries/ScreensaverState.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ScreensaverState_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo ScreensaverState.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+</div>
+<p><a href="ScreensaverState_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a7b92ffac9380547d17cebc7cfec56f22" id="r_a7b92ffac9380547d17cebc7cfec56f22"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a> { <br />
+&#160;&#160;<a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a> = 0
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a>
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a>
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a>
+, <br />
+&#160;&#160;<a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a>
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a>
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a>
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a>
+, <br />
+&#160;&#160;<a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a>
+, <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a>
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a81fc9d089912642873dd9e9ddb324a90" id="r_a81fc9d089912642873dd9e9ddb324a90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81fc9d089912642873dd9e9ddb324a90">RegisterActivity</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad00e7da8b0a922bb82451c2a9281d0dd" id="r_ad00e7da8b0a922bb82451c2a9281d0dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad00e7da8b0a922bb82451c2a9281d0dd">g_prevScreenId</a></td></tr>
+<tr class="memitem:addce1751b09ea6eee45c994725cf5125" id="r_addce1751b09ea6eee45c994725cf5125"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addce1751b09ea6eee45c994725cf5125">g_screensaverActive</a></td></tr>
+</table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a7b92ffac9380547d17cebc7cfec56f22" name="a7b92ffac9380547d17cebc7cfec56f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b92ffac9380547d17cebc7cfec56f22">&#9670;&#160;</a></span>PrevScreenId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a" name="a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a"></a>SCR_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f" name="a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f"></a>SCR_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a" name="a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a"></a>SCR_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8" name="a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8"></a>SCR_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564" name="a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564"></a>SCR_4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e" name="a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e"></a>SCR_5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92" name="a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92"></a>SCR_6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e" name="a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e"></a>SCR_7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1" name="a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1"></a>SCR_8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832" name="a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832"></a>SCR_9&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="ScreensaverState_8h_source.html#l00007">7</a> del archivo <a class="el" href="ScreensaverState_8h_source.html">ScreensaverState.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>                  {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a> = 0,</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a>,</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a>,</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a>,</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a>,</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a>,</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a>,</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a>,</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a>,</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a>,</div>
+<div class="line"><span class="lineno">   18</span>    <span class="comment">// añade más si tienes más pantallas</span></div>
+<div class="line"><span class="lineno">   19</span>};</div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22a079f6cabd73e48af67210966b295ff92">SCR_6</a></div><div class="ttdeci">@ SCR_6</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00014">ScreensaverState.h:14</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22a1d654459e1b888cc369101f2e54e299f">SCR_1</a></div><div class="ttdeci">@ SCR_1</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00009">ScreensaverState.h:9</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22a6045c07628cecc494b7fc5b9bd02080e">SCR_5</a></div><div class="ttdeci">@ SCR_5</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00013">ScreensaverState.h:13</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22a7019690295bb01bbe04d448f6bddef7a">SCR_2</a></div><div class="ttdeci">@ SCR_2</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00010">ScreensaverState.h:10</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22a99c7ed7535cda8ae407f96a46ca75a2e">SCR_7</a></div><div class="ttdeci">@ SCR_7</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00015">ScreensaverState.h:15</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22aa855a82200bd04af45e2f96d25d3aec1">SCR_8</a></div><div class="ttdeci">@ SCR_8</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00016">ScreensaverState.h:16</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22acb4894e8607b2e375995eba06bc32832">SCR_9</a></div><div class="ttdeci">@ SCR_9</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00017">ScreensaverState.h:17</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22ad8c3e4c86ca5018833d35477ca1a2be8">SCR_3</a></div><div class="ttdeci">@ SCR_3</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00011">ScreensaverState.h:11</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22ae209d4bae495a15296ca77e48b383564">SCR_4</a></div><div class="ttdeci">@ SCR_4</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00012">ScreensaverState.h:12</a></div></div>
+<div class="ttc" id="aScreensaverState_8h_html_a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a"><div class="ttname"><a href="#a7b92ffac9380547d17cebc7cfec56f22ae987271e3b830b5fa85d5c4c4976cf5a">SCR_NONE</a></div><div class="ttdeci">@ SCR_NONE</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8h_source.html#l00008">ScreensaverState.h:8</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a81fc9d089912642873dd9e9ddb324a90" name="a81fc9d089912642873dd9e9ddb324a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81fc9d089912642873dd9e9ddb324a90">&#9670;&#160;</a></span>RegisterActivity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegisterActivity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ScreensaverState_8cpp_source.html#l00009">9</a> del archivo <a class="el" href="ScreensaverState_8cpp_source.html">ScreensaverState.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>{</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="main_8cpp.html#ab1a9ad141585244770b08b1a56a17c22">g_lastActivityMs</a> = millis();</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+<div class="ttc" id="amain_8cpp_html_ab1a9ad141585244770b08b1a56a17c22"><div class="ttname"><a href="main_8cpp.html#ab1a9ad141585244770b08b1a56a17c22">g_lastActivityMs</a></div><div class="ttdeci">uint32_t g_lastActivityMs</div><div class="ttdef"><b>Definition</b> <a href="ScreensaverState_8cpp_source.html#l00006">ScreensaverState.cpp:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="ScreensaverState_8cpp_source.html#l00006">g_lastActivityMs</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="IRControl_8cpp_source.html#l00154">IRControl_poll()</a> y <a class="el" href="main_8cpp_source.html#l00261">loop()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="ad00e7da8b0a922bb82451c2a9281d0dd" name="ad00e7da8b0a922bb82451c2a9281d0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad00e7da8b0a922bb82451c2a9281d0dd">&#9670;&#160;</a></span>g_prevScreenId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a7b92ffac9380547d17cebc7cfec56f22">PrevScreenId</a> g_prevScreenId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ScreensaverState_8cpp_source.html#l00004">4</a> del archivo <a class="el" href="ScreensaverState_8cpp_source.html">ScreensaverState.cpp</a>.</p>
+
+</div>
+</div>
+<a id="addce1751b09ea6eee45c994725cf5125" name="addce1751b09ea6eee45c994725cf5125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addce1751b09ea6eee45c994725cf5125">&#9670;&#160;</a></span>g_screensaverActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool g_screensaverActive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="ScreensaverState_8cpp_source.html#l00005">5</a> del archivo <a class="el" href="ScreensaverState_8cpp_source.html">ScreensaverState.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="ScreensaverState_8h.html">ScreensaverState.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

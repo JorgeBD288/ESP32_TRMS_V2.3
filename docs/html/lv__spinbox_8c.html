@@ -1,0 +1,838 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/extra/widgets/spinbox/lv_spinbox.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__spinbox_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_spinbox.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__spinbox_8h_source.html">lv_spinbox.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../../../misc/lv_assert.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__spinbox_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#a44c2d0ad36df3f61c8cf8631e85bd96f">lv_spinbox_class</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ae156852c002d8612263fed8cea095ca1" id="r_ae156852c002d8612263fed8cea095ca1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae156852c002d8612263fed8cea095ca1">lv_spinbox_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:a096c73fcbbd794745544efaaf34e723e" id="r_a096c73fcbbd794745544efaaf34e723e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a096c73fcbbd794745544efaaf34e723e">lv_spinbox_decrement</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a798aa2746ee6f103f6e557f5c53b1a2a" id="r_a798aa2746ee6f103f6e557f5c53b1a2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a798aa2746ee6f103f6e557f5c53b1a2a">lv_spinbox_get_rollover</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a0c8339e63ef3ab378555424b40f90880" id="r_a0c8339e63ef3ab378555424b40f90880"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c8339e63ef3ab378555424b40f90880">lv_spinbox_get_step</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a2d2482626b8e38a8a43c462c71216381" id="r_a2d2482626b8e38a8a43c462c71216381"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d2482626b8e38a8a43c462c71216381">lv_spinbox_get_value</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:aae97fc287c6a1d5662ea79d21aef8d09" id="r_aae97fc287c6a1d5662ea79d21aef8d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae97fc287c6a1d5662ea79d21aef8d09">lv_spinbox_increment</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a8cdd5fd1cd19bc79d516e5af937c03c3" id="r_a8cdd5fd1cd19bc79d516e5af937c03c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cdd5fd1cd19bc79d516e5af937c03c3">lv_spinbox_set_cursor_pos</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint8_t pos)</td></tr>
+<tr class="memitem:a7ed70b2a8331af6418f9f6d6a8399258" id="r_a7ed70b2a8331af6418f9f6d6a8399258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ed70b2a8331af6418f9f6d6a8399258">lv_spinbox_set_digit_format</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint8_t digit_count, uint8_t separator_position)</td></tr>
+<tr class="memitem:a20cbdd839e4371a6e83bd23b8a2eb948" id="r_a20cbdd839e4371a6e83bd23b8a2eb948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20cbdd839e4371a6e83bd23b8a2eb948">lv_spinbox_set_digit_step_direction</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a> direction)</td></tr>
+<tr class="memitem:ae81cdcef3b533802934c11a36ae79c3f" id="r_ae81cdcef3b533802934c11a36ae79c3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae81cdcef3b533802934c11a36ae79c3f">lv_spinbox_set_range</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, int32_t range_min, int32_t range_max)</td></tr>
+<tr class="memitem:ac7cdff96861c990470660583663a562a" id="r_ac7cdff96861c990470660583663a562a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7cdff96861c990470660583663a562a">lv_spinbox_set_rollover</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, bool b)</td></tr>
+<tr class="memitem:af2de1a90294ad884715505ad82e8751f" id="r_af2de1a90294ad884715505ad82e8751f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2de1a90294ad884715505ad82e8751f">lv_spinbox_set_step</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint32_t step)</td></tr>
+<tr class="memitem:ae0dd5a52087d4d00dc03459c156f37ff" id="r_ae0dd5a52087d4d00dc03459c156f37ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0dd5a52087d4d00dc03459c156f37ff">lv_spinbox_set_value</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, int32_t i)</td></tr>
+<tr class="memitem:ae5ae4be8fcc42c0dd119cc8744707536" id="r_ae5ae4be8fcc42c0dd119cc8744707536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5ae4be8fcc42c0dd119cc8744707536">lv_spinbox_step_next</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a5e5b134aabc06c96be42ec328112784a" id="r_a5e5b134aabc06c96be42ec328112784a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e5b134aabc06c96be42ec328112784a">lv_spinbox_step_prev</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a44c2d0ad36df3f61c8cf8631e85bd96f" id="r_a44c2d0ad36df3f61c8cf8631e85bd96f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44c2d0ad36df3f61c8cf8631e85bd96f">lv_spinbox_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#a44c2d0ad36df3f61c8cf8631e85bd96f">lv_spinbox_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00017">17</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ae156852c002d8612263fed8cea095ca1" name="ae156852c002d8612263fed8cea095ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae156852c002d8612263fed8cea095ca1">&#9670;&#160;</a></span>lv_spinbox_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_spinbox_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a Spinbox object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to an object, it will be the parent of the new spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the created spinbox </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00050">50</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   56</span>}</div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__spinbox__1_8c_source.html#l00024">lv_example_spinbox_1()</a>.</p>
+
+</div>
+</div>
+<a id="a096c73fcbbd794745544efaaf34e723e" name="a096c73fcbbd794745544efaaf34e723e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096c73fcbbd794745544efaaf34e723e">&#9670;&#160;</a></span>lv_spinbox_decrement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_decrement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decrement spinbox value by one step </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00295">295</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>{</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">if</span>(spinbox-&gt;value - spinbox-&gt;step &gt;= spinbox-&gt;range_min) {</div>
+<div class="line"><span class="lineno">  301</span>        <span class="comment">/*Special mode when zero crossing*/</span></div>
+<div class="line"><span class="lineno">  302</span>        <span class="keywordflow">if</span>((spinbox-&gt;value - spinbox-&gt;step) &lt; 0 &amp;&amp; spinbox-&gt;value &gt; 0) spinbox-&gt;value = -spinbox-&gt;value;</div>
+<div class="line"><span class="lineno">  303</span>        spinbox-&gt;value -= spinbox-&gt;step;</div>
+<div class="line"><span class="lineno">  304</span>    }</div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  306</span>        <span class="comment">/*Rollover?*/</span></div>
+<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">if</span>((spinbox-&gt;rollover) &amp;&amp; (spinbox-&gt;value == spinbox-&gt;range_min))</div>
+<div class="line"><span class="lineno">  308</span>            spinbox-&gt;value = spinbox-&gt;range_max;</div>
+<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  310</span>            spinbox-&gt;value = spinbox-&gt;range_min;</div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  314</span>}</div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="astructlv__spinbox__t_html"><div class="ttname"><a href="structlv__spinbox__t.html">lv_spinbox_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00035">lv_spinbox.h:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00326">_ui_spinbox_step()</a>.</p>
+
+</div>
+</div>
+<a id="a798aa2746ee6f103f6e557f5c53b1a2a" name="a798aa2746ee6f103f6e557f5c53b1a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798aa2746ee6f103f6e557f5c53b1a2a">&#9670;&#160;</a></span>lv_spinbox_get_rollover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_spinbox_get_rollover </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get spinbox rollover function status </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00257">257</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>{</div>
+<div class="line"><span class="lineno">  259</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">return</span> spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#adb60cb887dcce67223f2e1883eb31b54">rollover</a>;</div>
+<div class="line"><span class="lineno">  263</span>}</div>
+<div class="ttc" id="astructlv__spinbox__t_html_adb60cb887dcce67223f2e1883eb31b54"><div class="ttname"><a href="structlv__spinbox__t.html#adb60cb887dcce67223f2e1883eb31b54">lv_spinbox_t::rollover</a></div><div class="ttdeci">uint16_t rollover</div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00044">lv_spinbox.h:44</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a0c8339e63ef3ab378555424b40f90880" name="a0c8339e63ef3ab378555424b40f90880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c8339e63ef3ab378555424b40f90880">&#9670;&#160;</a></span>lv_spinbox_get_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t lv_spinbox_get_step </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the spinbox step value (user has to convert to float according to its digit format) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>value integer step value of the spinbox </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00207">207</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>{</div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  210</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a6561524380df8363cd5d989df27c0da1">step</a>;</div>
+<div class="line"><span class="lineno">  213</span>}</div>
+<div class="ttc" id="astructlv__spinbox__t_html_a6561524380df8363cd5d989df27c0da1"><div class="ttname"><a href="structlv__spinbox__t.html#a6561524380df8363cd5d989df27c0da1">lv_spinbox_t::step</a></div><div class="ttdeci">int32_t step</div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00041">lv_spinbox.h:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a2d2482626b8e38a8a43c462c71216381" name="a2d2482626b8e38a8a43c462c71216381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2482626b8e38a8a43c462c71216381">&#9670;&#160;</a></span>lv_spinbox_get_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t lv_spinbox_get_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the spinbox numeral value (user has to convert to float according to its digit format) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>value integer value of the spinbox </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00195">195</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>{</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a74c16650df664cabfd6129be6bc6309d">value</a>;</div>
+<div class="line"><span class="lineno">  201</span>}</div>
+<div class="ttc" id="astructlv__spinbox__t_html_a74c16650df664cabfd6129be6bc6309d"><div class="ttname"><a href="structlv__spinbox__t.html#a74c16650df664cabfd6129be6bc6309d">lv_spinbox_t::value</a></div><div class="ttdeci">int32_t value</div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00038">lv_spinbox.h:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="aae97fc287c6a1d5662ea79d21aef8d09" name="aae97fc287c6a1d5662ea79d21aef8d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae97fc287c6a1d5662ea79d21aef8d09">&#9670;&#160;</a></span>lv_spinbox_increment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_increment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Increment spinbox value by one step </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00269">269</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  270</span>{</div>
+<div class="line"><span class="lineno">  271</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordflow">if</span>(spinbox-&gt;value + spinbox-&gt;step &lt;= spinbox-&gt;range_max) {</div>
+<div class="line"><span class="lineno">  275</span>        <span class="comment">/*Special mode when zero crossing*/</span></div>
+<div class="line"><span class="lineno">  276</span>        <span class="keywordflow">if</span>((spinbox-&gt;value + spinbox-&gt;step) &gt; 0 &amp;&amp; spinbox-&gt;value &lt; 0) spinbox-&gt;value = -spinbox-&gt;value;</div>
+<div class="line"><span class="lineno">  277</span>        spinbox-&gt;value += spinbox-&gt;step;</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>    }</div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  281</span>        <span class="comment">// Rollover?</span></div>
+<div class="line"><span class="lineno">  282</span>        <span class="keywordflow">if</span>((spinbox-&gt;rollover) &amp;&amp; (spinbox-&gt;value == spinbox-&gt;range_max))</div>
+<div class="line"><span class="lineno">  283</span>            spinbox-&gt;value = spinbox-&gt;range_min;</div>
+<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  285</span>            spinbox-&gt;value = spinbox-&gt;range_max;</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  289</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="ui__helpers_8c_source.html#l00326">_ui_spinbox_step()</a>.</p>
+
+</div>
+</div>
+<a id="a8cdd5fd1cd19bc79d516e5af937c03c3" name="a8cdd5fd1cd19bc79d516e5af937c03c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cdd5fd1cd19bc79d516e5af937c03c3">&#9670;&#160;</a></span>lv_spinbox_set_cursor_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_cursor_pos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set cursor position to a specific digit for edition </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spinbox</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">pos</td><td>selected position in spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00160">160</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{</div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  164</span>    int32_t step_limit;</div>
+<div class="line"><span class="lineno">  165</span>    step_limit       = <a class="code hl_define" href="lv__math_8h.html#a98104674a4e75ac624c0db433a05123d">LV_MAX</a>(spinbox-&gt;range_max, (spinbox-&gt;range_min &lt; 0 ? (-spinbox-&gt;range_min) : spinbox-&gt;range_min));</div>
+<div class="line"><span class="lineno">  166</span>    int32_t new_step = spinbox-&gt;step * <a class="code hl_function" href="lv__math_8c.html#aca39dfc033229e55b9c43ffe22be95fb">lv_pow</a>(10, pos);</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">if</span>(pos &lt;= 0) spinbox-&gt;step = 1;</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(new_step &lt;= step_limit) spinbox-&gt;step = new_step;</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+<div class="ttc" id="alv__math_8c_html_aca39dfc033229e55b9c43ffe22be95fb"><div class="ttname"><a href="lv__math_8c.html#aca39dfc033229e55b9c43ffe22be95fb">lv_pow</a></div><div class="ttdeci">int64_t lv_pow(int64_t base, int8_t exp)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8c_source.html#l00214">lv_math.c:214</a></div></div>
+<div class="ttc" id="alv__math_8h_html_a98104674a4e75ac624c0db433a05123d"><div class="ttname"><a href="lv__math_8h.html#a98104674a4e75ac624c0db433a05123d">LV_MAX</a></div><div class="ttdeci">#define LV_MAX(a, b)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8h_source.html#l00125">lv_math.h:125</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__math_8h_source.html#l00125">LV_MAX</a>, <a class="el" href="lv__math_8c_source.html#l00214">lv_pow()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a7ed70b2a8331af6418f9f6d6a8399258" name="a7ed70b2a8331af6418f9f6d6a8399258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed70b2a8331af6418f9f6d6a8399258">&#9670;&#160;</a></span>lv_spinbox_set_digit_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_digit_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>digit_count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>separator_position</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set spinbox digit format (digit count and decimal format) </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spinbox</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">digit_count</td><td>number of digit excluding the decimal separator and the sign </td></tr>
+    <tr><td class="paramname">separator_position</td><td>number of digit before the decimal point. If 0, decimal point is not shown </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00100">100</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span>(digit_count &gt; <a class="code hl_define" href="lv__spinbox_8h.html#aea12cb3c5dad7f59c6096405564945b2">LV_SPINBOX_MAX_DIGIT_COUNT</a>) digit_count = <a class="code hl_define" href="lv__spinbox_8h.html#aea12cb3c5dad7f59c6096405564945b2">LV_SPINBOX_MAX_DIGIT_COUNT</a>;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span>(separator_position &gt;= digit_count) separator_position = 0;</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span>(digit_count &lt; <a class="code hl_define" href="lv__spinbox_8h.html#aea12cb3c5dad7f59c6096405564945b2">LV_SPINBOX_MAX_DIGIT_COUNT</a>) {</div>
+<div class="line"><span class="lineno">  110</span>        int64_t max_val = <a class="code hl_function" href="lv__math_8c.html#aca39dfc033229e55b9c43ffe22be95fb">lv_pow</a>(10, digit_count);</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span>(spinbox-&gt;range_max &gt; max_val - 1) spinbox-&gt;range_max = max_val - 1;</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span>(spinbox-&gt;range_min &lt; - max_val  + 1) spinbox-&gt;range_min = - max_val  + 1;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    spinbox-&gt;digit_count   = digit_count;</div>
+<div class="line"><span class="lineno">  116</span>    spinbox-&gt;dec_point_pos = separator_position;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  119</span>}</div>
+<div class="ttc" id="alv__spinbox_8h_html_aea12cb3c5dad7f59c6096405564945b2"><div class="ttname"><a href="lv__spinbox_8h.html#aea12cb3c5dad7f59c6096405564945b2">LV_SPINBOX_MAX_DIGIT_COUNT</a></div><div class="ttdeci">#define LV_SPINBOX_MAX_DIGIT_COUNT</div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00028">lv_spinbox.h:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__math_8c_source.html#l00214">lv_pow()</a>, <a class="el" href="lv__spinbox_8h_source.html#l00028">LV_SPINBOX_MAX_DIGIT_COUNT</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__spinbox__1_8c_source.html#l00024">lv_example_spinbox_1()</a>.</p>
+
+</div>
+</div>
+<a id="a20cbdd839e4371a6e83bd23b8a2eb948" name="a20cbdd839e4371a6e83bd23b8a2eb948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20cbdd839e4371a6e83bd23b8a2eb948">&#9670;&#160;</a></span>lv_spinbox_set_digit_step_direction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_digit_step_direction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__area_8h.html#ae805e7334672ed782d8140eb200330eb">lv_dir_t</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set direction of digit step when clicking an encoder button while in editing mode </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spinbox</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">direction</td><td>the direction (LV_DIR_RIGHT or LV_DIR_LEFT) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00178">178</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>{</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  182</span>    spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a54492624004416408bc384bb95372dd7">digit_step_dir</a> = direction;</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+<div class="ttc" id="astructlv__spinbox__t_html_a54492624004416408bc384bb95372dd7"><div class="ttname"><a href="structlv__spinbox__t.html#a54492624004416408bc384bb95372dd7">lv_spinbox_t::digit_step_dir</a></div><div class="ttdeci">uint16_t digit_step_dir</div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00045">lv_spinbox.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="ae81cdcef3b533802934c11a36ae79c3f" name="ae81cdcef3b533802934c11a36ae79c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81cdcef3b533802934c11a36ae79c3f">&#9670;&#160;</a></span>lv_spinbox_set_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_range </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>range_min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>range_max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set spinbox value range </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spinbox</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">range_min</td><td>maximum value, inclusive </td></tr>
+    <tr><td class="paramname">range_max</td><td>minimum value, inclusive </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00141">141</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a9c66f63be86f16586cf68b6ec2510ab3">range_max</a> = range_max;</div>
+<div class="line"><span class="lineno">  147</span>    spinbox-&gt;range_min = range_min;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">if</span>(spinbox-&gt;value &gt; spinbox-&gt;range_max) spinbox-&gt;value = spinbox-&gt;range_max;</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span>(spinbox-&gt;value &lt; spinbox-&gt;range_min) spinbox-&gt;value = spinbox-&gt;range_min;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  153</span>}</div>
+<div class="ttc" id="astructlv__spinbox__t_html_a9c66f63be86f16586cf68b6ec2510ab3"><div class="ttname"><a href="structlv__spinbox__t.html#a9c66f63be86f16586cf68b6ec2510ab3">lv_spinbox_t::range_max</a></div><div class="ttdeci">int32_t range_max</div><div class="ttdef"><b>Definition</b> <a href="lv__spinbox_8h_source.html#l00039">lv_spinbox.h:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__spinbox__1_8c_source.html#l00024">lv_example_spinbox_1()</a>.</p>
+
+</div>
+</div>
+<a id="ac7cdff96861c990470660583663a562a" name="ac7cdff96861c990470660583663a562a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7cdff96861c990470660583663a562a">&#9670;&#160;</a></span>lv_spinbox_set_rollover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_rollover </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set spinbox rollover function </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spinbox</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">b</td><td>true or false to enable or disable (default) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00085">85</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#adb60cb887dcce67223f2e1883eb31b54">rollover</a> = b;</div>
+<div class="line"><span class="lineno">   91</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="af2de1a90294ad884715505ad82e8751f" name="af2de1a90294ad884715505ad82e8751f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2de1a90294ad884715505ad82e8751f">&#9670;&#160;</a></span>lv_spinbox_set_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_step </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>step</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set spinbox step </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spinbox</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">step</td><td>steps on increment/decrement </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00126">126</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a6561524380df8363cd5d989df27c0da1">step</a> = step;</div>
+<div class="line"><span class="lineno">  132</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  133</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="ae0dd5a52087d4d00dc03459c156f37ff" name="ae0dd5a52087d4d00dc03459c156f37ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0dd5a52087d4d00dc03459c156f37ff">&#9670;&#160;</a></span>lv_spinbox_set_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_set_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set spinbox value </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+    <tr><td class="paramname">i</td><td>value to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00067">67</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span>(i &gt; spinbox-&gt;range_max) i = spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a9c66f63be86f16586cf68b6ec2510ab3">range_max</a>;</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span>(i &lt; spinbox-&gt;range_min) i = spinbox-&gt;range_min;</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    spinbox-&gt;value = i;</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">   78</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="ae5ae4be8fcc42c0dd119cc8744707536" name="ae5ae4be8fcc42c0dd119cc8744707536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ae4be8fcc42c0dd119cc8744707536">&#9670;&#160;</a></span>lv_spinbox_step_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_step_next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Select next lower digit for edition </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00223">223</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>{</div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>    int32_t new_step = spinbox-&gt;<a class="code hl_variable" href="structlv__spinbox__t.html#a6561524380df8363cd5d989df27c0da1">step</a> / 10;</div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">if</span>((new_step) &gt; 0)</div>
+<div class="line"><span class="lineno">  230</span>        spinbox-&gt;step = new_step;</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  232</span>        spinbox-&gt;step = 1;</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  235</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a5e5b134aabc06c96be42ec328112784a" name="a5e5b134aabc06c96be42ec328112784a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e5b134aabc06c96be42ec328112784a">&#9670;&#160;</a></span>lv_spinbox_step_prev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_spinbox_step_prev </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Select next higher digit for edition </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to spinbox </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00241">241</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>{</div>
+<div class="line"><span class="lineno">  243</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  244</span>    <a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> * spinbox = (<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  245</span>    int32_t step_limit;</div>
+<div class="line"><span class="lineno">  246</span>    step_limit       = <a class="code hl_define" href="lv__math_8h.html#a98104674a4e75ac624c0db433a05123d">LV_MAX</a>(spinbox-&gt;range_max, (spinbox-&gt;range_min &lt; 0 ? (-spinbox-&gt;range_min) : spinbox-&gt;range_min));</div>
+<div class="line"><span class="lineno">  247</span>    int32_t new_step = spinbox-&gt;step * 10;</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">if</span>(new_step &lt;= step_limit) spinbox-&gt;step = new_step;</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>    lv_spinbox_updatevalue(obj);</div>
+<div class="line"><span class="lineno">  251</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__math_8h_source.html#l00125">LV_MAX</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__spinbox__1_8c_source.html#l00024">lv_example_spinbox_1()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a44c2d0ad36df3f61c8cf8631e85bd96f" name="a44c2d0ad36df3f61c8cf8631e85bd96f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c2d0ad36df3f61c8cf8631e85bd96f">&#9670;&#160;</a></span>lv_spinbox_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_spinbox_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_spinbox_constructor,</div>
+<div class="line">    .event_cb = lv_spinbox_event,</div>
+<div class="line">    .width_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line">    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a>),</div>
+<div class="line">    .editable = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8">LV_OBJ_CLASS_EDITABLE_TRUE</a>,</div>
+<div class="line">    .base_class = &amp;<a class="code hl_variable" href="lv__textarea_8c.html#a9eeb4c1eeea4587dac9732166dace7ea">lv_textarea_class</a></div>
+<div class="line">}</div>
+<div class="ttc" id="alv__conf_8h_html_aadf0386c6d60d0c07153b38654f6b6d3"><div class="ttname"><a href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a></div><div class="ttdeci">#define LV_DPI_DEF</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00099">lv_conf.h:99</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8"><div class="ttname"><a href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8">LV_OBJ_CLASS_EDITABLE_TRUE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_EDITABLE_TRUE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00034">lv_obj_class.h:34</a></div></div>
+<div class="ttc" id="alv__textarea_8c_html_a9eeb4c1eeea4587dac9732166dace7ea"><div class="ttname"><a href="lv__textarea_8c.html#a9eeb4c1eeea4587dac9732166dace7ea">lv_textarea_class</a></div><div class="ttdeci">const lv_obj_class_t lv_textarea_class</div><div class="ttdef"><b>Definition</b> <a href="lv__textarea_8c_source.html#l00067">lv_textarea.c:67</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__spinbox_8c_source.html#l00034">34</a> del archivo <a class="el" href="lv__spinbox_8c_source.html">lv_spinbox.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                        {</div>
+<div class="line"><span class="lineno">   35</span>    .constructor_cb = lv_spinbox_constructor,</div>
+<div class="line"><span class="lineno">   36</span>    .event_cb = lv_spinbox_event,</div>
+<div class="line"><span class="lineno">   37</span>    .width_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line"><span class="lineno">   38</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__spinbox__t.html">lv_spinbox_t</a>),</div>
+<div class="line"><span class="lineno">   39</span>    .editable = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8">LV_OBJ_CLASS_EDITABLE_TRUE</a>,</div>
+<div class="line"><span class="lineno">   40</span>    .base_class = &amp;<a class="code hl_variable" href="lv__textarea_8c.html#a9eeb4c1eeea4587dac9732166dace7ea">lv_textarea_class</a></div>
+<div class="line"><span class="lineno">   41</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_bb19f560f670b02cecb4a1e7e40c8382.html">extra</a></li><li class="navelem"><a href="dir_55368b328a7304c140d36ddb04c77ab8.html">widgets</a></li><li class="navelem"><a href="dir_3e8cadd237b8169d648bdee606a350a6.html">spinbox</a></li><li class="navelem"><a href="lv__spinbox_8c.html">lv_spinbox.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

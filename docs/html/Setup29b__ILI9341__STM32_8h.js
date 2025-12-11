@@ -1,0 +1,27 @@
+var Setup29b__ILI9341__STM32_8h =
+[
+    [ "LOAD_FONT2", "Setup29b__ILI9341__STM32_8h.html#a9a64e48d3861ca909fb1eb9b39492f43", null ],
+    [ "LOAD_FONT4", "Setup29b__ILI9341__STM32_8h.html#aff0ca6aaffec55fd4a03b3069a043296", null ],
+    [ "LOAD_FONT6", "Setup29b__ILI9341__STM32_8h.html#a53e7079cd5578217168e9c8de3c43d56", null ],
+    [ "LOAD_FONT7", "Setup29b__ILI9341__STM32_8h.html#ab824806161666b9da96b88c9fdd600aa", null ],
+    [ "LOAD_FONT8", "Setup29b__ILI9341__STM32_8h.html#a3bfd3307b606101c9c9b4c4ef75f4350", null ],
+    [ "LOAD_GFXFF", "Setup29b__ILI9341__STM32_8h.html#aaddd4fc72f0ef9b8f513c51b502bd95f", null ],
+    [ "LOAD_GLCD", "Setup29b__ILI9341__STM32_8h.html#aee21b8f7828189468d697cc8dfadbccc", null ],
+    [ "NUCLEO_64_TFT", "Setup29b__ILI9341__STM32_8h.html#a43681306d7d5c7d3d3ee4dc25f174f8f", null ],
+    [ "SMOOTH_FONT", "Setup29b__ILI9341__STM32_8h.html#af8d7688f4a848a0ee8013c122abbda24", null ],
+    [ "SPI_FREQUENCY", "Setup29b__ILI9341__STM32_8h.html#a5001016067783b1500a1fd34ca1bfc7f", null ],
+    [ "SPI_READ_FREQUENCY", "Setup29b__ILI9341__STM32_8h.html#afa2c3acb4cdfb40c8d9d7aedc7e368de", null ],
+    [ "ST7789_DRIVER", "Setup29b__ILI9341__STM32_8h.html#a13523782155f7f64557ea0bf1fc2b482", null ],
+    [ "STM32", "Setup29b__ILI9341__STM32_8h.html#a96a522c84533bc10eec7885c11773cf2", null ],
+    [ "SUPPORT_TRANSACTIONS", "Setup29b__ILI9341__STM32_8h.html#a6e17c6900cf2c788e827fe83865cd4ae", null ],
+    [ "TFT_CS", "Setup29b__ILI9341__STM32_8h.html#a5f4d46ae101b77df78010c506601c87c", null ],
+    [ "TFT_DC", "Setup29b__ILI9341__STM32_8h.html#a51529307207622c113ff0d584536be13", null ],
+    [ "TFT_HEIGHT", "Setup29b__ILI9341__STM32_8h.html#a1c2d2e1cd167f90b809c3450fd6f3434", null ],
+    [ "TFT_MISO", "Setup29b__ILI9341__STM32_8h.html#ac108dd4310833bbb4afd1bce1090d55f", null ],
+    [ "TFT_MOSI", "Setup29b__ILI9341__STM32_8h.html#a4db639d2d88a53132a529677e6dd795c", null ],
+    [ "TFT_RGB_ORDER", "Setup29b__ILI9341__STM32_8h.html#ad2deabb3f4962a07c839405877566a5d", null ],
+    [ "TFT_RST", "Setup29b__ILI9341__STM32_8h.html#ab40e9918d9141415a47e2a979292309c", null ],
+    [ "TFT_SCLK", "Setup29b__ILI9341__STM32_8h.html#a095a96cc6abc991346d7b6712f8576b5", null ],
+    [ "TFT_SPI_PORT", "Setup29b__ILI9341__STM32_8h.html#a44973824f01a84c92e99c8f943f27f59", null ],
+    [ "TFT_WIDTH", "Setup29b__ILI9341__STM32_8h.html#a83af0cb652728913ff58da7133c692ea", null ]
+];

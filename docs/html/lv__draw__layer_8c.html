@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/draw/lv_draw_layer.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__draw__layer_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_draw_layer.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__draw_8h_source.html">lv_draw.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__draw__arc_8h_source.html">lv_draw_arc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__refr_8h_source.html">../core/lv_refr.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__draw__layer_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:af067fd9c88821913b19ce443ebf8fe7e" id="r_af067fd9c88821913b19ce443ebf8fe7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af067fd9c88821913b19ce443ebf8fe7e">lv_draw_layer_adjust</a> (struct <a class="el" href="struct__lv__draw__ctx__t.html">_lv_draw_ctx_t</a> *draw_ctx, struct <a class="el" href="struct__lv__draw__layer__ctx__t.html">_lv_draw_layer_ctx_t</a> *layer_ctx, <a class="el" href="lv__draw__layer_8h.html#ae3539dc111bf00dfd23a123f2e71464e">lv_draw_layer_flags_t</a> flags)</td></tr>
+<tr class="memitem:a503f2d3564b4bd6bec110c23d99504e2" id="r_a503f2d3564b4bd6bec110c23d99504e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a503f2d3564b4bd6bec110c23d99504e2">lv_draw_layer_blend</a> (struct <a class="el" href="struct__lv__draw__ctx__t.html">_lv_draw_ctx_t</a> *draw_ctx, struct <a class="el" href="struct__lv__draw__layer__ctx__t.html">_lv_draw_layer_ctx_t</a> *layer_ctx, <a class="el" href="structlv__draw__img__dsc__t.html">lv_draw_img_dsc_t</a> *draw_dsc)</td></tr>
+<tr class="memitem:ad00f4a4195f94be9708da23f5110eedc" id="r_ad00f4a4195f94be9708da23f5110eedc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__draw_8h.html#aa69177fde41392932b3bc6261d288250">lv_draw_layer_ctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad00f4a4195f94be9708da23f5110eedc">lv_draw_layer_create</a> (<a class="el" href="lv__draw_8h.html#a3c97ef426260d81bff72570b24f5b886">lv_draw_ctx_t</a> *draw_ctx, const <a class="el" href="structlv__area__t.html">lv_area_t</a> *layer_area, <a class="el" href="lv__draw__layer_8h.html#ae3539dc111bf00dfd23a123f2e71464e">lv_draw_layer_flags_t</a> flags)</td></tr>
+<tr class="memitem:a512612dbc672f79d4018186bbb7d2c84" id="r_a512612dbc672f79d4018186bbb7d2c84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a512612dbc672f79d4018186bbb7d2c84">lv_draw_layer_destroy</a> (<a class="el" href="lv__draw_8h.html#a3c97ef426260d81bff72570b24f5b886">lv_draw_ctx_t</a> *draw_ctx, <a class="el" href="lv__draw_8h.html#aa69177fde41392932b3bc6261d288250">lv_draw_layer_ctx_t</a> *layer_ctx)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="af067fd9c88821913b19ce443ebf8fe7e" name="af067fd9c88821913b19ce443ebf8fe7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af067fd9c88821913b19ce443ebf8fe7e">&#9670;&#160;</a></span>lv_draw_layer_adjust()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_draw_layer_adjust </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__ctx__t.html">_lv_draw_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>draw_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__layer__ctx__t.html">_lv_draw_layer_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>layer_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__draw__layer_8h.html#ae3539dc111bf00dfd23a123f2e71464e">lv_draw_layer_flags_t</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adjust the layer_ctx and/or draw_ctx based on the <span class="tt">layer_ctx-&gt;area_act</span>. It's called only if flags has <span class="tt"><a class="el" href="lv__draw__layer_8h.html#ae3539dc111bf00dfd23a123f2e71464ea17c4438c0ca407cccfa53aa9cf63ed16">LV_DRAW_LAYER_FLAG_CAN_SUBDIVIDE</a></span> </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">draw_ctx</td><td>pointer to the current draw context </td></tr>
+    <tr><td class="paramname">layer_ctx</td><td>pointer to a layer context </td></tr>
+    <tr><td class="paramname">flags</td><td>OR-ed flags from @lv_draw_layer_flags_t </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__layer_8c_source.html#l00065">65</a> del archivo <a class="el" href="lv__draw__layer_8c_source.html">lv_draw_layer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span>(draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#a27f124886e64c3f98d4abc38a556c638">layer_adjust</a>) draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#a27f124886e64c3f98d4abc38a556c638">layer_adjust</a>(draw_ctx, layer_ctx, flags);</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_a27f124886e64c3f98d4abc38a556c638"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#a27f124886e64c3f98d4abc38a556c638">_lv_draw_ctx_t::layer_adjust</a></div><div class="ttdeci">void(* layer_adjust)(struct _lv_draw_ctx_t *draw_ctx, struct _lv_draw_layer_ctx_t *layer_ctx, lv_draw_layer_flags_t flags)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00163">lv_draw.h:163</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__draw_8h_source.html#l00163">_lv_draw_ctx_t::layer_adjust</a>.</p>
+
+</div>
+</div>
+<a id="a503f2d3564b4bd6bec110c23d99504e2" name="a503f2d3564b4bd6bec110c23d99504e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503f2d3564b4bd6bec110c23d99504e2">&#9670;&#160;</a></span>lv_draw_layer_blend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_draw_layer_blend </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__ctx__t.html">_lv_draw_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>draw_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__layer__ctx__t.html">_lv_draw_layer_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>layer_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlv__draw__img__dsc__t.html">lv_draw_img_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>draw_dsc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Blend a rendered layer to <span class="tt">layer_ctx-&gt;area_act</span> </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">draw_ctx</td><td>pointer to the current draw context </td></tr>
+    <tr><td class="paramname">layer_ctx</td><td>pointer to a layer context </td></tr>
+    <tr><td class="paramname">draw_dsc</td><td>pointer to an image draw descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__layer_8c_source.html#l00071">71</a> del archivo <a class="el" href="lv__draw__layer_8c_source.html">lv_draw_layer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span>(draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#aff67c913669483854453161ee65c7c1c">layer_blend</a>) draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#aff67c913669483854453161ee65c7c1c">layer_blend</a>(draw_ctx, layer_ctx, draw_dsc);</div>
+<div class="line"><span class="lineno">   75</span>}</div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_aff67c913669483854453161ee65c7c1c"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#aff67c913669483854453161ee65c7c1c">_lv_draw_ctx_t::layer_blend</a></div><div class="ttdeci">void(* layer_blend)(struct _lv_draw_ctx_t *draw_ctx, struct _lv_draw_layer_ctx_t *layer_ctx, const lv_draw_img_dsc_t *draw_dsc)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00172">lv_draw.h:172</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__draw_8h_source.html#l00172">_lv_draw_ctx_t::layer_blend</a>.</p>
+
+</div>
+</div>
+<a id="ad00f4a4195f94be9708da23f5110eedc" name="ad00f4a4195f94be9708da23f5110eedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad00f4a4195f94be9708da23f5110eedc">&#9670;&#160;</a></span>lv_draw_layer_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__draw_8h.html#aa69177fde41392932b3bc6261d288250">lv_draw_layer_ctx_t</a> * lv_draw_layer_create </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__ctx__t.html">_lv_draw_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>draw_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structlv__area__t.html">lv_area_t</a> *</td>          <td class="paramname"><span class="paramname"><em>layer_area</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__draw__layer_8h.html#ae3539dc111bf00dfd23a123f2e71464e">lv_draw_layer_flags_t</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new layer context. It is used to start and independent rendering session with the current draw_ctx </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">draw_ctx</td><td>pointer to the current draw context </td></tr>
+    <tr><td class="paramname">layer_area</td><td>the coordinates of the layer </td></tr>
+    <tr><td class="paramname">flags</td><td>OR-ed flags from @lv_draw_layer_flags_t </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the layer context, or NULL on error </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__layer_8c_source.html#l00037">37</a> del archivo <a class="el" href="lv__draw__layer_8c_source.html">lv_draw_layer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span>(draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#a617d8c2b55aa13a186de239c7baeb49a">layer_init</a> == NULL) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_typedef" href="lv__draw_8h.html#aa69177fde41392932b3bc6261d288250">lv_draw_layer_ctx_t</a> * layer_ctx = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#aee6f31576615903a994bac998e7af100">layer_instance_size</a>);</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(layer_ctx);</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span>(layer_ctx == NULL) {</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Couldn&#39;t allocate a new layer context&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(layer_ctx, draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#aee6f31576615903a994bac998e7af100">layer_instance_size</a>);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp_refr = <a class="code hl_function" href="lv__refr_8c.html#a52ccbcf304c3022f4fa93600ab52b698">_lv_refr_get_disp_refreshing</a>();</div>
+<div class="line"><span class="lineno">   52</span>    layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#ad1464ce9762e6c125ac49c9e2b9ed9b0">buf</a> = draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#a90225ccbb947ba8d39a103767a1178b9">buf</a>;</div>
+<div class="line"><span class="lineno">   53</span>    layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#a75dbb72dbb4b252375f6d441d6d19988">buf_area</a> = draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ac28b2c5007ad8dfca640e76c0890b16c">buf_area</a>;</div>
+<div class="line"><span class="lineno">   54</span>    layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#af45d15396ba60d5621e3cd310b8f252c">clip_area</a> = draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a>;</div>
+<div class="line"><span class="lineno">   55</span>    layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#acbcf0aa0d24b2c8c761c6e40a6e1c963">screen_transp</a> = disp_refr-&gt;driver-&gt;screen_transp;</div>
+<div class="line"><span class="lineno">   56</span>    layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#a943bd13b55986df294119439f627c1d8">area_full</a> = *layer_area;</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_typedef" href="lv__draw_8h.html#aa69177fde41392932b3bc6261d288250">lv_draw_layer_ctx_t</a> * init_layer_ctx =  draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#a617d8c2b55aa13a186de239c7baeb49a">layer_init</a>(draw_ctx, layer_ctx, flags);</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span>(NULL == init_layer_ctx) {</div>
+<div class="line"><span class="lineno">   60</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(layer_ctx);</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> init_layer_ctx;</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__draw_8h_html_aa69177fde41392932b3bc6261d288250"><div class="ttname"><a href="lv__draw_8h.html#aa69177fde41392932b3bc6261d288250">lv_draw_layer_ctx_t</a></div><div class="ttdeci">struct _lv_draw_layer_ctx_t lv_draw_layer_ctx_t</div></div>
+<div class="ttc" id="alv__hal__disp_8h_html_a38e817df2a5f77f36d3fe4975cf58129"><div class="ttname"><a href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a></div><div class="ttdeci">struct _lv_disp_t lv_disp_t</div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__refr_8c_html_a52ccbcf304c3022f4fa93600ab52b698"><div class="ttname"><a href="lv__refr_8c.html#a52ccbcf304c3022f4fa93600ab52b698">_lv_refr_get_disp_refreshing</a></div><div class="ttdeci">lv_disp_t * _lv_refr_get_disp_refreshing(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__refr_8c_source.html#l00267">lv_refr.c:267</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_a617d8c2b55aa13a186de239c7baeb49a"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#a617d8c2b55aa13a186de239c7baeb49a">_lv_draw_ctx_t::layer_init</a></div><div class="ttdeci">struct _lv_draw_layer_ctx_t *(* layer_init)(struct _lv_draw_ctx_t *draw_ctx, struct _lv_draw_layer_ctx_t *layer_ctx, lv_draw_layer_flags_t flags)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00141">lv_draw.h:153</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_a90225ccbb947ba8d39a103767a1178b9"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#a90225ccbb947ba8d39a103767a1178b9">_lv_draw_ctx_t::buf</a></div><div class="ttdeci">void * buf</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00063">lv_draw.h:63</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_ac28b2c5007ad8dfca640e76c0890b16c"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#ac28b2c5007ad8dfca640e76c0890b16c">_lv_draw_ctx_t::buf_area</a></div><div class="ttdeci">lv_area_t * buf_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00068">lv_draw.h:68</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_ae15cb5a04c4b2d9a37e3f4d50c0fa773"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">_lv_draw_ctx_t::clip_area</a></div><div class="ttdeci">const lv_area_t * clip_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00073">lv_draw.h:73</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_aee6f31576615903a994bac998e7af100"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#aee6f31576615903a994bac998e7af100">_lv_draw_ctx_t::layer_instance_size</a></div><div class="ttdeci">size_t layer_instance_size</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00186">lv_draw.h:186</a></div></div>
+<div class="ttc" id="astruct__lv__draw__layer__ctx__t_html_a75dbb72dbb4b252375f6d441d6d19988"><div class="ttname"><a href="struct__lv__draw__layer__ctx__t.html#a75dbb72dbb4b252375f6d441d6d19988">_lv_draw_layer_ctx_t::buf_area</a></div><div class="ttdeci">lv_area_t * buf_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00053">lv_draw.h:53</a></div></div>
+<div class="ttc" id="astruct__lv__draw__layer__ctx__t_html_a943bd13b55986df294119439f627c1d8"><div class="ttname"><a href="struct__lv__draw__layer__ctx__t.html#a943bd13b55986df294119439f627c1d8">_lv_draw_layer_ctx_t::area_full</a></div><div class="ttdeci">lv_area_t area_full</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00046">lv_draw.h:46</a></div></div>
+<div class="ttc" id="astruct__lv__draw__layer__ctx__t_html_aa94e6935acbc86dd158bbf05718fd20f"><div class="ttname"><a href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">_lv_draw_layer_ctx_t::original</a></div><div class="ttdeci">struct _lv_draw_layer_ctx_t::@043145174066244356244105134042037214174147146214 original</div></div>
+<div class="ttc" id="astruct__lv__draw__layer__ctx__t_html_acbcf0aa0d24b2c8c761c6e40a6e1c963"><div class="ttname"><a href="struct__lv__draw__layer__ctx__t.html#acbcf0aa0d24b2c8c761c6e40a6e1c963">_lv_draw_layer_ctx_t::screen_transp</a></div><div class="ttdeci">bool screen_transp</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00055">lv_draw.h:55</a></div></div>
+<div class="ttc" id="astruct__lv__draw__layer__ctx__t_html_ad1464ce9762e6c125ac49c9e2b9ed9b0"><div class="ttname"><a href="struct__lv__draw__layer__ctx__t.html#ad1464ce9762e6c125ac49c9e2b9ed9b0">_lv_draw_layer_ctx_t::buf</a></div><div class="ttdeci">void * buf</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00050">lv_draw.h:50</a></div></div>
+<div class="ttc" id="astruct__lv__draw__layer__ctx__t_html_af45d15396ba60d5621e3cd310b8f252c"><div class="ttname"><a href="struct__lv__draw__layer__ctx__t.html#af45d15396ba60d5621e3cd310b8f252c">_lv_draw_layer_ctx_t::clip_area</a></div><div class="ttdeci">const lv_area_t * clip_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00052">lv_draw.h:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__refr_8c_source.html#l00267">_lv_refr_get_disp_refreshing()</a>, <a class="el" href="lv__draw_8h_source.html#l00046">_lv_draw_layer_ctx_t::area_full</a>, <a class="el" href="lv__draw_8h_source.html#l00063">_lv_draw_ctx_t::buf</a>, <a class="el" href="lv__draw_8h_source.html#l00050">_lv_draw_layer_ctx_t::buf</a>, <a class="el" href="lv__draw_8h_source.html#l00068">_lv_draw_ctx_t::buf_area</a>, <a class="el" href="lv__draw_8h_source.html#l00053">_lv_draw_layer_ctx_t::buf_area</a>, <a class="el" href="lv__draw_8h_source.html#l00073">_lv_draw_ctx_t::clip_area</a>, <a class="el" href="lv__draw_8h_source.html#l00052">_lv_draw_layer_ctx_t::clip_area</a>, <a class="el" href="lv__draw_8h_source.html#l00153">_lv_draw_ctx_t::layer_init</a>, <a class="el" href="lv__draw_8h_source.html#l00186">_lv_draw_ctx_t::layer_instance_size</a>, <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>, <a class="el" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">_lv_draw_layer_ctx_t::original</a> y <a class="el" href="lv__draw_8h_source.html#l00055">_lv_draw_layer_ctx_t::screen_transp</a>.</p>
+
+</div>
+</div>
+<a id="a512612dbc672f79d4018186bbb7d2c84" name="a512612dbc672f79d4018186bbb7d2c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512612dbc672f79d4018186bbb7d2c84">&#9670;&#160;</a></span>lv_draw_layer_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_draw_layer_destroy </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__ctx__t.html">_lv_draw_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>draw_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct__lv__draw__layer__ctx__t.html">_lv_draw_layer_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>layer_ctx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destroy a layer context. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">draw_ctx</td><td>pointer to the current draw context </td></tr>
+    <tr><td class="paramname">layer_ctx</td><td>pointer to a layer context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__layer_8c_source.html#l00077">77</a> del archivo <a class="el" href="lv__draw__layer_8c_source.html">lv_draw_layer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_function" href="lv__draw_8c.html#acefe95fb984e0eca97ebbec10583b600">lv_draw_wait_for_finish</a>(draw_ctx);</div>
+<div class="line"><span class="lineno">   81</span>    draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#a90225ccbb947ba8d39a103767a1178b9">buf</a> = layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#ad1464ce9762e6c125ac49c9e2b9ed9b0">buf</a>;</div>
+<div class="line"><span class="lineno">   82</span>    draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ac28b2c5007ad8dfca640e76c0890b16c">buf_area</a> = layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#a75dbb72dbb4b252375f6d441d6d19988">buf_area</a>;</div>
+<div class="line"><span class="lineno">   83</span>    draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a> = layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#af45d15396ba60d5621e3cd310b8f252c">clip_area</a>;</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_typedef" href="lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129">lv_disp_t</a> * disp_refr = <a class="code hl_function" href="lv__refr_8c.html#a52ccbcf304c3022f4fa93600ab52b698">_lv_refr_get_disp_refreshing</a>();</div>
+<div class="line"><span class="lineno">   85</span>    disp_refr-&gt;driver-&gt;screen_transp = layer_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">original</a>.<a class="code hl_variable" href="struct__lv__draw__layer__ctx__t.html#acbcf0aa0d24b2c8c761c6e40a6e1c963">screen_transp</a>;</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span>(draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#af848153f452f8d0d15ebc86be0b56f22">layer_destroy</a>) draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#af848153f452f8d0d15ebc86be0b56f22">layer_destroy</a>(draw_ctx, layer_ctx);</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(layer_ctx);</div>
+<div class="line"><span class="lineno">   89</span>}</div>
+<div class="ttc" id="alv__draw_8c_html_acefe95fb984e0eca97ebbec10583b600"><div class="ttname"><a href="lv__draw_8c.html#acefe95fb984e0eca97ebbec10583b600">lv_draw_wait_for_finish</a></div><div class="ttdeci">void lv_draw_wait_for_finish(lv_draw_ctx_t *draw_ctx)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8c_source.html#l00045">lv_draw.c:45</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_af848153f452f8d0d15ebc86be0b56f22"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#af848153f452f8d0d15ebc86be0b56f22">_lv_draw_ctx_t::layer_destroy</a></div><div class="ttdeci">void(* layer_destroy)(struct _lv_draw_ctx_t *draw_ctx, lv_draw_layer_ctx_t *layer_ctx)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00181">lv_draw.h:181</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__refr_8c_source.html#l00267">_lv_refr_get_disp_refreshing()</a>, <a class="el" href="lv__draw_8h_source.html#l00063">_lv_draw_ctx_t::buf</a>, <a class="el" href="lv__draw_8h_source.html#l00050">_lv_draw_layer_ctx_t::buf</a>, <a class="el" href="lv__draw_8h_source.html#l00068">_lv_draw_ctx_t::buf_area</a>, <a class="el" href="lv__draw_8h_source.html#l00053">_lv_draw_layer_ctx_t::buf_area</a>, <a class="el" href="lv__draw_8h_source.html#l00073">_lv_draw_ctx_t::clip_area</a>, <a class="el" href="lv__draw_8h_source.html#l00052">_lv_draw_layer_ctx_t::clip_area</a>, <a class="el" href="lv__draw_8h_source.html#l00181">_lv_draw_ctx_t::layer_destroy</a>, <a class="el" href="lv__draw_8c_source.html#l00045">lv_draw_wait_for_finish()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="struct__lv__draw__layer__ctx__t.html#aa94e6935acbc86dd158bbf05718fd20f">_lv_draw_layer_ctx_t::original</a> y <a class="el" href="lv__draw_8h_source.html#l00055">_lv_draw_layer_ctx_t::screen_transp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4578e5786fd81055f79ae47b0a2845be.html">draw</a></li><li class="navelem"><a href="lv__draw__layer_8c.html">lv_draw_layer.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

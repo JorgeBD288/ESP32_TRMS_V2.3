@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/tests/src/lv_test_indev.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__test__indev_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_test_indev.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__test__indev_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#if LV_BUILD_TEST</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../lvgl.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="lv__test__indev_8h.html">lv_test_indev.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="lv__test__init_8h.html">lv_test_init.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x_act;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y_act;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">static</span> uint32_t key_act;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">static</span> int32_t diff_act;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">static</span> <span class="keywordtype">bool</span> mouse_pressed;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">static</span> <span class="keywordtype">bool</span> key_pressed;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">static</span> <span class="keywordtype">bool</span> enc_pressed;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#ab0e8362291a77d5955e11bc82559a62c">lv_test_mouse_read_cb</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">lv_indev_drv_t</a> * drv, <a class="code hl_struct" href="structlv__indev__data__t.html">lv_indev_data_t</a> * data)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(drv);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257">point</a>.<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> = x_act;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257">point</a>.<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> = y_act;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">state</a> = mouse_pressed ? <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a> : <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">LV_INDEV_STATE_RELEASED</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#aafd72d9275a7bc5250a67813cf41a7dc">lv_test_mouse_move_to</a>(<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x, <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  x_act = x;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  y_act = y;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#aa8e909d96f0201d6e4232c2ccbde8487">lv_test_mouse_move_by</a>(<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x, <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  x_act += x;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  y_act += y;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#ab72fb5177dfda0576cea6df99d60c437">lv_test_mouse_press</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  mouse_pressed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#ae5ec473a4f36e08f34b56d6d61b814a8">lv_test_mouse_release</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  mouse_pressed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a169dcf69218660c5d405b177ed8010e5">lv_test_mouse_click_at</a>(<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> x, <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_function" href="lv__test__indev_8h.html#ae5ec473a4f36e08f34b56d6d61b814a8">lv_test_mouse_release</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_function" href="lv__test__indev_8h.html#aafd72d9275a7bc5250a67813cf41a7dc">lv_test_mouse_move_to</a>(x, y);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_function" href="lv__test__indev_8h.html#ab72fb5177dfda0576cea6df99d60c437">lv_test_mouse_press</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_function" href="lv__test__indev_8h.html#ae5ec473a4f36e08f34b56d6d61b814a8">lv_test_mouse_release</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a0f43f0487831fc990ba2263113d316e0">lv_test_keypad_read_cb</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">lv_indev_drv_t</a> * drv, <a class="code hl_struct" href="structlv__indev__data__t.html">lv_indev_data_t</a> * data)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(drv);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#a5f93f90c6ffe0f7db54a0fc43a1cef9c">key</a> = key_act;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">state</a> = key_pressed ? <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a> : <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">LV_INDEV_STATE_RELEASED</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#aa137825f6aaed347a2220693d1737d6f">lv_test_key_press</a>(uint32_t k)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  key_act = k;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  key_pressed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#ae4d30a645185020aab549fd3a54d3be1">lv_test_key_release</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  key_pressed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a108dbd7ada69071712be5f0afb9108a4">lv_test_key_hit</a>(uint32_t k)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_function" href="lv__test__indev_8h.html#ae4d30a645185020aab549fd3a54d3be1">lv_test_key_release</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_function" href="lv__test__indev_8h.html#aa137825f6aaed347a2220693d1737d6f">lv_test_key_press</a>(k);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_function" href="lv__test__indev_8h.html#ab72fb5177dfda0576cea6df99d60c437">lv_test_mouse_press</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_function" href="lv__test__indev_8h.html#ae4d30a645185020aab549fd3a54d3be1">lv_test_key_release</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a26d8f86d12cf979e7536c686580dd29f">lv_test_encoder_read_cb</a>(<a class="code hl_typedef" href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">lv_indev_drv_t</a> * drv, <a class="code hl_struct" href="structlv__indev__data__t.html">lv_indev_data_t</a> * data)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(drv);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#a13b86f5548c334dc240f85a74c96195e">enc_diff</a> = diff_act;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  data-&gt;<a class="code hl_variable" href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">state</a> = enc_pressed ? <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a> : <a class="code hl_enumvalue" href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">LV_INDEV_STATE_RELEASED</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  diff_act = 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a5e373848de419c753d3b9b01520e154a">lv_test_encoder_add_diff</a>(int32_t d)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  diff_act += d;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#af95090f375c6db5df785ba54da0efbda">lv_test_encoder_turn</a>(int32_t d)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  diff_act += d;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#acbcda31eedff22efcade515e50c98de5">lv_test_encoder_press</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  enc_pressed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#aedd10d2d2c6d2d742ee5d3f83bc6d1f1">lv_test_encoder_release</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>{</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  enc_pressed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a7e972c578f9f15a92681236a06409193">lv_test_encoder_click</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_function" href="lv__test__indev_8h.html#aedd10d2d2c6d2d742ee5d3f83bc6d1f1">lv_test_encoder_release</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <a class="code hl_function" href="lv__test__indev_8h.html#acbcda31eedff22efcade515e50c98de5">lv_test_encoder_press</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <a class="code hl_function" href="lv__test__indev_8h.html#aedd10d2d2c6d2d742ee5d3f83bc6d1f1">lv_test_encoder_release</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(50);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a>(uint32_t ms)</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>{</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  uint32_t t = <a class="code hl_function" href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a>();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">while</span>(<a class="code hl_function" href="lv__hal__tick_8c.html#a632b8bf9b03d3a809d053508c06dc6d9">lv_tick_elaps</a>(t) &lt; ms) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_function" href="lv__timer_8c.html#adf718f6a468f54330ec793d443394c7a">lv_timer_handler</a>();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    lv_tick_inc(1);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aa608bb96b6aeff54d2f1c2280f4e970d"><div class="ttname"><a href="lv__hal__indev_8h.html#aa608bb96b6aeff54d2f1c2280f4e970d">lv_indev_drv_t</a></div><div class="ttdeci">struct _lv_indev_drv_t lv_indev_drv_t</div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e"><div class="ttname"><a href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aa17473382979b77cb5f5388ff3e11b2e">LV_INDEV_STATE_RELEASED</a></div><div class="ttdeci">@ LV_INDEV_STATE_RELEASED</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00072">lv_hal_indev.h:72</a></div></div>
+<div class="ttc" id="alv__hal__indev_8h_html_aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39"><div class="ttname"><a href="lv__hal__indev_8h.html#aacdf3efce400e71895f5efb42ee24956aae8cba42264e264514d9789425c14d39">LV_INDEV_STATE_PRESSED</a></div><div class="ttdeci">@ LV_INDEV_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00073">lv_hal_indev.h:73</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a051c47bcfb48282a75834d8dd0a8470c"><div class="ttname"><a href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a></div><div class="ttdeci">uint32_t lv_tick_get(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00060">lv_hal_tick.c:60</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a632b8bf9b03d3a809d053508c06dc6d9"><div class="ttname"><a href="lv__hal__tick_8c.html#a632b8bf9b03d3a809d053508c06dc6d9">lv_tick_elaps</a></div><div class="ttdeci">uint32_t lv_tick_elaps(uint32_t prev_tick)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00086">lv_hal_tick.c:86</a></div></div>
+<div class="ttc" id="alv__test__indev_8h_html"><div class="ttname"><a href="lv__test__indev_8h.html">lv_test_indev.h</a></div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a0f43f0487831fc990ba2263113d316e0"><div class="ttname"><a href="lv__test__indev_8h.html#a0f43f0487831fc990ba2263113d316e0">lv_test_keypad_read_cb</a></div><div class="ttdeci">void lv_test_keypad_read_cb(lv_indev_drv_t *drv, lv_indev_data_t *data)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a108dbd7ada69071712be5f0afb9108a4"><div class="ttname"><a href="lv__test__indev_8h.html#a108dbd7ada69071712be5f0afb9108a4">lv_test_key_hit</a></div><div class="ttdeci">void lv_test_key_hit(uint32_t k)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a169dcf69218660c5d405b177ed8010e5"><div class="ttname"><a href="lv__test__indev_8h.html#a169dcf69218660c5d405b177ed8010e5">lv_test_mouse_click_at</a></div><div class="ttdeci">void lv_test_mouse_click_at(lv_coord_t x, lv_coord_t y)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a26d8f86d12cf979e7536c686580dd29f"><div class="ttname"><a href="lv__test__indev_8h.html#a26d8f86d12cf979e7536c686580dd29f">lv_test_encoder_read_cb</a></div><div class="ttdeci">void lv_test_encoder_read_cb(lv_indev_drv_t *drv, lv_indev_data_t *data)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a5e373848de419c753d3b9b01520e154a"><div class="ttname"><a href="lv__test__indev_8h.html#a5e373848de419c753d3b9b01520e154a">lv_test_encoder_add_diff</a></div><div class="ttdeci">void lv_test_encoder_add_diff(int32_t d)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a7132923b00f1fb3edcb04981ff004e8d"><div class="ttname"><a href="lv__test__indev_8h.html#a7132923b00f1fb3edcb04981ff004e8d">lv_test_indev_wait</a></div><div class="ttdeci">void lv_test_indev_wait(uint32_t ms)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_a7e972c578f9f15a92681236a06409193"><div class="ttname"><a href="lv__test__indev_8h.html#a7e972c578f9f15a92681236a06409193">lv_test_encoder_click</a></div><div class="ttdeci">void lv_test_encoder_click(void)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_aa137825f6aaed347a2220693d1737d6f"><div class="ttname"><a href="lv__test__indev_8h.html#aa137825f6aaed347a2220693d1737d6f">lv_test_key_press</a></div><div class="ttdeci">void lv_test_key_press(uint32_t k)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_aa8e909d96f0201d6e4232c2ccbde8487"><div class="ttname"><a href="lv__test__indev_8h.html#aa8e909d96f0201d6e4232c2ccbde8487">lv_test_mouse_move_by</a></div><div class="ttdeci">void lv_test_mouse_move_by(lv_coord_t x, lv_coord_t y)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_aafd72d9275a7bc5250a67813cf41a7dc"><div class="ttname"><a href="lv__test__indev_8h.html#aafd72d9275a7bc5250a67813cf41a7dc">lv_test_mouse_move_to</a></div><div class="ttdeci">void lv_test_mouse_move_to(lv_coord_t x, lv_coord_t y)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_ab0e8362291a77d5955e11bc82559a62c"><div class="ttname"><a href="lv__test__indev_8h.html#ab0e8362291a77d5955e11bc82559a62c">lv_test_mouse_read_cb</a></div><div class="ttdeci">void lv_test_mouse_read_cb(lv_indev_drv_t *drv, lv_indev_data_t *data)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_ab72fb5177dfda0576cea6df99d60c437"><div class="ttname"><a href="lv__test__indev_8h.html#ab72fb5177dfda0576cea6df99d60c437">lv_test_mouse_press</a></div><div class="ttdeci">void lv_test_mouse_press(void)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_acbcda31eedff22efcade515e50c98de5"><div class="ttname"><a href="lv__test__indev_8h.html#acbcda31eedff22efcade515e50c98de5">lv_test_encoder_press</a></div><div class="ttdeci">void lv_test_encoder_press(void)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_ae4d30a645185020aab549fd3a54d3be1"><div class="ttname"><a href="lv__test__indev_8h.html#ae4d30a645185020aab549fd3a54d3be1">lv_test_key_release</a></div><div class="ttdeci">void lv_test_key_release(void)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_ae5ec473a4f36e08f34b56d6d61b814a8"><div class="ttname"><a href="lv__test__indev_8h.html#ae5ec473a4f36e08f34b56d6d61b814a8">lv_test_mouse_release</a></div><div class="ttdeci">void lv_test_mouse_release(void)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_aedd10d2d2c6d2d742ee5d3f83bc6d1f1"><div class="ttname"><a href="lv__test__indev_8h.html#aedd10d2d2c6d2d742ee5d3f83bc6d1f1">lv_test_encoder_release</a></div><div class="ttdeci">void lv_test_encoder_release(void)</div></div>
+<div class="ttc" id="alv__test__indev_8h_html_af95090f375c6db5df785ba54da0efbda"><div class="ttname"><a href="lv__test__indev_8h.html#af95090f375c6db5df785ba54da0efbda">lv_test_encoder_turn</a></div><div class="ttdeci">void lv_test_encoder_turn(int32_t d)</div></div>
+<div class="ttc" id="alv__test__init_8h_html"><div class="ttname"><a href="lv__test__init_8h.html">lv_test_init.h</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_adf718f6a468f54330ec793d443394c7a"><div class="ttname"><a href="lv__timer_8c.html#adf718f6a468f54330ec793d443394c7a">lv_timer_handler</a></div><div class="ttdeci">uint32_t LV_ATTRIBUTE_TIMER_HANDLER lv_timer_handler(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00067">lv_timer.c:67</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html"><div class="ttname"><a href="structlv__indev__data__t.html">lv_indev_data_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00077">lv_hal_indev.h:77</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_a13b86f5548c334dc240f85a74c96195e"><div class="ttname"><a href="structlv__indev__data__t.html#a13b86f5548c334dc240f85a74c96195e">lv_indev_data_t::enc_diff</a></div><div class="ttdeci">int16_t enc_diff</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00081">lv_hal_indev.h:81</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_a5f93f90c6ffe0f7db54a0fc43a1cef9c"><div class="ttname"><a href="structlv__indev__data__t.html#a5f93f90c6ffe0f7db54a0fc43a1cef9c">lv_indev_data_t::key</a></div><div class="ttdeci">uint32_t key</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00079">lv_hal_indev.h:79</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_aed0de26ed88301e92bc3d95020a9893b"><div class="ttname"><a href="structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b">lv_indev_data_t::state</a></div><div class="ttdeci">lv_indev_state_t state</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00083">lv_hal_indev.h:83</a></div></div>
+<div class="ttc" id="astructlv__indev__data__t_html_afaecb3fba20bd3d6f798dea8b207f257"><div class="ttname"><a href="structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257">lv_indev_data_t::point</a></div><div class="ttdeci">lv_point_t point</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__indev_8h_source.html#l00078">lv_hal_indev.h:78</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_f070bc0cb73a4ad1c4c8f9e7fda9a852.html">tests</a></li><li class="navelem"><a href="dir_a8f6ecb5f84b153223432d96815f1a7f.html">src</a></li><li class="navelem"><a href="lv__test__indev_8c.html">lv_test_indev.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

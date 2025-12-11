@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/demos/music/lv_demo_music_list.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__demo__music__list_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_demo_music_list.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__demo__music__list_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_demo_music_list.c</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lv__demo__music__list_8h.html">lv_demo_music_list.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#if LV_USE_DEMO_MUSIC</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="lv__demo__music__main_8h.html">lv_demo_music_main.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  STATIC PROTOTYPES</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * add_list_btn(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent, uint32_t track_id);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">static</span> <span class="keywordtype">void</span> btn_click_event_cb(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  STATIC VARIABLES</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * list;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> * font_small;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a> * font_medium;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_scrollbar;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_btn;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_btn_pr;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_btn_chk;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_btn_dis;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_title;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_artist;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">static</span> <a class="code hl_struct" href="structlv__style__t.html">lv_style_t</a> style_time;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><a class="code hl_define" href="lv__img_8h.html#a546946fa465f7c1a4aa97ca717825d8f">LV_IMG_DECLARE</a>(img_lv_demo_music_btn_list_play);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_define" href="lv__img_8h.html#a546946fa465f7c1a4aa97ca717825d8f">LV_IMG_DECLARE</a>(img_lv_demo_music_btn_list_pause);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * _lv_demo_music_list_create(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#if LV_DEMO_MUSIC_LARGE</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    font_small = &amp;lv_font_montserrat_16;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    font_medium = &amp;lv_font_montserrat_22;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    font_small = &amp;lv_font_montserrat_12;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    font_medium = &amp;lv_font_montserrat_16;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_scrollbar);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a0f602b8c4a1c42c2e2c63c0c6dabfc0c">lv_style_set_width</a>(&amp;style_scrollbar,  4);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a>(&amp;style_scrollbar, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a>(&amp;style_scrollbar, lv_color_hex3(0xeee));</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a0dd5fb2e6774c389eb2054f74dab3e78">lv_style_set_radius</a>(&amp;style_scrollbar, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="lv__style__gen_8c.html#aac46e98d363551cb581a7a75d7bd8519">lv_style_set_pad_right</a>(&amp;style_scrollbar, 4);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> grid_cols[] = {<a class="code hl_define" href="lv__grid_8h.html#a7ae1b0a902958ae595e01d6d64e484a0">LV_GRID_CONTENT</a>, <a class="code hl_define" href="lv__grid_8h.html#a056af61fb45593f412fc04bb7fc75a51">LV_GRID_FR</a>(1), <a class="code hl_define" href="lv__grid_8h.html#a7ae1b0a902958ae595e01d6d64e484a0">LV_GRID_CONTENT</a>, <a class="code hl_define" href="lv__grid_8h.html#a27f6638fea3a42db18fc1859288e0e1f">LV_GRID_TEMPLATE_LAST</a>};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#if LV_DEMO_MUSIC_LARGE</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> grid_rows[] = {35,  30, <a class="code hl_define" href="lv__grid_8h.html#a27f6638fea3a42db18fc1859288e0e1f">LV_GRID_TEMPLATE_LAST</a>};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> grid_rows[] = {22,  17, <a class="code hl_define" href="lv__grid_8h.html#a27f6638fea3a42db18fc1859288e0e1f">LV_GRID_TEMPLATE_LAST</a>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_btn);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a>(&amp;style_btn, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="lv__grid_8c.html#adf8e6564fd507790ab5ff88db9fc3ebb">lv_style_set_grid_column_dsc_array</a>(&amp;style_btn, grid_cols);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="lv__grid_8c.html#a9d70ef784bdc549dee657bdc50c4179f">lv_style_set_grid_row_dsc_array</a>(&amp;style_btn, grid_rows);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="lv__grid_8c.html#aaa645466194ddd2a760814f52c9cb5ab">lv_style_set_grid_row_align</a>(&amp;style_btn, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf">LV_GRID_ALIGN_CENTER</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_function" href="lv__style__gen_8c.html#af3178ef626339150522f4f5dfebf6d32">lv_style_set_layout</a>(&amp;style_btn, <a class="code hl_variable" href="lv__grid_8c.html#aac02e0c06b400834c3353cb9b39824c9">LV_LAYOUT_GRID</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#if LV_DEMO_MUSIC_LARGE</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_function" href="lv__style__gen_8c.html#aac46e98d363551cb581a7a75d7bd8519">lv_style_set_pad_right</a>(&amp;style_btn, 30);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_function" href="lv__style__gen_8c.html#aac46e98d363551cb581a7a75d7bd8519">lv_style_set_pad_right</a>(&amp;style_btn, 20);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_btn_pr);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a>(&amp;style_btn_pr, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a>(&amp;style_btn_pr,  lv_color_hex(0x4c4965));</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_btn_chk);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a>(&amp;style_btn_chk, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a>(&amp;style_btn_chk, lv_color_hex(0x4c4965));</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_btn_dis);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="lv__style__gen_8c.html#adaeddf05503fde910e64aa1465d7af78">lv_style_set_text_opa</a>(&amp;style_btn_dis, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f">LV_OPA_40</a>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_function" href="lv__style__gen_8c.html#ac0fbd0b73d3408029725d6d2536345ab">lv_style_set_img_opa</a>(&amp;style_btn_dis, <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f">LV_OPA_40</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_title);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a29f1e691827a59d9b27863151700b385">lv_style_set_text_font</a>(&amp;style_title, font_medium);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a74d7ad0e1d27b174a82fd95786020dbd">lv_style_set_text_color</a>(&amp;style_title, lv_color_hex(0xffffff));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_artist);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a29f1e691827a59d9b27863151700b385">lv_style_set_text_font</a>(&amp;style_artist, font_small);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a74d7ad0e1d27b174a82fd95786020dbd">lv_style_set_text_color</a>(&amp;style_artist, lv_color_hex(0xb1b0be));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a>(&amp;style_time);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a29f1e691827a59d9b27863151700b385">lv_style_set_text_font</a>(&amp;style_time, font_medium);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_function" href="lv__style__gen_8c.html#a74d7ad0e1d27b174a82fd95786020dbd">lv_style_set_text_color</a>(&amp;style_time, lv_color_hex(0xffffff));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">/*Create an empty transparent container*/</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    list = <a class="code hl_function" href="lv__obj_8c.html#acf57dc362a43990cbad93921da833b5d">lv_obj_create</a>(parent);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    lv_obj_remove_style_all(list);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a>(list, <a class="code hl_define" href="lv__disp_8h.html#a376696c753a2750dc80acaf6fb48770e">LV_HOR_RES</a>, <a class="code hl_define" href="lv__disp_8h.html#a46cd7da6d812121b09c735c59925e645">LV_VER_RES</a> - LV_DEMO_MUSIC_HANDLE_SIZE);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a1993b15b44f347aeff5aa9f24e816eb2">lv_obj_set_y</a>(list, LV_DEMO_MUSIC_HANDLE_SIZE);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(list, &amp;style_scrollbar, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa48a8e6955fcde2f7679f5a8f6eb698b9">LV_PART_SCROLLBAR</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_function" href="lv__flex_8c.html#afe0e90502eefb9f215b641a818bceb50">lv_obj_set_flex_flow</a>(list, <a class="code hl_enumvalue" href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187aa5d3d8faeb677348ac8ce95347a8f507">LV_FLEX_FLOW_COLUMN</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    uint32_t track_id;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">for</span>(track_id = 0; _lv_demo_music_get_title(track_id); track_id++) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        add_list_btn(list,  track_id);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#if LV_DEMO_MUSIC_SQUARE || LV_DEMO_MUSIC_ROUND</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="lv__obj__scroll_8c.html#a0163965d49e256d03a9cb42035198755">lv_obj_set_scroll_snap_y</a>(list, <a class="code hl_enumvalue" href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069">LV_SCROLL_SNAP_CENTER</a>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    _lv_demo_music_list_btn_check(0, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> list;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keywordtype">void</span> _lv_demo_music_list_close(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_scrollbar);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_btn);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_btn_pr);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_btn_chk);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_btn_dis);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_title);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_artist);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <a class="code hl_function" href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a>(&amp;style_time);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keywordtype">void</span> _lv_demo_music_list_btn_check(uint32_t track_id, <span class="keywordtype">bool</span> state)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * btn = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(list, track_id);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * icon = <a class="code hl_function" href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a>(btn, 0);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">if</span>(state) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <a class="code hl_function" href="lv__obj_8c.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a>(btn, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_function" href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a>(icon, &amp;img_lv_demo_music_btn_list_pause);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_function" href="lv__obj__scroll_8c.html#a083453d4ebccc0fd0bff84ccc6ece4c1">lv_obj_scroll_to_view</a>(btn, <a class="code hl_enumvalue" href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_function" href="lv__obj_8c.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a>(btn, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <a class="code hl_function" href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a>(icon, &amp;img_lv_demo_music_btn_list_play);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment"> *   STATIC FUNCTIONS</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="keyword">static</span> <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * add_list_btn(<a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * parent, uint32_t track_id)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    uint32_t t = _lv_demo_music_get_track_length(track_id);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">char</span> time[32];</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <a class="code hl_function" href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a>(time, <span class="keyword">sizeof</span>(time), <span class="stringliteral">&quot;%&quot;</span><a class="code hl_define" href="lv__printf_8h.html#a1d0a8004139d4627a0d3144eddf033ff">LV_PRIu32</a><span class="stringliteral">&quot;:%02&quot;</span><a class="code hl_define" href="lv__printf_8h.html#a1d0a8004139d4627a0d3144eddf033ff">LV_PRIu32</a>, t / 60, t % 60);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * title = _lv_demo_music_get_title(track_id);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * artist = _lv_demo_music_get_artist(track_id);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * btn = <a class="code hl_function" href="lv__obj_8c.html#acf57dc362a43990cbad93921da833b5d">lv_obj_create</a>(parent);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    lv_obj_remove_style_all(btn);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#if LV_DEMO_MUSIC_LARGE</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a>(btn, lv_pct(100), 110);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a>(btn, lv_pct(100), 60);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(btn, &amp;style_btn, 0);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(btn, &amp;style_btn_pr, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(btn, &amp;style_btn_chk, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(btn, &amp;style_btn_dis, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <a class="code hl_function" href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a>(btn, btn_click_event_cb, <a class="code hl_enumvalue" href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa02bc86fc8e7a7edab3634a816c19ab6">LV_EVENT_CLICKED</a>, NULL);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">if</span>(track_id &gt;= 3) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <a class="code hl_function" href="lv__obj_8c.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a>(btn, <a class="code hl_enumvalue" href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * icon = <a class="code hl_function" href="lv__img_8c.html#a3242ee9e0c4348b050e01da89cd32f5d">lv_img_create</a>(btn);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_function" href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a>(icon, &amp;img_lv_demo_music_btn_list_play);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_function" href="lv__grid_8c.html#a348d6f7ed845f63f1e6d867c1e859fc4">lv_obj_set_grid_cell</a>(icon, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a08e1b59f16d09947ef2df001aebe34a1">LV_GRID_ALIGN_START</a>, 0, 1, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf">LV_GRID_ALIGN_CENTER</a>, 0, 2);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * title_label = <a class="code hl_function" href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a>(btn);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(title_label, title);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_function" href="lv__grid_8c.html#a348d6f7ed845f63f1e6d867c1e859fc4">lv_obj_set_grid_cell</a>(title_label, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a08e1b59f16d09947ef2df001aebe34a1">LV_GRID_ALIGN_START</a>, 1, 1, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf">LV_GRID_ALIGN_CENTER</a>, 0, 1);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(title_label, &amp;style_title, 0);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * artist_label = <a class="code hl_function" href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a>(btn);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(artist_label, artist);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(artist_label, &amp;style_artist, 0);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <a class="code hl_function" href="lv__grid_8c.html#a348d6f7ed845f63f1e6d867c1e859fc4">lv_obj_set_grid_cell</a>(artist_label, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a08e1b59f16d09947ef2df001aebe34a1">LV_GRID_ALIGN_START</a>, 1, 1, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf">LV_GRID_ALIGN_CENTER</a>, 1, 1);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * time_label = <a class="code hl_function" href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a>(btn);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_function" href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a>(time_label, time);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_function" href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a>(time_label, &amp;style_time, 0);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <a class="code hl_function" href="lv__grid_8c.html#a348d6f7ed845f63f1e6d867c1e859fc4">lv_obj_set_grid_cell</a>(time_label, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7aff9bfff5387c281e99d2a1604d6b0885">LV_GRID_ALIGN_END</a>, 2, 1, <a class="code hl_enumvalue" href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf">LV_GRID_ALIGN_CENTER</a>, 0, 2);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <a class="code hl_define" href="lv__img_8h.html#a546946fa465f7c1a4aa97ca717825d8f">LV_IMG_DECLARE</a>(img_lv_demo_music_list_border);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * border = <a class="code hl_function" href="lv__img_8c.html#a3242ee9e0c4348b050e01da89cd32f5d">lv_img_create</a>(btn);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <a class="code hl_function" href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a>(border, &amp;img_lv_demo_music_list_border);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a63d809001264dd8510fa9fe0f9aaced3">lv_obj_set_width</a>(border, lv_pct(120));</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#a4a58eb9c33b90f015405a7b115cc8ed4">lv_obj_align</a>(border, <a class="code hl_enumvalue" href="lv__area_8h.html#a1ed23dfd798126c2938153cfe435af70adf551cff16be0cd62c0643cbee3dd615">LV_ALIGN_BOTTOM_MID</a>, 0, 0);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(border, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea5278a16b8d997809825817354c2a836c">LV_OBJ_FLAG_IGNORE_LAYOUT</a>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">return</span> btn;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>}</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keyword">static</span> <span class="keywordtype">void</span> btn_click_event_cb(<a class="code hl_typedef" href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> * e)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>{</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * btn = <a class="code hl_function" href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a>(e);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    uint32_t idx = lv_obj_get_child_id(btn);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    _lv_demo_music_play(idx);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>}</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_DEMO_MUSIC*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="ttc" id="alv__anim_8h_html_a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e"><div class="ttname"><a href="lv__anim_8h.html#a1ba9d18fd18b8c83da1f058155b43a71ae078e0865cfff1b8c196d4c526eb5a5e">LV_ANIM_ON</a></div><div class="ttdeci">@ LV_ANIM_ON</div><div class="ttdef"><b>Definition</b> <a href="lv__anim_8h_source.html#l00039">lv_anim.h:39</a></div></div>
+<div class="ttc" id="alv__area_8h_html_a1ed23dfd798126c2938153cfe435af70adf551cff16be0cd62c0643cbee3dd615"><div class="ttname"><a href="lv__area_8h.html#a1ed23dfd798126c2938153cfe435af70adf551cff16be0cd62c0643cbee3dd615">LV_ALIGN_BOTTOM_MID</a></div><div class="ttdeci">@ LV_ALIGN_BOTTOM_MID</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00057">lv_area.h:57</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a13cdfbbe767edf76dc4f53389dfeca4a">LV_OPA_COVER</a></div><div class="ttdeci">@ LV_OPA_COVER</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00054">lv_color.h:54</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117a3dde339d67efb75f90331f51df49d74f">LV_OPA_40</a></div><div class="ttdeci">@ LV_OPA_40</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00047">lv_color.h:47</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a></div><div class="ttdeci">@ LV_OPA_TRANSP</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00042">lv_color.h:42</a></div></div>
+<div class="ttc" id="alv__demo__music__list_8h_html"><div class="ttname"><a href="lv__demo__music__list_8h.html">lv_demo_music_list.h</a></div></div>
+<div class="ttc" id="alv__demo__music__main_8h_html"><div class="ttname"><a href="lv__demo__music__main_8h.html">lv_demo_music_main.h</a></div></div>
+<div class="ttc" id="alv__disp_8h_html_a376696c753a2750dc80acaf6fb48770e"><div class="ttname"><a href="lv__disp_8h.html#a376696c753a2750dc80acaf6fb48770e">LV_HOR_RES</a></div><div class="ttdeci">#define LV_HOR_RES</div><div class="ttdef"><b>Definition</b> <a href="lv__disp_8h_source.html#l00223">lv_disp.h:223</a></div></div>
+<div class="ttc" id="alv__disp_8h_html_a46cd7da6d812121b09c735c59925e645"><div class="ttname"><a href="lv__disp_8h.html#a46cd7da6d812121b09c735c59925e645">LV_VER_RES</a></div><div class="ttdeci">#define LV_VER_RES</div><div class="ttdef"><b>Definition</b> <a href="lv__disp_8h_source.html#l00230">lv_disp.h:230</a></div></div>
+<div class="ttc" id="alv__draw__rect_8h_html_a426785bea126345f648486e35e940ad9"><div class="ttname"><a href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a></div><div class="ttdeci">#define LV_RADIUS_CIRCLE</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00025">lv_draw_rect.h:25</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a1c1e534267d7f818054106a10966b6f1"><div class="ttname"><a href="lv__event_8c.html#a1c1e534267d7f818054106a10966b6f1">lv_event_get_target</a></div><div class="ttdeci">lv_obj_t * lv_event_get_target(lv_event_t *e)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00108">lv_event.c:108</a></div></div>
+<div class="ttc" id="alv__event_8c_html_abacf41238027144749f68107a5375994"><div class="ttname"><a href="lv__event_8c.html#abacf41238027144749f68107a5375994">lv_obj_add_event_cb</a></div><div class="ttdeci">struct _lv_event_dsc_t * lv_obj_add_event_cb(lv_obj_t *obj, lv_event_cb_t event_cb, lv_event_code_t filter, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00162">lv_event.c:162</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a21b130dbe9349eab447cf0c891517272"><div class="ttname"><a href="lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a></div><div class="ttdeci">struct _lv_event_t lv_event_t</div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771aa02bc86fc8e7a7edab3634a816c19ab6"><div class="ttname"><a href="lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771aa02bc86fc8e7a7edab3634a816c19ab6">LV_EVENT_CLICKED</a></div><div class="ttdeci">@ LV_EVENT_CLICKED</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8h_source.html#l00042">lv_event.h:42</a></div></div>
+<div class="ttc" id="alv__flex_8c_html_afe0e90502eefb9f215b641a818bceb50"><div class="ttname"><a href="lv__flex_8c.html#afe0e90502eefb9f215b641a818bceb50">lv_obj_set_flex_flow</a></div><div class="ttdeci">void lv_obj_set_flex_flow(lv_obj_t *obj, lv_flex_flow_t flow)</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8c_source.html#l00103">lv_flex.c:103</a></div></div>
+<div class="ttc" id="alv__flex_8h_html_aa591169a4b8b936b35e3e9fc84d3a187aa5d3d8faeb677348ac8ce95347a8f507"><div class="ttname"><a href="lv__flex_8h.html#aa591169a4b8b936b35e3e9fc84d3a187aa5d3d8faeb677348ac8ce95347a8f507">LV_FLEX_FLOW_COLUMN</a></div><div class="ttdeci">@ LV_FLEX_FLOW_COLUMN</div><div class="ttdef"><b>Definition</b> <a href="lv__flex_8h_source.html#l00048">lv_flex.h:48</a></div></div>
+<div class="ttc" id="alv__font_8h_html_a11e3396cab33231964d98046c4e436af"><div class="ttname"><a href="lv__font_8h.html#a11e3396cab33231964d98046c4e436af">lv_font_t</a></div><div class="ttdeci">struct _lv_font_t lv_font_t</div></div>
+<div class="ttc" id="alv__grid_8c_html_a348d6f7ed845f63f1e6d867c1e859fc4"><div class="ttname"><a href="lv__grid_8c.html#a348d6f7ed845f63f1e6d867c1e859fc4">lv_obj_set_grid_cell</a></div><div class="ttdeci">void lv_obj_set_grid_cell(lv_obj_t *obj, lv_grid_align_t x_align, uint8_t col_pos, uint8_t col_span, lv_grid_align_t y_align, uint8_t row_pos, uint8_t row_span)</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8c_source.html#l00161">lv_grid.c:161</a></div></div>
+<div class="ttc" id="alv__grid_8c_html_a9d70ef784bdc549dee657bdc50c4179f"><div class="ttname"><a href="lv__grid_8c.html#a9d70ef784bdc549dee657bdc50c4179f">lv_style_set_grid_row_dsc_array</a></div><div class="ttdeci">void lv_style_set_grid_row_dsc_array(lv_style_t *style, const lv_coord_t value[])</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8c_source.html#l00176">lv_grid.c:176</a></div></div>
+<div class="ttc" id="alv__grid_8c_html_aaa645466194ddd2a760814f52c9cb5ab"><div class="ttname"><a href="lv__grid_8c.html#aaa645466194ddd2a760814f52c9cb5ab">lv_style_set_grid_row_align</a></div><div class="ttdeci">void lv_style_set_grid_row_align(lv_style_t *style, lv_grid_align_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8c_source.html#l00192">lv_grid.c:192</a></div></div>
+<div class="ttc" id="alv__grid_8c_html_aac02e0c06b400834c3353cb9b39824c9"><div class="ttname"><a href="lv__grid_8c.html#aac02e0c06b400834c3353cb9b39824c9">LV_LAYOUT_GRID</a></div><div class="ttdeci">uint16_t LV_LAYOUT_GRID</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8c_source.html#l00105">lv_grid.c:105</a></div></div>
+<div class="ttc" id="alv__grid_8c_html_adf8e6564fd507790ab5ff88db9fc3ebb"><div class="ttname"><a href="lv__grid_8c.html#adf8e6564fd507790ab5ff88db9fc3ebb">lv_style_set_grid_column_dsc_array</a></div><div class="ttdeci">void lv_style_set_grid_column_dsc_array(lv_style_t *style, const lv_coord_t value[])</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8c_source.html#l00184">lv_grid.c:184</a></div></div>
+<div class="ttc" id="alv__grid_8h_html_a056af61fb45593f412fc04bb7fc75a51"><div class="ttname"><a href="lv__grid_8h.html#a056af61fb45593f412fc04bb7fc75a51">LV_GRID_FR</a></div><div class="ttdeci">#define LV_GRID_FR(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8h_source.html#l00027">lv_grid.h:27</a></div></div>
+<div class="ttc" id="alv__grid_8h_html_a27f6638fea3a42db18fc1859288e0e1f"><div class="ttname"><a href="lv__grid_8h.html#a27f6638fea3a42db18fc1859288e0e1f">LV_GRID_TEMPLATE_LAST</a></div><div class="ttdeci">#define LV_GRID_TEMPLATE_LAST</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8h_source.html#l00032">lv_grid.h:32</a></div></div>
+<div class="ttc" id="alv__grid_8h_html_a5facd72ec498b70c2c9e538237a620a7a08e1b59f16d09947ef2df001aebe34a1"><div class="ttname"><a href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a08e1b59f16d09947ef2df001aebe34a1">LV_GRID_ALIGN_START</a></div><div class="ttdeci">@ LV_GRID_ALIGN_START</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8h_source.html#l00043">lv_grid.h:43</a></div></div>
+<div class="ttc" id="alv__grid_8h_html_a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf"><div class="ttname"><a href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7a38fd9e0fe50314b346050648ad168faf">LV_GRID_ALIGN_CENTER</a></div><div class="ttdeci">@ LV_GRID_ALIGN_CENTER</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8h_source.html#l00044">lv_grid.h:44</a></div></div>
+<div class="ttc" id="alv__grid_8h_html_a5facd72ec498b70c2c9e538237a620a7aff9bfff5387c281e99d2a1604d6b0885"><div class="ttname"><a href="lv__grid_8h.html#a5facd72ec498b70c2c9e538237a620a7aff9bfff5387c281e99d2a1604d6b0885">LV_GRID_ALIGN_END</a></div><div class="ttdeci">@ LV_GRID_ALIGN_END</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8h_source.html#l00045">lv_grid.h:45</a></div></div>
+<div class="ttc" id="alv__grid_8h_html_a7ae1b0a902958ae595e01d6d64e484a0"><div class="ttname"><a href="lv__grid_8h.html#a7ae1b0a902958ae595e01d6d64e484a0">LV_GRID_CONTENT</a></div><div class="ttdeci">#define LV_GRID_CONTENT</div><div class="ttdef"><b>Definition</b> <a href="lv__grid_8h_source.html#l00029">lv_grid.h:29</a></div></div>
+<div class="ttc" id="alv__img_8c_html_a3242ee9e0c4348b050e01da89cd32f5d"><div class="ttname"><a href="lv__img_8c.html#a3242ee9e0c4348b050e01da89cd32f5d">lv_img_create</a></div><div class="ttdeci">lv_obj_t * lv_img_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8c_source.html#l00058">lv_img.c:58</a></div></div>
+<div class="ttc" id="alv__img_8c_html_aee1e48c0fc36b804ceb8d2127d01ccac"><div class="ttname"><a href="lv__img_8c.html#aee1e48c0fc36b804ceb8d2127d01ccac">lv_img_set_src</a></div><div class="ttdeci">void lv_img_set_src(lv_obj_t *obj, const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8c_source.html#l00070">lv_img.c:70</a></div></div>
+<div class="ttc" id="alv__img_8h_html_a546946fa465f7c1a4aa97ca717825d8f"><div class="ttname"><a href="lv__img_8h.html#a546946fa465f7c1a4aa97ca717825d8f">LV_IMG_DECLARE</a></div><div class="ttdeci">#define LV_IMG_DECLARE(var_name)</div><div class="ttdef"><b>Definition</b> <a href="lv__img_8h_source.html#l00226">lv_img.h:226</a></div></div>
+<div class="ttc" id="alv__label_8c_html_a9b7eac4c1840d44582995efda39ef466"><div class="ttname"><a href="lv__label_8c.html#a9b7eac4c1840d44582995efda39ef466">lv_label_create</a></div><div class="ttdeci">lv_obj_t * lv_label_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__label_8c_source.html#l00073">lv_label.c:73</a></div></div>
+<div class="ttc" id="alv__label_8c_html_ac0a3691e31b2defebc1eab701a35d63b"><div class="ttname"><a href="lv__label_8c.html#ac0a3691e31b2defebc1eab701a35d63b">lv_label_set_text</a></div><div class="ttdeci">void lv_label_set_text(lv_obj_t *obj, const char *text)</div><div class="ttdef"><b>Definition</b> <a href="lv__label_8c_source.html#l00085">lv_label.c:85</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a87fa70194789d48ea3dba01d1c28c984"><div class="ttname"><a href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a></div><div class="ttdeci">void lv_obj_add_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00229">lv_obj.c:229</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_ac94c26d36140c7c83da6914d60170e16"><div class="ttname"><a href="lv__obj_8c.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a></div><div class="ttdeci">void lv_obj_clear_state(lv_obj_t *obj, lv_state_t state)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00304">lv_obj.c:304</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_acf57dc362a43990cbad93921da833b5d"><div class="ttname"><a href="lv__obj_8c.html#acf57dc362a43990cbad93921da833b5d">lv_obj_create</a></div><div class="ttdeci">lv_obj_t * lv_obj_create(lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00213">lv_obj.c:213</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_adbd258635d3d653e5446336764044db1"><div class="ttname"><a href="lv__obj_8c.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a></div><div class="ttdeci">void lv_obj_add_state(lv_obj_t *obj, lv_state_t state)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00294">lv_obj.c:294</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a></div><div class="ttdeci">@ LV_STATE_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00050">lv_obj.h:50</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a69673539aa92d84848a992fb3baea649">LV_STATE_PRESSED</a></div><div class="ttdeci">@ LV_STATE_PRESSED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00048">lv_obj.h:48</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf"><div class="ttname"><a href="lv__obj_8h.html#a7cdf26376a29a84150d135c63ca62b58a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a></div><div class="ttdeci">@ LV_STATE_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00043">lv_obj.h:43</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea5278a16b8d997809825817354c2a836c"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea5278a16b8d997809825817354c2a836c">LV_OBJ_FLAG_IGNORE_LAYOUT</a></div><div class="ttdeci">@ LV_OBJ_FLAG_IGNORE_LAYOUT</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00108">lv_obj.h:108</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aa48a8e6955fcde2f7679f5a8f6eb698b9"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa48a8e6955fcde2f7679f5a8f6eb698b9">LV_PART_SCROLLBAR</a></div><div class="ttdeci">@ LV_PART_SCROLLBAR</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00070">lv_obj.h:70</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a1993b15b44f347aeff5aa9f24e816eb2"><div class="ttname"><a href="lv__obj__pos_8c.html#a1993b15b44f347aeff5aa9f24e816eb2">lv_obj_set_y</a></div><div class="ttdeci">void lv_obj_set_y(lv_obj_t *obj, lv_coord_t y)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00066">lv_obj_pos.c:66</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a4a58eb9c33b90f015405a7b115cc8ed4"><div class="ttname"><a href="lv__obj__pos_8c.html#a4a58eb9c33b90f015405a7b115cc8ed4">lv_obj_align</a></div><div class="ttdeci">void lv_obj_align(lv_obj_t *obj, lv_align_t align, lv_coord_t x_ofs, lv_coord_t y_ofs)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00339">lv_obj_pos.c:339</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a63d809001264dd8510fa9fe0f9aaced3"><div class="ttname"><a href="lv__obj__pos_8c.html#a63d809001264dd8510fa9fe0f9aaced3">lv_obj_set_width</a></div><div class="ttdeci">void lv_obj_set_width(lv_obj_t *obj, lv_coord_t w)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00223">lv_obj_pos.c:223</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_abcc5ebd0d1bda82435697baeeb58048d"><div class="ttname"><a href="lv__obj__pos_8c.html#abcc5ebd0d1bda82435697baeeb58048d">lv_obj_set_size</a></div><div class="ttdeci">void lv_obj_set_size(lv_obj_t *obj, lv_coord_t w, lv_coord_t h)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00215">lv_obj_pos.c:215</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a0163965d49e256d03a9cb42035198755"><div class="ttname"><a href="lv__obj__scroll_8c.html#a0163965d49e256d03a9cb42035198755">lv_obj_set_scroll_snap_y</a></div><div class="ttdeci">void lv_obj_set_scroll_snap_y(lv_obj_t *obj, lv_scroll_snap_t align)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00082">lv_obj_scroll.c:82</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8c_html_a083453d4ebccc0fd0bff84ccc6ece4c1"><div class="ttname"><a href="lv__obj__scroll_8c.html#a083453d4ebccc0fd0bff84ccc6ece4c1">lv_obj_scroll_to_view</a></div><div class="ttdeci">void lv_obj_scroll_to_view(lv_obj_t *obj, lv_anim_enable_t anim_en)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8c_source.html#l00388">lv_obj_scroll.c:388</a></div></div>
+<div class="ttc" id="alv__obj__scroll_8h_html_ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069"><div class="ttname"><a href="lv__obj__scroll_8h.html#ade83011398bb8b69988b482f6508178ea1ca0c2b2a66ff08bc5b185720d79b069">LV_SCROLL_SNAP_CENTER</a></div><div class="ttdeci">@ LV_SCROLL_SNAP_CENTER</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__scroll_8h_source.html#l00046">lv_obj_scroll.h:46</a></div></div>
+<div class="ttc" id="alv__obj__style_8c_html_afde1c6c8ff1810dcfa37b4a3aaf8f89e"><div class="ttname"><a href="lv__obj__style_8c.html#afde1c6c8ff1810dcfa37b4a3aaf8f89e">lv_obj_add_style</a></div><div class="ttdeci">void lv_obj_add_style(lv_obj_t *obj, lv_style_t *style, lv_style_selector_t selector)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__style_8c_source.html#l00076">lv_obj_style.c:76</a></div></div>
+<div class="ttc" id="alv__obj__tree_8c_html_a708b3eb8efc7d0ac06d1b924dcd9b651"><div class="ttname"><a href="lv__obj__tree_8c.html#a708b3eb8efc7d0ac06d1b924dcd9b651">lv_obj_get_child</a></div><div class="ttdeci">lv_obj_t * lv_obj_get_child(const lv_obj_t *obj, int32_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__tree_8c_source.html#l00293">lv_obj_tree.c:293</a></div></div>
+<div class="ttc" id="alv__printf_8c_html_a5480d8503f8285409692a6116c7df5e7"><div class="ttname"><a href="lv__printf_8c.html#a5480d8503f8285409692a6116c7df5e7">lv_snprintf</a></div><div class="ttdeci">int lv_snprintf(char *buffer, size_t count, const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8c_source.html#l00865">lv_printf.c:865</a></div></div>
+<div class="ttc" id="alv__printf_8h_html_a1d0a8004139d4627a0d3144eddf033ff"><div class="ttname"><a href="lv__printf_8h.html#a1d0a8004139d4627a0d3144eddf033ff">LV_PRIu32</a></div><div class="ttdeci">#define LV_PRIu32</div><div class="ttdef"><b>Definition</b> <a href="lv__printf_8h_source.html#l00054">lv_printf.h:54</a></div></div>
+<div class="ttc" id="alv__style_8c_html_a327db2c3050bd2d1a1693aa6981205dd"><div class="ttname"><a href="lv__style_8c.html#a327db2c3050bd2d1a1693aa6981205dd">lv_style_init</a></div><div class="ttdeci">void lv_style_init(lv_style_t *style)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00151">lv_style.c:151</a></div></div>
+<div class="ttc" id="alv__style_8c_html_afd91dc8011c22491bae7010959267741"><div class="ttname"><a href="lv__style_8c.html#afd91dc8011c22491bae7010959267741">lv_style_reset</a></div><div class="ttdeci">void lv_style_reset(lv_style_t *style)</div><div class="ttdef"><b>Definition</b> <a href="lv__style_8c_source.html#l00165">lv_style.c:165</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a033bf2ecb3aab94dde82136cea696693"><div class="ttname"><a href="lv__style__gen_8c.html#a033bf2ecb3aab94dde82136cea696693">lv_style_set_bg_opa</a></div><div class="ttdeci">void lv_style_set_bg_opa(lv_style_t *style, lv_opa_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00195">lv_style_gen.c:195</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a0dd5fb2e6774c389eb2054f74dab3e78"><div class="ttname"><a href="lv__style__gen_8c.html#a0dd5fb2e6774c389eb2054f74dab3e78">lv_style_set_radius</a></div><div class="ttdeci">void lv_style_set_radius(lv_style_t *style, lv_coord_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00579">lv_style_gen.c:579</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a0f602b8c4a1c42c2e2c63c0c6dabfc0c"><div class="ttname"><a href="lv__style__gen_8c.html#a0f602b8c4a1c42c2e2c63c0c6dabfc0c">lv_style_set_width</a></div><div class="ttdeci">void lv_style_set_width(lv_style_t *style, lv_coord_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00003">lv_style_gen.c:3</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a29f1e691827a59d9b27863151700b385"><div class="ttname"><a href="lv__style__gen_8c.html#a29f1e691827a59d9b27863151700b385">lv_style_set_text_font</a></div><div class="ttdeci">void lv_style_set_text_font(lv_style_t *style, const lv_font_t *value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00539">lv_style_gen.c:539</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_a74d7ad0e1d27b174a82fd95786020dbd"><div class="ttname"><a href="lv__style__gen_8c.html#a74d7ad0e1d27b174a82fd95786020dbd">lv_style_set_text_color</a></div><div class="ttdeci">void lv_style_set_text_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00523">lv_style_gen.c:523</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_aac46e98d363551cb581a7a75d7bd8519"><div class="ttname"><a href="lv__style__gen_8c.html#aac46e98d363551cb581a7a75d7bd8519">lv_style_set_pad_right</a></div><div class="ttdeci">void lv_style_set_pad_right(lv_style_t *style, lv_coord_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00163">lv_style_gen.c:163</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_ac0fbd0b73d3408029725d6d2536345ab"><div class="ttname"><a href="lv__style__gen_8c.html#ac0fbd0b73d3408029725d6d2536345ab">lv_style_set_img_opa</a></div><div class="ttdeci">void lv_style_set_img_opa(lv_style_t *style, lv_opa_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00411">lv_style_gen.c:411</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_adaeddf05503fde910e64aa1465d7af78"><div class="ttname"><a href="lv__style__gen_8c.html#adaeddf05503fde910e64aa1465d7af78">lv_style_set_text_opa</a></div><div class="ttdeci">void lv_style_set_text_opa(lv_style_t *style, lv_opa_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00531">lv_style_gen.c:531</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_af3178ef626339150522f4f5dfebf6d32"><div class="ttname"><a href="lv__style__gen_8c.html#af3178ef626339150522f4f5dfebf6d32">lv_style_set_layout</a></div><div class="ttdeci">void lv_style_set_layout(lv_style_t *style, uint16_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00667">lv_style_gen.c:667</a></div></div>
+<div class="ttc" id="alv__style__gen_8c_html_afcfd90e9415c860adbf13bedb97ce0c7"><div class="ttname"><a href="lv__style__gen_8c.html#afcfd90e9415c860adbf13bedb97ce0c7">lv_style_set_bg_color</a></div><div class="ttdeci">void lv_style_set_bg_color(lv_style_t *style, lv_color_t value)</div><div class="ttdef"><b>Definition</b> <a href="lv__style__gen_8c_source.html#l00187">lv_style_gen.c:187</a></div></div>
+<div class="ttc" id="astructlv__style__t_html"><div class="ttname"><a href="structlv__style__t.html">lv_style_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__style_8h_source.html#l00319">lv_style.h:319</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_1481dd6c70834c756a3ddce782477f88.html">demos</a></li><li class="navelem"><a href="dir_7d73996cd8f9e7276871ced4117a5b9f.html">music</a></li><li class="navelem"><a href="lv__demo__music__list_8c.html">lv_demo_music_list.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/draw/sdl/lv_draw_sdl_arc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__draw__sdl__arc_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_draw_sdl_arc.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__draw__sdl__arc_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_draw_sdl_arc.c</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lv__conf__internal_8h.html">../../lv_conf_internal.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_GPU_SDL</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="lv__draw__sdl_8h.html">lv_draw_sdl.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="lv__draw__sdl__utils_8h.html">lv_draw_sdl_utils.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="lv__draw__sdl__texture__cache_8h.html">lv_draw_sdl_texture_cache.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="lv__draw__sdl__composite_8h.html">lv_draw_sdl_composite.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  STATIC PROTOTYPES</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  STATIC VARIABLES</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">static</span> <span class="keywordtype">void</span> dump_masks(SDL_Texture * texture, <span class="keyword">const</span> <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> * coords, <span class="keyword">const</span> int16_t * ids, int16_t ids_count,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                       <span class="keyword">const</span> int16_t * caps);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">static</span> <span class="keywordtype">void</span> get_cap_area(int16_t angle, <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> thickness, uint16_t radius, <span class="keyword">const</span> <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> * center,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                         <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> * out);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> lv_draw_sdl_draw_arc(<a class="code hl_typedef" href="lv__draw_8h.html#a3c97ef426260d81bff72570b24f5b886">lv_draw_ctx_t</a> * draw_ctx, <span class="keyword">const</span> <a class="code hl_struct" href="structlv__draw__arc__dsc__t.html">lv_draw_arc_dsc_t</a> * dsc, <span class="keyword">const</span> <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> * center,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                          uint16_t radius, uint16_t start_angle, uint16_t end_angle)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    lv_draw_sdl_ctx_t * ctx = (lv_draw_sdl_ctx_t *) draw_ctx;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> area_out;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> - radius;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> - radius;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> + radius - 1;  <span class="comment">/*-1 because the center already belongs to the left/bottom part*/</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> + radius - 1;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> draw_area;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="lv__area_8c.html#a4d3f162819f5c73af3f8db373bd760a1">_lv_area_intersect</a>(&amp;draw_area, &amp;area_out, draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a>)) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> area_in;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    lv_area_copy(&amp;area_in, &amp;area_out);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> += dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> += dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> -= dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> -= dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">while</span>(start_angle &gt;= 360) start_angle -= 360;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">while</span>(end_angle &gt;= 360) end_angle -= 360;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    int16_t mask_ids[3] = {<a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>, <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>, <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>}, mask_ids_count = 1;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    int16_t cap_ids[2] = {<a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>, <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_struct" href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a> mask_out_param;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;mask_out_param, &amp;area_out, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    mask_ids[0] = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_out_param, NULL);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_struct" href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a> mask_in_param;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span>(lv_area_get_width(&amp;area_in) &gt; 0 &amp;&amp; lv_area_get_height(&amp;area_in) &gt; 0) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;mask_in_param, &amp;area_in, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        mask_ids[1] = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_in_param, NULL);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        mask_ids_count++;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_struct" href="structlv__draw__mask__angle__param__t.html">lv_draw_mask_angle_param_t</a> mask_angle_param;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span>((start_angle - end_angle) % 360) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a907fedb356b36ce3b3b8439e1f8f7323">lv_draw_mask_angle_init</a>(&amp;mask_angle_param, center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>, center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>, start_angle, end_angle);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        mask_ids[2] = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_angle_param, NULL);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        mask_ids_count++;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_struct" href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a> cap_start_param, cap_end_param;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span>(mask_ids_count == 3 &amp;&amp; dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#aa3f201600200f0639cf2753462532bcf">rounded</a>) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> start_area, end_area;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        get_cap_area((int16_t) start_angle, dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>, radius, center, &amp;start_area);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        get_cap_area((int16_t) end_angle, dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>, radius, center, &amp;end_area);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;cap_start_param, &amp;start_area, dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a> / 2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        cap_ids[0] = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;cap_start_param, NULL);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;cap_end_param, &amp;end_area, dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a> / 2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        cap_ids[1] = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;cap_end_param, NULL);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = lv_area_get_width(&amp;draw_area), h = lv_area_get_height(&amp;draw_area);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">bool</span> texture_cached = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    SDL_Texture * texture = <a class="code hl_function" href="lv__draw__sdl__composite_8h.html#a7d5ebc84fc2d281dd91026bd443f46ce">lv_draw_sdl_composite_texture_obtain</a>(ctx, <a class="code hl_enumvalue" href="lv__draw__sdl__composite_8h.html#ae50b7126984aa1485c7199af726d093ca8ab5cf094ab56e09e10ceb1a38e7a59e">LV_DRAW_SDL_COMPOSITE_TEXTURE_ID_STREAM1</a>, w, h,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                                                 &amp;texture_cached);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    dump_masks(texture, &amp;draw_area, mask_ids, mask_ids_count, cap_ids[0] != <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a> ? cap_ids : NULL);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_ids[0]);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_out_param);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span>(mask_ids_count &gt; 1) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_ids[1]);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_in_param);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">if</span>(mask_ids_count &gt; 2) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_ids[2]);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_angle_param);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span>(cap_ids[0] != <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(cap_ids[0]);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(cap_ids[1]);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;cap_start_param);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;cap_end_param);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    SDL_Rect srcrect = {0, 0, w, h}, dstrect;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    lv_area_to_sdl_rect(&amp;draw_area, &amp;dstrect);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    SDL_Color color;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    lv_color_to_sdl_color(&amp;dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a78111b748fd2e70f79a1311824e1c083">color</a>, &amp;color);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    SDL_SetTextureColorMod(texture, color.r, color.g, color.b);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    SDL_SetTextureAlphaMod(texture, dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a6f670a72223d1c80bf4a7397f8b06d8a">opa</a>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    SDL_RenderCopy(ctx-&gt;renderer, texture, &amp;srcrect, &amp;dstrect);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span>(!texture_cached) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Texture is not cached, this will impact performance.&quot;</span>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        SDL_DestroyTexture(texture);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment"> *   STATIC FUNCTIONS</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">static</span> <span class="keywordtype">void</span> dump_masks(SDL_Texture * texture, <span class="keyword">const</span> <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> * coords, <span class="keyword">const</span> int16_t * ids, int16_t ids_count,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                       <span class="keyword">const</span> int16_t * caps)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>{</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> w = lv_area_get_width(coords), h = lv_area_get_height(coords);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    SDL_assert(w &gt; 0 &amp;&amp; h &gt; 0);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    SDL_Rect rect = {0, 0, w, h};</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    uint8_t * pixels;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">int</span> pitch;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">if</span>(SDL_LockTexture(texture, &amp;rect, (<span class="keywordtype">void</span> **) &amp;pixels, &amp;pitch) != 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    lv_opa_t * line_buf = <a class="code hl_function" href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a>(rect.w);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">for</span>(<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> y = 0; y &lt; rect.h; y++) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <a class="code hl_function" href="lv__mem_8c.html#a97f78c0d617b305da72b90971808141f">lv_memset_ff</a>(line_buf, rect.w);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> abs_x = (<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>) coords-&gt;<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a>, abs_y = (<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>)(y + coords-&gt;<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a>), len = (<a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a>) rect.w;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_typedef" href="lv__draw__mask_8h.html#aee52f75d7d96363ddb868b6f17784170">lv_draw_mask_res_t</a> res;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        res = <a class="code hl_function" href="lv__draw__mask_8c.html#a29a4bf99230bc928bba8cdedc5294d29">lv_draw_mask_apply_ids</a>(line_buf, abs_x, abs_y, len, ids, ids_count);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__draw__mask_8h.html#aec16bea8f4e62c95159777ad74bacbcea174ee60d0bec0b67e0eb36eaeeb9ab83">LV_DRAW_MASK_RES_TRANSP</a>) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(&amp;pixels[y * pitch], 4 * rect.w);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__draw__mask_8h.html#aec16bea8f4e62c95159777ad74bacbceaec08366ff4b1fcd94c311c1215db8d6d">LV_DRAW_MASK_RES_FULL_COVER</a>) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <a class="code hl_function" href="lv__mem_8c.html#a97f78c0d617b305da72b90971808141f">lv_memset_ff</a>(&amp;pixels[y * pitch], 4 * rect.w);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; rect.w; x++) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                uint8_t * pixel = &amp;pixels[y * pitch + x * 4];</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                *pixel = line_buf[x];</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                pixel[1] = pixel[2] = pixel[3] = 0xFF;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">if</span>(caps) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 2; i++) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <a class="code hl_function" href="lv__mem_8c.html#a97f78c0d617b305da72b90971808141f">lv_memset_ff</a>(line_buf, rect.w);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                res = <a class="code hl_function" href="lv__draw__mask_8c.html#a29a4bf99230bc928bba8cdedc5294d29">lv_draw_mask_apply_ids</a>(line_buf, abs_x, abs_y, len, &amp;caps[i], 1);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__draw__mask_8h.html#aec16bea8f4e62c95159777ad74bacbcea174ee60d0bec0b67e0eb36eaeeb9ab83">LV_DRAW_MASK_RES_TRANSP</a>) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                    <span class="comment">/* Ignore */</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(res == <a class="code hl_enumvalue" href="lv__draw__mask_8h.html#aec16bea8f4e62c95159777ad74bacbceaec08366ff4b1fcd94c311c1215db8d6d">LV_DRAW_MASK_RES_FULL_COVER</a>) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                    <a class="code hl_function" href="lv__mem_8c.html#a97f78c0d617b305da72b90971808141f">lv_memset_ff</a>(&amp;pixels[y * pitch], 4 * rect.w);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; rect.w; x++) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                        uint8_t * pixel = &amp;pixels[y * pitch + x * 4];</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                        uint16_t old_opa = line_buf[x] + *pixel;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                        *pixel = <a class="code hl_define" href="lv__math_8h.html#ab075eda3daab5b70cb8dac91262f8f34">LV_MIN</a>(old_opa, 0xFF);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                        pixel[1] = pixel[2] = pixel[3] = 0xFF;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                    }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <a class="code hl_function" href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a>(line_buf);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    SDL_UnlockTexture(texture);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">static</span> <span class="keywordtype">void</span> get_cap_area(int16_t angle, <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> thickness, uint16_t radius, <span class="keyword">const</span> <a class="code hl_struct" href="structlv__point__t.html">lv_point_t</a> * center,</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                         <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> * out)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>{</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keyword">const</span> uint8_t ps = 8;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keyword">const</span> uint8_t pa = 127;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    int32_t thick_half = thickness / 2;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    uint8_t thick_corr = (thickness &amp; 0x01) ? 0 : 1;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    int32_t cir_x;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    int32_t cir_y;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    cir_x = ((radius - thick_half) * <a class="code hl_function" href="lv__math_8c.html#a3332f00a5dbab1ca3580123082a4b46c">lv_trigo_sin</a>((int16_t)(90 - angle))) &gt;&gt; (<a class="code hl_define" href="lv__math_8h.html#a32656adf979cc453f3abc9ed5efad596">LV_TRIGO_SHIFT</a> - ps);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    cir_y = ((radius - thick_half) * <a class="code hl_function" href="lv__math_8c.html#a3332f00a5dbab1ca3580123082a4b46c">lv_trigo_sin</a>(angle)) &gt;&gt; (<a class="code hl_define" href="lv__math_8h.html#a32656adf979cc453f3abc9ed5efad596">LV_TRIGO_SHIFT</a> - ps);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="comment">/*Actually the center of the pixel need to be calculated so apply 1/2 px offset*/</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordflow">if</span>(cir_x &gt; 0) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        cir_x = (cir_x - pa) &gt;&gt; ps;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> = cir_x - thick_half + thick_corr;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> = cir_x + thick_half;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        cir_x = (cir_x + pa) &gt;&gt; ps;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> = cir_x - thick_half;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> = cir_x + thick_half - thick_corr;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">if</span>(cir_y &gt; 0) {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        cir_y = (cir_y - pa) &gt;&gt; ps;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> = cir_y - thick_half + thick_corr;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> = cir_y + thick_half;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        cir_y = (cir_y + pa) &gt;&gt; ps;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> = cir_y - thick_half;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        out-&gt;<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> = cir_y + thick_half - thick_corr;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_function" href="lv__area_8c.html#a22a153486cc4417588c9737e07609076">lv_area_move</a>(out, center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>, center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>}</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#endif </span><span class="comment">/*LV_USE_GPU_SDL*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alv__area_8c_html_a22a153486cc4417588c9737e07609076"><div class="ttname"><a href="lv__area_8c.html#a22a153486cc4417588c9737e07609076">lv_area_move</a></div><div class="ttdeci">void lv_area_move(lv_area_t *area, lv_coord_t x_ofs, lv_coord_t y_ofs)</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8c_source.html#l00114">lv_area.c:114</a></div></div>
+<div class="ttc" id="alv__area_8c_html_a4d3f162819f5c73af3f8db373bd760a1"><div class="ttname"><a href="lv__area_8c.html#a4d3f162819f5c73af3f8db373bd760a1">_lv_area_intersect</a></div><div class="ttdeci">bool _lv_area_intersect(lv_area_t *res_p, const lv_area_t *a1_p, const lv_area_t *a2_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8c_source.html#l00129">lv_area.c:129</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__conf__internal_8h_html"><div class="ttname"><a href="lv__conf__internal_8h.html">lv_conf_internal.h</a></div></div>
+<div class="ttc" id="alv__draw_8h_html_a3c97ef426260d81bff72570b24f5b886"><div class="ttname"><a href="lv__draw_8h.html#a3c97ef426260d81bff72570b24f5b886">lv_draw_ctx_t</a></div><div class="ttdeci">struct _lv_draw_ctx_t lv_draw_ctx_t</div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a0c6e2dfc4102853ccd17a96d7dd2c9a9"><div class="ttname"><a href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a></div><div class="ttdeci">int16_t lv_draw_mask_add(void *param, void *custom_id)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00081">lv_draw_mask.c:81</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a29a4bf99230bc928bba8cdedc5294d29"><div class="ttname"><a href="lv__draw__mask_8c.html#a29a4bf99230bc928bba8cdedc5294d29">lv_draw_mask_apply_ids</a></div><div class="ttdeci">lv_draw_mask_res_t LV_ATTRIBUTE_FAST_MEM lv_draw_mask_apply_ids(lv_opa_t *mask_buf, lv_coord_t abs_x, lv_coord_t abs_y, lv_coord_t len, const int16_t *ids, int16_t ids_count)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00145">lv_draw_mask.c:145</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a42befac4b0b19cd552618cf02e05d3af"><div class="ttname"><a href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a></div><div class="ttdeci">void * lv_draw_mask_remove_id(int16_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00172">lv_draw_mask.c:172</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a88f1cbdf8f0e107075536d0a07f511bf"><div class="ttname"><a href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a></div><div class="ttdeci">void lv_draw_mask_radius_init(lv_draw_mask_radius_param_t *param, const lv_area_t *rect, lv_coord_t radius, bool inv)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00475">lv_draw_mask.c:475</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a907fedb356b36ce3b3b8439e1f8f7323"><div class="ttname"><a href="lv__draw__mask_8c.html#a907fedb356b36ce3b3b8439e1f8f7323">lv_draw_mask_angle_init</a></div><div class="ttdeci">void lv_draw_mask_angle_init(lv_draw_mask_angle_param_t *param, lv_coord_t vertex_x, lv_coord_t vertex_y, lv_coord_t start_angle, lv_coord_t end_angle)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00414">lv_draw_mask.c:414</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_af0fd11f700504180695cc4d7fa5f3cb2"><div class="ttname"><a href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a></div><div class="ttdeci">void lv_draw_mask_free_param(void *p)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00211">lv_draw_mask.c:211</a></div></div>
+<div class="ttc" id="alv__draw__mask_8h_html_aec16bea8f4e62c95159777ad74bacbcea174ee60d0bec0b67e0eb36eaeeb9ab83"><div class="ttname"><a href="lv__draw__mask_8h.html#aec16bea8f4e62c95159777ad74bacbcea174ee60d0bec0b67e0eb36eaeeb9ab83">LV_DRAW_MASK_RES_TRANSP</a></div><div class="ttdeci">@ LV_DRAW_MASK_RES_TRANSP</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00037">lv_draw_mask.h:37</a></div></div>
+<div class="ttc" id="alv__draw__mask_8h_html_aec16bea8f4e62c95159777ad74bacbceaec08366ff4b1fcd94c311c1215db8d6d"><div class="ttname"><a href="lv__draw__mask_8h.html#aec16bea8f4e62c95159777ad74bacbceaec08366ff4b1fcd94c311c1215db8d6d">LV_DRAW_MASK_RES_FULL_COVER</a></div><div class="ttdeci">@ LV_DRAW_MASK_RES_FULL_COVER</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00038">lv_draw_mask.h:38</a></div></div>
+<div class="ttc" id="alv__draw__mask_8h_html_aee52f75d7d96363ddb868b6f17784170"><div class="ttname"><a href="lv__draw__mask_8h.html#aee52f75d7d96363ddb868b6f17784170">lv_draw_mask_res_t</a></div><div class="ttdeci">uint8_t lv_draw_mask_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00043">lv_draw_mask.h:43</a></div></div>
+<div class="ttc" id="alv__draw__mask_8h_html_aef3e0411a29ba9ac2900540696b98cb2"><div class="ttname"><a href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a></div><div class="ttdeci">#define LV_MASK_ID_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00025">lv_draw_mask.h:25</a></div></div>
+<div class="ttc" id="alv__draw__rect_8h_html_a426785bea126345f648486e35e940ad9"><div class="ttname"><a href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a></div><div class="ttdeci">#define LV_RADIUS_CIRCLE</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00025">lv_draw_rect.h:25</a></div></div>
+<div class="ttc" id="alv__draw__sdl_8h_html"><div class="ttname"><a href="lv__draw__sdl_8h.html">lv_draw_sdl.h</a></div></div>
+<div class="ttc" id="alv__draw__sdl__composite_8h_html"><div class="ttname"><a href="lv__draw__sdl__composite_8h.html">lv_draw_sdl_composite.h</a></div></div>
+<div class="ttc" id="alv__draw__sdl__composite_8h_html_a7d5ebc84fc2d281dd91026bd443f46ce"><div class="ttname"><a href="lv__draw__sdl__composite_8h.html#a7d5ebc84fc2d281dd91026bd443f46ce">lv_draw_sdl_composite_texture_obtain</a></div><div class="ttdeci">SDL_Texture * lv_draw_sdl_composite_texture_obtain(lv_draw_sdl_ctx_t *ctx, lv_draw_sdl_composite_texture_id_t id, lv_coord_t w, lv_coord_t h, bool *texture_in_cache)</div></div>
+<div class="ttc" id="alv__draw__sdl__composite_8h_html_ae50b7126984aa1485c7199af726d093ca8ab5cf094ab56e09e10ceb1a38e7a59e"><div class="ttname"><a href="lv__draw__sdl__composite_8h.html#ae50b7126984aa1485c7199af726d093ca8ab5cf094ab56e09e10ceb1a38e7a59e">LV_DRAW_SDL_COMPOSITE_TEXTURE_ID_STREAM1</a></div><div class="ttdeci">@ LV_DRAW_SDL_COMPOSITE_TEXTURE_ID_STREAM1</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sdl__composite_8h_source.html#l00035">lv_draw_sdl_composite.h:35</a></div></div>
+<div class="ttc" id="alv__draw__sdl__texture__cache_8h_html"><div class="ttname"><a href="lv__draw__sdl__texture__cache_8h.html">lv_draw_sdl_texture_cache.h</a></div></div>
+<div class="ttc" id="alv__draw__sdl__utils_8h_html"><div class="ttname"><a href="lv__draw__sdl__utils_8h.html">lv_draw_sdl_utils.h</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__math_8c_html_a3332f00a5dbab1ca3580123082a4b46c"><div class="ttname"><a href="lv__math_8c.html#a3332f00a5dbab1ca3580123082a4b46c">lv_trigo_sin</a></div><div class="ttdeci">int16_t LV_ATTRIBUTE_FAST_MEM lv_trigo_sin(int16_t angle)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8c_source.html#l00048">lv_math.c:48</a></div></div>
+<div class="ttc" id="alv__math_8h_html_a32656adf979cc453f3abc9ed5efad596"><div class="ttname"><a href="lv__math_8h.html#a32656adf979cc453f3abc9ed5efad596">LV_TRIGO_SHIFT</a></div><div class="ttdeci">#define LV_TRIGO_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8h_source.html#l00023">lv_math.h:23</a></div></div>
+<div class="ttc" id="alv__math_8h_html_ab075eda3daab5b70cb8dac91262f8f34"><div class="ttname"><a href="lv__math_8h.html#ab075eda3daab5b70cb8dac91262f8f34">LV_MIN</a></div><div class="ttdeci">#define LV_MIN(a, b)</div><div class="ttdef"><b>Definition</b> <a href="lv__math_8h_source.html#l00121">lv_math.h:121</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a05d38dfa0f4d69de8ff082551c263815"><div class="ttname"><a href="lv__mem_8c.html#a05d38dfa0f4d69de8ff082551c263815">lv_mem_buf_get</a></div><div class="ttdeci">void * lv_mem_buf_get(uint32_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00276">lv_mem.c:276</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a92be7074012180599b9b1122a639cc86"><div class="ttname"><a href="lv__mem_8c.html#a92be7074012180599b9b1122a639cc86">lv_mem_buf_release</a></div><div class="ttdeci">void lv_mem_buf_release(void *p)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00332">lv_mem.c:332</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a97f78c0d617b305da72b90971808141f"><div class="ttname"><a href="lv__mem_8c.html#a97f78c0d617b305da72b90971808141f">lv_memset_ff</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_ff(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00511">lv_mem.c:511</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_ae15cb5a04c4b2d9a37e3f4d50c0fa773"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">_lv_draw_ctx_t::clip_area</a></div><div class="ttdeci">const lv_area_t * clip_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00073">lv_draw.h:73</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a56d2e4d92428979499ff6a06e3d23cba"><div class="ttname"><a href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">lv_area_t::x1</a></div><div class="ttdeci">lv_coord_t x1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00044">lv_area.h:44</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a8e6b43ed9ab280f66ae4e00af312ca27"><div class="ttname"><a href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">lv_area_t::y1</a></div><div class="ttdeci">lv_coord_t y1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00045">lv_area.h:45</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_ac3da01ffe2d07a8e446684160dd1f7fc"><div class="ttname"><a href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">lv_area_t::y2</a></div><div class="ttdeci">lv_coord_t y2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00047">lv_area.h:47</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_aec0405ee6e0fa96f922fee6851240081"><div class="ttname"><a href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">lv_area_t::x2</a></div><div class="ttdeci">lv_coord_t x2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00046">lv_area.h:46</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html">lv_draw_arc_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00028">lv_draw_arc.h:28</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a4b6bc7184b2e4aca2834c3ff8552a916"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">lv_draw_arc_dsc_t::width</a></div><div class="ttdeci">lv_coord_t width</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00030">lv_draw_arc.h:30</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a6f670a72223d1c80bf4a7397f8b06d8a"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a6f670a72223d1c80bf4a7397f8b06d8a">lv_draw_arc_dsc_t::opa</a></div><div class="ttdeci">lv_opa_t opa</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00034">lv_draw_arc.h:34</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a78111b748fd2e70f79a1311824e1c083"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a78111b748fd2e70f79a1311824e1c083">lv_draw_arc_dsc_t::color</a></div><div class="ttdeci">lv_color_t color</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00029">lv_draw_arc.h:29</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_aa3f201600200f0639cf2753462532bcf"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#aa3f201600200f0639cf2753462532bcf">lv_draw_arc_dsc_t::rounded</a></div><div class="ttdeci">uint8_t rounded</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00036">lv_draw_arc.h:36</a></div></div>
+<div class="ttc" id="astructlv__draw__mask__angle__param__t_html"><div class="ttname"><a href="structlv__draw__mask__angle__param__t.html">lv_draw_mask_angle_param_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00141">lv_draw_mask.h:141</a></div></div>
+<div class="ttc" id="astructlv__draw__mask__radius__param__t_html"><div class="ttname"><a href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00168">lv_draw_mask.h:168</a></div></div>
+<div class="ttc" id="astructlv__point__t_html"><div class="ttname"><a href="structlv__point__t.html">lv_point_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00037">lv_area.h:37</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4578e5786fd81055f79ae47b0a2845be.html">draw</a></li><li class="navelem"><a href="dir_b21c351bb6df4471dc315f4de465931d.html">sdl</a></li><li class="navelem"><a href="lv__draw__sdl__arc_8c.html">lv_draw_sdl_arc.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

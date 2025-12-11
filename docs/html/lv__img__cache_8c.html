@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/draw/lv_img_cache.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__img__cache_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_img_cache.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__img__cache_8h_source.html">lv_img_cache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__img__decoder_8h_source.html">lv_img_decoder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__draw__img_8h_source.html">lv_draw_img.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__hal__tick_8h_source.html">../hal/lv_hal_tick.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__gc_8h_source.html">../misc/lv_gc.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__img__cache_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ac4c9f382ba71028be139e64a7d6190a3" id="r_ac4c9f382ba71028be139e64a7d6190a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4c9f382ba71028be139e64a7d6190a3">LV_IMG_CACHE_AGING</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a63e305e5422009f8ad0fe0d93f775b6f" id="r_a63e305e5422009f8ad0fe0d93f775b6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63e305e5422009f8ad0fe0d93f775b6f">LV_IMG_CACHE_LIFE_GAIN</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a20d77ffcbb51ccb557b35f810ad53888" id="r_a20d77ffcbb51ccb557b35f810ad53888"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20d77ffcbb51ccb557b35f810ad53888">LV_IMG_CACHE_LIFE_LIMIT</a>&#160;&#160;&#160;1000</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ac2eb3dc7871f758a9738dcfa5f2e0da1" id="r_ac2eb3dc7871f758a9738dcfa5f2e0da1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2eb3dc7871f758a9738dcfa5f2e0da1">_lv_img_cache_open</a> (const void *src, lv_color_t color, int32_t frame_id)</td></tr>
+<tr class="memitem:a958506ba24cd5caea94613788c4be8b6" id="r_a958506ba24cd5caea94613788c4be8b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a> (const void *src)</td></tr>
+<tr class="memitem:a285d69a06a7c86380815647aa705d451" id="r_a285d69a06a7c86380815647aa705d451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285d69a06a7c86380815647aa705d451">lv_img_cache_set_size</a> (uint16_t new_entry_cnt)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="ac4c9f382ba71028be139e64a7d6190a3" name="ac4c9f382ba71028be139e64a7d6190a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c9f382ba71028be139e64a7d6190a3">&#9670;&#160;</a></span>LV_IMG_CACHE_AGING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IMG_CACHE_AGING&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__cache_8c_source.html#l00020">20</a> del archivo <a class="el" href="lv__img__cache_8c_source.html">lv_img_cache.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__cache_8c_source.html#l00063">_lv_img_cache_open()</a>.</p>
+
+</div>
+</div>
+<a id="a63e305e5422009f8ad0fe0d93f775b6f" name="a63e305e5422009f8ad0fe0d93f775b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e305e5422009f8ad0fe0d93f775b6f">&#9670;&#160;</a></span>LV_IMG_CACHE_LIFE_GAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IMG_CACHE_LIFE_GAIN&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__cache_8c_source.html#l00023">23</a> del archivo <a class="el" href="lv__img__cache_8c_source.html">lv_img_cache.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__cache_8c_source.html#l00063">_lv_img_cache_open()</a>.</p>
+
+</div>
+</div>
+<a id="a20d77ffcbb51ccb557b35f810ad53888" name="a20d77ffcbb51ccb557b35f810ad53888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d77ffcbb51ccb557b35f810ad53888">&#9670;&#160;</a></span>LV_IMG_CACHE_LIFE_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_IMG_CACHE_LIFE_LIMIT&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__cache_8c_source.html#l00027">27</a> del archivo <a class="el" href="lv__img__cache_8c_source.html">lv_img_cache.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__img__cache_8c_source.html#l00063">_lv_img_cache_open()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ac2eb3dc7871f758a9738dcfa5f2e0da1" name="ac2eb3dc7871f758a9738dcfa5f2e0da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2eb3dc7871f758a9738dcfa5f2e0da1">&#9670;&#160;</a></span>_lv_img_cache_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a> * _lv_img_cache_open </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_color_t</td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>frame_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open an image using the image decoder interface and cache it. The image will be left open meaning if the image decoder open callback allocated memory then it will remain. The image is closed if a new image is opened and the new image takes its place in the cache. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>source of the image. Path to file or pointer to an <span class="tt"><a class="el" href="structlv__img__dsc__t.html">lv_img_dsc_t</a></span> variable </td></tr>
+    <tr><td class="paramname">color</td><td>color The color of the image with <span class="tt">LV_IMG_CF_ALPHA_...</span> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the cache entry or NULL if can open the image </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__cache_8c_source.html#l00063">63</a> del archivo <a class="el" href="lv__img__cache_8c_source.html">lv_img_cache.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">/*Is the image cached?*/</span></div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a> * cached_src = NULL;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span><span class="preprocessor">#if LV_IMG_CACHE_DEF_SIZE</span></div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span>(entry_cnt == 0) {</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;lv_img_cache_open: the cache size is 0&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a> * cache = <a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="comment">/*Decrement all lifes. Make the entries older*/</span></div>
+<div class="line"><span class="lineno">   77</span>    uint16_t i;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">for</span>(i = 0; i &lt; entry_cnt; i++) {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span>(cache[i].life &gt; INT32_MIN + <a class="code hl_define" href="#ac4c9f382ba71028be139e64a7d6190a3">LV_IMG_CACHE_AGING</a>) {</div>
+<div class="line"><span class="lineno">   80</span>            cache[i].life -= <a class="code hl_define" href="#ac4c9f382ba71028be139e64a7d6190a3">LV_IMG_CACHE_AGING</a>;</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">for</span>(i = 0; i &lt; entry_cnt; i++) {</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span>(color.full == cache[i].dec_dsc.color.full &amp;&amp;</div>
+<div class="line"><span class="lineno">   86</span>           frame_id == cache[i].dec_dsc.frame_id &amp;&amp;</div>
+<div class="line"><span class="lineno">   87</span>           lv_img_cache_match(src, cache[i].dec_dsc.src)) {</div>
+<div class="line"><span class="lineno">   88</span>            <span class="comment">/*If opened increment its life.</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment">             *Image difficult to open should live longer to keep avoid frequent their recaching.</span></div>
+<div class="line"><span class="lineno">   90</span><span class="comment">             *Therefore increase `life` with `time_to_open`*/</span></div>
+<div class="line"><span class="lineno">   91</span>            cached_src = &amp;cache[i];</div>
+<div class="line"><span class="lineno">   92</span>            cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a2400b9e3a827bf0cd030324a1d62b4a4">life</a> += cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>.<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">time_to_open</a> * <a class="code hl_define" href="#a63e305e5422009f8ad0fe0d93f775b6f">LV_IMG_CACHE_LIFE_GAIN</a>;</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span>(cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a2400b9e3a827bf0cd030324a1d62b4a4">life</a> &gt; <a class="code hl_define" href="#a20d77ffcbb51ccb557b35f810ad53888">LV_IMG_CACHE_LIFE_LIMIT</a>) cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a2400b9e3a827bf0cd030324a1d62b4a4">life</a> = <a class="code hl_define" href="#a20d77ffcbb51ccb557b35f810ad53888">LV_IMG_CACHE_LIFE_LIMIT</a>;</div>
+<div class="line"><span class="lineno">   94</span>            <a class="code hl_define" href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a>(<span class="stringliteral">&quot;image source found in the cache&quot;</span>);</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="comment">/*The image is not cached then cache it now*/</span></div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span>(cached_src) <span class="keywordflow">return</span> cached_src;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="comment">/*Find an entry to reuse. Select the entry with the least life*/</span></div>
+<div class="line"><span class="lineno">  103</span>    cached_src = &amp;cache[0];</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">for</span>(i = 1; i &lt; entry_cnt; i++) {</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span>(cache[i].life &lt; cached_src-&gt;life) {</div>
+<div class="line"><span class="lineno">  106</span>            cached_src = &amp;cache[i];</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="comment">/*Close the decoder to reuse if it was opened (has a valid source)*/</span></div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span>(cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>.<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">src</a>) {</div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_function" href="lv__img__decoder_8c.html#a43f69939ef89a85e3f7db25f12994259">lv_img_decoder_close</a>(&amp;cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>);</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;image draw: cache miss, close and reuse an entry&quot;</span>);</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  116</span>        <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;image draw: cache miss, cached to an empty entry&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  119</span>    cached_src = &amp;<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_single);</div>
+<div class="line"><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  121</span>    <span class="comment">/*Open the image and measure the time to open*/</span></div>
+<div class="line"><span class="lineno">  122</span>    uint32_t t_start  = <a class="code hl_function" href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a>();</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> open_res = <a class="code hl_function" href="lv__img__decoder_8c.html#a961b6c69714872e8a7ca552c3d4b2e6d">lv_img_decoder_open</a>(&amp;cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>, src, color, frame_id);</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">if</span>(open_res == <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>) {</div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Image draw cannot open the image resource&quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>        <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(cached_src, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a>));</div>
+<div class="line"><span class="lineno">  127</span>        cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a2400b9e3a827bf0cd030324a1d62b4a4">life</a> = INT32_MIN; <span class="comment">/*Make the empty entry very &quot;weak&quot; to force its us*/</span></div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a2400b9e3a827bf0cd030324a1d62b4a4">life</a> = 0;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">/*If `time_to_open` was not set in the open function set it here*/</span></div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span>(cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>.<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">time_to_open</a> == 0) {</div>
+<div class="line"><span class="lineno">  135</span>        cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>.<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">time_to_open</a> = <a class="code hl_function" href="lv__hal__tick_8c.html#a632b8bf9b03d3a809d053508c06dc6d9">lv_tick_elaps</a>(t_start);</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span>(cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>.<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">time_to_open</a> == 0) cached_src-&gt;<a class="code hl_variable" href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">dec_dsc</a>.<a class="code hl_variable" href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">time_to_open</a> = 1;</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> cached_src;</div>
+<div class="line"><span class="lineno">  141</span>}</div>
+<div class="ttc" id="alv__gc_8h_html_a56ab4f084c8075b22e02e1c99491c4cd"><div class="ttname"><a href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a></div><div class="ttdeci">#define LV_GC_ROOT(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__gc_8h_source.html#l00074">lv_gc.h:74</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a051c47bcfb48282a75834d8dd0a8470c"><div class="ttname"><a href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a></div><div class="ttdeci">uint32_t lv_tick_get(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00060">lv_hal_tick.c:60</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a632b8bf9b03d3a809d053508c06dc6d9"><div class="ttname"><a href="lv__hal__tick_8c.html#a632b8bf9b03d3a809d053508c06dc6d9">lv_tick_elaps</a></div><div class="ttdeci">uint32_t lv_tick_elaps(uint32_t prev_tick)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00086">lv_hal_tick.c:86</a></div></div>
+<div class="ttc" id="alv__img__cache_8c_html_a20d77ffcbb51ccb557b35f810ad53888"><div class="ttname"><a href="#a20d77ffcbb51ccb557b35f810ad53888">LV_IMG_CACHE_LIFE_LIMIT</a></div><div class="ttdeci">#define LV_IMG_CACHE_LIFE_LIMIT</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8c_source.html#l00027">lv_img_cache.c:27</a></div></div>
+<div class="ttc" id="alv__img__cache_8c_html_a63e305e5422009f8ad0fe0d93f775b6f"><div class="ttname"><a href="#a63e305e5422009f8ad0fe0d93f775b6f">LV_IMG_CACHE_LIFE_GAIN</a></div><div class="ttdeci">#define LV_IMG_CACHE_LIFE_GAIN</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8c_source.html#l00023">lv_img_cache.c:23</a></div></div>
+<div class="ttc" id="alv__img__cache_8c_html_ac4c9f382ba71028be139e64a7d6190a3"><div class="ttname"><a href="#ac4c9f382ba71028be139e64a7d6190a3">LV_IMG_CACHE_AGING</a></div><div class="ttdeci">#define LV_IMG_CACHE_AGING</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8c_source.html#l00020">lv_img_cache.c:20</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a43f69939ef89a85e3f7db25f12994259"><div class="ttname"><a href="lv__img__decoder_8c.html#a43f69939ef89a85e3f7db25f12994259">lv_img_decoder_close</a></div><div class="ttdeci">void lv_img_decoder_close(lv_img_decoder_dsc_t *dsc)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00188">lv_img_decoder.c:188</a></div></div>
+<div class="ttc" id="alv__img__decoder_8c_html_a961b6c69714872e8a7ca552c3d4b2e6d"><div class="ttname"><a href="lv__img__decoder_8c.html#a961b6c69714872e8a7ca552c3d4b2e6d">lv_img_decoder_open</a></div><div class="ttdeci">lv_res_t lv_img_decoder_open(lv_img_decoder_dsc_t *dsc, const void *src, lv_color_t color, int32_t frame_id)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8c_source.html#l00107">lv_img_decoder.c:107</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a1deeb0e317c6314c573ee8730321afd0"><div class="ttname"><a href="lv__log_8h.html#a1deeb0e317c6314c573ee8730321afd0">LV_LOG_TRACE</a></div><div class="ttdeci">#define LV_LOG_TRACE(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00093">lv_log.h:93</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ac65fd2f657ffe3de576e9bb974029df9"><div class="ttname"><a href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_memset_00(void *dst, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00473">lv_mem.c:473</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a></div><div class="ttdeci">@ LV_RES_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00043">lv_types.h:43</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a5c71f43250ed3699f40a8b634e342228"><div class="ttname"><a href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a></div><div class="ttdeci">uint8_t lv_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00047">lv_types.h:47</a></div></div>
+<div class="ttc" id="astruct__lv__img__cache__entry__t_html"><div class="ttname"><a href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8h_source.html#l00031">lv_img_cache.h:31</a></div></div>
+<div class="ttc" id="astruct__lv__img__cache__entry__t_html_a2400b9e3a827bf0cd030324a1d62b4a4"><div class="ttname"><a href="struct__lv__img__cache__entry__t.html#a2400b9e3a827bf0cd030324a1d62b4a4">_lv_img_cache_entry_t::life</a></div><div class="ttdeci">int32_t life</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8h_source.html#l00037">lv_img_cache.h:37</a></div></div>
+<div class="ttc" id="astruct__lv__img__cache__entry__t_html_a90b49f260d93acd5513487701c2b6fc6"><div class="ttname"><a href="struct__lv__img__cache__entry__t.html#a90b49f260d93acd5513487701c2b6fc6">_lv_img_cache_entry_t::dec_dsc</a></div><div class="ttdeci">lv_img_decoder_dsc_t dec_dsc</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8h_source.html#l00032">lv_img_cache.h:32</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_abc78d4094f87222bdca2a7acbb2222e0"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#abc78d4094f87222bdca2a7acbb2222e0">_lv_img_decoder_dsc_t::src</a></div><div class="ttdeci">const void * src</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00104">lv_img_decoder.h:104</a></div></div>
+<div class="ttc" id="astruct__lv__img__decoder__dsc__t_html_afd95f692ebff354b62bc01f36fda1ae8"><div class="ttname"><a href="struct__lv__img__decoder__dsc__t.html#afd95f692ebff354b62bc01f36fda1ae8">_lv_img_decoder_dsc_t::time_to_open</a></div><div class="ttdeci">uint32_t time_to_open</div><div class="ttdef"><b>Definition</b> <a href="lv__img__decoder_8h_source.html#l00124">lv_img_decoder.h:124</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__img__cache_8h_source.html#l00032">_lv_img_cache_entry_t::dec_dsc</a>, <a class="el" href="lv__img__cache_8h_source.html#l00037">_lv_img_cache_entry_t::life</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__img__cache_8c_source.html#l00020">LV_IMG_CACHE_AGING</a>, <a class="el" href="lv__img__cache_8c_source.html#l00023">LV_IMG_CACHE_LIFE_GAIN</a>, <a class="el" href="lv__img__cache_8c_source.html#l00027">LV_IMG_CACHE_LIFE_LIMIT</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00188">lv_img_decoder_close()</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00107">lv_img_decoder_open()</a>, <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__log_8h_source.html#l00093">LV_LOG_TRACE</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__hal__tick_8c_source.html#l00086">lv_tick_elaps()</a>, <a class="el" href="lv__hal__tick_8c_source.html#l00060">lv_tick_get()</a>, <a class="el" href="lv__img__decoder_8h_source.html#l00104">_lv_img_decoder_dsc_t::src</a> y <a class="el" href="lv__img__decoder_8h_source.html#l00124">_lv_img_decoder_dsc_t::time_to_open</a>.</p>
+
+</div>
+</div>
+<a id="a958506ba24cd5caea94613788c4be8b6" name="a958506ba24cd5caea94613788c4be8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958506ba24cd5caea94613788c4be8b6">&#9670;&#160;</a></span>lv_img_cache_invalidate_src()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_cache_invalidate_src </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>src</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Invalidate an image source in the cache. Useful if the image source is updated therefore it needs to be cached again. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>an image source path to a file or pointer to an <span class="tt"><a class="el" href="structlv__img__dsc__t.html">lv_img_dsc_t</a></span> variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__cache_8c_source.html#l00180">180</a> del archivo <a class="el" href="lv__img__cache_8c_source.html">lv_img_cache.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>{</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(src);</div>
+<div class="line"><span class="lineno">  183</span><span class="preprocessor">#if LV_IMG_CACHE_DEF_SIZE</span></div>
+<div class="line"><span class="lineno">  184</span>    <a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a> * cache = <a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array);</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    uint16_t i;</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">for</span>(i = 0; i &lt; entry_cnt; i++) {</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">if</span>(src == NULL || lv_img_cache_match(src, cache[i].dec_dsc.src)) {</div>
+<div class="line"><span class="lineno">  189</span>            <span class="keywordflow">if</span>(cache[i].dec_dsc.src != NULL) {</div>
+<div class="line"><span class="lineno">  190</span>                <a class="code hl_function" href="lv__img__decoder_8c.html#a43f69939ef89a85e3f7db25f12994259">lv_img_decoder_close</a>(&amp;cache[i].dec_dsc);</div>
+<div class="line"><span class="lineno">  191</span>            }</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>            <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(&amp;cache[i], <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a>));</div>
+<div class="line"><span class="lineno">  194</span>        }</div>
+<div class="line"><span class="lineno">  195</span>    }</div>
+<div class="line"><span class="lineno">  196</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  197</span>}</div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__img__decoder_8c_source.html#l00188">lv_img_decoder_close()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a> y <a class="el" href="lv__types_8h_source.html#l00072">LV_UNUSED</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__canvas_8c_source.html#l00066">lv_canvas_set_buffer()</a>, <a class="el" href="lv__draw__sw__layer_8c_source.html#l00115">lv_draw_sw_layer_blend()</a> y <a class="el" href="lv__img__cache_8c_source.html#l00149">lv_img_cache_set_size()</a>.</p>
+
+</div>
+</div>
+<a id="a285d69a06a7c86380815647aa705d451" name="a285d69a06a7c86380815647aa705d451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285d69a06a7c86380815647aa705d451">&#9670;&#160;</a></span>lv_img_cache_set_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_img_cache_set_size </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>new_entry_cnt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the number of images to be cached. More cached images mean more opened image at same time which might mean more memory usage. E.g. if 20 PNG or JPG images are open in the RAM they consume memory while opened in the cache. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_entry_cnt</td><td>number of image to cache </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__img__cache_8c_source.html#l00149">149</a> del archivo <a class="el" href="lv__img__cache_8c_source.html">lv_img_cache.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span><span class="preprocessor">#if LV_IMG_CACHE_DEF_SIZE == 0</span></div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(new_entry_cnt);</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Can&#39;t change cache size because it&#39;s disabled by LV_IMG_CACHE_DEF_SIZE = 0&quot;</span>);</div>
+<div class="line"><span class="lineno">  154</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array) != NULL) {</div>
+<div class="line"><span class="lineno">  156</span>        <span class="comment">/*Clean the cache before free it*/</span></div>
+<div class="line"><span class="lineno">  157</span>        <a class="code hl_function" href="#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a>(NULL);</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array));</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="comment">/*Reallocate the cache*/</span></div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array) = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a>) * new_entry_cnt);</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_define" href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a>(<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array));</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array) == NULL) {</div>
+<div class="line"><span class="lineno">  165</span>        entry_cnt = 0;</div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>    entry_cnt = new_entry_cnt;</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="comment">/*Clean the cache*/</span></div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="lv__mem_8c.html#ac65fd2f657ffe3de576e9bb974029df9">lv_memset_00</a>(<a class="code hl_define" href="lv__gc_8h.html#a56ab4f084c8075b22e02e1c99491c4cd">LV_GC_ROOT</a>(_lv_img_cache_array), entry_cnt * <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__lv__img__cache__entry__t.html">_lv_img_cache_entry_t</a>));</div>
+<div class="line"><span class="lineno">  172</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  173</span>}</div>
+<div class="ttc" id="alv__assert_8h_html_a124f08761ffc45565d4511eaf68f777e"><div class="ttname"><a href="lv__assert_8h.html#a124f08761ffc45565d4511eaf68f777e">LV_ASSERT_MALLOC</a></div><div class="ttdeci">#define LV_ASSERT_MALLOC(p)</div><div class="ttdef"><b>Definition</b> <a href="lv__assert_8h_source.html#l00064">lv_assert.h:64</a></div></div>
+<div class="ttc" id="alv__img__cache_8c_html_a958506ba24cd5caea94613788c4be8b6"><div class="ttname"><a href="#a958506ba24cd5caea94613788c4be8b6">lv_img_cache_invalidate_src</a></div><div class="ttdeci">void lv_img_cache_invalidate_src(const void *src)</div><div class="ttdef"><b>Definition</b> <a href="lv__img__cache_8c_source.html#l00180">lv_img_cache.c:180</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__assert_8h_source.html#l00064">LV_ASSERT_MALLOC</a>, <a class="el" href="lv__gc_8h_source.html#l00074">LV_GC_ROOT</a>, <a class="el" href="lv__img__cache_8c_source.html#l00180">lv_img_cache_invalidate_src()</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__mem_8c_source.html#l00473">lv_memset_00()</a> y <a class="el" href="lv__types_8h_source.html#l00072">LV_UNUSED</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj_8c_source.html#l00098">lv_init()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4578e5786fd81055f79ae47b0a2845be.html">draw</a></li><li class="navelem"><a href="lv__img__cache_8c.html">lv_img_cache.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

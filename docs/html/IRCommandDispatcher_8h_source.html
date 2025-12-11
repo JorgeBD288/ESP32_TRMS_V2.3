@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/IRremote/examples/IRDispatcherDemo/IRCommandDispatcher.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('IRCommandDispatcher_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IRCommandDispatcher.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="IRCommandDispatcher_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * IRCommandDispatcher.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Library to process IR commands by calling functions specified in a mapping array.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * To run this example you need to install the &quot;IRremote&quot; or &quot;IRMP&quot; library under &quot;Tools -&gt; Manage Libraries...&quot; or &quot;Ctrl+Shift+I&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  Copyright (C) 2019-2024  Armin Joachimsmeyer</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  armin.joachimsmeyer@gmail.com</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *  This file is part of ServoEasing https://github.com/ArminJo/ServoEasing.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *  This file is part of IRMP https://github.com/IRMP-org/IRMP.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *  This file is part of Arduino-IRremote https://github.com/Arduino-IRremote/Arduino-IRremote.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *  IRCommandDispatcher is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *  (at your option) any later version.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *  This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  See the GNU General Public License for more details.</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  along with this program. If not, see &lt;http://www.gnu.org/licenses/gpl.html&gt;.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifndef _IR_COMMAND_DISPATCHER_H</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define _IR_COMMAND_DISPATCHER_H</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * For command mapping file</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a62c08296c5e3e1a7ae3fef2f7705480d">   37</a></span><span class="preprocessor">#define IR_COMMAND_FLAG_BLOCKING        0x00 </span><span class="comment">// default - blocking command, repeat not accepted, only one command at a time. Stops an already running command.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#ae8c7fe7214dfabd4c4778dd68723e237">   38</a></span><span class="preprocessor">#define IR_COMMAND_FLAG_REPEATABLE      0x01 </span><span class="comment">// repeat accepted</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a4d007d3ed1180784ca66f009edb63946">   39</a></span><span class="preprocessor">#define IR_COMMAND_FLAG_NON_BLOCKING    0x02 </span><span class="comment">// Non blocking (short) command that can be processed any time and may interrupt other IR commands - used for stop, set direction etc.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a0c201f3ee3fb31b0b5c362ceb9a2b33d">   40</a></span><span class="preprocessor">#define IR_COMMAND_FLAG_REPEATABLE_NON_BLOCKING (IR_COMMAND_FLAG_REPEATABLE | IR_COMMAND_FLAG_NON_BLOCKING)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a28d284806339f6c3461479b613a25e44">   41</a></span><span class="preprocessor">#define IR_COMMAND_FLAG_BEEP            0x04 </span><span class="comment">// Do a single short beep before executing command. May not be useful for short or repeating commands.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a90a3ebf189fd91f6fab61c0bd2dfb8a3">   42</a></span><span class="preprocessor">#define IR_COMMAND_FLAG_BLOCKING_BEEP   (IR_COMMAND_FLAG_BLOCKING | IR_COMMAND_FLAG_BEEP)</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#if !defined(IS_STOP_REQUESTED)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#ab714ca016af9cb361ec1e5bc699dc48e">   46</a></span><span class="preprocessor">#define IS_STOP_REQUESTED               IRDispatcher.requestToStopReceived</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#if !defined(RETURN_IF_STOP)</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#aa4b15657ea4a36c11429646bbff737de">   49</a></span><span class="preprocessor">#define RETURN_IF_STOP                  if (IRDispatcher.requestToStopReceived) return</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#if !defined(BREAK_IF_STOP)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a44a193cf383111c1ec665c2de2252d92">   52</a></span><span class="preprocessor">#define BREAK_IF_STOP                   if (IRDispatcher.requestToStopReceived) break</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#if !defined(DELAY_AND_RETURN_IF_STOP)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#a618090545f0bc3f43362f27ecc64c008">   55</a></span><span class="preprocessor">#define DELAY_AND_RETURN_IF_STOP(aDurationMillis)   if (IRDispatcher.delayAndCheckForStop(aDurationMillis)) return</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// Basic mapping structure</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structIRToCommandMappingStruct.html">   59</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIRToCommandMappingStruct.html">IRToCommandMappingStruct</a> {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#if defined(IR_COMMAND_HAS_MORE_THAN_8_BIT)</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    uint16_t <a class="code hl_variable" href="structIRToCommandMappingStruct.html#a9c1530620f7d47702cb0bffcc9ca7296">IRCode</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structIRToCommandMappingStruct.html#a9c1530620f7d47702cb0bffcc9ca7296">   63</a></span>    uint8_t <a class="code hl_variable" href="structIRToCommandMappingStruct.html#a9c1530620f7d47702cb0bffcc9ca7296">IRCode</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structIRToCommandMappingStruct.html#a68893217c19668481020c3f2104438a7">   65</a></span>    uint8_t <a class="code hl_variable" href="structIRToCommandMappingStruct.html#a68893217c19668481020c3f2104438a7">Flags</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structIRToCommandMappingStruct.html#ab4996ab6fe4c989cff02a8447d412465">   66</a></span>    void (*<a class="code hl_variable" href="structIRToCommandMappingStruct.html#ab4996ab6fe4c989cff02a8447d412465">CommandToCall</a>)();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structIRToCommandMappingStruct.html#ac59c9d04c11b986d044a5ce3b132ae16">   67</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structIRToCommandMappingStruct.html#ac59c9d04c11b986d044a5ce3b132ae16">CommandString</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structIRDataForCommandDispatcherStruct.html">   70</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIRDataForCommandDispatcherStruct.html">IRDataForCommandDispatcherStruct</a> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structIRDataForCommandDispatcherStruct.html#a13c689dd26d8cdefee50db6f78196229">   71</a></span>    uint16_t <a class="code hl_variable" href="structIRDataForCommandDispatcherStruct.html#a13c689dd26d8cdefee50db6f78196229">address</a>;           <span class="comment">// to distinguish between multiple senders</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#if defined(IR_COMMAND_HAS_MORE_THAN_8_BIT)</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    uint16_t <a class="code hl_variable" href="structIRDataForCommandDispatcherStruct.html#aec1ee2c9ff0d1882b77bcce545c1d843">command</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structIRDataForCommandDispatcherStruct.html#aec1ee2c9ff0d1882b77bcce545c1d843">   75</a></span>    uint8_t <a class="code hl_variable" href="structIRDataForCommandDispatcherStruct.html#aec1ee2c9ff0d1882b77bcce545c1d843">command</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structIRDataForCommandDispatcherStruct.html#a178fc257401a44e276e24df8bf4d7450">   77</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structIRDataForCommandDispatcherStruct.html#a178fc257401a44e276e24df8bf4d7450">isRepeat</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structIRDataForCommandDispatcherStruct.html#ac22558842ba0984625efbf9a8eba7524">   78</a></span>    uint32_t <a class="code hl_variable" href="structIRDataForCommandDispatcherStruct.html#ac22558842ba0984625efbf9a8eba7524">MillisOfLastCode</a>;  <span class="comment">// millis() of last IR command -including repeats!- received - for timeouts etc.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structIRDataForCommandDispatcherStruct.html#a1aa9c39efbd730c02a81af535f48dc2b">   79</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="structIRDataForCommandDispatcherStruct.html#a1aa9c39efbd730c02a81af535f48dc2b">isAvailable</a>;  <span class="comment">// flag for a polling interpreting function, that a new command has arrived. Is set true by library and set false by main loop.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"> * Special codes (hopefully) not sent by the remote - otherwise please redefine it here</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#if defined(IR_COMMAND_HAS_MORE_THAN_8_BIT)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#define COMMAND_EMPTY       0xFFFF </span><span class="comment">// code no command</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">   88</a></span><span class="preprocessor">#define COMMAND_EMPTY       0xFF </span><span class="comment">// code no command</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="};">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html">   91</a></span><span class="keyword">class </span><a class="code hl_class" href="classIRCommandDispatcher.html">IRCommandDispatcher</a> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#ad68d5fcdbe439e175cfe1c8b9107d0db">   93</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#ad68d5fcdbe439e175cfe1c8b9107d0db">init</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#a386ede9bb66907a5cc8adc0bfe9e304e">   94</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a386ede9bb66907a5cc8adc0bfe9e304e">printIRInfo</a>(Print *aSerial);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#a145197a073497acc6af758edd53fde13">   96</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a145197a073497acc6af758edd53fde13">checkAndRunNonBlockingCommands</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a62d3944d8e464859f17fa3ddc00168c7">checkAndRunSuspendedBlockingCommands</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#if defined(IR_COMMAND_HAS_MORE_THAN_8_BIT)</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a121e95355ab9fbc931eecb7d00c0540b">setNextBlockingCommand</a>(uint16_t aBlockingCommandToRunNext);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a121e95355ab9fbc931eecb7d00c0540b">setNextBlockingCommand</a>(uint8_t aBlockingCommandToRunNext);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a1d82fe08011229b1cc358dfab1904cf5">delayAndCheckForStop</a>(uint16_t aDelayMillis);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// The main dispatcher function</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#aed3b40ff7afbcae900829027cfe7fb00">checkAndCallCommand</a>(<span class="keywordtype">bool</span> aCallBlockingCommandImmediately);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#a1bea564c18a8e6bceb9cd4601a6d5cda">printIRCommandString</a>(Print *aSerial);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classIRCommandDispatcher.html#ac659a618dcd5cb7d6068a9b50058c2b9">setRequestToStopReceived</a>(<span class="keywordtype">bool</span> aRequestToStopReceived = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#if defined(IR_COMMAND_HAS_MORE_THAN_8_BIT)</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    uint16_t <a class="code hl_variable" href="classIRCommandDispatcher.html#ae2569e80e2c03d4f9483dd8b6d1e81ef">currentBlockingCommandCalled</a> = <a class="code hl_define" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a>; <span class="comment">// The code for the current called command</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    uint16_t <a class="code hl_variable" href="classIRCommandDispatcher.html#ac0f99ef75773f82843abab4d27e9b022">lastBlockingCommandCalled</a> = <a class="code hl_define" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a>; <span class="comment">// The code for the last called command. Can be evaluated by main loop</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    uint16_t <a class="code hl_variable" href="classIRCommandDispatcher.html#abcd19ab6bf352a41b5e5db42930fb2f2">BlockingCommandToRunNext</a> = <a class="code hl_define" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a>;  <span class="comment">// Storage for command currently suspended to allow the current command to end, before it is called by main loop</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#ae2569e80e2c03d4f9483dd8b6d1e81ef">  116</a></span>    uint8_t <a class="code hl_variable" href="classIRCommandDispatcher.html#ae2569e80e2c03d4f9483dd8b6d1e81ef">currentBlockingCommandCalled</a> = <a class="code hl_define" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a>; <span class="comment">// The code for the current called command</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#ac0f99ef75773f82843abab4d27e9b022">  117</a></span>    uint8_t <a class="code hl_variable" href="classIRCommandDispatcher.html#ac0f99ef75773f82843abab4d27e9b022">lastBlockingCommandCalled</a> = <a class="code hl_define" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a>;  <span class="comment">// The code for the last called command. Can be evaluated by main loop</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#abcd19ab6bf352a41b5e5db42930fb2f2">  118</a></span>    uint8_t <a class="code hl_variable" href="classIRCommandDispatcher.html#abcd19ab6bf352a41b5e5db42930fb2f2">BlockingCommandToRunNext</a> = <a class="code hl_define" href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a>;   <span class="comment">// Storage for command currently suspended to allow the current command to end, before it is called by main loop</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#aca80d0e3db5cadaf8ba7951572d8f076">  120</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classIRCommandDispatcher.html#aca80d0e3db5cadaf8ba7951572d8f076">justCalledBlockingCommand</a> = <span class="keyword">false</span>;             <span class="comment">// Flag that a blocking command was received and called - is set before call of command</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">     * Flag for running blocking commands to terminate. To check, you can use &quot;if (IRDispatcher.requestToStopReceived) return;&quot; (available as macro RETURN_IF_STOP).</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">     * It is set if a blocking IR command received, which cannot be executed directly. Can be reset by main loop, if command has stopped.</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">     * It is reset before executing a blocking command.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#a313bcae5a6fff14e6ca725dff4751454">  126</a></span>    <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classIRCommandDispatcher.html#a313bcae5a6fff14e6ca725dff4751454">requestToStopReceived</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">     * This flag must be true, if we have a function, which want to interpret the IR codes by itself e.g. the calibrate function of QuadrupedControl</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#a5214f344ec32f7d60e19f638a482f73e">  130</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classIRCommandDispatcher.html#a5214f344ec32f7d60e19f638a482f73e">doNotUseDispatcher</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classIRCommandDispatcher.html#a53e11d63aef8f7bb2c6445f84ac94a2e">  132</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structIRDataForCommandDispatcherStruct.html">IRDataForCommandDispatcherStruct</a> <a class="code hl_variable" href="classIRCommandDispatcher.html#a53e11d63aef8f7bb2c6445f84ac94a2e">IRReceivedData</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>};</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">extern</span> <a class="code hl_class" href="classIRCommandDispatcher.html">IRCommandDispatcher</a> <a class="code hl_variable" href="IRCommandDispatcher_8h.html#abd4ec492c11f65024d878f0d0e85f2c9">IRDispatcher</a>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#endif </span><span class="comment">// _IR_COMMAND_DISPATCHER_H</span></div>
+<div class="ttc" id="aIRCommandDispatcher_8h_html_abd4ec492c11f65024d878f0d0e85f2c9"><div class="ttname"><a href="IRCommandDispatcher_8h.html#abd4ec492c11f65024d878f0d0e85f2c9">IRDispatcher</a></div><div class="ttdeci">IRCommandDispatcher IRDispatcher</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00070">IRCommandDispatcher.hpp:70</a></div></div>
+<div class="ttc" id="aIRCommandDispatcher_8h_html_acbc3d5dcbe00eec6cb338d2dfc8f1b68"><div class="ttname"><a href="IRCommandDispatcher_8h.html#acbc3d5dcbe00eec6cb338d2dfc8f1b68">COMMAND_EMPTY</a></div><div class="ttdeci">#define COMMAND_EMPTY</div><div class="ttdef"><b>Definition</b> <a href="#l00088">IRCommandDispatcher.h:88</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html"><div class="ttname"><a href="classIRCommandDispatcher.html">IRCommandDispatcher</a></div><div class="ttdef"><b>Definition</b> <a href="#l00091">IRCommandDispatcher.h:91</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a121e95355ab9fbc931eecb7d00c0540b"><div class="ttname"><a href="classIRCommandDispatcher.html#a121e95355ab9fbc931eecb7d00c0540b">IRCommandDispatcher::setNextBlockingCommand</a></div><div class="ttdeci">void setNextBlockingCommand(uint8_t aBlockingCommandToRunNext)</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00322">IRCommandDispatcher.hpp:322</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a145197a073497acc6af758edd53fde13"><div class="ttname"><a href="classIRCommandDispatcher.html#a145197a073497acc6af758edd53fde13">IRCommandDispatcher::checkAndRunNonBlockingCommands</a></div><div class="ttdeci">bool checkAndRunNonBlockingCommands()</div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a1bea564c18a8e6bceb9cd4601a6d5cda"><div class="ttname"><a href="classIRCommandDispatcher.html#a1bea564c18a8e6bceb9cd4601a6d5cda">IRCommandDispatcher::printIRCommandString</a></div><div class="ttdeci">void printIRCommandString(Print *aSerial)</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00346">IRCommandDispatcher.hpp:346</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a1d82fe08011229b1cc358dfab1904cf5"><div class="ttname"><a href="classIRCommandDispatcher.html#a1d82fe08011229b1cc358dfab1904cf5">IRCommandDispatcher::delayAndCheckForStop</a></div><div class="ttdeci">bool delayAndCheckForStop(uint16_t aDelayMillis)</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00336">IRCommandDispatcher.hpp:336</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a313bcae5a6fff14e6ca725dff4751454"><div class="ttname"><a href="classIRCommandDispatcher.html#a313bcae5a6fff14e6ca725dff4751454">IRCommandDispatcher::requestToStopReceived</a></div><div class="ttdeci">volatile bool requestToStopReceived</div><div class="ttdef"><b>Definition</b> <a href="#l00126">IRCommandDispatcher.h:126</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a386ede9bb66907a5cc8adc0bfe9e304e"><div class="ttname"><a href="classIRCommandDispatcher.html#a386ede9bb66907a5cc8adc0bfe9e304e">IRCommandDispatcher::printIRInfo</a></div><div class="ttdeci">void printIRInfo(Print *aSerial)</div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a5214f344ec32f7d60e19f638a482f73e"><div class="ttname"><a href="classIRCommandDispatcher.html#a5214f344ec32f7d60e19f638a482f73e">IRCommandDispatcher::doNotUseDispatcher</a></div><div class="ttdeci">bool doNotUseDispatcher</div><div class="ttdef"><b>Definition</b> <a href="#l00130">IRCommandDispatcher.h:130</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a53e11d63aef8f7bb2c6445f84ac94a2e"><div class="ttname"><a href="classIRCommandDispatcher.html#a53e11d63aef8f7bb2c6445f84ac94a2e">IRCommandDispatcher::IRReceivedData</a></div><div class="ttdeci">struct IRDataForCommandDispatcherStruct IRReceivedData</div><div class="ttdef"><b>Definition</b> <a href="#l00132">IRCommandDispatcher.h:132</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_a62d3944d8e464859f17fa3ddc00168c7"><div class="ttname"><a href="classIRCommandDispatcher.html#a62d3944d8e464859f17fa3ddc00168c7">IRCommandDispatcher::checkAndRunSuspendedBlockingCommands</a></div><div class="ttdeci">bool checkAndRunSuspendedBlockingCommands()</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00297">IRCommandDispatcher.hpp:297</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_abcd19ab6bf352a41b5e5db42930fb2f2"><div class="ttname"><a href="classIRCommandDispatcher.html#abcd19ab6bf352a41b5e5db42930fb2f2">IRCommandDispatcher::BlockingCommandToRunNext</a></div><div class="ttdeci">uint8_t BlockingCommandToRunNext</div><div class="ttdef"><b>Definition</b> <a href="#l00118">IRCommandDispatcher.h:118</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_ac0f99ef75773f82843abab4d27e9b022"><div class="ttname"><a href="classIRCommandDispatcher.html#ac0f99ef75773f82843abab4d27e9b022">IRCommandDispatcher::lastBlockingCommandCalled</a></div><div class="ttdeci">uint8_t lastBlockingCommandCalled</div><div class="ttdef"><b>Definition</b> <a href="#l00117">IRCommandDispatcher.h:117</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_ac659a618dcd5cb7d6068a9b50058c2b9"><div class="ttname"><a href="classIRCommandDispatcher.html#ac659a618dcd5cb7d6068a9b50058c2b9">IRCommandDispatcher::setRequestToStopReceived</a></div><div class="ttdeci">void setRequestToStopReceived(bool aRequestToStopReceived=true)</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00356">IRCommandDispatcher.hpp:356</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_aca80d0e3db5cadaf8ba7951572d8f076"><div class="ttname"><a href="classIRCommandDispatcher.html#aca80d0e3db5cadaf8ba7951572d8f076">IRCommandDispatcher::justCalledBlockingCommand</a></div><div class="ttdeci">bool justCalledBlockingCommand</div><div class="ttdef"><b>Definition</b> <a href="#l00120">IRCommandDispatcher.h:120</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_ad68d5fcdbe439e175cfe1c8b9107d0db"><div class="ttname"><a href="classIRCommandDispatcher.html#ad68d5fcdbe439e175cfe1c8b9107d0db">IRCommandDispatcher::init</a></div><div class="ttdeci">void init()</div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_ae2569e80e2c03d4f9483dd8b6d1e81ef"><div class="ttname"><a href="classIRCommandDispatcher.html#ae2569e80e2c03d4f9483dd8b6d1e81ef">IRCommandDispatcher::currentBlockingCommandCalled</a></div><div class="ttdeci">uint8_t currentBlockingCommandCalled</div><div class="ttdef"><b>Definition</b> <a href="#l00116">IRCommandDispatcher.h:116</a></div></div>
+<div class="ttc" id="aclassIRCommandDispatcher_html_aed3b40ff7afbcae900829027cfe7fb00"><div class="ttname"><a href="classIRCommandDispatcher.html#aed3b40ff7afbcae900829027cfe7fb00">IRCommandDispatcher::checkAndCallCommand</a></div><div class="ttdeci">void checkAndCallCommand(bool aCallBlockingCommandImmediately)</div><div class="ttdef"><b>Definition</b> <a href="IRCommandDispatcher_8hpp_source.html#l00185">IRCommandDispatcher.hpp:185</a></div></div>
+<div class="ttc" id="astructIRDataForCommandDispatcherStruct_html"><div class="ttname"><a href="structIRDataForCommandDispatcherStruct.html">IRDataForCommandDispatcherStruct</a></div><div class="ttdef"><b>Definition</b> <a href="#l00070">IRCommandDispatcher.h:70</a></div></div>
+<div class="ttc" id="astructIRDataForCommandDispatcherStruct_html_a13c689dd26d8cdefee50db6f78196229"><div class="ttname"><a href="structIRDataForCommandDispatcherStruct.html#a13c689dd26d8cdefee50db6f78196229">IRDataForCommandDispatcherStruct::address</a></div><div class="ttdeci">uint16_t address</div><div class="ttdef"><b>Definition</b> <a href="#l00071">IRCommandDispatcher.h:71</a></div></div>
+<div class="ttc" id="astructIRDataForCommandDispatcherStruct_html_a178fc257401a44e276e24df8bf4d7450"><div class="ttname"><a href="structIRDataForCommandDispatcherStruct.html#a178fc257401a44e276e24df8bf4d7450">IRDataForCommandDispatcherStruct::isRepeat</a></div><div class="ttdeci">bool isRepeat</div><div class="ttdef"><b>Definition</b> <a href="#l00077">IRCommandDispatcher.h:77</a></div></div>
+<div class="ttc" id="astructIRDataForCommandDispatcherStruct_html_a1aa9c39efbd730c02a81af535f48dc2b"><div class="ttname"><a href="structIRDataForCommandDispatcherStruct.html#a1aa9c39efbd730c02a81af535f48dc2b">IRDataForCommandDispatcherStruct::isAvailable</a></div><div class="ttdeci">volatile bool isAvailable</div><div class="ttdef"><b>Definition</b> <a href="#l00079">IRCommandDispatcher.h:79</a></div></div>
+<div class="ttc" id="astructIRDataForCommandDispatcherStruct_html_ac22558842ba0984625efbf9a8eba7524"><div class="ttname"><a href="structIRDataForCommandDispatcherStruct.html#ac22558842ba0984625efbf9a8eba7524">IRDataForCommandDispatcherStruct::MillisOfLastCode</a></div><div class="ttdeci">uint32_t MillisOfLastCode</div><div class="ttdef"><b>Definition</b> <a href="#l00078">IRCommandDispatcher.h:78</a></div></div>
+<div class="ttc" id="astructIRDataForCommandDispatcherStruct_html_aec1ee2c9ff0d1882b77bcce545c1d843"><div class="ttname"><a href="structIRDataForCommandDispatcherStruct.html#aec1ee2c9ff0d1882b77bcce545c1d843">IRDataForCommandDispatcherStruct::command</a></div><div class="ttdeci">uint8_t command</div><div class="ttdef"><b>Definition</b> <a href="#l00075">IRCommandDispatcher.h:75</a></div></div>
+<div class="ttc" id="astructIRToCommandMappingStruct_html"><div class="ttname"><a href="structIRToCommandMappingStruct.html">IRToCommandMappingStruct</a></div><div class="ttdef"><b>Definition</b> <a href="#l00059">IRCommandDispatcher.h:59</a></div></div>
+<div class="ttc" id="astructIRToCommandMappingStruct_html_a68893217c19668481020c3f2104438a7"><div class="ttname"><a href="structIRToCommandMappingStruct.html#a68893217c19668481020c3f2104438a7">IRToCommandMappingStruct::Flags</a></div><div class="ttdeci">uint8_t Flags</div><div class="ttdef"><b>Definition</b> <a href="#l00065">IRCommandDispatcher.h:65</a></div></div>
+<div class="ttc" id="astructIRToCommandMappingStruct_html_a9c1530620f7d47702cb0bffcc9ca7296"><div class="ttname"><a href="structIRToCommandMappingStruct.html#a9c1530620f7d47702cb0bffcc9ca7296">IRToCommandMappingStruct::IRCode</a></div><div class="ttdeci">uint8_t IRCode</div><div class="ttdef"><b>Definition</b> <a href="#l00063">IRCommandDispatcher.h:63</a></div></div>
+<div class="ttc" id="astructIRToCommandMappingStruct_html_ab4996ab6fe4c989cff02a8447d412465"><div class="ttname"><a href="structIRToCommandMappingStruct.html#ab4996ab6fe4c989cff02a8447d412465">IRToCommandMappingStruct::CommandToCall</a></div><div class="ttdeci">void(* CommandToCall)()</div><div class="ttdef"><b>Definition</b> <a href="#l00066">IRCommandDispatcher.h:66</a></div></div>
+<div class="ttc" id="astructIRToCommandMappingStruct_html_ac59c9d04c11b986d044a5ce3b132ae16"><div class="ttname"><a href="structIRToCommandMappingStruct.html#ac59c9d04c11b986d044a5ce3b132ae16">IRToCommandMappingStruct::CommandString</a></div><div class="ttdeci">const char * CommandString</div><div class="ttdef"><b>Definition</b> <a href="#l00067">IRCommandDispatcher.h:67</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_417fe7ef0b5ebbe0b6604e0e4a5ae822.html">examples</a></li><li class="navelem"><a href="dir_382699c6b7f5841e20701527515a5554.html">IRDispatcherDemo</a></li><li class="navelem"><a href="IRCommandDispatcher_8h.html">IRCommandDispatcher.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

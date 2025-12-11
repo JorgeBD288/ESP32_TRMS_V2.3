@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/misc/lv_async.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__async_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_async.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__async_8h_source.html">lv_async.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__mem_8h_source.html">lv_mem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__timer_8h_source.html">lv_timer.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__async_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:_5Flv_5Fasync_5Finfo_5Ft" id="r__5Flv_5Fasync_5Finfo_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__lv__async__info__t.html">_lv_async_info_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a17cedf5b977f5f18ea0feac0730112c6" id="r_a17cedf5b977f5f18ea0feac0730112c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__lv__async__info__t.html">_lv_async_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:aee44e660e597215583d71f76f9ce2564" id="r_aee44e660e597215583d71f76f9ce2564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee44e660e597215583d71f76f9ce2564">lv_async_call</a> (<a class="el" href="lv__async_8h.html#a89e9d933d35c3858d4b2b88ee73d02ef">lv_async_cb_t</a> async_xcb, void *user_data)</td></tr>
+<tr class="memitem:aeecd7df777cee8da6eafa2b76d167fee" id="r_aeecd7df777cee8da6eafa2b76d167fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeecd7df777cee8da6eafa2b76d167fee">lv_async_call_cancel</a> (<a class="el" href="lv__async_8h.html#a89e9d933d35c3858d4b2b88ee73d02ef">lv_async_cb_t</a> async_xcb, void *user_data)</td></tr>
+</table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de «typedef»</h2>
+<a id="a17cedf5b977f5f18ea0feac0730112c6" name="a17cedf5b977f5f18ea0feac0730112c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cedf5b977f5f18ea0feac0730112c6">&#9670;&#160;</a></span>lv_async_info_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__lv__async__info__t.html">_lv_async_info_t</a> <a class="el" href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="aee44e660e597215583d71f76f9ce2564" name="aee44e660e597215583d71f76f9ce2564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee44e660e597215583d71f76f9ce2564">&#9670;&#160;</a></span>lv_async_call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_async_call </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__async_8h.html#a89e9d933d35c3858d4b2b88ee73d02ef">lv_async_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>async_xcb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>user_data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Call an asynchronous function the next time <a class="el" href="lv__timer_8c.html#adf718f6a468f54330ec793d443394c7a">lv_timer_handler()</a> is run. This function is likely to return <b>before</b> the call actually happens! </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">async_xcb</td><td>a callback which is the task itself. (the 'x' in the argument name indicates that it's not a fully generic function because it not follows the <span class="tt">func_name(object, callback, ...)</span> convention) </td></tr>
+    <tr><td class="paramname">user_data</td><td>custom parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__async_8c_source.html#l00045">45</a> del archivo <a class="el" href="lv__async_8c_source.html">lv_async.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">/*Allocate an info structure*/</span></div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_typedef" href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a> * info = <a class="code hl_function" href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a>));</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span>(info == NULL)</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">/*Create a new timer*/</span></div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer = <a class="code hl_function" href="lv__timer_8c.html#a9f92d3830e2336b96d0459199b87ff18">lv_timer_create</a>(lv_async_timer_cb, 0, info);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span>(timer == NULL) {</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(info);</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    info-&gt;<a class="code hl_variable" href="struct__lv__async__info__t.html#a5c1b132606b89c697985e7a49cca4902">cb</a> = async_xcb;</div>
+<div class="line"><span class="lineno">   62</span>    info-&gt;<a class="code hl_variable" href="struct__lv__async__info__t.html#a96d3151eecd626c111800951e2486d3a">user_data</a> = user_data;</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_function" href="lv__timer_8c.html#a30eaae235dd52aa13491dc2aab28905e">lv_timer_set_repeat_count</a>(timer, 1);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+<div class="ttc" id="alv__async_8c_html_a17cedf5b977f5f18ea0feac0730112c6"><div class="ttname"><a href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a></div><div class="ttdeci">struct _lv_async_info_t lv_async_info_t</div></div>
+<div class="ttc" id="alv__mem_8c_html_a00a96ee619670101ca51862efa4c97aa"><div class="ttname"><a href="lv__mem_8c.html#a00a96ee619670101ca51862efa4c97aa">lv_mem_alloc</a></div><div class="ttdeci">void * lv_mem_alloc(size_t size)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00125">lv_mem.c:125</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_ae99a4f8aefb6da04e976f2da45521cb4"><div class="ttname"><a href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a></div><div class="ttdeci">void lv_mem_free(void *data)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00169">lv_mem.c:169</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a30eaae235dd52aa13491dc2aab28905e"><div class="ttname"><a href="lv__timer_8c.html#a30eaae235dd52aa13491dc2aab28905e">lv_timer_set_repeat_count</a></div><div class="ttdeci">void lv_timer_set_repeat_count(lv_timer_t *timer, int32_t repeat_count)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00247">lv_timer.c:247</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a9f92d3830e2336b96d0459199b87ff18"><div class="ttname"><a href="lv__timer_8c.html#a9f92d3830e2336b96d0459199b87ff18">lv_timer_create</a></div><div class="ttdeci">lv_timer_t * lv_timer_create(lv_timer_cb_t timer_xcb, uint32_t period, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00167">lv_timer.c:167</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_aab341e84d977d67aec9b766ccd6d3173"><div class="ttname"><a href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a></div><div class="ttdeci">struct _lv_timer_t lv_timer_t</div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a></div><div class="ttdeci">@ LV_RES_OK</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00045">lv_types.h:45</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993"><div class="ttname"><a href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a></div><div class="ttdeci">@ LV_RES_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00043">lv_types.h:43</a></div></div>
+<div class="ttc" id="astruct__lv__async__info__t_html_a5c1b132606b89c697985e7a49cca4902"><div class="ttname"><a href="struct__lv__async__info__t.html#a5c1b132606b89c697985e7a49cca4902">_lv_async_info_t::cb</a></div><div class="ttdeci">lv_async_cb_t cb</div><div class="ttdef"><b>Definition</b> <a href="lv__async_8c_source.html#l00023">lv_async.c:23</a></div></div>
+<div class="ttc" id="astruct__lv__async__info__t_html_a96d3151eecd626c111800951e2486d3a"><div class="ttname"><a href="struct__lv__async__info__t.html#a96d3151eecd626c111800951e2486d3a">_lv_async_info_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="lv__async_8c_source.html#l00024">lv_async.c:24</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__async_8c_source.html#l00023">_lv_async_info_t::cb</a>, <a class="el" href="lv__mem_8c_source.html#l00125">lv_mem_alloc()</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__timer_8c_source.html#l00167">lv_timer_create()</a>, <a class="el" href="lv__timer_8c_source.html#l00247">lv_timer_set_repeat_count()</a> y <a class="el" href="lv__async_8c_source.html#l00024">_lv_async_info_t::user_data</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__obj__tree_8c_source.html#l00121">lv_obj_del_async()</a>.</p>
+
+</div>
+</div>
+<a id="aeecd7df777cee8da6eafa2b76d167fee" name="aeecd7df777cee8da6eafa2b76d167fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeecd7df777cee8da6eafa2b76d167fee">&#9670;&#160;</a></span>lv_async_call_cancel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> lv_async_call_cancel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__async_8h.html#a89e9d933d35c3858d4b2b88ee73d02ef">lv_async_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>async_xcb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>user_data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cancel an asynchronous function call </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">async_xcb</td><td>a callback which is the task itself. </td></tr>
+    <tr><td class="paramname">user_data</td><td>custom parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__async_8c_source.html#l00068">68</a> del archivo <a class="el" href="lv__async_8c_source.html">lv_async.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer = <a class="code hl_function" href="lv__timer_8c.html#a8cadfeccdc0ea47f6c0f0875e58d47f1">lv_timer_get_next</a>(NULL);</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_typedef" href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a> res = <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1cafd6cedb249ed55fc007247ebe9c4e993">LV_RES_INV</a>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">while</span>(timer != NULL) {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="comment">/*Find the next timer node*/</span></div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer_next = <a class="code hl_function" href="lv__timer_8c.html#a8cadfeccdc0ea47f6c0f0875e58d47f1">lv_timer_get_next</a>(timer);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <span class="comment">/*Find async timer callback*/</span></div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">if</span>(timer-&gt;<a class="code hl_variable" href="struct__lv__timer__t.html#ab0d4f9cd8cebafc853c5842d8d0c8119">timer_cb</a> == lv_async_timer_cb) {</div>
+<div class="line"><span class="lineno">   79</span>            <a class="code hl_typedef" href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a> * info = (<a class="code hl_typedef" href="#a17cedf5b977f5f18ea0feac0730112c6">lv_async_info_t</a> *)timer-&gt;<a class="code hl_variable" href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">user_data</a>;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>            <span class="comment">/*Match user function callback and user data*/</span></div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span>(info-&gt;cb == async_xcb &amp;&amp; info-&gt;user_data == user_data) {</div>
+<div class="line"><span class="lineno">   83</span>                <a class="code hl_function" href="lv__timer_8c.html#a4d916c26471670716c5b698698e08fab">lv_timer_del</a>(timer);</div>
+<div class="line"><span class="lineno">   84</span>                <a class="code hl_function" href="lv__mem_8c.html#ae99a4f8aefb6da04e976f2da45521cb4">lv_mem_free</a>(info);</div>
+<div class="line"><span class="lineno">   85</span>                res = <a class="code hl_enumvalue" href="lv__types_8h.html#a15e56e0a8b22da17d9ce821f444fff1ca90ea5295fdbeeda6f5816f49204dd860">LV_RES_OK</a>;</div>
+<div class="line"><span class="lineno">   86</span>            }</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>        timer = timer_next;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">   93</span>}</div>
+<div class="ttc" id="alv__timer_8c_html_a4d916c26471670716c5b698698e08fab"><div class="ttname"><a href="lv__timer_8c.html#a4d916c26471670716c5b698698e08fab">lv_timer_del</a></div><div class="ttdeci">void lv_timer_del(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00201">lv_timer.c:201</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_a8cadfeccdc0ea47f6c0f0875e58d47f1"><div class="ttname"><a href="lv__timer_8c.html#a8cadfeccdc0ea47f6c0f0875e58d47f1">lv_timer_get_next</a></div><div class="ttdeci">lv_timer_t * lv_timer_get_next(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00285">lv_timer.c:285</a></div></div>
+<div class="ttc" id="alv__types_8h_html_a5c71f43250ed3699f40a8b634e342228"><div class="ttname"><a href="lv__types_8h.html#a5c71f43250ed3699f40a8b634e342228">lv_res_t</a></div><div class="ttdeci">uint8_t lv_res_t</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00047">lv_types.h:47</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_a0c23b96fd727574d57d84e6b0c3f9119"><div class="ttname"><a href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">_lv_timer_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8h_source.html#l00048">lv_timer.h:48</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_ab0d4f9cd8cebafc853c5842d8d0c8119"><div class="ttname"><a href="struct__lv__timer__t.html#ab0d4f9cd8cebafc853c5842d8d0c8119">_lv_timer_t::timer_cb</a></div><div class="ttdeci">lv_timer_cb_t timer_cb</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8h_source.html#l00047">lv_timer.h:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__async_8c_source.html#l00023">_lv_async_info_t::cb</a>, <a class="el" href="lv__mem_8c_source.html#l00169">lv_mem_free()</a>, <a class="el" href="lv__types_8h_source.html#l00043">LV_RES_INV</a>, <a class="el" href="lv__types_8h_source.html#l00045">LV_RES_OK</a>, <a class="el" href="lv__timer_8c_source.html#l00201">lv_timer_del()</a>, <a class="el" href="lv__timer_8c_source.html#l00285">lv_timer_get_next()</a>, <a class="el" href="lv__timer_8h_source.html#l00047">_lv_timer_t::timer_cb</a>, <a class="el" href="lv__async_8c_source.html#l00024">_lv_async_info_t::user_data</a> y <a class="el" href="lv__timer_8h_source.html#l00048">_lv_timer_t::user_data</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__async_8c.html">lv_async.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/IRremote/examples/AllProtocolsOnLCD/LiquidCrystal_I2C.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('LiquidCrystal__I2C_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">LiquidCrystal_I2C.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="LiquidCrystal__I2C_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// LiquidCrystal_I2C.hpp</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Based on the work by DFRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Extensions made by AJ 2023</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Removed Arduino 0.x support</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Added SoftI2CMaste support, which drastically reduces program size.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Added OLED stuff</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Added createChar() with PROGMEM input</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * Added fast timing</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef _LIQUID_CRYSTAL_I2C_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="LiquidCrystal__I2C_8cpp.html#aecac6e47f263f51d66037df2c2fa43bc">   12</a></span><span class="preprocessor">#define _LIQUID_CRYSTAL_I2C_HPP</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if defined(__AVR__) &amp;&amp; !defined(USE_SOFT_I2C_MASTER) &amp;&amp; __has_include(&quot;SoftI2CMasterConfig.h&quot;)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define USE_SOFT_I2C_MASTER </span><span class="comment">// must be before #include &quot;LiquidCrystal_I2C.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="LiquidCrystal__I2C_8h.html">LiquidCrystal_I2C.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#ab5dc1bd4a630aa842c5d21ee3e2caa2a">   23</a></span><span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#ab5dc1bd4a630aa842c5d21ee3e2caa2a">LiquidCrystal_I2C::write</a>(uint8_t value) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    send(value, <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a345d1a871beb9e772c3bf9ef75412bb5">Rs</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#if defined(USE_SOFT_I2C_MASTER)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//#define USE_SOFT_I2C_MASTER_H_AS_PLAIN_INCLUDE</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;SoftI2CMasterConfig.h&quot;</span>    <span class="comment">// Include configuration for sources</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;SoftI2CMaster.h&quot;</span>          <span class="comment">// include sources</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#elif defined(USE_SOFT_WIRE)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define USE_SOFTWIRE_H_AS_PLAIN_INCLUDE</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;SoftWire.h&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#if defined(__AVR__)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * The datasheet says: a command need &gt; 37us to settle. Enable pulse must be &gt; 450ns.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * Use no delay for enable pulse after each command,</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * because the overhead of this library seems to be using the 37 us and 450 ns.</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * At least it works perfectly for all my LCD&#39;s connected to Uno, Nano etc.</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * and it saves a lot of time in realtime applications using LCD as display,</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * like https://github.com/ArminJo/Arduino-DTSU666H_PowerMeter</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define USE_FAST_TIMING</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// When the display powers up, it is configured as follows:</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// 1. Display clear</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// 2. Function set:</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">//    DL = 1; 8-bit interface data</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//    N = 0; 1-line display</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//    F = 0; 5x8 dot character font</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// 3. Display on/off control:</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//    D = 0; Display off</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//    C = 0; Cursor off</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//    B = 0; Blinking off</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// 4. Entry mode set:</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">//    I/D = 1; Increment by 1</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//    S = 0; No shift</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// Note, however, that resetting the Arduino doesn&#39;t reset the LCD, so we</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// can&#39;t assume that its in that state when a sketch starts (and the</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">// LiquidCrystal constructor is called).</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a8dfaa0b0dd9ac30360afaf6b3b79c073">   68</a></span><a class="code hl_function" href="classLiquidCrystal__I2C.html#a8dfaa0b0dd9ac30360afaf6b3b79c073">LiquidCrystal_I2C::LiquidCrystal_I2C</a>(uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    _Addr = lcd_Addr;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    _cols = lcd_cols;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    _rows = lcd_rows;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    _backlightval = <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a65fa786d6e31fe8b1aa51784a9736581">LCD_NOBACKLIGHT</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    _oled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#afd0a4e0bbc95dd544ac6a731dcc64fda">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#afd0a4e0bbc95dd544ac6a731dcc64fda">LiquidCrystal_I2C::oled_init</a>() {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    _oled = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    init_priv();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a6d40d226d4bc9baedc9a5c765470457a">   81</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a6d40d226d4bc9baedc9a5c765470457a">LiquidCrystal_I2C::init</a>() {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    init_priv();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">void</span> LiquidCrystal_I2C::init_priv() {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#if defined(USE_SOFT_I2C_MASTER)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    i2c_init();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    Wire.begin();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    _displayfunction = <a class="code hl_define" href="LiquidCrystal_8h.html#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a> | <a class="code hl_define" href="LiquidCrystal_8h.html#a8c85cf88d8af66a47c42249d81c94641">LCD_1LINE</a> | <a class="code hl_define" href="LiquidCrystal_8h.html#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#aeee2ada537f0cfbfda8613324b57c4a6">begin</a>(_cols, _rows);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#aeee2ada537f0cfbfda8613324b57c4a6">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#aeee2ada537f0cfbfda8613324b57c4a6">LiquidCrystal_I2C::begin</a>(uint8_t cols __attribute__((unused)), uint8_t lines, uint8_t dotsize) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (lines &gt; 1) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        _displayfunction |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    _numlines = lines;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// for some 1 line displays you can select a 10 pixel high font</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> ((dotsize != 0) &amp;&amp; (lines == 1)) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        _displayfunction |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#abb3210156d88d3fe18c9352eb161fe42">LCD_5x10DOTS</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// according to datasheet, we need at least 40ms after power rises above 2.7V</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// before sending commands. Arduino can turn on way before 4.5V so we&#39;ll wait 50</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(50);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// Now we pull both RS and R/W low to begin commands</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    expanderWrite(_backlightval);   <span class="comment">// reset expander and turn backlight off (Bit 8 =1)</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(1000);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">//put the LCD into 4 bit mode</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// this is according to the hitachi HD44780 datasheet</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// figure 24, pg 46</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">// we start in 8bit mode, try to set 4 bit mode</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    write4bits(0x03 &lt;&lt; 4);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    delayMicroseconds(4500); <span class="comment">// wait min 4.1ms</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">// second try</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    write4bits(0x03 &lt;&lt; 4);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    delayMicroseconds(4500); <span class="comment">// wait min 4.1ms</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// third go!</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    write4bits(0x03 &lt;&lt; 4);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    delayMicroseconds(150);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// finally, set to 4-bit interface</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    write4bits(0x02 &lt;&lt; 4);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">// set # lines, font size, etc.</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a> | _displayfunction);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="comment">// turn the display on with no cursor or blinking default</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    _displaycontrol = <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5fa41920b5cebf1960b15582a957eb93">display</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// clear it off</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#ab47996231da6feeebcebf0e6e34756a9">clear</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="comment">// Initialize to default text direction (for roman languages)</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    _displaymode = <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a049ee97e98d04788c1da9a55590fbe42">LCD_ENTRYSHIFTDECREMENT</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">// set the entry mode</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | _displaymode);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a9b8edf82c5835c9b6caac98b5a0ed464">home</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">/********** high level commands, for the user! */</span></div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#ab47996231da6feeebcebf0e6e34756a9">  155</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#ab47996231da6feeebcebf0e6e34756a9">LiquidCrystal_I2C::clear</a>() {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a>); <span class="comment">// clear display, set cursor position to zero</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#if defined(USE_FAST_TIMING)</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    delayMicroseconds(1500);  <span class="comment">// this command takes a long time! // AJ 20.9.23 1200 is too short for my 2004 LCD&#39;s, 1400 is OK</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    delayMicroseconds(2000);  <span class="comment">// this command takes a long time!</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">if</span> (_oled)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <a class="code hl_function" href="classLiquidCrystal__I2C.html#ae1a7b0162a055502ad9eac04cec9e270">setCursor</a>(0, 0);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a9b8edf82c5835c9b6caac98b5a0ed464">  166</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a9b8edf82c5835c9b6caac98b5a0ed464">LiquidCrystal_I2C::home</a>() {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a154c86a887633d0f6d9988e4dbb1f419">LCD_RETURNHOME</a>);  <span class="comment">// set cursor position to zero</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    delayMicroseconds(2000);  <span class="comment">// this command takes a long time!</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#ae1a7b0162a055502ad9eac04cec9e270">  171</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#ae1a7b0162a055502ad9eac04cec9e270">LiquidCrystal_I2C::setCursor</a>(uint8_t col, uint8_t row) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">int</span> row_offsets[] = { 0x00, 0x40, 0x14, 0x54 };</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (row &gt; _numlines) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        row = _numlines - 1;    <span class="comment">// we count rows starting w/0</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a> | (col + row_offsets[row]));</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">// Turn the display on/off (quickly)</span></div>
+<div class="foldopen" id="foldopen00180" data-start="{" data-end="}">
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#af89d6facccc156d7f151da71ecdd3b70">  180</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#af89d6facccc156d7f151da71ecdd3b70">LiquidCrystal_I2C::noDisplay</a>() {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    _displaycontrol &amp;= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">~LCD_DISPLAYON</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | _displaycontrol);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a5fa41920b5cebf1960b15582a957eb93">  184</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5fa41920b5cebf1960b15582a957eb93">LiquidCrystal_I2C::display</a>() {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    _displaycontrol |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | _displaycontrol);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">// Turns the underline cursor on/off</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a35a18278aa45bd91f2772924a50b7120">  190</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a35a18278aa45bd91f2772924a50b7120">LiquidCrystal_I2C::noCursor</a>() {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    _displaycontrol &amp;= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ab67f0adccde68de88eee0513fdfc4574">~LCD_CURSORON</a>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | _displaycontrol);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a4ea81707534586397b00c39b1ab236bf">  194</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a4ea81707534586397b00c39b1ab236bf">LiquidCrystal_I2C::cursor</a>() {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    _displaycontrol |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ab67f0adccde68de88eee0513fdfc4574">LCD_CURSORON</a>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | _displaycontrol);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">// Turn on and off the blinking cursor</span></div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a89ba791c60f6100eb565bc6099e56bb1">  200</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a89ba791c60f6100eb565bc6099e56bb1">LiquidCrystal_I2C::noBlink</a>() {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    _displaycontrol &amp;= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ac3b19d4e6553b9bbf18a23387e439206">~LCD_BLINKON</a>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | _displaycontrol);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a604ade489e878ec757a05dab4586c3a9">  204</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a604ade489e878ec757a05dab4586c3a9">LiquidCrystal_I2C::blink</a>() {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    _displaycontrol |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ac3b19d4e6553b9bbf18a23387e439206">LCD_BLINKON</a>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a> | _displaycontrol);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">// These commands scroll the display without changing the RAM</span></div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#affbf0a3c740de86dbf684345fdddc607">  210</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#affbf0a3c740de86dbf684345fdddc607">LiquidCrystal_I2C::scrollDisplayLeft</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a61f16a2b7550e4700f7898a7587c5594">LCD_CURSORSHIFT</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ab2f7b67abfac33f610acfd5d7a971f40">LCD_DISPLAYMOVE</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#aafb86adb0dfca1e65d65b2cd1946a009">LCD_MOVELEFT</a>);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a467cf825f22d41b197250e4bd3d39fd8">  213</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a467cf825f22d41b197250e4bd3d39fd8">LiquidCrystal_I2C::scrollDisplayRight</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a61f16a2b7550e4700f7898a7587c5594">LCD_CURSORSHIFT</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ab2f7b67abfac33f610acfd5d7a971f40">LCD_DISPLAYMOVE</a> | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#acf5999180233790bb2c9902efde58f7f">LCD_MOVERIGHT</a>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">// This is for text that flows Left to Right</span></div>
+<div class="foldopen" id="foldopen00218" data-start="{" data-end="}">
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a90a79b37f976778593abb0264f59cda5">  218</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a90a79b37f976778593abb0264f59cda5">LiquidCrystal_I2C::leftToRight</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    _displaymode |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | _displaymode);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>}</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">// This is for text that flows Right to Left</span></div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a063f518b9ebf1e35f29273f7c784d028">  224</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a063f518b9ebf1e35f29273f7c784d028">LiquidCrystal_I2C::rightToLeft</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    _displaymode &amp;= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">~LCD_ENTRYLEFT</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | _displaymode);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>}</div>
+</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">// This will &#39;right justify&#39; text from the cursor</span></div>
+<div class="foldopen" id="foldopen00230" data-start="{" data-end="}">
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a36f1b8e433762262d2238463b7a92f74">  230</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a36f1b8e433762262d2238463b7a92f74">LiquidCrystal_I2C::autoscroll</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    _displaymode |= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#aa2cf1d0f4a319e53c009cffe1184466c">LCD_ENTRYSHIFTINCREMENT</a>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | _displaymode);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>}</div>
+</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">// This will &#39;left justify&#39; text from the cursor</span></div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a10fd17e8377c240527a7668606c9de72">  236</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a10fd17e8377c240527a7668606c9de72">LiquidCrystal_I2C::noAutoscroll</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    _displaymode &amp;= <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#aa2cf1d0f4a319e53c009cffe1184466c">~LCD_ENTRYSHIFTINCREMENT</a>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a> | _displaymode);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>}</div>
+</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">// Allows us to fill the first 8 CGRAM locations</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">// with custom characters</span></div>
+<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#adb84147c9e3ee0c279d3afc609b81608">  243</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#adb84147c9e3ee0c279d3afc609b81608">LiquidCrystal_I2C::createChar</a>(uint8_t location, uint8_t charmap[]) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    location &amp;= 0x7; <span class="comment">// we only have 8 locations 0-7</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#aae6ea856879c11dee58493184582a52f">LCD_SETCGRAMADDR</a> | (location &lt;&lt; 3));</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8; i++) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <a class="code hl_function" href="classLiquidCrystal__I2C.html#ab5dc1bd4a630aa842c5d21ee3e2caa2a">write</a>(charmap[i]);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>}</div>
+</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">//createChar with PROGMEM input</span></div>
+<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a97aeaa2e6fff89da0b94b260f03263a3">  252</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#adb84147c9e3ee0c279d3afc609b81608">LiquidCrystal_I2C::createChar</a>(uint8_t location, <span class="keyword">const</span> <span class="keywordtype">char</span> *charmap) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    location &amp;= 0x7; <span class="comment">// we only have 8 locations 0-7</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">command</a>(<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#aae6ea856879c11dee58493184582a52f">LCD_SETCGRAMADDR</a> | (location &lt;&lt; 3));</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8; i++) {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <a class="code hl_function" href="classLiquidCrystal__I2C.html#ab5dc1bd4a630aa842c5d21ee3e2caa2a">write</a>(pgm_read_byte_near(charmap++));</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">// Turn the (optional) backlight off/on</span></div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a576f1f5813f55f34333d6d7e9fe53ad3">  261</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a576f1f5813f55f34333d6d7e9fe53ad3">LiquidCrystal_I2C::noBacklight</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    _backlightval = <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#a65fa786d6e31fe8b1aa51784a9736581">LCD_NOBACKLIGHT</a>;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    expanderWrite(0);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>}</div>
+</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a9f296e0d26f8b6a4509d8d4b9d738c03">  266</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a9f296e0d26f8b6a4509d8d4b9d738c03">LiquidCrystal_I2C::backlight</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    _backlightval = <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a>;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    expanderWrite(0);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
+</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">/*********** mid level commands, for sending data/cmds */</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="foldopen" id="foldopen00273" data-start="{" data-end="}">
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">  273</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">LiquidCrystal_I2C::command</a>(uint8_t value) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    send(value, 0);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>}</div>
+</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">/************ low level data pushing commands **********/</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment">// write either command or data</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="keywordtype">void</span> LiquidCrystal_I2C::send(uint8_t value, uint8_t mode) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    uint8_t highnib = value &amp; 0xf0;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    uint8_t lownib = (value &lt;&lt; 4) &amp; 0xf0;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    write4bits((highnib) | mode);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    write4bits((lownib) | mode);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>}</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="keywordtype">void</span> LiquidCrystal_I2C::write4bits(uint8_t value) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    expanderWrite(value);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    pulseEnable(value);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keywordtype">void</span> LiquidCrystal_I2C::expanderWrite(uint8_t _data) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="preprocessor">#if defined(USE_SOFT_I2C_MASTER)</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    i2c_write_byte(_Addr &lt;&lt; 1, _data | _backlightval);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    Wire.beginTransmission(_Addr);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    Wire.write((<span class="keywordtype">int</span> )(_data) | _backlightval);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    Wire.endTransmission();</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>}</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="keywordtype">void</span> LiquidCrystal_I2C::pulseEnable(uint8_t _data) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    expanderWrite(_data | <a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ab5ef25ebfe582f7bf0d93e2770548e2c">En</a>);  <span class="comment">// En high</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="preprocessor">#if !defined(USE_FAST_TIMING)</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    delayMicroseconds(1);       <span class="comment">// enable pulse must be &gt; 450ns // AJ 20.9.23 not required for my LCD&#39;s</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    expanderWrite(_data &amp; ~<a class="code hl_define" href="LiquidCrystal__I2C_8h.html#ab5ef25ebfe582f7bf0d93e2770548e2c">En</a>); <span class="comment">// En low</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#if !defined(USE_FAST_TIMING)</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    delayMicroseconds(50);      <span class="comment">// commands need &gt; 37us to settle // AJ 20.9.23 not required for my LCD&#39;s</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>}</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="comment">// Alias functions</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="foldopen" id="foldopen00315" data-start="{" data-end="}">
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a95fb4de1f214f30e94b0f3ff84df2c85">  315</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a95fb4de1f214f30e94b0f3ff84df2c85">LiquidCrystal_I2C::cursor_on</a>() {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a4ea81707534586397b00c39b1ab236bf">cursor</a>();</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>}</div>
+</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="foldopen" id="foldopen00319" data-start="{" data-end="}">
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a7f3c51a11c078f8c6750690bc172047d">  319</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a7f3c51a11c078f8c6750690bc172047d">LiquidCrystal_I2C::cursor_off</a>() {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a35a18278aa45bd91f2772924a50b7120">noCursor</a>();</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>}</div>
+</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="foldopen" id="foldopen00323" data-start="{" data-end="}">
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a06a2f5c8607d58cfe6db8b801ae956a0">  323</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a06a2f5c8607d58cfe6db8b801ae956a0">LiquidCrystal_I2C::blink_on</a>() {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a604ade489e878ec757a05dab4586c3a9">blink</a>();</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>}</div>
+</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="foldopen" id="foldopen00327" data-start="{" data-end="}">
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a9ac2b8da020fd033eb174d9805f43751">  327</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a9ac2b8da020fd033eb174d9805f43751">LiquidCrystal_I2C::blink_off</a>() {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#a89ba791c60f6100eb565bc6099e56bb1">noBlink</a>();</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
+</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="foldopen" id="foldopen00331" data-start="{" data-end="}">
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a3251c0d8e9a6981d46e25d5452b8323f">  331</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a3251c0d8e9a6981d46e25d5452b8323f">LiquidCrystal_I2C::load_custom_character</a>(uint8_t char_num, uint8_t *rows) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <a class="code hl_function" href="classLiquidCrystal__I2C.html#adb84147c9e3ee0c279d3afc609b81608">createChar</a>(char_num, rows);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>}</div>
+</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="foldopen" id="foldopen00335" data-start="{" data-end="}">
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a76383f15c82698f5b4ef5f3a36f26413">  335</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a76383f15c82698f5b4ef5f3a36f26413">LiquidCrystal_I2C::setBacklight</a>(uint8_t new_val) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">if</span> (new_val) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <a class="code hl_function" href="classLiquidCrystal__I2C.html#a9f296e0d26f8b6a4509d8d4b9d738c03">backlight</a>();        <span class="comment">// turn backlight on</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        <a class="code hl_function" href="classLiquidCrystal__I2C.html#a576f1f5813f55f34333d6d7e9fe53ad3">noBacklight</a>();      <span class="comment">// turn backlight off</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>}</div>
+</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="foldopen" id="foldopen00343" data-start="{" data-end="}">
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a36d792580018f7c0c0ae2500980931e5">  343</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a36d792580018f7c0c0ae2500980931e5">LiquidCrystal_I2C::printstr</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> c[]) {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="comment">//This function is not identical to the function used for &quot;real&quot; I2C displays</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="comment">//it&#39;s here so the user sketch doesn&#39;t have to be changed</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    print(c);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>}</div>
+</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="comment">// unsupported API functions</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wunused-parameter&quot;</span></div>
+<div class="foldopen" id="foldopen00352" data-start="{" data-end="}">
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a2823eb0ebd97f9710868d51b470a7310">  352</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a2823eb0ebd97f9710868d51b470a7310">LiquidCrystal_I2C::off</a>() {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00354" data-start="{" data-end="}">
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#ade8df694db7a45392d81a630221aec35">  354</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#ade8df694db7a45392d81a630221aec35">LiquidCrystal_I2C::on</a>() {</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00356" data-start="{" data-end="}">
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#aebc613f31cd399cb463f6d9fce8a4d8d">  356</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#aebc613f31cd399cb463f6d9fce8a4d8d">LiquidCrystal_I2C::setDelay</a>(<span class="keywordtype">int</span> cmdDelay, <span class="keywordtype">int</span> charDelay) {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00358" data-start="{" data-end="}">
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a57278987b0b259fe7598e57ddaf106cf">  358</a></span>uint8_t <a class="code hl_function" href="classLiquidCrystal__I2C.html#a57278987b0b259fe7598e57ddaf106cf">LiquidCrystal_I2C::status</a>() {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00361" data-start="{" data-end="}">
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#ab571c9ed0b1b38ed8b6bc9c4b2572ea0">  361</a></span>uint8_t <a class="code hl_function" href="classLiquidCrystal__I2C.html#ab571c9ed0b1b38ed8b6bc9c4b2572ea0">LiquidCrystal_I2C::keypad</a>() {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00364" data-start="{" data-end="}">
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a8a87f06039d79acc1bda837d3303bfdc">  364</a></span>uint8_t <a class="code hl_function" href="classLiquidCrystal__I2C.html#a8a87f06039d79acc1bda837d3303bfdc">LiquidCrystal_I2C::init_bargraph</a>(uint8_t graphtype) {</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00367" data-start="{" data-end="}">
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#a2fad8437055f3c550bc212662e0f4e15">  367</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#a2fad8437055f3c550bc212662e0f4e15">LiquidCrystal_I2C::draw_horizontal_graph</a>(uint8_t row, uint8_t column, uint8_t len, uint8_t pixel_col_end) {</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00369" data-start="{" data-end="}">
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#af984fc2e29c38b87d4bc8b855e9ba27c">  369</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#af984fc2e29c38b87d4bc8b855e9ba27c">LiquidCrystal_I2C::draw_vertical_graph</a>(uint8_t row, uint8_t column, uint8_t len, uint8_t pixel_row_end) {</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00371" data-start="{" data-end="}">
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="classLiquidCrystal__I2C.html#aa49d57361d3b48ded89bfb42c3e0349d">  371</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLiquidCrystal__I2C.html#aa49d57361d3b48ded89bfb42c3e0349d">LiquidCrystal_I2C::setContrast</a>(uint8_t new_val) {</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>}</div>
+</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">#endif </span><span class="comment">// _LIQUID_CRYSTAL_I2C_HPP</span></div>
+<div class="ttc" id="aGC9A01__Init_8h_html_a5aca13d7b6004cb9d0f57e632205e46b"><div class="ttname"><a href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a></div><div class="ttdeci">delay(120)</div></div>
+<div class="ttc" id="aLiquidCrystal_8h_html_a8c85cf88d8af66a47c42249d81c94641"><div class="ttname"><a href="LiquidCrystal_8h.html#a8c85cf88d8af66a47c42249d81c94641">LCD_1LINE</a></div><div class="ttdeci">#define LCD_1LINE</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal_8h_source.html#l00041">LiquidCrystal.h:41</a></div></div>
+<div class="ttc" id="aLiquidCrystal_8h_html_a9ef57e724c1b846dae0f531aff6fb464"><div class="ttname"><a href="LiquidCrystal_8h.html#a9ef57e724c1b846dae0f531aff6fb464">LCD_5x8DOTS</a></div><div class="ttdeci">#define LCD_5x8DOTS</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal_8h_source.html#l00043">LiquidCrystal.h:43</a></div></div>
+<div class="ttc" id="aLiquidCrystal_8h_html_ab8c35d355d2372090c7a347e961c9224"><div class="ttname"><a href="LiquidCrystal_8h.html#ab8c35d355d2372090c7a347e961c9224">LCD_4BITMODE</a></div><div class="ttdeci">#define LCD_4BITMODE</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal_8h_source.html#l00039">LiquidCrystal.h:39</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html">LiquidCrystal_I2C.h</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a049ee97e98d04788c1da9a55590fbe42"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a049ee97e98d04788c1da9a55590fbe42">LCD_ENTRYSHIFTDECREMENT</a></div><div class="ttdeci">#define LCD_ENTRYSHIFTDECREMENT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00025">LiquidCrystal_I2C.h:25</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a15008b832807a208d9d88c74e6751ebf"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a15008b832807a208d9d88c74e6751ebf">LCD_SETDDRAMADDR</a></div><div class="ttdeci">#define LCD_SETDDRAMADDR</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00019">LiquidCrystal_I2C.h:19</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a154c86a887633d0f6d9988e4dbb1f419"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a154c86a887633d0f6d9988e4dbb1f419">LCD_RETURNHOME</a></div><div class="ttdeci">#define LCD_RETURNHOME</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00013">LiquidCrystal_I2C.h:13</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a32b194a3adaa0a0bb69acee2e6a754fa"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a32b194a3adaa0a0bb69acee2e6a754fa">LCD_CURSOROFF</a></div><div class="ttdeci">#define LCD_CURSOROFF</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00031">LiquidCrystal_I2C.h:31</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a345d1a871beb9e772c3bf9ef75412bb5"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a345d1a871beb9e772c3bf9ef75412bb5">Rs</a></div><div class="ttdeci">#define Rs</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00055">LiquidCrystal_I2C.h:55</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a4b28243034cec656b0ed490ba6979752"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a4b28243034cec656b0ed490ba6979752">LCD_BLINKOFF</a></div><div class="ttdeci">#define LCD_BLINKOFF</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00033">LiquidCrystal_I2C.h:33</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a5597e1d5819ea2f0734ad4313abf6703"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a5597e1d5819ea2f0734ad4313abf6703">LCD_ENTRYMODESET</a></div><div class="ttdeci">#define LCD_ENTRYMODESET</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00014">LiquidCrystal_I2C.h:14</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a61f16a2b7550e4700f7898a7587c5594"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a61f16a2b7550e4700f7898a7587c5594">LCD_CURSORSHIFT</a></div><div class="ttdeci">#define LCD_CURSORSHIFT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00016">LiquidCrystal_I2C.h:16</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a65fa786d6e31fe8b1aa51784a9736581"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a65fa786d6e31fe8b1aa51784a9736581">LCD_NOBACKLIGHT</a></div><div class="ttdeci">#define LCD_NOBACKLIGHT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00051">LiquidCrystal_I2C.h:51</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a76236ae8317b34bbc98ea56bc0a2639c"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a76236ae8317b34bbc98ea56bc0a2639c">LCD_DISPLAYON</a></div><div class="ttdeci">#define LCD_DISPLAYON</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00028">LiquidCrystal_I2C.h:28</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_a7987e93538df2819583ba43b81ddbb25"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#a7987e93538df2819583ba43b81ddbb25">LCD_2LINE</a></div><div class="ttdeci">#define LCD_2LINE</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00044">LiquidCrystal_I2C.h:44</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_aa2cf1d0f4a319e53c009cffe1184466c"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#aa2cf1d0f4a319e53c009cffe1184466c">LCD_ENTRYSHIFTINCREMENT</a></div><div class="ttdeci">#define LCD_ENTRYSHIFTINCREMENT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00024">LiquidCrystal_I2C.h:24</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_aae6ea856879c11dee58493184582a52f"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#aae6ea856879c11dee58493184582a52f">LCD_SETCGRAMADDR</a></div><div class="ttdeci">#define LCD_SETCGRAMADDR</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00018">LiquidCrystal_I2C.h:18</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_aaef882ae70d1f485cd132815d9716111"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#aaef882ae70d1f485cd132815d9716111">LCD_FUNCTIONSET</a></div><div class="ttdeci">#define LCD_FUNCTIONSET</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00017">LiquidCrystal_I2C.h:17</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_aafb86adb0dfca1e65d65b2cd1946a009"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#aafb86adb0dfca1e65d65b2cd1946a009">LCD_MOVELEFT</a></div><div class="ttdeci">#define LCD_MOVELEFT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00039">LiquidCrystal_I2C.h:39</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_ab2f7b67abfac33f610acfd5d7a971f40"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#ab2f7b67abfac33f610acfd5d7a971f40">LCD_DISPLAYMOVE</a></div><div class="ttdeci">#define LCD_DISPLAYMOVE</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00036">LiquidCrystal_I2C.h:36</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_ab5ef25ebfe582f7bf0d93e2770548e2c"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#ab5ef25ebfe582f7bf0d93e2770548e2c">En</a></div><div class="ttdeci">#define En</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00053">LiquidCrystal_I2C.h:53</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_ab67f0adccde68de88eee0513fdfc4574"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#ab67f0adccde68de88eee0513fdfc4574">LCD_CURSORON</a></div><div class="ttdeci">#define LCD_CURSORON</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00030">LiquidCrystal_I2C.h:30</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_abb3210156d88d3fe18c9352eb161fe42"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#abb3210156d88d3fe18c9352eb161fe42">LCD_5x10DOTS</a></div><div class="ttdeci">#define LCD_5x10DOTS</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00046">LiquidCrystal_I2C.h:46</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_ac059d24dfe9c1e1f7c07cb7869a1833b"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#ac059d24dfe9c1e1f7c07cb7869a1833b">LCD_BACKLIGHT</a></div><div class="ttdeci">#define LCD_BACKLIGHT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00050">LiquidCrystal_I2C.h:50</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_ac3b19d4e6553b9bbf18a23387e439206"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#ac3b19d4e6553b9bbf18a23387e439206">LCD_BLINKON</a></div><div class="ttdeci">#define LCD_BLINKON</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00032">LiquidCrystal_I2C.h:32</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_acc3509bc0442b41e2b816555de473ed2"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#acc3509bc0442b41e2b816555de473ed2">LCD_CLEARDISPLAY</a></div><div class="ttdeci">#define LCD_CLEARDISPLAY</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00012">LiquidCrystal_I2C.h:12</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_acf5999180233790bb2c9902efde58f7f"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#acf5999180233790bb2c9902efde58f7f">LCD_MOVERIGHT</a></div><div class="ttdeci">#define LCD_MOVERIGHT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00038">LiquidCrystal_I2C.h:38</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_adfb8b2b8b8a08d7313504d7a4f89d99f"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#adfb8b2b8b8a08d7313504d7a4f89d99f">LCD_DISPLAYCONTROL</a></div><div class="ttdeci">#define LCD_DISPLAYCONTROL</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00015">LiquidCrystal_I2C.h:15</a></div></div>
+<div class="ttc" id="aLiquidCrystal__I2C_8h_html_ae7c6309fce6200bd7526d090a4a84dd0"><div class="ttname"><a href="LiquidCrystal__I2C_8h.html#ae7c6309fce6200bd7526d090a4a84dd0">LCD_ENTRYLEFT</a></div><div class="ttdeci">#define LCD_ENTRYLEFT</div><div class="ttdef"><b>Definition</b> <a href="LiquidCrystal__I2C_8h_source.html#l00023">LiquidCrystal_I2C.h:23</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a063f518b9ebf1e35f29273f7c784d028"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a063f518b9ebf1e35f29273f7c784d028">LiquidCrystal_I2C::rightToLeft</a></div><div class="ttdeci">void rightToLeft()</div><div class="ttdef"><b>Definition</b> <a href="#l00224">LiquidCrystal_I2C.cpp:224</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a06a2f5c8607d58cfe6db8b801ae956a0"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a06a2f5c8607d58cfe6db8b801ae956a0">LiquidCrystal_I2C::blink_on</a></div><div class="ttdeci">void blink_on()</div><div class="ttdef"><b>Definition</b> <a href="#l00323">LiquidCrystal_I2C.cpp:323</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a10fd17e8377c240527a7668606c9de72"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a10fd17e8377c240527a7668606c9de72">LiquidCrystal_I2C::noAutoscroll</a></div><div class="ttdeci">void noAutoscroll()</div><div class="ttdef"><b>Definition</b> <a href="#l00236">LiquidCrystal_I2C.cpp:236</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a2823eb0ebd97f9710868d51b470a7310"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a2823eb0ebd97f9710868d51b470a7310">LiquidCrystal_I2C::off</a></div><div class="ttdeci">void off()</div><div class="ttdef"><b>Definition</b> <a href="#l00352">LiquidCrystal_I2C.cpp:352</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a2fad8437055f3c550bc212662e0f4e15"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a2fad8437055f3c550bc212662e0f4e15">LiquidCrystal_I2C::draw_horizontal_graph</a></div><div class="ttdeci">void draw_horizontal_graph(uint8_t row, uint8_t column, uint8_t len, uint8_t pixel_col_end)</div><div class="ttdef"><b>Definition</b> <a href="#l00367">LiquidCrystal_I2C.cpp:367</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a3251c0d8e9a6981d46e25d5452b8323f"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a3251c0d8e9a6981d46e25d5452b8323f">LiquidCrystal_I2C::load_custom_character</a></div><div class="ttdeci">void load_custom_character(uint8_t char_num, uint8_t *rows)</div><div class="ttdef"><b>Definition</b> <a href="#l00331">LiquidCrystal_I2C.cpp:331</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a35a18278aa45bd91f2772924a50b7120"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a35a18278aa45bd91f2772924a50b7120">LiquidCrystal_I2C::noCursor</a></div><div class="ttdeci">void noCursor()</div><div class="ttdef"><b>Definition</b> <a href="#l00190">LiquidCrystal_I2C.cpp:190</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a36d792580018f7c0c0ae2500980931e5"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a36d792580018f7c0c0ae2500980931e5">LiquidCrystal_I2C::printstr</a></div><div class="ttdeci">void printstr(const char[])</div><div class="ttdef"><b>Definition</b> <a href="#l00343">LiquidCrystal_I2C.cpp:343</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a36f1b8e433762262d2238463b7a92f74"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a36f1b8e433762262d2238463b7a92f74">LiquidCrystal_I2C::autoscroll</a></div><div class="ttdeci">void autoscroll()</div><div class="ttdef"><b>Definition</b> <a href="#l00230">LiquidCrystal_I2C.cpp:230</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a467cf825f22d41b197250e4bd3d39fd8"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a467cf825f22d41b197250e4bd3d39fd8">LiquidCrystal_I2C::scrollDisplayRight</a></div><div class="ttdeci">void scrollDisplayRight()</div><div class="ttdef"><b>Definition</b> <a href="#l00213">LiquidCrystal_I2C.cpp:213</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a4ea81707534586397b00c39b1ab236bf"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a4ea81707534586397b00c39b1ab236bf">LiquidCrystal_I2C::cursor</a></div><div class="ttdeci">void cursor()</div><div class="ttdef"><b>Definition</b> <a href="#l00194">LiquidCrystal_I2C.cpp:194</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a57278987b0b259fe7598e57ddaf106cf"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a57278987b0b259fe7598e57ddaf106cf">LiquidCrystal_I2C::status</a></div><div class="ttdeci">uint8_t status()</div><div class="ttdef"><b>Definition</b> <a href="#l00358">LiquidCrystal_I2C.cpp:358</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a576f1f5813f55f34333d6d7e9fe53ad3"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a576f1f5813f55f34333d6d7e9fe53ad3">LiquidCrystal_I2C::noBacklight</a></div><div class="ttdeci">void noBacklight()</div><div class="ttdef"><b>Definition</b> <a href="#l00261">LiquidCrystal_I2C.cpp:261</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a5e69fa88365d87fb8422f69069a3ee48"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a5e69fa88365d87fb8422f69069a3ee48">LiquidCrystal_I2C::command</a></div><div class="ttdeci">void command(uint8_t)</div><div class="ttdef"><b>Definition</b> <a href="#l00273">LiquidCrystal_I2C.cpp:273</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a5fa41920b5cebf1960b15582a957eb93"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a5fa41920b5cebf1960b15582a957eb93">LiquidCrystal_I2C::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition</b> <a href="#l00184">LiquidCrystal_I2C.cpp:184</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a604ade489e878ec757a05dab4586c3a9"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a604ade489e878ec757a05dab4586c3a9">LiquidCrystal_I2C::blink</a></div><div class="ttdeci">void blink()</div><div class="ttdef"><b>Definition</b> <a href="#l00204">LiquidCrystal_I2C.cpp:204</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a6d40d226d4bc9baedc9a5c765470457a"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a6d40d226d4bc9baedc9a5c765470457a">LiquidCrystal_I2C::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> <a href="#l00081">LiquidCrystal_I2C.cpp:81</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a76383f15c82698f5b4ef5f3a36f26413"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a76383f15c82698f5b4ef5f3a36f26413">LiquidCrystal_I2C::setBacklight</a></div><div class="ttdeci">void setBacklight(uint8_t new_val)</div><div class="ttdef"><b>Definition</b> <a href="#l00335">LiquidCrystal_I2C.cpp:335</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a7f3c51a11c078f8c6750690bc172047d"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a7f3c51a11c078f8c6750690bc172047d">LiquidCrystal_I2C::cursor_off</a></div><div class="ttdeci">void cursor_off()</div><div class="ttdef"><b>Definition</b> <a href="#l00319">LiquidCrystal_I2C.cpp:319</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a89ba791c60f6100eb565bc6099e56bb1"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a89ba791c60f6100eb565bc6099e56bb1">LiquidCrystal_I2C::noBlink</a></div><div class="ttdeci">void noBlink()</div><div class="ttdef"><b>Definition</b> <a href="#l00200">LiquidCrystal_I2C.cpp:200</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a8a87f06039d79acc1bda837d3303bfdc"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a8a87f06039d79acc1bda837d3303bfdc">LiquidCrystal_I2C::init_bargraph</a></div><div class="ttdeci">uint8_t init_bargraph(uint8_t graphtype)</div><div class="ttdef"><b>Definition</b> <a href="#l00364">LiquidCrystal_I2C.cpp:364</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a8dfaa0b0dd9ac30360afaf6b3b79c073"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a8dfaa0b0dd9ac30360afaf6b3b79c073">LiquidCrystal_I2C::LiquidCrystal_I2C</a></div><div class="ttdeci">LiquidCrystal_I2C(uint8_t lcd_Addr, uint8_t lcd_cols, uint8_t lcd_rows)</div><div class="ttdef"><b>Definition</b> <a href="#l00068">LiquidCrystal_I2C.cpp:68</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a90a79b37f976778593abb0264f59cda5"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a90a79b37f976778593abb0264f59cda5">LiquidCrystal_I2C::leftToRight</a></div><div class="ttdeci">void leftToRight()</div><div class="ttdef"><b>Definition</b> <a href="#l00218">LiquidCrystal_I2C.cpp:218</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a95fb4de1f214f30e94b0f3ff84df2c85"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a95fb4de1f214f30e94b0f3ff84df2c85">LiquidCrystal_I2C::cursor_on</a></div><div class="ttdeci">void cursor_on()</div><div class="ttdef"><b>Definition</b> <a href="#l00315">LiquidCrystal_I2C.cpp:315</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a9ac2b8da020fd033eb174d9805f43751"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a9ac2b8da020fd033eb174d9805f43751">LiquidCrystal_I2C::blink_off</a></div><div class="ttdeci">void blink_off()</div><div class="ttdef"><b>Definition</b> <a href="#l00327">LiquidCrystal_I2C.cpp:327</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a9b8edf82c5835c9b6caac98b5a0ed464"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a9b8edf82c5835c9b6caac98b5a0ed464">LiquidCrystal_I2C::home</a></div><div class="ttdeci">void home()</div><div class="ttdef"><b>Definition</b> <a href="#l00166">LiquidCrystal_I2C.cpp:166</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_a9f296e0d26f8b6a4509d8d4b9d738c03"><div class="ttname"><a href="classLiquidCrystal__I2C.html#a9f296e0d26f8b6a4509d8d4b9d738c03">LiquidCrystal_I2C::backlight</a></div><div class="ttdeci">void backlight()</div><div class="ttdef"><b>Definition</b> <a href="#l00266">LiquidCrystal_I2C.cpp:266</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_aa49d57361d3b48ded89bfb42c3e0349d"><div class="ttname"><a href="classLiquidCrystal__I2C.html#aa49d57361d3b48ded89bfb42c3e0349d">LiquidCrystal_I2C::setContrast</a></div><div class="ttdeci">void setContrast(uint8_t new_val)</div><div class="ttdef"><b>Definition</b> <a href="#l00371">LiquidCrystal_I2C.cpp:371</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_ab47996231da6feeebcebf0e6e34756a9"><div class="ttname"><a href="classLiquidCrystal__I2C.html#ab47996231da6feeebcebf0e6e34756a9">LiquidCrystal_I2C::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition</b> <a href="#l00155">LiquidCrystal_I2C.cpp:155</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_ab571c9ed0b1b38ed8b6bc9c4b2572ea0"><div class="ttname"><a href="classLiquidCrystal__I2C.html#ab571c9ed0b1b38ed8b6bc9c4b2572ea0">LiquidCrystal_I2C::keypad</a></div><div class="ttdeci">uint8_t keypad()</div><div class="ttdef"><b>Definition</b> <a href="#l00361">LiquidCrystal_I2C.cpp:361</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_ab5dc1bd4a630aa842c5d21ee3e2caa2a"><div class="ttname"><a href="classLiquidCrystal__I2C.html#ab5dc1bd4a630aa842c5d21ee3e2caa2a">LiquidCrystal_I2C::write</a></div><div class="ttdeci">size_t write(uint8_t)</div><div class="ttdef"><b>Definition</b> <a href="#l00023">LiquidCrystal_I2C.cpp:23</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_adb84147c9e3ee0c279d3afc609b81608"><div class="ttname"><a href="classLiquidCrystal__I2C.html#adb84147c9e3ee0c279d3afc609b81608">LiquidCrystal_I2C::createChar</a></div><div class="ttdeci">void createChar(uint8_t, uint8_t[])</div><div class="ttdef"><b>Definition</b> <a href="#l00243">LiquidCrystal_I2C.cpp:243</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_ade8df694db7a45392d81a630221aec35"><div class="ttname"><a href="classLiquidCrystal__I2C.html#ade8df694db7a45392d81a630221aec35">LiquidCrystal_I2C::on</a></div><div class="ttdeci">void on()</div><div class="ttdef"><b>Definition</b> <a href="#l00354">LiquidCrystal_I2C.cpp:354</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_ae1a7b0162a055502ad9eac04cec9e270"><div class="ttname"><a href="classLiquidCrystal__I2C.html#ae1a7b0162a055502ad9eac04cec9e270">LiquidCrystal_I2C::setCursor</a></div><div class="ttdeci">void setCursor(uint8_t, uint8_t)</div><div class="ttdef"><b>Definition</b> <a href="#l00171">LiquidCrystal_I2C.cpp:171</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_aebc613f31cd399cb463f6d9fce8a4d8d"><div class="ttname"><a href="classLiquidCrystal__I2C.html#aebc613f31cd399cb463f6d9fce8a4d8d">LiquidCrystal_I2C::setDelay</a></div><div class="ttdeci">void setDelay(int, int)</div><div class="ttdef"><b>Definition</b> <a href="#l00356">LiquidCrystal_I2C.cpp:356</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_aeee2ada537f0cfbfda8613324b57c4a6"><div class="ttname"><a href="classLiquidCrystal__I2C.html#aeee2ada537f0cfbfda8613324b57c4a6">LiquidCrystal_I2C::begin</a></div><div class="ttdeci">void begin(uint8_t cols, uint8_t rows, uint8_t charsize=LCD_5x8DOTS)</div><div class="ttdef"><b>Definition</b> <a href="#l00095">LiquidCrystal_I2C.cpp:95</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_af89d6facccc156d7f151da71ecdd3b70"><div class="ttname"><a href="classLiquidCrystal__I2C.html#af89d6facccc156d7f151da71ecdd3b70">LiquidCrystal_I2C::noDisplay</a></div><div class="ttdeci">void noDisplay()</div><div class="ttdef"><b>Definition</b> <a href="#l00180">LiquidCrystal_I2C.cpp:180</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_af984fc2e29c38b87d4bc8b855e9ba27c"><div class="ttname"><a href="classLiquidCrystal__I2C.html#af984fc2e29c38b87d4bc8b855e9ba27c">LiquidCrystal_I2C::draw_vertical_graph</a></div><div class="ttdeci">void draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len, uint8_t pixel_col_end)</div><div class="ttdef"><b>Definition</b> <a href="#l00369">LiquidCrystal_I2C.cpp:369</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_afd0a4e0bbc95dd544ac6a731dcc64fda"><div class="ttname"><a href="classLiquidCrystal__I2C.html#afd0a4e0bbc95dd544ac6a731dcc64fda">LiquidCrystal_I2C::oled_init</a></div><div class="ttdeci">void oled_init()</div><div class="ttdef"><b>Definition</b> <a href="#l00076">LiquidCrystal_I2C.cpp:76</a></div></div>
+<div class="ttc" id="aclassLiquidCrystal__I2C_html_affbf0a3c740de86dbf684345fdddc607"><div class="ttname"><a href="classLiquidCrystal__I2C.html#affbf0a3c740de86dbf684345fdddc607">LiquidCrystal_I2C::scrollDisplayLeft</a></div><div class="ttdeci">void scrollDisplayLeft()</div><div class="ttdef"><b>Definition</b> <a href="#l00210">LiquidCrystal_I2C.cpp:210</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_417fe7ef0b5ebbe0b6604e0e4a5ae822.html">examples</a></li><li class="navelem"><a href="dir_6f9f3fa2791bad57de10ce3c2bbb995c.html">AllProtocolsOnLCD</a></li><li class="navelem"><a href="LiquidCrystal__I2C_8cpp.html">LiquidCrystal_I2C.cpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

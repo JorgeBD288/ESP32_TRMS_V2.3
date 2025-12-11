@@ -1,0 +1,27 @@
+var TFT__eSPI__ESP8266_8h =
+[
+    [ "CMD_BITS", "TFT__eSPI__ESP8266_8h.html#af296159965407b5bc60d1593cea1e4ce", null ],
+    [ "CS_H", "TFT__eSPI__ESP8266_8h.html#a41e4d0688746fbb1f301e6b349f66e94", null ],
+    [ "CS_L", "TFT__eSPI__ESP8266_8h.html#a94bcad9ccdc5c0c015b7bd7282220310", null ],
+    [ "DAT8TO32", "TFT__eSPI__ESP8266_8h.html#aa9a21b8777dac5ca0a35adefd34549e7", null ],
+    [ "DC_C", "TFT__eSPI__ESP8266_8h.html#af968aaa0a6293c3129f4d12a87dc3bd2", null ],
+    [ "DC_D", "TFT__eSPI__ESP8266_8h.html#a8ce7aa603d0ee60c8cce4835f36bf1d0", null ],
+    [ "DMA_BUSY_CHECK", "TFT__eSPI__ESP8266_8h.html#a6191cea82a2602a4eb54f4049c76baa7", null ],
+    [ "INIT_TFT_DATA_BUS", "TFT__eSPI__ESP8266_8h.html#a963a646b9f4becfb3e1b9b7fe3e8594e", null ],
+    [ "PROCESSOR_ID", "TFT__eSPI__ESP8266_8h.html#a74075f95668704cf2d25c7ce880fb12a", null ],
+    [ "SET_BUS_READ_MODE", "TFT__eSPI__ESP8266_8h.html#a56c9f10e7fe8d36818ad8166c2093628", null ],
+    [ "SET_BUS_WRITE_MODE", "TFT__eSPI__ESP8266_8h.html#aa8cf4bde0e7056da07eb131d577c5277", null ],
+    [ "SPI1U_READ", "TFT__eSPI__ESP8266_8h.html#ab9d72acdedc77ec0a3d8f46fa23e8a4c", null ],
+    [ "SPI1U_WRITE", "TFT__eSPI__ESP8266_8h.html#af3936219fa2dae7f8c3b5b5922c0cb72", null ],
+    [ "T_CS_H", "TFT__eSPI__ESP8266_8h.html#ae9d6105bbb31e739494e7709661d6051", null ],
+    [ "T_CS_L", "TFT__eSPI__ESP8266_8h.html#acac8ae27a1ecb059078fd6cab7f8ffdc", null ],
+    [ "TFT_MISO", "TFT__eSPI__ESP8266_8h.html#ac108dd4310833bbb4afd1bce1090d55f", null ],
+    [ "tft_Read_8", "TFT__eSPI__ESP8266_8h.html#a455eaaba9953a977ff9db92228aa2aa7", null ],
+    [ "tft_Write_16", "TFT__eSPI__ESP8266_8h.html#a340b19ab56c9e3296321e6e0de9b6ed9", null ],
+    [ "tft_Write_16N", "TFT__eSPI__ESP8266_8h.html#a4e89e69c5223372d24dd95ec71be7b77", null ],
+    [ "tft_Write_16S", "TFT__eSPI__ESP8266_8h.html#ae696469f15a43403757d83210759b962", null ],
+    [ "tft_Write_32", "TFT__eSPI__ESP8266_8h.html#ac7c8923c1906a4770381b4ae9bb2e344", null ],
+    [ "tft_Write_32C", "TFT__eSPI__ESP8266_8h.html#a62c478a3ffa5b0ffc3b94e74f8b26945", null ],
+    [ "tft_Write_32D", "TFT__eSPI__ESP8266_8h.html#a80b7d5c5fa06c5d306dd1df8f70fe64f", null ],
+    [ "tft_Write_8", "TFT__eSPI__ESP8266_8h.html#a9306e0d41cbd3a8f633114a71d6ba6d6", null ]
+];

@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/lvgl/src/misc/lv_timer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__timer_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lv_timer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lv__timer_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file lv_timer.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef LV_TIMER_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define LV_TIMER_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *      INCLUDES</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="lv__conf__internal_8h.html">../lv_conf_internal.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="lv__hal__tick_8h.html">../hal/lv_hal_tick.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/*********************</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *      DEFINES</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *********************/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef LV_ATTRIBUTE_TIMER_HANDLER</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define LV_ATTRIBUTE_TIMER_HANDLER</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="lv__timer_8h.html#a7d49faa2259c60af0baa13994c39c076">   28</a></span><span class="preprocessor">#define LV_NO_TIMER_READY 0xFFFFFFFF</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *      TYPEDEFS</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__timer__t.html">_lv_timer_t</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * Timers execute this type of functions.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="lv__timer_8h.html#a610169eec97bb2d1d1c20f5a4a0aab4a">   39</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lv__timer_8h.html#a610169eec97bb2d1d1c20f5a4a0aab4a">lv_timer_cb_t</a>)(<span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__timer__t.html">_lv_timer_t</a> *);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * Descriptor of a lv_timer</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html">   44</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__lv__timer__t.html">_lv_timer_t</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html#a8d6c4138fa4fbf6d246b336a390fc73c">   45</a></span>    uint32_t <a class="code hl_variable" href="struct__lv__timer__t.html#a8d6c4138fa4fbf6d246b336a390fc73c">period</a>; <span class="comment">/**&lt; How often the timer should run*/</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html#a47580fa59f8b2c9cbbec02e6599495a4">   46</a></span>    uint32_t <a class="code hl_variable" href="struct__lv__timer__t.html#a47580fa59f8b2c9cbbec02e6599495a4">last_run</a>; <span class="comment">/**&lt; Last time the timer ran*/</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html#ab0d4f9cd8cebafc853c5842d8d0c8119">   47</a></span>    <a class="code hl_typedef" href="lv__timer_8h.html#a610169eec97bb2d1d1c20f5a4a0aab4a">lv_timer_cb_t</a> <a class="code hl_variable" href="struct__lv__timer__t.html#ab0d4f9cd8cebafc853c5842d8d0c8119">timer_cb</a>; <span class="comment">/**&lt; Timer function*/</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">   48</a></span>    <span class="keywordtype">void</span> * <a class="code hl_variable" href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">user_data</a>; <span class="comment">/**&lt; Custom user data*/</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html#ae9cc5ef9424e7d807e959fd2f2997d94">   49</a></span>    int32_t <a class="code hl_variable" href="struct__lv__timer__t.html#ae9cc5ef9424e7d807e959fd2f2997d94">repeat_count</a>; <span class="comment">/**&lt; 1: One time;  -1 : infinity;  n&gt;0: residual times*/</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct__lv__timer__t.html#ae52768610be7456e15b41f95d27c220e">   50</a></span>    uint32_t <a class="code hl_variable" href="struct__lv__timer__t.html#ae52768610be7456e15b41f95d27c220e">paused</a> : 1;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">   51</a></span>} <a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a>;</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * GLOBAL PROTOTYPES</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"></span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> * Init the lv_timer module</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#afcfd134fc188cf77059b2aa7f118da5c">_lv_timer_core_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"></span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//! @cond Doxygen_Suppress</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> * Call it periodically to handle lv_timers.</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"> * @return time till it needs to be run next (in ms)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>uint32_t <span class="comment">/* LV_ATTRIBUTE_TIMER_HANDLER */</span> <a class="code hl_function" href="lv__timer_8c.html#adf718f6a468f54330ec793d443394c7a">lv_timer_handler</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">//! @endcond</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment"></span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"> * Call it in the super-loop of main() or threads. It will run lv_timer_handler()</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"> * with a given period in ms. You can use it with sleep or delay in OS environment.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"> * This function is used to simplify the porting.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> * @param __ms the period for running lv_timer_handler()</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">static</span> <span class="keyword">inline</span> uint32_t <a class="code hl_define" href="lv__conf_8h.html#a65a000fa97141d8340aab1813d0966d2">LV_ATTRIBUTE_TIMER_HANDLER</a> lv_timer_handler_run_in_period(uint32_t ms)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">static</span> uint32_t last_tick = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    uint32_t curr_tick = <a class="code hl_function" href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span>((curr_tick - last_tick) &gt;= (ms)) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        last_tick = curr_tick;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="lv__timer_8c.html#adf718f6a468f54330ec793d443394c7a">lv_timer_handler</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"></span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"> * Create an &quot;empty&quot; timer. It needs to initialized with at least</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment"> * `lv_timer_set_cb` and `lv_timer_set_period`</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"> * @return pointer to the created timer</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * <a class="code hl_function" href="lv__timer_8h.html#a59810b0483766ce41193ce562f2c7889">lv_timer_create_basic</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment"></span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment"> * Create a new lv_timer</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"> * @param timer_xcb a callback to call periodically.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"> *                 (the &#39;x&#39; in the argument name indicates that it&#39;s not a fully generic function because it not follows</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment"> *                  the `func_name(object, callback, ...)` convention)</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"> * @param period call period in ms unit</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> * @param user_data custom parameter</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"> * @return pointer to the new timer</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * <a class="code hl_function" href="lv__timer_8h.html#a9f92d3830e2336b96d0459199b87ff18">lv_timer_create</a>(<a class="code hl_typedef" href="lv__timer_8h.html#a610169eec97bb2d1d1c20f5a4a0aab4a">lv_timer_cb_t</a> timer_xcb, uint32_t period, <span class="keywordtype">void</span> * user_data);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"></span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment"> * Delete a lv_timer</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment"> * @param timer pointer to an lv_timer</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a4d916c26471670716c5b698698e08fab">lv_timer_del</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment"></span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"> * Pause/resume a timer.</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment"> * @param timer pointer to an lv_timer</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a90e10e2ab69ab89747b9b20face7f038">lv_timer_pause</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a25ed72d3306a02d08e65f9f265f6958c">lv_timer_resume</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment"></span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment"> * Set the callback the timer (the function to call periodically)</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment"> * @param timer pointer to a timer</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment"> * @param timer_cb the function to call periodically</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a26a85f864c0b682f69fde9f34aa132a7">lv_timer_set_cb</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer, <a class="code hl_typedef" href="lv__timer_8h.html#a610169eec97bb2d1d1c20f5a4a0aab4a">lv_timer_cb_t</a> timer_cb);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment"></span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"> * Set new period for a lv_timer</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"> * @param timer pointer to a lv_timer</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment"> * @param period the new period</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#adf9e813ac9c28319d45db10e78f06d9c">lv_timer_set_period</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer, uint32_t period);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"></span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment"> * Make a lv_timer ready. It will not wait its period.</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment"> * @param timer pointer to a lv_timer.</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a346ed206bc41f346e2f29f2991dc0703">lv_timer_ready</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment"></span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment"> * Set the number of times a timer will repeat.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment"> * @param timer pointer to a lv_timer.</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment"> * @param repeat_count -1 : infinity;  0 : stop ;  n&gt;0: residual times</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a30eaae235dd52aa13491dc2aab28905e">lv_timer_set_repeat_count</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer, int32_t repeat_count);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment"></span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment"> * Reset a lv_timer.</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment"> * It will be called the previously set period milliseconds later.</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment"> * @param timer pointer to a lv_timer.</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#ab1d0f47b0ce4cc897f99fe7426a3b252">lv_timer_reset</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment"></span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment"> * Enable or disable the whole lv_timer handling</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment"> * @param en true: lv_timer handling is running, false: lv_timer handling is suspended</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">void</span> <a class="code hl_function" href="lv__timer_8h.html#a20104d9b90d04c1c63e4974baaf930b3">lv_timer_enable</a>(<span class="keywordtype">bool</span> en);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment"></span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment"> * Get idle percentage</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment"> * @return the lv_timer idle in percentage</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>uint8_t <a class="code hl_function" href="lv__timer_8h.html#a88ae411d39601eed816c01f5d9a16bbb">lv_timer_get_idle</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment"></span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment"> * Iterate through the timers</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment"> * @param timer NULL to start iteration or the previous return value to get the next timer</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment"> * @return the next timer or NULL if there is no more timer</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * <a class="code hl_function" href="lv__timer_8h.html#a8cadfeccdc0ea47f6c0f0875e58d47f1">lv_timer_get_next</a>(<a class="code hl_typedef" href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a> * timer);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">/**********************</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment"> *      MACROS</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"> **********************/</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>} <span class="comment">/*extern &quot;C&quot;*/</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alv__conf_8h_html_a65a000fa97141d8340aab1813d0966d2"><div class="ttname"><a href="lv__conf_8h.html#a65a000fa97141d8340aab1813d0966d2">LV_ATTRIBUTE_TIMER_HANDLER</a></div><div class="ttdeci">#define LV_ATTRIBUTE_TIMER_HANDLER</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00327">lv_conf.h:327</a></div></div>
+<div class="ttc" id="alv__conf__internal_8h_html"><div class="ttname"><a href="lv__conf__internal_8h.html">lv_conf_internal.h</a></div></div>
+<div class="ttc" id="alv__hal__tick_8c_html_a051c47bcfb48282a75834d8dd0a8470c"><div class="ttname"><a href="lv__hal__tick_8c.html#a051c47bcfb48282a75834d8dd0a8470c">lv_tick_get</a></div><div class="ttdeci">uint32_t lv_tick_get(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__hal__tick_8c_source.html#l00060">lv_hal_tick.c:60</a></div></div>
+<div class="ttc" id="alv__hal__tick_8h_html"><div class="ttname"><a href="lv__hal__tick_8h.html">lv_hal_tick.h</a></div></div>
+<div class="ttc" id="alv__timer_8c_html_adf718f6a468f54330ec793d443394c7a"><div class="ttname"><a href="lv__timer_8c.html#adf718f6a468f54330ec793d443394c7a">lv_timer_handler</a></div><div class="ttdeci">uint32_t LV_ATTRIBUTE_TIMER_HANDLER lv_timer_handler(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00067">lv_timer.c:67</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a20104d9b90d04c1c63e4974baaf930b3"><div class="ttname"><a href="lv__timer_8h.html#a20104d9b90d04c1c63e4974baaf930b3">lv_timer_enable</a></div><div class="ttdeci">void lv_timer_enable(bool en)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00266">lv_timer.c:266</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a25ed72d3306a02d08e65f9f265f6958c"><div class="ttname"><a href="lv__timer_8h.html#a25ed72d3306a02d08e65f9f265f6958c">lv_timer_resume</a></div><div class="ttdeci">void lv_timer_resume(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00218">lv_timer.c:218</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a26a85f864c0b682f69fde9f34aa132a7"><div class="ttname"><a href="lv__timer_8h.html#a26a85f864c0b682f69fde9f34aa132a7">lv_timer_set_cb</a></div><div class="ttdeci">void lv_timer_set_cb(lv_timer_t *timer, lv_timer_cb_t timer_cb)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00192">lv_timer.c:192</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a30eaae235dd52aa13491dc2aab28905e"><div class="ttname"><a href="lv__timer_8h.html#a30eaae235dd52aa13491dc2aab28905e">lv_timer_set_repeat_count</a></div><div class="ttdeci">void lv_timer_set_repeat_count(lv_timer_t *timer, int32_t repeat_count)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00247">lv_timer.c:247</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a346ed206bc41f346e2f29f2991dc0703"><div class="ttname"><a href="lv__timer_8h.html#a346ed206bc41f346e2f29f2991dc0703">lv_timer_ready</a></div><div class="ttdeci">void lv_timer_ready(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00237">lv_timer.c:237</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a4d916c26471670716c5b698698e08fab"><div class="ttname"><a href="lv__timer_8h.html#a4d916c26471670716c5b698698e08fab">lv_timer_del</a></div><div class="ttdeci">void lv_timer_del(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00201">lv_timer.c:201</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a59810b0483766ce41193ce562f2c7889"><div class="ttname"><a href="lv__timer_8h.html#a59810b0483766ce41193ce562f2c7889">lv_timer_create_basic</a></div><div class="ttdeci">lv_timer_t * lv_timer_create_basic(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00153">lv_timer.c:153</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a610169eec97bb2d1d1c20f5a4a0aab4a"><div class="ttname"><a href="lv__timer_8h.html#a610169eec97bb2d1d1c20f5a4a0aab4a">lv_timer_cb_t</a></div><div class="ttdeci">void(* lv_timer_cb_t)(struct _lv_timer_t *)</div><div class="ttdef"><b>Definition</b> <a href="#l00039">lv_timer.h:39</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a88ae411d39601eed816c01f5d9a16bbb"><div class="ttname"><a href="lv__timer_8h.html#a88ae411d39601eed816c01f5d9a16bbb">lv_timer_get_idle</a></div><div class="ttdeci">uint8_t lv_timer_get_idle(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00275">lv_timer.c:275</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a8cadfeccdc0ea47f6c0f0875e58d47f1"><div class="ttname"><a href="lv__timer_8h.html#a8cadfeccdc0ea47f6c0f0875e58d47f1">lv_timer_get_next</a></div><div class="ttdeci">lv_timer_t * lv_timer_get_next(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00285">lv_timer.c:285</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a90e10e2ab69ab89747b9b20face7f038"><div class="ttname"><a href="lv__timer_8h.html#a90e10e2ab69ab89747b9b20face7f038">lv_timer_pause</a></div><div class="ttdeci">void lv_timer_pause(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00213">lv_timer.c:213</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_a9f92d3830e2336b96d0459199b87ff18"><div class="ttname"><a href="lv__timer_8h.html#a9f92d3830e2336b96d0459199b87ff18">lv_timer_create</a></div><div class="ttdeci">lv_timer_t * lv_timer_create(lv_timer_cb_t timer_xcb, uint32_t period, void *user_data)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00167">lv_timer.c:167</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_aab341e84d977d67aec9b766ccd6d3173"><div class="ttname"><a href="lv__timer_8h.html#aab341e84d977d67aec9b766ccd6d3173">lv_timer_t</a></div><div class="ttdeci">struct _lv_timer_t lv_timer_t</div></div>
+<div class="ttc" id="alv__timer_8h_html_ab1d0f47b0ce4cc897f99fe7426a3b252"><div class="ttname"><a href="lv__timer_8h.html#ab1d0f47b0ce4cc897f99fe7426a3b252">lv_timer_reset</a></div><div class="ttdeci">void lv_timer_reset(lv_timer_t *timer)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00257">lv_timer.c:257</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_adf9e813ac9c28319d45db10e78f06d9c"><div class="ttname"><a href="lv__timer_8h.html#adf9e813ac9c28319d45db10e78f06d9c">lv_timer_set_period</a></div><div class="ttdeci">void lv_timer_set_period(lv_timer_t *timer, uint32_t period)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00228">lv_timer.c:228</a></div></div>
+<div class="ttc" id="alv__timer_8h_html_afcfd134fc188cf77059b2aa7f118da5c"><div class="ttname"><a href="lv__timer_8h.html#afcfd134fc188cf77059b2aa7f118da5c">_lv_timer_core_init</a></div><div class="ttdeci">void _lv_timer_core_init(void)</div><div class="ttdef"><b>Definition</b> <a href="lv__timer_8c_source.html#l00055">lv_timer.c:55</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html"><div class="ttname"><a href="struct__lv__timer__t.html">_lv_timer_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00044">lv_timer.h:44</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_a0c23b96fd727574d57d84e6b0c3f9119"><div class="ttname"><a href="struct__lv__timer__t.html#a0c23b96fd727574d57d84e6b0c3f9119">_lv_timer_t::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition</b> <a href="#l00048">lv_timer.h:48</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_a47580fa59f8b2c9cbbec02e6599495a4"><div class="ttname"><a href="struct__lv__timer__t.html#a47580fa59f8b2c9cbbec02e6599495a4">_lv_timer_t::last_run</a></div><div class="ttdeci">uint32_t last_run</div><div class="ttdef"><b>Definition</b> <a href="#l00046">lv_timer.h:46</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_a8d6c4138fa4fbf6d246b336a390fc73c"><div class="ttname"><a href="struct__lv__timer__t.html#a8d6c4138fa4fbf6d246b336a390fc73c">_lv_timer_t::period</a></div><div class="ttdeci">uint32_t period</div><div class="ttdef"><b>Definition</b> <a href="#l00045">lv_timer.h:45</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_ab0d4f9cd8cebafc853c5842d8d0c8119"><div class="ttname"><a href="struct__lv__timer__t.html#ab0d4f9cd8cebafc853c5842d8d0c8119">_lv_timer_t::timer_cb</a></div><div class="ttdeci">lv_timer_cb_t timer_cb</div><div class="ttdef"><b>Definition</b> <a href="#l00047">lv_timer.h:47</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_ae52768610be7456e15b41f95d27c220e"><div class="ttname"><a href="struct__lv__timer__t.html#ae52768610be7456e15b41f95d27c220e">_lv_timer_t::paused</a></div><div class="ttdeci">uint32_t paused</div><div class="ttdef"><b>Definition</b> <a href="#l00050">lv_timer.h:50</a></div></div>
+<div class="ttc" id="astruct__lv__timer__t_html_ae9cc5ef9424e7d807e959fd2f2997d94"><div class="ttname"><a href="struct__lv__timer__t.html#ae9cc5ef9424e7d807e959fd2f2997d94">_lv_timer_t::repeat_count</a></div><div class="ttdeci">int32_t repeat_count</div><div class="ttdef"><b>Definition</b> <a href="#l00049">lv_timer.h:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4430ba73f412acb635b010650892f0b8.html">misc</a></li><li class="navelem"><a href="lv__timer_8h.html">lv_timer.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

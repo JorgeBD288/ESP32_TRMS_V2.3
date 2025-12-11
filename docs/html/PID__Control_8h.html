@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/Custom_Libraries/PID_Control.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('PID__Control_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo PID_Control.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="PID__Parameters_8h_source.html">PID_Parameters.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MotorControl_8h_source.html">MotorControl.h</a>&quot;</code><br />
+</div>
+<p><a href="PID__Control_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:PID4Params" id="r_PID4Params"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPID4Params.html">PID4Params</a></td></tr>
+<tr class="memitem:PID4State" id="r_PID4State"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPID4State.html">PID4State</a></td></tr>
+<tr class="memitem:PIDParams" id="r_PIDParams"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPIDParams.html">PIDParams</a></td></tr>
+<tr class="memitem:PIDState" id="r_PIDState"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPIDState.html">PIDState</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab742ffa103f35e4b9ae3340199f58915" id="r_ab742ffa103f35e4b9ae3340199f58915"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab742ffa103f35e4b9ae3340199f58915">PID4_IsEnabled</a> ()</td></tr>
+<tr class="memitem:a75cca6569aa1683f00e98d62aec850f9" id="r_a75cca6569aa1683f00e98d62aec850f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75cca6569aa1683f00e98d62aec850f9">PID4_LoadFromCurr</a> (const <a class="el" href="structPID__CURR.html">PID_CURR</a> &amp;curr)</td></tr>
+<tr class="memitem:ae1cb84dbdee5166cba6ed2329ff7fa66" id="r_ae1cb84dbdee5166cba6ed2329ff7fa66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1cb84dbdee5166cba6ed2329ff7fa66">PID4_Reset</a> (<a class="el" href="structPID4State.html">PID4State</a> &amp;state)</td></tr>
+<tr class="memitem:a8e50d2aba4e2895d32221c29fd5532a8" id="r_a8e50d2aba4e2895d32221c29fd5532a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e50d2aba4e2895d32221c29fd5532a8">PID4_SetEnabled</a> (bool enable)</td></tr>
+<tr class="memitem:afe0f5b177448ffb139d60ea5289e0060" id="r_afe0f5b177448ffb139d60ea5289e0060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe0f5b177448ffb139d60ea5289e0060">PID4_SetReferences</a> (float refVertDeg, float refHorDeg)</td></tr>
+<tr class="memitem:abeefb1959bd545203628ada8b0d1665a" id="r_abeefb1959bd545203628ada8b0d1665a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeefb1959bd545203628ada8b0d1665a">PID4_Step</a> (float dt)</td></tr>
+<tr class="memitem:af2de7a04dc6f7aea449dc15e5caa99ab" id="r_af2de7a04dc6f7aea449dc15e5caa99ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2de7a04dc6f7aea449dc15e5caa99ab">PID4_Update</a> (const <a class="el" href="structPID4Params.html">PID4Params</a> &amp;params, <a class="el" href="structPID4State.html">PID4State</a> &amp;state, float in1, float in2, float dt, float &amp;out1, float &amp;out2)</td></tr>
+<tr class="memitem:afb7f621a6d8f40d8a5630530cac8f890" id="r_afb7f621a6d8f40d8a5630530cac8f890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a> (<a class="el" href="structPIDState.html">PIDState</a> &amp;state)</td></tr>
+<tr class="memitem:a45bb04bcecfff5567830a6ba6c4d451d" id="r_a45bb04bcecfff5567830a6ba6c4d451d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45bb04bcecfff5567830a6ba6c4d451d">PID_Update</a> (const <a class="el" href="structPIDParams.html">PIDParams</a> &amp;params, <a class="el" href="structPIDState.html">PIDState</a> &amp;state, float input, float dt)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ab742ffa103f35e4b9ae3340199f58915" name="ab742ffa103f35e4b9ae3340199f58915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab742ffa103f35e4b9ae3340199f58915">&#9670;&#160;</a></span>PID4_IsEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PID4_IsEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00118">118</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> s_pid4_enabled;</div>
+<div class="line"><span class="lineno">  121</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a75cca6569aa1683f00e98d62aec850f9" name="a75cca6569aa1683f00e98d62aec850f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75cca6569aa1683f00e98d62aec850f9">&#9670;&#160;</a></span>PID4_LoadFromCurr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID4_LoadFromCurr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPID__CURR.html">PID_CURR</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>curr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00089">89</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>    s_pidCurrCopy = c;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    s_pid4_params.vv = { c.KpvvCurr, c.KivvCurr, c.KdvvCurr, c.IsatvvCurr };</div>
+<div class="line"><span class="lineno">   94</span>    s_pid4_params.hv = { c.KphvCurr, c.KihvCurr, c.KdhvCurr, c.IsathvCurr };</div>
+<div class="line"><span class="lineno">   95</span>    s_pid4_params.vh = { c.KpvhCurr, c.KivhCurr, c.KdvhCurr, c.IsatvhCurr };</div>
+<div class="line"><span class="lineno">   96</span>    s_pid4_params.hh = { c.KphhCurr, c.KihhCurr, c.KdhhCurr, c.IsathhCurr };</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    s_pid4_params.Uv_max = c.UvmaxCurr;</div>
+<div class="line"><span class="lineno">   99</span>    s_pid4_params.Uh_max = c.UhmaxCurr;</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_function" href="PID__Control_8cpp.html#ad434613789447e67065aeac9386ad5fb">PID4_Reset</a>(s_pid4_state);</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="aPID__Control_8cpp_html_ad434613789447e67065aeac9386ad5fb"><div class="ttname"><a href="PID__Control_8cpp.html#ad434613789447e67065aeac9386ad5fb">PID4_Reset</a></div><div class="ttdeci">void PID4_Reset(PID4State &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00135">PID_Control.cpp:135</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Parameters_8h_source.html#l00033">PID_CURR::IsathhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00032">PID_CURR::IsathvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00031">PID_CURR::IsatvhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00030">PID_CURR::IsatvvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00028">PID_CURR::KdhhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00027">PID_CURR::KdhvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00021">PID_CURR::KdvhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00020">PID_CURR::KdvvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00026">PID_CURR::KihhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00025">PID_CURR::KihvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00019">PID_CURR::KivhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00018">PID_CURR::KivvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00024">PID_CURR::KphhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00023">PID_CURR::KphvCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00017">PID_CURR::KpvhCurr</a>, <a class="el" href="PID__Parameters_8h_source.html#l00016">PID_CURR::KpvvCurr</a>, <a class="el" href="PID__Control_8cpp_source.html#l00135">PID4_Reset()</a>, <a class="el" href="PID__Parameters_8h_source.html#l00036">PID_CURR::UhmaxCurr</a> y <a class="el" href="PID__Parameters_8h_source.html#l00035">PID_CURR::UvmaxCurr</a>.</p>
+
+</div>
+</div>
+<a id="ae1cb84dbdee5166cba6ed2329ff7fa66" name="ae1cb84dbdee5166cba6ed2329ff7fa66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1cb84dbdee5166cba6ed2329ff7fa66">&#9670;&#160;</a></span>PID4_Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID4_Reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPID4State.html">PID4State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Resetea todos los integradores y memorias del bloque PID-4. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00135">135</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_function" href="PID__Control_8cpp.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a>(s.hh);</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_function" href="PID__Control_8cpp.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a>(s.hv);</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_function" href="PID__Control_8cpp.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a>(s.vh);</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_function" href="PID__Control_8cpp.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a>(s.vv);</div>
+<div class="line"><span class="lineno">  141</span>}</div>
+<div class="ttc" id="aPID__Control_8cpp_html_afb7f621a6d8f40d8a5630530cac8f890"><div class="ttname"><a href="PID__Control_8cpp.html#afb7f621a6d8f40d8a5630530cac8f890">PID_Reset</a></div><div class="ttdeci">void PID_Reset(PIDState &amp;state)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00033">PID_Control.cpp:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Control_8h_source.html#l00062">PID4State::hh</a>, <a class="el" href="PID__Control_8h_source.html#l00063">PID4State::hv</a>, <a class="el" href="PID__Control_8cpp_source.html#l00033">PID_Reset()</a>, <a class="el" href="PID__Control_8h_source.html#l00064">PID4State::vh</a> y <a class="el" href="PID__Control_8h_source.html#l00065">PID4State::vv</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="PID__Control_8cpp_source.html#l00089">PID4_LoadFromCurr()</a> y <a class="el" href="PID__Control_8cpp_source.html#l00110">PID4_SetEnabled()</a>.</p>
+
+</div>
+</div>
+<a id="a8e50d2aba4e2895d32221c29fd5532a8" name="a8e50d2aba4e2895d32221c29fd5532a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e50d2aba4e2895d32221c29fd5532a8">&#9670;&#160;</a></span>PID4_SetEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID4_SetEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enable</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00110">110</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
+<div class="line"><span class="lineno">  112</span>    s_pid4_enabled = enable;</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> (enable) {</div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_function" href="PID__Control_8cpp.html#ad434613789447e67065aeac9386ad5fb">PID4_Reset</a>(s_pid4_state);</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Control_8cpp_source.html#l00135">PID4_Reset()</a>.</p>
+
+</div>
+</div>
+<a id="afe0f5b177448ffb139d60ea5289e0060" name="afe0f5b177448ffb139d60ea5289e0060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0f5b177448ffb139d60ea5289e0060">&#9670;&#160;</a></span>PID4_SetReferences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID4_SetReferences </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>refVertDeg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>refHorDeg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00104">104</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    s_refVertDeg = refVertDeg;</div>
+<div class="line"><span class="lineno">  107</span>    s_refHorDeg  = refHorDeg;</div>
+<div class="line"><span class="lineno">  108</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abeefb1959bd545203628ada8b0d1665a" name="abeefb1959bd545203628ada8b0d1665a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeefb1959bd545203628ada8b0d1665a">&#9670;&#160;</a></span>PID4_Step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID4_Step </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00184">184</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>{</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">if</span> (!s_pid4_enabled) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">if</span> (dt &lt;= 0.0f) dt = 1e-3f;</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>    <span class="comment">// 1) Leer ángulos medidos del TRMS EN GRADOS</span></div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordtype">float</span> measVertDeg, measHorDeg;</div>
+<div class="line"><span class="lineno">  191</span>    TRMS_GetAnglesDeg(measVertDeg, measHorDeg);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="comment">// 2) Convertir referencias y medidas a RADIANES</span></div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordtype">float</span> refV_rad  = s_refVertDeg * <a class="code hl_define" href="PID__Control_8cpp.html#a212460e743fecb084d717bb2180c5a56">DEG_TO_RAD</a>;</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordtype">float</span> refH_rad  = s_refHorDeg  * <a class="code hl_define" href="PID__Control_8cpp.html#a212460e743fecb084d717bb2180c5a56">DEG_TO_RAD</a>;</div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordtype">float</span> measV_rad = measVertDeg  * <a class="code hl_define" href="PID__Control_8cpp.html#a212460e743fecb084d717bb2180c5a56">DEG_TO_RAD</a>;</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">float</span> measH_rad = measHorDeg   * <a class="code hl_define" href="PID__Control_8cpp.html#a212460e743fecb084d717bb2180c5a56">DEG_TO_RAD</a>;</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>    <span class="comment">// 3) Errores en radianes (como en el modelo original)</span></div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordtype">float</span> ev = refV_rad - measV_rad;</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordtype">float</span> eh = refH_rad - measH_rad;</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>    <span class="comment">// 4) Ejecutar PID-4</span></div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordtype">float</span> Uh, Uv;</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_function" href="PID__Control_8cpp.html#aa91f93644894e3837d3cbfd39473fbfb">PID4_Update</a>(s_pid4_params, s_pid4_state, eh, ev, dt, Uh, Uv);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="comment">// 5) Convertir Uh/Uv a registros de motor [-100..100]</span></div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_variable" href="main_8cpp.html#a3f5df5c3fa3f68b6b3547046d640c379">Registro_RDC</a> = U_to_Register(Uh, s_pid4_params.Uh_max);  <span class="comment">// rotor de cola (horizontal)</span></div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_variable" href="main_8cpp.html#ac373b4ec88e744a90b2dd55ce9fc4dd8">Registro_MP</a>  = U_to_Register(Uv, s_pid4_params.Uv_max);  <span class="comment">// motor principal (vertical)</span></div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// 6) Aplicar a los DACs / sliders</span></div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_function" href="MotorControl_8cpp.html#a2177ceee12cdecd37227b7990c5110c6">MotorControl_update</a>(<a class="code hl_variable" href="main_8cpp.html#ac373b4ec88e744a90b2dd55ce9fc4dd8">Registro_MP</a>, <a class="code hl_variable" href="main_8cpp.html#a3f5df5c3fa3f68b6b3547046d640c379">Registro_RDC</a>);</div>
+<div class="line"><span class="lineno">  213</span>}</div>
+<div class="ttc" id="aMotorControl_8cpp_html_a2177ceee12cdecd37227b7990c5110c6"><div class="ttname"><a href="MotorControl_8cpp.html#a2177ceee12cdecd37227b7990c5110c6">MotorControl_update</a></div><div class="ttdeci">void MotorControl_update(int &amp;Registro_MP, int &amp;Registro_RDC)</div><div class="ttdoc">Actualiza sliders, banderas y DACs a partir de los registros.</div><div class="ttdef"><b>Definition</b> <a href="MotorControl_8cpp_source.html#l00087">MotorControl.cpp:87</a></div></div>
+<div class="ttc" id="aPID__Control_8cpp_html_a212460e743fecb084d717bb2180c5a56"><div class="ttname"><a href="PID__Control_8cpp.html#a212460e743fecb084d717bb2180c5a56">DEG_TO_RAD</a></div><div class="ttdeci">#define DEG_TO_RAD</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00007">PID_Control.cpp:7</a></div></div>
+<div class="ttc" id="aPID__Control_8cpp_html_aa91f93644894e3837d3cbfd39473fbfb"><div class="ttname"><a href="PID__Control_8cpp.html#aa91f93644894e3837d3cbfd39473fbfb">PID4_Update</a></div><div class="ttdeci">void PID4_Update(const PID4Params &amp;p, PID4State &amp;s, float in1, float in2, float dt, float &amp;out1, float &amp;out2)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00143">PID_Control.cpp:143</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a3f5df5c3fa3f68b6b3547046d640c379"><div class="ttname"><a href="main_8cpp.html#a3f5df5c3fa3f68b6b3547046d640c379">Registro_RDC</a></div><div class="ttdeci">int Registro_RDC</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00024">ui_events.cpp:24</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac373b4ec88e744a90b2dd55ce9fc4dd8"><div class="ttname"><a href="main_8cpp.html#ac373b4ec88e744a90b2dd55ce9fc4dd8">Registro_MP</a></div><div class="ttdeci">int Registro_MP</div><div class="ttdef"><b>Definition</b> <a href="ui__events_8cpp_source.html#l00023">ui_events.cpp:23</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Control_8cpp_source.html#l00007">DEG_TO_RAD</a>, <a class="el" href="MotorControl_8cpp_source.html#l00087">MotorControl_update()</a>, <a class="el" href="PID__Control_8cpp_source.html#l00143">PID4_Update()</a>, <a class="el" href="ui__events_8cpp_source.html#l00023">Registro_MP</a> y <a class="el" href="ui__events_8cpp_source.html#l00024">Registro_RDC</a>.</p>
+
+</div>
+</div>
+<a id="af2de7a04dc6f7aea449dc15e5caa99ab" name="af2de7a04dc6f7aea449dc15e5caa99ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2de7a04dc6f7aea449dc15e5caa99ab">&#9670;&#160;</a></span>PID4_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID4_Update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPID4Params.html">PID4Params</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>params</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPID4State.html">PID4State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>in1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>in2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>out1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>out2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evalúa el bloque PID-4.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Parámetros de los 4 PID + Uh_max / Uv_max </td></tr>
+    <tr><td class="paramname">state</td><td>Estado interno de los 4 PID </td></tr>
+    <tr><td class="paramname">in1</td><td>in_1 (error horizontal, por ejemplo) </td></tr>
+    <tr><td class="paramname">in2</td><td>in_2 (error vertical, por ejemplo) </td></tr>
+    <tr><td class="paramname">dt</td><td>Tiempo de muestreo [s] </td></tr>
+    <tr><td class="paramname">out1</td><td>out_1 (Uh) → señal para motor horizontal </td></tr>
+    <tr><td class="paramname">out2</td><td>out_2 (Uv) → señal para motor vertical </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00143">143</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">// in1 = error horizontal (eh)</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="comment">// in2 = error vertical  (ev)</span></div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment">// PIDhh: in1 -&gt; out1</span></div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordtype">float</span> u_hh = <a class="code hl_function" href="PID__Control_8cpp.html#a898c215d400522841055d5adc6a154ed">PID_Update</a>(p.hh, s.hh, in1, dt);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="comment">// PIDhv: in1 -&gt; out2</span></div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordtype">float</span> u_hv = <a class="code hl_function" href="PID__Control_8cpp.html#a898c215d400522841055d5adc6a154ed">PID_Update</a>(p.hv, s.hv, in1, dt);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="comment">// PIDvh: in2 -&gt; out1</span></div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordtype">float</span> u_vh = <a class="code hl_function" href="PID__Control_8cpp.html#a898c215d400522841055d5adc6a154ed">PID_Update</a>(p.vh, s.vh, in2, dt);</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="comment">// PIDvv: in2 -&gt; out2</span></div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordtype">float</span> u_vv = <a class="code hl_function" href="PID__Control_8cpp.html#a898c215d400522841055d5adc6a154ed">PID_Update</a>(p.vv, s.vv, in2, dt);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    <span class="comment">// Sumas MIMO</span></div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordtype">float</span> Uh = u_hh + u_vh;   <span class="comment">// out_1</span></div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">float</span> Uv = u_hv + u_vv;   <span class="comment">// out_2</span></div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="comment">// Saturaciones Uhmax / Uvmax (simétricas ±)</span></div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">if</span> (p.Uh_max &gt; 0.0f) {</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (Uh &gt;  p.Uh_max) Uh =  p.Uh_max;</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span> (Uh &lt; -p.Uh_max) Uh = -p.Uh_max;</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">if</span> (p.Uv_max &gt; 0.0f) {</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">if</span> (Uv &gt;  p.Uv_max) Uv =  p.Uv_max;</div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">if</span> (Uv &lt; -p.Uv_max) Uv = -p.Uv_max;</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    out1 = Uh;</div>
+<div class="line"><span class="lineno">  181</span>    out2 = Uv;</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="aPID__Control_8cpp_html_a898c215d400522841055d5adc6a154ed"><div class="ttname"><a href="PID__Control_8cpp.html#a898c215d400522841055d5adc6a154ed">PID_Update</a></div><div class="ttdeci">float PID_Update(const PIDParams &amp;p, PIDState &amp;s, float u, float dt)</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8cpp_source.html#l00047">PID_Control.cpp:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Control_8h_source.html#l00052">PID4Params::hh</a>, <a class="el" href="PID__Control_8h_source.html#l00062">PID4State::hh</a>, <a class="el" href="PID__Control_8h_source.html#l00053">PID4Params::hv</a>, <a class="el" href="PID__Control_8h_source.html#l00063">PID4State::hv</a>, <a class="el" href="PID__Control_8cpp_source.html#l00047">PID_Update()</a>, <a class="el" href="PID__Control_8h_source.html#l00057">PID4Params::Uh_max</a>, <a class="el" href="PID__Control_8h_source.html#l00058">PID4Params::Uv_max</a>, <a class="el" href="PID__Control_8h_source.html#l00054">PID4Params::vh</a>, <a class="el" href="PID__Control_8h_source.html#l00064">PID4State::vh</a>, <a class="el" href="PID__Control_8h_source.html#l00055">PID4Params::vv</a> y <a class="el" href="PID__Control_8h_source.html#l00065">PID4State::vv</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="PID__Control_8cpp_source.html#l00184">PID4_Step()</a>.</p>
+
+</div>
+</div>
+<a id="afb7f621a6d8f40d8a5630530cac8f890" name="afb7f621a6d8f40d8a5630530cac8f890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7f621a6d8f40d8a5630530cac8f890">&#9670;&#160;</a></span>PID_Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PID_Reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPIDState.html">PIDState</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inicializa el estado del PID. Llama a esto una vez al arrancar o cuando quieras resetearlo.</p>
+<p>Pone a cero el integrador y la memoria de derivada. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00033">33</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>    state.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a> = 0.0f;</div>
+<div class="line"><span class="lineno">   36</span>    state.<a class="code hl_variable" href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">prevInput</a>  = 0.0f;</div>
+<div class="line"><span class="lineno">   37</span>    state.<a class="code hl_variable" href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">firstRun</a>   = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   38</span>}</div>
+<div class="ttc" id="astructPIDState_html_ad4d98ab6c83e42bcd08c15ff060d3fb7"><div class="ttname"><a href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">PIDState::firstRun</a></div><div class="ttdeci">bool firstRun</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00024">PID_Control.h:24</a></div></div>
+<div class="ttc" id="astructPIDState_html_adecb8e52af7f054de8c2d15ce406eb15"><div class="ttname"><a href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">PIDState::integrator</a></div><div class="ttdeci">float integrator</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00022">PID_Control.h:22</a></div></div>
+<div class="ttc" id="astructPIDState_html_ae1895b615aab2a6c59e87c2a7f271e1d"><div class="ttname"><a href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">PIDState::prevInput</a></div><div class="ttdeci">float prevInput</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00023">PID_Control.h:23</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Control_8h_source.html#l00024">PIDState::firstRun</a>, <a class="el" href="PID__Control_8h_source.html#l00022">PIDState::integrator</a> y <a class="el" href="PID__Control_8h_source.html#l00023">PIDState::prevInput</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="PID__Control_8cpp_source.html#l00135">PID4_Reset()</a>.</p>
+
+</div>
+</div>
+<a id="a45bb04bcecfff5567830a6ba6c4d451d" name="a45bb04bcecfff5567830a6ba6c4d451d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bb04bcecfff5567830a6ba6c4d451d">&#9670;&#160;</a></span>PID_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PID_Update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPIDParams.html">PIDParams</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPIDState.html">PIDState</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcula la salida del PID para una muestra.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Ganancias Kp, Ki, Kd, I_sat </td></tr>
+    <tr><td class="paramname">state</td><td>Estado interno del PID (integrador, memoria) </td></tr>
+    <tr><td class="paramname">input</td><td>Entrada u (normalmente el error: ref - medida) </td></tr>
+    <tr><td class="paramname">dt</td><td>Tiempo de muestreo [s]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>salida del PID (antes de Umax/Uhmax/Uvmax, eso va aparte)</dd></dl>
+<p>Implementa: out = Kp*u + I + Kd*du/dt</p>
+<p>donde: I[k] = saturación( I[k-1] + Ki * u[k] * dt, ±I_sat ) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="PID__Control_8cpp_source.html#l00047">47</a> del archivo <a class="el" href="PID__Control_8cpp_source.html">PID_Control.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">// Protección básica</span></div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (dt &lt;= 0.0f) dt = 1e-3f;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">// ---- Derivada du/dt ----</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">float</span> du_dt = 0.0f;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!s.<a class="code hl_variable" href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">firstRun</a>) {</div>
+<div class="line"><span class="lineno">   58</span>        du_dt = (u - s.<a class="code hl_variable" href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">prevInput</a>) / dt;</div>
+<div class="line"><span class="lineno">   59</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   60</span>        du_dt = 0.0f;</div>
+<div class="line"><span class="lineno">   61</span>        s.<a class="code hl_variable" href="structPIDState.html#ad4d98ab6c83e42bcd08c15ff060d3fb7">firstRun</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span>    s.<a class="code hl_variable" href="structPIDState.html#ae1895b615aab2a6c59e87c2a7f271e1d">prevInput</a> = u;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">// ---- Integrador con saturación ----</span></div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">// En Simulink: Ki -&gt; integrador -&gt; saturador Ihhsat</span></div>
+<div class="line"><span class="lineno">   67</span>    s.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a> += p.<a class="code hl_variable" href="structPIDParams.html#aeac7f803c23e75fda8f91bd766a283df">Ki</a> * u * dt;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// Saturación simétrica ±I_sat</span></div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (p.<a class="code hl_variable" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">I_sat</a> &gt; 0.0f) {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (s.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a> &gt;  p.<a class="code hl_variable" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">I_sat</a>) s.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a> =  p.<a class="code hl_variable" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">I_sat</a>;</div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">if</span> (s.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a> &lt; -p.<a class="code hl_variable" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">I_sat</a>) s.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a> = -p.<a class="code hl_variable" href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">I_sat</a>;</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">// ---- Salida total: Kp*u + I + Kd*du/dt ----</span></div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordtype">float</span> outP = p.<a class="code hl_variable" href="structPIDParams.html#a19cb8d9e5c5c90bab811f1dfa862fee8">Kp</a> * u;</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordtype">float</span> outI = s.<a class="code hl_variable" href="structPIDState.html#adecb8e52af7f054de8c2d15ce406eb15">integrator</a>;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">float</span> outD = p.<a class="code hl_variable" href="structPIDParams.html#ac31eb9b76b293076c9ce97cf57356cb4">Kd</a> * du_dt;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">float</span> out = outP + outI + outD;</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno">   83</span>}</div>
+<div class="ttc" id="astructPIDParams_html_a19cb8d9e5c5c90bab811f1dfa862fee8"><div class="ttname"><a href="structPIDParams.html#a19cb8d9e5c5c90bab811f1dfa862fee8">PIDParams::Kp</a></div><div class="ttdeci">float Kp</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00011">PID_Control.h:11</a></div></div>
+<div class="ttc" id="astructPIDParams_html_a60c7dac9e2f4a03281be3085756a2bfb"><div class="ttname"><a href="structPIDParams.html#a60c7dac9e2f4a03281be3085756a2bfb">PIDParams::I_sat</a></div><div class="ttdeci">float I_sat</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00014">PID_Control.h:14</a></div></div>
+<div class="ttc" id="astructPIDParams_html_ac31eb9b76b293076c9ce97cf57356cb4"><div class="ttname"><a href="structPIDParams.html#ac31eb9b76b293076c9ce97cf57356cb4">PIDParams::Kd</a></div><div class="ttdeci">float Kd</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00013">PID_Control.h:13</a></div></div>
+<div class="ttc" id="astructPIDParams_html_aeac7f803c23e75fda8f91bd766a283df"><div class="ttname"><a href="structPIDParams.html#aeac7f803c23e75fda8f91bd766a283df">PIDParams::Ki</a></div><div class="ttdeci">float Ki</div><div class="ttdef"><b>Definition</b> <a href="PID__Control_8h_source.html#l00012">PID_Control.h:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="PID__Control_8h_source.html#l00024">PIDState::firstRun</a>, <a class="el" href="PID__Control_8h_source.html#l00014">PIDParams::I_sat</a>, <a class="el" href="PID__Control_8h_source.html#l00022">PIDState::integrator</a>, <a class="el" href="PID__Control_8h_source.html#l00013">PIDParams::Kd</a>, <a class="el" href="PID__Control_8h_source.html#l00012">PIDParams::Ki</a>, <a class="el" href="PID__Control_8h_source.html#l00011">PIDParams::Kp</a> y <a class="el" href="PID__Control_8h_source.html#l00023">PIDState::prevInput</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="PID__Control_8cpp_source.html#l00143">PID4_Update()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_f78abdf07d2bbe4addba7a5fa976ff88.html">Custom_Libraries</a></li><li class="navelem"><a href="PID__Control_8h.html">PID_Control.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

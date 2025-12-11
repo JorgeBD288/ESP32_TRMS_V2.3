@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/draw/sw/lv_draw_sw_arc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__draw__sw__arc_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_draw_sw_arc.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__draw__sw_8h_source.html">lv_draw_sw.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__math_8h_source.html">../../misc/lv_math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__log_8h_source.html">../../misc/lv_log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__mem_8h_source.html">../../misc/lv_mem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__draw_8h_source.html">../lv_draw.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__draw__sw__arc_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:quarter_5Fdraw_5Fdsc_5Ft" id="r_quarter_5Fdraw_5Fdsc_5Ft"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structquarter__draw__dsc__t.html">quarter_draw_dsc_t</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a202180ea3bbf5e1b0591324933b6db8a" id="r_a202180ea3bbf5e1b0591324933b6db8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a202180ea3bbf5e1b0591324933b6db8a">SPLIT_ANGLE_GAP_LIMIT</a>&#160;&#160;&#160;60  /*With small gaps in the arc don't bother with splitting because there is nothing to skip.*/</td></tr>
+<tr class="memitem:ae179eee96df062349fde663f121c322c" id="r_ae179eee96df062349fde663f121c322c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae179eee96df062349fde663f121c322c">SPLIT_RADIUS_LIMIT</a>&#160;&#160;&#160;10  /*With radius greater than this the arc will drawn in quarters. A quarter is drawn only <a class="el" href="ST7735__Init_8h.html#a5a626930d8f0dd98814d45961ebf56a3">if</a> there is arc in it*/</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:aa695711d1081df9301f3d72a0d0c0f1c" id="r_aa695711d1081df9301f3d72a0d0c0f1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa695711d1081df9301f3d72a0d0c0f1c">lv_draw_sw_arc</a> (<a class="el" href="lv__draw_8h.html#a3c97ef426260d81bff72570b24f5b886">lv_draw_ctx_t</a> *draw_ctx, const <a class="el" href="structlv__draw__arc__dsc__t.html">lv_draw_arc_dsc_t</a> *dsc, const <a class="el" href="structlv__point__t.html">lv_point_t</a> *center, uint16_t radius, uint16_t start_angle, uint16_t end_angle)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a202180ea3bbf5e1b0591324933b6db8a" name="a202180ea3bbf5e1b0591324933b6db8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202180ea3bbf5e1b0591324933b6db8a">&#9670;&#160;</a></span>SPLIT_ANGLE_GAP_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPLIT_ANGLE_GAP_LIMIT&#160;&#160;&#160;60  /*With small gaps in the arc don't bother with splitting because there is nothing to skip.*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__sw__arc_8c_source.html#l00019">19</a> del archivo <a class="el" href="lv__draw__sw__arc_8c_source.html">lv_draw_sw_arc.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__sw__arc_8c_source.html#l00060">lv_draw_sw_arc()</a>.</p>
+
+</div>
+</div>
+<a id="ae179eee96df062349fde663f121c322c" name="ae179eee96df062349fde663f121c322c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae179eee96df062349fde663f121c322c">&#9670;&#160;</a></span>SPLIT_RADIUS_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPLIT_RADIUS_LIMIT&#160;&#160;&#160;10  /*With radius greater than this the arc will drawn in quarters. A quarter is drawn only <a class="el" href="ST7735__Init_8h.html#a5a626930d8f0dd98814d45961ebf56a3">if</a> there is arc in it*/</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__sw__arc_8c_source.html#l00018">18</a> del archivo <a class="el" href="lv__draw__sw__arc_8c_source.html">lv_draw_sw_arc.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__sw__arc_8c_source.html#l00060">lv_draw_sw_arc()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="aa695711d1081df9301f3d72a0d0c0f1c" name="aa695711d1081df9301f3d72a0d0c0f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa695711d1081df9301f3d72a0d0c0f1c">&#9670;&#160;</a></span>lv_draw_sw_arc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_draw_sw_arc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__draw_8h.html#a3c97ef426260d81bff72570b24f5b886">lv_draw_ctx_t</a> *</td>          <td class="paramname"><span class="paramname"><em>draw_ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structlv__draw__arc__dsc__t.html">lv_draw_arc_dsc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dsc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structlv__point__t.html">lv_point_t</a> *</td>          <td class="paramname"><span class="paramname"><em>center</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>radius</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>start_angle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>end_angle</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__draw__sw__arc_8c_source.html#l00060">60</a> del archivo <a class="el" href="lv__draw__sw__arc_8c_source.html">lv_draw_sw_arc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
+<div class="line"><span class="lineno">   63</span><span class="preprocessor">#if LV_DRAW_COMPLEX</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a6f670a72223d1c80bf4a7397f8b06d8a">opa</a> &lt;= <a class="code hl_define" href="lv__color_8h.html#ac614bb0f5acc68f3b921f3213d46ac0f">LV_OPA_MIN</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a> == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span>(start_angle == end_angle) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> width = dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span>(width &gt; radius) width = radius;</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_struct" href="structlv__draw__rect__dsc__t.html">lv_draw_rect_dsc_t</a> cir_dsc;</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="lv__draw__rect_8c.html#af62a0ca73215a2e95250cf33210609b2">lv_draw_rect_dsc_init</a>(&amp;cir_dsc);</div>
+<div class="line"><span class="lineno">   73</span>    cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#abcbe5de935bae90ab9ebed214640150a">blend_mode</a> = dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a06f58e21e8fe9fc45b18560b6959bf60">blend_mode</a>;</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a8a26f435534a3729071ecf19938aeb77">img_src</a>) {</div>
+<div class="line"><span class="lineno">   75</span>        cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#a8211fe41507fda70839dde2c5df2710d">bg_opa</a> = <a class="code hl_enumvalue" href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a>;</div>
+<div class="line"><span class="lineno">   76</span>        cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#aee275b32ad1fa734c08849c410662712">bg_img_src</a> = dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a8a26f435534a3729071ecf19938aeb77">img_src</a>;</div>
+<div class="line"><span class="lineno">   77</span>        cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#a5cb107822e7725ea8bdbc5d876af91b6">bg_img_opa</a> = dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a6f670a72223d1c80bf4a7397f8b06d8a">opa</a>;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   80</span>        cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#a8211fe41507fda70839dde2c5df2710d">bg_opa</a> = dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a6f670a72223d1c80bf4a7397f8b06d8a">opa</a>;</div>
+<div class="line"><span class="lineno">   81</span>        cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">bg_color</a> = dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a78111b748fd2e70f79a1311824e1c083">color</a>;</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> area_out;</div>
+<div class="line"><span class="lineno">   85</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> - radius;</div>
+<div class="line"><span class="lineno">   86</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> - radius;</div>
+<div class="line"><span class="lineno">   87</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a> + radius - 1;  <span class="comment">/*-1 because the center already belongs to the left/bottom part*/</span></div>
+<div class="line"><span class="lineno">   88</span>    area_out.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> = center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a> + radius - 1;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> area_in;</div>
+<div class="line"><span class="lineno">   91</span>    lv_area_copy(&amp;area_in, &amp;area_out);</div>
+<div class="line"><span class="lineno">   92</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> += dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><span class="lineno">   93</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> += dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><span class="lineno">   94</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> -= dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><span class="lineno">   95</span>    area_in.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> -= dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">width</a>;</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="comment">/*Create inner the mask*/</span></div>
+<div class="line"><span class="lineno">   98</span>    int16_t mask_in_id = <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>;</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_struct" href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a> mask_in_param;</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordtype">bool</span> mask_in_param_valid = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span>(lv_area_get_width(&amp;area_in) &gt; 0 &amp;&amp; lv_area_get_height(&amp;area_in) &gt; 0) {</div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;mask_in_param, &amp;area_in, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  103</span>        mask_in_param_valid = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  104</span>        mask_in_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_in_param, NULL);</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_struct" href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a> mask_out_param;</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;mask_out_param, &amp;area_out, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  109</span>    int16_t mask_out_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_out_param, NULL);</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">/*Draw a full ring*/</span></div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span>(start_angle + 360 == end_angle || start_angle == end_angle + 360) {</div>
+<div class="line"><span class="lineno">  113</span>        cir_dsc.<a class="code hl_variable" href="structlv__draw__rect__dsc__t.html#a36ac72db31f96a94cdf528160562ede7">radius</a> = <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>;</div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_function" href="lv__draw__rect_8c.html#a07829e85ae6a6f61dbb0cba48a3c51ff">lv_draw_rect</a>(draw_ctx, &amp;cir_dsc, &amp;area_out);</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_out_id);</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">if</span>(mask_in_id != <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>) <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_in_id);</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_out_param);</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span>(mask_in_param_valid) {</div>
+<div class="line"><span class="lineno">  121</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_in_param);</div>
+<div class="line"><span class="lineno">  122</span>        }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">while</span>(start_angle &gt;= 360) start_angle -= 360;</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">while</span>(end_angle &gt;= 360) end_angle -= 360;</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_struct" href="structlv__draw__mask__angle__param__t.html">lv_draw_mask_angle_param_t</a> mask_angle_param;</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#a907fedb356b36ce3b3b8439e1f8f7323">lv_draw_mask_angle_init</a>(&amp;mask_angle_param, center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>, center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>, start_angle, end_angle);</div>
+<div class="line"><span class="lineno">  132</span>    int16_t mask_angle_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_angle_param, NULL);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    int32_t angle_gap;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">if</span>(end_angle &gt; start_angle) {</div>
+<div class="line"><span class="lineno">  136</span>        angle_gap = 360 - (end_angle - start_angle);</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  139</span>        angle_gap = start_angle - end_angle;</div>
+<div class="line"><span class="lineno">  140</span>    }</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> * clip_area_ori = draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a>;</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span>(angle_gap &gt; <a class="code hl_define" href="#a202180ea3bbf5e1b0591324933b6db8a">SPLIT_ANGLE_GAP_LIMIT</a> &amp;&amp; radius &gt; <a class="code hl_define" href="#ae179eee96df062349fde663f121c322c">SPLIT_RADIUS_LIMIT</a>) {</div>
+<div class="line"><span class="lineno">  145</span>        <span class="comment">/*Handle each quarter individually and skip which is empty*/</span></div>
+<div class="line"><span class="lineno">  146</span>        <a class="code hl_struct" href="structquarter__draw__dsc__t.html">quarter_draw_dsc_t</a> q_dsc;</div>
+<div class="line"><span class="lineno">  147</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a63961ed72d8b0d6f4986c0b22b6bf27a">center</a> = center;</div>
+<div class="line"><span class="lineno">  148</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#ac01d9712116e671ced251b6ce8cd47b2">radius</a> = radius;</div>
+<div class="line"><span class="lineno">  149</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a1b8e5e6b9f2e8a538e9a1df8d24ef157">start_angle</a> = start_angle;</div>
+<div class="line"><span class="lineno">  150</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a4061c6f9bf2161b1aecb85e89a47f8bc">end_angle</a> = end_angle;</div>
+<div class="line"><span class="lineno">  151</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a0a77d23d9711e07bcf8edefaa6701391">start_quarter</a> = (start_angle / 90) &amp; 0x3;</div>
+<div class="line"><span class="lineno">  152</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a4950bc335724b7d30146c4edd72b09cc">end_quarter</a> = (end_angle / 90) &amp; 0x3;</div>
+<div class="line"><span class="lineno">  153</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a2d227341ac061cb536f3b8ae92387dc6">width</a> = width;</div>
+<div class="line"><span class="lineno">  154</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a10811f1dc28e80d9c88653ad6c4c1700">draw_dsc</a> = &amp;cir_dsc;</div>
+<div class="line"><span class="lineno">  155</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#a1ef65c041cb1b2d624c30cc3da0dd7a2">draw_area</a> = &amp;area_out;</div>
+<div class="line"><span class="lineno">  156</span>        q_dsc.<a class="code hl_variable" href="structquarter__draw__dsc__t.html#ac4252ed612e9f8ad893a42e30a55ff17">draw_ctx</a> = draw_ctx;</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>        draw_quarter_0(&amp;q_dsc);</div>
+<div class="line"><span class="lineno">  159</span>        draw_quarter_1(&amp;q_dsc);</div>
+<div class="line"><span class="lineno">  160</span>        draw_quarter_2(&amp;q_dsc);</div>
+<div class="line"><span class="lineno">  161</span>        draw_quarter_3(&amp;q_dsc);</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_function" href="lv__draw__rect_8c.html#a07829e85ae6a6f61dbb0cba48a3c51ff">lv_draw_rect</a>(draw_ctx, &amp;cir_dsc, &amp;area_out);</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_angle_param);</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_out_param);</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">if</span>(mask_in_param_valid) {</div>
+<div class="line"><span class="lineno">  170</span>        <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_in_param);</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_angle_id);</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_out_id);</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">if</span>(mask_in_id != <a class="code hl_define" href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a>) <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_in_id);</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">if</span>(dsc-&gt;<a class="code hl_variable" href="structlv__draw__arc__dsc__t.html#aa3f201600200f0639cf2753462532bcf">rounded</a>) {</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_struct" href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a> mask_end_param;</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> round_area;</div>
+<div class="line"><span class="lineno">  182</span>        get_rounded_area(start_angle, radius, width, &amp;round_area);</div>
+<div class="line"><span class="lineno">  183</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  184</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  185</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  186</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  187</span>        <a class="code hl_struct" href="structlv__area__t.html">lv_area_t</a> clip_area2;</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__area_8c.html#a4d3f162819f5c73af3f8db373bd760a1">_lv_area_intersect</a>(&amp;clip_area2, clip_area_ori, &amp;round_area)) {</div>
+<div class="line"><span class="lineno">  189</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;mask_end_param, &amp;round_area, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  190</span>            int16_t mask_end_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_end_param, NULL);</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>            draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a> = &amp;clip_area2;</div>
+<div class="line"><span class="lineno">  193</span>            <a class="code hl_function" href="lv__draw__rect_8c.html#a07829e85ae6a6f61dbb0cba48a3c51ff">lv_draw_rect</a>(draw_ctx, &amp;cir_dsc, &amp;area_out);</div>
+<div class="line"><span class="lineno">  194</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_end_id);</div>
+<div class="line"><span class="lineno">  195</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_end_param);</div>
+<div class="line"><span class="lineno">  196</span>        }</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>        get_rounded_area(end_angle, radius, width, &amp;round_area);</div>
+<div class="line"><span class="lineno">  199</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">x1</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  200</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">x2</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">x</a>;</div>
+<div class="line"><span class="lineno">  201</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">y1</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  202</span>        round_area.<a class="code hl_variable" href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">y2</a> += center-&gt;<a class="code hl_variable" href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">y</a>;</div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__area_8c.html#a4d3f162819f5c73af3f8db373bd760a1">_lv_area_intersect</a>(&amp;clip_area2, clip_area_ori, &amp;round_area)) {</div>
+<div class="line"><span class="lineno">  204</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a>(&amp;mask_end_param, &amp;round_area, <a class="code hl_define" href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  205</span>            int16_t mask_end_id = <a class="code hl_function" href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a>(&amp;mask_end_param, NULL);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>            draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a> = &amp;clip_area2;</div>
+<div class="line"><span class="lineno">  208</span>            <a class="code hl_function" href="lv__draw__rect_8c.html#a07829e85ae6a6f61dbb0cba48a3c51ff">lv_draw_rect</a>(draw_ctx, &amp;cir_dsc, &amp;area_out);</div>
+<div class="line"><span class="lineno">  209</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a>(mask_end_id);</div>
+<div class="line"><span class="lineno">  210</span>            <a class="code hl_function" href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a>(&amp;mask_end_param);</div>
+<div class="line"><span class="lineno">  211</span>        }</div>
+<div class="line"><span class="lineno">  212</span>        draw_ctx-&gt;<a class="code hl_variable" href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">clip_area</a> = clip_area_ori;</div>
+<div class="line"><span class="lineno">  213</span>    }</div>
+<div class="line"><span class="lineno">  214</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_define" href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a>(<span class="stringliteral">&quot;Can&#39;t draw arc with LV_DRAW_COMPLEX == 0&quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(center);</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(radius);</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(start_angle);</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(end_angle);</div>
+<div class="line"><span class="lineno">  220</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(draw_ctx);</div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_define" href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a>(dsc);</div>
+<div class="line"><span class="lineno">  222</span><span class="preprocessor">#endif </span><span class="comment">/*LV_DRAW_COMPLEX*/</span><span class="preprocessor"></span></div>
+<div class="line"><span class="lineno">  223</span>}</div>
+<div class="ttc" id="alv__area_8c_html_a4d3f162819f5c73af3f8db373bd760a1"><div class="ttname"><a href="lv__area_8c.html#a4d3f162819f5c73af3f8db373bd760a1">_lv_area_intersect</a></div><div class="ttdeci">bool _lv_area_intersect(lv_area_t *res_p, const lv_area_t *a1_p, const lv_area_t *a2_p)</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8c_source.html#l00129">lv_area.c:129</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0"><div class="ttname"><a href="lv__color_8h.html#ab3b217ce698afa0cf7a479990809e117ac5670b24820d02ac0fe11ff8a1ad00c0">LV_OPA_TRANSP</a></div><div class="ttdeci">@ LV_OPA_TRANSP</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00042">lv_color.h:42</a></div></div>
+<div class="ttc" id="alv__color_8h_html_ac614bb0f5acc68f3b921f3213d46ac0f"><div class="ttname"><a href="lv__color_8h.html#ac614bb0f5acc68f3b921f3213d46ac0f">LV_OPA_MIN</a></div><div class="ttdeci">#define LV_OPA_MIN</div><div class="ttdef"><b>Definition</b> <a href="lv__color_8h_source.html#l00057">lv_color.h:57</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a0c6e2dfc4102853ccd17a96d7dd2c9a9"><div class="ttname"><a href="lv__draw__mask_8c.html#a0c6e2dfc4102853ccd17a96d7dd2c9a9">lv_draw_mask_add</a></div><div class="ttdeci">int16_t lv_draw_mask_add(void *param, void *custom_id)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00081">lv_draw_mask.c:81</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a42befac4b0b19cd552618cf02e05d3af"><div class="ttname"><a href="lv__draw__mask_8c.html#a42befac4b0b19cd552618cf02e05d3af">lv_draw_mask_remove_id</a></div><div class="ttdeci">void * lv_draw_mask_remove_id(int16_t id)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00172">lv_draw_mask.c:172</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a88f1cbdf8f0e107075536d0a07f511bf"><div class="ttname"><a href="lv__draw__mask_8c.html#a88f1cbdf8f0e107075536d0a07f511bf">lv_draw_mask_radius_init</a></div><div class="ttdeci">void lv_draw_mask_radius_init(lv_draw_mask_radius_param_t *param, const lv_area_t *rect, lv_coord_t radius, bool inv)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00475">lv_draw_mask.c:475</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_a907fedb356b36ce3b3b8439e1f8f7323"><div class="ttname"><a href="lv__draw__mask_8c.html#a907fedb356b36ce3b3b8439e1f8f7323">lv_draw_mask_angle_init</a></div><div class="ttdeci">void lv_draw_mask_angle_init(lv_draw_mask_angle_param_t *param, lv_coord_t vertex_x, lv_coord_t vertex_y, lv_coord_t start_angle, lv_coord_t end_angle)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00414">lv_draw_mask.c:414</a></div></div>
+<div class="ttc" id="alv__draw__mask_8c_html_af0fd11f700504180695cc4d7fa5f3cb2"><div class="ttname"><a href="lv__draw__mask_8c.html#af0fd11f700504180695cc4d7fa5f3cb2">lv_draw_mask_free_param</a></div><div class="ttdeci">void lv_draw_mask_free_param(void *p)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8c_source.html#l00211">lv_draw_mask.c:211</a></div></div>
+<div class="ttc" id="alv__draw__mask_8h_html_aef3e0411a29ba9ac2900540696b98cb2"><div class="ttname"><a href="lv__draw__mask_8h.html#aef3e0411a29ba9ac2900540696b98cb2">LV_MASK_ID_INV</a></div><div class="ttdeci">#define LV_MASK_ID_INV</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00025">lv_draw_mask.h:25</a></div></div>
+<div class="ttc" id="alv__draw__rect_8c_html_a07829e85ae6a6f61dbb0cba48a3c51ff"><div class="ttname"><a href="lv__draw__rect_8c.html#a07829e85ae6a6f61dbb0cba48a3c51ff">lv_draw_rect</a></div><div class="ttdeci">void lv_draw_rect(lv_draw_ctx_t *draw_ctx, const lv_draw_rect_dsc_t *dsc, const lv_area_t *coords)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8c_source.html#l00062">lv_draw_rect.c:62</a></div></div>
+<div class="ttc" id="alv__draw__rect_8c_html_af62a0ca73215a2e95250cf33210609b2"><div class="ttname"><a href="lv__draw__rect_8c.html#af62a0ca73215a2e95250cf33210609b2">lv_draw_rect_dsc_init</a></div><div class="ttdeci">void LV_ATTRIBUTE_FAST_MEM lv_draw_rect_dsc_init(lv_draw_rect_dsc_t *dsc)</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8c_source.html#l00037">lv_draw_rect.c:37</a></div></div>
+<div class="ttc" id="alv__draw__rect_8h_html_a426785bea126345f648486e35e940ad9"><div class="ttname"><a href="lv__draw__rect_8h.html#a426785bea126345f648486e35e940ad9">LV_RADIUS_CIRCLE</a></div><div class="ttdeci">#define LV_RADIUS_CIRCLE</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00025">lv_draw_rect.h:25</a></div></div>
+<div class="ttc" id="alv__draw__sw__arc_8c_html_a202180ea3bbf5e1b0591324933b6db8a"><div class="ttname"><a href="#a202180ea3bbf5e1b0591324933b6db8a">SPLIT_ANGLE_GAP_LIMIT</a></div><div class="ttdeci">#define SPLIT_ANGLE_GAP_LIMIT</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00019">lv_draw_sw_arc.c:19</a></div></div>
+<div class="ttc" id="alv__draw__sw__arc_8c_html_ae179eee96df062349fde663f121c322c"><div class="ttname"><a href="#ae179eee96df062349fde663f121c322c">SPLIT_RADIUS_LIMIT</a></div><div class="ttdeci">#define SPLIT_RADIUS_LIMIT</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00018">lv_draw_sw_arc.c:18</a></div></div>
+<div class="ttc" id="alv__log_8h_html_a7838f102c438c68e7936435f2d981808"><div class="ttname"><a href="lv__log_8h.html#a7838f102c438c68e7936435f2d981808">LV_LOG_WARN</a></div><div class="ttdeci">#define LV_LOG_WARN(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00107">lv_log.h:107</a></div></div>
+<div class="ttc" id="alv__types_8h_html_ad07f3715eae2cfee3d5e0000edb150d7"><div class="ttname"><a href="lv__types_8h.html#ad07f3715eae2cfee3d5e0000edb150d7">LV_UNUSED</a></div><div class="ttdeci">#define LV_UNUSED(x)</div><div class="ttdef"><b>Definition</b> <a href="lv__types_8h_source.html#l00072">lv_types.h:72</a></div></div>
+<div class="ttc" id="astruct__lv__draw__ctx__t_html_ae15cb5a04c4b2d9a37e3f4d50c0fa773"><div class="ttname"><a href="struct__lv__draw__ctx__t.html#ae15cb5a04c4b2d9a37e3f4d50c0fa773">_lv_draw_ctx_t::clip_area</a></div><div class="ttdeci">const lv_area_t * clip_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw_8h_source.html#l00073">lv_draw.h:73</a></div></div>
+<div class="ttc" id="astructlv__area__t_html"><div class="ttname"><a href="structlv__area__t.html">lv_area_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00043">lv_area.h:43</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a56d2e4d92428979499ff6a06e3d23cba"><div class="ttname"><a href="structlv__area__t.html#a56d2e4d92428979499ff6a06e3d23cba">lv_area_t::x1</a></div><div class="ttdeci">lv_coord_t x1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00044">lv_area.h:44</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_a8e6b43ed9ab280f66ae4e00af312ca27"><div class="ttname"><a href="structlv__area__t.html#a8e6b43ed9ab280f66ae4e00af312ca27">lv_area_t::y1</a></div><div class="ttdeci">lv_coord_t y1</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00045">lv_area.h:45</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_ac3da01ffe2d07a8e446684160dd1f7fc"><div class="ttname"><a href="structlv__area__t.html#ac3da01ffe2d07a8e446684160dd1f7fc">lv_area_t::y2</a></div><div class="ttdeci">lv_coord_t y2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00047">lv_area.h:47</a></div></div>
+<div class="ttc" id="astructlv__area__t_html_aec0405ee6e0fa96f922fee6851240081"><div class="ttname"><a href="structlv__area__t.html#aec0405ee6e0fa96f922fee6851240081">lv_area_t::x2</a></div><div class="ttdeci">lv_coord_t x2</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00046">lv_area.h:46</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a06f58e21e8fe9fc45b18560b6959bf60"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a06f58e21e8fe9fc45b18560b6959bf60">lv_draw_arc_dsc_t::blend_mode</a></div><div class="ttdeci">lv_blend_mode_t blend_mode</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00035">lv_draw_arc.h:35</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a4b6bc7184b2e4aca2834c3ff8552a916"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916">lv_draw_arc_dsc_t::width</a></div><div class="ttdeci">lv_coord_t width</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00030">lv_draw_arc.h:30</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a6f670a72223d1c80bf4a7397f8b06d8a"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a6f670a72223d1c80bf4a7397f8b06d8a">lv_draw_arc_dsc_t::opa</a></div><div class="ttdeci">lv_opa_t opa</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00034">lv_draw_arc.h:34</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a78111b748fd2e70f79a1311824e1c083"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a78111b748fd2e70f79a1311824e1c083">lv_draw_arc_dsc_t::color</a></div><div class="ttdeci">lv_color_t color</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00029">lv_draw_arc.h:29</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_a8a26f435534a3729071ecf19938aeb77"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#a8a26f435534a3729071ecf19938aeb77">lv_draw_arc_dsc_t::img_src</a></div><div class="ttdeci">const void * img_src</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00033">lv_draw_arc.h:33</a></div></div>
+<div class="ttc" id="astructlv__draw__arc__dsc__t_html_aa3f201600200f0639cf2753462532bcf"><div class="ttname"><a href="structlv__draw__arc__dsc__t.html#aa3f201600200f0639cf2753462532bcf">lv_draw_arc_dsc_t::rounded</a></div><div class="ttdeci">uint8_t rounded</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__arc_8h_source.html#l00036">lv_draw_arc.h:36</a></div></div>
+<div class="ttc" id="astructlv__draw__mask__angle__param__t_html"><div class="ttname"><a href="structlv__draw__mask__angle__param__t.html">lv_draw_mask_angle_param_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00141">lv_draw_mask.h:141</a></div></div>
+<div class="ttc" id="astructlv__draw__mask__radius__param__t_html"><div class="ttname"><a href="structlv__draw__mask__radius__param__t.html">lv_draw_mask_radius_param_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__mask_8h_source.html#l00168">lv_draw_mask.h:168</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html">lv_draw_rect_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00032">lv_draw_rect.h:32</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_a36ac72db31f96a94cdf528160562ede7"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#a36ac72db31f96a94cdf528160562ede7">lv_draw_rect_dsc_t::radius</a></div><div class="ttdeci">lv_coord_t radius</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00033">lv_draw_rect.h:33</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_a5cb107822e7725ea8bdbc5d876af91b6"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#a5cb107822e7725ea8bdbc5d876af91b6">lv_draw_rect_dsc_t::bg_img_opa</a></div><div class="ttdeci">lv_opa_t bg_img_opa</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00045">lv_draw_rect.h:45</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_a8211fe41507fda70839dde2c5df2710d"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#a8211fe41507fda70839dde2c5df2710d">lv_draw_rect_dsc_t::bg_opa</a></div><div class="ttdeci">lv_opa_t bg_opa</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00037">lv_draw_rect.h:37</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_ab729b49b24e3e57974cdebfe86ee1778"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#ab729b49b24e3e57974cdebfe86ee1778">lv_draw_rect_dsc_t::bg_color</a></div><div class="ttdeci">lv_color_t bg_color</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00038">lv_draw_rect.h:38</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_abcbe5de935bae90ab9ebed214640150a"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#abcbe5de935bae90ab9ebed214640150a">lv_draw_rect_dsc_t::blend_mode</a></div><div class="ttdeci">lv_blend_mode_t blend_mode</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00034">lv_draw_rect.h:34</a></div></div>
+<div class="ttc" id="astructlv__draw__rect__dsc__t_html_aee275b32ad1fa734c08849c410662712"><div class="ttname"><a href="structlv__draw__rect__dsc__t.html#aee275b32ad1fa734c08849c410662712">lv_draw_rect_dsc_t::bg_img_src</a></div><div class="ttdeci">const void * bg_img_src</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__rect_8h_source.html#l00042">lv_draw_rect.h:42</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_a4f11b93689ca9ee0e57734726cf187c0"><div class="ttname"><a href="structlv__point__t.html#a4f11b93689ca9ee0e57734726cf187c0">lv_point_t::y</a></div><div class="ttdeci">lv_coord_t y</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00039">lv_area.h:39</a></div></div>
+<div class="ttc" id="astructlv__point__t_html_adfa12860a9e02d054107cfcd4fde3d9e"><div class="ttname"><a href="structlv__point__t.html#adfa12860a9e02d054107cfcd4fde3d9e">lv_point_t::x</a></div><div class="ttdeci">lv_coord_t x</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00038">lv_area.h:38</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html"><div class="ttname"><a href="structquarter__draw__dsc__t.html">quarter_draw_dsc_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00024">lv_draw_sw_arc.c:24</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a0a77d23d9711e07bcf8edefaa6701391"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a0a77d23d9711e07bcf8edefaa6701391">quarter_draw_dsc_t::start_quarter</a></div><div class="ttdeci">uint16_t start_quarter</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00029">lv_draw_sw_arc.c:29</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a10811f1dc28e80d9c88653ad6c4c1700"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a10811f1dc28e80d9c88653ad6c4c1700">quarter_draw_dsc_t::draw_dsc</a></div><div class="ttdeci">lv_draw_rect_dsc_t * draw_dsc</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00032">lv_draw_sw_arc.c:32</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a1b8e5e6b9f2e8a538e9a1df8d24ef157"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a1b8e5e6b9f2e8a538e9a1df8d24ef157">quarter_draw_dsc_t::start_angle</a></div><div class="ttdeci">uint16_t start_angle</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00027">lv_draw_sw_arc.c:27</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a1ef65c041cb1b2d624c30cc3da0dd7a2"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a1ef65c041cb1b2d624c30cc3da0dd7a2">quarter_draw_dsc_t::draw_area</a></div><div class="ttdeci">const lv_area_t * draw_area</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00033">lv_draw_sw_arc.c:33</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a2d227341ac061cb536f3b8ae92387dc6"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a2d227341ac061cb536f3b8ae92387dc6">quarter_draw_dsc_t::width</a></div><div class="ttdeci">lv_coord_t width</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00031">lv_draw_sw_arc.c:31</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a4061c6f9bf2161b1aecb85e89a47f8bc"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a4061c6f9bf2161b1aecb85e89a47f8bc">quarter_draw_dsc_t::end_angle</a></div><div class="ttdeci">uint16_t end_angle</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00028">lv_draw_sw_arc.c:28</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a4950bc335724b7d30146c4edd72b09cc"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a4950bc335724b7d30146c4edd72b09cc">quarter_draw_dsc_t::end_quarter</a></div><div class="ttdeci">uint16_t end_quarter</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00030">lv_draw_sw_arc.c:30</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_a63961ed72d8b0d6f4986c0b22b6bf27a"><div class="ttname"><a href="structquarter__draw__dsc__t.html#a63961ed72d8b0d6f4986c0b22b6bf27a">quarter_draw_dsc_t::center</a></div><div class="ttdeci">const lv_point_t * center</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00025">lv_draw_sw_arc.c:25</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_ac01d9712116e671ced251b6ce8cd47b2"><div class="ttname"><a href="structquarter__draw__dsc__t.html#ac01d9712116e671ced251b6ce8cd47b2">quarter_draw_dsc_t::radius</a></div><div class="ttdeci">lv_coord_t radius</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00026">lv_draw_sw_arc.c:26</a></div></div>
+<div class="ttc" id="astructquarter__draw__dsc__t_html_ac4252ed612e9f8ad893a42e30a55ff17"><div class="ttname"><a href="structquarter__draw__dsc__t.html#ac4252ed612e9f8ad893a42e30a55ff17">quarter_draw_dsc_t::draw_ctx</a></div><div class="ttdeci">lv_draw_ctx_t * draw_ctx</div><div class="ttdef"><b>Definition</b> <a href="lv__draw__sw__arc_8c_source.html#l00034">lv_draw_sw_arc.c:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__area_8c_source.html#l00129">_lv_area_intersect()</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00038">lv_draw_rect_dsc_t::bg_color</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00045">lv_draw_rect_dsc_t::bg_img_opa</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00042">lv_draw_rect_dsc_t::bg_img_src</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00037">lv_draw_rect_dsc_t::bg_opa</a>, <a class="el" href="lv__draw__arc_8h_source.html#l00035">lv_draw_arc_dsc_t::blend_mode</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00034">lv_draw_rect_dsc_t::blend_mode</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00025">quarter_draw_dsc_t::center</a>, <a class="el" href="lv__draw_8h_source.html#l00073">_lv_draw_ctx_t::clip_area</a>, <a class="el" href="lv__draw__arc_8h_source.html#l00029">lv_draw_arc_dsc_t::color</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00033">quarter_draw_dsc_t::draw_area</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00034">quarter_draw_dsc_t::draw_ctx</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00032">quarter_draw_dsc_t::draw_dsc</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00028">quarter_draw_dsc_t::end_angle</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00030">quarter_draw_dsc_t::end_quarter</a>, <a class="el" href="lv__draw__arc_8h_source.html#l00033">lv_draw_arc_dsc_t::img_src</a>, <a class="el" href="lv__draw__mask_8c_source.html#l00081">lv_draw_mask_add()</a>, <a class="el" href="lv__draw__mask_8c_source.html#l00414">lv_draw_mask_angle_init()</a>, <a class="el" href="lv__draw__mask_8c_source.html#l00211">lv_draw_mask_free_param()</a>, <a class="el" href="lv__draw__mask_8c_source.html#l00475">lv_draw_mask_radius_init()</a>, <a class="el" href="lv__draw__mask_8c_source.html#l00172">lv_draw_mask_remove_id()</a>, <a class="el" href="lv__draw__rect_8c_source.html#l00062">lv_draw_rect()</a>, <a class="el" href="lv__draw__rect_8c_source.html#l00037">lv_draw_rect_dsc_init()</a>, <a class="el" href="lv__log_8h_source.html#l00107">LV_LOG_WARN</a>, <a class="el" href="lv__draw__mask_8h_source.html#l00025">LV_MASK_ID_INV</a>, <a class="el" href="lv__color_8h_source.html#l00057">LV_OPA_MIN</a>, <a class="el" href="lv__color_8h_source.html#l00042">LV_OPA_TRANSP</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00025">LV_RADIUS_CIRCLE</a>, <a class="el" href="lv__types_8h_source.html#l00072">LV_UNUSED</a>, <a class="el" href="lv__draw__arc_8h_source.html#l00034">lv_draw_arc_dsc_t::opa</a>, <a class="el" href="lv__draw__rect_8h_source.html#l00033">lv_draw_rect_dsc_t::radius</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00026">quarter_draw_dsc_t::radius</a>, <a class="el" href="lv__draw__arc_8h_source.html#l00036">lv_draw_arc_dsc_t::rounded</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00019">SPLIT_ANGLE_GAP_LIMIT</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00018">SPLIT_RADIUS_LIMIT</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00027">quarter_draw_dsc_t::start_angle</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00029">quarter_draw_dsc_t::start_quarter</a>, <a class="el" href="lv__draw__arc_8h_source.html#l00030">lv_draw_arc_dsc_t::width</a>, <a class="el" href="lv__draw__sw__arc_8c_source.html#l00031">quarter_draw_dsc_t::width</a>, <a class="el" href="lv__area_8h_source.html#l00038">lv_point_t::x</a>, <a class="el" href="lv__area_8h_source.html#l00044">lv_area_t::x1</a>, <a class="el" href="lv__area_8h_source.html#l00046">lv_area_t::x2</a>, <a class="el" href="lv__area_8h_source.html#l00039">lv_point_t::y</a>, <a class="el" href="lv__area_8h_source.html#l00045">lv_area_t::y1</a> y <a class="el" href="lv__area_8h_source.html#l00047">lv_area_t::y2</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__draw__sw_8c_source.html#l00040">lv_draw_sw_init_ctx()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_4578e5786fd81055f79ae47b0a2845be.html">draw</a></li><li class="navelem"><a href="dir_643f6779c42a9b35abb2f0742b21e07f.html">sw</a></li><li class="navelem"><a href="lv__draw__sw__arc_8c.html">lv_draw_sw_arc.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

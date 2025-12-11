@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/IRremote/src/ir_JVC.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('ir__JVC_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ir_JVC.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ir__JVC_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ir_JVC.hpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Contains functions for receiving and sending JVC IR Protocol in &quot;raw&quot; and standard format with 8 bit address and 8 bit command</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  This file is part of Arduino-IRremote https://github.com/Arduino-IRremote/Arduino-IRremote.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> ************************************************************************************</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * MIT License</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * Copyright (c) 2017-2023 Kristian Lauszus, Armin Joachimsmeyer</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * copies of the Software, and to permit persons to whom the Software is furnished</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> ************************************************************************************</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#ifndef _IR_JVC_HPP</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define _IR_JVC_HPP</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#if defined(DEBUG) &amp;&amp; !defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define LOCAL_DEBUG</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//#define LOCAL_DEBUG // This enables debug output only for this file</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/** \addtogroup Decoder Decoders and encoders for different protocols</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * @{</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//==============================================================================</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//                             JJJJJ  V   V   CCCC</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//                               J    V   V  C</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">//                               J     V V   C</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//                             J J     V V   C</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">//                              J       V     CCCC</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//==============================================================================</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> +8400,-4150</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> + 550,-1550 + 550,- 500 + 550,- 500 + 550,- 500</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> + 550,-1500 + 600,-1500 + 600,-1500 + 550,-1550</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> + 550,- 500 + 550,-1550 + 550,-1550 + 550,- 500</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> + 500,-1600 + 550,-1550 + 550,-1500 + 600,- 500</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> + 550</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> Sum: 40350</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// https://www.sbprojects.net/knowledge/ir/jvc.php</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// http://www.hifi-remote.com/johnsfine/DecodeIR.html#JVC</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">// IRP: {38k,525}&lt;1,-1|1,-3&gt;(16,-8,(D:8,F:8,1,-45)+)</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// LSB first, 1 start bit + 8 bit address + 8 bit command + 1 stop bit.</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// The JVC protocol repeats by skipping the header mark and space -&gt; this leads to a poor repeat detection for JVC protocol.</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// Some JVC devices require to send 3 repeats. https://github.com/Arduino-IRremote/Arduino-IRremote/issues/21</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="group__Decoder.html#gaede1737ff1f8da95a80c7aa059ba2f13">   66</a></span><span class="preprocessor">#define JVC_ADDRESS_BITS      8 </span><span class="comment">// 8 bit address</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga6c37ba21b2b04d86a7c5c028dd0edc9e">   67</a></span><span class="preprocessor">#define JVC_COMMAND_BITS      8 </span><span class="comment">// Command</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">   69</a></span><span class="preprocessor">#define JVC_BITS              (JVC_ADDRESS_BITS + JVC_COMMAND_BITS) </span><span class="comment">// 16 - The number of bits in the protocol</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__Decoder.html#gaa79a9fdad87400415aa367568b9fdb98">   70</a></span><span class="preprocessor">#define JVC_UNIT              526 </span><span class="comment">// 20 periods of 38 kHz (526.315789)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__Decoder.html#gaec51a5a6206fbaae28a05966a840069d">   72</a></span><span class="preprocessor">#define JVC_HEADER_MARK       (16 * JVC_UNIT) </span><span class="comment">// 8400</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga44feb6af98dbbcf234ef970742b511a0">   73</a></span><span class="preprocessor">#define JVC_HEADER_SPACE      (8 * JVC_UNIT)  </span><span class="comment">// 4200</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">   75</a></span><span class="preprocessor">#define JVC_BIT_MARK          JVC_UNIT        </span><span class="comment">// The length of a Bit:Mark</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group__Decoder.html#gac66f4778d06e0a5eda29695f4a0ad9fa">   76</a></span><span class="preprocessor">#define JVC_ONE_SPACE         (3 * JVC_UNIT)  </span><span class="comment">// 1578 - The length of a Bit:Space for 1&#39;s</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga3e161d70fe56f2ed0f76b5421fd5b1b3">   77</a></span><span class="preprocessor">#define JVC_ZERO_SPACE        JVC_UNIT        </span><span class="comment">// The length of a Bit:Space for 0&#39;s</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga3b7ef2259866de5d238e589e63e4e1c0">   79</a></span><span class="preprocessor">#define JVC_REPEAT_DISTANCE   (uint16_t)(45 * JVC_UNIT)  </span><span class="comment">// 23625 - Commands are repeated with a distance of 23 ms for as long as the key on the remote control is held down.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="group__Decoder.html#ga3511024575bd92aae238c9db73b9d1e1">   80</a></span><span class="preprocessor">#define JVC_REPEAT_PERIOD     65000 </span><span class="comment">// assume around 40 ms for a JVC frame. JVC IR Remotes: RM-SA911U, RM-SX463U have 45 ms period</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group__Decoder.html#gaa0a9300348a3451ddceca0e691dc4690">   82</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPulseDistanceWidthProtocolConstants.html">PulseDistanceWidthProtocolConstants</a> <a class="code hl_variable" href="group__Decoder.html#gaa0a9300348a3451ddceca0e691dc4690">JVCProtocolConstants</a> = { <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a>, <a class="code hl_define" href="IRProtocol_8h.html#abcc6e2b61050500362daed1341bef91b">JVC_KHZ</a>, <a class="code hl_define" href="group__Decoder.html#gaec51a5a6206fbaae28a05966a840069d">JVC_HEADER_MARK</a>, <a class="code hl_define" href="group__Decoder.html#ga44feb6af98dbbcf234ef970742b511a0">JVC_HEADER_SPACE</a>, <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><a class="code hl_define" href="group__Decoder.html#gac66f4778d06e0a5eda29695f4a0ad9fa">JVC_ONE_SPACE</a>, <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>, <a class="code hl_define" href="group__Decoder.html#ga3e161d70fe56f2ed0f76b5421fd5b1b3">JVC_ZERO_SPACE</a>, <a class="code hl_define" href="IRProtocol_8h.html#a8717702b4019c982727719bd40af7630">PROTOCOL_IS_LSB_FIRST</a>, (<a class="code hl_define" href="group__Decoder.html#ga3511024575bd92aae238c9db73b9d1e1">JVC_REPEAT_PERIOD</a> / <a class="code hl_define" href="IRremote_8hpp.html#ae9ba0b7dd556e22688f7da01019bba68">MICROS_IN_ONE_MILLI</a>), NULL };</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">/************************************</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"> * Start of send and decode functions</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"> ************************************/</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"></span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"> * The JVC protocol repeats by skipping the header mark and space -&gt; this leads to a poor repeat detection for JVC protocol.</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__Decoder.html#gaa10da0665ac4d44b06dba845420ab7f1">   92</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__Decoder.html#gaa10da0665ac4d44b06dba845420ab7f1">IRsend::sendJVC</a>(uint8_t aAddress, uint8_t <a class="code hl_variable" href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">aCommand</a>, int_fast8_t <a class="code hl_variable" href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">aNumberOfRepeats</a>) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// Set IR carrier frequency</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_function" href="group__Sending.html#ga30b1c8f6029a2f72b4dee0eeb2fb7f15">enableIROut</a> (<a class="code hl_define" href="IRProtocol_8h.html#abcc6e2b61050500362daed1341bef91b">JVC_KHZ</a>); <span class="comment">// 38 kHz</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">aNumberOfRepeats</a> &lt; 0) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="comment">// The JVC protocol repeats by skipping the header.</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_variable" href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">aNumberOfRepeats</a> = 0;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_function" href="group__Sending.html#ga71a76987183f83b366fa59660e80253b">mark</a>(<a class="code hl_define" href="group__Decoder.html#gaec51a5a6206fbaae28a05966a840069d">JVC_HEADER_MARK</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_function" href="group__Sending.html#ga914d45f08addaf1142e167a8ebf7d5a4">space</a>(<a class="code hl_define" href="group__Decoder.html#ga44feb6af98dbbcf234ef970742b511a0">JVC_HEADER_SPACE</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    uint_fast8_t tNumberOfCommands = <a class="code hl_variable" href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">aNumberOfRepeats</a> + 1;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">while</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="comment">// Address + command</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_function" href="group__Sending.html#ga0e697969acd5ea115afd45d0c08a03db">sendPulseDistanceWidthData</a>(&amp;<a class="code hl_variable" href="group__Decoder.html#gaa0a9300348a3451ddceca0e691dc4690">JVCProtocolConstants</a>, aAddress | (<a class="code hl_variable" href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">aCommand</a> &lt;&lt; <a class="code hl_define" href="group__Decoder.html#gaede1737ff1f8da95a80c7aa059ba2f13">JVC_ADDRESS_BITS</a>), <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        tNumberOfCommands--;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="comment">// skip last delay!</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">if</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="comment">// send repeated command in a fixed raster</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(<a class="code hl_define" href="group__Decoder.html#ga3b7ef2259866de5d238e589e63e4e1c0">JVC_REPEAT_DISTANCE</a> / <a class="code hl_define" href="IRremote_8hpp.html#ae9ba0b7dd556e22688f7da01019bba68">MICROS_IN_ONE_MILLI</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__Decoder.html#gad6ecf38f85cefea8f71090fce4dbbbed">  119</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__Decoder.html#gad6ecf38f85cefea8f71090fce4dbbbed">IRrecv::decodeJVC</a>() {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">//    uint_fast8_t tRawlen = decodedIRData.rawlen; // Using a local variable does not improve code size</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">// Check we have the right amount of data (36 or 34). The +4 is for initial gap, start bit mark and space + stop bit mark.</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// +4 is for first frame, +2 is for repeats</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen != ((2 * <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>) + 2) &amp;&amp; <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen != ((2 * <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>) + 4)) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;JVC: &quot;</span>));</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Data length=&quot;</span>));</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(F(<span class="stringliteral">&quot; is not 34 or 36&quot;</span>));</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen == ((2 * <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>) + 2)) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">         * Check for repeat</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">         * Check leading space and first and last mark length</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">         */</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.initialGapTicks &lt; ((<a class="code hl_define" href="group__Decoder.html#ga3b7ef2259866de5d238e589e63e4e1c0">JVC_REPEAT_DISTANCE</a> + (<a class="code hl_define" href="group__Decoder.html#ga3b7ef2259866de5d238e589e63e4e1c0">JVC_REPEAT_DISTANCE</a> / 4) / <a class="code hl_define" href="IRremote_8hpp.html#a1c7eebb527483c272812530caa313d20">MICROS_PER_TICK</a>))</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                &amp;&amp; <a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawDataPtr-&gt;rawbuf[1], <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                &amp;&amp; <a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawDataPtr-&gt;rawbuf[<a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.rawlen - 1], <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>)) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="comment">/*</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">             * We have a repeat here, so do not check for start bit</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">             */</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.flags = <a class="code hl_define" href="IRProtocol_8h.html#aaa9952cd64b58083c28873484c494abf">IRDATA_FLAGS_IS_REPEAT</a> | <a class="code hl_define" href="IRProtocol_8h.html#a035e96118f9daf6d8e5152a1ae466538">IRDATA_FLAGS_IS_LSB_FIRST</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.address = <a class="code hl_variable" href="classIRrecv.html#a1cf9af80cfeba7c722155c82b2d05c65">lastDecodedAddress</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.command = <a class="code hl_variable" href="classIRrecv.html#ab82d9993e4791d7904ec3b62bb9bc1cf">lastDecodedCommand</a>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.protocol = <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga69b3bcea4b42c620264d9212e409238e">checkHeader</a>(&amp;<a class="code hl_variable" href="group__Decoder.html#gaa0a9300348a3451ddceca0e691dc4690">JVCProtocolConstants</a>)) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga97d300dc2b49cdc7aa1e0570bf888e7c">decodePulseDistanceWidthData</a>(&amp;<a class="code hl_variable" href="group__Decoder.html#gaa0a9300348a3451ddceca0e691dc4690">JVCProtocolConstants</a>, <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>)) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            Serial.print(F(<span class="stringliteral">&quot;JVC: &quot;</span>));</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            Serial.println(F(<span class="stringliteral">&quot;Decode failed&quot;</span>));</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="comment">// Success</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">//    decodedIRData.flags = IRDATA_FLAGS_IS_LSB_FIRST; // Not required, since this is the start value</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.command = <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.decodedRawData &gt;&gt; <a class="code hl_define" href="group__Decoder.html#gaede1737ff1f8da95a80c7aa059ba2f13">JVC_ADDRESS_BITS</a>;  <span class="comment">// upper 8 bits of LSB first value</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.address = <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.decodedRawData &amp; 0xFF;    <span class="comment">// lowest 8 bit of LSB first value</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.numberOfBits = <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.protocol = <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">/*********************************************************************************</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment"> * Old deprecated functions, kept for backward compatibility to old 2.0 tutorials</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment"> *********************************************************************************/</span></div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="group__Decoder.html#gad7512fb183efc882f493ce5ab4c2bd10">  177</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__Decoder.html#gad7512fb183efc882f493ce5ab4c2bd10">IRrecv::decodeJVCMSB</a>(<a class="code hl_struct" href="structdecode__results.html">decode_results</a> *aResults) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> offset = 1; <span class="comment">// Skip first space</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="comment">// Check for repeat</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span> ((aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a17bf90d204708de6c490dfe3ab887103">rawlen</a> - 1 == 33) &amp;&amp; <a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a88b2a9fa8a5e843247c6dcdfe372ddf5">rawbuf</a>[offset], <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            &amp;&amp; <a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a88b2a9fa8a5e843247c6dcdfe372ddf5">rawbuf</a>[aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a17bf90d204708de6c490dfe3ab887103">rawlen</a> - 1], <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>)) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#aa22c703c3ba7308dc7663bf1058a6686">bits</a> = 0;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a7c9654e6312819d5f7880fa4838340fe">value</a> = 0xFFFFFFFF;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.flags = <a class="code hl_define" href="IRProtocol_8h.html#aaa9952cd64b58083c28873484c494abf">IRDATA_FLAGS_IS_REPEAT</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.protocol = <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="comment">// Initial mark</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a88b2a9fa8a5e843247c6dcdfe372ddf5">rawbuf</a>[offset], <a class="code hl_define" href="group__Decoder.html#gaec51a5a6206fbaae28a05966a840069d">JVC_HEADER_MARK</a>)) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    offset++;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="comment">// Check we have enough data - +3 for start bit mark and space + stop bit mark</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">if</span> (aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a17bf90d204708de6c490dfe3ab887103">rawlen</a> &lt;= (2 * <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>) + 3) {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(F(<span class="stringliteral">&quot;Data length=&quot;</span>));</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <a class="code hl_define" href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a>(aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a17bf90d204708de6c490dfe3ab887103">rawlen</a>);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <a class="code hl_define" href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a>(F(<span class="stringliteral">&quot; is too small. &gt;= 36 is required.&quot;</span>));</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="comment">// Initial space</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga7902b620f6c01463b5b6e50ef604ac8b">matchSpace</a>(aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a88b2a9fa8a5e843247c6dcdfe372ddf5">rawbuf</a>[offset], <a class="code hl_define" href="group__Decoder.html#ga44feb6af98dbbcf234ef970742b511a0">JVC_HEADER_SPACE</a>)) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    offset++;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga97d300dc2b49cdc7aa1e0570bf888e7c">decodePulseDistanceWidthData</a>(<a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>, offset, <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>, <a class="code hl_define" href="group__Decoder.html#gac66f4778d06e0a5eda29695f4a0ad9fa">JVC_ONE_SPACE</a>, 0, <a class="code hl_define" href="IRProtocol_8h.html#a2db53e8319cd3f5de758337fa08552d0">PROTOCOL_IS_MSB_FIRST</a>)) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="comment">// Stop bit</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a>(aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a88b2a9fa8a5e843247c6dcdfe372ddf5">rawbuf</a>[offset + (2 * <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>)], <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>)) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        Serial.println(F(<span class="stringliteral">&quot;Stop bit mark length is wrong&quot;</span>));</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">// Success</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a7c9654e6312819d5f7880fa4838340fe">value</a> = <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.decodedRawData;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#aa22c703c3ba7308dc7663bf1058a6686">bits</a> = <a class="code hl_define" href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    aResults-&gt;<a class="code hl_variable" href="structdecode__results.html#a9c0e9f161b9c90dc10b7561d4c0b50fa">decode_type</a> = <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_variable" href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">decodedIRData</a>.protocol = <a class="code hl_enumvalue" href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>}</div>
+</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment"></span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment"> * With Send sendJVCMSB() you can send your old 32 bit codes.</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment"> * To convert one into the other, you must reverse the byte positions and then reverse all bit positions of each byte.</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment"> * Use bitreverse32Bit().</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment"> * Or write it as one binary string and reverse/mirror it.</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment"> * Example:</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment"> * 0xCB340102 byte reverse -&gt; 02 01 34 CB bit reverse-&gt; 40 80 2C D3.</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment"> * 0xCB340102 is binary 11001011001101000000000100000010.</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment"> * 0x40802CD3 is binary 01000000100000000010110011010011.</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment"> * If you read the first binary sequence backwards (right to left), you get the second sequence.</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="group__Decoder.html#gae3ffaf23301bec85ca0c2c7499f484a3">  242</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__Decoder.html#gae3ffaf23301bec85ca0c2c7499f484a3">IRsend::sendJVCMSB</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data, <span class="keywordtype">int</span> nbits, <span class="keywordtype">bool</span> repeat) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="comment">// Set IR carrier frequency</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <a class="code hl_function" href="group__Sending.html#ga30b1c8f6029a2f72b4dee0eeb2fb7f15">enableIROut</a> (<a class="code hl_define" href="IRProtocol_8h.html#abcc6e2b61050500362daed1341bef91b">JVC_KHZ</a>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">// Only send the Header if this is NOT a repeat command</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">if</span> (!repeat) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <a class="code hl_function" href="group__Sending.html#ga71a76987183f83b366fa59660e80253b">mark</a>(<a class="code hl_define" href="group__Decoder.html#gaec51a5a6206fbaae28a05966a840069d">JVC_HEADER_MARK</a>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <a class="code hl_function" href="group__Sending.html#ga914d45f08addaf1142e167a8ebf7d5a4">space</a>(<a class="code hl_define" href="group__Decoder.html#ga44feb6af98dbbcf234ef970742b511a0">JVC_HEADER_SPACE</a>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="comment">// Old version with MSB first Data</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <a class="code hl_function" href="group__Sending.html#ga0e697969acd5ea115afd45d0c08a03db">sendPulseDistanceWidthData</a>(<a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>, <a class="code hl_define" href="group__Decoder.html#gac66f4778d06e0a5eda29695f4a0ad9fa">JVC_ONE_SPACE</a>, <a class="code hl_define" href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a>, <a class="code hl_define" href="group__Decoder.html#ga3e161d70fe56f2ed0f76b5421fd5b1b3">JVC_ZERO_SPACE</a>, data, nbits, <a class="code hl_define" href="IRProtocol_8h.html#a2db53e8319cd3f5de758337fa08552d0">PROTOCOL_IS_MSB_FIRST</a>);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>}</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment"></span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">/** @}*/</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="preprocessor">#if defined(LOCAL_DEBUG)</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="preprocessor">#undef LOCAL_DEBUG</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#endif </span><span class="comment">// _IR_JVC_HPP</span></div>
+<div class="ttc" id="aGC9A01__Init_8h_html_a5aca13d7b6004cb9d0f57e632205e46b"><div class="ttname"><a href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a></div><div class="ttdeci">delay(120)</div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a035e96118f9daf6d8e5152a1ae466538"><div class="ttname"><a href="IRProtocol_8h.html#a035e96118f9daf6d8e5152a1ae466538">IRDATA_FLAGS_IS_LSB_FIRST</a></div><div class="ttdeci">#define IRDATA_FLAGS_IS_LSB_FIRST</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00102">IRProtocol.h:102</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a2db53e8319cd3f5de758337fa08552d0"><div class="ttname"><a href="IRProtocol_8h.html#a2db53e8319cd3f5de758337fa08552d0">PROTOCOL_IS_MSB_FIRST</a></div><div class="ttdeci">#define PROTOCOL_IS_MSB_FIRST</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00150">IRProtocol.h:150</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_a8717702b4019c982727719bd40af7630"><div class="ttname"><a href="IRProtocol_8h.html#a8717702b4019c982727719bd40af7630">PROTOCOL_IS_LSB_FIRST</a></div><div class="ttdeci">#define PROTOCOL_IS_LSB_FIRST</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00151">IRProtocol.h:151</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_aaa9952cd64b58083c28873484c494abf"><div class="ttname"><a href="IRProtocol_8h.html#aaa9952cd64b58083c28873484c494abf">IRDATA_FLAGS_IS_REPEAT</a></div><div class="ttdeci">#define IRDATA_FLAGS_IS_REPEAT</div><div class="ttdoc">The gap between the preceding frame is as smaller than the maximum gap expected for a repeat....</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00093">IRProtocol.h:93</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_abcc6e2b61050500362daed1341bef91b"><div class="ttname"><a href="IRProtocol_8h.html#abcc6e2b61050500362daed1341bef91b">JVC_KHZ</a></div><div class="ttdeci">#define JVC_KHZ</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00162">IRProtocol.h:162</a></div></div>
+<div class="ttc" id="aIRProtocol_8h_html_ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d"><div class="ttname"><a href="IRProtocol_8h.html#ad5b287a488a8c1b7b8661f029ab56fada5b6f507fb4bbd70ee70be4e2e0b0371d">JVC</a></div><div class="ttdeci">@ JVC</div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00046">IRProtocol.h:46</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_a093a1c04e9dd4d6845a48163554143a0"><div class="ttname"><a href="IRremoteInt_8h.html#a093a1c04e9dd4d6845a48163554143a0">IR_DEBUG_PRINT</a></div><div class="ttdeci">#define IR_DEBUG_PRINT(...)</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00163">IRremoteInt.h:163</a></div></div>
+<div class="ttc" id="aIRremoteInt_8h_html_aebf95fa57eb370cfe65ce6a9728b6e1f"><div class="ttname"><a href="IRremoteInt_8h.html#aebf95fa57eb370cfe65ce6a9728b6e1f">IR_DEBUG_PRINTLN</a></div><div class="ttdeci">#define IR_DEBUG_PRINTLN(...)</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00167">IRremoteInt.h:167</a></div></div>
+<div class="ttc" id="aIRremote_8hpp_html_a1c7eebb527483c272812530caa313d20"><div class="ttname"><a href="IRremote_8hpp.html#a1c7eebb527483c272812530caa313d20">MICROS_PER_TICK</a></div><div class="ttdeci">#define MICROS_PER_TICK</div><div class="ttdef"><b>Definition</b> <a href="IRremote_8hpp_source.html#l00250">IRremote.hpp:250</a></div></div>
+<div class="ttc" id="aIRremote_8hpp_html_ae9ba0b7dd556e22688f7da01019bba68"><div class="ttname"><a href="IRremote_8hpp.html#ae9ba0b7dd556e22688f7da01019bba68">MICROS_IN_ONE_MILLI</a></div><div class="ttdeci">#define MICROS_IN_ONE_MILLI</div><div class="ttdef"><b>Definition</b> <a href="IRremote_8hpp_source.html#l00255">IRremote.hpp:255</a></div></div>
+<div class="ttc" id="aclassIRrecv_html_a19d71758b1b0e1fbee948ad917c5b828"><div class="ttname"><a href="classIRrecv.html#a19d71758b1b0e1fbee948ad917c5b828">IRrecv::decodedIRData</a></div><div class="ttdeci">IRData decodedIRData</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00356">IRremoteInt.h:356</a></div></div>
+<div class="ttc" id="aclassIRrecv_html_a1cf9af80cfeba7c722155c82b2d05c65"><div class="ttname"><a href="classIRrecv.html#a1cf9af80cfeba7c722155c82b2d05c65">IRrecv::lastDecodedAddress</a></div><div class="ttdeci">uint32_t lastDecodedAddress</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00360">IRremoteInt.h:360</a></div></div>
+<div class="ttc" id="aclassIRrecv_html_ab82d9993e4791d7904ec3b62bb9bc1cf"><div class="ttname"><a href="classIRrecv.html#ab82d9993e4791d7904ec3b62bb9bc1cf">IRrecv::lastDecodedCommand</a></div><div class="ttdeci">uint32_t lastDecodedCommand</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00361">IRremoteInt.h:361</a></div></div>
+<div class="ttc" id="aclassIRsend_html_a5f5d819c72ce2f74395d14166e77c7cc"><div class="ttname"><a href="classIRsend.html#a5f5d819c72ce2f74395d14166e77c7cc">IRsend::aCommand</a></div><div class="ttdeci">void aCommand</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00543">IRremoteInt.h:543</a></div></div>
+<div class="ttc" id="aclassIRsend_html_aff233b57d2382a713926797ce5da0fd3"><div class="ttname"><a href="classIRsend.html#aff233b57d2382a713926797ce5da0fd3">IRsend::aNumberOfRepeats</a></div><div class="ttdeci">void aNumberOfRepeats</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00543">IRremoteInt.h:543</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga3511024575bd92aae238c9db73b9d1e1"><div class="ttname"><a href="group__Decoder.html#ga3511024575bd92aae238c9db73b9d1e1">JVC_REPEAT_PERIOD</a></div><div class="ttdeci">#define JVC_REPEAT_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="#l00080">ir_JVC.hpp:80</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga3b7ef2259866de5d238e589e63e4e1c0"><div class="ttname"><a href="group__Decoder.html#ga3b7ef2259866de5d238e589e63e4e1c0">JVC_REPEAT_DISTANCE</a></div><div class="ttdeci">#define JVC_REPEAT_DISTANCE</div><div class="ttdef"><b>Definition</b> <a href="#l00079">ir_JVC.hpp:79</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga3e161d70fe56f2ed0f76b5421fd5b1b3"><div class="ttname"><a href="group__Decoder.html#ga3e161d70fe56f2ed0f76b5421fd5b1b3">JVC_ZERO_SPACE</a></div><div class="ttdeci">#define JVC_ZERO_SPACE</div><div class="ttdef"><b>Definition</b> <a href="#l00077">ir_JVC.hpp:77</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga3eb74f5b177f68386ff35bd41e09a33c"><div class="ttname"><a href="group__Decoder.html#ga3eb74f5b177f68386ff35bd41e09a33c">JVC_BIT_MARK</a></div><div class="ttdeci">#define JVC_BIT_MARK</div><div class="ttdef"><b>Definition</b> <a href="#l00075">ir_JVC.hpp:75</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga44feb6af98dbbcf234ef970742b511a0"><div class="ttname"><a href="group__Decoder.html#ga44feb6af98dbbcf234ef970742b511a0">JVC_HEADER_SPACE</a></div><div class="ttdeci">#define JVC_HEADER_SPACE</div><div class="ttdef"><b>Definition</b> <a href="#l00073">ir_JVC.hpp:73</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gaa0a9300348a3451ddceca0e691dc4690"><div class="ttname"><a href="group__Decoder.html#gaa0a9300348a3451ddceca0e691dc4690">JVCProtocolConstants</a></div><div class="ttdeci">struct PulseDistanceWidthProtocolConstants JVCProtocolConstants</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ir_JVC.hpp:82</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gaa10da0665ac4d44b06dba845420ab7f1"><div class="ttname"><a href="group__Decoder.html#gaa10da0665ac4d44b06dba845420ab7f1">IRsend::sendJVC</a></div><div class="ttdeci">void sendJVC(uint8_t aAddress, uint8_t aCommand, int_fast8_t aNumberOfRepeats)</div><div class="ttdef"><b>Definition</b> <a href="#l00092">ir_JVC.hpp:92</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gac66f4778d06e0a5eda29695f4a0ad9fa"><div class="ttname"><a href="group__Decoder.html#gac66f4778d06e0a5eda29695f4a0ad9fa">JVC_ONE_SPACE</a></div><div class="ttdeci">#define JVC_ONE_SPACE</div><div class="ttdef"><b>Definition</b> <a href="#l00076">ir_JVC.hpp:76</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gad6ecf38f85cefea8f71090fce4dbbbed"><div class="ttname"><a href="group__Decoder.html#gad6ecf38f85cefea8f71090fce4dbbbed">IRrecv::decodeJVC</a></div><div class="ttdeci">bool decodeJVC()</div><div class="ttdef"><b>Definition</b> <a href="#l00119">ir_JVC.hpp:119</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gad7512fb183efc882f493ce5ab4c2bd10"><div class="ttname"><a href="group__Decoder.html#gad7512fb183efc882f493ce5ab4c2bd10">IRrecv::decodeJVCMSB</a></div><div class="ttdeci">bool decodeJVCMSB(decode_results *aResults)</div><div class="ttdef"><b>Definition</b> <a href="#l00177">ir_JVC.hpp:177</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gae3ffaf23301bec85ca0c2c7499f484a3"><div class="ttname"><a href="group__Decoder.html#gae3ffaf23301bec85ca0c2c7499f484a3">IRsend::sendJVCMSB</a></div><div class="ttdeci">void sendJVCMSB(unsigned long data, int nbits, bool repeat=false)</div><div class="ttdef"><b>Definition</b> <a href="#l00242">ir_JVC.hpp:242</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gaec51a5a6206fbaae28a05966a840069d"><div class="ttname"><a href="group__Decoder.html#gaec51a5a6206fbaae28a05966a840069d">JVC_HEADER_MARK</a></div><div class="ttdeci">#define JVC_HEADER_MARK</div><div class="ttdef"><b>Definition</b> <a href="#l00072">ir_JVC.hpp:72</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gaede1737ff1f8da95a80c7aa059ba2f13"><div class="ttname"><a href="group__Decoder.html#gaede1737ff1f8da95a80c7aa059ba2f13">JVC_ADDRESS_BITS</a></div><div class="ttdeci">#define JVC_ADDRESS_BITS</div><div class="ttdef"><b>Definition</b> <a href="#l00066">ir_JVC.hpp:66</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gafcb4f4e6144a1e3c779b2b8777b8f8ac"><div class="ttname"><a href="group__Decoder.html#gafcb4f4e6144a1e3c779b2b8777b8f8ac">JVC_BITS</a></div><div class="ttdeci">#define JVC_BITS</div><div class="ttdef"><b>Definition</b> <a href="#l00069">ir_JVC.hpp:69</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga4472564ea96b1ee10b51f594f60d7aeb"><div class="ttname"><a href="group__Receiving.html#ga4472564ea96b1ee10b51f594f60d7aeb">matchMark</a></div><div class="ttdeci">bool matchMark(uint16_t aMeasuredTicks, uint16_t aMatchValueMicros)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l01215">IRReceive.hpp:1215</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga69b3bcea4b42c620264d9212e409238e"><div class="ttname"><a href="group__Receiving.html#ga69b3bcea4b42c620264d9212e409238e">IRrecv::checkHeader</a></div><div class="ttdeci">bool checkHeader(PulseDistanceWidthProtocolConstants *aProtocolConstants)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l01148">IRReceive.hpp:1148</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga7902b620f6c01463b5b6e50ef604ac8b"><div class="ttname"><a href="group__Receiving.html#ga7902b620f6c01463b5b6e50ef604ac8b">matchSpace</a></div><div class="ttdeci">bool matchSpace(uint16_t aMeasuredTicks, uint16_t aMatchValueMicros)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l01249">IRReceive.hpp:1249</a></div></div>
+<div class="ttc" id="agroup__Receiving_html_ga97d300dc2b49cdc7aa1e0570bf888e7c"><div class="ttname"><a href="group__Receiving.html#ga97d300dc2b49cdc7aa1e0570bf888e7c">IRrecv::decodePulseDistanceWidthData</a></div><div class="ttdeci">bool decodePulseDistanceWidthData(PulseDistanceWidthProtocolConstants *aProtocolConstants, uint_fast8_t aNumberOfBits, IRRawlenType aStartOffset=3)</div><div class="ttdef"><b>Definition</b> <a href="IRReceive_8hpp_source.html#l00976">IRReceive.hpp:976</a></div></div>
+<div class="ttc" id="agroup__Sending_html_ga0e697969acd5ea115afd45d0c08a03db"><div class="ttname"><a href="group__Sending.html#ga0e697969acd5ea115afd45d0c08a03db">IRsend::sendPulseDistanceWidthData</a></div><div class="ttdeci">void sendPulseDistanceWidthData(PulseDistanceWidthProtocolConstants *aProtocolConstants, IRRawDataType aData, uint_fast8_t aNumberOfBits)</div><div class="ttdef"><b>Definition</b> <a href="IRSend_8hpp_source.html#l00812">IRSend.hpp:812</a></div></div>
+<div class="ttc" id="agroup__Sending_html_ga30b1c8f6029a2f72b4dee0eeb2fb7f15"><div class="ttname"><a href="group__Sending.html#ga30b1c8f6029a2f72b4dee0eeb2fb7f15">IRsend::enableIROut</a></div><div class="ttdeci">void enableIROut(uint_fast8_t aFrequencyKHz)</div><div class="ttdef"><b>Definition</b> <a href="IRSend_8hpp_source.html#l01188">IRSend.hpp:1188</a></div></div>
+<div class="ttc" id="agroup__Sending_html_ga71a76987183f83b366fa59660e80253b"><div class="ttname"><a href="group__Sending.html#ga71a76987183f83b366fa59660e80253b">IRsend::mark</a></div><div class="ttdeci">void mark(uint16_t aMarkMicros)</div><div class="ttdef"><b>Definition</b> <a href="IRSend_8hpp_source.html#l00947">IRSend.hpp:947</a></div></div>
+<div class="ttc" id="agroup__Sending_html_ga914d45f08addaf1142e167a8ebf7d5a4"><div class="ttname"><a href="group__Sending.html#ga914d45f08addaf1142e167a8ebf7d5a4">IRsend::space</a></div><div class="ttdeci">static void space(uint16_t aSpaceMicros)</div><div class="ttdef"><b>Definition</b> <a href="IRSend_8hpp_source.html#l01148">IRSend.hpp:1148</a></div></div>
+<div class="ttc" id="astructPulseDistanceWidthProtocolConstants_html"><div class="ttname"><a href="structPulseDistanceWidthProtocolConstants.html">PulseDistanceWidthProtocolConstants</a></div><div class="ttdef"><b>Definition</b> <a href="IRProtocol_8h_source.html#l00137">IRProtocol.h:137</a></div></div>
+<div class="ttc" id="astructdecode__results_html"><div class="ttname"><a href="structdecode__results.html">decode_results</a></div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00185">IRremoteInt.h:185</a></div></div>
+<div class="ttc" id="astructdecode__results_html_a17bf90d204708de6c490dfe3ab887103"><div class="ttname"><a href="structdecode__results.html#a17bf90d204708de6c490dfe3ab887103">decode_results::rawlen</a></div><div class="ttdeci">uint_fast8_t rawlen</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00195">IRremoteInt.h:195</a></div></div>
+<div class="ttc" id="astructdecode__results_html_a7c9654e6312819d5f7880fa4838340fe"><div class="ttname"><a href="structdecode__results.html#a7c9654e6312819d5f7880fa4838340fe">decode_results::value</a></div><div class="ttdeci">uint32_t value</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00188">IRremoteInt.h:188</a></div></div>
+<div class="ttc" id="astructdecode__results_html_a88b2a9fa8a5e843247c6dcdfe372ddf5"><div class="ttname"><a href="structdecode__results.html#a88b2a9fa8a5e843247c6dcdfe372ddf5">decode_results::rawbuf</a></div><div class="ttdeci">uint16_t * rawbuf</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00194">IRremoteInt.h:194</a></div></div>
+<div class="ttc" id="astructdecode__results_html_a9c0e9f161b9c90dc10b7561d4c0b50fa"><div class="ttname"><a href="structdecode__results.html#a9c0e9f161b9c90dc10b7561d4c0b50fa">decode_results::decode_type</a></div><div class="ttdeci">decode_type_t decode_type</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00186">IRremoteInt.h:186</a></div></div>
+<div class="ttc" id="astructdecode__results_html_aa22c703c3ba7308dc7663bf1058a6686"><div class="ttname"><a href="structdecode__results.html#aa22c703c3ba7308dc7663bf1058a6686">decode_results::bits</a></div><div class="ttdeci">uint8_t bits</div><div class="ttdef"><b>Definition</b> <a href="IRremoteInt_8h_source.html#l00189">IRremoteInt.h:189</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0110f69da0b0abc5e39b58ae0956c283.html">IRremote</a></li><li class="navelem"><a href="dir_88c0bcaa7fd8df08d0f5885e4eb57ee3.html">src</a></li><li class="navelem"><a href="ir__JVC_8hpp.html">ir_JVC.hpp</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

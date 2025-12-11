@@ -1,0 +1,663 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Minimal sender for NEC and FAST protocol</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('group__TinySender.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Minimal sender for NEC and FAST protocol </div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ga4cb394b3b749f9302940902fb05bd920" id="r_ga4cb394b3b749f9302940902fb05bd920"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4cb394b3b749f9302940902fb05bd920">IR_SEND_PIN</a>&#160;&#160;&#160;3</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ga397e1b9d2e6457c3707ea35e85008415" id="r_ga397e1b9d2e6457c3707ea35e85008415"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga397e1b9d2e6457c3707ea35e85008415">sendExtendedNEC</a> (uint8_t aSendPin, uint16_t aAddress, uint16_t aCommand, uint_fast8_t aNumberOfRepeats, bool aSendNEC2Repeats)</td></tr>
+<tr class="memitem:ga03e7b24211df9d9b321032bf11449df8" id="r_ga03e7b24211df9d9b321032bf11449df8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga03e7b24211df9d9b321032bf11449df8">sendFAST</a> (uint8_t aSendPin, uint16_t aCommand, uint_fast8_t aNumberOfRepeats)</td></tr>
+<tr class="memitem:gac2a48685f769fa815bb473f6c97c9677" id="r_gac2a48685f769fa815bb473f6c97c9677"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac2a48685f769fa815bb473f6c97c9677">sendFast8BitAndParity</a> (uint8_t aSendPin, uint8_t aCommand, uint_fast8_t aNumberOfRepeats)</td></tr>
+<tr class="memitem:ga1cc15240b7357116480a33cbc5ff4a06" id="r_ga1cc15240b7357116480a33cbc5ff4a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a> (uint8_t aSendPin, unsigned int aMarkMicros)</td></tr>
+<tr class="memitem:ga0a4a942fdd78fd7e5f6a54b0c7251ff7" id="r_ga0a4a942fdd78fd7e5f6a54b0c7251ff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a4a942fdd78fd7e5f6a54b0c7251ff7">sendNEC</a> (uint8_t aSendPin, uint16_t aAddress, uint16_t aCommand, uint_fast8_t aNumberOfRepeats, bool aSendNEC2Repeats)</td></tr>
+<tr class="memitem:ga693e3c08170e163489b7c73c595c060e" id="r_ga693e3c08170e163489b7c73c595c060e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga693e3c08170e163489b7c73c595c060e">sendNECMinimal</a> (uint8_t aSendPin, uint16_t aAddress, uint16_t aCommand, uint_fast8_t aNumberOfRepeats)</td></tr>
+<tr class="memitem:gaff8e9e20a15795c5e211407f62166637" id="r_gaff8e9e20a15795c5e211407f62166637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff8e9e20a15795c5e211407f62166637">sendONKYO</a> (uint8_t aSendPin, uint16_t aAddress, uint16_t aCommand, uint_fast8_t aNumberOfRepeats, bool aSendNEC2Repeats)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="ga4cb394b3b749f9302940902fb05bd920" name="ga4cb394b3b749f9302940902fb05bd920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4cb394b3b749f9302940902fb05bd920">&#9670;&#160;</a></span>IR_SEND_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IR_SEND_PIN&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00065">65</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ga397e1b9d2e6457c3707ea35e85008415" name="ga397e1b9d2e6457c3707ea35e85008415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga397e1b9d2e6457c3707ea35e85008415">&#9670;&#160;</a></span>sendExtendedNEC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendExtendedNEC </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aAddress</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast8_t</td>          <td class="paramname"><span class="paramname"><em>aNumberOfRepeats</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>aSendNEC2Repeats</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00234">234</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>                                                                                                                                   {</div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_define" href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a>(aSendPin, OUTPUT);</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    uint_fast8_t tNumberOfCommands = aNumberOfRepeats + 1;</div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">while</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tStartOfFrameMillis = millis();</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga8d393b95d8df4dfa15873aec6a37965e">NEC_HEADER_MARK</a>);</div>
+<div class="line"><span class="lineno">  242</span>        <span class="keywordflow">if</span> ((!aSendNEC2Repeats) &amp;&amp; (tNumberOfCommands &lt; aNumberOfRepeats + 1)) {</div>
+<div class="line"><span class="lineno">  243</span>            <span class="comment">// send the NEC special repeat</span></div>
+<div class="line"><span class="lineno">  244</span>            delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga91880ffa0b09391f2c827d3a1c565abf">NEC_REPEAT_HEADER_SPACE</a>); <span class="comment">// - 2250</span></div>
+<div class="line"><span class="lineno">  245</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  246</span>            <span class="comment">// send header</span></div>
+<div class="line"><span class="lineno">  247</span>            delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5c728ed320ffee624e26767be0a80404">NEC_HEADER_SPACE</a>);</div>
+<div class="line"><span class="lineno">  248</span>            <a class="code hl_union" href="unionLongUnion.html">LongUnion</a> tData;</div>
+<div class="line"><span class="lineno">  249</span>            tData.<a class="code hl_variable" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">UWord</a>.<a class="code hl_variable" href="unionLongUnion.html#a05f946f8845eb4dda0407470d34854e2">LowWord</a> = aAddress;</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">if</span> (aCommand &gt; 0xFF) {</div>
+<div class="line"><span class="lineno">  251</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">UWord</a>.<a class="code hl_variable" href="unionLongUnion.html#afd26d7d3a11130649129850162a7eb39">HighWord</a> = aCommand;</div>
+<div class="line"><span class="lineno">  252</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  253</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aba027b17010803cf910996cae9201f32">MidHighByte</a> = aCommand;</div>
+<div class="line"><span class="lineno">  254</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#a67e1514b7a6ccc4d017eb6928c327e5c">HighByte</a> = ~aCommand; <span class="comment">// LSB first</span></div>
+<div class="line"><span class="lineno">  255</span>            }</div>
+<div class="line"><span class="lineno">  256</span>            <span class="comment">// Send data</span></div>
+<div class="line"><span class="lineno">  257</span>            <span class="keywordflow">for</span> (uint_fast8_t i = 0; i &lt; <a class="code hl_define" href="group__Decoder.html#gaa82c77bc0131ac28bc3534b8cf3422bc">NEC_BITS</a>; ++i) {</div>
+<div class="line"><span class="lineno">  258</span>                <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a>); <span class="comment">// constant mark length</span></div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>                <span class="keywordflow">if</span> (tData.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a> &amp; 1) {</div>
+<div class="line"><span class="lineno">  261</span>                    delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5ac04ec8b2185c9fb257d39c472733b1">NEC_ONE_SPACE</a>);</div>
+<div class="line"><span class="lineno">  262</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  263</span>                    delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5ee46914e98bf7f87f32a7104843b243">NEC_ZERO_SPACE</a>);</div>
+<div class="line"><span class="lineno">  264</span>                }</div>
+<div class="line"><span class="lineno">  265</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a> &gt;&gt;= 1; <span class="comment">// shift command for next bit</span></div>
+<div class="line"><span class="lineno">  266</span>            }</div>
+<div class="line"><span class="lineno">  267</span>        }        <span class="comment">// send stop bit</span></div>
+<div class="line"><span class="lineno">  268</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a>);</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>        tNumberOfCommands--;</div>
+<div class="line"><span class="lineno">  271</span>        <span class="comment">// skip last delay!</span></div>
+<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">if</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  273</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  274</span><span class="comment">             * Check and fallback for wrong RepeatPeriodMillis parameter. I.e the repeat period must be greater than each frame duration.</span></div>
+<div class="line"><span class="lineno">  275</span><span class="comment">             */</span></div>
+<div class="line"><span class="lineno">  276</span>            <span class="keyword">auto</span> tFrameDurationMillis = millis() - tStartOfFrameMillis;</div>
+<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a> / 1000 &gt; tFrameDurationMillis) {</div>
+<div class="line"><span class="lineno">  278</span>                <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(<a class="code hl_define" href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a> / 1000 - tFrameDurationMillis);</div>
+<div class="line"><span class="lineno">  279</span>            }</div>
+<div class="line"><span class="lineno">  280</span>        }</div>
+<div class="line"><span class="lineno">  281</span>    }</div>
+<div class="line"><span class="lineno">  282</span>}</div>
+<div class="ttc" id="aGC9A01__Init_8h_html_a5aca13d7b6004cb9d0f57e632205e46b"><div class="ttname"><a href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a></div><div class="ttdeci">delay(120)</div></div>
+<div class="ttc" id="adigitalWriteFast_8h_html_a99fa3e1d72f2f1a9ffba996b06767a39"><div class="ttname"><a href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a></div><div class="ttdeci">#define pinModeFast</div><div class="ttdef"><b>Definition</b> <a href="digitalWriteFast_8h_source.html#l00375">digitalWriteFast.h:375</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga3abbe30ef3781c1cf2490003e1c1443a"><div class="ttname"><a href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a></div><div class="ttdeci">#define NEC_BIT_MARK</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00103">ir_NEC.hpp:103</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga5ac04ec8b2185c9fb257d39c472733b1"><div class="ttname"><a href="group__Decoder.html#ga5ac04ec8b2185c9fb257d39c472733b1">NEC_ONE_SPACE</a></div><div class="ttdeci">#define NEC_ONE_SPACE</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00104">ir_NEC.hpp:104</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga5c728ed320ffee624e26767be0a80404"><div class="ttname"><a href="group__Decoder.html#ga5c728ed320ffee624e26767be0a80404">NEC_HEADER_SPACE</a></div><div class="ttdeci">#define NEC_HEADER_SPACE</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00101">ir_NEC.hpp:101</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga5ee46914e98bf7f87f32a7104843b243"><div class="ttname"><a href="group__Decoder.html#ga5ee46914e98bf7f87f32a7104843b243">NEC_ZERO_SPACE</a></div><div class="ttdeci">#define NEC_ZERO_SPACE</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00105">ir_NEC.hpp:105</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga8d393b95d8df4dfa15873aec6a37965e"><div class="ttname"><a href="group__Decoder.html#ga8d393b95d8df4dfa15873aec6a37965e">NEC_HEADER_MARK</a></div><div class="ttdeci">#define NEC_HEADER_MARK</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00100">ir_NEC.hpp:100</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_ga91880ffa0b09391f2c827d3a1c565abf"><div class="ttname"><a href="group__Decoder.html#ga91880ffa0b09391f2c827d3a1c565abf">NEC_REPEAT_HEADER_SPACE</a></div><div class="ttdeci">#define NEC_REPEAT_HEADER_SPACE</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00107">ir_NEC.hpp:107</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gaa82c77bc0131ac28bc3534b8cf3422bc"><div class="ttname"><a href="group__Decoder.html#gaa82c77bc0131ac28bc3534b8cf3422bc">NEC_BITS</a></div><div class="ttdeci">#define NEC_BITS</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00097">ir_NEC.hpp:97</a></div></div>
+<div class="ttc" id="agroup__Decoder_html_gac2dab5c4a22f8c4915217d3ee4676f08"><div class="ttname"><a href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a></div><div class="ttdeci">#define NEC_REPEAT_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="ir__NEC_8hpp_source.html#l00112">ir_NEC.hpp:112</a></div></div>
+<div class="ttc" id="agroup__TinySender_html_ga1cc15240b7357116480a33cbc5ff4a06"><div class="ttname"><a href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a></div><div class="ttdeci">void sendMark(uint8_t aSendPin, unsigned int aMarkMicros)</div><div class="ttdef"><b>Definition</b> <a href="TinyIRSender_8hpp_source.html#l00070">TinyIRSender.hpp:70</a></div></div>
+<div class="ttc" id="aunionLongUnion_html"><div class="ttname"><a href="unionLongUnion.html">LongUnion</a></div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00059">LongUnion.h:59</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_a05f946f8845eb4dda0407470d34854e2"><div class="ttname"><a href="unionLongUnion.html#a05f946f8845eb4dda0407470d34854e2">LongUnion::LowWord</a></div><div class="ttdeci">uint16_t LowWord</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00080">LongUnion.h:80</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_a651d9cc12ce8322cd9d1e478b36a81df"><div class="ttname"><a href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">LongUnion::UWord</a></div><div class="ttdeci">struct LongUnion::@030033037120250160336000146220200250217313245065 UWord</div></div>
+<div class="ttc" id="aunionLongUnion_html_a67e1514b7a6ccc4d017eb6928c327e5c"><div class="ttname"><a href="unionLongUnion.html#a67e1514b7a6ccc4d017eb6928c327e5c">LongUnion::HighByte</a></div><div class="ttdeci">uint8_t HighByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00064">LongUnion.h:64</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_a81d84b7f8f09ffa223e0dbba9d234a0a"><div class="ttname"><a href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">LongUnion::UByte</a></div><div class="ttdeci">struct LongUnion::@061277105001236167100162262062116076230363273225 UByte</div></div>
+<div class="ttc" id="aunionLongUnion_html_aaf8815ca810b2d8386b5912f127586a7"><div class="ttname"><a href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">LongUnion::ULong</a></div><div class="ttdeci">uint32_t ULong</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00095">LongUnion.h:95</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_aba027b17010803cf910996cae9201f32"><div class="ttname"><a href="unionLongUnion.html#aba027b17010803cf910996cae9201f32">LongUnion::MidHighByte</a></div><div class="ttdeci">uint8_t MidHighByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00063">LongUnion.h:63</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_afd26d7d3a11130649129850162a7eb39"><div class="ttname"><a href="unionLongUnion.html#afd26d7d3a11130649129850162a7eb39">LongUnion::HighWord</a></div><div class="ttdeci">uint16_t HighWord</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00081">LongUnion.h:81</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay()</a>, <a class="el" href="LongUnion_8h_source.html#l00064">LongUnion::HighByte</a>, <a class="el" href="LongUnion_8h_source.html#l00081">LongUnion::HighWord</a>, <a class="el" href="LongUnion_8h_source.html#l00080">LongUnion::LowWord</a>, <a class="el" href="LongUnion_8h_source.html#l00063">LongUnion::MidHighByte</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00103">NEC_BIT_MARK</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00097">NEC_BITS</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00100">NEC_HEADER_MARK</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00101">NEC_HEADER_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00104">NEC_ONE_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00107">NEC_REPEAT_HEADER_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00112">NEC_REPEAT_PERIOD</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00105">NEC_ZERO_SPACE</a>, <a class="el" href="digitalWriteFast_8h_source.html#l00375">pinModeFast</a>, <a class="el" href="TinyIRSender_8hpp_source.html#l00070">sendMark()</a>, <a class="el" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">LongUnion::UByte</a>, <a class="el" href="LongUnion_8h_source.html#l00095">LongUnion::ULong</a> y <a class="el" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">LongUnion::UWord</a>.</p>
+
+</div>
+</div>
+<a id="ga03e7b24211df9d9b321032bf11449df8" name="ga03e7b24211df9d9b321032bf11449df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03e7b24211df9d9b321032bf11449df8">&#9670;&#160;</a></span>sendFAST()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendFAST </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast8_t</td>          <td class="paramname"><span class="paramname"><em>aNumberOfRepeats</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00294">294</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  294</span>                                                                                  {</div>
+<div class="line"><span class="lineno">  295</span>    <a class="code hl_define" href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a>(aSendPin, OUTPUT);</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    uint_fast8_t tNumberOfCommands = aNumberOfRepeats + 1;</div>
+<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">while</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tStartOfFrameMillis = millis();</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>        <span class="comment">// send header</span></div>
+<div class="line"><span class="lineno">  302</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__TinyReceiver.html#ga533fde31d6c3cab34ddeefbe26183427">FAST_HEADER_MARK</a>);</div>
+<div class="line"><span class="lineno">  303</span>        delayMicroseconds(<a class="code hl_define" href="group__TinyReceiver.html#ga14bff3efcd02e7c95ffb4a1220e7b86a">FAST_HEADER_SPACE</a>);</div>
+<div class="line"><span class="lineno">  304</span>        uint16_t tData;</div>
+<div class="line"><span class="lineno">  305</span>        <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  306</span><span class="comment">         * The compiler is intelligent and removes the code for &quot;(aCommand &gt; 0xFF)&quot; if we are called with an uint8_t command :-).</span></div>
+<div class="line"><span class="lineno">  307</span><span class="comment">         * Using an uint16_t command requires additional 56 bytes program memory.</span></div>
+<div class="line"><span class="lineno">  308</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">if</span> (aCommand &gt; 0xFF) {</div>
+<div class="line"><span class="lineno">  310</span>            tData = aCommand;</div>
+<div class="line"><span class="lineno">  311</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  312</span>            tData = aCommand | (((uint8_t) (~aCommand)) &lt;&lt; 8); <span class="comment">// LSB first</span></div>
+<div class="line"><span class="lineno">  313</span>        }</div>
+<div class="line"><span class="lineno">  314</span>        <span class="comment">// Send data</span></div>
+<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">for</span> (uint_fast8_t i = 0; i &lt; <a class="code hl_define" href="group__TinyReceiver.html#gadd78822c51f4692289f2ce174bdf82b0">FAST_BITS</a>; ++i) {</div>
+<div class="line"><span class="lineno">  316</span>            <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__TinyReceiver.html#gad0e804e9cefa097c4f675793f68e1872">FAST_BIT_MARK</a>); <span class="comment">// constant mark length</span></div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>            <span class="keywordflow">if</span> (tData &amp; 1) {</div>
+<div class="line"><span class="lineno">  319</span>                delayMicroseconds(<a class="code hl_define" href="group__TinyReceiver.html#ga3328b696c6fa6b4dcf75fd608ede42be">FAST_ONE_SPACE</a>);</div>
+<div class="line"><span class="lineno">  320</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  321</span>                delayMicroseconds(<a class="code hl_define" href="group__TinyReceiver.html#ga45f7bfdc1ec78bb187031df82d97a9b1">FAST_ZERO_SPACE</a>);</div>
+<div class="line"><span class="lineno">  322</span>            }</div>
+<div class="line"><span class="lineno">  323</span>            tData &gt;&gt;= 1; <span class="comment">// shift command for next bit</span></div>
+<div class="line"><span class="lineno">  324</span>        }</div>
+<div class="line"><span class="lineno">  325</span>        <span class="comment">// send stop bit</span></div>
+<div class="line"><span class="lineno">  326</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__TinyReceiver.html#gad0e804e9cefa097c4f675793f68e1872">FAST_BIT_MARK</a>);</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>        tNumberOfCommands--;</div>
+<div class="line"><span class="lineno">  329</span>        <span class="comment">// skip last delay!</span></div>
+<div class="line"><span class="lineno">  330</span>        <span class="keywordflow">if</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  331</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  332</span><span class="comment">             * Check and fallback for wrong RepeatPeriodMillis parameter. I.e the repeat period must be greater than each frame duration.</span></div>
+<div class="line"><span class="lineno">  333</span><span class="comment">             */</span></div>
+<div class="line"><span class="lineno">  334</span>            <span class="keyword">auto</span> tFrameDurationMillis = millis() - tStartOfFrameMillis;</div>
+<div class="line"><span class="lineno">  335</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="group__TinyReceiver.html#ga2c359cbdc94b7c6c8e7fdcd5554f82d3">FAST_REPEAT_PERIOD</a> / 1000 &gt; tFrameDurationMillis) {</div>
+<div class="line"><span class="lineno">  336</span>                <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(<a class="code hl_define" href="group__TinyReceiver.html#ga2c359cbdc94b7c6c8e7fdcd5554f82d3">FAST_REPEAT_PERIOD</a> / 1000 - tFrameDurationMillis);</div>
+<div class="line"><span class="lineno">  337</span>            }</div>
+<div class="line"><span class="lineno">  338</span>        }</div>
+<div class="line"><span class="lineno">  339</span>    }</div>
+<div class="line"><span class="lineno">  340</span>}</div>
+<div class="ttc" id="agroup__TinyReceiver_html_ga14bff3efcd02e7c95ffb4a1220e7b86a"><div class="ttname"><a href="group__TinyReceiver.html#ga14bff3efcd02e7c95ffb4a1220e7b86a">FAST_HEADER_SPACE</a></div><div class="ttdeci">#define FAST_HEADER_SPACE</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00101">TinyIR.h:101</a></div></div>
+<div class="ttc" id="agroup__TinyReceiver_html_ga2c359cbdc94b7c6c8e7fdcd5554f82d3"><div class="ttname"><a href="group__TinyReceiver.html#ga2c359cbdc94b7c6c8e7fdcd5554f82d3">FAST_REPEAT_PERIOD</a></div><div class="ttdeci">#define FAST_REPEAT_PERIOD</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00103">TinyIR.h:103</a></div></div>
+<div class="ttc" id="agroup__TinyReceiver_html_ga3328b696c6fa6b4dcf75fd608ede42be"><div class="ttname"><a href="group__TinyReceiver.html#ga3328b696c6fa6b4dcf75fd608ede42be">FAST_ONE_SPACE</a></div><div class="ttdeci">#define FAST_ONE_SPACE</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00097">TinyIR.h:97</a></div></div>
+<div class="ttc" id="agroup__TinyReceiver_html_ga45f7bfdc1ec78bb187031df82d97a9b1"><div class="ttname"><a href="group__TinyReceiver.html#ga45f7bfdc1ec78bb187031df82d97a9b1">FAST_ZERO_SPACE</a></div><div class="ttdeci">#define FAST_ZERO_SPACE</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00098">TinyIR.h:98</a></div></div>
+<div class="ttc" id="agroup__TinyReceiver_html_ga533fde31d6c3cab34ddeefbe26183427"><div class="ttname"><a href="group__TinyReceiver.html#ga533fde31d6c3cab34ddeefbe26183427">FAST_HEADER_MARK</a></div><div class="ttdeci">#define FAST_HEADER_MARK</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00100">TinyIR.h:100</a></div></div>
+<div class="ttc" id="agroup__TinyReceiver_html_gad0e804e9cefa097c4f675793f68e1872"><div class="ttname"><a href="group__TinyReceiver.html#gad0e804e9cefa097c4f675793f68e1872">FAST_BIT_MARK</a></div><div class="ttdeci">#define FAST_BIT_MARK</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00096">TinyIR.h:96</a></div></div>
+<div class="ttc" id="agroup__TinyReceiver_html_gadd78822c51f4692289f2ce174bdf82b0"><div class="ttname"><a href="group__TinyReceiver.html#gadd78822c51f4692289f2ce174bdf82b0">FAST_BITS</a></div><div class="ttdeci">#define FAST_BITS</div><div class="ttdef"><b>Definition</b> <a href="TinyIR_8h_source.html#l00092">TinyIR.h:92</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay()</a>, <a class="el" href="TinyIR_8h_source.html#l00096">FAST_BIT_MARK</a>, <a class="el" href="TinyIR_8h_source.html#l00092">FAST_BITS</a>, <a class="el" href="TinyIR_8h_source.html#l00100">FAST_HEADER_MARK</a>, <a class="el" href="TinyIR_8h_source.html#l00101">FAST_HEADER_SPACE</a>, <a class="el" href="TinyIR_8h_source.html#l00097">FAST_ONE_SPACE</a>, <a class="el" href="TinyIR_8h_source.html#l00103">FAST_REPEAT_PERIOD</a>, <a class="el" href="TinyIR_8h_source.html#l00098">FAST_ZERO_SPACE</a>, <a class="el" href="digitalWriteFast_8h_source.html#l00375">pinModeFast</a> y <a class="el" href="TinyIRSender_8hpp_source.html#l00070">sendMark()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TinyIRSender_8hpp_source.html#l00287">sendFast8BitAndParity()</a>.</p>
+
+</div>
+</div>
+<a id="gac2a48685f769fa815bb473f6c97c9677" name="gac2a48685f769fa815bb473f6c97c9677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2a48685f769fa815bb473f6c97c9677">&#9670;&#160;</a></span>sendFast8BitAndParity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendFast8BitAndParity </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast8_t</td>          <td class="paramname"><span class="paramname"><em>aNumberOfRepeats</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00287">287</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>                                                                                              {</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="#ga03e7b24211df9d9b321032bf11449df8">sendFAST</a>(aSendPin, aCommand, aNumberOfRepeats);</div>
+<div class="line"><span class="lineno">  289</span>}</div>
+<div class="ttc" id="agroup__TinySender_html_ga03e7b24211df9d9b321032bf11449df8"><div class="ttname"><a href="#ga03e7b24211df9d9b321032bf11449df8">sendFAST</a></div><div class="ttdeci">void sendFAST(uint8_t aSendPin, uint16_t aCommand, uint_fast8_t aNumberOfRepeats)</div><div class="ttdef"><b>Definition</b> <a href="TinyIRSender_8hpp_source.html#l00294">TinyIRSender.hpp:294</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="TinyIRSender_8hpp_source.html#l00294">sendFAST()</a>.</p>
+
+</div>
+</div>
+<a id="ga1cc15240b7357116480a33cbc5ff4a06" name="ga1cc15240b7357116480a33cbc5ff4a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1cc15240b7357116480a33cbc5ff4a06">&#9670;&#160;</a></span>sendMark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendMark </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>aMarkMicros</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00070">70</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                                                          {</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tStartMicros = micros();</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tNextPeriodEnding = tStartMicros;</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tMicros;</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   76</span><span class="comment">         * Generate pulse</span></div>
+<div class="line"><span class="lineno">   77</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">   78</span>        noInterrupts(); <span class="comment">// do not let interrupts extend the short on period</span></div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(aSendPin, HIGH);</div>
+<div class="line"><span class="lineno">   80</span>        delayMicroseconds(8); <span class="comment">// 8 us for a 30 % duty cycle for 38 kHz</span></div>
+<div class="line"><span class="lineno">   81</span>        <a class="code hl_define" href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a>(aSendPin, LOW);</div>
+<div class="line"><span class="lineno">   82</span>        interrupts(); <span class="comment">// Enable interrupts - to keep micros correct- for the longer off period 3.4 us until receive ISR is active (for 7 us + pop&#39;s)</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>        <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   85</span><span class="comment">         * PWM pause timing and end check</span></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">         * Minimal pause duration is 4.3 us</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">   88</span>        tNextPeriodEnding += 26; <span class="comment">// for 38 kHz</span></div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   90</span>            tMicros = micros(); <span class="comment">// we have only 4 us resolution for AVR @16MHz</span></div>
+<div class="line"><span class="lineno">   91</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   92</span><span class="comment">             * Exit the forever loop if aMarkMicros has reached</span></div>
+<div class="line"><span class="lineno">   93</span><span class="comment">             */</span></div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tDeltaMicros = tMicros - tStartMicros;</div>
+<div class="line"><span class="lineno">   95</span><span class="preprocessor">#if defined(__AVR__)</span></div>
+<div class="line"><span class="lineno">   96</span>            <span class="comment">// Just getting variables and check for end condition takes minimal 3.8 us</span></div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">if</span> (tDeltaMicros &gt;= aMarkMicros - (112 / (F_CPU / <a class="code hl_define" href="IRremote_8hpp.html#af33c8a218dd35ede965cf20a68a0068d">MICROS_IN_ONE_SECOND</a>))) { <span class="comment">// To compensate for call duration - 112 is an empirical value</span></div>
+<div class="line"><span class="lineno">   98</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">if</span> (tDeltaMicros &gt;= aMarkMicros) {</div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  102</span>            }</div>
+<div class="line"><span class="lineno">  103</span>        } <span class="keywordflow">while</span> (tMicros &lt; tNextPeriodEnding);</div>
+<div class="line"><span class="lineno">  104</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+<div class="ttc" id="aIRremote_8hpp_html_af33c8a218dd35ede965cf20a68a0068d"><div class="ttname"><a href="IRremote_8hpp.html#af33c8a218dd35ede965cf20a68a0068d">MICROS_IN_ONE_SECOND</a></div><div class="ttdeci">#define MICROS_IN_ONE_SECOND</div><div class="ttdef"><b>Definition</b> <a href="IRremote_8hpp_source.html#l00254">IRremote.hpp:254</a></div></div>
+<div class="ttc" id="adigitalWriteFast_8h_html_a9bef074dfc5a83ffbb27929185ef9597"><div class="ttname"><a href="digitalWriteFast_8h.html#a9bef074dfc5a83ffbb27929185ef9597">digitalWriteFast</a></div><div class="ttdeci">#define digitalWriteFast</div><div class="ttdef"><b>Definition</b> <a href="digitalWriteFast_8h_source.html#l00343">digitalWriteFast.h:343</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="digitalWriteFast_8h_source.html#l00343">digitalWriteFast</a> y <a class="el" href="IRremote_8hpp_source.html#l00254">MICROS_IN_ONE_SECOND</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TinyIRSender_8hpp_source.html#l00234">sendExtendedNEC()</a>, <a class="el" href="TinyIRSender_8hpp_source.html#l00294">sendFAST()</a>, <a class="el" href="TinyIRSender_8hpp_source.html#l00168">sendNEC()</a> y <a class="el" href="TinyIRSender_8hpp_source.html#l00114">sendONKYO()</a>.</p>
+
+</div>
+</div>
+<a id="ga0a4a942fdd78fd7e5f6a54b0c7251ff7" name="ga0a4a942fdd78fd7e5f6a54b0c7251ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a4a942fdd78fd7e5f6a54b0c7251ff7">&#9670;&#160;</a></span>sendNEC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendNEC </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aAddress</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast8_t</td>          <td class="paramname"><span class="paramname"><em>aNumberOfRepeats</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>aSendNEC2Repeats</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00168">168</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                                                                                           {</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_define" href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a>(aSendPin, OUTPUT);</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    uint_fast8_t tNumberOfCommands = aNumberOfRepeats + 1;</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">while</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tStartOfFrameMillis = millis();</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga8d393b95d8df4dfa15873aec6a37965e">NEC_HEADER_MARK</a>);</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">if</span> ((!aSendNEC2Repeats) &amp;&amp; (tNumberOfCommands &lt; aNumberOfRepeats + 1)) {</div>
+<div class="line"><span class="lineno">  177</span>            <span class="comment">// send the NEC special repeat</span></div>
+<div class="line"><span class="lineno">  178</span>            delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga91880ffa0b09391f2c827d3a1c565abf">NEC_REPEAT_HEADER_SPACE</a>); <span class="comment">// - 2250</span></div>
+<div class="line"><span class="lineno">  179</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  180</span>            <span class="comment">// send header</span></div>
+<div class="line"><span class="lineno">  181</span>            delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5c728ed320ffee624e26767be0a80404">NEC_HEADER_SPACE</a>);</div>
+<div class="line"><span class="lineno">  182</span>            <a class="code hl_union" href="unionLongUnion.html">LongUnion</a> tData;</div>
+<div class="line"><span class="lineno">  183</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  184</span><span class="comment">             * The compiler is intelligent and removes the code for &quot;(aAddress &gt; 0xFF)&quot; if we are called with an uint8_t address :-).</span></div>
+<div class="line"><span class="lineno">  185</span><span class="comment">             * Using an uint16_t address requires additional 28 bytes program memory.</span></div>
+<div class="line"><span class="lineno">  186</span><span class="comment">             */</span></div>
+<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">if</span> (aAddress &gt; 0xFF) {</div>
+<div class="line"><span class="lineno">  188</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">UWord</a>.<a class="code hl_variable" href="unionLongUnion.html#a05f946f8845eb4dda0407470d34854e2">LowWord</a> = aAddress;</div>
+<div class="line"><span class="lineno">  189</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  190</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aa41368107679917a1c39f30999f4e9d9">LowByte</a> = aAddress; <span class="comment">// LSB first</span></div>
+<div class="line"><span class="lineno">  191</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aeed69e051ef3c5c3d03e0efa260226b1">MidLowByte</a> = ~aAddress;</div>
+<div class="line"><span class="lineno">  192</span>            }</div>
+<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">if</span> (aCommand &gt; 0xFF) {</div>
+<div class="line"><span class="lineno">  194</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">UWord</a>.<a class="code hl_variable" href="unionLongUnion.html#afd26d7d3a11130649129850162a7eb39">HighWord</a> = aCommand;</div>
+<div class="line"><span class="lineno">  195</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  196</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#aba027b17010803cf910996cae9201f32">MidHighByte</a> = aCommand;</div>
+<div class="line"><span class="lineno">  197</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">UByte</a>.<a class="code hl_variable" href="unionLongUnion.html#a67e1514b7a6ccc4d017eb6928c327e5c">HighByte</a> = ~aCommand; <span class="comment">// LSB first</span></div>
+<div class="line"><span class="lineno">  198</span>            }</div>
+<div class="line"><span class="lineno">  199</span>            <span class="comment">// Send data</span></div>
+<div class="line"><span class="lineno">  200</span>            <span class="keywordflow">for</span> (uint_fast8_t i = 0; i &lt; <a class="code hl_define" href="group__Decoder.html#gaa82c77bc0131ac28bc3534b8cf3422bc">NEC_BITS</a>; ++i) {</div>
+<div class="line"><span class="lineno">  201</span>                <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a>); <span class="comment">// constant mark length</span></div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>                <span class="keywordflow">if</span> (tData.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a> &amp; 1) {</div>
+<div class="line"><span class="lineno">  204</span>                    delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5ac04ec8b2185c9fb257d39c472733b1">NEC_ONE_SPACE</a>);</div>
+<div class="line"><span class="lineno">  205</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  206</span>                    delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5ee46914e98bf7f87f32a7104843b243">NEC_ZERO_SPACE</a>);</div>
+<div class="line"><span class="lineno">  207</span>                }</div>
+<div class="line"><span class="lineno">  208</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a> &gt;&gt;= 1; <span class="comment">// shift command for next bit</span></div>
+<div class="line"><span class="lineno">  209</span>            }</div>
+<div class="line"><span class="lineno">  210</span>        }        <span class="comment">// send stop bit</span></div>
+<div class="line"><span class="lineno">  211</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a>);</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>        tNumberOfCommands--;</div>
+<div class="line"><span class="lineno">  214</span>        <span class="comment">// skip last delay!</span></div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">if</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  216</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  217</span><span class="comment">             * Check and fallback for wrong RepeatPeriodMillis parameter. I.e the repeat period must be greater than each frame duration.</span></div>
+<div class="line"><span class="lineno">  218</span><span class="comment">             */</span></div>
+<div class="line"><span class="lineno">  219</span>            <span class="keyword">auto</span> tFrameDurationMillis = millis() - tStartOfFrameMillis;</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a> / 1000 &gt; tFrameDurationMillis) {</div>
+<div class="line"><span class="lineno">  221</span>                <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(<a class="code hl_define" href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a> / 1000 - tFrameDurationMillis);</div>
+<div class="line"><span class="lineno">  222</span>            }</div>
+<div class="line"><span class="lineno">  223</span>        }</div>
+<div class="line"><span class="lineno">  224</span>    }</div>
+<div class="line"><span class="lineno">  225</span>}</div>
+<div class="ttc" id="aunionLongUnion_html_aa41368107679917a1c39f30999f4e9d9"><div class="ttname"><a href="unionLongUnion.html#aa41368107679917a1c39f30999f4e9d9">LongUnion::LowByte</a></div><div class="ttdeci">uint8_t LowByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00061">LongUnion.h:61</a></div></div>
+<div class="ttc" id="aunionLongUnion_html_aeed69e051ef3c5c3d03e0efa260226b1"><div class="ttname"><a href="unionLongUnion.html#aeed69e051ef3c5c3d03e0efa260226b1">LongUnion::MidLowByte</a></div><div class="ttdeci">uint8_t MidLowByte</div><div class="ttdef"><b>Definition</b> <a href="LongUnion_8h_source.html#l00062">LongUnion.h:62</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay()</a>, <a class="el" href="LongUnion_8h_source.html#l00064">LongUnion::HighByte</a>, <a class="el" href="LongUnion_8h_source.html#l00081">LongUnion::HighWord</a>, <a class="el" href="LongUnion_8h_source.html#l00061">LongUnion::LowByte</a>, <a class="el" href="LongUnion_8h_source.html#l00080">LongUnion::LowWord</a>, <a class="el" href="LongUnion_8h_source.html#l00063">LongUnion::MidHighByte</a>, <a class="el" href="LongUnion_8h_source.html#l00062">LongUnion::MidLowByte</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00103">NEC_BIT_MARK</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00097">NEC_BITS</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00100">NEC_HEADER_MARK</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00101">NEC_HEADER_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00104">NEC_ONE_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00107">NEC_REPEAT_HEADER_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00112">NEC_REPEAT_PERIOD</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00105">NEC_ZERO_SPACE</a>, <a class="el" href="digitalWriteFast_8h_source.html#l00375">pinModeFast</a>, <a class="el" href="TinyIRSender_8hpp_source.html#l00070">sendMark()</a>, <a class="el" href="unionLongUnion.html#a81d84b7f8f09ffa223e0dbba9d234a0a">LongUnion::UByte</a>, <a class="el" href="LongUnion_8h_source.html#l00095">LongUnion::ULong</a> y <a class="el" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">LongUnion::UWord</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="TinyIRSender_8hpp_source.html#l00165">sendNECMinimal()</a>.</p>
+
+</div>
+</div>
+<a id="ga693e3c08170e163489b7c73c595c060e" name="ga693e3c08170e163489b7c73c595c060e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga693e3c08170e163489b7c73c595c060e">&#9670;&#160;</a></span>sendNECMinimal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendNECMinimal </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aAddress</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast8_t</td>          <td class="paramname"><span class="paramname"><em>aNumberOfRepeats</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00165">165</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>                                                                                                           {</div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_function" href="#ga0a4a942fdd78fd7e5f6a54b0c7251ff7">sendNEC</a>(aSendPin, aAddress, aCommand, aNumberOfRepeats); <span class="comment">// sendNECMinimal() is deprecated</span></div>
+<div class="line"><span class="lineno">  167</span>}</div>
+<div class="ttc" id="agroup__TinySender_html_ga0a4a942fdd78fd7e5f6a54b0c7251ff7"><div class="ttname"><a href="#ga0a4a942fdd78fd7e5f6a54b0c7251ff7">sendNEC</a></div><div class="ttdeci">void sendNEC(uint8_t aSendPin, uint16_t aAddress, uint16_t aCommand, uint_fast8_t aNumberOfRepeats, bool aSendNEC2Repeats)</div><div class="ttdef"><b>Definition</b> <a href="TinyIRSender_8hpp_source.html#l00168">TinyIRSender.hpp:168</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="TinyIRSender_8hpp_source.html#l00168">sendNEC()</a>.</p>
+
+</div>
+</div>
+<a id="gaff8e9e20a15795c5e211407f62166637" name="gaff8e9e20a15795c5e211407f62166637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff8e9e20a15795c5e211407f62166637">&#9670;&#160;</a></span>sendONKYO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendONKYO </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>aSendPin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aAddress</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>aCommand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast8_t</td>          <td class="paramname"><span class="paramname"><em>aNumberOfRepeats</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>aSendNEC2Repeats</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="TinyIRSender_8hpp_source.html#l00114">114</a> del archivo <a class="el" href="TinyIRSender_8hpp_source.html">TinyIRSender.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                                                                                             {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_define" href="digitalWriteFast_8h.html#a99fa3e1d72f2f1a9ffba996b06767a39">pinModeFast</a>(aSendPin, OUTPUT);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    uint_fast8_t tNumberOfCommands = aNumberOfRepeats + 1;</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">while</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> tStartOfFrameMillis = millis();</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga8d393b95d8df4dfa15873aec6a37965e">NEC_HEADER_MARK</a>);</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> ((!aSendNEC2Repeats) &amp;&amp; (tNumberOfCommands &lt; aNumberOfRepeats + 1)) {</div>
+<div class="line"><span class="lineno">  123</span>            <span class="comment">// send the NEC special repeat</span></div>
+<div class="line"><span class="lineno">  124</span>            delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga91880ffa0b09391f2c827d3a1c565abf">NEC_REPEAT_HEADER_SPACE</a>); <span class="comment">// - 2250</span></div>
+<div class="line"><span class="lineno">  125</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  126</span>            <span class="comment">// send header</span></div>
+<div class="line"><span class="lineno">  127</span>            delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5c728ed320ffee624e26767be0a80404">NEC_HEADER_SPACE</a>);</div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_union" href="unionLongUnion.html">LongUnion</a> tData;</div>
+<div class="line"><span class="lineno">  129</span>            tData.<a class="code hl_variable" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">UWord</a>.<a class="code hl_variable" href="unionLongUnion.html#a05f946f8845eb4dda0407470d34854e2">LowWord</a> = aAddress;</div>
+<div class="line"><span class="lineno">  130</span>            tData.<a class="code hl_variable" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">UWord</a>.<a class="code hl_variable" href="unionLongUnion.html#afd26d7d3a11130649129850162a7eb39">HighWord</a> = aCommand;</div>
+<div class="line"><span class="lineno">  131</span>            <span class="comment">// Send data</span></div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">for</span> (uint_fast8_t i = 0; i &lt; <a class="code hl_define" href="group__Decoder.html#gaa82c77bc0131ac28bc3534b8cf3422bc">NEC_BITS</a>; ++i) {</div>
+<div class="line"><span class="lineno">  133</span>                <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a>); <span class="comment">// constant mark length</span></div>
+<div class="line"><span class="lineno">  134</span>                <span class="keywordflow">if</span> (tData.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a> &amp; 1) {</div>
+<div class="line"><span class="lineno">  135</span>                    delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5ac04ec8b2185c9fb257d39c472733b1">NEC_ONE_SPACE</a>);</div>
+<div class="line"><span class="lineno">  136</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  137</span>                    delayMicroseconds(<a class="code hl_define" href="group__Decoder.html#ga5ee46914e98bf7f87f32a7104843b243">NEC_ZERO_SPACE</a>);</div>
+<div class="line"><span class="lineno">  138</span>                }</div>
+<div class="line"><span class="lineno">  139</span>                tData.<a class="code hl_variable" href="unionLongUnion.html#aaf8815ca810b2d8386b5912f127586a7">ULong</a> &gt;&gt;= 1; <span class="comment">// shift command for next bit</span></div>
+<div class="line"><span class="lineno">  140</span>            }</div>
+<div class="line"><span class="lineno">  141</span>        }        <span class="comment">// send stop bit</span></div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_function" href="#ga1cc15240b7357116480a33cbc5ff4a06">sendMark</a>(aSendPin, <a class="code hl_define" href="group__Decoder.html#ga3abbe30ef3781c1cf2490003e1c1443a">NEC_BIT_MARK</a>);</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>        tNumberOfCommands--;</div>
+<div class="line"><span class="lineno">  145</span>        <span class="comment">// skip last delay!</span></div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> (tNumberOfCommands &gt; 0) {</div>
+<div class="line"><span class="lineno">  147</span>            <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment">             * Check and fallback for wrong RepeatPeriodMillis parameter. I.e the repeat period must be greater than each frame duration.</span></div>
+<div class="line"><span class="lineno">  149</span><span class="comment">             */</span></div>
+<div class="line"><span class="lineno">  150</span>            <span class="keyword">auto</span> tFrameDurationMillis = millis() - tStartOfFrameMillis;</div>
+<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a> / 1000 &gt; tFrameDurationMillis) {</div>
+<div class="line"><span class="lineno">  152</span>                <a class="code hl_function" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay</a>(<a class="code hl_define" href="group__Decoder.html#gac2dab5c4a22f8c4915217d3ee4676f08">NEC_REPEAT_PERIOD</a> / 1000 - tFrameDurationMillis);</div>
+<div class="line"><span class="lineno">  153</span>            }</div>
+<div class="line"><span class="lineno">  154</span>        }</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="GC9A01__Init_8h.html#a5aca13d7b6004cb9d0f57e632205e46b">delay()</a>, <a class="el" href="LongUnion_8h_source.html#l00081">LongUnion::HighWord</a>, <a class="el" href="LongUnion_8h_source.html#l00080">LongUnion::LowWord</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00103">NEC_BIT_MARK</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00097">NEC_BITS</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00100">NEC_HEADER_MARK</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00101">NEC_HEADER_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00104">NEC_ONE_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00107">NEC_REPEAT_HEADER_SPACE</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00112">NEC_REPEAT_PERIOD</a>, <a class="el" href="ir__NEC_8hpp_source.html#l00105">NEC_ZERO_SPACE</a>, <a class="el" href="digitalWriteFast_8h_source.html#l00375">pinModeFast</a>, <a class="el" href="TinyIRSender_8hpp_source.html#l00070">sendMark()</a>, <a class="el" href="LongUnion_8h_source.html#l00095">LongUnion::ULong</a> y <a class="el" href="unionLongUnion.html#a651d9cc12ce8322cd9d1e478b36a81df">LongUnion::UWord</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

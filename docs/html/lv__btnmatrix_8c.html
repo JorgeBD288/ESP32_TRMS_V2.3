@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Referencia del archivo lib/lvgl/src/widgets/lv_btnmatrix.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lv__btnmatrix_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lv_btnmatrix.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="lv__btnmatrix_8h_source.html">lv_btnmatrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__assert_8h_source.html">../misc/lv_assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__indev_8h_source.html">../core/lv_indev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__group_8h_source.html">../core/lv_group.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__draw_8h_source.html">../draw/lv_draw.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__refr_8h_source.html">../core/lv_refr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__txt_8h_source.html">../misc/lv_txt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lv__txt__ap_8h_source.html">../misc/lv_txt_ap.h</a>&quot;</code><br />
+</div>
+<p><a href="lv__btnmatrix_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a5a838edcc915470e7f200a17f40ae9d6" id="r_a5a838edcc915470e7f200a17f40ae9d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a838edcc915470e7f200a17f40ae9d6">BTN_EXTRA_CLICK_AREA_MAX</a>&#160;&#160;&#160;(<a class="el" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> / 10)</td></tr>
+<tr class="memitem:aea9cd4789266a3a8ef7ecb5997a9f447" id="r_aea9cd4789266a3a8ef7ecb5997a9f447"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea9cd4789266a3a8ef7ecb5997a9f447">LV_BTNMATRIX_WIDTH_MASK</a>&#160;&#160;&#160;0x000F</td></tr>
+<tr class="memitem:a9be806f23ad96997f1d62c1a6dfabe05" id="r_a9be806f23ad96997f1d62c1a6dfabe05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>&#160;&#160;&#160;&amp;<a class="el" href="#aeb8c4b9564fd7745c49cb854b9f97735">lv_btnmatrix_class</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:aee9602dad4ae1b66a433202efe87816a" id="r_aee9602dad4ae1b66a433202efe87816a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee9602dad4ae1b66a433202efe87816a">lv_btnmatrix_clear_btn_ctrl</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t btn_id, <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a> ctrl)</td></tr>
+<tr class="memitem:a7f3ec532d602c0df4cbc910f5f402147" id="r_a7f3ec532d602c0df4cbc910f5f402147"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f3ec532d602c0df4cbc910f5f402147">lv_btnmatrix_clear_btn_ctrl_all</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a> ctrl)</td></tr>
+<tr class="memitem:a6c0fe59cb71dc904b1a923460d8e5236" id="r_a6c0fe59cb71dc904b1a923460d8e5236"><td class="memItemLeft" align="right" valign="top"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c0fe59cb71dc904b1a923460d8e5236">lv_btnmatrix_create</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *parent)</td></tr>
+<tr class="memitem:aaf80838b5ce46cffeb824500317a2bdd" id="r_aaf80838b5ce46cffeb824500317a2bdd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf80838b5ce46cffeb824500317a2bdd">lv_btnmatrix_get_btn_text</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t btn_id)</td></tr>
+<tr class="memitem:a01c8788d5033ff92615f87f96bcff5fd" id="r_a01c8788d5033ff92615f87f96bcff5fd"><td class="memItemLeft" align="right" valign="top">const char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01c8788d5033ff92615f87f96bcff5fd">lv_btnmatrix_get_map</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:a907416cec7d5617694781d135f24c18c" id="r_a907416cec7d5617694781d135f24c18c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a907416cec7d5617694781d135f24c18c">lv_btnmatrix_get_one_checked</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ab597f57b85824b31003b4ed6e0d4cfa6" id="r_ab597f57b85824b31003b4ed6e0d4cfa6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab597f57b85824b31003b4ed6e0d4cfa6">lv_btnmatrix_get_selected_btn</a> (const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj)</td></tr>
+<tr class="memitem:ac0b8b7511e2746f05b690add7e16dbb0" id="r_ac0b8b7511e2746f05b690add7e16dbb0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0b8b7511e2746f05b690add7e16dbb0">lv_btnmatrix_has_btn_ctrl</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t btn_id, <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a> ctrl)</td></tr>
+<tr class="memitem:a5dc6dae51c983371337b415f2330c71c" id="r_a5dc6dae51c983371337b415f2330c71c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t btn_id, <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a> ctrl)</td></tr>
+<tr class="memitem:afb072278ff0042eac694f0139cf5451e" id="r_afb072278ff0042eac694f0139cf5451e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb072278ff0042eac694f0139cf5451e">lv_btnmatrix_set_btn_ctrl_all</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a> ctrl)</td></tr>
+<tr class="memitem:a15f65df093de0b3fccdff6aa804cb63a" id="r_a15f65df093de0b3fccdff6aa804cb63a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15f65df093de0b3fccdff6aa804cb63a">lv_btnmatrix_set_btn_width</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t btn_id, uint8_t width)</td></tr>
+<tr class="memitem:a2a5c44579692e36a2cf74ac2c23f8d88" id="r_a2a5c44579692e36a2cf74ac2c23f8d88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a5c44579692e36a2cf74ac2c23f8d88">lv_btnmatrix_set_ctrl_map</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a> ctrl_map[])</td></tr>
+<tr class="memitem:ab3987d2f4338fa6194665a3924608c5a" id="r_ab3987d2f4338fa6194665a3924608c5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3987d2f4338fa6194665a3924608c5a">lv_btnmatrix_set_map</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, const char *map[])</td></tr>
+<tr class="memitem:a634e7f994d4d6d8551cacccc58b094d9" id="r_a634e7f994d4d6d8551cacccc58b094d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a634e7f994d4d6d8551cacccc58b094d9">lv_btnmatrix_set_one_checked</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, bool en)</td></tr>
+<tr class="memitem:ac887783607642c29fdcc31b34da7ed10" id="r_ac887783607642c29fdcc31b34da7ed10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac887783607642c29fdcc31b34da7ed10">lv_btnmatrix_set_selected_btn</a> (<a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *obj, uint16_t btn_id)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aeb8c4b9564fd7745c49cb854b9f97735" id="r_aeb8c4b9564fd7745c49cb854b9f97735"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb8c4b9564fd7745c49cb854b9f97735">lv_btnmatrix_class</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a5a838edcc915470e7f200a17f40ae9d6" name="a5a838edcc915470e7f200a17f40ae9d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a838edcc915470e7f200a17f40ae9d6">&#9670;&#160;</a></span>BTN_EXTRA_CLICK_AREA_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BTN_EXTRA_CLICK_AREA_MAX&#160;&#160;&#160;(<a class="el" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> / 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00025">25</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+
+</div>
+</div>
+<a id="aea9cd4789266a3a8ef7ecb5997a9f447" name="aea9cd4789266a3a8ef7ecb5997a9f447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9cd4789266a3a8ef7ecb5997a9f447">&#9670;&#160;</a></span>LV_BTNMATRIX_WIDTH_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_BTNMATRIX_WIDTH_MASK&#160;&#160;&#160;0x000F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00026">26</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__btnmatrix_8c_source.html#l00283">lv_btnmatrix_set_btn_width()</a>.</p>
+
+</div>
+</div>
+<a id="a9be806f23ad96997f1d62c1a6dfabe05" name="a9be806f23ad96997f1d62c1a6dfabe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be806f23ad96997f1d62c1a6dfabe05">&#9670;&#160;</a></span>MY_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_CLASS&#160;&#160;&#160;&amp;<a class="el" href="#aeb8c4b9564fd7745c49cb854b9f97735">lv_btnmatrix_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00023">23</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="aee9602dad4ae1b66a433202efe87816a" name="aee9602dad4ae1b66a433202efe87816a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee9602dad4ae1b66a433202efe87816a">&#9670;&#160;</a></span>lv_btnmatrix_clear_btn_ctrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_clear_btn_ctrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>btn_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></td>          <td class="paramname"><span class="paramname"><em>ctrl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clear the attributes of a button of the button matrix </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to button matrix object </td></tr>
+    <tr><td class="paramname">btn_id</td><td>0 based index of the button to modify. (Not counting new lines) </td></tr>
+    <tr><td class="paramname">ctrl</td><td>OR-ed attributs. E.g. <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a8b687f1dad1968600f8e8cf81e6602cf">LV_BTNMATRIX_CTRL_NO_REPEAT</a> | <a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a24a06bd7d16b5cabbaf93eff3fcced6b">LV_BTNMATRIX_CTRL_CHECKABLE</a></span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00240">240</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  241</span>{</div>
+<div class="line"><span class="lineno">  242</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">if</span>(btn_id &gt;= btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <span class="comment">/* If all buttons were hidden the whole button matrix is hidden so we need to check and remove hidden flag if present */</span></div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">if</span>(ctrl &amp; <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aae147a0e550c0e9b856bda9f37a08a82">LV_BTNMATRIX_CTRL_HIDDEN</a>) {</div>
+<div class="line"><span class="lineno">  250</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="lv__obj_8c.html#a349bf1b6dea18bd0ab189e7a1c06a662">lv_obj_has_flag</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>)) <a class="code hl_function" href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><span class="lineno">  251</span>    }</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_id] &amp;= (~ctrl);</div>
+<div class="line"><span class="lineno">  254</span>    invalidate_button_area(obj, btn_id);</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">if</span>(ctrl &amp; <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a8d254922bb0d6ad9561bf662bbf0fab4">LV_BTNMATRIX_CTRL_POPOVER</a>) {</div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  258</span>    }</div>
+<div class="line"><span class="lineno">  259</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8h_html_afedbbeb3c1adfce72b350e8fed608bf2a8d254922bb0d6ad9561bf662bbf0fab4"><div class="ttname"><a href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a8d254922bb0d6ad9561bf662bbf0fab4">LV_BTNMATRIX_CTRL_POPOVER</a></div><div class="ttdeci">@ LV_BTNMATRIX_CTRL_POPOVER</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00042">lv_btnmatrix.h:42</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8h_html_afedbbeb3c1adfce72b350e8fed608bf2aae147a0e550c0e9b856bda9f37a08a82"><div class="ttname"><a href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aae147a0e550c0e9b856bda9f37a08a82">LV_BTNMATRIX_CTRL_HIDDEN</a></div><div class="ttdeci">@ LV_BTNMATRIX_CTRL_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00036">lv_btnmatrix.h:36</a></div></div>
+<div class="ttc" id="alv__event_8c_html_a9be806f23ad96997f1d62c1a6dfabe05"><div class="ttname"><a href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a></div><div class="ttdeci">#define MY_CLASS</div><div class="ttdef"><b>Definition</b> <a href="lv__event_8c_source.html#l00015">lv_event.c:15</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a349bf1b6dea18bd0ab189e7a1c06a662"><div class="ttname"><a href="lv__obj_8c.html#a349bf1b6dea18bd0ab189e7a1c06a662">lv_obj_has_flag</a></div><div class="ttdeci">bool lv_obj_has_flag(const lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00318">lv_obj.c:318</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a8a45a671b0fb07c0e99639c180d25fba"><div class="ttname"><a href="lv__obj_8c.html#a8a45a671b0fb07c0e99639c180d25fba">lv_obj_clear_flag</a></div><div class="ttdeci">void lv_obj_clear_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00266">lv_obj.c:266</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a8ec0fe9743c5c015162d64df591cd719"><div class="ttname"><a href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a></div><div class="ttdeci">#define LV_ASSERT_OBJ(obj_p, obj_class)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00397">lv_obj.h:397</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2"><div class="ttname"><a href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a></div><div class="ttdeci">@ LV_OBJ_FLAG_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00090">lv_obj.h:90</a></div></div>
+<div class="ttc" id="alv__obj__draw_8c_html_a334282a6e189afe45217f2fd5faaf71b"><div class="ttname"><a href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a></div><div class="ttdeci">void lv_obj_refresh_ext_draw_size(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__draw_8c_source.html#l00359">lv_obj_draw.c:359</a></div></div>
+<div class="ttc" id="astructlv__btnmatrix__t_html"><div class="ttname"><a href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a></div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00056">lv_btnmatrix.h:56</a></div></div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_a1331ad834db4e8fc6cb74e35b1348904"><div class="ttname"><a href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">lv_btnmatrix_t::btn_cnt</a></div><div class="ttdeci">uint16_t btn_cnt</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix.h:61</a></div></div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_ab865ffddd2801c2ba943368a6b7bbcf1"><div class="ttname"><a href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">lv_btnmatrix_t::ctrl_bits</a></div><div class="ttdeci">lv_btnmatrix_ctrl_t * ctrl_bits</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix.h:60</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix_t::ctrl_bits</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00036">LV_BTNMATRIX_CTRL_HIDDEN</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00042">LV_BTNMATRIX_CTRL_POPOVER</a>, <a class="el" href="lv__obj_8c_source.html#l00266">lv_obj_clear_flag()</a>, <a class="el" href="lv__obj_8h_source.html#l00090">LV_OBJ_FLAG_HIDDEN</a>, <a class="el" href="lv__obj_8c_source.html#l00318">lv_obj_has_flag()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__btnmatrix_8c_source.html#l00272">lv_btnmatrix_clear_btn_ctrl_all()</a> y <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>.</p>
+
+</div>
+</div>
+<a id="a7f3ec532d602c0df4cbc910f5f402147" name="a7f3ec532d602c0df4cbc910f5f402147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3ec532d602c0df4cbc910f5f402147">&#9670;&#160;</a></span>lv_btnmatrix_clear_btn_ctrl_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_clear_btn_ctrl_all </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></td>          <td class="paramname"><span class="paramname"><em>ctrl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clear the attributes of all buttons of a button matrix </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+    <tr><td class="paramname">ctrl</td><td>attribute(s) to set from <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></span>. Values can be ORed. </td></tr>
+    <tr><td class="paramname">en</td><td>true: set the attributes; false: clear the attributes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00272">272</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  273</span>{</div>
+<div class="line"><span class="lineno">  274</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  277</span>    uint16_t i;</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">for</span>(i = 0; i &lt; btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>; i++) {</div>
+<div class="line"><span class="lineno">  279</span>        <a class="code hl_function" href="#aee9602dad4ae1b66a433202efe87816a">lv_btnmatrix_clear_btn_ctrl</a>(obj, i, ctrl);</div>
+<div class="line"><span class="lineno">  280</span>    }</div>
+<div class="line"><span class="lineno">  281</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8c_html_aee9602dad4ae1b66a433202efe87816a"><div class="ttname"><a href="#aee9602dad4ae1b66a433202efe87816a">lv_btnmatrix_clear_btn_ctrl</a></div><div class="ttdeci">void lv_btnmatrix_clear_btn_ctrl(lv_obj_t *obj, uint16_t btn_id, lv_btnmatrix_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00240">lv_btnmatrix.c:240</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00240">lv_btnmatrix_clear_btn_ctrl()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__btnmatrix_8c_source.html#l00207">lv_btnmatrix_set_btn_ctrl()</a> y <a class="el" href="lv__calendar_8c_source.html#l00109">lv_calendar_set_showed_date()</a>.</p>
+
+</div>
+</div>
+<a id="a6c0fe59cb71dc904b1a923460d8e5236" name="a6c0fe59cb71dc904b1a923460d8e5236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0fe59cb71dc904b1a923460d8e5236">&#9670;&#160;</a></span>lv_btnmatrix_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * lv_btnmatrix_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a button matrix object </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>pointer to an object, it will be the parent of the new button matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>pointer to the created button matrix </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00081">81</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_define" href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_typedef" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> * obj = <a class="code hl_function" href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a>(<a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>, parent);</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a>(obj);</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> obj;</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+<div class="ttc" id="alv__log_8h_html_ad912d92d4a755984e83980ff3ee67673"><div class="ttname"><a href="lv__log_8h.html#ad912d92d4a755984e83980ff3ee67673">LV_LOG_INFO</a></div><div class="ttdeci">#define LV_LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> <a href="lv__log_8h_source.html#l00101">lv_log.h:101</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_a01de9a127bcf589bd7d0c695a429b158"><div class="ttname"><a href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a></div><div class="ttdeci">struct _lv_obj_t lv_obj_t</div></div>
+<div class="ttc" id="alv__obj__class_8c_html_ab2819e3208b748d3e3a60c932a32f6d0"><div class="ttname"><a href="lv__obj__class_8c.html#ab2819e3208b748d3e3a60c932a32f6d0">lv_obj_class_create_obj</a></div><div class="ttdeci">lv_obj_t * lv_obj_class_create_obj(const lv_obj_class_t *class_p, lv_obj_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00043">lv_obj_class.c:43</a></div></div>
+<div class="ttc" id="alv__obj__class_8c_html_af1b44594b97077bc64b751f8932b4739"><div class="ttname"><a href="lv__obj__class_8c.html#af1b44594b97077bc64b751f8932b4739">lv_obj_class_init_obj</a></div><div class="ttdeci">void lv_obj_class_init_obj(lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8c_source.html#l00104">lv_obj_class.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__log_8h_source.html#l00101">LV_LOG_INFO</a>, <a class="el" href="lv__obj__class_8c_source.html#l00043">lv_obj_class_create_obj()</a>, <a class="el" href="lv__obj__class_8c_source.html#l00104">lv_obj_class_init_obj()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__btnmatrix__1_8c_source.html#l00022">lv_example_btnmatrix_1()</a>, <a class="el" href="lv__example__btnmatrix__2_8c_source.html#l00071">lv_example_btnmatrix_2()</a>, <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>, <a class="el" href="lv__example__textarea__1_8c_source.html#l00022">lv_example_textarea_1()</a> y <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a>.</p>
+
+</div>
+</div>
+<a id="aaf80838b5ce46cffeb824500317a2bdd" name="aaf80838b5ce46cffeb824500317a2bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf80838b5ce46cffeb824500317a2bdd">&#9670;&#160;</a></span>lv_btnmatrix_get_btn_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * lv_btnmatrix_get_btn_text </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>btn_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00326">326</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>{</div>
+<div class="line"><span class="lineno">  328</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  329</span> </div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">if</span>(btn_id == <a class="code hl_define" href="lv__btnmatrix_8h.html#a6726d21381e2aeede2b3a766d8aace91">LV_BTNMATRIX_BTN_NONE</a>) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">if</span>(btn_id &gt; btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  334</span> </div>
+<div class="line"><span class="lineno">  335</span>    uint16_t txt_i = 0;</div>
+<div class="line"><span class="lineno">  336</span>    uint16_t btn_i = 0;</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    <span class="comment">/*Search the text of btnm-&gt;btn_pr the buttons text in the map</span></div>
+<div class="line"><span class="lineno">  339</span><span class="comment">     *Skip &quot;\n&quot;-s*/</span></div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">while</span>(btn_i != btn_id) {</div>
+<div class="line"><span class="lineno">  341</span>        btn_i++;</div>
+<div class="line"><span class="lineno">  342</span>        txt_i++;</div>
+<div class="line"><span class="lineno">  343</span>        <span class="keywordflow">if</span>(strcmp(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">map_p</a>[txt_i], <span class="stringliteral">&quot;\n&quot;</span>) == 0) txt_i++;</div>
+<div class="line"><span class="lineno">  344</span>    }</div>
+<div class="line"><span class="lineno">  345</span> </div>
+<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">if</span>(btn_i == btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  347</span> </div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">return</span> btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">map_p</a>[txt_i];</div>
+<div class="line"><span class="lineno">  349</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8h_html_a6726d21381e2aeede2b3a766d8aace91"><div class="ttname"><a href="lv__btnmatrix_8h.html#a6726d21381e2aeede2b3a766d8aace91">LV_BTNMATRIX_BTN_NONE</a></div><div class="ttdeci">#define LV_BTNMATRIX_BTN_NONE</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00025">lv_btnmatrix.h:25</a></div></div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_a33b1a3da68197f846dc18913c47ee3ee"><div class="ttname"><a href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">lv_btnmatrix_t::map_p</a></div><div class="ttdeci">const char ** map_p</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00058">lv_btnmatrix.h:58</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00025">LV_BTNMATRIX_BTN_NONE</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00058">lv_btnmatrix_t::map_p</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__calendar_8c_source.html#l00211">lv_calendar_get_pressed_date()</a>, <a class="el" href="lv__keyboard_8c_source.html#l00273">lv_keyboard_def_event_cb()</a> y <a class="el" href="lv__msgbox_8c_source.html#l00183">lv_msgbox_get_active_btn_text()</a>.</p>
+
+</div>
+</div>
+<a id="a01c8788d5033ff92615f87f96bcff5fd" name="a01c8788d5033ff92615f87f96bcff5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c8788d5033ff92615f87f96bcff5fd">&#9670;&#160;</a></span>lv_btnmatrix_get_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ** lv_btnmatrix_get_map </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current map of a button matrix </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>the current map </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00310">310</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>{</div>
+<div class="line"><span class="lineno">  312</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">return</span> btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">map_p</a>;</div>
+<div class="line"><span class="lineno">  316</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00058">lv_btnmatrix_t::map_p</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a907416cec7d5617694781d135f24c18c" name="a907416cec7d5617694781d135f24c18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a907416cec7d5617694781d135f24c18c">&#9670;&#160;</a></span>lv_btnmatrix_get_one_checked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_btnmatrix_get_one_checked </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tell whether "one check" mode is enabled or not. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Button matrix object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: "one check" mode is enabled; false: disabled </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00361">361</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  362</span>{</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  366</span> </div>
+<div class="line"><span class="lineno">  367</span>    <span class="keywordflow">return</span> btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a8c3b78171bd12621bdb6edd9dc5ec570">one_check</a>;</div>
+<div class="line"><span class="lineno">  368</span>}</div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_a8c3b78171bd12621bdb6edd9dc5ec570"><div class="ttname"><a href="structlv__btnmatrix__t.html#a8c3b78171bd12621bdb6edd9dc5ec570">lv_btnmatrix_t::one_check</a></div><div class="ttdeci">uint8_t one_check</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00064">lv_btnmatrix.h:64</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__btnmatrix_8h_source.html#l00064">lv_btnmatrix_t::one_check</a>.</p>
+
+</div>
+</div>
+<a id="ab597f57b85824b31003b4ed6e0d4cfa6" name="ab597f57b85824b31003b4ed6e0d4cfa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab597f57b85824b31003b4ed6e0d4cfa6">&#9670;&#160;</a></span>lv_btnmatrix_get_selected_btn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lv_btnmatrix_get_selected_btn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the index of the lastly "activated" button by the user (pressed, released, focused etc) Useful in the <span class="tt">event_cb</span> to get the text of the button, check if hidden etc. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to button matrix object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>index of the last released button (LV_BTNMATRIX_BTN_NONE: if unset) </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00318">318</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  319</span>{</div>
+<div class="line"><span class="lineno">  320</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  323</span>    <span class="keywordflow">return</span> btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a8c603aac385ca527a7f8c7ec2e4ba250">btn_id_sel</a>;</div>
+<div class="line"><span class="lineno">  324</span>}</div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_a8c603aac385ca527a7f8c7ec2e4ba250"><div class="ttname"><a href="structlv__btnmatrix__t.html#a8c603aac385ca527a7f8c7ec2e4ba250">lv_btnmatrix_t::btn_id_sel</a></div><div class="ttdeci">uint16_t btn_id_sel</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00063">lv_btnmatrix.h:63</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00063">lv_btnmatrix_t::btn_id_sel</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__calendar_8c_source.html#l00211">lv_calendar_get_pressed_date()</a>, <a class="el" href="lv__calendar_8c_source.html#l00109">lv_calendar_set_showed_date()</a>, <a class="el" href="lv__keyboard_8c_source.html#l00273">lv_keyboard_def_event_cb()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00177">lv_msgbox_get_active_btn()</a> y <a class="el" href="lv__msgbox_8c_source.html#l00183">lv_msgbox_get_active_btn_text()</a>.</p>
+
+</div>
+</div>
+<a id="ac0b8b7511e2746f05b690add7e16dbb0" name="ac0b8b7511e2746f05b690add7e16dbb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b8b7511e2746f05b690add7e16dbb0">&#9670;&#160;</a></span>lv_btnmatrix_has_btn_ctrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lv_btnmatrix_has_btn_ctrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>btn_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></td>          <td class="paramname"><span class="paramname"><em>ctrl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the button's text </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to button matrix object </td></tr>
+    <tr><td class="paramname">btn_id</td><td>the index a button not counting new line characters. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>text of btn_index` button */ const char * <a class="el" href="#aaf80838b5ce46cffeb824500317a2bdd">lv_btnmatrix_get_btn_text(const lv_obj_t * obj, uint16_t btn_id)</a>;</dd></dl>
+<p>/** Get the whether a control value is enabled or disabled for button of a button matrix </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+    <tr><td class="paramname">btn_id</td><td>the index of a button not counting new line characters. </td></tr>
+    <tr><td class="paramname">ctrl</td><td>control values to check (ORed value can be used) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true: the control attribute is enabled false: disabled </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00351">351</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>{</div>
+<div class="line"><span class="lineno">  353</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">if</span>(btn_id &gt;= btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">return</span> ((btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_id] &amp; ctrl) == ctrl) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  359</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix_t::ctrl_bits</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="a5dc6dae51c983371337b415f2330c71c" name="a5dc6dae51c983371337b415f2330c71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc6dae51c983371337b415f2330c71c">&#9670;&#160;</a></span>lv_btnmatrix_set_btn_ctrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_btn_ctrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>btn_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></td>          <td class="paramname"><span class="paramname"><em>ctrl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the attributes of a button of the button matrix </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to button matrix object </td></tr>
+    <tr><td class="paramname">btn_id</td><td>0 based index of the button to modify. (Not counting new lines) </td></tr>
+    <tr><td class="paramname">ctrl</td><td>OR-ed attributs. E.g. <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a8b687f1dad1968600f8e8cf81e6602cf">LV_BTNMATRIX_CTRL_NO_REPEAT</a> | <a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a24a06bd7d16b5cabbaf93eff3fcced6b">LV_BTNMATRIX_CTRL_CHECKABLE</a></span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00207">207</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>{</div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span>(btn_id &gt;= btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span>(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a8c3b78171bd12621bdb6edd9dc5ec570">one_check</a> &amp;&amp; (ctrl &amp; <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aee59c1c5053c1a2347adc0b7ab945b02">LV_BTNMATRIX_CTRL_CHECKED</a>)) {</div>
+<div class="line"><span class="lineno">  216</span>        <a class="code hl_function" href="#a7f3ec532d602c0df4cbc910f5f402147">lv_btnmatrix_clear_btn_ctrl_all</a>(obj, <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aee59c1c5053c1a2347adc0b7ab945b02">LV_BTNMATRIX_CTRL_CHECKED</a>);</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>    <span class="comment">/* If we hide a button if all buttons are now hidden hide the whole button matrix to make focus behave correctly */</span></div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">if</span>(ctrl &amp; <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aae147a0e550c0e9b856bda9f37a08a82">LV_BTNMATRIX_CTRL_HIDDEN</a>) {</div>
+<div class="line"><span class="lineno">  221</span>        <span class="keywordtype">bool</span> all_buttons_hidden = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">if</span>(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a> &gt; 1) {</div>
+<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">for</span>(uint16_t btn_idx = 0; btn_idx &lt; btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>; btn_idx++) {</div>
+<div class="line"><span class="lineno">  224</span>                <span class="keywordflow">if</span>(btn_idx == btn_id) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  225</span>                <span class="keywordflow">if</span>(!(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_idx] &amp; <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aae147a0e550c0e9b856bda9f37a08a82">LV_BTNMATRIX_CTRL_HIDDEN</a>)) all_buttons_hidden = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  226</span>            }</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>        }</div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">if</span>(all_buttons_hidden) <a class="code hl_function" href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a>(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#a9cdc355bc464e920fd7620f482cec10ea897a3221874cb9d0e4e28a6d530755f2">LV_OBJ_FLAG_HIDDEN</a>);</div>
+<div class="line"><span class="lineno">  230</span>    }</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_id] |= ctrl;</div>
+<div class="line"><span class="lineno">  233</span>    invalidate_button_area(obj, btn_id);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span>(ctrl &amp; <a class="code hl_enumvalue" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a8d254922bb0d6ad9561bf662bbf0fab4">LV_BTNMATRIX_CTRL_POPOVER</a>) {</div>
+<div class="line"><span class="lineno">  236</span>        <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  237</span>    }</div>
+<div class="line"><span class="lineno">  238</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8c_html_a7f3ec532d602c0df4cbc910f5f402147"><div class="ttname"><a href="#a7f3ec532d602c0df4cbc910f5f402147">lv_btnmatrix_clear_btn_ctrl_all</a></div><div class="ttdeci">void lv_btnmatrix_clear_btn_ctrl_all(lv_obj_t *obj, lv_btnmatrix_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00272">lv_btnmatrix.c:272</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8h_html_afedbbeb3c1adfce72b350e8fed608bf2aee59c1c5053c1a2347adc0b7ab945b02"><div class="ttname"><a href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2aee59c1c5053c1a2347adc0b7ab945b02">LV_BTNMATRIX_CTRL_CHECKED</a></div><div class="ttdeci">@ LV_BTNMATRIX_CTRL_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00040">lv_btnmatrix.h:40</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a87fa70194789d48ea3dba01d1c28c984"><div class="ttname"><a href="lv__obj_8c.html#a87fa70194789d48ea3dba01d1c28c984">lv_obj_add_flag</a></div><div class="ttdeci">void lv_obj_add_flag(lv_obj_t *obj, lv_obj_flag_t f)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00229">lv_obj.c:229</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix_t::ctrl_bits</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00272">lv_btnmatrix_clear_btn_ctrl_all()</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00040">LV_BTNMATRIX_CTRL_CHECKED</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00036">LV_BTNMATRIX_CTRL_HIDDEN</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00042">LV_BTNMATRIX_CTRL_POPOVER</a>, <a class="el" href="lv__obj_8c_source.html#l00229">lv_obj_add_flag()</a>, <a class="el" href="lv__obj_8h_source.html#l00090">LV_OBJ_FLAG_HIDDEN</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__btnmatrix_8h_source.html#l00064">lv_btnmatrix_t::one_check</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__btnmatrix_8c_source.html#l00261">lv_btnmatrix_set_btn_ctrl_all()</a>, <a class="el" href="lv__calendar_8c_source.html#l00109">lv_calendar_set_showed_date()</a>, <a class="el" href="lv__example__btnmatrix__1_8c_source.html#l00022">lv_example_btnmatrix_1()</a>, <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>, <a class="el" href="lv__tabview_8c_source.html#l00067">lv_tabview_add_tab()</a> y <a class="el" href="lv__tabview_8c_source.html#l00138">lv_tabview_set_act()</a>.</p>
+
+</div>
+</div>
+<a id="afb072278ff0042eac694f0139cf5451e" name="afb072278ff0042eac694f0139cf5451e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb072278ff0042eac694f0139cf5451e">&#9670;&#160;</a></span>lv_btnmatrix_set_btn_ctrl_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_btn_ctrl_all </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></td>          <td class="paramname"><span class="paramname"><em>ctrl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set attributes of all buttons of a button matrix </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+    <tr><td class="paramname">ctrl</td><td>attribute(s) to set from <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></span>. Values can be ORed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00261">261</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>{</div>
+<div class="line"><span class="lineno">  263</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  266</span>    uint16_t i;</div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">for</span>(i = 0; i &lt; btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>; i++) {</div>
+<div class="line"><span class="lineno">  268</span>        <a class="code hl_function" href="#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a>(obj, i, ctrl);</div>
+<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  270</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8c_html_a5dc6dae51c983371337b415f2330c71c"><div class="ttname"><a href="#a5dc6dae51c983371337b415f2330c71c">lv_btnmatrix_set_btn_ctrl</a></div><div class="ttdeci">void lv_btnmatrix_set_btn_ctrl(lv_obj_t *obj, uint16_t btn_id, lv_btnmatrix_ctrl_t ctrl)</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00207">lv_btnmatrix.c:207</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00207">lv_btnmatrix_set_btn_ctrl()</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a> y <a class="el" href="lv__tabview_8c_source.html#l00067">lv_tabview_add_tab()</a>.</p>
+
+</div>
+</div>
+<a id="a15f65df093de0b3fccdff6aa804cb63a" name="a15f65df093de0b3fccdff6aa804cb63a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f65df093de0b3fccdff6aa804cb63a">&#9670;&#160;</a></span>lv_btnmatrix_set_btn_width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_btn_width </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>btn_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>width</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a single button's relative width. This method will cause the matrix be regenerated and is a relatively expensive operation. It is recommended that initial width be specified using <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#a2a5c44579692e36a2cf74ac2c23f8d88">lv_btnmatrix_set_ctrl_map</a></span> and this method only be used for dynamic changes. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to button matrix object </td></tr>
+    <tr><td class="paramname">btn_id</td><td>0 based index of the button to modify. </td></tr>
+    <tr><td class="paramname">width</td><td>relative width compared to the buttons in the same row. [1..7] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00283">283</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>{</div>
+<div class="line"><span class="lineno">  285</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">if</span>(btn_id &gt;= btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  289</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_id] &amp;= (<a class="code hl_define" href="#aea9cd4789266a3a8ef7ecb5997a9f447">~LV_BTNMATRIX_WIDTH_MASK</a>);</div>
+<div class="line"><span class="lineno">  290</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_id] |= (<a class="code hl_define" href="#aea9cd4789266a3a8ef7ecb5997a9f447">LV_BTNMATRIX_WIDTH_MASK</a> &amp; width);</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_function" href="#ab3987d2f4338fa6194665a3924608c5a">lv_btnmatrix_set_map</a>(obj, btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">map_p</a>);</div>
+<div class="line"><span class="lineno">  293</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8c_html_ab3987d2f4338fa6194665a3924608c5a"><div class="ttname"><a href="#ab3987d2f4338fa6194665a3924608c5a">lv_btnmatrix_set_map</a></div><div class="ttdeci">void lv_btnmatrix_set_map(lv_obj_t *obj, const char *map[])</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00093">lv_btnmatrix.c:93</a></div></div>
+<div class="ttc" id="alv__btnmatrix_8c_html_aea9cd4789266a3a8ef7ecb5997a9f447"><div class="ttname"><a href="#aea9cd4789266a3a8ef7ecb5997a9f447">LV_BTNMATRIX_WIDTH_MASK</a></div><div class="ttdeci">#define LV_BTNMATRIX_WIDTH_MASK</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8c_source.html#l00026">lv_btnmatrix.c:26</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix_t::ctrl_bits</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00093">lv_btnmatrix_set_map()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00026">LV_BTNMATRIX_WIDTH_MASK</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00058">lv_btnmatrix_t::map_p</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__btnmatrix__1_8c_source.html#l00022">lv_example_btnmatrix_1()</a>.</p>
+
+</div>
+</div>
+<a id="a2a5c44579692e36a2cf74ac2c23f8d88" name="a2a5c44579692e36a2cf74ac2c23f8d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5c44579692e36a2cf74ac2c23f8d88">&#9670;&#160;</a></span>lv_btnmatrix_set_ctrl_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_ctrl_map </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></td>          <td class="paramname"><span class="paramname"><em>ctrl_map</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the button control map (hidden, disabled etc.) for a button matrix. The control map array will be copied and so may be deallocated after this function returns. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+    <tr><td class="paramname">ctrl_map</td><td>pointer to an array of <span class="tt">lv_btn_ctrl_t</span> control bytes. The length of the array and position of the elements must match the number and order of the individual buttons (i.e. excludes newline entries). An element of the map should look like e.g.: <span class="tt">ctrl_map[0] = width | <a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a8b687f1dad1968600f8e8cf81e6602cf">LV_BTNMATRIX_CTRL_NO_REPEAT</a> |  LV_BTNMATRIX_CTRL_TGL_ENABLE</span> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00184">184</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>{</div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_function" href="lv__mem_8c.html#a9e3596054c2dad5f13df43719bb5eff7">lv_memcpy</a>(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>, ctrl_map, <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a>) * btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a>);</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_function" href="#ab3987d2f4338fa6194665a3924608c5a">lv_btnmatrix_set_map</a>(obj, btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">map_p</a>);</div>
+<div class="line"><span class="lineno">  192</span>}</div>
+<div class="ttc" id="alv__btnmatrix_8h_html_a56587d4597f6b0999d3f3dde3daceaf8"><div class="ttname"><a href="lv__btnmatrix_8h.html#a56587d4597f6b0999d3f3dde3daceaf8">lv_btnmatrix_ctrl_t</a></div><div class="ttdeci">uint16_t lv_btnmatrix_ctrl_t</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00050">lv_btnmatrix.h:50</a></div></div>
+<div class="ttc" id="alv__mem_8c_html_a9e3596054c2dad5f13df43719bb5eff7"><div class="ttname"><a href="lv__mem_8c.html#a9e3596054c2dad5f13df43719bb5eff7">lv_memcpy</a></div><div class="ttdeci">void *LV_ATTRIBUTE_FAST_MEM lv_memcpy(void *dst, const void *src, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="lv__mem_8c_source.html#l00368">lv_mem.c:368</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix_t::ctrl_bits</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00093">lv_btnmatrix_set_map()</a>, <a class="el" href="lv__mem_8c_source.html#l00368">lv_memcpy()</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00058">lv_btnmatrix_t::map_p</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+</div>
+</div>
+<a id="ab3987d2f4338fa6194665a3924608c5a" name="ab3987d2f4338fa6194665a3924608c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3987d2f4338fa6194665a3924608c5a">&#9670;&#160;</a></span>lv_btnmatrix_set_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_map </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>map</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a new map. Buttons will be created/deleted according to the map. The button matrix keeps a reference to the map and so the string array must not be deallocated during the life of the matrix. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+    <tr><td class="paramname">map</td><td>pointer a string array. The last string has to be: "". Use "\n" to make a line break. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00093">93</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span>(map == NULL) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">/*Analyze the map and create the required number of buttons*/</span></div>
+<div class="line"><span class="lineno">  101</span>    allocate_btn_areas_and_controls(obj, map);</div>
+<div class="line"><span class="lineno">  102</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a33b1a3da68197f846dc18913c47ee3ee">map_p</a> = map;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_typedef" href="lv__bidi_8h.html#adf77ab11b1ee24f462aae136634a216c">lv_base_dir_t</a> base_dir = lv_obj_get_style_base_dir(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">/*Set size and positions of the buttons*/</span></div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> pleft = lv_obj_get_style_pad_left(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> ptop = lv_obj_get_style_pad_top(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> prow = lv_obj_get_style_pad_row(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> pcol = lv_obj_get_style_pad_column(obj, <a class="code hl_enumvalue" href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a>);</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> max_w            = <a class="code hl_function" href="lv__obj__pos_8c.html#a5a13624c03eef715b089ec7981523d11">lv_obj_get_content_width</a>(obj);</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> max_h            = <a class="code hl_function" href="lv__obj__pos_8c.html#af41c84dafb07f7445f35699024f3d5d6">lv_obj_get_content_height</a>(obj);</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="comment">/*Calculate the position of each row*/</span></div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> max_h_no_gap = max_h - (prow * (btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a427d6ebfb3bd75b0af4c19848755542c">row_cnt</a> - 1));</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">/*Count the units and the buttons in a line</span></div>
+<div class="line"><span class="lineno">  119</span><span class="comment">     *(A button can be 1,2,3... unit wide)*/</span></div>
+<div class="line"><span class="lineno">  120</span>    uint32_t txt_tot_i = 0; <span class="comment">/*Act. index in the str map*/</span></div>
+<div class="line"><span class="lineno">  121</span>    uint32_t btn_tot_i = 0; <span class="comment">/*Act. index of button areas*/</span></div>
+<div class="line"><span class="lineno">  122</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> ** map_row = map;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment">/*Count the units and the buttons in a line*/</span></div>
+<div class="line"><span class="lineno">  125</span>    uint32_t row;</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">for</span>(row = 0; row &lt; btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a427d6ebfb3bd75b0af4c19848755542c">row_cnt</a>; row++) {</div>
+<div class="line"><span class="lineno">  127</span>        uint16_t unit_cnt = 0;           <span class="comment">/*Number of units in a row*/</span></div>
+<div class="line"><span class="lineno">  128</span>        uint16_t btn_cnt = 0;            <span class="comment">/*Number of buttons in a row*/</span></div>
+<div class="line"><span class="lineno">  129</span>        <span class="comment">/*Count the buttons and units in this row*/</span></div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">while</span>(map_row[btn_cnt] &amp;&amp; strcmp(map_row[btn_cnt], <span class="stringliteral">&quot;\n&quot;</span>) != 0 &amp;&amp; map_row[btn_cnt][0] != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><span class="lineno">  131</span>            unit_cnt += get_button_width(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_tot_i + btn_cnt]);</div>
+<div class="line"><span class="lineno">  132</span>            btn_cnt++;</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>        <span class="comment">/*Only deal with the non empty lines*/</span></div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">if</span>(btn_cnt == 0) {</div>
+<div class="line"><span class="lineno">  137</span>            map_row = &amp;map_row[btn_cnt + 1];       <span class="comment">/*Set the map to the next row*/</span></div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  139</span>        }</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> row_y1 = ptop + (max_h_no_gap * row) / btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a427d6ebfb3bd75b0af4c19848755542c">row_cnt</a> + row * prow;</div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> row_y2 = ptop + (max_h_no_gap * (row + 1)) / btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a427d6ebfb3bd75b0af4c19848755542c">row_cnt</a> + row * prow - 1;</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>        <span class="comment">/*Set the button size and positions*/</span></div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> max_w_no_gap = max_w - (pcol * (btn_cnt - 1));</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span>(max_w_no_gap &lt; 0) max_w_no_gap = 0;</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>        uint32_t row_unit_cnt = 0;  <span class="comment">/*The current unit position in the row*/</span></div>
+<div class="line"><span class="lineno">  149</span>        uint32_t btn;</div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">for</span>(btn = 0; btn &lt; btn_cnt; btn++, btn_tot_i++, txt_tot_i++) {</div>
+<div class="line"><span class="lineno">  151</span>            uint32_t btn_u = get_button_width(btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#ab865ffddd2801c2ba943368a6b7bbcf1">ctrl_bits</a>[btn_tot_i]);</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> btn_x1 = (max_w_no_gap * row_unit_cnt) / unit_cnt + btn * pcol;</div>
+<div class="line"><span class="lineno">  154</span>            <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> btn_x2 = (max_w_no_gap * (row_unit_cnt + btn_u)) / unit_cnt + btn * pcol - 1;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>            <span class="comment">/*If RTL start from the right*/</span></div>
+<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span>(base_dir == <a class="code hl_enumvalue" href="lv__bidi_8h.html#af8a307c1812981eb025f470e586e0b76aa5df7b3439002a3269eb188f04070719">LV_BASE_DIR_RTL</a>) {</div>
+<div class="line"><span class="lineno">  158</span>                <a class="code hl_typedef" href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a> tmp = btn_x1;</div>
+<div class="line"><span class="lineno">  159</span>                btn_x1 = btn_x2;</div>
+<div class="line"><span class="lineno">  160</span>                btn_x2 = tmp;</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>                btn_x1 = max_w - btn_x1;</div>
+<div class="line"><span class="lineno">  163</span>                btn_x2 = max_w - btn_x2;</div>
+<div class="line"><span class="lineno">  164</span>            }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>            btn_x1 += pleft;</div>
+<div class="line"><span class="lineno">  167</span>            btn_x2 += pleft;</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>            <a class="code hl_function" href="lv__area_8c.html#a8a6f63df40693641307a31d39f44101d">lv_area_set</a>(&amp;btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a9a3e40816f9c98919abaeef3ee1bc856">button_areas</a>[btn_tot_i], btn_x1, row_y1, btn_x2, row_y2);</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>            row_unit_cnt += btn_u;</div>
+<div class="line"><span class="lineno">  172</span>        }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>        map_row = &amp;map_row[btn_cnt + 1];       <span class="comment">/*Set the map to the next line*/</span></div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">/*Popovers in the top row will draw outside the widget and the extended draw size depends on</span></div>
+<div class="line"><span class="lineno">  178</span><span class="comment">     *the row height which may have changed when setting the new map*/</span></div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_function" href="lv__obj__draw_8c.html#a334282a6e189afe45217f2fd5faaf71b">lv_obj_refresh_ext_draw_size</a>(obj);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_function" href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a>(obj);</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="alv__area_8c_html_a8a6f63df40693641307a31d39f44101d"><div class="ttname"><a href="lv__area_8c.html#a8a6f63df40693641307a31d39f44101d">lv_area_set</a></div><div class="ttdeci">void lv_area_set(lv_area_t *area_p, lv_coord_t x1, lv_coord_t y1, lv_coord_t x2, lv_coord_t y2)</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8c_source.html#l00048">lv_area.c:48</a></div></div>
+<div class="ttc" id="alv__area_8h_html_ad98932f5017f20988532bb68b32a6d76"><div class="ttname"><a href="lv__area_8h.html#ad98932f5017f20988532bb68b32a6d76">lv_coord_t</a></div><div class="ttdeci">int16_t lv_coord_t</div><div class="ttdef"><b>Definition</b> <a href="lv__area_8h_source.html#l00027">lv_area.h:27</a></div></div>
+<div class="ttc" id="alv__bidi_8h_html_adf77ab11b1ee24f462aae136634a216c"><div class="ttname"><a href="lv__bidi_8h.html#adf77ab11b1ee24f462aae136634a216c">lv_base_dir_t</a></div><div class="ttdeci">uint8_t lv_base_dir_t</div><div class="ttdef"><b>Definition</b> <a href="lv__bidi_8h_source.html#l00042">lv_bidi.h:42</a></div></div>
+<div class="ttc" id="alv__bidi_8h_html_af8a307c1812981eb025f470e586e0b76aa5df7b3439002a3269eb188f04070719"><div class="ttname"><a href="lv__bidi_8h.html#af8a307c1812981eb025f470e586e0b76aa5df7b3439002a3269eb188f04070719">LV_BASE_DIR_RTL</a></div><div class="ttdeci">@ LV_BASE_DIR_RTL</div><div class="ttdef"><b>Definition</b> <a href="lv__bidi_8h_source.html#l00035">lv_bidi.h:35</a></div></div>
+<div class="ttc" id="alv__obj_8h_html_ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103"><div class="ttname"><a href="lv__obj_8h.html#ab4244f25691069a70a009e08be0aeb9aa1bb7ac56fc509fb459eb8c6ef66ba103">LV_PART_MAIN</a></div><div class="ttdeci">@ LV_PART_MAIN</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8h_source.html#l00069">lv_obj.h:69</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_a5a13624c03eef715b089ec7981523d11"><div class="ttname"><a href="lv__obj__pos_8c.html#a5a13624c03eef715b089ec7981523d11">lv_obj_get_content_width</a></div><div class="ttdeci">lv_coord_t lv_obj_get_content_width(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00569">lv_obj_pos.c:569</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_aad66ca3c74dbc0c194bd5135fa18d033"><div class="ttname"><a href="lv__obj__pos_8c.html#aad66ca3c74dbc0c194bd5135fa18d033">lv_obj_invalidate</a></div><div class="ttdeci">void lv_obj_invalidate(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00851">lv_obj_pos.c:851</a></div></div>
+<div class="ttc" id="alv__obj__pos_8c_html_af41c84dafb07f7445f35699024f3d5d6"><div class="ttname"><a href="lv__obj__pos_8c.html#af41c84dafb07f7445f35699024f3d5d6">lv_obj_get_content_height</a></div><div class="ttdeci">lv_coord_t lv_obj_get_content_height(const lv_obj_t *obj)</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__pos_8c_source.html#l00580">lv_obj_pos.c:580</a></div></div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_a427d6ebfb3bd75b0af4c19848755542c"><div class="ttname"><a href="structlv__btnmatrix__t.html#a427d6ebfb3bd75b0af4c19848755542c">lv_btnmatrix_t::row_cnt</a></div><div class="ttdeci">uint16_t row_cnt</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00062">lv_btnmatrix.h:62</a></div></div>
+<div class="ttc" id="astructlv__btnmatrix__t_html_a9a3e40816f9c98919abaeef3ee1bc856"><div class="ttname"><a href="structlv__btnmatrix__t.html#a9a3e40816f9c98919abaeef3ee1bc856">lv_btnmatrix_t::button_areas</a></div><div class="ttdeci">lv_area_t * button_areas</div><div class="ttdef"><b>Definition</b> <a href="lv__btnmatrix_8h_source.html#l00059">lv_btnmatrix.h:59</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00059">lv_btnmatrix_t::button_areas</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00060">lv_btnmatrix_t::ctrl_bits</a>, <a class="el" href="lv__area_8c_source.html#l00048">lv_area_set()</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__bidi_8h_source.html#l00035">LV_BASE_DIR_RTL</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00580">lv_obj_get_content_height()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00569">lv_obj_get_content_width()</a>, <a class="el" href="lv__obj__pos_8c_source.html#l00851">lv_obj_invalidate()</a>, <a class="el" href="lv__obj__draw_8c_source.html#l00359">lv_obj_refresh_ext_draw_size()</a>, <a class="el" href="lv__obj_8h_source.html#l00069">LV_PART_MAIN</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00058">lv_btnmatrix_t::map_p</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__btnmatrix_8h_source.html#l00062">lv_btnmatrix_t::row_cnt</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__btnmatrix_8c_source.html#l00283">lv_btnmatrix_set_btn_width()</a>, <a class="el" href="lv__btnmatrix_8c_source.html#l00184">lv_btnmatrix_set_ctrl_map()</a>, <a class="el" href="lv__example__btnmatrix__1_8c_source.html#l00022">lv_example_btnmatrix_1()</a>, <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>, <a class="el" href="lv__example__textarea__1_8c_source.html#l00022">lv_example_textarea_1()</a>, <a class="el" href="lv__keyboard_8c_source.html#l00273">lv_keyboard_def_event_cb()</a>, <a class="el" href="lv__msgbox_8c_source.html#l00061">lv_msgbox_create()</a> y <a class="el" href="lv__tabview_8c_source.html#l00067">lv_tabview_add_tab()</a>.</p>
+
+</div>
+</div>
+<a id="a634e7f994d4d6d8551cacccc58b094d9" name="a634e7f994d4d6d8551cacccc58b094d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634e7f994d4d6d8551cacccc58b094d9">&#9670;&#160;</a></span>lv_btnmatrix_set_one_checked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_one_checked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>en</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Make the button matrix like a selector widget (only one button may be checked at a time). <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#afedbbeb3c1adfce72b350e8fed608bf2a24a06bd7d16b5cabbaf93eff3fcced6b">LV_BTNMATRIX_CTRL_CHECKABLE</a></span> must be enabled on the buttons to be selected using <span class="tt">lv_btnmatrix_set_ctrl()</span> or <span class="tt"><a class="el" href="lv__btnmatrix_8h.html#afb072278ff0042eac694f0139cf5451e">lv_btnmatrix_set_btn_ctrl_all()</a></span>. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to a button matrix object </td></tr>
+    <tr><td class="paramname">en</td><td>whether "one check" mode is enabled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00295">295</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>{</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;;</div>
+<div class="line"><span class="lineno">  300</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a8c3b78171bd12621bdb6edd9dc5ec570">one_check</a>     = en;</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>    <span class="comment">/*If more than one button is toggled only the first one should be*/</span></div>
+<div class="line"><span class="lineno">  303</span>    make_one_button_checked(obj, 0);</div>
+<div class="line"><span class="lineno">  304</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a> y <a class="el" href="lv__btnmatrix_8h_source.html#l00064">lv_btnmatrix_t::one_check</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__example__btnmatrix__3_8c_source.html#l00027">lv_example_btnmatrix_3()</a>.</p>
+
+</div>
+</div>
+<a id="ac887783607642c29fdcc31b34da7ed10" name="ac887783607642c29fdcc31b34da7ed10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac887783607642c29fdcc31b34da7ed10">&#9670;&#160;</a></span>lv_btnmatrix_set_selected_btn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lv_btnmatrix_set_selected_btn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>btn_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the selected buttons </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>pointer to button matrix object </td></tr>
+    <tr><td class="paramname">btn_id</td><td>0 based index of the button to modify. (Not counting new lines) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00194">194</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>{</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_define" href="lv__obj_8h.html#a8ec0fe9743c5c015162d64df591cd719">LV_ASSERT_OBJ</a>(obj, <a class="code hl_define" href="lv__event_8c.html#a9be806f23ad96997f1d62c1a6dfabe05">MY_CLASS</a>);</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> * btnm = (<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a> *)obj;</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">if</span>(btn_id &gt;= btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a1331ad834db4e8fc6cb74e35b1348904">btn_cnt</a> &amp;&amp; btn_id != <a class="code hl_define" href="lv__btnmatrix_8h.html#a6726d21381e2aeede2b3a766d8aace91">LV_BTNMATRIX_BTN_NONE</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    invalidate_button_area(obj, btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a8c603aac385ca527a7f8c7ec2e4ba250">btn_id_sel</a>);</div>
+<div class="line"><span class="lineno">  203</span>    btnm-&gt;<a class="code hl_variable" href="structlv__btnmatrix__t.html#a8c603aac385ca527a7f8c7ec2e4ba250">btn_id_sel</a> = btn_id;</div>
+<div class="line"><span class="lineno">  204</span>    invalidate_button_area(obj, btn_id);</div>
+<div class="line"><span class="lineno">  205</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lv__btnmatrix_8h_source.html#l00061">lv_btnmatrix_t::btn_cnt</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00063">lv_btnmatrix_t::btn_id_sel</a>, <a class="el" href="lv__obj_8h_source.html#l00397">LV_ASSERT_OBJ</a>, <a class="el" href="lv__btnmatrix_8h_source.html#l00025">LV_BTNMATRIX_BTN_NONE</a> y <a class="el" href="lv__event_8c_source.html#l00015">MY_CLASS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lv__calendar_8c_source.html#l00109">lv_calendar_set_showed_date()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="aeb8c4b9564fd7745c49cb854b9f97735" name="aeb8c4b9564fd7745c49cb854b9f97735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb8c4b9564fd7745c49cb854b9f97735">&#9670;&#160;</a></span>lv_btnmatrix_class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="lv__obj__class_8h.html#a45f1eead6ce2fb12e215ea3e0558f168">lv_obj_class_t</a> lv_btnmatrix_class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .constructor_cb = lv_btnmatrix_constructor,</div>
+<div class="line">    .destructor_cb = lv_btnmatrix_destructor,</div>
+<div class="line">    .event_cb = lv_btnmatrix_event,</div>
+<div class="line">    .width_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> * 2,</div>
+<div class="line">    .height_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line">    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a>),</div>
+<div class="line">    .editable = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8">LV_OBJ_CLASS_EDITABLE_TRUE</a>,</div>
+<div class="line">    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a>,</div>
+<div class="line">    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line">}</div>
+<div class="ttc" id="alv__conf_8h_html_aadf0386c6d60d0c07153b38654f6b6d3"><div class="ttname"><a href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a></div><div class="ttdeci">#define LV_DPI_DEF</div><div class="ttdef"><b>Definition</b> <a href="lv__conf_8h_source.html#l00099">lv_conf.h:99</a></div></div>
+<div class="ttc" id="alv__obj_8c_html_a424ca3b432ad82f98c4b05950b597d44"><div class="ttname"><a href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div><div class="ttdeci">const lv_obj_class_t lv_obj_class</div><div class="ttdef"><b>Definition</b> <a href="lv__obj_8c_source.html#l00073">lv_obj.c:73</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8"><div class="ttname"><a href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8">LV_OBJ_CLASS_EDITABLE_TRUE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_EDITABLE_TRUE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00034">lv_obj_class.h:34</a></div></div>
+<div class="ttc" id="alv__obj__class_8h_html_aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef"><div class="ttname"><a href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a></div><div class="ttdeci">@ LV_OBJ_CLASS_GROUP_DEF_TRUE</div><div class="ttdef"><b>Definition</b> <a href="lv__obj__class_8h_source.html#l00040">lv_obj_class.h:40</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="lv__btnmatrix_8c_source.html#l00061">61</a> del archivo <a class="el" href="lv__btnmatrix_8c_source.html">lv_btnmatrix.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>                                          {</div>
+<div class="line"><span class="lineno">   62</span>    .constructor_cb = lv_btnmatrix_constructor,</div>
+<div class="line"><span class="lineno">   63</span>    .destructor_cb = lv_btnmatrix_destructor,</div>
+<div class="line"><span class="lineno">   64</span>    .event_cb = lv_btnmatrix_event,</div>
+<div class="line"><span class="lineno">   65</span>    .width_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a> * 2,</div>
+<div class="line"><span class="lineno">   66</span>    .height_def = <a class="code hl_define" href="lv__conf_8h.html#aadf0386c6d60d0c07153b38654f6b6d3">LV_DPI_DEF</a>,</div>
+<div class="line"><span class="lineno">   67</span>    .instance_size = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structlv__btnmatrix__t.html">lv_btnmatrix_t</a>),</div>
+<div class="line"><span class="lineno">   68</span>    .editable = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#a86f3f042b274542776ab1a066cfe7c82ab638a87144f8d50dcb2c5cea91e718f8">LV_OBJ_CLASS_EDITABLE_TRUE</a>,</div>
+<div class="line"><span class="lineno">   69</span>    .group_def = <a class="code hl_enumvalue" href="lv__obj__class_8h.html#aebc1dfe87bf60e09142aea1746c6871dae33754a3c5ce1d1ad608b9282fa238ef">LV_OBJ_CLASS_GROUP_DEF_TRUE</a>,</div>
+<div class="line"><span class="lineno">   70</span>    .base_class = &amp;<a class="code hl_variable" href="lv__obj_8c.html#a424ca3b432ad82f98c4b05950b597d44">lv_obj_class</a></div>
+<div class="line"><span class="lineno">   71</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_0c16cec4e2746c776d8a7a68d37d2c7c.html">lvgl</a></li><li class="navelem"><a href="dir_fbd8be0e44ea4d18f9994ab59388e83c.html">src</a></li><li class="navelem"><a href="dir_20066d84f6aea438deed21abfc1118ef.html">widgets</a></li><li class="navelem"><a href="lv__btnmatrix_8c.html">lv_btnmatrix.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

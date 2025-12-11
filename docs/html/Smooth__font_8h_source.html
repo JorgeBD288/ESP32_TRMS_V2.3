@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ESP32_TRMS_V2.0: Archivo de código fuente lib/TFT_eSPI/Extensions/Smooth_font.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ESP32_TRMS_V2.0
+   </div>
+   <div id="projectbrief">Control TRMS con ESP32</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('Smooth__font_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Smooth_font.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Smooth__font_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> <span class="comment">// Coded by Bodmer 10/2/18, see license in root directory.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> <span class="comment">// This is part of the TFT_eSPI class and is associated with anti-aliased font functions</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  <span class="comment">// These are for the new anti-aliased fonts</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a0248ece0522986e36ec4534aeffdba0f">    7</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="Smooth__font_8h.html#a0248ece0522986e36ec4534aeffdba0f">loadFont</a>(<span class="keyword">const</span> uint8_t array[]);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef FONT_FS_AVAILABLE</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="Smooth__font_8h.html#a0248ece0522986e36ec4534aeffdba0f">loadFont</a>(String fontName, fs::FS &amp;ffs);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#aaba9925e7247bba9d86e84125e43953c">   11</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="Smooth__font_8h.html#a0248ece0522986e36ec4534aeffdba0f">loadFont</a>(String fontName, <span class="keywordtype">bool</span> flash = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a77f5f398a88b2f1631690881296bb0ba">   12</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="Smooth__font_8h.html#a77f5f398a88b2f1631690881296bb0ba">unloadFont</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a0ed1a692f1e7c6eb841798c8ebbca545">   13</a></span>  <span class="keywordtype">bool</span>     <a class="code hl_function" href="Smooth__font_8h.html#a0ed1a692f1e7c6eb841798c8ebbca545">getUnicodeIndex</a>(uint16_t unicode, uint16_t *index);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a390f74f0ce2b2e46f81309286746c95e">   15</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="Smooth__font_8h.html#a390f74f0ce2b2e46f81309286746c95e">drawGlyph</a>(uint16_t code);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#ac1992c9e1a8fb31bb0a1fb527e09eb83">   17</a></span>  <span class="keywordtype">void</span>     <a class="code hl_function" href="Smooth__font_8h.html#ac1992c9e1a8fb31bb0a1fb527e09eb83">showFont</a>(uint32_t td);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> <span class="comment">// This is for the whole font</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structfontMetrics.html">   20</a></span>  <span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a44c4f6a0226a71c0d7d7f05cc71884b1">   22</a></span>    <span class="keyword">const</span> uint8_t* <a class="code hl_variable" href="structfontMetrics.html#a44c4f6a0226a71c0d7d7f05cc71884b1">gArray</a>;           <span class="comment">//array start pointer</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a810c840cfb115b8d14d248daba66d5df">   23</a></span>    uint16_t <a class="code hl_variable" href="structfontMetrics.html#a810c840cfb115b8d14d248daba66d5df">gCount</a>;                 <span class="comment">// Total number of characters</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a3eef3be21aab0db31db551e9d93d8c73">   24</a></span>    uint16_t <a class="code hl_variable" href="structfontMetrics.html#a3eef3be21aab0db31db551e9d93d8c73">yAdvance</a>;               <span class="comment">// Line advance</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a785f82833b45a8dda627d71c9cd9f392">   25</a></span>    uint16_t <a class="code hl_variable" href="structfontMetrics.html#a785f82833b45a8dda627d71c9cd9f392">spaceWidth</a>;             <span class="comment">// Width of a space character</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structfontMetrics.html#acc660e0a4d16013cf8a12072717c0271">   26</a></span>    int16_t  <a class="code hl_variable" href="structfontMetrics.html#acc660e0a4d16013cf8a12072717c0271">ascent</a>;                 <span class="comment">// Height of top of &#39;d&#39; above baseline, other characters may be taller</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a4d3221b748c5813605f1711c706064a2">   27</a></span>    int16_t  <a class="code hl_variable" href="structfontMetrics.html#a4d3221b748c5813605f1711c706064a2">descent</a>;                <span class="comment">// Offset to bottom of &#39;p&#39;, other characters may have a larger descent</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a709aa1f27f5d26fa8acff7567b0709cd">   28</a></span>    uint16_t <a class="code hl_variable" href="structfontMetrics.html#a709aa1f27f5d26fa8acff7567b0709cd">maxAscent</a>;              <span class="comment">// Maximum ascent found in font</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structfontMetrics.html#a408a210972dae4d5a3135d6cdbe9a5c9">   29</a></span>    uint16_t <a class="code hl_variable" href="structfontMetrics.html#a408a210972dae4d5a3135d6cdbe9a5c9">maxDescent</a>;             <span class="comment">// Maximum descent found in font</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  } <a class="code hl_struct" href="structfontMetrics.html">fontMetrics</a>;</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#af3c9b7fd5e45129cc03d6f4dfd2d5563">   32</a></span><a class="code hl_struct" href="structfontMetrics.html">fontMetrics</a> <a class="code hl_variable" href="Smooth__font_8h.html#af3c9b7fd5e45129cc03d6f4dfd2d5563">gFont</a> = { <span class="keyword">nullptr</span>, 0, 0, 0, 0, 0, 0, 0 };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">// These are for the metrics for each individual glyph (so we don&#39;t need to seek this in file and waste time)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a2f815155b8882b07b3d6e90be5cc3d11">   35</a></span>  uint16_t* <a class="code hl_variable" href="Smooth__font_8h.html#a2f815155b8882b07b3d6e90be5cc3d11">gUnicode</a> = NULL;  <span class="comment">//UTF-16 code, the codes are searched so do not need to be sequential</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#ac19cb7fd77a73132654ff2413ec6f456">   36</a></span>  uint8_t*  <a class="code hl_variable" href="Smooth__font_8h.html#ac19cb7fd77a73132654ff2413ec6f456">gHeight</a> = NULL;   <span class="comment">//cheight</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#ade6868421acdc18e9e9b1483671d9a5c">   37</a></span>  uint8_t*  <a class="code hl_variable" href="Smooth__font_8h.html#ade6868421acdc18e9e9b1483671d9a5c">gWidth</a> = NULL;    <span class="comment">//cwidth</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a80448c87607cc454b202a53ad51bd417">   38</a></span>  uint8_t*  <a class="code hl_variable" href="Smooth__font_8h.html#a80448c87607cc454b202a53ad51bd417">gxAdvance</a> = NULL; <span class="comment">//setWidth</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a4010fed95d5deb82e03595e4b1b78a13">   39</a></span>  int16_t*  <a class="code hl_variable" href="Smooth__font_8h.html#a4010fed95d5deb82e03595e4b1b78a13">gdY</a> = NULL;       <span class="comment">//topExtent</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#ae3cd20c9425d17f6547582a5328989ea">   40</a></span>  int8_t*   <a class="code hl_variable" href="Smooth__font_8h.html#ae3cd20c9425d17f6547582a5328989ea">gdX</a> = NULL;       <span class="comment">//leftExtent</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a3eae8ae89edf8862c4a9982a8101c193">   41</a></span>  uint32_t* <a class="code hl_variable" href="Smooth__font_8h.html#a3eae8ae89edf8862c4a9982a8101c193">gBitmap</a> = NULL;   <span class="comment">//file pointer to greyscale bitmap</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a9a7a07c6fb5f1208b79f29d669945f41">   43</a></span>  <span class="keywordtype">bool</span>     <a class="code hl_variable" href="Smooth__font_8h.html#a9a7a07c6fb5f1208b79f29d669945f41">fontLoaded</a> = <span class="keyword">false</span>; <span class="comment">// Flags when a anti-aliased font is loaded</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#ifdef FONT_FS_AVAILABLE</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  fs::File <a class="code hl_variable" href="Smooth__font_8h.html#a8b4ddb1b146705ff13238681dc0fa343">fontFile</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  fs::FS   &amp;fontFS  = <a class="code hl_define" href="TFT__eSPI__RP2040_8h.html#a192acfd84744499972deef98ae719493">SPIFFS</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">bool</span>     spiffs   = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">bool</span>     fs_font = <span class="keyword">false</span>;    <span class="comment">// For ESP32/8266 use smooth font file or FLASH (PROGMEM) array</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="Smooth__font_8h.html#a8b4ddb1b146705ff13238681dc0fa343">   52</a></span>  <span class="keywordtype">bool</span>     <a class="code hl_variable" href="Smooth__font_8h.html#a8b4ddb1b146705ff13238681dc0fa343">fontFile</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span>     loadMetrics(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  uint32_t readInt32(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  uint8_t* fontPtr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="ttc" id="aSmooth__font_8h_html_a0248ece0522986e36ec4534aeffdba0f"><div class="ttname"><a href="Smooth__font_8h.html#a0248ece0522986e36ec4534aeffdba0f">loadFont</a></div><div class="ttdeci">void loadFont(const uint8_t array[])</div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a0ed1a692f1e7c6eb841798c8ebbca545"><div class="ttname"><a href="Smooth__font_8h.html#a0ed1a692f1e7c6eb841798c8ebbca545">getUnicodeIndex</a></div><div class="ttdeci">bool getUnicodeIndex(uint16_t unicode, uint16_t *index)</div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a2f815155b8882b07b3d6e90be5cc3d11"><div class="ttname"><a href="Smooth__font_8h.html#a2f815155b8882b07b3d6e90be5cc3d11">gUnicode</a></div><div class="ttdeci">uint16_t * gUnicode</div><div class="ttdef"><b>Definition</b> <a href="#l00035">Smooth_font.h:35</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a390f74f0ce2b2e46f81309286746c95e"><div class="ttname"><a href="Smooth__font_8h.html#a390f74f0ce2b2e46f81309286746c95e">drawGlyph</a></div><div class="ttdeci">virtual void drawGlyph(uint16_t code)</div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a3eae8ae89edf8862c4a9982a8101c193"><div class="ttname"><a href="Smooth__font_8h.html#a3eae8ae89edf8862c4a9982a8101c193">gBitmap</a></div><div class="ttdeci">uint32_t * gBitmap</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Smooth_font.h:41</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a4010fed95d5deb82e03595e4b1b78a13"><div class="ttname"><a href="Smooth__font_8h.html#a4010fed95d5deb82e03595e4b1b78a13">gdY</a></div><div class="ttdeci">int16_t * gdY</div><div class="ttdef"><b>Definition</b> <a href="#l00039">Smooth_font.h:39</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a77f5f398a88b2f1631690881296bb0ba"><div class="ttname"><a href="Smooth__font_8h.html#a77f5f398a88b2f1631690881296bb0ba">unloadFont</a></div><div class="ttdeci">void unloadFont(void)</div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a80448c87607cc454b202a53ad51bd417"><div class="ttname"><a href="Smooth__font_8h.html#a80448c87607cc454b202a53ad51bd417">gxAdvance</a></div><div class="ttdeci">uint8_t * gxAdvance</div><div class="ttdef"><b>Definition</b> <a href="#l00038">Smooth_font.h:38</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a8b4ddb1b146705ff13238681dc0fa343"><div class="ttname"><a href="Smooth__font_8h.html#a8b4ddb1b146705ff13238681dc0fa343">fontFile</a></div><div class="ttdeci">bool fontFile</div><div class="ttdef"><b>Definition</b> <a href="#l00052">Smooth_font.h:52</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_a9a7a07c6fb5f1208b79f29d669945f41"><div class="ttname"><a href="Smooth__font_8h.html#a9a7a07c6fb5f1208b79f29d669945f41">fontLoaded</a></div><div class="ttdeci">bool fontLoaded</div><div class="ttdef"><b>Definition</b> <a href="#l00043">Smooth_font.h:43</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_ac1992c9e1a8fb31bb0a1fb527e09eb83"><div class="ttname"><a href="Smooth__font_8h.html#ac1992c9e1a8fb31bb0a1fb527e09eb83">showFont</a></div><div class="ttdeci">void showFont(uint32_t td)</div></div>
+<div class="ttc" id="aSmooth__font_8h_html_ac19cb7fd77a73132654ff2413ec6f456"><div class="ttname"><a href="Smooth__font_8h.html#ac19cb7fd77a73132654ff2413ec6f456">gHeight</a></div><div class="ttdeci">uint8_t * gHeight</div><div class="ttdef"><b>Definition</b> <a href="#l00036">Smooth_font.h:36</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_ade6868421acdc18e9e9b1483671d9a5c"><div class="ttname"><a href="Smooth__font_8h.html#ade6868421acdc18e9e9b1483671d9a5c">gWidth</a></div><div class="ttdeci">uint8_t * gWidth</div><div class="ttdef"><b>Definition</b> <a href="#l00037">Smooth_font.h:37</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_ae3cd20c9425d17f6547582a5328989ea"><div class="ttname"><a href="Smooth__font_8h.html#ae3cd20c9425d17f6547582a5328989ea">gdX</a></div><div class="ttdeci">int8_t * gdX</div><div class="ttdef"><b>Definition</b> <a href="#l00040">Smooth_font.h:40</a></div></div>
+<div class="ttc" id="aSmooth__font_8h_html_af3c9b7fd5e45129cc03d6f4dfd2d5563"><div class="ttname"><a href="Smooth__font_8h.html#af3c9b7fd5e45129cc03d6f4dfd2d5563">gFont</a></div><div class="ttdeci">fontMetrics gFont</div><div class="ttdef"><b>Definition</b> <a href="#l00032">Smooth_font.h:32</a></div></div>
+<div class="ttc" id="aTFT__eSPI__RP2040_8h_html_a192acfd84744499972deef98ae719493"><div class="ttname"><a href="TFT__eSPI__RP2040_8h.html#a192acfd84744499972deef98ae719493">SPIFFS</a></div><div class="ttdeci">#define SPIFFS</div><div class="ttdef"><b>Definition</b> <a href="TFT__eSPI__RP2040_8h_source.html#l00014">TFT_eSPI_RP2040.h:14</a></div></div>
+<div class="ttc" id="astructfontMetrics_html"><div class="ttname"><a href="structfontMetrics.html">fontMetrics</a></div><div class="ttdef"><b>Definition</b> <a href="#l00020">Smooth_font.h:21</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a3eef3be21aab0db31db551e9d93d8c73"><div class="ttname"><a href="structfontMetrics.html#a3eef3be21aab0db31db551e9d93d8c73">fontMetrics::yAdvance</a></div><div class="ttdeci">uint16_t yAdvance</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Smooth_font.h:24</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a408a210972dae4d5a3135d6cdbe9a5c9"><div class="ttname"><a href="structfontMetrics.html#a408a210972dae4d5a3135d6cdbe9a5c9">fontMetrics::maxDescent</a></div><div class="ttdeci">uint16_t maxDescent</div><div class="ttdef"><b>Definition</b> <a href="#l00029">Smooth_font.h:29</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a44c4f6a0226a71c0d7d7f05cc71884b1"><div class="ttname"><a href="structfontMetrics.html#a44c4f6a0226a71c0d7d7f05cc71884b1">fontMetrics::gArray</a></div><div class="ttdeci">const uint8_t * gArray</div><div class="ttdef"><b>Definition</b> <a href="#l00022">Smooth_font.h:22</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a4d3221b748c5813605f1711c706064a2"><div class="ttname"><a href="structfontMetrics.html#a4d3221b748c5813605f1711c706064a2">fontMetrics::descent</a></div><div class="ttdeci">int16_t descent</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Smooth_font.h:27</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a709aa1f27f5d26fa8acff7567b0709cd"><div class="ttname"><a href="structfontMetrics.html#a709aa1f27f5d26fa8acff7567b0709cd">fontMetrics::maxAscent</a></div><div class="ttdeci">uint16_t maxAscent</div><div class="ttdef"><b>Definition</b> <a href="#l00028">Smooth_font.h:28</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a785f82833b45a8dda627d71c9cd9f392"><div class="ttname"><a href="structfontMetrics.html#a785f82833b45a8dda627d71c9cd9f392">fontMetrics::spaceWidth</a></div><div class="ttdeci">uint16_t spaceWidth</div><div class="ttdef"><b>Definition</b> <a href="#l00025">Smooth_font.h:25</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_a810c840cfb115b8d14d248daba66d5df"><div class="ttname"><a href="structfontMetrics.html#a810c840cfb115b8d14d248daba66d5df">fontMetrics::gCount</a></div><div class="ttdeci">uint16_t gCount</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Smooth_font.h:23</a></div></div>
+<div class="ttc" id="astructfontMetrics_html_acc660e0a4d16013cf8a12072717c0271"><div class="ttname"><a href="structfontMetrics.html#acc660e0a4d16013cf8a12072717c0271">fontMetrics::ascent</a></div><div class="ttdeci">int16_t ascent</div><div class="ttdef"><b>Definition</b> <a href="#l00026">Smooth_font.h:26</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a00e1292026ae2b011a01279c6fea683.html">TFT_eSPI</a></li><li class="navelem"><a href="dir_181aaffaeb0e21d83e108f76ec753182.html">Extensions</a></li><li class="navelem"><a href="Smooth__font_8h.html">Smooth_font.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
