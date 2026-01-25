@@ -45,3 +45,22 @@ void bloquear_slider(lv_obj_t * slider);
 void desbloquear_slider(lv_obj_t * slider);
 void mostrar_flecha(lv_obj_t * flecha);
 void ocultar_flecha(lv_obj_t * flecha);
+
+/**
+ * @brief 
+ * Devuelve los últimos valores escritos a los DAC (0..255).
+ * @note
+ * Permite que otros módulos consulten el último valor enviado a los DAC.
+ * @param dacG1 Referencia donde se devuelve el último valor escrito en G1
+ * @param dacG2 Referencia donde se devuelve el último valor escrito en G2
+ */
+void MotorControl_getLastDacValues(uint8_t &dacG1, uint8_t &dacG2);
+
+/**
+ * @brief
+ * Devuelve un contador que aumenta cada vez que cambia algún valor DAC escrito.
+ * @note
+ * Útil para detectar cambios de control desde la última comprobación.
+ * @return uint32_t Contador de actualizaciones de DAC
+ */
+uint32_t MotorControl_getDacUpdateSeq();

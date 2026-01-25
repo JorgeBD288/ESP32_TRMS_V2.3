@@ -19,9 +19,35 @@ static char      s_numEditBuffer[16] = "";   // magnitud (máx. 3 dígitos, pero
 static lv_obj_t *s_numEditTarget     = nullptr;
 static bool      s_numNegative       = false;
 
+// ----------------------------
+// Modo precisión para sliders
+// ----------------------------
+static bool      s_fineModeActive = false;
+static lv_obj_t* s_fineSlider     = nullptr;
+static int       s_origMin        = 0;
+static int       s_origMax        = 0;
+
+// Estilo rojo para indicar precisión
+static lv_style_t s_styleFineInd;
+static lv_style_t s_styleFineKnob;
+static bool       s_styleFineInit = false;
+
 // ============================
 // Navegación con IR (flechas + ENTER)
 // ============================
+
+/**
+ * @brief 
+ * Maneja la navegación en la interfaz
+ * según la tecla de navegación recibida.
+ * @note
+  Mueve el foco entre los objetos
+  del grupo de navegación global (g_navGroup)
+  o simula un click/enter en el objeto enfocado,
+  dependiendo de la tecla recibida.
+ * @param nav 
+ */
+
 void HandleIRNavigation(IRNavKey nav)
 {
     if (g_navGroup == nullptr) return;
@@ -81,6 +107,13 @@ void HandleIRNavigation(IRNavKey nav)
                 break;
             }
 
+            // Toggle precisión para sliders
+            if (lv_obj_get_class(focused) == &lv_slider_class) {
+                if (s_fineModeActive && s_fineSlider == focused) FineMode_Exit();
+                else FineMode_Enter(focused);
+                break;
+            }
+
             // Resto de objetos: comportamiento normal (click)
             lv_event_send(focused, LV_EVENT_CLICKED,  NULL);
             lv_event_send(focused, LV_EVENT_PRESSED,  NULL);
@@ -93,12 +126,30 @@ void HandleIRNavigation(IRNavKey nav)
     }
 }
 
+/**
+ * @brief 
+ * Maneja el ajuste del valor del slider
+ * actualmente enfocado según el delta recibido.
+ * @note
+  Si el objeto enfocado es un slider,
+  ajusta su valor en función del delta proporcionado.
+  También actualiza las variables PID correspondientes
+  si el slider está vinculado a un parámetro PID.
+ * @param delta 
+ */
+
 void HandleDeltaSlider(int delta)
 {
     if (delta == 0) return;
 
     lv_obj_t * focused = lv_group_get_focused(g_navGroup);
     if (focused == nullptr) return;
+
+    //Código para detetectar en que modo de incremento de slider estamos, si en el normal o en el de precisión
+    if (s_fineModeActive && focused == s_fineSlider) {
+    if (delta > 0) delta = 1;
+    else if (delta < 0) delta = -1;
+    }
 
     // 1) Caso especial: sliders de motor principal / rotor de cola
     if (focused == ui_MotorPrincipal) {
@@ -118,6 +169,11 @@ void HandleDeltaSlider(int delta)
     // 2) Si no es ninguno de esos, comprobamos que sea un slider LVGL
     if (lv_obj_get_class(focused) != &lv_slider_class) {
         return;
+    }
+
+    // Si estamos sobre el slider de control brillo, cogemos el valor de este y actualizamos su valor
+    if (focused == ui_ControlDeBrillo) {
+        brightness_Control();
     }
 
     // Ajustar valor del slider seleccionado
@@ -243,6 +299,21 @@ static void ApplyNumericBufferToAngle(lv_obj_t *focused)
 // ============================
 // Entrada numérica con dígitos (preview)
 // ============================
+
+/**
+ * @brief 
+ * Maneja la entrada de un dígito numérico
+ * para la label actualmente enfocada.
+ * @note
+  Si la label enfocada es una de las aceptadas
+  para entrada numérica (ui_Label64 o ui_Label65),
+  acumula el dígito en un buffer y actualiza
+  el texto de la label para mostrar un preview
+  del valor ingresado, respetando el signo
+  y el rango permitido [-180, 180].
+ * @param digit 
+ */
+
 void HandleNumericDigit(int digit)
 {
     if (digit < 0 || digit > 9) return;
@@ -306,6 +377,20 @@ void HandleNumericDigit(int digit)
 // ============================
 // Manejo del signo "-"
 // ============================
+
+/**
+ * @brief 
+ * Maneja la entrada del signo menos
+ * para la label actualmente enfocada.
+ * @note
+  Si la label enfocada es una de las aceptadas
+  para entrada numérica (ui_Label64 o ui_Label65),
+  alterna el signo del número en edición
+  y actualiza el texto de la label para mostrar
+  un preview del valor con el nuevo signo,
+  respetando el rango permitido [-180, 180].
+ */
+
 void HandleNumericMinus()
 {
     if (g_navGroup == nullptr) return;
@@ -355,6 +440,111 @@ void HandleNumericMinus()
     }
 }
 
+/**
+ * @brief
+ * Inicializa los estilos rojos
+ * @note
+  Crea los estilos LVGL
+  para el modo de precisión de sliders,
+  configurando los colores adecuados.
+  Solo se ejecuta una vez. 
+ */
+
+static void FineStyle_InitOnce()
+{
+    if (s_styleFineInit) return;
+    s_styleFineInit = true;
+
+    lv_style_init(&s_styleFineInd);
+    lv_style_set_bg_color(&s_styleFineInd, lv_color_make(255, 0, 0)); // indicador rojo
+
+    lv_style_init(&s_styleFineKnob);
+    lv_style_set_bg_color(&s_styleFineKnob, lv_color_make(255, 0, 0)); // knob rojo
+}
+
+/**
+ * @brief 
+ * Sale del modo precisión para sliders.
+ * @note
+  Restaura el slider al rango original,
+  elimina los estilos de precisión
+  y ajusta el valor al entero más cercano
+  (múltiplo de 10) para el modo normal.
+ */
+
+static void FineMode_Exit()
+{
+    if (!s_fineModeActive || s_fineSlider == nullptr) return;
+
+    // Quitar estilos rojos
+    lv_obj_remove_style(s_fineSlider, &s_styleFineInd,  LV_PART_INDICATOR);
+    lv_obj_remove_style(s_fineSlider, &s_styleFineKnob, LV_PART_KNOB);
+
+    // Restaurar rango original
+    lv_slider_set_range(s_fineSlider, s_origMin, s_origMax);
+
+    // Snap a entero (múltiplo de 10) para modo “grueso”
+    int v = lv_slider_get_value(s_fineSlider);
+    int snapped = ((v + 5) / 10) * 10;   // redondeo al entero más cercano (0.1*10)
+    lv_slider_set_value(s_fineSlider, snapped, LV_ANIM_OFF);
+
+    s_fineModeActive = false;
+    s_fineSlider     = nullptr;
+}
+
+/**
+ * @brief 
+ * Entra en el modo precisión para sliders.
+ * @note
+  Ajusta el slider al modo de precisión,
+  cambiando su rango a [N, N+1] en décimas
+  y aplicando estilos rojos para indicar el modo.
+  Si ya había otro slider en modo precisión,
+  primero sale de ese modo. 
+ * @param slider 
+ */
+
+static void FineMode_Enter(lv_obj_t* slider)
+{
+    if (slider == nullptr) return;
+
+    FineStyle_InitOnce();
+
+    // Si había otro slider en precisión, lo cerramos
+    FineMode_Exit();
+
+    s_fineSlider     = slider;
+    s_fineModeActive = true;
+
+    // Guardar rango original
+    s_origMin = lv_slider_get_min_value(slider);
+    s_origMax = lv_slider_get_max_value(slider);
+
+    // Encerrar en ventana [N, N+1] usando décimas: [N*10, N*10+10]
+    int v = lv_slider_get_value(slider);
+    int base = (v / 10) * 10;
+    lv_slider_set_range(slider, base, base + 10);
+
+    // Aplicar estilos rojos
+    lv_obj_add_style(slider, &s_styleFineInd,  LV_PART_INDICATOR);
+    lv_obj_add_style(slider, &s_styleFineKnob, LV_PART_KNOB);
+}
+
+/**
+ * @brief 
+ * Configura la navegación para las distintas pantallas, sin incluir el salvapantallas
+ * Screen1 - Scrren9.
+ * @note
+  Añade los objetos interactivos
+  de la Screen1 al grupo de navegación
+  y aplica el estilo de foco. 
+  Fija el foco inicial en el primer botón. 
+  (Repetido para cada pantalla con sus objetos) 
+  @see SetupScreen2Nav
+  @see SetupScreen3Nav
+  @see SetupScreen4Nav 
+ */
+
 void SetupScreen1Nav()
 {
     lv_group_remove_all_objs(g_navGroup);
@@ -362,12 +552,14 @@ void SetupScreen1Nav()
     lv_group_add_obj(g_navGroup, ui_Button3);
     lv_group_add_obj(g_navGroup, ui_Button4);
     lv_group_add_obj(g_navGroup, ui_Button18);
+    lv_group_add_obj(g_navGroup, ui_ControlDeBrillo);
 
     // Aplicar estilo de foco a todos ellos
     lv_obj_add_style(ui_Button1, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button3, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button4, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button18, &style_focus, LV_STATE_FOCUSED);
+    lv_obj_add_style(ui_ControlDeBrillo, &style_focus, LV_STATE_FOCUSED);
 
     // Fijar foco inicial en el primer botón (arriba a la izquierda)
     lv_group_focus_obj(ui_Button1);
@@ -519,7 +711,7 @@ void SetupScreen7Nav()
     lv_group_add_obj(g_navGroup, ui_Config2);
     lv_group_add_obj(g_navGroup, ui_Config3);
     lv_group_add_obj(g_navGroup, ui_Config4);
-    lv_group_add_obj(g_navGroup, ui_Config5);
+    lv_group_add_obj(g_navGroup, ui_SaveEEPROM);
 
     // Aplicar estilo de foco a todos ellos
     lv_obj_add_style(ui_Button20, &style_focus, LV_STATE_FOCUSED);
@@ -528,7 +720,7 @@ void SetupScreen7Nav()
     lv_obj_add_style(ui_Config2,  &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Config3,   &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Config4,   &style_focus, LV_STATE_FOCUSED);
-    lv_obj_add_style(ui_Config5,   &style_focus, LV_STATE_FOCUSED);
+    lv_obj_add_style(ui_SaveEEPROM,   &style_focus, LV_STATE_FOCUSED);
 
     // Fijar foco inicial en el primer botón (arriba a la izquierda)
     lv_group_focus_obj(ui_Button20);
@@ -566,6 +758,7 @@ void SetupScreen9Nav()
     // Fijar foco inicial en el primer botón (arriba a la izquierda)
     lv_group_focus_obj(ui_Button19);
 }
+
 
 
 

@@ -19,6 +19,17 @@ static bool  s_pid4_enabled = false;
 static float s_refVertDeg   = 0.0f; // ref display (grados)
 static float s_refHorDeg    = 0.0f; // ref display (grados)
 
+/**
+ * @brief 
+ * Obtiene los ángulos actuales del TRMS en grados.
+ * @note
+ * Utiliza la librería de encoders
+ * para leer los ángulos vertical y horizontal
+ * medidos por los encoders.
+ * @param vertDeg 
+ * @param horzDeg 
+ */
+
 // Lee ángulos reales del TRMS EN GRADOS usando la librería de encoders
 static void TRMS_GetAnglesDeg(float &vertDeg, float &horzDeg)
 {
@@ -28,14 +39,41 @@ static void TRMS_GetAnglesDeg(float &vertDeg, float &horzDeg)
 }
 
 /**
- * Pone a cero el integrador y la memoria de derivada.
+ * @brief 
+ * Pone a cero el integrador y la memoria de derivada
+ * de un controlador PID simple.
+ * @note
+ * Implementa el reseteo del estado interno
+ * de un PID individual.
+ * @param state
+ * Estado del PID a resetear.
+ * @return void
  */
+
 void PID_Reset(PIDState &state)
 {
     state.integrator = 0.0f;
     state.prevInput  = 0.0f;
     state.firstRun   = true;
 }
+
+/**
+ * @brief 
+ * Actualiza un controlador PID simple.
+ * @note
+ * Implementa la ecuación del PID con integrador
+ * y derivada, incluyendo saturación del integrador.
+ * @param p
+ * Parámetros del PID.
+ * @param s
+ * Estado del PID.
+ * @param u
+ * Entrada del PID (error).
+ * @param dt
+ * Intervalo de tiempo desde la última actualización (segundos).
+ * @return float
+ * Salida del PID.
+ */
 
 /**
  * Implementa:
@@ -86,6 +124,17 @@ float PID_Update(const PIDParams &p,
 // Bloque PID-4 (MIMO 2x2)
 // =====================================================
 
+/**
+ * @brief 
+ * Carga los parámetros del PID-4 desde la estructura PID_CURR.
+ * @note
+ * Copia los parámetros de la estructura PID_CURR
+ * a la estructura interna PID4Params utilizada
+ * por el controlador PID-4.
+ * @param c
+ * Estructura PID_CURR con los parámetros actuales.
+ */
+
 void PID4_LoadFromCurr(const PID_CURR &c)
 {
     s_pidCurrCopy = c;
@@ -101,11 +150,32 @@ void PID4_LoadFromCurr(const PID_CURR &c)
     PID4_Reset(s_pid4_state);
 }
 
+/**
+ * @brief 
+ * Establece las referencias de posición para el PID-4.
+ * @note
+ * Actualiza las referencias vertical y horizontal
+ * en grados que el PID-4 debe alcanzar.
+ * @param refVertDeg 
+ * Referencia vertical en grados.
+ * @param refHorDeg 
+ * Referencia horizontal en grados.
+ */
+
 void PID4_SetReferences(float refVertDeg, float refHorDeg)
 {
     s_refVertDeg = refVertDeg;
     s_refHorDeg  = refHorDeg;
 }
+
+/**
+ * @brief 
+ * Habilita o deshabilita el controlador PID-4.
+ * @note
+ * Cuando se habilita, el PID-4 se resetea.
+ * @param enable 
+ * true para habilitar, false para deshabilitar.
+ */
 
 void PID4_SetEnabled(bool enable)
 {
@@ -115,10 +185,38 @@ void PID4_SetEnabled(bool enable)
     }
 }
 
+/**
+ * @brief 
+ * Consulta si el PID-4 está habilitado.
+ * @note
+ * Devuelve el estado actual de habilitación
+ * del controlador PID-4.
+ * @return true 
+ * Si el PID-4 está habilitado.
+ * @return false 
+ * Si el PID-4 está deshabilitado.
+ */
+
 bool PID4_IsEnabled()
 {
     return s_pid4_enabled;
 }
+
+/**
+ * @brief 
+ * Convierte una señal de control U
+ * a un valor de registro para el motor.
+ * @note
+ * Normaliza la señal U respecto a Umax,
+ * la limita al rango [-1, 1],
+ * y la escala al rango de registro [-100, 100].
+ * @param U 
+ * Señal de control.
+ * @param Umax 
+ * Valor máximo absoluto permitido para U.
+ * @return int 
+ * Valor de registro correspondiente en el rango [-100, 100].
+ */
 
 static int U_to_Register(float U, float Umax)
 {
@@ -132,6 +230,17 @@ static int U_to_Register(float U, float Umax)
     return reg;
 }
 
+/**
+ * @brief 
+ * Resetea el estado de un controlador PID-4.
+ * @note
+ * Pone a cero los integradores y memorias de derivada
+ * de los cuatro controladores PID individuales
+ * que componen el PID-4.
+ * @param s
+ * Estado del PID-4 a resetear.
+ */
+
 void PID4_Reset(PID4State &s)
 {
     PID_Reset(s.hh);
@@ -139,6 +248,29 @@ void PID4_Reset(PID4State &s)
     PID_Reset(s.vh);
     PID_Reset(s.vv);
 }
+
+/**
+ * @brief 
+ * Actualiza el controlador PID-4.
+ * @note
+ * Ejecuta los cuatro controladores PID individuales,
+ * suma sus salidas según la configuración MIMO,
+ * y aplica las saturaciones de salida.
+ * @param p
+ * Parámetros del PID-4.
+ * @param s
+ * Estado del PID-4.
+ * @param in1
+ * Entrada 1 (error horizontal).
+ * @param in2
+ * Entrada 2 (error vertical).
+ * @param dt
+ * Intervalo de tiempo desde la última actualización (segundos).
+ * @param out1
+ * Salida 1 (control motor principal).
+ * @param out2
+ * Salida 2 (control rotor de cola).
+ */
 
 void PID4_Update(const PID4Params &p,
                  PID4State        &s,
@@ -180,6 +312,19 @@ void PID4_Update(const PID4Params &p,
     out1 = Uh;
     out2 = Uv;
 }
+
+/**
+ * @brief 
+ * Ejecuta un paso del controlador PID-4.
+ * @note
+ * Lee los ángulos medidos,
+ * calcula los errores respecto a las referencias,
+ * actualiza el PID-4,
+ * convierte las salidas a registros de motor,
+ * y aplica los valores a los DACs/sliders.
+ * @param dt
+ * Intervalo de tiempo desde la última actualización (segundos).
+ */
 
 void PID4_Step(float dt)
 {

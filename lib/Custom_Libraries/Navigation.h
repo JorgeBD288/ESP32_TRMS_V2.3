@@ -9,6 +9,10 @@ void HandleDeltaSlider(int delta);
 void HandleNumericDigit(int digit);
 void HandleNumericMinus();
 
+static void FineStyle_InitOnce();
+static void FineMode_Exit();
+static void FineMode_Enter(lv_obj_t* slider);
+
 void SetupScreen1Nav();
 void SetupScreen2Nav();
 void SetupScreen3Nav();

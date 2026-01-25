@@ -131,6 +131,22 @@ static const int REMOTE_PWR_CY   =  28;
 // HELPERS: creación de botones invisibles
 // ======================================================================
 
+/**
+ * @brief Create a circle button object
+ * @note
+  Crea un botón circular invisible
+  en el objeto padre dado,
+  centrado en (cx, cy) con radio r.
+  El botón no tiene fondo ni borde visibles.
+  Esta función es útil para crear áreas clicables
+  en forma de círculo sobre una imagen de control remoto.
+ * @param parent 
+ * @param cx 
+ * @param cy 
+ * @param r 
+ * @return lv_obj_t* 
+ */
+
 static lv_obj_t * create_circle_button(lv_obj_t * parent, int cx, int cy, int r)
 {
     lv_obj_t * btn = lv_btn_create(parent);
@@ -142,6 +158,24 @@ static lv_obj_t * create_circle_button(lv_obj_t * parent, int cx, int cy, int r)
 
     return btn;
 }
+
+/**
+ * @brief Create a rectangle button object
+ * @note
+  Crea un botón rectangular invisible
+  en el objeto padre dado,
+  con las esquinas superior izquierda (x1, y1)
+  e inferior derecha (x2, y2).
+  El botón no tiene fondo ni borde visibles.
+  Esta función es útil para crear áreas clicables
+  en forma de rectángulo sobre una imagen de control remoto.
+ * @param parent 
+ * @param x1 
+ * @param y1 
+ * @param x2 
+ * @param y2 
+ * @return lv_obj_t* 
+ */
 
 static lv_obj_t * create_rect_button(lv_obj_t * parent, int x1, int y1, int x2, int y2)
 {
@@ -157,6 +191,18 @@ static lv_obj_t * create_rect_button(lv_obj_t * parent, int x1, int y1, int x2, 
 
 
 // Mostrar en la label el botón seleccionado, con su código IR correspondiente
+
+/**
+ * @brief 
+ * Muestra en la label el botón seleccionado.
+ * @note
+  Actualiza la label ui_ButtonSelected
+  para mostrar el nombre del botón seleccionado
+  y un texto adicional opcional.
+  Si no hay label, no hace nada.
+ * @param name 
+ * @param extra 
+ */
 
 static void show_selected_label(const char *name, const char *extra = nullptr)
 {
@@ -179,6 +225,20 @@ static void show_selected_label(const char *name, const char *extra = nullptr)
 // EVENTOS
 // ======================================================================
 
+/**
+ * @brief 
+ * Evento para botón numérico.
+ * @note
+  Manejador de eventos para los botones numéricos
+  del diagrama remoto. Cuando se hace clic en un botón,
+  establece el modo de aprendizaje a DIGIT,
+  almacena el dígito seleccionado,
+  y actualiza la label para mostrar
+  el dígito seleccionado y un mensaje
+  indicando que se espera un código IR.
+ * @param e 
+ */
+
 static void remote_digit_event(lv_event_t * e)
 {
     if (lv_event_get_code(e) != LV_EVENT_CLICKED) return;
@@ -196,6 +256,19 @@ static void remote_digit_event(lv_event_t * e)
     show_selected_label(name, "Esperando codigo IR...");
 }
 
+/**
+ * @brief 
+ * Evento para botón de navegación.
+ * @note
+  Manejador de eventos para los botones de navegación
+  del diagrama remoto. Cuando se hace clic en un botón,
+  establece el modo de aprendizaje a NAV,
+  almacena la tecla de navegación seleccionada,
+  y actualiza la label para mostrar
+  la tecla seleccionada y un mensaje
+  indicando que se espera un código IR.
+ * @param e 
+ */
 
 static void remote_nav_event(lv_event_t * e)
 {
@@ -222,7 +295,18 @@ static void remote_nav_event(lv_event_t * e)
     show_selected_label(name, "Esperando codigo IR...");
 }
 
-
+/**
+ * @brief 
+ * Evento para botón + / −.
+ * @note
+  Manejador de eventos para los botones + y −
+  del diagrama remoto. Cuando se hace clic en un botón,
+  establece el modo de aprendizaje a PLUS o MINUS,
+  y actualiza la label para mostrar
+  el símbolo seleccionado y un mensaje
+  indicando que se espera un código IR.
+ * @param e 
+ */
 
 static void remote_delta_event(lv_event_t * e)
 {
@@ -245,6 +329,17 @@ static void remote_delta_event(lv_event_t * e)
     }
 }
 
+/**
+ * @brief 
+ * Evento para botón POWER.
+ * @note
+  Manejador de eventos para el botón POWER
+  del diagrama remoto. Cuando se hace clic en el botón,
+  establece el modo de aprendizaje a POWER,
+  y actualiza la label para mostrar
+  "POWER" y un mensaje indicando que se espera un código IR.
+ * @param e 
+ */
 
 static void remote_power_event(lv_event_t * e)
 {
@@ -261,6 +356,18 @@ static void remote_power_event(lv_event_t * e)
 // ======================================================================
 // INICIALIZACIÓN PÚBLICA
 // ======================================================================
+
+/**
+ * @brief 
+ * Inicializa el diagrama remoto.
+ * @note
+  Crea los botones invisibles
+  sobre la imagen del diagrama remoto
+  y asigna los manejadores de eventos correspondientes
+  para cada botón (números, navegación, +/−).
+  También oculta la label de botón seleccionado al inicio.
+ * @param remoteImg 
+ */
 
 void RemoteDiagram_Init(lv_obj_t *remoteImg)
 {
@@ -353,6 +460,23 @@ void RemoteDiagram_Init(lv_obj_t *remoteImg)
 
     Serial.println("[RemoteDiagram] Inicializado");
 }
+
+/**
+ * @brief 
+ * Maneja el evento de aprendizaje IR.
+ * @note
+  Procesa un evento IR recibido
+  durante el modo de aprendizaje.
+  Si se está en modo de aprendizaje,
+  asigna el código IR recibido
+  al botón correspondiente
+  (dígito, navegación, +/−, POWER),
+  muestra un mensaje en la label
+  y sale del modo de aprendizaje.
+ * @param ev 
+ * @return true Si el evento IR fue manejado (aprendido)
+ * @return false Si no se estaba en modo aprendizaje
+ */
 
 bool RemoteDiagram_HandleIRLearn(const IRControlEvent &ev)
 {

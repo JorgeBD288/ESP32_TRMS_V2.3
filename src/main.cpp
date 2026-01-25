@@ -21,6 +21,31 @@
 #include "Load_Screen.h"
 #include "Navigation.h"
 #include "Remote_Diagram.h"
+#include "Boot_Animation.h"
+
+// Activa/desactiva trazas de depuración del TCA9539
+#define TCA_DEBUG 1
+
+#if TCA_DEBUG
+  #define TCA_DBG_PRINTLN(x) Serial.println(x)
+  #define TCA_DBG_PRINT(x)   Serial.print(x)
+#else
+  #define TCA_DBG_PRINTLN(x) do{}while(0)
+  #define TCA_DBG_PRINT(x)   do{}while(0)
+#endif
+
+// Convierte códigos de Wire.endTransmission() a texto (Arduino Wire)
+static const char* i2cErrToStr(uint8_t err) {
+    switch (err) {
+        case 0: return "OK";
+        case 1: return "data too long";
+        case 2: return "NACK on address";
+        case 3: return "NACK on data";
+        case 4: return "other error";
+        default: return "unknown";
+    }
+}
+
 
 // ================================
 // Definiciones de pines y constantes
@@ -43,16 +68,25 @@
 #define T_IRQ_PIN 35
 
 // Pines del ESP32 que van a los inversores de SEL / RST / OE del HCTL
-#define PIN_SEL 14
-#define PIN_RST 12
-#define PIN_OE  13
+#define PIN_SEL 12
+#define PIN_RST 13
+#define PIN_OE  14
+
+// Pin para decidir el tipo de arranque
+#define PIN_BOOT 0
+
+//Pines I2C
+#define PIN_SDA 21
+#define PIN_SCL 22
 
 // Constante para conversión de voltaje a RPM para las lecturas de los tacómetros
 const float TACH_VOLTS_PER_1000RPM = 0.52f;
 
-// Cuentas por vuelta
-const float COUNTS_PER_REV_VERTICAL   = 2000.0f;  // ejemplo
-const float COUNTS_PER_REV_HORIZONTAL = 2000.0f;  // ejemplo
+// Cuentas por vuelta en los encoders HCTL-2016
+static const float COUNTS_PER_REV = 2000.0f;
+
+// Frecuencia de impresión
+static const uint32_t PRINT_EVERY_MS = 50;
 
 // ================================
 // Objetos y configuración global
@@ -61,9 +95,9 @@ const float COUNTS_PER_REV_HORIZONTAL = 2000.0f;  // ejemplo
 TFT_eSPI tft = TFT_eSPI();
 
 // Configuración de encoders
-EncoderConfig g_encoderConfig = {
-    COUNTS_PER_REV_VERTICAL,
-    COUNTS_PER_REV_HORIZONTAL
+static EncoderConfig g_cfg = {
+  .countsPerRevVertical   = COUNTS_PER_REV,
+  .countsPerRevHorizontal = COUNTS_PER_REV
 };
 
 // Configuración de tacómetro
@@ -87,6 +121,10 @@ DisplayTouchConfig g_displayCfg = {
 // Registros
 extern int  Registro_MP;
 extern int  Registro_RDC;
+
+// Variable para la temporización de la muestra de mensaje de comprobación de guardado y carga de configuración
+extern float temp_Save_Message;
+extern float temp_Load_Message;
 
 //Variables para la temporización del salvapantallas
 
@@ -112,12 +150,21 @@ void setup() {
     pinMode(LED, OUTPUT);
     pinMode (Buzzer, OUTPUT);
 
-    //Encdendemos el LED durante el arranque
+    //Encendemos el LED durante el arranque
     digitalWrite(LED, HIGH);
+
+    //Pin para el control de la iluminación de la pantalla (solo funciona si el jumper está conectado correctamente)
+    pinMode(BRILLO_PIN, OUTPUT);
+    // Configurar PWM
+    ledcSetup(BRILLO_PWM_CHANNEL, BRILLO_PWM_FREQ, BRILLO_PWM_RES);
+    ledcAttachPin(BRILLO_PIN, BRILLO_PWM_CHANNEL);
+
+    // Brillo inicial al 100%
+    ledcWrite(BRILLO_PWM_CHANNEL, 255);
     
     //Hacemos sonar el Buzzer durante un segundo en el inicio a toda potencia
     BuzzerWrite(HIGH);
-    delay(1000);
+    delay(500);
     BuzzerWrite(LOW);
 
     Serial.begin(115200);
@@ -125,7 +172,23 @@ void setup() {
 
     // Buses
     SPI.begin(); 
-    Wire.begin();
+    Wire.begin(PIN_SDA, PIN_SCL);
+    Wire.setClock(400000); // 400 kHz (Fast Mode)
+    Wire.setTimeOut(50);
+
+    // --- Ajustes de la librería de encoders ---
+    // Puertos de encoders, vertical y horizontal, cruzados: IN0=H y IN1=V
+    Encoders_setSwapPorts(true);
+
+    // Para leer bien, es preciso togglear OE entre bytes
+    Encoders_setToggleOE(true);
+
+    // Tiempos “tipo cronograma” (en us, con margen)
+    Encoders_setTimingsUs(
+        5,  // after SEL
+        5,  // after OE enable
+        5   // tri-state gap
+    );
 
     // CS de SD y TFT
     pinMode(SD_CS, OUTPUT);
@@ -134,18 +197,9 @@ void setup() {
     pinMode(TFT_CS, OUTPUT);
     digitalWrite(TFT_CS, HIGH);
 
-    // Inicializar pantalla, táctil y LVGL (como antes)
+    // Inicializar pantalla, táctil y LVGL
     DisplayTouch_begin(tft, g_displayCfg);
-
-    // -----------------------------------------------------------------
-    //  MENSAJES DE "CARGA" SIMULADOS ANTES DE ui_init()
-    // -----------------------------------------------------------------
-    tft.fillScreen(TFT_BLACK);
-    tft.setRotation(1);
-    tft.setTextSize(2);
-    tft.setTextColor(TFT_ORANGE, TFT_BLACK);
-    tft.setCursor(10, 20);
-
+    
     //----------------------------------------------------------------------------------------------//
     //                     Grupo pata navegar por el menú utilizanzo las flechas
     //----------------------------------------------------------------------------------------------//
@@ -159,38 +213,90 @@ void setup() {
     lv_style_set_outline_color(&style_focus, lv_palette_main(LV_PALETTE_GREEN));
     lv_style_set_outline_opa(&style_focus, LV_OPA_COVER);
 
-    // Montar la tarjeta SD
-    tft.print("Montando tarjeta SD... ");
-    delay(1000);    
-    if (SD.begin(SD_CS)) {
-        tft.setTextColor(TFT_GREEN, TFT_BLACK);
-        tft.println("SD OK");
-    } else {
-        tft.setTextColor(TFT_RED, TFT_BLACK);
-        tft.println("ERROR");
+    //----------------------------------------------------------------------------------------------//
+    //                    Modo de arranque ténico con detalles sobre el inicio del sistema
+    //----------------------------------------------------------------------------------------------//
+
+    pinMode(PIN_BOOT, INPUT_PULLUP);
+    // Lee BOOT al principio (pulsado = LOW)
+    bool debugMode = (digitalRead(PIN_BOOT) == LOW);
+
+    if (debugMode){
+        Serial.println("Arranque en MODO DEBUG");
+
+        // -----------------------------------------------------------------
+        //  MENSAJES DE "CARGA" SIMULADOS ANTES DE ui_init()
+        // -----------------------------------------------------------------
+        tft.fillScreen(TFT_BLACK);
+        tft.setRotation(1);
+        tft.setTextSize(2);
+        tft.setTextColor(TFT_ORANGE, TFT_BLACK);
+        tft.setCursor(10, 20);
+
+        // Montar la tarjeta SD
+        tft.print("Montando tarjeta SD... ");
+        delay(1000);
+        if (SD.begin(SD_CS)) {
+            tft.setTextColor(TFT_GREEN, TFT_BLACK);
+            tft.println("SD OK");
+        } else {
+            tft.setTextColor(TFT_RED, TFT_BLACK);
+            tft.println("ERROR");
+        }
+        delay(1000);
+
+        tft.setTextColor(TFT_ORANGE, TFT_BLACK);
+        tft.println("Inicializando control de motores...");
+        delay(1000);
+
+        tft.println("Inicializando encoders...");
+        delay(1000);
+
+        tft.println("Cargando ajustes PID...");
+        delay(1000);
+
+        tft.println("Inicializando UI...");
+        delay(500);
+
+        // Esquema del TRMS para la pantalla de inicio
+        int trmsCenterX = TFT_WIDTH / 2;
+        int trmsBaseY   = 210;
+        DrawTRMSFigure(tft, trmsCenterX, trmsBaseY);
+
+        //Barra de carga con 3 segundos de duración
+        Load_bar(tft);
     }
-    delay(1000);
+    else {
+        Serial.println("Arranque en MODO COMERCIAL");
 
-    tft.setTextColor(TFT_ORANGE, TFT_BLACK);
-    tft.println("Inicializando control de motores...");
-    delay(1000);
+        delay(500);
+        if (SD.begin(SD_CS)) {
+            Serial.println("SD OK");
+        } else {
+            Serial.println("SD ERROR");
+        }
+        delay(500);
 
-    tft.println("Inicializando encoders...");
-    delay(1000);
+        //----------------------------------------------------------------------------------------------//
+        //                                 Modo de arranque normal (comercial)
+        //----------------------------------------------------------------------------------------------//
 
-    tft.println("Cargando ajustes PID...");
-    delay(1000);
+        // Animación comercial
+        BootAnimConfig cfg = {};
+        cfg.title_big = "TRMS";
+        cfg.title_small = "Jorge Benítez Domingo";
+        cfg.logo_left_src  = &ui_img_logo_ugr_redimensionado_png;
+        cfg.logo_right_src = &ui_img_logo_granasat_redimensionado_png;
+        cfg.logos_on_top = true;
 
-    tft.println("Inicializando UI...");
-    delay(500);
+        BootAnim_Start(&cfg, nullptr);
 
-    // Esquema del TRMS para la pantalla de inicio
-    int trmsCenterX = TFT_WIDTH / 2;
-    int trmsBaseY   = 210;
-    DrawTRMSFigure(tft, trmsCenterX, trmsBaseY);
-    
-    //Barra de carga con 3 segundos de duración
-    Load_bar(tft);
+        // IMPORTANTE: mantener vivo LVGL mientras dura la animación
+        while (!BootAnim_IsFinished()) {
+            DisplayTouch_taskHandler();
+            delay(1);
+        }
+    }
     
     // -----------------------------------------------------------------
     //  AHORA SÍ: INICIALIZAR LA UI REAL DE LVGL
@@ -235,8 +341,22 @@ void setup() {
     //Inicializar la función para la detección de parámetros de entrada para el control PID
     AngSelect_Init(ui_Image12, ui_Label65, ui_Label64); // (Cuadrícula, Ang_Horizontal, Ang_Vertical)
 
+    // Inicializar encoders (HCTL + TCA9539)
+    
+    bool ok = Encoders_begin(PIN_SEL, PIN_RST, PIN_OE, g_cfg);
+    if (!ok) {
+        Serial.println("[FATAL] Encoders_begin fallo (I2C/TCA).");
+        while (true) delay(1000);
+    }
+
+    Serial.println("[OK] Encoders_begin correcto.");
+    Serial.println("[INFO] 0° = posicion al arrancar (tras reset interno).");
+   
     //Reset de encoders y registros antes de empezar
     Reset_Encoders_Registros();
+
+    //Inicializamos los charts para la muestra de datos de los encoders
+    Encoders_chartInit(ui_GraphEncoder);
 
     // Arrancamos contadores de actividad
     g_lastActivityMs = millis();
@@ -245,13 +365,14 @@ void setup() {
 
     //Hacemos sonar el Buzzer durante un segundo cuando el proceso de carga ha terminado por completo
     BuzzerWrite(HIGH);
-    delay(1000);
+    delay(500);
     BuzzerWrite(LOW);
 
     //Apagamos el LED al finalizar el proceso de carga
 
     digitalWrite(LED, LOW);
-}
+
+ }
 
 
 // ================================
@@ -284,10 +405,19 @@ void loop() {
         lastTachoUpdate = now;
     }
     
-    //Elimininar mensaje de confirmación de carga de datos desde SD en caso de que esta se haya producido, pasado un tiempo
-    if (flag_Config_Message == true){
-        Show_Config_Message_Selected();
+    //Elimininar mensaje de confirmación de carga de datos desde SD y guardado en SD, en caso de que esta se haya producido, pasado un tiempo
+   
+    if (flag_Save_Message == true){
+        if (millis() - temp_Save_Message > 2500){
+            Show_Save_Message_Selected();
+        }
     }
+    
+    if (flag_Config_Message == true){
+        if (millis() - temp_Load_Message > 2500){
+            Show_Config_Message_Selected();
+        }
+    }    
 
     // ---------------------------
     // 4) IR: leer mando y actuar
@@ -344,11 +474,159 @@ void loop() {
             HandleNumericMinus();
         }
     }
+/*
+    //----------------------------------------------------
+    // 5) TEST: 2 senoidales + actualizar charts
+    //----------------------------------------------------
+    static uint32_t lastRead   = 0;
+    static uint32_t lastChart1 = 0;
+    static uint32_t lastChart2 = 0;
+    static uint32_t lastPrint  = 0;
 
+    now = millis();
 
-    // ---------------------------
-    // 5) Comprobar INACTIVIDAD y activar salvapantallas (Screen10)
-    // ---------------------------
+    // ¿Está el chart visible?
+    bool chart1Visible =
+        (lv_scr_act() == ui_Screen2) &&
+        (ui_GraphEncoder != nullptr) &&
+        !lv_obj_has_flag(ui_GraphEncoder, LV_OBJ_FLAG_HIDDEN);
+
+    bool chart2Visible =
+        (lv_scr_act() == ui_Screen6) &&
+        (ui_GraphEncoder3 != nullptr) &&
+        !lv_obj_has_flag(ui_GraphEncoder3, LV_OBJ_FLAG_HIDDEN);
+
+    bool chartsVisible = chart1Visible || chart2Visible;
+
+    // (A) Generar muestra senoidal (rápido)
+    static float degH = 0.0f, degV = 0.0f;
+    static float t = 0.0f;
+
+    if (now - lastRead >= 50) {   // 50 ms
+        uint32_t dt_ms = now - lastRead;
+        lastRead = now;
+
+        t += (float)dt_ms / 1000.0f;
+
+        const float AMP  = 160.0f;
+        const float F_HZ = 0.20f;                 // 0.20 Hz = 5 s por ciclo
+        const float W    = 2.0f * 3.1415926f * F_HZ;  // <- IMPORTANTE: 2*pi*f
+
+        degH = AMP * sinf(W * t);
+        degV = AMP * cosf(W * t);
+    }
+
+    // (B) Chart 1 (solo si visible)
+    if (chart1Visible && (now - lastChart1 >= 50)) {
+        lastChart1 = now;
+
+        // Ojo: usa las series DEL CHART 1
+        lv_chart_set_next_value(ui_GraphEncoder, ui_GraphEncoder_series_1, (lv_coord_t)degH);
+        lv_chart_set_next_value(ui_GraphEncoder, ui_GraphEncoder_series_2, (lv_coord_t)degV);
+
+        lv_chart_refresh(ui_GraphEncoder);
+    }
+
+    // (C) Chart 2 (solo si visible)
+    if (chart2Visible && (now - lastChart2 >= 50)) {
+        lastChart2 = now;
+
+        // Ojo: usa las series DEL CHART 2
+        lv_chart_set_next_value(ui_GraphEncoder3, ui_GraphEncoder3_series_1, (lv_coord_t)degH);
+        lv_chart_set_next_value(ui_GraphEncoder3, ui_GraphEncoder3_series_2, (lv_coord_t)degV);
+
+        lv_chart_refresh(ui_GraphEncoder3);
+    }
+
+    // (D) Serial más lento (para no bloquear)
+    uint32_t printPeriod = chartsVisible ? 400 : 100;
+    if (now - lastPrint >= printPeriod) {
+        lastPrint = now;
+        Serial.printf("[SIM] H=%8.2f deg | V=%8.2f deg\n", degH, degV);
+    }
+
+*/
+
+    //----------------------------------------------------
+    // 5) Leer encoders (rápido) + actualizar charts (lento)
+    //----------------------------------------------------
+    static uint32_t lastRead   = 0;
+    static uint32_t lastChart1 = 0;
+    static uint32_t lastChart2 = 0;
+    static uint32_t lastPrint  = 0;
+
+    now = millis();
+
+    // ¿Está el chart visible?
+    bool chart1Visible =
+        (lv_scr_act() == ui_Screen2) &&
+        (ui_GraphEncoder != nullptr) &&
+        !lv_obj_has_flag(ui_GraphEncoder, LV_OBJ_FLAG_HIDDEN);
+
+    bool chart2Visible =
+        (lv_scr_act() == ui_Screen6) &&
+        (ui_GraphEncoder3 != nullptr) &&
+        !lv_obj_has_flag(ui_GraphEncoder3, LV_OBJ_FLAG_HIDDEN);
+
+    bool chartsVisible = chart1Visible || chart2Visible;
+
+    // (A) Lectura rápida de encoders
+    static int16_t cH = 0, cV = 0;   // guardamos último valor
+    static bool lastOk = true;
+
+    if (now - lastRead >= 50) {      // 50 ms lectura
+        lastRead = now;
+
+        int16_t tmpV = 0, tmpH = 0;
+        bool ok = Encoders_readCounts(tmpV, tmpH);
+        lastOk = ok;
+
+        if (ok) {
+            cV = tmpV;
+            cH = tmpH;
+        }
+    }
+
+    // (B) Convertir a grados (con tu CPR)
+    const float K = 360.0f / COUNTS_PER_REV;
+    float degH = (float)cH * K;
+    float degV = (float)cV * K;
+
+    // (C) Chart 1 más lento (solo si visible)
+    if (chart1Visible && lastOk && (now - lastChart1 >= 50)) {
+        lastChart1 = now;
+
+        // Series del chart 1 (Screen2)
+        lv_chart_set_next_value(ui_GraphEncoder, ui_GraphEncoder_series_1, (lv_coord_t)degH);
+        lv_chart_set_next_value(ui_GraphEncoder, ui_GraphEncoder_series_2, (lv_coord_t)degV);
+        lv_chart_refresh(ui_GraphEncoder);
+    }
+
+    // (D) Chart 2 más lento (solo si visible)
+    if (chart2Visible && lastOk && (now - lastChart2 >= 50)) {
+        lastChart2 = now;
+
+        // Series del chart 2 (Screen6)
+        lv_chart_set_next_value(ui_GraphEncoder3, ui_GraphEncoder3_series_1, (lv_coord_t)degH);
+        lv_chart_set_next_value(ui_GraphEncoder3, ui_GraphEncoder3_series_2, (lv_coord_t)degV);
+        lv_chart_refresh(ui_GraphEncoder3);
+    }
+
+    // (E) Serial más lento (para no bloquear)
+    uint32_t printPeriod = chartsVisible ? 400 : 100; // con chart imprime menos
+    if (now - lastPrint >= printPeriod) {
+        lastPrint = now;
+
+        if (!lastOk) {
+            Serial.println("[READ] ERROR leyendo counts (I2C).");
+        } else {
+            Serial.printf("[H] %6d  %8.2f deg | [V] %6d  %8.2f deg\n", cH, degH, cV, degV);
+        }
+    }
+
+    // ------------------------------------------------------------
+    // 6) Comprobar INACTIVIDAD y activar salvapantallas (Screen10)
+    // ------------------------------------------------------------
     now = millis();
     if (now - g_lastActivityMs > INACTIVITY_TIMEOUT_MS) {
         lv_obj_t *act = lv_scr_act();
@@ -380,4 +658,21 @@ void loop() {
             );
         }
     }
+
+    /*
+
+    uint8_t p0 = 0, p1 = 0;
+    
+    if (Encoders_readTcaPorts(p0, p1)) {
+    Serial.print("P0 = ");
+    Serial.print(p0, BIN);
+    Serial.print(" | P1 = ");
+    Serial.println(p1, BIN);
+    } else {
+        Serial.println("ERROR leyendo puertos del TCA");
+    }
+
+    delay(200);
+    */
+
 }

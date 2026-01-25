@@ -13,6 +13,81 @@ extern PID_MIN  g_pidMin;
 extern PID_MAX  g_pidMax;
 
 bool flag_Config_Message = false;
+bool flag_Save_Message = false;
+
+static const lv_color_t COLOR_RED = lv_color_make(255, 0, 0);
+static const lv_color_t COLOR_GREEN = lv_color_make(0, 255, 0);
+
+// Funciones auxiliares para la muestra de mensajes de error en caso de fallo
+
+static lv_timer_t* s_tmrLabel92 = nullptr;
+
+/**
+ * @brief 
+ * Oculta la label 92 tras un retardo.
+ * @note
+ * Callback del timer para ocultar
+ * la label de mensaje tras 1 segundo. 
+ * @param t 
+ */
+
+static void hide_label92_cb(lv_timer_t* t)
+{
+    lv_obj_t* label = (lv_obj_t*)t->user_data;
+    if (!label) return;
+
+    lv_obj_add_flag(label, LV_OBJ_FLAG_HIDDEN);
+
+    // Si quieres volver a verde:
+    lv_obj_set_style_text_color(label, lv_color_make(0,255,0), LV_PART_MAIN);
+
+    s_tmrLabel92 = nullptr;
+    lv_timer_del(t);
+}
+
+/**
+ * @brief 
+ * Muestra un mensaje de error en la label 92.
+ * @note
+ * Actualiza la label ui_Label92
+ * para mostrar un mensaje de error
+ * en color rojo, y crea un timer
+ * para ocultarla tras 1 segundo.
+ */
+
+static void show_error_label92(void)
+{
+    if (!ui_Label92) return;
+
+    lv_label_set_text(ui_Label92, "Error al cargar configuracion");
+    lv_obj_set_style_text_color(ui_Label92, lv_color_make(255,0,0), LV_PART_MAIN);
+    lv_obj_clear_flag(ui_Label92, LV_OBJ_FLAG_HIDDEN);
+
+    // Si ya había timer activo, lo borramos (evita acumulación)
+    if (s_tmrLabel92) {
+        lv_timer_del(s_tmrLabel92);
+        s_tmrLabel92 = nullptr;
+    }
+
+    s_tmrLabel92 = lv_timer_create(hide_label92_cb, 1000, ui_Label92);
+
+    // Forzar a que se llegue a dibujar ahora
+    lv_timer_handler();
+}
+
+
+// ======================================================
+
+/**
+ * @brief 
+ * Asegura que la tarjeta SD está montada.
+ * @note
+ * Deselecciona otros dispositivos SPI
+ * antes de llamar a SD.begin().
+ * Si SD.begin() falla, imprime un error por Serial. 
+ * @return true 
+ * @return false 
+ */
 
 static bool SD_EnsureMounted()
 {
@@ -29,15 +104,39 @@ static bool SD_EnsureMounted()
     return true;
 }
 
+/**
+ * @brief 
+ * Actualiza una label con los valores PID.
+ * @note
+ * Muestra en la label el valor mínimo,
+ * actual y máximo de un parámetro PID. 
+ * @param label 
+ * @param minVal 
+ * @param currVal 
+ * @param maxVal 
+ */
+
 // Declarada en Parameters.h (si no, añade allí el prototipo)
 extern void PID_UpdateParamLabel(lv_obj_t * label,
                                  float      minVal,
                                  float      currVal,
                                  float      maxVal);
 
-// ======================================================
+// ===============================================================
 // Helper: aplicar g_pidCurr/g_pidMin/g_pidMax a sliders y labels
-// ======================================================
+// ===============================================================
+
+/**
+ * @brief 
+ * Aplica los valores de g_pidCurr
+ * a los sliders y labels de la UI.
+ * @note
+ * Actualiza todos los sliders
+ * para reflejar los valores actuales
+ * de g_pidCurr (multiplicados por 10),
+ * y actualiza las labels correspondientes
+ * con min/curr/max.
+ */
 
 static void PID_ApplyCurrToUI()
 {
@@ -92,20 +191,47 @@ static void PID_ApplyCurrToUI()
 // Guardar configuración en fichero
 // ======================================================
 
+/**
+ * @brief 
+ * Guarda los parámetros PID en un fichero.
+ * @note
+ * Asegura que la SD está montada,
+ * abre el fichero en modo escritura,
+ * y escribe los valores de g_pidCurr,
+ * g_pidMin y g_pidMax en formato texto.
+ * @param path 
+ * Ruta del fichero en la SD.
+ * @return true 
+ * @return false 
+ */
+
 static bool PID_SaveConfigToFile(const char *path)
 {   
     // Asegurar montaje SD
     if (!SD_EnsureMounted()) {
         Serial.println("No se puede guardar: SD no montada");
+
+        //lv_obj_set_style_text_color(ui_Label36, lv_color_make(255,0,0), LV_PART_MAIN);
+        //lv_label_set_text(ui_Label36, "Error de\nguardado");      
+
         return false;
     }
 
     File f = SD.open(path, FILE_WRITE);
     if (!f) {
         Serial.print("ERROR abriendo fichero: ");
+        
+        //lv_obj_set_style_text_color(ui_Label36, lv_color_make(255,0,0), LV_PART_MAIN);
+        //lv_label_set_text(ui_Label36, "Error de\nguardado");
+
         Serial.println(path);
         return false;
     }
+
+    
+    //lv_obj_set_style_text_color(ui_Label36, lv_color_make(0,255,0), LV_PART_MAIN);
+    //lv_label_set_text(ui_Label36, "Guardado\nexitoso");
+    
 
     f.println("# CONFIGURACION PID -----------------------");
 
@@ -193,11 +319,26 @@ enum PIDSection {
     PID_SECTION_MAX
 };
 
+/**
+ * @brief 
+ * Carga los parámetros PID desde un fichero.
+ * @note
+ * Asegura que la SD está montada,
+ * abre el fichero en modo lectura,
+ * y lee los valores para g_pidCurr,
+ * g_pidMin y g_pidMax.
+ * @param path 
+ * Ruta del fichero en la SD.
+ * @return true 
+ * @return false 
+ */
+
 static bool PID_LoadConfigFromFile(const char *path)
 {   
     // Asegurar montaje SD
     if (!SD_EnsureMounted()) {
         Serial.println("No se puede guardar: SD no montada");
+        show_error_label92();
         return false;
     }
 
@@ -205,6 +346,7 @@ static bool PID_LoadConfigFromFile(const char *path)
     if (!f) {
         Serial.print("ERROR abriendo fichero de config: ");
         Serial.println(path);
+        show_error_label92();
         return false;
     }
 
@@ -318,6 +460,18 @@ static bool PID_LoadConfigFromFile(const char *path)
 // API pública: guardar/cargar por índice (1..N)
 // ======================================================
 
+/**
+ * @brief 
+ * Construye la ruta del fichero de configuración
+ * para un índice dado.
+ * @note
+ * La ruta tiene el formato:
+ * "/Config_PID/Config_<index>.txt"
+ * @param index 
+ * Índice de configuración (1..5).
+ * @return String 
+ */
+
 static String buildConfigPath(uint8_t index)
 {
     // Index 1..5 → "/Config_PID/Config_1.txt" ...
@@ -326,6 +480,19 @@ static String buildConfigPath(uint8_t index)
     path += ".txt";
     return path;
 }
+
+/**
+ * @brief 
+ * Guarda la configuración PID en la SD.
+ * @note
+ * Construye la ruta del fichero
+ * según el índice dado,
+ * y llama a PID_SaveConfigToFile().
+ * @param index 
+ * Índice de configuración (1..5).
+ * @return true 
+ * @return false 
+ */
 
 bool ControlSD_SaveConfig(uint8_t index)
 {
@@ -341,6 +508,21 @@ bool ControlSD_SaveConfig(uint8_t index)
 
     return PID_SaveConfigToFile(path.c_str());
 }
+
+/**
+ * @brief 
+ * Carga la configuración PID desde la SD.
+ * @note
+ * Construye la ruta del fichero
+ * según el índice dado,
+ * y llama a PID_LoadConfigFromFile().
+ * Tras cargar, actualiza los sliders
+ * y muestra la label de éxito.
+ * @param index 
+ * Índice de configuración (1..5).
+ * @return true 
+ * @return false 
+ */
 
 bool ControlSD_LoadConfig(uint8_t index)
 {

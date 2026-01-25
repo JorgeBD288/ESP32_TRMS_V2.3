@@ -102,6 +102,16 @@ PID_MAX g_pidMax = {
 // ------------------------------------------------------
 // Función para establecer parámetros predeterminados
 // ------------------------------------------------------
+
+/**
+ * @brief 
+ * Carga los parámetros PID predeterminados.
+ * @note
+ * Establece valores por defecto
+ * para g_pidCurr, g_pidMin y g_pidMax,
+ * y sincroniza la UI con g_pidCurr.
+ */
+
 void PID_LoadDefaults() {
 
     //1) Establecer conjunto parámetros predeterminados
@@ -183,6 +193,23 @@ void PID_LoadDefaults() {
     Serial.println("PID parameters loaded with default values.");
 }
 
+/**
+ * @brief 
+ * Actualiza la etiqueta de un parámetro PID.
+ * @note
+ * Muestra en la etiqueta el valor mínimo,
+ * el valor actual y el valor máximo
+ * formateados con dos decimales
+ * y separados por espacios.
+ * 
+ * Ejemplo de formato: "0.00   1.23   10.00"
+ *
+ * @param label 
+ * @param minVal 
+ * @param currVal 
+ * @param maxVal 
+ */
+
 void PID_UpdateParamLabel(lv_obj_t * label, float minVal, float currVal, float maxVal)
 {
     if (!label) return;
@@ -198,6 +225,18 @@ void PID_UpdateParamLabel(lv_obj_t * label, float minVal, float currVal, float m
 // ======================================================
 // Helper interno: aplicar g_pidCurr/g_pidMin/g_pidMax a la UI
 // ======================================================
+
+/**
+ * @brief 
+ * Sincroniza la UI con los valores actuales de g_pidCurr.
+ * @note
+ * Actualiza los sliders y las etiquetas
+ * en la interfaz de usuario
+ * para reflejar los valores actuales de g_pidCurr,
+ * así como los valores mínimos y máximos
+ * de g_pidMin y g_pidMax.
+ */
+
 static void PID_SyncUIFromCurr()
 {
     // -------- SLIDERS (0..100 → valor = param*10) --------
@@ -250,6 +289,16 @@ static void PID_SyncUIFromCurr()
 // ======================================================
 // NVS (Preferences): cargar / guardar PID
 // ======================================================
+
+/**
+ * @brief 
+ * Guarda los parámetros PID en NVS.
+ * @note
+ * Almacena los valores de g_pidCurr,
+ * g_pidMin y g_pidMax
+ * en la memoria no volátil (NVS)
+ * bajo el namespace definido.
+ */
 
 void PID_SaveToNVS()
 {
@@ -334,6 +383,16 @@ void PID_SaveToNVS()
 
     Serial.println("[PID] Configuración guardada en NVS");
 }
+
+/**
+ * @brief 
+ * Carga los parámetros PID desde NVS.
+ * @note
+ * Si no hay datos en NVS,
+ * guarda los valores actuales (por defecto).
+ * Si hay datos, carga los valores
+ * en g_pidCurr, g_pidMin y g_pidMax.
+ */
 
 void PID_LoadFromNVS()
 {

@@ -48,12 +48,29 @@ static lv_obj_t * g_marker = nullptr;  // punto rojo
 static lv_obj_t * g_lineH  = nullptr;  // línea horizontal verde
 static lv_obj_t * g_lineV  = nullptr;  // línea vertical azul
 
-//Función para dibujar/mover el punto y las líneas verde/azul que indican las coordenadas seleccionadas
+
+
+/**
+ * @brief 
+ * @param img
+ * @param local_x
+ * @param local_y
+ * @return void
+ * @note
+ * Calcula y dibuja/mueve el punto rojo (marcador) y las líneas verde (horizontal)
+ * y azul (vertical) en la imagen de la cuadrícula, basándose en las
+ * coordenadas locales del toque dentro de la imagen.
+ * El punto rojo se coloca en la posición del toque,
+ * la línea verde se extiende horizontalmente desde el eje vertical
+ * hasta el punto, y la línea azul se extiende verticalmente
+ * desde el eje horizontal hasta el punto.
+*/
 
 // Dibuja/mueve el punto rojo y las líneas verde/azul
 // img      → imagen de la cuadrícula (ui_Image12)
 // local_x  → x del toque en coordenadas locales de la imagen
 // local_y  → y del toque en coordenadas locales de la imagen
+
 static void AngSelect_UpdateGraphics(lv_obj_t * img, int local_x, int local_y)
 {
     // Crear los objetos la primera vez
@@ -134,6 +151,23 @@ static void AngSelect_UpdateGraphics(lv_obj_t * img, int local_x, int local_y)
 // ======================================================
 // CALLBACK DE EVENTO
 // ======================================================
+
+
+/**
+ * @brief 
+ * @param img
+ * @param local_x
+ * @param local_y
+ * @return void
+ * @note
+ * Maneja los eventos táctiles en la imagen de la cuadrícula.
+ * Calcula los ángulos horizontales y verticales
+ * basándose en la posición del toque,
+ * actualiza los gráficos (punto y líneas)
+ * y muestra los ángulos en las etiquetas correspondientes.
+ * Además, guarda los ángulos como referencias globales.
+ * @param e 
+ */
 
 static void AngSelect_Event(lv_event_t * e)
 {
@@ -241,6 +275,19 @@ static void AngSelect_Event(lv_event_t * e)
 // INICIALIZACIÓN PÚBLICA
 // ======================================================
 
+/**
+ * @brief 
+ * @note
+ * Inicializa el selector de ángulos táctil.
+ * Configura la imagen de la cuadrícula y las etiquetas
+ * para mostrar los ángulos horizontal y vertical.
+ * Además, registra los callbacks de eventos táctiles
+ * para manejar la interacción del usuario.
+ * @param gridImage 
+ * @param labelH 
+ * @param labelV 
+ */
+
 void AngSelect_Init(lv_obj_t * gridImage,
                     lv_obj_t * labelH,
                     lv_obj_t * labelV)
@@ -260,15 +307,37 @@ void AngSelect_Init(lv_obj_t * gridImage,
     Serial.println("[AngSelect] Inicializado");
 }
 
+/**
+ * @brief 
+ * @return float
+ * @note
+ * Obtiene el ángulo de referencia horizontal actual en grados.
+ */
+
 float AngSelect_GetRefHorizontal()
 {
     return g_refH;
 }
 
+/**
+ * @brief 
+ * @return float
+ * @note
+ * Obtiene el ángulo de referencia vertical actual en grados.
+ */
+
 float AngSelect_GetRefVertical()
 {
     return g_refV;
 }
+
+/**
+ * @brief
+ * @note 
+ * Establece el ángulo de referencia horizontal
+ * y actualiza la etiqueta correspondiente.
+ * @param angle 
+ */
 
 void AngSelect_SetRefHorizontal(float angle)
 {
@@ -281,6 +350,14 @@ void AngSelect_SetRefHorizontal(float angle)
     }
 }
 
+/**
+ * @brief 
+ * @note
+ * Establece el ángulo de referencia vertical
+ * y actualiza la etiqueta correspondiente.
+ * @param angle 
+ */
+
 void AngSelect_SetRefVertical(float angle)
 {
     g_refV = angle;
@@ -291,6 +368,20 @@ void AngSelect_SetRefVertical(float angle)
         lv_label_set_text(g_labelV, buf);
     }
 }
+
+/**
+ * @brief 
+ * @note
+ * Esta función ajusta las referencias de ángulo horizontal
+ * y vertical a los valores proporcionados,
+ * asegurándose de que estén dentro del rango [-180, 180] grados.
+ * Luego, actualiza las etiquetas de la interfaz
+ * para mostrar los nuevos ángulos de referencia
+ * y ajusta los gráficos en la imagen de la cuadrícula
+ * para reflejar las nuevas referencias.
+ * @param angle_h 
+ * @param angle_v 
+ */
 
 void AngSelect_ApplyRefFromAngles(float angle_h, float angle_v)
 {
@@ -346,21 +437,52 @@ void AngSelect_ApplyRefFromAngles(float angle_h, float angle_v)
     AngSelect_UpdateGraphics(g_gridImage, local_x, local_y);
 }
 
-// Funciones de RESET
+//-------------------------------------------------------------//
+//                      Funciones de RESET
+//-------------------------------------------------------------//
 
-// Pone las dos referencias a 0º y dibuja punto y líneas en (0,0)
+/**
+ * @brief 
+ * @note
+ * Resetea ambas referencias de ángulo (horizontal y vertical) a 0 grados.
+ * Actualiza las etiquetas y los gráficos en la imagen de la cuadrícula
+ * para reflejar las referencias reseteadas.
+ * @param void
+ */
+
+
 void AngSelect_ResetRefBoth()
 {
     AngSelect_ApplyRefFromAngles(0.0f, 0.0f);
 }
 
-// Pone solo la referencia horizontal a 0º (la vertical se mantiene)
+/**
+ * @brief
+ * @note
+ * Resetea el ángulo de referencia horizontal a 0 grados.
+ * Actualiza la etiqueta y los gráficos en la imagen de la cuadrícula
+ * para reflejar la referencia reseteada.
+ * @param void
+ * @return void 
+ */
+
+
 void AngSelect_ResetRefHorizontal()
 {
     AngSelect_ApplyRefFromAngles(0.0f, g_refV);
 }
 
-// Pone solo la referencia vertical a 0º (la horizontal se mantiene)
+/**
+ * @brief 
+ * @note
+ * Resetea el ángulo de referencia vertical a 0 grados.
+ * Actualiza la etiqueta y los gráficos en la imagen de la cuadrícula
+ * para reflejar la referencia reseteada.
+ * @param void
+ * @return void
+ */
+
+
 void AngSelect_ResetRefVertical()
 {
     AngSelect_ApplyRefFromAngles(g_refH, 0.0f);

@@ -51,6 +51,16 @@ static Preferences s_prefs;
 // SETTERS / GETTERS
 // =====================
 
+/**
+ * @brief 
+ * Asigna un código IR a un dígito numérico.
+ * @note
+  Actualiza la tabla interna de códigos
+  para el dígito especificado. 
+ * @param digit 
+ * @param code 
+ */
+
 void IRControl_setDigitCode(uint8_t digit, uint32_t code)
 {
     if (digit < 10) {
@@ -62,11 +72,31 @@ void IRControl_setDigitCode(uint8_t digit, uint32_t code)
     }
 }
 
+/**
+ * @brief 
+ * Obtiene el código IR asignado a un dígito numérico.
+ * @note
+  Consulta la tabla interna de códigos
+  para el dígito especificado. 
+ * @param digit 
+ * @return uint32_t 
+ */
+
 uint32_t IRControl_getDigitCode(uint8_t digit)
 {
     if (digit < 10) return s_digitCode[digit];
     return 0;
 }
+
+/**
+ * @brief 
+ * Asigna un código IR a una tecla de navegación.
+ * @note
+  Actualiza la tabla interna de códigos
+  para la tecla de navegación especificada. 
+ * @param key 
+ * @param code 
+ */
 
 void IRControl_setNavCode(IRNavKey key, uint32_t code)
 {
@@ -84,6 +114,16 @@ void IRControl_setNavCode(IRNavKey key, uint32_t code)
     Serial.println((int)key);
 }
 
+/**
+ * @brief 
+ * Obtiene el código IR asignado a una tecla de navegación.
+ * @note
+  Consulta la tabla interna de códigos
+  para la tecla de navegación especificada. 
+ * @param key 
+ * @return uint32_t 
+ */
+
 uint32_t IRControl_getNavCode(IRNavKey key)
 {
     switch (key) {
@@ -96,6 +136,15 @@ uint32_t IRControl_getNavCode(IRNavKey key)
     }
 }
 
+/**
+ * @brief 
+ * Asigna un código IR a la tecla PLUS (+).
+ * @note
+  Actualiza la tabla interna de códigos
+  para la tecla PLUS. 
+ * @param code 
+ */
+
 void IRControl_setPlusCode(uint32_t code)
 {
     s_plusCode = code;
@@ -104,10 +153,28 @@ void IRControl_setPlusCode(uint32_t code)
     Serial.println(" a PLUS (+)");
 }
 
+/**
+ * @brief 
+ * Obtiene el código IR asignado a la tecla PLUS (+).
+ * @note
+  Consulta la tabla interna de códigos
+  para la tecla PLUS. 
+ * @return uint32_t 
+ */
+
 uint32_t IRControl_getPlusCode()
 {
     return s_plusCode;
 }
+
+/**
+ * @brief 
+ * Asigna un código IR a la tecla MINUS (-).
+ * @note
+  Actualiza la tabla interna de códigos
+  para la tecla MINUS. 
+ * @param code 
+ */
 
 void IRControl_setMinusCode(uint32_t code)
 {
@@ -117,10 +184,28 @@ void IRControl_setMinusCode(uint32_t code)
     Serial.println(" a MINUS (-)");
 }
 
+/**
+ * @brief 
+ * Obtiene el código IR asignado a la tecla MINUS (-).
+ * @note
+  Consulta la tabla interna de códigos
+  para la tecla MINUS. 
+ * @return uint32_t 
+ */
+
 uint32_t IRControl_getMinusCode()
 {
     return s_minusCode;
 }
+
+/**
+ * @brief 
+ * Asigna un código IR a la tecla POWER.
+ * @note
+  Actualiza la tabla interna de códigos
+  para la tecla POWER. 
+ * @param code 
+ */
 
 void IRControl_setPowerCode(uint32_t code)
 {
@@ -130,6 +215,15 @@ void IRControl_setPowerCode(uint32_t code)
     Serial.println(" a POWER");
 }
 
+/**
+ * @brief 
+ * Obtiene el código IR asignado a la tecla POWER.
+ * @note
+  Consulta la tabla interna de códigos
+  para la tecla POWER. 
+ * @return uint32_t 
+ */
+
 uint32_t IRControl_getPowerCode()
 {
     return s_powerCode;
@@ -138,6 +232,15 @@ uint32_t IRControl_getPowerCode()
 // =====================
 // INICIALIZACIÓN
 // =====================
+
+/**
+ * @brief 
+ * Inicializa el receptor IR.
+ * @note
+  Configura el pin del receptor
+  y arranca la librería IRremote. 
+ * @param irPin 
+ */
 
 void IRControl_begin(uint8_t irPin) {
     s_irPin = irPin;
@@ -150,6 +253,16 @@ void IRControl_begin(uint8_t irPin) {
 // =====================
 // LECTURA / DECODIFICACIÓN
 // =====================
+
+/**
+ * @brief 
+ * Lee y decodifica un comando IR recibido.
+ * @note
+  Si se recibe un comando válido,
+  lo interpreta y rellena una estructura
+  con la información del evento. 
+ * @return IRControlEvent 
+ */
 
 IRControlEvent IRControl_poll() {
     IRControlEvent ev{};
@@ -242,6 +355,14 @@ IRControlEvent IRControl_poll() {
 // CARGAR / GUARDAR EN NVS
 // =====================
 
+/**
+ * @brief 
+ * Carga la configuración de códigos IR desde NVS.
+ * @note
+  Lee los códigos almacenados en NVS
+  y actualiza la tabla interna de códigos. 
+ */
+
 void IRControl_loadConfigFromNVS()
 {
     if (!s_prefs.begin("ir_codes", true)) {   // true = solo lectura
@@ -275,6 +396,14 @@ void IRControl_loadConfigFromNVS()
     s_prefs.end();
     Serial.println("[IRControl] Configuración IR cargada desde NVS");
 }
+
+/**
+ * @brief 
+ * Guarda la configuración de códigos IR en NVS.
+ * @note
+  Escribe los códigos actuales
+  en la memoria NVS. 
+ */
 
 void IRControl_saveConfigToNVS()
 {

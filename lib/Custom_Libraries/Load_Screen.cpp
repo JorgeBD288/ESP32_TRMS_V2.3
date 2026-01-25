@@ -10,7 +10,27 @@ const int steps = 60;          // número de pasos de la barra
 const int stepDelay = 3000 / steps;  // 3 s repartidos en 60 pasos (~50 ms)
 
 
-// Dibuja un TRMS esquemático
+/**
+ * @brief 
+ * Dibuja una figura esquemática de TRMS en la pantalla.
+ * @note
+ * La figura incluye la base, el mástil,
+ * la caja superior, el brazo horizontal y los rotores.
+  Se utiliza para la pantalla de inicio
+  durante la animación de carga.
+  La figura es proporcional a la resolución de la pantalla.
+  Se centra horizontalmente en centerX
+  y se posiciona verticalmente con baseY como referencia inferior.
+  La figura es de color
+ * rojo para destacar sobre el fondo oscuro.
+ * Esta función es útil para representar
+ * un aerogenerador TRMS de forma esquemática
+ * durante la secuencia de arranque del sistema.
+ * @param tft 
+ * @param centerX 
+ * @param baseY 
+ */
+
 void DrawTRMSFigure(TFT_eSPI &tft, int centerX, int baseY)
 {
     uint16_t col = TFT_RED;
@@ -124,6 +144,20 @@ void DrawTRMSFigure(TFT_eSPI &tft, int centerX, int baseY)
         tft.drawRect(pillarX, pillarTopY, pillarW, pillarH, col);
     }
 }
+
+/**
+ * @brief 
+ * Muestra una barra de carga en la pantalla.
+ * @note
+ * La barra se dibuja con un borde naranja
+ * y se rellena progresivamente
+ * en pasos definidos por la constante 'steps'.
+ * Cada paso tiene un retardo para simular
+ * una animación de carga.
+ * Esta función es útil para indicar
+ * el progreso de carga durante la pantalla de inicio.
+ * @param tft 
+ */
 
 void Load_bar(TFT_eSPI &tft)
 {

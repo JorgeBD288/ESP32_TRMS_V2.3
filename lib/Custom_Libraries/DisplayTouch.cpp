@@ -39,6 +39,21 @@ static lv_color_t s_buf[DISP_MAX_WIDTH * DISP_BUF_LINES];
 
 // XPT2046: T_IRQ pasa a LOW mientras hay toque.
 // Aquí solo incrementamos un contador para depuración.
+
+/**
+ * @brief ISR para el pin de interrupción táctil T_IRQ.
+ * Incrementa un contador cada vez que se detecta un cambio de estado.
+ * @note
+ * Esta ISR se utiliza principalmente para depuración,
+ * permitiendo verificar que las interrupciones se están generando correctamente
+ * cuando se toca la pantalla.
+ * @param void
+ * @return void
+ * @note
+ * No se recomienda realizar operaciones complejas dentro de una ISR.
+ * Aquí solo se incrementa un contador atómico para minimizar el tiempo de ejecución.
+ */
+
 static void IRAM_ATTR touch_isr()
 {
     s_irq_count++;
@@ -138,6 +153,22 @@ static void my_touchpad_read(lv_indev_drv_t *indev_drv,
 // -----------------------------------------------------------------------------
 // API pública
 // -----------------------------------------------------------------------------
+
+/**
+ * @brief 
+ * Inicializa la pantalla TFT y el táctil con LVGL.
+ * Nota: el pin T_IRQ se configura como entrada con pull-up,
+ * y se adjunta una interrupción para depuración.
+ * @note
+ * Esta función debe llamarse una vez al inicio del programa,
+ * antes de usar cualquier función de LVGL o de la pantalla táctil.
+ * La calibración táctil es opcional y se aplica si se proporcionan datos.
+ * @note
+ * La función configura LVGL con un buffer de dibujo adecuado
+ * para la resolución de la pantalla especificada. * 
+ * @param tft 
+ * @param cfg 
+ */
 
 void DisplayTouch_begin(TFT_eSPI &tft, const DisplayTouchConfig &cfg)
 {

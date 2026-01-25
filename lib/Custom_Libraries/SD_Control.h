@@ -13,3 +13,10 @@ bool ControlSD_SaveConfig(uint8_t index);
 bool ControlSD_LoadConfig(uint8_t index);
 
 extern bool flag_Config_Message;
+extern bool flag_Save_Message;
+
+static void hide_label92_cb();
+static void show_error_label92();
+
+static void show_label36();
+

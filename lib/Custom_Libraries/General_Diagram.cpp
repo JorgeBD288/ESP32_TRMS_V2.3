@@ -27,6 +27,14 @@ const int ESQ_TRMS_Y2 = 127;
 // HELPERS INTERNOS
 // ===============================
 
+/**
+ * @brief 
+ * Muestra el bloque del PID completo
+ * @note
+  Oculta el esquema general
+  y muestra la imagen del bloque PID completo. 
+ */
+
 static void ShowPIDBlock()
 {
     // Ocultar esquema general
@@ -39,6 +47,14 @@ static void ShowPIDBlock()
 
     Serial.println("[GeneralDiagram] Seleccionado bloque PID completo");
 }
+
+/**
+ * @brief 
+ * Muestra el bloque del TRMS completo
+ * @note
+  Oculta el esquema general
+  y muestra la imagen del bloque TRMS completo. 
+ */
 
 static void ShowTRMSBlock()
 {
@@ -57,6 +73,15 @@ static void ShowTRMSBlock()
 // ===============================
 // CALLBACK DE EVENTO
 // ===============================
+
+/**
+ * @brief 
+ * Maneja los eventos táctiles en la imagen del esquema general.
+ * @note
+  Detecta si se ha tocado alguna de las zonas activas
+  y muestra el bloque correspondiente. 
+ * @param e 
+ */
 
 static void GeneralDiagram_Event(lv_event_t * e)
 {
@@ -138,6 +163,15 @@ static void GeneralDiagram_Event(lv_event_t * e)
 // INICIALIZACIÓN PÚBLICA
 // ===============================
 
+/**
+ * @brief 
+ * Inicializa el manejo del esquema general.
+ * @note
+  Registra el callback de eventos táctiles
+  para la imagen del esquema general. 
+ * @param diagramImg 
+ */
+
 void GeneralDiagram_Init(lv_obj_t * diagramImg)
 {
     // Aseguramos que la imagen del esquema general es clicable
@@ -154,10 +188,20 @@ void GeneralDiagram_Init(lv_obj_t * diagramImg)
 // API PÚBLICA PARA EL MANDO
 // ===============================
 
+/**
+ * @brief 
+ * Maneja la selección del bloque PID completo.
+ */
+
 void GeneralDiagram_SelectPID()
 {
     ShowPIDBlock();
 }
+
+/**
+ * @brief 
+ * Maneja la selección del bloque TRMS completo.
+ */
 
 void GeneralDiagram_SelectTRMS()
 {

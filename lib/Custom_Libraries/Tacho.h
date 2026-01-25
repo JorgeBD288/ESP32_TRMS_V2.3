@@ -32,5 +32,13 @@ void Tacho_begin(const TachoConfig &config);
  * @brief Lee los tacómetros, convierte a RPM y actualiza los labels de LVGL.
  *
  * Debe llamarse periódicamente (ej: cada 100 ms)
+ *
+ * @note
+ * La librería aplica un filtro anti-oscilación/anti-picos:
+ *  - Solo actualiza el valor mostrado si la variación respecto al valor mostrado anterior
+ *    es de al menos 100 rpm.
+ *  - Además, ese nuevo valor debe mantenerse estable durante al menos 0.5 s,
+ *    entendiendo estable como que las muestras dentro de esa ventana no superan
+ *    un rango (max-min) de 100 rpm.
  */
 void Tacho_update();
