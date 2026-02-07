@@ -306,15 +306,20 @@ void MotorControl_update(int &Registro_MP, int &Registro_RDC) {
     }
 
     dacWrite(s_dacPinG1, outG1);  // Motor / G1
-    Serial.print("DAC_motor_Principal = ");
-    Serial.println(outG1);
-    Serial.print("Volt_motor_Principal = ");
-    Serial.println(volt_mp);
+
+    //Serial.print("DAC_motor_Principal = ");
+    //Serial.println(Registro_MP);
+    //Serial.println(outG1);
+    //Serial.print("Volt_motor_Principal = ");
+    //Serial.println(volt_mp);
 
     dacWrite(s_dacPinG2, outG2);   // Rotor / G2
+/*
     Serial.print("DAC_rotor_de_cola = ");
     Serial.println(outG2);
     Serial.print("Volt_rotor_de_cola = ");
     Serial.println(volt_rdc);
+*/
+
 
 }

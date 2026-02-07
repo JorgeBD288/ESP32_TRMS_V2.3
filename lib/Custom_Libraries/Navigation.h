@@ -22,3 +22,4 @@ void SetupScreen6Nav();
 void SetupScreen7Nav();
 void SetupScreen8Nav();
 void SetupScreen9Nav();
+void SetupScreen11Nav();

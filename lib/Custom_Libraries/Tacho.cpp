@@ -112,7 +112,7 @@ static float pushAvgWithSpikeRejectAndDacGate(float sampleRpm, RpmAvgState &st)
         const float drpm = absf(sampleRpm - st.lastAccepted);
         const uint32_t dt = now - st.lastAcceptedMs;
 
-        if (dt < 200 && drpm > 300.0f) {
+        if (dt < 100 && drpm > 300.0f) {
             // Descarta directamente esta muestra
             return st.lastOutput;
         }
@@ -127,7 +127,7 @@ static float pushAvgWithSpikeRejectAndDacGate(float sampleRpm, RpmAvgState &st)
     st.count++;
 
     // Cuando llegamos a 10, calculamos promedio
-    if (st.count >= 10) {
+    if (st.count >= 5) {
         const float avg = st.sum / 10.0f;
 
         // Consultar si ha habido cambios en los DAC desde el último promedio publicado

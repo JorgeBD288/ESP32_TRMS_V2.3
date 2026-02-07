@@ -570,6 +570,7 @@ void SetupScreen2Nav()
     lv_group_remove_all_objs(g_navGroup);
     lv_group_add_obj(g_navGroup, ui_Button7);
     lv_group_add_obj(g_navGroup, ui_Button8);
+    lv_group_add_obj(g_navGroup, ui_Button24x);
     lv_group_add_obj(g_navGroup, ui_Button2);
     lv_group_add_obj(g_navGroup, ui_MotorPrincipal);
     lv_group_add_obj(g_navGroup, ui_RotorDeCola);
@@ -577,6 +578,7 @@ void SetupScreen2Nav()
     // Aplicar estilo de foco a todos ellos
     lv_obj_add_style(ui_Button7, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button8, &style_focus, LV_STATE_FOCUSED);
+    lv_obj_add_style(ui_Button24x, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button2, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_MotorPrincipal, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_RotorDeCola, &style_focus, LV_STATE_FOCUSED);
@@ -686,6 +688,7 @@ void SetupScreen6Nav()
     lv_group_add_obj(g_navGroup, ui_Label64);
     lv_group_add_obj(g_navGroup, ui_Label65);
     lv_group_add_obj(g_navGroup, ui_Button26);
+    lv_group_add_obj(g_navGroup, ui_Button27x);
     lv_group_add_obj(g_navGroup, ui_Button16);
     lv_group_add_obj(g_navGroup, ui_Button17);
 
@@ -694,6 +697,7 @@ void SetupScreen6Nav()
     lv_obj_add_style(ui_Label64, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Label65, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button26, &style_focus, LV_STATE_FOCUSED);
+    lv_obj_add_style(ui_Button27x, &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button16,  &style_focus, LV_STATE_FOCUSED);
     lv_obj_add_style(ui_Button17,  &style_focus, LV_STATE_FOCUSED);
 
@@ -757,6 +761,20 @@ void SetupScreen9Nav()
     
     // Fijar foco inicial en el primer botón (arriba a la izquierda)
     lv_group_focus_obj(ui_Button19);
+}
+
+void SetupScreen11Nav()
+{
+    lv_group_remove_all_objs(g_navGroup);
+    lv_group_add_obj(g_navGroup, ui_Button2y);
+    lv_group_add_obj(g_navGroup, ui_Button3y);
+
+    // Aplicar estilo de foco a todos ellos
+    lv_obj_add_style(ui_Button2y, &style_focus, LV_STATE_FOCUSED);
+    lv_obj_add_style(ui_Button3y, &style_focus, LV_STATE_FOCUSED);
+    
+    // Fijar foco inicial en el primer botón (arriba a la izquierda)
+    lv_group_focus_obj(ui_Button2y);
 }
 
 

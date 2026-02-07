@@ -110,10 +110,10 @@ void ui_Screen2_screen_init(void)
     lv_obj_clear_flag(ui_FlechaVerdeCurvaGirada, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     ui_Button2 = lv_btn_create(ui_Screen2);
-    lv_obj_set_width(ui_Button2, 64);
+    lv_obj_set_width(ui_Button2, 103);
     lv_obj_set_height(ui_Button2, 30);
-    lv_obj_set_x(ui_Button2, 199);
-    lv_obj_set_y(ui_Button2, 21);
+    lv_obj_set_x(ui_Button2, 175);
+    lv_obj_set_y(ui_Button2, 75);
     lv_obj_set_align(ui_Button2, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button2, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -143,10 +143,10 @@ void ui_Screen2_screen_init(void)
     lv_obj_set_style_text_font(ui_Label10, &ui_font_Montserrat_14_Latin_2, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Button8 = lv_btn_create(ui_Screen2);
-    lv_obj_set_width(ui_Button8, 62);
-    lv_obj_set_height(ui_Button8, 31);
-    lv_obj_set_x(ui_Button8, 199);
-    lv_obj_set_y(ui_Button8, -16);
+    lv_obj_set_width(ui_Button8, 103);
+    lv_obj_set_height(ui_Button8, 30);
+    lv_obj_set_x(ui_Button8, 175);
+    lv_obj_set_y(ui_Button8, 5);
     lv_obj_set_align(ui_Button8, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button8, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button8, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -180,7 +180,7 @@ void ui_Screen2_screen_init(void)
     lv_obj_set_y(ui_V_motor_principal_1, 9);
     lv_obj_set_align(ui_V_motor_principal_1, LV_ALIGN_CENTER);
     lv_label_set_text(ui_V_motor_principal_1, "V. mp =");
-
+/*
     ui_GraphEncoder = lv_chart_create(ui_Screen2);
     lv_obj_set_width(ui_GraphEncoder, 278);
     lv_obj_set_height(ui_GraphEncoder, 181);
@@ -205,9 +205,8 @@ void ui_Screen2_screen_init(void)
 
     ui_GraphEncoder_series_2 = lv_chart_add_series(ui_GraphEncoder, lv_color_hex(0x2A00FF),
                                                LV_CHART_AXIS_SECONDARY_Y);
-
-
-
+    
+    */
 
     /*
     lv_chart_series_t * ui_GraphEncoder_series_1 = lv_chart_add_series(ui_GraphEncoder, lv_color_hex(0xFF0000),
@@ -219,6 +218,50 @@ void ui_Screen2_screen_init(void)
     static lv_coord_t ui_GraphEncoder_series_2_array[] = { 0 };
     lv_chart_set_ext_y_array(ui_GraphEncoder, ui_GraphEncoder_series_2, ui_GraphEncoder_series_2_array);
     */
+
+    ui_GraphEncoder = lv_chart_create(ui_Screen2);
+    lv_obj_set_width(ui_GraphEncoder, 278);
+    lv_obj_set_height(ui_GraphEncoder, 181);
+    lv_obj_set_x(ui_GraphEncoder, -50);
+    lv_obj_set_y(ui_GraphEncoder, -17);
+    lv_obj_set_align(ui_GraphEncoder, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_GraphEncoder, LV_OBJ_FLAG_HIDDEN);     /// Flags
+    lv_chart_set_type(ui_GraphEncoder, LV_CHART_TYPE_LINE);
+
+    // 12 s * 5 muestras/s = 60 puntos visibles (ventana deslizante)
+    lv_chart_set_point_count(ui_GraphEncoder, 60);
+    lv_chart_set_update_mode(ui_GraphEncoder, LV_CHART_UPDATE_MODE_SHIFT);
+
+    // Rangos Y
+    lv_chart_set_range(ui_GraphEncoder, LV_CHART_AXIS_PRIMARY_Y,   -180, 180);
+    lv_chart_set_range(ui_GraphEncoder, LV_CHART_AXIS_SECONDARY_Y, -180, 180);
+
+    // Rejilla: verticales = 60 (12s * 5), horizontales = las que quieras (ej: 6)
+    lv_chart_set_div_line_count(ui_GraphEncoder, 6, 60);
+
+    // Ticks eje X
+    lv_chart_set_axis_tick(ui_GraphEncoder, LV_CHART_AXIS_PRIMARY_X, 12, 3, 13, 5, true, 10);
+
+    /*
+    // Ticks eje X: sin texto (lo ponemos con labels manuales)
+    lv_chart_set_axis_tick(ui_GraphEncoder,
+        LV_CHART_AXIS_PRIMARY_X,
+        10, 5,       // tick mayor / menor
+        7, 5,        // 7 mayores (0,2,4,6,8,10,12) y 5 menores entre ellos
+        false, 0     // NO texto
+    );
+    */
+    
+    // Ticks eje Y
+    lv_chart_set_axis_tick(ui_GraphEncoder, LV_CHART_AXIS_PRIMARY_Y,   10, 5, 7, 7, true, 50);
+    lv_chart_set_axis_tick(ui_GraphEncoder, LV_CHART_AXIS_SECONDARY_Y, 10, 5, 7, 7, true, 25);
+
+    // Series (SquareLine)
+    ui_GraphEncoder_series_1 = lv_chart_add_series(ui_GraphEncoder, lv_color_hex(0xFF0000),
+                                                LV_CHART_AXIS_PRIMARY_Y);
+    ui_GraphEncoder_series_2 = lv_chart_add_series(ui_GraphEncoder, lv_color_hex(0x2A00FF),
+                                                LV_CHART_AXIS_SECONDARY_Y);
+
 
 
     ui_Panel2 = lv_obj_create(ui_Screen2);
@@ -291,10 +334,29 @@ void ui_Screen2_screen_init(void)
     lv_label_set_text(ui_Label43, "Tacómetros");
     lv_obj_set_style_text_font(ui_Label43, &ui_font_Montserrat_14_Latin_2, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_Button24x = lv_btn_create(ui_Screen2);
+    lv_obj_set_width(ui_Button24x, 103);
+    lv_obj_set_height(ui_Button24x, 30);
+    lv_obj_set_x(ui_Button24x, 175);
+    lv_obj_set_y(ui_Button24x, 40);
+    lv_obj_set_align(ui_Button24x, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Button24x, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button24x, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Button24x, lv_color_hex(0xBB0000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Button24x, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label28x = lv_label_create(ui_Button24x);
+    lv_obj_set_width(ui_Label28x, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label28x, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label28x, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label28x, "Calibración");
+    lv_obj_set_style_text_font(ui_Label28x, &ui_font_Montserrat_14_Latin_2, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(ui_RotorDeCola, ui_event_RotorDeCola, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_MotorPrincipal, ui_event_MotorPrincipal, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button2, ui_event_Button2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button7, ui_event_Button7, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Button24x, ui_event_Button24x, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button8, ui_event_Button8, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Screen2, ui_event_Screen2, LV_EVENT_ALL, NULL);
     uic_Slider3 = ui_RotorDeCola;

@@ -13,6 +13,7 @@
 #include "Navigation.h"
 #include "Ang_Select.h"
 #include "Encoders.h"
+#include "PID_Control.h"
 
 extern PID_CURR g_pidCurr;
 extern PID_MIN  g_pidMin;
@@ -30,10 +31,23 @@ extern float temp_Load_Message = 0.0f;
 static bool modo_encoder_grafico = false;   // false = modelo mecánico, true = gráfica
 static bool Encoders_flag = false;
 
+bool logger_start = false;
+bool flag_calibration = false;
+
 // Las señal de control del Buzzer está invertida debido a un transistor pull-up de control, previo a este
 void BuzzerWrite(bool level) {    
     digitalWrite(Buzzer, level);}
 
+    // ------------------------------
+// Etiquetas del eje X (tiempo)
+// ------------------------------
+static lv_obj_t * xlab0  = NULL;
+static lv_obj_t * xlab2  = NULL;
+static lv_obj_t * xlab4  = NULL;
+static lv_obj_t * xlab6  = NULL;
+static lv_obj_t * xlab8  = NULL;
+static lv_obj_t * xlab10 = NULL;
+static lv_obj_t * xlab12 = NULL;
 
 // -------------------------------------------------------------------
 // Encendido/apagado de elementos
@@ -159,14 +173,32 @@ static bool PID_SaveConfigToFile(const char *path)
 
 void Initiate_Modo_Manual(lv_event_t * e)
 {
-	SetupScreen2Nav();   
-    AngSelect_ResetRefBoth();
+    if (flag_calibration == false){
+        g_prevScreenId = SCR_1;
+        SetupScreen11Nav();  
+        _ui_screen_change(
+        &ui_Screen11,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen11_screen_init
+        );    
+    }
+    else {
+        SetupScreen2Nav();   
+        AngSelect_ResetRefBoth();
+        digitalWrite(LED,HIGH);
+        BuzzerWrite(HIGH);    
+        delay(500);
+        digitalWrite(LED,LOW);
+        BuzzerWrite(LOW);
 
-    digitalWrite(LED,HIGH);
-    BuzzerWrite(HIGH);    
-    delay(500);
-    digitalWrite(LED,LOW);
-    BuzzerWrite(LOW);
+        _ui_screen_change(
+        &ui_Screen2,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen2_screen_init
+        );    
+    }
 
 }
 
@@ -228,8 +260,35 @@ void function_Load_Parameters_From_SD(lv_event_t * e)
 }
 
 void function_Start_Control_PID(lv_event_t * e)
-{
-	SetupScreen6Nav();
+{   
+    if (flag_calibration == false){
+        g_prevScreenId = SCR_3;
+        SetupScreen11Nav();  
+        _ui_screen_change(
+        &ui_Screen11,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen11_screen_init
+        );        
+    }
+    else {
+        SetupScreen6Nav();
+        PID4_LoadFromCurr(g_pidCurr);
+        PID4_SetEnabled(true);
+        Reset_Encoders_Registros();
+        digitalWrite(LED,HIGH);
+        BuzzerWrite(HIGH);    
+        delay(500);
+        digitalWrite(LED,LOW);
+        BuzzerWrite(LOW);
+
+        _ui_screen_change(
+        &ui_Screen6,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen6_screen_init
+        );    
+    }
 }
 
 void Reset_Encoders_Registros()
@@ -250,7 +309,7 @@ void Reset_Encoders_Registros()
     MotorControl_update(Registro_MP, Registro_RDC);
 
     //Reinicio de los encoders
-    Encoders_pulseReset(10);
+    //Encoders_pulseReset(10);
 }
 
 
@@ -480,6 +539,7 @@ void function_Change_Images(lv_event_t * e)
 void function_Control_PID_Menu_1(lv_event_t * e)
 {
 	SetupScreen3Nav();
+    PID4_SetEnabled(false);
 }
 
 void function_Encoders_2(lv_event_t * e)
@@ -489,9 +549,11 @@ void function_Encoders_2(lv_event_t * e)
     if (Encoders_flag) {
         lv_obj_clear_flag(ui_GraphEncoder3, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(ui_Image12, LV_OBJ_FLAG_HIDDEN);
+        logger_start = true;
     } else {
         lv_obj_clear_flag(ui_Image12, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(ui_GraphEncoder3, LV_OBJ_FLAG_HIDDEN);
+        logger_start = false;
     }
 }
 
@@ -535,8 +597,11 @@ void function_Encoders_GraphModel(lv_event_t * e)
 
     if (modo_encoder_grafico) {
         mostrar_grafica_encoder();
+        logger_start = true;
+        
     } else {
         mostrar_modelo_mecanico();
+        logger_start = false;
     }
 }
 
@@ -760,7 +825,9 @@ void function_Init_3(lv_event_t * e)
 
 void function_Angle_Reset(lv_event_t * e)
 {
-	AngSelect_ResetRefBoth();
+	AngSelect_ResetRefBoth();    
+    //Reinicio de los encoders
+    //Encoders_pulseReset(10);
 }
 void function_Save_Button_Config(lv_event_t * e)
 {
@@ -770,4 +837,88 @@ void function_Save_Button_Config(lv_event_t * e)
     // opcional, mensaje en la label:
     lv_label_set_text(ui_ButtonSelected, "Configuracion guardada en EEPROM");
     lv_obj_clear_flag(ui_ButtonSelected, LV_OBJ_FLAG_HIDDEN);
+}
+
+void function_encoders_calibration(lv_event_t * e)
+{
+	//Reseteo de los encoders para establecer una nueva referencia (proceso de calibración)
+	Encoders_pulseReset(10);
+    delay(200);
+    lv_obj_clear_flag(ui_Label5y, LV_OBJ_FLAG_HIDDEN);
+    flag_calibration = true;
+    
+}
+
+void function_calibration_screen_out(lv_event_t * e)
+{ 
+    if (g_prevScreenId == SCR_11){ // Esto se dará si venimos del salavapantallas
+        g_prevScreenId = g_prevScreenId_temp;  
+    }
+
+    if (g_prevScreenId == SCR_1){
+        SetupScreen2Nav();   
+        AngSelect_ResetRefBoth();
+        digitalWrite(LED,HIGH);
+        BuzzerWrite(HIGH);    
+        delay(500);
+        digitalWrite(LED,LOW);
+        BuzzerWrite(LOW);
+        lv_obj_add_flag(ui_Label5y, LV_OBJ_FLAG_HIDDEN);
+
+        _ui_screen_change(
+        &ui_Screen2,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen2_screen_init
+        );
+    }
+    else if (g_prevScreenId == SCR_2){
+        SetupScreen2Nav();
+        lv_obj_add_flag(ui_Label5y, LV_OBJ_FLAG_HIDDEN);
+
+        _ui_screen_change(
+        &ui_Screen2,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen2_screen_init
+        );
+    }
+    else if (g_prevScreenId == SCR_3){
+        SetupScreen6Nav();
+        lv_obj_add_flag(ui_Label5y, LV_OBJ_FLAG_HIDDEN);
+
+        PID4_LoadFromCurr(g_pidCurr);
+        PID4_SetEnabled(true);
+
+        _ui_screen_change(
+        &ui_Screen6,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen6_screen_init
+        );
+    }
+    else if (g_prevScreenId == SCR_6){
+        SetupScreen6Nav();
+        lv_obj_add_flag(ui_Label5y, LV_OBJ_FLAG_HIDDEN);
+
+        _ui_screen_change(
+        &ui_Screen6,
+        LV_SCR_LOAD_ANIM_FADE_ON,
+        500, 0,
+        &ui_Screen6_screen_init
+        );
+    }
+
+}
+
+void function_calibration_1(lv_event_t * e)
+{
+	g_prevScreenId = SCR_2;
+    SetupScreen11Nav(); 
+}
+
+void function_calibration_2(lv_event_t * e)
+{
+    g_prevScreenId = SCR_6;
+    SetupScreen11Nav();
 }

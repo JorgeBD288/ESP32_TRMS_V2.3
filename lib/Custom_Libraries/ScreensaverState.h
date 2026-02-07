@@ -15,12 +15,15 @@ enum PrevScreenId {
     SCR_7,
     SCR_8,
     SCR_9,
+    SCR_11,
     // añade más si tienes más pantallas
 };
 
+
 // Variables globales compartidas
 extern PrevScreenId g_prevScreenId;
-extern bool         g_screensaverActive;
+extern PrevScreenId g_prevScreenId_temp;
+extern bool g_screensaverActive;
 
 // Declaración de la función
 void RegisterActivity();

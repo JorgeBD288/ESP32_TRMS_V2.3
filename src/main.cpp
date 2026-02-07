@@ -5,6 +5,7 @@
 #include <SD.h>
 #include <ui.h>
 #include <Wire.h>
+#include <Ansiterm.h>
 
 // ==== Librerías personalizadas ====
 #include "DisplayTouch.h"
@@ -22,6 +23,11 @@
 #include "Navigation.h"
 #include "Remote_Diagram.h"
 #include "Boot_Animation.h"
+#include "Ang_Select.h"
+#include "PID_Control.h"
+#include "PID_Parameters.h"
+#include "AnsiTable.h"
+#include "SerialAnsiLogger.h"
 
 // Activa/desactiva trazas de depuración del TCA9539
 #define TCA_DEBUG 1
@@ -46,6 +52,9 @@ static const char* i2cErrToStr(uint8_t err) {
     }
 }
 
+// Habilitar monitor Ansi
+Ansiterm term;
+SerialAnsiLogger logger(term, 50); // 50ms
 
 // ================================
 // Definiciones de pines y constantes
@@ -78,6 +87,8 @@ static const char* i2cErrToStr(uint8_t err) {
 //Pines I2C
 #define PIN_SDA 21
 #define PIN_SCL 22
+
+int t = 0;
 
 // Constante para conversión de voltaje a RPM para las lecturas de los tacómetros
 const float TACH_VOLTS_PER_1000RPM = 0.52f;
@@ -129,6 +140,7 @@ extern float temp_Load_Message;
 //Variables para la temporización del salvapantallas
 
 extern PrevScreenId g_prevScreenId;
+extern PrevScreenId g_prevScreenId_temp;
 extern bool         g_screensaverActive;
 extern uint32_t     g_lastActivityMs;
 
@@ -140,6 +152,11 @@ lv_group_t * g_navGroup = nullptr;
 
 // Estilo para cuando un objeto tiene el foco
 lv_style_t   style_focus;
+
+// Valores de referencia iniciales para las consignas de la gráfica del PID
+float refH_old = 0.0f;
+float refV_old = 0.0f;
+
 
 // ================================
 // setup()
@@ -169,6 +186,17 @@ void setup() {
 
     Serial.begin(115200);
     Serial.println("Inicializando ESP32...");
+    logger.begin(true); // imprime cabecera
+    //logger.enablePlot(true, 70, 16, true); // width=70, height=16, autoscale
+    // Muestreo (50ms) y refresh del plot (1000ms)
+    //logger.setSamplePeriodMs(50);
+    //logger.setPlotRefreshMs(1000);
+    // Consigna (línea roja)
+    //logger.enableSetpointLine(true);
+    
+    // Ejes: etiquetas Y cada 4 filas, ticks X cada 20 muestras (1s si Ts=50ms)
+    //logger.setYLabelEveryRows(4);
+    //logger.setXTickEverySamples(20);
 
     // Buses
     SPI.begin(); 
@@ -337,6 +365,19 @@ void setup() {
     //Establecimiento de valores iniciales para los prámetros PID
     PID_LoadDefaults(); //Inicializar valores PID a sus valores predeterminados
     PID_LoadFromNVS(); // Si hay algo en EEPROM, lo sobreescribe y actualiza UI
+    PID4_LoadFromCurr(g_pidCurr);    // copia a s_pid4_params y resetea estados
+    PID4_SetEnabled(false);           // habilita el control cuando quieras
+
+    //Selección de modo de funcionamiento PID por defefecto
+    PID4_SetMode(PIDMode::MIMO_FULL);
+
+    //Inicialización con un valor nulo de las series de datos de las consignas del PID
+    uint16_t pc = lv_chart_get_point_count(ui_GraphEncoder3);
+    for (uint16_t i = 0; i < pc; i++) {
+        ui_GraphEncoder3_series_refH->y_points[i] = 0;
+        ui_GraphEncoder3_series_refV->y_points[i] = 0;
+    }
+
 
     //Inicializar la función para la detección de parámetros de entrada para el control PID
     AngSelect_Init(ui_Image12, ui_Label65, ui_Label64); // (Cuadrícula, Ang_Horizontal, Ang_Vertical)
@@ -453,7 +494,7 @@ void loop() {
             default:
                 break;
         }
-
+        
         // 4.3) Navegación con flechas
         if (ev.nav != IRNavKey::NONE) {
             HandleIRNavigation(ev.nav);
@@ -592,18 +633,19 @@ void loop() {
     float degH = (float)cH * K;
     float degV = (float)cV * K;
 
+  //Comento esto temporalmente para usar el logger con los datos reales de los encoders, con menos retardos
     // (C) Chart 1 más lento (solo si visible)
-    if (chart1Visible && lastOk && (now - lastChart1 >= 50)) {
+    if (chart1Visible && lastOk && (now - lastChart1 >= 200)) {
         lastChart1 = now;
 
         // Series del chart 1 (Screen2)
         lv_chart_set_next_value(ui_GraphEncoder, ui_GraphEncoder_series_1, (lv_coord_t)degH);
         lv_chart_set_next_value(ui_GraphEncoder, ui_GraphEncoder_series_2, (lv_coord_t)degV);
-        lv_chart_refresh(ui_GraphEncoder);
+        //lv_chart_refresh(ui_GraphEncoder);
     }
 
     // (D) Chart 2 más lento (solo si visible)
-    if (chart2Visible && lastOk && (now - lastChart2 >= 50)) {
+    if (chart2Visible && lastOk && (now - lastChart2 >= 200)) {
         lastChart2 = now;
 
         // Series del chart 2 (Screen6)
@@ -612,8 +654,16 @@ void loop() {
         lv_chart_refresh(ui_GraphEncoder3);
     }
 
-    // (E) Serial más lento (para no bloquear)
-    uint32_t printPeriod = chartsVisible ? 400 : 100; // con chart imprime menos
+
+    // (E) Serial
+    //uint32_t printPeriod = chartsVisible ? 400 : 100;
+
+    //if (logger_start == true){
+        //logger.update(degV, degH); // visual (opcional)
+    //}
+    
+    /*
+    uint32_t printPeriod = 50;
     if (now - lastPrint >= printPeriod) {
         lastPrint = now;
 
@@ -623,9 +673,48 @@ void loop() {
             Serial.printf("[H] %6d  %8.2f deg | [V] %6d  %8.2f deg\n", cH, degH, cV, degV);
         }
     }
+    */
+    //----------------------------------------------------
+    // 6) Control PID
+    //----------------------------------------------------
+
+    // ---- PID timing ----
+    static uint32_t lastPidMs = 0;
+    uint32_t nowMs = millis();
+    float dt = (nowMs - lastPidMs) / 1000.0f;
+    if (dt < 0.001f) dt = 0.001f;       // seguridad
+    if (dt > 0.100f) dt = 0.100f;       // evita saltos grandes si la UI bloquea
+    lastPidMs = nowMs;
+
+    // ---- 1) Consignas desde AngSelect (GRADOS) ----
+    float refH = AngSelect_GetRefHorizontal();
+    float refV = AngSelect_GetRefVertical();
+    PID4_SetReferences(refV, refH); // ojo: tu PID4_SetReferences(refVertDeg, refHorDeg)
+    const float Err = 0.1f;  // 0.1°
+    if (fabsf(refH - refH_old) > Err || fabsf(refV - refV_old) > Err) {
+        Chart_UpdateReferences(refH, refV); 
+        PID4_ResetStates();
+        refH_old = refH;
+        refV_old = refV;
+    }
+
+    // ---- 2) Medidas desde el loop (GRADOS) ----
+    // degH = horizontal, degV = vertical
+
+    // ---- 3) Ejecutar PID SOLO si lectura ok ----
+    if (lastOk) {
+        PID4_StepWithMeasurements(dt, degV, degH);
+    } else {
+        // si falla encoder, opcional: parar motores por seguridad
+        // MotorControl_update(0, 0);
+    }
+
+    //if (logger_start) {
+        //logger.update(degV, degH, refV, refH);
+    //}
 
     // ------------------------------------------------------------
-    // 6) Comprobar INACTIVIDAD y activar salvapantallas (Screen10)
+    // 7) Comprobar INACTIVIDAD y activar salvapantallas (Screen10)
     // ------------------------------------------------------------
     now = millis();
     if (now - g_lastActivityMs > INACTIVITY_TIMEOUT_MS) {
@@ -644,7 +733,13 @@ void loop() {
             else if (act == ui_Screen7) g_prevScreenId = SCR_7;
             else if (act == ui_Screen8) g_prevScreenId = SCR_8;
             else if (act == ui_Screen9) g_prevScreenId = SCR_9;
-            else                        g_prevScreenId = SCR_NONE;
+            else if (act == ui_Screen11){
+                if (g_prevScreenId != SCR_11) {
+                    g_prevScreenId_temp = g_prevScreenId;
+                    g_prevScreenId = SCR_11;
+                }
+            }
+            else g_prevScreenId = SCR_NONE;
 
             // 2) Activar flag de salvapantallas
             g_screensaverActive = true;

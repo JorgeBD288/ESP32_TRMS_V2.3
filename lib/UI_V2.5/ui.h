@@ -183,11 +183,18 @@ extern lv_obj_t * ui_V_motor_principal_2;
 extern lv_obj_t * ui_GraphEncoder3;
 extern lv_chart_series_t * ui_GraphEncoder3_series_1; // Horizontal (rojo)
 extern lv_chart_series_t * ui_GraphEncoder3_series_2; // Vertical (azul)
+extern lv_chart_series_t * ui_GraphEncoder3_series_refH; // Referencia Horizontal (consgina del PID)
+extern lv_chart_series_t * ui_GraphEncoder3_series_refV; // Referencia Vertical (consgina del PID)
 
 void ui_event_Button26(lv_event_t * e);
 extern lv_obj_t * ui_Button26;
 extern lv_obj_t * ui_Label39;
 extern lv_obj_t * ui_Image12;
+
+void ui_event_Button27x(lv_event_t * e);
+extern lv_obj_t * ui_Button27x;
+extern lv_obj_t * ui_Label31x;
+
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Screen2
@@ -232,6 +239,11 @@ extern lv_obj_t * ui_Label80;
 extern lv_obj_t * ui_VinRDC;
 extern lv_obj_t * ui_VinMP;
 extern lv_obj_t * ui_Label43;
+
+void ui_event_Button24x(lv_event_t * e);
+extern lv_obj_t * ui_Button24x;
+extern lv_obj_t * ui_Label28x;
+
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_Slider3;
 
@@ -300,6 +312,23 @@ extern lv_obj_t * ui_Button19;
 extern lv_obj_t * ui_Label21;
 // CUSTOM VARIABLES
 
+// SCREEN: ui_Screen11
+void ui_Screen11_screen_init(void);
+extern lv_obj_t * ui_Screen11;
+extern lv_obj_t * ui_Image2y;
+extern lv_obj_t * ui_Image3y;
+extern lv_obj_t * ui_Label1y;
+extern lv_obj_t * ui_Label2y;
+void ui_event_Button2y(lv_event_t * e);
+extern lv_obj_t * ui_Button2y;
+extern lv_obj_t * ui_Label3y;
+void ui_event_Button3y(lv_event_t * e);
+extern lv_obj_t * ui_Button3y;
+extern lv_obj_t * ui_Label4y;
+extern lv_obj_t * ui_Label5y;
+
+// CUSTOM VARIABLES
+
 // EVENTS
 
 extern lv_obj_t * ui____initial_actions0;
@@ -322,6 +351,9 @@ LV_IMG_DECLARE(ui_img_flecha_verde_curvada_50x50_png);    // assets/flecha_verde
 LV_IMG_DECLARE(ui_img_flecha_verde_invertida_50x50_png);    // assets/flecha_verde_invertida_50x50.png
 LV_IMG_DECLARE(ui_img_logo_ugr_rojo_redimensionado_png);    // assets/Logo_UGR_Rojo_Redimensionado.png
 LV_IMG_DECLARE(ui_img_mando_ir_redimensionado_png);    // assets/Mando_IR_redimensionado.png
+
+LV_IMG_DECLARE(ui_img_1570174852);    // assets/Esquema de TRMS para calibración de eje vertical_2.png
+LV_IMG_DECLARE(ui_img_1016581827);    // assets/TRMS_Vista superior para calibración.png
 
 // FONTS
 LV_FONT_DECLARE(ui_font_Montserrat_14_Latin);

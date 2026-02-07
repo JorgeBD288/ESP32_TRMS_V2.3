@@ -44,6 +44,7 @@ float PID_Update(const PIDParams &params,
                  PIDState        &state,
                  float            input,
                  float            dt);
+
 // =====================================================
 // Bloque PID-4 (MIMO 2x2) para el TRMS
 // =====================================================
@@ -64,6 +65,15 @@ struct PID4State {
     PIDState vh;
     PIDState vv;
 };
+
+enum class PIDMode {
+    MIMO_FULL,
+    VERTICAL_ONLY,
+    HORIZONTAL_ONLY
+};
+
+// Selección de modo (MIMO / SISO)
+void PID4_SetMode(PIDMode mode);
 
 /**
  * Resetea todos los integradores y memorias del bloque PID-4.
@@ -89,7 +99,7 @@ void PID4_Update(const PID4Params &params,
                  float            &out1,
                  float            &out2);
 
-                 // ======================================
+// ======================================
 // Módulo global de control PID-4 (TRMS)
 // ======================================
 
@@ -103,13 +113,28 @@ void PID4_SetReferences(float refVertDeg, float refHorDeg);
 void PID4_SetEnabled(bool enable);
 bool PID4_IsEnabled();
 
-// Ejecuta un paso de control:
-//   dt  -> tiempo de muestreo [s]
-// Internamente:
-//   - lee los ángulos medidos (Encoders_readAngles)
-//   - convierte ref y medida a radianes
-//   - calcula errores
-//   - llama a PID4_Update
-//   - convierte Uh/Uv a Registro_MP / Registro_RDC
-//   - llama a MotorControl_update(...)
+// Ejecuta un paso de control con lectura de encoders
 void PID4_Step(float dt);
+
+// Ejecuta un paso usando medidas externas (en GRADOS)
+void PID4_StepWithMeasurements(float dt, float measVertDeg, float measHorDeg);
+void PID4_Vertical_Step(float dt, float measVertDeg, float measHorDeg);
+void PID4_Horizontal_Step(float dt, float measVertDeg, float measHorDeg);
+
+// Actualiza las series de datos de las consignas del PID en la gráfica
+void Chart_UpdateReferences(float refH_deg, float refV_deg);
+
+// Reset global de estados internos (integradores/derivadas)
+void PID4_ResetStates();
+
+
+// =====================================================
+// NUEVO (opcional): ajuste de feedforward vertical
+// (sustituye al antiguo "bias" fijo s_MP_eq)
+// -----------------------------------------------------
+// Umbral interno: ref = -30º
+// - mp_at_threshold: magnitud base (0..100) cuando ref = -30º
+// - slopes: pendiente por grado arriba/abajo del umbral
+// =====================================================
+void PID4_SetVerticalFeedforwardAtThreshold(int mp_at_threshold);
+void PID4_SetVerticalFeedforwardSlopes(float slope_up, float slope_down);

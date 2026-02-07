@@ -27,6 +27,7 @@ extern int Registro_MP;
 extern int Registro_RDC;
 extern float temp_Save_Message;
 extern float temp_Load_Message;
+extern bool logger_start;
 
 void F_Rotor_Derecha(lv_event_t * e);
 void F_Rotor_Izquierda(lv_event_t * e);
@@ -95,6 +96,11 @@ void function_Program_1(lv_event_t * e);
 void function_Salvapantallas(lv_event_t * e);
 void function_Init_3(lv_event_t * e);
 void function_Save_Button_Config(lv_event_t * e);
+
+void function_encoders_calibration(lv_event_t * e);
+void function_calibration_screen_out(lv_event_t * e);
+void function_calibration_1(lv_event_t * e);
+void function_calibration_2(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/
