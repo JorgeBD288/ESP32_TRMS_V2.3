@@ -807,7 +807,25 @@ void PID4_StepWithMeasurements(float dt, float measVertDeg, float measHorDeg)
     } else if (s_pidMode == PIDMode::HORIZONTAL_ONLY) {
         Registro_MP = 0;
     }
+/*
+    // DEBUG: modo actual antes de aplicar motores
+        static uint32_t lastModePrint = 0;
+        uint32_t nowMode = millis();
+        if (nowMode - lastModePrint > 500) {   // cada 500 ms
+            lastModePrint = nowMode;
 
+            const char* modeStr =
+                (s_pidMode == PIDMode::MIMO_FULL)       ? "MIMO_FULL" :
+                (s_pidMode == PIDMode::VERTICAL_ONLY)   ? "VERTICAL_ONLY" :
+                (s_pidMode == PIDMode::HORIZONTAL_ONLY) ? "HORIZONTAL_ONLY" :
+                                                        "UNKNOWN";
+
+            Serial.printf(
+                "[PID MODE] %s | MP=%d | RDC=%d\n",
+                modeStr, Registro_MP, Registro_RDC
+            );
+        }
+*/
     // 7) Aplicar
     MotorControl_update(Registro_MP, Registro_RDC);
 

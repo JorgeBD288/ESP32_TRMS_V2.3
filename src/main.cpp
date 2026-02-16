@@ -25,8 +25,6 @@
 #include "Boot_Animation.h"
 #include "Ang_Select.h"
 #include "PID_Control.h"
-#include "PID_Parameters.h"
-#include "AnsiTable.h"
 #include "SerialAnsiLogger.h"
 
 // Activa/desactiva trazas de depuración del TCA9539
@@ -368,7 +366,7 @@ void setup() {
     PID4_LoadFromCurr(g_pidCurr);    // copia a s_pid4_params y resetea estados
     PID4_SetEnabled(false);           // habilita el control cuando quieras
 
-    //Selección de modo de funcionamiento PID por defefecto
+    //Selección de modo de funcionamiento PID por defecto
     PID4_SetMode(PIDMode::MIMO_FULL);
 
     //Inicialización con un valor nulo de las series de datos de las consignas del PID
